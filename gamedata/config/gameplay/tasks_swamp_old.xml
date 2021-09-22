@@ -1,0 +1,248 @@
+<game_task id="know_for_fate_of_klyk">
+   <title>Узнать о судьбе Клыка</title>
+   <objective>
+      <text>Поговорить с Доктором</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>known_of_klyk</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поискать информацию в тайнике</text>
+      <function_complete>l03u_agr_underground_dialog.books_research_have</function_complete>
+      <infoportion_set_complete>talk_to_doctor_1</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести информацию Доктору</text>
+      <infoportion_complete>bring_doctor_klyk_zapiska1</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти Колобка</text>
+      <infoportion_complete>bring_info_kolobok</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отправиться на поиски Клыка в Пузырь</text>
+      <infoportion_complete>klyk_first_message</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти и забрать информацию с радиомаяком</text>
+      <function_complete>puzir_dialog.zapiska_klyk2_have</function_complete>
+   </objective>
+
+   <objective>
+      <text>Идти по следам Клыка в Лиманск</text>
+      <function_complete>limansk_dialog.zapiska_klyk3_have</function_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Доктором</text>
+      <map_location_type hint="Доктор">blue_location</map_location_type>
+      <object_story_id>swamp_old_doctor</object_story_id>
+      <infoportion_complete>known_of_klyk</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="progress_find_klyk">
+   <title>Продолжение поисков Клыка</title>
+   <objective>
+      <text>Вернуться к Доктору</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>goto_doc</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Пробраться в Лабиринт</text>
+      <infoportion_complete>find_av_peshera</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти тёмных</text>
+      <infoportion_complete>talking_darks</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с лидером тёмных</text>
+      <infoportion_complete>first_talking_cheburek</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Вернуться к Доктору</text>
+      <map_location_type hint="Доктор">blue_location</map_location_type>
+      <object_story_id>swamp_old_doctor</object_story_id>
+      <infoportion_complete>goto_doc</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="goto_generators">
+   <title>Найти курьера тёмных на Генераторах</title>
+   <objective>
+      <text>Расшифровать записи в КПК Ярика у Доктора</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>goto_doc2</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Добраться на Генераторы</text>
+      <infoportion_complete>find_generators</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти высокую точку для пеленгации</text>
+      <infoportion_complete>start_peleng</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отправить Доктору запеленгованный сигнал</text>
+      <infoportion_complete>end_peleng</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Дождаться результатов дешифровки</text>
+      <infoportion_complete>generators_message_doctor_1</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Придти на запеленгованную точку</text>
+      <infoportion_complete>message_doctor_2</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Дождаться сообщения от Доктора</text>
+      <infoportion_complete>generators_message_doctor_2</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Проникнуть в лабораторию</text>
+      <infoportion_complete>find_warlab</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отключить 1-й накопитель</text>
+      <infoportion_complete>warlab_antenna_2_off</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отключить 2-й накопитель</text>
+      <infoportion_complete>warlab_antenna_3_off</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отключить 3-й накопитель</text>
+      <infoportion_complete>warlab_antenna_4_off</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отключить 4-й накопитель</text>
+      <infoportion_complete>warlab_antenna_5_off</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отключить 5-й накопитель</text>
+      <infoportion_complete>warlab_antenna_6_off</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отключить питание главного накопителя</text>
+      <infoportion_complete>warlab_antenna_1_off</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти пропавшего курьера тёмных</text>
+      <infoportion_complete>generators_yarik_corpse</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Расшифровать записи в КПК Ярика у Доктора</text>
+      <map_location_type hint="Доктор">blue_location</map_location_type>
+      <object_story_id>swamp_old_doctor</object_story_id>
+      <infoportion_complete>goto_doc2</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="goto_sarcofag">
+   <title>Поиск компонентов "Сердца Оазиса"</title>
+   <objective>
+      <text>Получить "Сердце Оазиса"</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>seventh_talking_doctor</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Проникнуть в Саркофаг</text>
+      <infoportion_complete>find_sarcofag</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти уникальные артефакты</text>
+      <function_complete>sarcofag_dialog.unique_arts_have</function_complete>
+      <infoportion_set_complete>find_unique_arts</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести уникальные артефакты Доктору</text>
+      <infoportion_complete>bring_doctor_unique_arts</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Дождаться сообщения Доктора</text>
+      <infoportion_complete>goto_doc3</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Получить "Сердце Оазиса"</text>
+      <map_location_type hint="Доктор">blue_location</map_location_type>
+      <object_story_id>swamp_old_doctor</object_story_id>
+      <infoportion_complete>seventh_talking_doctor</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="end_of_find_klyk">
+   <title>Завершение поисков Клыка</title>
+   <objective>
+      <text>Вернуться к Доктору</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>eighth_talking_doctor</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Встретиться с Чебуреком</text>
+      <infoportion_complete>second_talking_cheburek</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Уничтожить тёмных</text>
+      <function_complete>av_peshera_dialog.actor_killing_darks</function_complete>
+      <infoportion_set_complete>talk_to_klyk</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Найти Клыка</text>
+      <infoportion_complete>peshera_code_door_unlocked</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отдать Клыку "Сердце Оазиса"</text>
+      <infoportion_complete>give_so</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти вещи Клыка</text>
+      <function_complete>av_peshera_dialog.actor_find_things_klyk</function_complete>
+      <infoportion_set_complete>second_talk_to_klyk</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести вещи Клыку</text>
+      <infoportion_complete>second_talking_klyk</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Вернуться к Доктору</text>
+      <map_location_type hint="Доктор">blue_location</map_location_type>
+      <object_story_id>swamp_old_doctor</object_story_id>
+      <infoportion_complete>eighth_talking_doctor</infoportion_complete>
+   </objective>
+</game_task>

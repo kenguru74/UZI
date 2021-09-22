@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+        <info_portion id="german_find_disk">
+                <article>german_find_disk_art</article>
+        </info_portion>
+	<info_portion id="have_yanold_secrets"></info_portion>
+		
+</game_information_portions>

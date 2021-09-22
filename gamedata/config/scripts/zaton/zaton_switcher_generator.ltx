@@ -1,0 +1,18 @@
+[logic]
+active = ph_button@active
+
+[ph_button@active]
+anim = lab_primary_switcher_idle
+on_info = {+zaton_group_2_off} ph_button@activate
+
+[ph_button@activate]
+on_info = {+zaton_generator_off} ph_button@deactivate
+anim = lab_primary_switcher_idle
+tooltip = tips_zaton_generator_press
+on_press = ph_button@deactivate %+zaton_generator_off =delete_anomaly%
+
+[ph_button@deactivate]
+anim = lab_primary_switcher_off
+on_timer = 2000 | ph_idle@nil %+spawn_new_zver%
+
+[ph_idle@nil]

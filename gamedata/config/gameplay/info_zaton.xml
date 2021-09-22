@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+	<info_portion id="zat_b14_door_1_unlock"></info_portion>
+
+        <info_portion id="zaton_skadovsk_door1_open"></info_portion>
+        <info_portion id="zaton_skadovsk_door2_open"></info_portion>
+        <info_portion id="zaton_skadovsk_door3_open"></info_portion>
+        <info_portion id="zaton_skadovsk_door4_open"></info_portion>
+
+        <info_portion id="noah_door_open"></info_portion>
+
+	<info_portion id="go_to_noah">
+                <task>zaton_spartak_help</task>
+        </info_portion>
+        <info_portion id="steel_forest_lab_door_open"></info_portion>
+        <info_portion id="zaton_lab_power_off"></info_portion>
+        <info_portion id="spartak_boys_to_home"></info_portion>
+        <info_portion id="spartak_help"></info_portion>
+        <info_portion id="find_pda"></info_portion>
+        <info_portion id="list_signal"></info_portion>
+        <info_portion id="bring_noah_pda"></info_portion>
+        <info_portion id="bring_pda"></info_portion>
+        <info_portion id="give_signal"></info_portion>
+        <info_portion id="find_lab"></info_portion>
+        <info_portion id="find_rubilnik"></info_portion>
+        <info_portion id="zaton_stalker_corpse"></info_portion>
+        <info_portion id="stalker_talk"></info_portion>
+
+        <info_portion id="go_to_german"></info_portion>
+        <info_portion id="german_find_docs_zech">
+                <article>german_find_docs_zech_art</article>
+        </info_portion>
+
+        <info_portion id="going_complete"></info_portion>
+        <info_portion id="take_zver_message">
+                <article>take_zver_message_art</article>
+        </info_portion>
+        <info_portion id="fourth_dialog_noah"></info_portion>
+        <info_portion id="have_heli_docs"></info_portion>
+        <info_portion id="fifth_dialog_noah"></info_portion>
+        <info_portion id="have_control_access"></info_portion>
+        <info_portion id="sixth_dialog_noah">
+                <article>sixth_dialog_noah_art</article>
+        </info_portion>
+        <info_portion id="give_message_noah"></info_portion>
+        <info_portion id="access_system_complete"></info_portion>
+        <info_portion id="zaton_group_1_off"></info_portion>
+        <info_portion id="zaton_group_2_off"></info_portion>
+        <info_portion id="zaton_generator_off"></info_portion>
+        <info_portion id="spawn_new_zver"></info_portion>
+        <info_portion id="first_dialog_zver"></info_portion>
+        <info_portion id="spawn_zver2"></info_portion>
+        <info_portion id="seventh_dialog_noah"></info_portion>
+        <info_portion id="second_dialog_zver"></info_portion>
+
+        <info_portion id="zaton_kranes_door_open"></info_portion>
+        <info_portion id="zaton_actor_kran_door"></info_portion>
+        <info_portion id="npc_54563_door"></info_portion>
+        <info_portion id="npc_54564_door"></info_portion>
+
+        <info_portion id="zaton_dialog_road"></info_portion>
+        <info_portion id="zaton_dialog_kran"></info_portion>
+        <info_portion id="zaton_dialog_jo"></info_portion>
+        <info_portion id="zat_kran_koster_on"></info_portion>
+        <info_portion id="start_quest_kranes"></info_portion>
+        <info_portion id="zat_bloodsucker_spawn"></info_portion>
+        <info_portion id="zat_bloodsucker_death"></info_portion>
+        <info_portion id="jo_quest_1">
+                <task>zaton_jo_quest</task>
+        </info_portion>
+        <info_portion id="zat_kran_stalker1"></info_portion>
+        <info_portion id="zat_kran_stalker2"></info_portion>
+        <info_portion id="jo_quest_fail"></info_portion>
+		
+</game_information_portions>

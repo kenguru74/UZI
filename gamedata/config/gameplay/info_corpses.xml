@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+	<info_portion id="escape_stalker_about_vagonchik_54572"></info_portion>
+	<info_portion id="escape_stlaker_on_ferma_54573"></info_portion>
+	<info_portion id="escape_stalker_before_blockpost_on_garbage_54574"></info_portion>
+	<info_portion id="escape_stalker_left_from_fox_54575"></info_portion>
+	<info_portion id="escape_stalker_forward_from_fox_54576"></info_portion>
+	<info_portion id="escape_bandit_on_elevator_54577"></info_portion>
+	<info_portion id="escape_bandit_about_boars_54578"></info_portion>
+	<info_portion id="escape_stalker_about_viaduk_54579"></info_portion>
+	<info_portion id="escape_stalker_about_tunnel_33"></info_portion>
+	<info_portion id="escape_kuznezov_32"></info_portion>
+	<info_portion id="escape_bandit_on_atp_24"></info_portion>
+	<info_portion id="escape_killer_21"></info_portion>
+	<info_portion id="escape_petruha_9"></info_portion>
+	<info_portion id="escape_provodnik_92"></info_portion>
+	<info_portion id="escape_shustryi_4"></info_portion>
+	<info_portion id="escape_fanat_22"></info_portion>
+	<info_portion id="escape_tolik_7"></info_portion>
+
+	<info_portion id="garbage_stalker_in_tunnel_124"></info_portion>
+	<info_portion id="garbage_bandit_on_techocemetery_1_54583"></info_portion>
+	<info_portion id="garbage_bandit_on_techocemetery_2_54584"></info_portion>
+	<info_portion id="garbage_bandit_on_techocemetery_3_54585"></info_portion>
+	<info_portion id="garbage_stalker_in_forest_54586"></info_portion>
+	<info_portion id="garbage_stalker_on_techocemetery_54587"></info_portion>
+	<info_portion id="garbage_stalker_in_nizina_54588"></info_portion>
+	<info_portion id="garbage_kamaz_bandit_1_101"></info_portion>
+	<info_portion id="garbage_kamaz_bandit_2_102"></info_portion>
+	<info_portion id="garbage_kamaz_bandit_3_103"></info_portion>
+	<info_portion id="garbage_stalker_jurik_104"></info_portion>
+	<info_portion id="garbage_vasya_kaban_106"></info_portion>
+	<info_portion id="garbage_prapor_115"></info_portion>
+	<info_portion id="garbage_drug_serogo_123"></info_portion>
+	<info_portion id="garbage_bandit_wounded_109"></info_portion>
+
+	<info_portion id="agroprom_stalker_in_kapterka_54589"></info_portion>
+	<info_portion id="agroprom_stalker_on_place_54590"></info_portion>
+	<info_portion id="agroprom_stalker_in_dvor_54591"></info_portion>
+	<info_portion id="agroprom_stalker_about_shlagbaum_54592"></info_portion>
+	<info_portion id="agroprom_military_in_dvor_54593"></info_portion>
+	<info_portion id="agroprom_stalker_about_bochka_54594"></info_portion>
+
+	<info_portion id="agroprom_und_stalker_about_hatch_54595"></info_portion>
+	<info_portion id="agroprom_und_doctor_350"></info_portion>
+
+	<info_portion id="darkvalley_bandit_with_rpg_437"></info_portion>
+	<info_portion id="darkvalley_bandit_about_bullet_1_54596"></info_portion>
+	<info_portion id="darkvalley_bandit_about_bullet_2_54597"></info_portion>
+	<info_portion id="darkvalley_bandit_in_podval_on_stroika_54598"></info_portion>
+	<info_portion id="darkvalley_stalker_on_azs_54599"></info_portion>
+	<info_portion id="darkvalley_bandit_on_azs_54800"></info_portion>
+	<info_portion id="darkvalley_bandit_wounded_424"></info_portion>
+	<info_portion id="darkvalley_dolg_plennyi_400"></info_portion>
+	<info_portion id="darkvalley_bandit_escort_1_407"></info_portion>
+	<info_portion id="darkvalley_bandit_escort_2_408"></info_portion>
+	<info_portion id="darkvalley_pulya_406"></info_portion>
+	<info_portion id="darkvalley_buryi_425"></info_portion>
+	<info_portion id="darkvalley_sergei_lohmatyi_402"></info_portion>
+	<info_portion id="darkvalley_bandit_about_yama_1_404"></info_portion>
+	<info_portion id="darkvalley_bandit_about_yama_2_405"></info_portion>
+	<info_portion id="darkvalley_bandit_about_tunnel_409"></info_portion>
+	<info_portion id="darkvalley_dolg_in_yama_401"></info_portion>
+	<info_portion id="darkvalley_stalker_on_azs_422"></info_portion>
+
+	<info_portion id="x_18_stalker_about_lift_54801"></info_portion>
+	<info_portion id="x_18_ecolog_1_450"></info_portion>
+	<info_portion id="x_18_ecolog_2_451"></info_portion>
+	<info_portion id="x_18_stalker_about_anomaly_54802"></info_portion>
+
+	<info_portion id="bar_stalker_about_kamaz_54803"></info_portion>
+	<info_portion id="bar_arni_571"></info_portion>
+	<info_portion id="bar_brom_510"></info_portion>
+	<info_portion id="bar_lyisyii_607"></info_portion>
+	<info_portion id="bar_osvedomitel_515"></info_portion>
+	<info_portion id="bar_ohotnik_504"></info_portion>
+	<info_portion id="bar_ivanzov_505"></info_portion>
+	<info_portion id="bar_plichko_516"></info_portion>
+	<info_portion id="bar_kizenko_518"></info_portion>
+	<info_portion id="bar_voronin_507"></info_portion>
+	<info_portion id="bar_petrenko_506"></info_portion>
+
+	<info_portion id="rostok_ecolog_south_helicopter_1_54804"></info_portion>
+	<info_portion id="rostok_ecolog_south_helicopter_2_54805"></info_portion>
+	<info_portion id="rostok_ecolog_nord_helicopter_54806"></info_portion>
+	<info_portion id="rostok_ecolog_in_tunnel_54807"></info_portion>
+	<info_portion id="rostok_ecolog_about_locomotiv_54808"></info_portion>
+	<info_portion id="rostok_stalker_in_west_angar_54809"></info_portion>
+	<info_portion id="rostok_stalker_in_ost_angar_1_54810"></info_portion>
+	<info_portion id="rostok_duty_in_ost_angar_54811"></info_portion>
+	<info_portion id="rostok_stalker_in_ost_angar_2_54812"></info_portion>
+	<info_portion id="rostok_stalker_freeman_54813"></info_portion>
+	<info_portion id="rostok_kruglov_503"></info_portion>
+	<info_portion id="rostok_killer_1_601"></info_portion>
+	<info_portion id="rostok_killer_2_603"></info_portion>
+	<info_portion id="rostok_killer_3_604"></info_portion>
+	<info_portion id="rostok_killer_4_602"></info_portion>
+	<info_portion id="rostok_volkodav_509"></info_portion>
+	<info_portion id="rostok_killer_5_595"></info_portion>
+
+	<info_portion id="military_freedom_about_tower_1_54814"></info_portion>
+	<info_portion id="military_freedom_about_tower_2_54815"></info_portion>
+	<info_portion id="military_stalker_on_cemetery_nord_from_helicopter_54816"></info_portion>
+	<info_portion id="military_duty_about_wall_54817"></info_portion>
+	<info_portion id="military_stalker_on_ost_from_pavlik_54818"></info_portion>
+	<info_portion id="military_ara_719"></info_portion>
+	<info_portion id="military_killer_1_714"></info_portion>
+	<info_portion id="military_killer_2_713"></info_portion>
+	<info_portion id="military_killer_3_712"></info_portion>
+	<info_portion id="military_kep_724"></info_portion>
+	<info_portion id="military_cherep_708"></info_portion>
+	<info_portion id="military_dolg_1_740"></info_portion>
+	<info_portion id="military_dolg_2_736"></info_portion>
+	<info_portion id="military_dolg_3_738"></info_portion>
+	<info_portion id="military_dolg_4_711"></info_portion>
+	<info_portion id="military_dolg_5_737"></info_portion>
+	<info_portion id="military_pavlik_710"></info_portion>
+	<info_portion id="military_max_702"></info_portion>
+	<info_portion id="military_svoboda_1_731"></info_portion>
+	<info_portion id="military_svoboda_2_730"></info_portion>
+	<info_portion id="military_svoboda_3_704"></info_portion>
+	<info_portion id="military_svoboda_4_732"></info_portion>
+	<info_portion id="military_povar_728"></info_portion>
+	<info_portion id="military_svoboda_patrol_1_721"></info_portion>
+	<info_portion id="military_svoboda_patrol_2_720"></info_portion>
+	<info_portion id="military_svoboda_patrol_3_722"></info_portion>
+	<info_portion id="military_psih_703"></info_portion>
+	<info_portion id="military_ugryumyi_725"></info_portion>
+	<info_portion id="military_svoboda_krovososka_1_726"></info_portion>
+	<info_portion id="military_svoboda_krovososka_2_727"></info_portion>
+	<info_portion id="military_lukash_707"></info_portion>
+	<info_portion id="military_skryaga_734"></info_portion>
+
+	<info_portion id="yantar_military_on_factory_922"></info_portion>
+	<info_portion id="yantar_stalker_in_tunnel_54819"></info_portion>
+	<info_portion id="yantar_ecolog_vasiliev_903"></info_portion>
+	<info_portion id="yantar_ecolog_kruglov_900"></info_portion>
+	<info_portion id="yantar_ecolog_semenov_905"></info_portion>
+	<info_portion id="sahar_corpse"></info_portion>
+
+	<info_portion id="x16_stalker_ghost_918"></info_portion>
+
+	<info_portion id="radar_stalker_turn_on_pripyat_54820"></info_portion>
+	<info_portion id="radar_ecolog_out_grid_1_54821"></info_portion>
+	<info_portion id="radar_ecolog_in_grid_54822"></info_portion>
+	<info_portion id="radar_ecolog_out_grid_2_54823"></info_portion>
+	<info_portion id="radar_stalker_about_stones_54824"></info_portion>
+	<info_portion id="radar_monolit_1_1075"></info_portion>
+	<info_portion id="radar_monolit_2_1074"></info_portion>
+	<info_portion id="radar_monolit_3_1071"></info_portion>
+	<info_portion id="radar_monolit_4_1072"></info_portion>
+	<info_portion id="radar_monolit_5_1073"></info_portion>
+
+	<info_portion id="pripyat_stalker_806"></info_portion>
+	<info_portion id="pripyat_monolit_1_809"></info_portion>
+	<info_portion id="pripyat_haron_828"></info_portion>
+	<info_portion id="pripyat_monolit_2_808"></info_portion>
+	<info_portion id="pripyat_monolit_3_821"></info_portion>
+
+	<info_portion id="stancia_military_forward_stela_54825"></info_portion>
+	<info_portion id="stancia_military_about_btr_54826"></info_portion>
+	<info_portion id="stancia_military_1_1104"></info_portion>
+	<info_portion id="stancia_military_2_1105"></info_portion>
+	<info_portion id="stancia_military_3_1106"></info_portion>
+	<info_portion id="stancia_military_4_1107"></info_portion>
+	<info_portion id="stancia_military_5_1103"></info_portion>
+	<info_portion id="stancia_military_6_1108"></info_portion>
+	<info_portion id="stancia_military_7_1110"></info_portion>
+	<info_portion id="stancia_military_8_1109"></info_portion>
+
+	<info_portion id="jupiter_stalker_dron_54569"></info_portion>
+	<info_portion id="jupiter_ecolog_dron_54570"></info_portion>
+        <info_portion id="jupiter_stalker_grek_54828">
+                <article>grek_art</article>
+                <action>jupiter_dialog.spawn_black_box</action>
+        </info_portion>
+
+	<info_portion id="red_forest_stalker_corpse_1_54580"></info_portion>
+	<info_portion id="red_forest_stalker_corpse_2_54581"></info_portion>
+	<info_portion id="red_forest_stalker_corpse_3_54582"></info_portion>
+
+	<info_portion id="catacombs_ecolog_54568"></info_portion>
+
+	<info_portion id="peshera_stalker_54827"></info_portion>
+
+	<info_portion id="zaton_glaz_54532"></info_portion>
+	<info_portion id="zaton_dal_54563"></info_portion>
+	<info_portion id="zaton_shah_54564"></info_portion>
+		
+</game_information_portions>

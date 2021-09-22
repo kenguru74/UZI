@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+	<!-- Инфопоршни для солдат на блокпосте -->
+	<info_portion id="pred_blockpost_pass_on">
+		<disable>pred_blockpost_pass_off</disable>
+	</info_portion>
+	<info_portion id="pred_blockpost_pass_off">
+		<disable>pred_blockpost_pass_on</disable>
+	</info_portion>
+	<info_portion id="pred_blockpost_pass_fire"></info_portion>
+	<info_portion id="remesov_first_dialog"></info_portion>
+	<info_portion id="ptichkin_first_dialog"></info_portion>
+
+
+	<!-- Инфопоршни для Скупого -->
+	<info_portion id="pred_code">
+                <task>pred_trader_find_weapon</task>
+                <article>skupoi_info</article>
+        </info_portion>
+	<info_portion id="find_weapon"></info_portion>
+	<info_portion id="bring_weapon"></info_portion>
+
+	<!-- Инфопоршни для Хозяина -->
+	<info_portion id="pred_barman_start"></info_portion>
+	<info_portion id="pred_barman_bring_outfit">
+                <task>pred_barman_find_outfit</task> 
+        </info_portion>
+	<info_portion id="find_outfit"></info_portion>
+	<info_portion id="bring_outfit"></info_portion>
+
+	<!-- Инфопоршни для Жиклёра -->
+	<info_portion id="pred_gikler_start"></info_portion>
+	<info_portion id="pred_gikler_bring_weapon">
+                <task>pred_gikler_find_weapon</task>
+        </info_portion>
+	<info_portion id="gikler_find_weapon"></info_portion>
+	<info_portion id="gikler_bring_weapon"></info_portion>
+
+	<!-- Инфопоршни для Чучельника -->
+	<info_portion id="chuchelnik_first_talk"></info_portion>
+	<info_portion id="predbannik_chuchelnik_find_item">
+                <task>pred_chuchelnik_find_hand</task>
+        </info_portion>
+	<info_portion id="predbannik_chuchelnik_take_item"></info_portion>
+	<info_portion id="predbannik_chuchelnik_bring_item"></info_portion>
+	<info_portion id="map_jupiter_underground_location">
+                <article>chuchelnik_info</article>
+        </info_portion>
+
+	<!-- Инфопоршень для Борзого -->
+	<info_portion id="bar_guard_nodoor"></info_portion>
+
+	<!-- Инфопоршень для Гарика в Баре -->
+	<info_portion id="bar_guard_open"></info_portion>
+
+	<info_portion id="all_friends"></info_portion>
+
+        <info_portion id="ozerskii_first_talk">
+                <article>ozerskii_first_talk_art</article>
+        </info_portion>
+
+	<info_portion id="bubna_first_dialog">
+                <article>flash_sidor_info_art</article>
+        </info_portion>
+
+	<info_portion id="zat_kran_koster_off"></info_portion>
+
+	<info_portion id="pred_tent_start"></info_portion>
+	<info_portion id="pred_lager_start"></info_portion>
+
+	<info_portion id="bul_first_dialog">
+                <article>gausspistol_art</article>
+                <task>pred_bul</task>
+        </info_portion>
+	<info_portion id="find_gpistol"></info_portion>
+	<info_portion id="bring_gpistol"></info_portion>
+		
+</game_information_portions>

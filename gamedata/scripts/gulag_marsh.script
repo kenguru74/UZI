@@ -1,0 +1,565 @@
+local t = {}
+
+function load_job(sj, gname, type, squad, groups)
+
+--' created by Mora
+
+--'--------------------------------------------------------------------------
+--' MARSH
+--'--------------------------------------------------------------------------
+
+        -- сталкеры на Южном хуторе
+	if type == "mar_south_farm" then
+		-- часовые
+		t = { section = "logic@mar_south_farm_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_south_farm_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- у костра
+		t = { section = "logic@mar_south_farm_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_south_farm_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры на Северном хуторе
+	if type == "mar_nord_farm" then
+		-- часовые
+		t = { section = "logic@mar_nord_farm_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_nord_farm_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_nord_farm_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- у костра
+		t = { section = "logic@mar_nord_farm_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_nord_farm_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры на Мехдворе
+	if type == "mar_farm_yard" then
+		-- у 1 костра
+		t = { section = "logic@mar_farm_yard_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_farm_yard_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- часовые
+		t = { section = "logic@mar_farm_yard_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_farm_yard_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_farm_yard_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	if type == "mar_farm_yard2" then
+		-- у 2 костра
+		t = { section = "logic@mar_farm_yard2_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_farm_yard2_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры в церкви
+	if type == "mar_church" then
+		-- часовые
+		t = { section = "logic@mar_church_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_church_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- у костра
+		t = { section = "logic@mar_church_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_church_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры на вышке 2
+	if type == "mar_tower_2" then
+		-- часовые
+		t = { section = "logic@mar_tower_2_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_tower_2_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_tower_2_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_tower_2_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры на Рыбацком хуторе
+	if type == "mar_fish_farm" then
+		-- у костра
+		t = { section = "logic@mar_fish_farm_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_fish_farm_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- часовые
+		t = { section = "logic@mar_fish_farm_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_fish_farm_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры на насосной станции
+	if type == "mar_pump_station" then
+		-- часовые
+		t = { section = "logic@mar_pump_station_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_pump_station_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_pump_station_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры на вышке 1
+	if type == "mar_tower_1" then
+		-- часовые
+		t = { section = "logic@mar_tower_1_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_tower_1_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_tower_1_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры на Сгоревшем хуторе
+	if type == "mar_burn_farm" then
+		-- часовой
+		t = { section = "logic@mar_burn_farm_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- у костра
+		t = { section = "logic@mar_burn_farm_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_burn_farm_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры на Западном хуторе
+	if type == "mar_west_farm" then
+		-- часовые
+		t = { section = "logic@mar_west_farm_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_west_farm_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_west_farm_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- у костра
+		t = { section = "logic@mar_west_farm_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_west_farm_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры на Базе
+	if type == "mar_base" then
+		-- сидящие у костра
+		t = { section = "logic@mar_base_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_base_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_base_kamp3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_base_kamp4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- охранники
+		t = { section = "logic@mar_base_zoneguard1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_base_zoneguard2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- патрулирующий
+		t = { section = "logic@mar_base_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- посетители
+		t = { section = "logic@mar_base_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@mar_base_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+end
+
+function load_states(gname, type)
+
+	if type == "mar_south_farm" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_nord_farm" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_farm_yard" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_farm_yard2" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_church" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_tower_2" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_fish_farm" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_pump_station" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_tower_1" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_burn_farm" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_west_farm" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "mar_base" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+end
+
+
+
+--------------------------------------------------------------------------
+-- Dynamic ltx
+--------------------------------------------------------------------------
+function load_ltx(gname, type)
+	return nil
+end
+
+function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
+
+	if gulag_type == "mar_south_farm" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_nord_farm" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_farm_yard" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_farm_yard2" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_church" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_tower_2" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_fish_farm" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_pump_station" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_tower_1" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_burn_farm" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_west_farm" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "mar_base" then
+		return npc_community == "stalker"
+	end
+
+	return false
+end
+
+function checkMonster(npc_community, gulag_type)
+
+	return false
+end

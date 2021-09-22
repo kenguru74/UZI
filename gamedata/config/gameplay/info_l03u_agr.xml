@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+        <info_portion id="have_zapiska_klyk1">
+                <article>strelok_find_zapiska_klyk1_art</article>
+        </info_portion>
+		
+</game_information_portions>

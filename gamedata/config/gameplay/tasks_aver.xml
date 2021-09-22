@@ -1,0 +1,22 @@
+<game_task id="aver_lesnichii_help">
+   <title>Откликнуться на просьбу Лесничего</title>
+   <objective>
+      <text>Выполнить просьбу Лесничего</text>
+      <icon>ui_iconsTotal_mutant</icon>
+      <infoportion_complete>second_dialog_aver</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить по душам с контролёром</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <object_story_id>aver_controller</object_story_id>
+      <infoportion_complete>aver_controller_corpse</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Выполнить просьбу Лесничего</text>
+      <map_location_type hint="Лесничий">blue_location</map_location_type>
+      <object_story_id>aver_lesnichii</object_story_id>
+      <infoportion_complete>second_dialog_aver</infoportion_complete>
+   </objective>
+</game_task>

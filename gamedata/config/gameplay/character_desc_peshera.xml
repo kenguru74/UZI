@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!-------------------------- Колобок ------------------------>
+    <specific_character id="peshera_kolobok" team_default = "1">
+        <name>peshera_kolobok_name</name>
+        <icon>ui_npc_u_dolg_2_face_2</icon>
+        <map_icon x="1" y="0"></map_icon>
+        <bio>peshera_kolobok_bio</bio>
+
+        <class>peshera_kolobok</class>
+        <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+        <rank>859</rank>
+        <reputation>145</reputation>
+	<money min="2000" max="6000" infinitive="0"/>
+
+	<visual>actors\stalker_dolg\stalker_dolg_2_face_2</visual>
+        <snd_config>characters_voice\human_02\dolg\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>dialog_with_strelok</start_dialog>
+		<actor_dialog>hello_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+
+	<specific_character id="peshera_stalker_general_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_8</icon>
+		<map_icon x="1" y="0"></map_icon>
+		<bio>gar_stalker_regular_bio</bio>
+
+		<class>peshera_stalker_general</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>354</rank>
+		<reputation>-11</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\neytral\stalker_neytral_balon_8</visual>
+		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pmm \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>
+				
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+</xml>

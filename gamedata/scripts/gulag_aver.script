@@ -1,0 +1,61 @@
+local t = {}
+
+function load_job(sj, gname, type, squad, groups)
+
+--' created by Mora
+
+--'--------------------------------------------------------------------------
+--' AVER
+--'--------------------------------------------------------------------------
+
+        -- сталкеры у вагончика
+	if type == "aver_vagon" then
+		-- у костра
+		t = { section = "logic@aver_vagon_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@aver_vagon_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+end
+
+function load_states(gname, type)
+
+	if type == "aver_vagon" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+end
+
+--------------------------------------------------------------------------
+-- Dynamic ltx
+--------------------------------------------------------------------------
+function load_ltx(gname, type)
+	return nil
+end
+
+function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
+
+	if gulag_type == "aver_vagon" then
+		return npc_community == "stalker"
+	end
+
+	return false
+end
+
+function checkMonster(npc_community, gulag_type)
+
+	return false
+end

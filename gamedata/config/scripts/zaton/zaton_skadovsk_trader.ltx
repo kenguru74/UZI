@@ -1,0 +1,16 @@
+[logic]
+active = walker
+combat_ignore = combat_ignore
+trade = misc\trade_juk.ltx
+inv_max_weight = 100000
+
+[walker]
+path_walk = zaton_skadovsk_trader_walk
+path_look = zaton_skadovsk_trader_look
+danger = danger_condition@trader
+
+[danger_condition@trader]
+ignore_distance       = 0
+
+[combat_ignore]
+combat_ignore_cond = always

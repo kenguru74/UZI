@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+	<string id="list_trader_repair_0">
+		<text>Стоимость ремонта первого ствола:</text>
+	</string>
+	
+	<string id="list_trader_repair_1">
+		<text>Стоимость ремонта второго ствола:</text>
+	</string>
+	
+	<string id="list_trader_repair_2">
+		<text>Стоимость ремонта комбеза:</text>
+	</string>
+	
+	<string id="list_trader_repair_3">
+		<text>Первый ствол у тебя слишком убит. Могу только выкупить на запчасти..</text>
+	</string>
+	
+	<string id="list_trader_repair_4">
+		<text>Второй ствол у тебя слишком убит. Могу только выкупить на запчасти..</text>
+	</string>
+	
+	<string id="list_trader_repair_5">
+		<text>Комбез у тебя слишком убит. Могу только выкупить на запчасти..</text>
+	</string>
+
+<!--********************************-->
+<!-- Sidorovich Repair dialog start -->
+<!--********************************-->
+	<string id="escape_trader_repair_0">
+		<text>Сидорыч, надо бы кой-чего подремонтировать...</text>
+	</string>
+	<string id="escape_trader_repair_1">
+		<text>Ну, показывай, что у тебя там...\n \nСписок возможных починок:</text>
+	</string>
+	<string id="escape_trader_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="escape_trader_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="escape_trader_repair_4">
+		<text>Отремонтируй комбез мне? А то у меня пластин даже нет..</text>
+	</string>
+	<string id="escape_trader_repair_5">
+		<text>Ладно, разберёмся позже.</text>
+	</string>
+	<string id="escape_trader_repair_6">
+		<text>Щас... Погодь маленько...\n \nГотово, забирай!</text>
+	</string>
+	<string id="escape_trader_repair_7">
+		<text>Так... вот так... угу...\n \nГотово!</text>
+	</string>
+	<string id="escape_trader_repair_8">
+		<text>Отличная работа, спасибо!</text>
+	</string>
+	<string id="escape_trader_repair_9">
+		<text>Мастерская работа, не зря такие деньги берёшь!</text>
+	</string>
+	<string id="escape_trader_repair_10">
+		<text>Можешь ещё кое-что подшаманить?</text>
+	</string>
+	<string id="escape_trader_repair_11">
+		<text>Ну давай, сделаю.\n \nЧто могу отремонтировать:</text>
+	</string>
+
+<!--****************************-->
+<!-- Barist Repair dialog start -->
+<!--****************************-->
+	<string id="bar_trader_repair_0">
+		<text>Надо бы кое-что отремонтировать...</text>
+	</string>
+	<string id="bar_trader_repair_1">
+		<text>Давай, отнесу оружейнику, посмотрим, что можно сделать.\n \nЧто можем отремонтировать:</text>
+	</string>
+	<string id="bar_trader_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="bar_trader_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="bar_trader_repair_4">
+		<text>Комбез подлатай?</text>
+	</string>
+	<string id="bar_trader_repair_5">
+		<text>Ладно, позже.</text>
+	</string>
+	<string id="bar_trader_repair_6">
+		<text>Держи, всё готово.</text>
+	</string>
+	<string id="bar_trader_repair_7">
+		<text>Вот, готово.</text>
+	</string>
+	<string id="bar_trader_repair_8">
+		<text>Отлично! Твой оружейник и вправду мастер. Передавай ему мой респект!</text>
+	</string>
+	<string id="bar_trader_repair_9">
+		<text>Отличная работа!</text>
+	</string>
+	<string id="bar_trader_repair_10">
+		<text>А он может ещё кое-что отремонтировать?</text>
+	</string>
+	<string id="bar_trader_repair_11">
+		<text>Конечно может.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--****************************-->
+<!-- Doctor Repair dialog start -->
+<!--****************************-->
+	<string id="yantar_trader_repair_0">
+		<text>Вы ремонтом занимаетесь?</text>
+	</string>
+	<string id="yantar_trader_repair_1">
+		<text>Да, по надобности могу отвлечься от своих исследований. Правда, инструмента у меня мало, починка - это только моё хобби, поэтому стоить будет недёшево.\n \nСписок возможных починок:</text>
+	</string>
+	<string id="yantar_trader_repair_2">
+		<text>Отремонтируйте первый ствол?</text>
+	</string>
+	<string id="yantar_trader_repair_3">
+		<text>Отремонтируйте второй ствол?</text>
+	</string>
+	<string id="yantar_trader_repair_4">
+		<text>Отремонтируйте мне комбинезон?</text>
+	</string>
+	<string id="yantar_trader_repair_5">
+		<text>Ладно, потом.</text>
+	</string>
+	<string id="yantar_trader_repair_6">
+		<text>Подожди немного...\n \nВроде всё, забирай!</text>
+	</string>
+	<string id="yantar_trader_repair_7">
+		<text>Жди тут...\n \nСделал на совесть.</text>
+	</string>
+	<string id="yantar_trader_repair_8">
+		<text>Отлично, спасибо!</text>
+	</string>
+	<string id="yantar_trader_repair_9">
+		<text>Работа на 5+!</text>
+	</string>
+	<string id="yantar_trader_repair_10">
+		<text>Ещё кое-что сможете для меня сделать?</text>
+	</string>
+	<string id="yantar_trader_repair_11">
+		<text>Ну, давай быстрей, пока данные ещё обрабатываются, сделаю.\n \nЧто могу отремонтировать:</text>
+	</string>
+
+<!--***************************-->
+<!-- Screw Repair dialog start -->
+<!--***************************-->
+	<string id="mil_trader_repair_0">
+		<text>Мне бы подремонтироваться...</text>
+	</string>
+	<string id="mil_trader_repair_1">
+		<text>Что там у тебя?\n \nЧто могу сделать:</text>
+	</string>
+	<string id="mil_trader_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="mil_trader_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="mil_trader_repair_4">
+		<text>Отремонтируй броню?</text>
+	</string>
+	<string id="mil_trader_repair_5">
+		<text>Ладно, зайду позже.</text>
+	</string>
+	<string id="mil_trader_repair_6">
+		<text>Вот, готово...\n \nПользуйся!</text>
+	</string>
+	<string id="mil_trader_repair_7">
+		<text>Ого, хорошо потрепало снарягу...\n \nЩа сделаем...</text>
+	</string>
+	<string id="mil_trader_repair_8">
+		<text>Отличная работа!</text>
+	</string>
+	<string id="mil_trader_repair_9">
+		<text>Надо же ж, прям как новое! Супеер!</text>
+	</string>
+	<string id="mil_trader_repair_10">
+		<text>А ещё кое-что отремкаешь?</text>
+	</string>
+	<string id="mil_trader_repair_11">
+		<text>Конечно. Только платить не забывай.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--*********************************-->
+<!-- Dark Dealer Repair dialog start -->
+<!--*********************************-->
+	<string id="pri_trader_repair_0">
+		<text>Ремонтом займёшься?</text>
+	</string>
+	<string id="pri_trader_repair_1">
+		<text>Показывай. Но учти: чем больше износ, тем дороже. Итак?\n \nСписок возможных ремонтов:</text>
+	</string>
+	<string id="pri_trader_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="pri_trader_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="pri_trader_repair_4">
+		<text>Комбез подлатай?</text>
+	</string>
+	<string id="pri_trader_repair_5">
+		<text>Ладно, попозже.</text>
+	</string>
+	<string id="pri_trader_repair_6">
+		<text>Готово.\n \nДержи. И заходи, если что!</text>
+	</string>
+	<string id="pri_trader_repair_7">
+		<text>Давай сюда, погляжу, что можно сделать...\n \nНормально... Ща забацаем.</text>
+	</string>
+	<string id="pri_trader_repair_8">
+		<text>Отлично!</text>
+	</string>
+	<string id="pri_trader_repair_9">
+		<text>Спасибо!</text>
+	</string>
+	<string id="pri_trader_repair_10">
+		<text>А ещё кое-что отремонитируешь?</text>
+	</string>
+	<string id="pri_trader_repair_11">
+		<text>Да без базару, только тугрики отстёгивай.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--*********************************-->
+<!-- Baza Technik Repair dialog start -->
+<!--*********************************-->
+
+	<string id="baza_technik_repair_0">
+		<text>Надо бы кое-что отремонтировать...</text>
+	</string>
+	<string id="baza_technik_repair_1">
+		<text>Давай посмотрим.\n \nСписок возможных ремонтов:</text>
+	</string>
+	<string id="baza_technik_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="baza_technik_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="baza_technik_repair_4">
+		<text>Броник подлатай?</text>
+	</string>
+	<string id="baza_technik_repair_5">
+		<text>Ладно, забудь пока.</text>
+	</string>
+	<string id="baza_technik_repair_6">
+		<text>Вот, готово...\n \nДержи. Заходи, если что.</text>
+	</string>
+	<string id="baza_technik_repair_7">
+		<text>Давай посмотрим.\n \nНормально, исправим.</text>
+	</string>
+	<string id="baza_technik_repair_8">
+		<text>Отлично!</text>
+	</string>
+	<string id="baza_technik_repair_9">
+		<text>Всё отлично. Спасибо!</text>
+	</string>
+	<string id="baza_technik_repair_10">
+		<text>А ещё кое-что отремонтируй?</text>
+	</string>
+	<string id="baza_technik_repair_11">
+		<text>Да без базару, только отстёгивай.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--*********************************-->
+<!-- Predbannik Technik Repair dialog start -->
+<!--*********************************-->
+
+	<string id="pred_gikler_repair_0">
+		<text>И почём ремонт?</text>
+	</string>
+	<string id="pred_gikler_repair_1">
+		<text>Да как обычно: сложнее работа - больше бабок.\n \nСписок возможных ремонтов:</text>
+	</string>
+	<string id="pred_gikler_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="pred_gikler_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="pred_gikler_repair_4">
+		<text>Комбинезон подлатай?</text>
+	</string>
+	<string id="pred_gikler_repair_5">
+		<text>Ладно, разберёмся позже.</text>
+	</string>
+	<string id="pred_gikler_repair_6">
+		<text>Вот, держи.\n \nИ заходи ещё.</text>
+	</string>
+	<string id="pred_gikler_repair_7">
+		<text>Давай глянем, что тут сделать можно...\n \nНоси на здоровье!</text>
+	</string>
+	<string id="pred_gikler_repair_8">
+		<text>Отлично сделал. Спасибо!</text>
+	</string>
+	<string id="pred_gikler_repair_9">
+		<text>Отлично! С меня причитается!</text>
+	</string>
+	<string id="pred_gikler_repair_10">
+		<text>А ещё кое-что посмотришь?</text>
+	</string>
+	<string id="pred_gikler_repair_11">
+		<text>Нет проблем. Деньги есть - сделаю.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--*********************************-->
+<!-- ATP Technik Repair dialog start -->
+<!--*********************************-->
+
+	<string id="atp_technik_repair_0">
+		<text>Почём ремонт?</text>
+	</string>
+	<string id="atp_technik_repair_1">
+		<text>Да недорого. Чего ремонтировать будем?\n \nСписок возможных ремонтов:</text>
+	</string>
+	<string id="atp_technik_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="atp_technik_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="atp_technik_repair_4">
+		<text>Комбез сделаешь?</text>
+	</string>
+	<string id="atp_technik_repair_5">
+		<text>Ладно, в другой раз.</text>
+	</string>
+	<string id="atp_technik_repair_6">
+		<text>Так... Ща сделаем.\n \nВот, держи.</text>
+	</string>
+	<string id="atp_technik_repair_7">
+		<text>Давай, попробуем отремонтировать.\n \nДержи!</text>
+	</string>
+	<string id="atp_technik_repair_8">
+		<text>Спасибо!</text>
+	</string>
+	<string id="atp_technik_repair_9">
+		<text>Вот, это за работу!</text>
+	</string>
+	<string id="atp_technik_repair_10">
+		<text>Может, ещё чего сделаешь?</text>
+	</string>
+	<string id="atp_technik_repair_11">
+		<text>Бабки есть - сделаю.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--********************************************-->
+<!-- Zaton Skadovsk Technik Repair dialog start -->
+<!--********************************************-->
+
+	<string id="zaton_skadovsk_technik_repair_0">
+		<text>Поздорову, Кулибин! Сколько за ремонт просишь?</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_1">
+		<text>Ну-у, это кому как... Тебе вот, ну, не знаю... А чего надо-то?\n \nСписок возможных ремонтов:</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_4">
+		<text>Броник подлатай?</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_5">
+		<text>Ладно, сделаем позже.</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_6">
+		<text>Тээкс... Готово.\n \nВот, пользуйся на здоровье!</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_7">
+		<text>Ну, давай прикинем хрен к носу...\n \nВот, всё готово!</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_8">
+		<text>Во, отлично!</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_9">
+		<text>Держи денежку!</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_10">
+		<text>А ещё кой-чего починишь?</text>
+	</string>
+	<string id="zaton_skadovsk_technik_repair_11">
+		<text>Да без проблем.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--*************************************-->
+<!-- JUPITER Technik Repair dialog start -->
+<!--*************************************-->
+
+	<string id="jupiter_technik_repair_0">
+		<text>Поздорову, брат. Надо бы кое-что подшаманить.</text>
+	</string>
+	<string id="jupiter_technik_repair_1">
+		<text>Давай посмотрим.\n \nНу смотри, вот что могу сделать:</text>
+	</string>
+	<string id="jupiter_technik_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="jupiter_technik_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="jupiter_technik_repair_4">
+		<text>Броню подшамань, ага?</text>
+	</string>
+	<string id="jupiter_technik_repair_5">
+		<text>Ладно, это подождёт..</text>
+	</string>
+	<string id="jupiter_technik_repair_6">
+		<text>Ну вот, вроде готово.\n \nБери, пользуйся!</text>
+	</string>
+	<string id="jupiter_technik_repair_7">
+		<text>Так, будем кумекать...\n \nНу вот... Готово!</text>
+	</string>
+	<string id="jupiter_technik_repair_8">
+		<text>Спасибо, брат!</text>
+	</string>
+	<string id="jupiter_technik_repair_9">
+		<text>С меня хабар, браток. Вот, возьми, за труды не жалко!</text>
+	</string>
+	<string id="jupiter_technik_repair_10">
+		<text>А ещё кой-чего отремонтируешь?</text>
+	</string>
+	<string id="jupiter_technik_repair_11">
+		<text>Починим, показывай.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--****************************-->
+<!-- Skupoi Repair dialog start -->
+<!--****************************-->
+	<string id="predbannik_trader_repair_0">
+		<text>Надо бы подремонтировать кое-что. Сделаешь?</text>
+	</string>
+	<string id="predbannik_trader_repair_1">
+		<text>Сделаю. Показывай.\n \nВот смотри, чем могу помочь:</text> 
+	</string>
+	<string id="predbannik_trader_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="predbannik_trader_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="predbannik_trader_repair_4">
+		<text>Отремонтируй комбез?</text>
+	</string>
+	<string id="predbannik_trader_repair_5">
+		<text>Ладно, это не горит..</text>
+	</string>
+	<string id="predbannik_trader_repair_6">
+		<text>Ща сделаем...\n \nНу вот, готово, забирай!</text>
+	</string>
+	<string id="predbannik_trader_repair_7">
+		<text>Таак, что тут у нас...\n \nВот, готово!</text>
+	</string>
+	<string id="predbannik_trader_repair_8">
+		<text>Отлично. Благодарю!</text>
+	</string>
+	<string id="predbannik_trader_repair_9">
+		<text>Спасибо! За такую работу денег не жалко.</text>
+	</string>
+	<string id="predbannik_trader_repair_10">
+		<text>Ещё кое-что сделаешь?</text>
+	</string>
+	<string id="predbannik_trader_repair_11">
+		<text>Сделаю, почему нет.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--*************************************-->
+<!-- PRIPYAT Technik Repair dialog start -->
+<!--*************************************-->
+
+	<string id="pripyat_prachka_technik_repair_0">
+		<text>Здоров! Надо бы пошаманить вот...</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_1">
+		<text>Давай посмотрим...\n \nСписок возможных ремонтов:</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_4">
+		<text>Подлатай комбез мне?</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_5">
+		<text>Ладно, разберёмся с этим попозже.</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_6">
+		<text>Давай глянем...\n \nВот, держи!</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_7">
+		<text>Ща придумаем, как тебе помочь...\n \nНу вот, готово!</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_8">
+		<text>Уважуха, брат!</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_9">
+		<text>С меня прозрачное!</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_10">
+		<text>А ещё кой-чего починишь?</text>
+	</string>
+	<string id="pripyat_prachka_technik_repair_11">
+		<text>Конечно. Показывай.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--*************************************-->
+<!-- LIMANSK Technik Repair dialog start -->
+<!--*************************************-->
+
+	<string id="limansk_baza_technik_repair_0">
+		<text>Поздорову! Почём за свои услуги берёшь?</text>
+	</string>
+	<string id="limansk_baza_technik_repair_1">
+		<text>Как обычно: чем труднее - тем дороже.\n \nСписок возможных ремонтов:</text>
+	</string>
+	<string id="limansk_baza_technik_repair_2">
+		<text>Отремонтируй первый ствол?</text>
+	</string>
+	<string id="limansk_baza_technik_repair_3">
+		<text>Отремонтируй второй ствол?</text>
+	</string>
+	<string id="limansk_baza_technik_repair_4">
+		<text>Комбез мне подлатай?</text>
+	</string>
+	<string id="limansk_baza_technik_repair_5">
+		<text>Ладно, займёмся этим позже.</text>
+	</string>
+	<string id="limansk_baza_technik_repair_6">
+		<text>Давай поглядим...\n \nВот, держи!</text>
+	</string>
+	<string id="limansk_baza_technik_repair_7">
+		<text>Сейчас забацаем.\n \nВот, всё готово!</text>
+	</string>
+	<string id="limansk_baza_technik_repair_8">
+		<text>Спасибо, хорошая работа!</text>
+	</string>
+	<string id="limansk_baza_technik_repair_9">
+		<text>Бери, брат, честно заработал!</text>
+	</string>
+	<string id="limansk_baza_technik_repair_10">
+		<text>А ещё кой-чего отремонтируй?</text>
+	</string>
+	<string id="limansk_baza_technik_repair_11">
+		<text>Не вопрос.\n \nСписок возможных ремонтов:</text>
+	</string>
+
+<!--********************-->
+<!-- Repair dialogs end -->
+<!--********************-->
+
+</string_table>

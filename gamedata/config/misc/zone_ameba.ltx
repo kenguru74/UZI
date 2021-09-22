@@ -1,0 +1,78 @@
+[zone_ameba]
+GroupControlSection = spawn_group_zone
+$spawn = "zones\ameba"
+class = Z_AMEBA
+visual = physics\anomaly\anomaly_hvatalka
+
+hit_impulse_scale = 0.
+effective_radius = 0.75 ;размер радиуса в процентах от оригинального, где действует зона
+max_velocity_in_zone= 0.5
+sound = zone_mosquito_bald
+postprocess = postprocess_new
+
+ef_anomaly_type = 1
+ef_weapon_type = 13
+
+artefacts =
+BirthProbability = 0.0
+
+;----------- Anomaly settings -----------------------
+min_start_power = 90
+max_start_power = 100
+attenuation = 1
+period = 1
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_idle = 24
+artefact_spawn_rnd = 0
+
+hit_type = explosion
+
+disable_time = -1 ;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time_small = 500 ;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
+disable_idle_time = -1 ;время отключения idle партиклов
+
+idle_sound = anomaly\hvatalka_idle ;постоянный звук
+blowout_sound = anomaly\anomaly_body_tear_1 ;во время выброса(удара) в центре аномалии
+hit_sound = anomaly\anomaly_gravy_hit1 ;anomaly\hit_6 ;на персонаже, когда тот получает хит
+body_tearing_sound = anomaly\anomaly_body_tear_1 ;звук разрывания трупа
+entrance_sound = anomaly\swamp_appear_1 ;при попадании объекта в аномалию
+
+
+ignore_nonalive = false;
+ignore_small = false;
+ignore_artefacts = true
+
+awaking_time = 10
+blowout_time = 5000
+accamulate_time = 1000
+
+attack_animation_start = 0
+attack_animation_end = 5000
+
+idle_light = off
+
+blowout_light = on
+light_color = 4.0,1.6,1.3
+light_range = 5.0
+light_time = 2.0
+light_height = 1.5
+
+visible_by_detector = off
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ветер
+blowout_wind = off
+
+blowout_wind_time_start = 0
+blowout_wind_time_peak = 1500
+blowout_wind_time_end = 2501; 2499
+blowout_wind_power = 0.5 ;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;рождение артефактов во время срабатывания
+spawn_blowout_artefacts = off
+artefact_spawn_probability = 0.0
+
+throw_out_power = 50
+artefact_spawn_height = 3

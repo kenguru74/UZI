@@ -1,0 +1,65 @@
+[logic]
+active = walker
+on_death = death
+
+[walker]
+path_walk = road1_walk
+path_look = road1_look
+on_timer = 1500 | kamp
+
+[kamp]
+center_point  = road_camp_center
+path_walk = road_camp_center_task
+on_info = {+zaton_dialog_road} kamp@road
+meet = meet@road
+
+[kamp@road]
+center_point  = road_camp_center
+path_walk = road_camp_center_task
+on_actor_dist_ge_nvis = 10 | walker@road_to_kranes
+meet = no_meet
+
+[walker@road_to_kranes]
+path_walk = road3_walk
+meet = no_meet
+on_timer = 10000| %=zat_koster_road_off%
+on_signal = zat_home1| walker@house %+zat_kran_stalker1%
+
+[walker@house]
+path_walk = road5_walk
+path_look = road5_look
+meet = no_meet
+on_info = {+zat_bloodsucker_death} walker@kranes
+
+[walker@kranes]
+path_walk = road7_walk
+meet = no_meet
+on_signal = zat_kranes1| kamp@kranes
+
+[kamp@kranes]
+center_point  = kran_camp_center
+path_walk = kran_camp_center_task
+on_timer = 5000| kamp@kranes2 %=zat_koster_kran_on%
+
+[kamp@kranes2]
+center_point  = kran_camp_center
+path_walk = kran_camp_center_task
+meet = meet@kran
+on_info = {-jo_quest_fail +zaton_dialog_kran} %=actor_friend%
+
+[meet@road]
+victim		= 5|actor
+victim_wpn		= 5|actor
+use			= true
+use_wpn		= false
+meet_dialog = zaton_road_talk
+
+[meet@kran]
+victim		= 5|actor
+victim_wpn		= 5|actor
+use			= true
+use_wpn		= false
+meet_dialog = zaton_kran_talk
+
+[death]
+on_info = %+jo_quest_fail%

@@ -1,0 +1,68 @@
+[ammo_7.62x51_fmj]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\ammo\ammo_7.62x51_fmj" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = Arsenal_Mod\ammo\762x51_fmj.ogf
+description				= enc_arsenal_7.62x51_fmj
+$prefetch 		= 64
+
+cost			= 940
+
+box_size		= 20
+
+inv_name		= ars-7.62x51_fmj
+inv_name_short	= ars-7.62x51_fmj
+inv_weight		= .44
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 37
+
+k_dist			= 1
+k_disp			= 2
+k_hit			= 4.5
+k_impulse		= 1.2
+k_pierce		= 1.25
+impair			= 1
+buck_shot		= 1
+tracer			= off
+wm_size         = 0.07
+explosive		= off
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[ammo_7.62x51_ap]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\ammo\ammo_7.62x51_ap" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = Arsenal_Mod\ammo\762x51_ap.ogf
+description				= enc_arsenal_7.62x51_ap
+$prefetch 		= 64
+
+cost			= 1300
+
+box_size		= 20
+
+inv_name		= ars-7.62x51_ap
+inv_name_short	= ars-7.62x51_ap
+inv_weight		= .46
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 38
+
+k_dist			= 1
+k_disp			= 1
+k_hit			= 5
+k_impulse		= 0.95
+k_pierce		= 1.4
+impair			= 2
+buck_shot		= 1
+tracer			= off
+wm_size         = 0.07
+explosive		= off

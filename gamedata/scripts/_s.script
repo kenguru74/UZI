@@ -1,0 +1,1003 @@
+--[[ ----------------------------------------------------------------------------------------------
+ File       : _s.script
+ Description: Main slave-functions
+ Copyright  : © SIMBION:SHOC mod
+ Author     : Artos (использованы материалы xStream & Red75)
+ Last edit  : 01.08.2010 (by Artos)
+--]] ----------------------------------------------------------------------------------------------
+local sModule = "_s"  --/ строковое имя файла-модуля
+local bInit   = false --/ флаг инициализации модуля
+--/ -----------------------------------------------------------------
+--/ Print-Log (вывод отладочной информации)
+--/ -----------------------------------------------------------------
+local function printf(fmt, ...)
+	db.log(string.format("%s:%s",sModule,fmt),...)
+end
+--/ -----------------------------------------------------------------
+--/ VARIABLEs
+--/ -----------------------------------------------------------------
+local iTimeUpdate  = 0  --/ таймер
+local iTimeChkHide = 0  --/ таймер
+local idUsed       = 0  --/ id использованного предмета
+local idPDA        = nil
+local tQuestNPCs   = {} --/ массив квестовых неписей
+local sMapNow      = "" --/ текущий уровень
+local i,k,v,id
+--/ -----------------------------------------------------------------
+--/ Initialize Module (инициализация, выполняется единожды)
+--/ -----------------------------------------------------------------
+function init()
+--	printf("init:[%s]", "info") --/#~#
+	if m_tables and m_tables.init then m_tables.init() end
+	--register_callback("actor_init", Game_Init, nil) --/ запускается принудительно в '_m'
+	register_callback("game_load", load_variables, nil)
+	bInit = true
+end
+--/ ------------------------------------------------------------------------------------------------
+--/ 'Первичный запуск'
+--/ ------------------------------------------------------------------------------------------------
+function Game_Init()
+--	printf("Game_Init:[%s]", ">") --/#~#
+	sMapNow = level.name() or ""
+	db.sMapNow = sMapNow
+	db.sMapSav = _f.load_variable("ln_sav","")
+	_f.save_variable("ln_sav",sMapNow)
+	db.tMapIds  = _f.get_ltx_section("_common","levels_id","number") --/ массив ID уровней
+	local tKnowMapId = _f.load_table("maps_sav") --/ загрузка массива ID 'разведанных' уровней
+	--/ восстанавливаем массив 'разведанных' уровней и ID текущего уровня
+	for k,v in pairs(db.tMapIds) do
+		if tKnowMapId[v] then
+			db.tMapKnow[k] = true
+		end
+		if k == sMapNow then
+			db.idMapNow = v
+		end
+	end
+	Set_Options()
+	if not _f.load_variable("1st",nil) then --/ 1-й запуск ('новая' игра или 'чужой' сэйв)
+--		log(":Game_Init:Map=[%s]", sMapNow) --/#~#
+		_f.save_variable("1st",_f.Get_VerMod().date or "err")
+		local sim,soObj = alife(),nil
+		soObj = sim:create("zapiska",vector():set(-126.96,-28.41,-379.12),125181,27)
+		soObj = sim:create("zapiska",vector():set(  21.6,  -3.94, -18.28),5991,1140)
+		soObj = sim:create("zapiska",vector():set(-126.92, 23.27, -36.98),7083,1543)
+		if db.m_arts then m_arts.Remove_Artefacts() end
+		if db.m_nlc then m_nlc.spawn_quest_items() end --/ cпавн предметов NLC
+		if db.m_vehicles then m_vehicles.spawn_vehicle_esc() end --/#+#
+		if db.m_amk then m_amk.Spawn_Fuel() end --/#+#
+		--/#+# for "Books-mod" (by andrewalexk)
+		local soBox = sim:object("level_prefix_inventory_box_0003")
+		if soBox then --/ vector():set(-247.503921508789,-24.7944984436035,-135.684509277344),594270,0)
+			soObj = sim:create("books",      soBox.position, soBox.m_level_vertex_id, soBox.m_game_vertex_id, soBox.id) --/ книга
+			soObj = sim:create("food_flask", soBox.position, soBox.m_level_vertex_id, soBox.m_game_vertex_id, soBox.id) --/ фляга
+		end
+		--/#+# Демо выброс
+		local iDemoBw = _f.read_from_ini("m_bw_mgr","blowout","demo",0)
+		if iDemoBw > 0 then
+			_f.save_variable("bw_demo",iDemoBw)
+		end
+		for i=1,2 do
+			soObj = sim:story_object(830) --/ "pri_stadium_entrance"
+			if soObj then
+				sim:release(soObj,true)
+				local se_obj = sim:create(7819) --/#~# AMK=[7368] | NLC=[7783]
+				soObj = sim:story_object(830)
+				if se_obj and soObj and se_obj:name() == soObj:name() then --/ [pri_space_restrictor_0011]
+					_f.save_variable("2st",false)
+					break
+				end
+			elseif i > 1 then
+				abort("%s:Game_Init:Object_sid=(830):Create=[%s],Check=[%s]<~?", sModule, (se_obj ~= nil), (soObj ~= nil) )
+			end
+		end
+		_f.send_tip("mod_welcome_msg", "mod_welcome_title", 0, 15, "anonymous")
+	else --/ не 1-й запуск
+		log(":Game_Init:Level=[%s],SavedLevel=[%s],KnowLevels=[%s]:(%s)", sMapNow, db.sMapSav, _f.get_n_table(db.tMapKnow), _f.load_variable("1st","Error!")) --/#~#
+	end
+	Build_Table_QuestNPCs()
+	db.idFakeBox = Fake_Box_Manager()
+--	if db.idFakeBox and db.is_dbg1 then _f.add_spot_on_map(db.fake_box_id, "dbg_metka2", "Fake Box") end --/#~# пометка на карте (for test) "treasure_spot"|"treasure"
+--	printf("Game_Init:MapSav=[%s]~>MapNow=[%s]:[%s]", db.sMapSav, db.sMapNow, "info" ) --/#~#
+end
+--/ -----------------------------------------------------------------
+--/ Main Functions
+--/ -----------------------------------------------------------------
+function load_variables()
+--	printf("load_variables:[%s]", ">") --/#~#
+	if not bInit then abort(sModule..":Not_initialised!") end
+	register_callback("option_init", Set_Options, true)
+	register_callback("use", Check_Use_Obj, nil)
+	register_callback("item_use", Check_Use_Item, nil)
+	register_callback("item_take", Check_Take_Item, nil)
+	register_callback("item_take_from_box", Check_Take_from_Box, nil)
+	register_callback("npc_net_spawn", npc_net_spawn, nil)
+	register_callback("npc_death", npc_death, nil)
+	register_callback("actor_save", save, nil)
+	if sMapNow == "l10_radar" then
+		register_callback("update", Check_Radar_Off, nil)
+	end
+	if (release_body_manager) then
+		release_body_manager.get_release_body_manager()
+	end
+end
+
+--/ Продолжение загрузки игры
+function Continue_Game_Load()
+--	printf("Continue_Game_Load:>[%s]", _f.get_str_time() ) --/#~#
+	--/#+# "Книжный мод" (by andrewalexk)
+	if not has_alife_info("books_take_part01") then --/"books_take_all"
+		give_info("books_take_part01")
+	end
+	--/ Разбудим Кочергу
+	if has_alife_info("val_actor_has_borov_key") and not has_alife_info("val_borov_dead") then
+		give_info("val_borov_dead")
+	end
+	--/#+# ABC
+	if has_alife_info("esc_find_doctor_done") and not has_alife_info("cit_doctor_meet_conclusion_info") then
+		give_info("cit_doctor_meet_conclusion_info")
+	end
+	--/ Включим гулаг кабанов на Свалке.
+	--/  По-хорошему надо исправлять условия активации в логике рестриктора gar_boars_territory2
+	if has_alife_info("agroprom_military_case_done") and not has_alife_info("gar_kill_boars_done") then
+		give_info("gar_kill_boars_done")
+	end
+	Set_Visual_NPCs() --/ одеваем квестовых npc в 'броню'
+	Check_Death_QuestNPCs() --/ проверка смерти квестовых NPCs
+	Check_Spawn_Objects()
+	if sMapNow and sMapNow ~= "" and not db.tMapKnow[sMapNow] then
+		db.tMapKnow[sMapNow] = true --/ запоминаем новый 'разведанный' уровень
+	end
+end
+
+function Build_Table_QuestNPCs()
+	tQuestNPCs = {}
+	local ltx = ini_file("mods\\_common.ltx")
+	if ltx:section_exist("table_quest_npc") then
+		for i=0,ltx:line_count("table_quest_npc")-1 do
+			local result,idx,value = ltx:r_line("table_quest_npc",i,"","")
+			if idx and _f.trim(idx) and _f.trim(idx) ~= "" and value and _f.trim(value) and _f.trim(value) ~= "" then
+				local iSid = tonumber(_f.trim(idx))
+				if iSid then
+					local tS = _f.Parse_Str_to_Tbl(value, ",", true)
+					tQuestNPCs[iSid] = {ssec=tonumber(tS[1]), name=tS[2], visual=tS[3]}
+--					printf("Build_Table_QuestNPCs:(%s):Sid[%s]=[%s]/[%s]/[%s]:[%s]", i+1, iSid, tQuestNPCs[iSid].ssec, tQuestNPCs[iSid].name, tQuestNPCs[iSid].visual_name, "+") --/#~#
+				end
+			end
+		end
+--		printf("Build_Table_QuestNPCs:#QuestNPCs=[%s]:[%s]", _f.get_n_table(tQuestNPCs), "i") --/#~#
+	end
+end
+
+function Get_Table_QuestNPCs()
+	return tQuestNPCs
+end
+
+function Check_Spawn_Objects()
+--	printf("Check_Spawn_Objects:[%s]", ">") --/#~#
+	local sim = alife()
+	--/ level_changers section
+	local soLvChg = sim:story_object(6000) --/ [exit_to_pripyat_from_st2]
+	if not soLvChg then
+		local soLvChg = sim:create(1333) --/#~# AMK=[2] | NLC=[1321]
+		if soLvChg then
+			local soObj = sim:story_object(6000)
+			printf("Check_Spawn_Objects:create(1333)=[%s]->obj(6000)=[%s]:[%s]", soLvChg:name(), soObj and soObj:name(), "i") --/#~#
+		else
+			printf("Check_Spawn_Objects:Error_create_obj=(1333):<%s>", "Error!")
+		end
+	end
+	--/
+	if sMapNow == "l12_stancia" and _f.load_variable("freeplay",0) >= 1 then --/ активирован режим "freeplay"
+		for id=1,65534 do
+			local oObj = level.object_by_id(id)
+			if oObj and oObj:name() == "exit_to_sarcofag_01" then
+				local soLvChg = sim:object(id) --/[8706]
+				if soLvChg then
+					printf("Check_LvChanger:obj=[%s/%s]~>release:[%s]", soLvChg:section_name(), soLvChg:name(), "~x~") --/#~#
+					alife():release(soLvChg,true)
+				end
+			end
+		end
+	end
+	--/
+	if not has_alife_info("val_chase_start") then
+		local soLvChg = sim:story_object(6002) --/ [exit_to_darkvalley_from_esc]
+		if soLvChg then
+			sim:release(soLvChg,true) --/ закрываем [exit_to_darkvalley_from_esc]
+		end
+	end
+	--/
+	if sMapNow == "l01_escape" then
+		if not has_alife_info("val_chase_start") then
+			local soLvChg = sim:story_object(6002) --/ [exit_to_darkvalley_from_esc]
+			if soLvChg then
+				sim:release(soLvChg,true) --/ удаляем (закрываем)
+			end
+		elseif db.sMapSav == "l04_darkvalley" then
+			local soLvChg = sim:story_object(6002) --/ exit_to_darkvalley_from_esc
+			if not soLvChg then
+				soLvChg = sim:create(0) --/ создаем (открываем)
+				if soLvChg then
+					local soObj = sim:story_object(6002)
+					printf("Check_Spawn_Objects:create(0)=[%s]->obj(6002)=[%s]:[%s]", soLvChg:name(), soObj and soObj:name(), "i") --/#~#
+				else
+					printf("Check_Spawn_Objects:Error_create_obj=(0):<%s>", "Error!")
+				end
+			end
+		end
+	elseif sMapNow == "l04_darkvalley" and db.sMapSav == "l01_escape" then
+		db.actor:set_actor_position(vector():set(-44.38, 0.43, -541.47))
+	end
+	--/ метки на карту
+	for k,v in pairs({[6001] = "to_pripyat",[6002] = "to_darkvalley"}) do
+		local soLvChg = sim:story_object(k)
+		if soLvChg then
+			--/ spots section (exit_to_pripyat_from_st1,exit_to_darkvalley_from_esc)
+--			level.map_add_object_spot(soLvChg.id, "level_changer", v)
+		end
+	end
+	--/
+	local soNPC = sim:object("esc_blokpost_commander") --/ капитан Тарнавский
+	if soNPC and IsStalker(soNPC) and soNPC.m_story_id ~= 93 and db.wrpk then
+		local tT = m_net_utils.Get_Data_Stalker(soNPC)
+		tT.story_id = 93
+		local bFlg = m_net_utils.Set_Data_Stalker(tT,soNPC)
+		if not bFlg then
+			printf("Check_Spawn_Objects:Error_write_for_obj=[%s]:<%s>", soNPC:name(), "Error!")
+		end
+	end
+	--/
+	soNPC = sim:object("gar_stalker_flame_quest23") --/ Лёха Тамбовский
+	if soNPC and IsStalker(soNPC) and soNPC.m_story_id ~= 190 and db.wrpk then
+		local tT = m_net_utils.Get_Data_Stalker(soNPC)
+		tT.story_id = 190
+		local bFlg = m_net_utils.Set_Data_Stalker(tT,soNPC)
+		if not bFlg then
+			printf("Check_Spawn_Objects:Error_write_for_obj=[%s]:<%s>", soNPC:name(), "Error!")
+		end
+	end
+end
+
+function save()
+--	printf("save:[%s]", _f.get_str_time() ) --/#~#
+	local tMapIds = {} --/ массив ID 'разведанных' уровней
+	for k,v in pairs(db.tMapIds) do
+		if db.tMapKnow[k] then
+			tMapIds[v] = true
+		end
+	end
+	_f.save_table("maps_sav", tMapIds) --/ запоминаем массив ID 'разведанных' уровней
+end
+
+--/ ---------------------------------------------
+--/ Set option-variables
+--/ ---------------------------------------------
+function Set_Options(uo)
+--	printf("Set_Options:uo=[%s]:>[%s]", uo, _f.get_str_time() ) --/#~#
+	idUsed = 0 --/ preset
+	db.is_dbg2 = _f.load_variable("opt_dbg2", false)
+	db.is_dbg3 = _f.load_variable("opt_dbg3", false)
+--	printf("Set_Options:GameVer=[%s]:[%s]", db.ver ,"info")
+	if db.m_net_utils then
+		db.wrpk = _f.load_variable("opt_wrpk", 2) >= 1 --/ откл/вкл
+		db.wroa = _f.load_variable("opt_wrpk", 2) == 2 --/ откл/вкл
+	else
+		_f.save_variable("opt_wrpk", 0) --/ откл
+		db.wrpk = false
+		db.wroa = false
+	end
+	if not (db.wrpk and db.wroa) then
+		printf("Set_Options:wrpk=[%s],wroa=[%s]:<%s>", db.wrpk, db.wroa, "Warning!") --/#~#
+	end
+	--/ режим тайников
+	if _f.load_variable("opt_trs", nil) == nil then
+		_f.save_variable("opt_trs", 3) --/ по умолчанию: 3 => уникальные
+	end
+	--/
+	se_respawn.Set_Options()
+	Check_Options_Horror()
+--	printf("Set_Options:map_id=[%s]:<[%s]", db.idMapNow, _f.get_str_time() ) --/#~#
+end
+
+function Check_Options_Horror() --/#~#
+	local iOpt = _f.load_variable("opt_horr", nil)
+	if not iOpt then
+		local ini = ini_file("mods\\_common.ltx")
+		local bEnabled = ltx and _f.read_from_ini(ini,"horrortime","enabled",true,0)
+		if bEnabled then
+			local bMoreMobs = _f.read_from_ini(ini,"horrortime","more_mobs",true,0)
+			if bMoreMobs then
+				iOpt = 2
+			else
+				iOpt = 1
+			end
+		else
+			iOpt = 0
+		end
+		_f.save_variable("opt_horr", iOpt)
+	end
+	db.bHorrorEnabled  = (iOpt > 0)
+	db.bHorrorMoreMobs = (iOpt > 1)
+--	printf("Check_Options_Horror:opt=[%s],enabled=[%s],moremobs=[%s]:[%s]", iOpt, db.bHorrorEnabled, db.bHorrorMoreMobs, "i" ) --/#~#
+end
+
+--/ -----------------------------------------------------------------
+--/ UpDate Actor (для проверки условий, вызывается постоянно, НЕ перегружать - возможны лаги!)
+--/ -----------------------------------------------------------------
+function update(delta)
+--	printf("update:delta=[%s]:[%s]", ">") --/#~#
+	Check_Switch_Obj() --/ перевод объектов (из массива) on<->off line
+	--/ проверки 1 раз в сек реал.времени
+	if iTimeUpdate < time_global() then
+		iTimeUpdate = time_global() + 1000
+		db.sOau = sModule..":update:run"
+		Check_Death_QuestNPCs() --/ проверка смерти квестовых NPCs
+		db.sOau = sModule..":update:2"
+		Check_Actor_in_Hideout() --/ проверка нахождения ГГ в укрытии
+		db.sOau = sModule..":update:3"
+		Check_Actor_Outfit() --/ проверка состояния костюма ГГ
+		db.sOau = sModule..":update:4"
+		Check_ActorPDA() --/ проверка наличия КПК
+		db.sOau = sModule..":update:end"
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Net Spawn (...)
+--/ -----------------------------------------------------------------
+function npc_net_spawn(uo,oNPC,sobject)
+	if oNPC and IsStalker(oNPC) and oNPC:character_community() == "military" and oNPC:alive() then
+		db.tFriendBTR[oNPC:id()] = oNPC:section() --/ build table tFriendBTR
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Check Take Items
+--/ -----------------------------------------------------------------
+function Check_Take_Item(uo,oObj)
+	local oActor = db.actor
+	if not (oObj and oActor) then return end --/>
+	_f.remove_spot_from_map(oObj:id(),"red_location") --/ снимаем метку
+	local sInfo = nil
+	local sSection = oObj:section()
+--	printf("Check_Take_Item:section=[%s]:[%s]", sSection, ">") --/#~#
+	if sSection == "books" then --/#+# дополнение к "Книжный мод" (by andrewalexk)
+		sInfo = "books_take_part02" --/"books_take_all"
+	elseif sSection == "zapiska" or sSection == "amk_zapiska" then
+		if     sMapNow == "l01_escape" then
+			sInfo = "info_amk_recipt_shkura"
+			_f.drop_remove_item(oActor,oObj)
+		elseif sMapNow == "l04u_labx18" then
+			sInfo = "info_amk_recipt_simbion"
+			_f.drop_remove_item(oActor,oObj)
+		elseif sMapNow == "l08u_brainlab" then
+			sInfo = "info_amk_recipt_dummy"
+			_f.drop_remove_item(oActor,oObj)
+		end
+	elseif sSection == "vehicle_btr" then
+		oActor:kill(oActor)
+	end
+	if sInfo and not has_alife_info(sInfo) then
+		give_info(sInfo)
+		if string.find(sInfo,"^info_amk_recipt_") then
+			_f.send_tip("",game.translate_string("st_take_new_recipt"),0,10,"gen_info")
+		else
+			_f.info_received("") --/ send_tip
+		end
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Check Take Items from Box - взятие предмета (из ящика) в инвентарь [ГГ]
+--/ -----------------------------------------------------------------
+function Check_Take_from_Box(uo,oBox,oItem)
+	if oBox and oBox.id and oBox:id() then
+		_f.remove_spot_from_map(oBox:id(),"crlc_big")
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Check Used (использование объекта)
+--/ -----------------------------------------------------------------
+function Check_Use_Obj(uo,oObj,oWho)
+--	printf("Check_Use_Obj:obj=[%s],id=[%s]:[%s]", oObj:name(), oObj:id(), "i") --/#~#
+	if oObj and IsStalker(oObj) and db.actor and oWho and oWho:id() == db.actor:id() then
+		local sInfo = nil
+		if oObj:name() == "mil_stalker0012" then
+			sInfo = "info_amk_recipt_stone_dikoobraz"
+		else
+			local tRecipes = _f.load_table("amk_body_recipe")
+			sInfo = tRecipes[oObj:id()]
+		end
+		if sInfo and not has_alife_info(sInfo) then
+			give_info(sInfo)
+			if string.find(sInfo,"^info_amk_recipt_") then
+				_f.send_tip("",game.translate_string("st_take_new_recipt"),0,10,"gen_info")
+			else
+				_f.info_received("") --/ send_tip
+			end
+		end
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Check Used Items (использование предмета [ГГ])
+--/ -----------------------------------------------------------------
+function Check_Use_Item(uo,oItem,idItem,sSection)
+--	printf("Check_Use_Item:id=[%s],section=[%s]:[%s]", idItem, sSection, "i") --/#~#
+	if sSection == "backpack" then --/ походный рюкзак
+		idUsed = idItem
+		register_callback("item_drop", Check_Drop_Item, idItem)
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Check Drop Items (потеря предмета [ГГ])
+--/ -----------------------------------------------------------------
+function Check_Drop_Item(uo,oItem,idItem,sSection) --/check_used_repair
+	if not (uo and idUsed and uo == idUsed) then return end --/>
+--	printf("Check_Drop_Item:uo=[%s],section=[%s]:[%s]", uo, sSection, ">") --/#~#
+	if sSection == "backpack" then
+		register_callback("update", Check_Used_Backpack, idItem)
+	end
+	unregister_callback("item_drop", Check_Drop_Item)
+end
+
+--/ -----------------------------------------------------------------
+--/ Проверка гибели NPC
+--/ -----------------------------------------------------------------
+function npc_death(uo,oVictim, oWho)
+	if oVictim and IsStalker(oVictim) then --/ заглушка от монстров и пр.
+		local sChrComm = oVictim:character_community()
+		if not sChrComm then return end --/>
+		local sInfo, iProb
+		if     sMapNow == "l07_military"
+			 and sChrComm == "killer"
+			then
+			sInfo = "info_amk_recipt_titan_kolobok"
+			iProb = 30 *db.exr_cf
+--			printf("npc_death:info=[%s],prob=[%s]:[%s]", sInfo, iProb, "i") --/#~#
+		elseif sMapNow == "l10_radar"
+			 and sChrComm == "monolith"
+			then
+			sInfo = "info_amk_recipt_controller_skalp"
+			iProb = 25 *db.exr_cf
+		end
+		--/ TODO: переделать, рецепт генерировать в КПК, а не в труп
+		if iProb and iProb >= math.random(100) then
+			local tRecipes = _f.load_table("amk_body_recipe")
+			--/ проверка: не генерился ли уже этот рецепт
+			for k,v in pairs(tRecipes) do
+				if v == sInfo then
+					--/проверка: существует ли труп с рецептом
+					local corpse = alife():object(k)
+					if corpse then
+						return false --/> рецепт в трупе
+					else
+						tRecipes[k] = nil --/чистим таблицу
+					end
+				end
+			end
+			--/ Сгенерим рецепт в таблицу выдачи
+--			printf("npc_death:info=[%s],prob=[%s]:[%s]", sInfo, iProb, "+") --/#~#
+			tRecipes[oVictim:id()] = sInfo
+			_f.save_table("amk_body_recipe",tRecipes)
+		end
+		Check_Death_QuestNPC(oVictim)
+	end
+end
+
+--/ Проверка смерти квестового NPC
+function Check_Death_QuestNPC(oNPC)
+	if oNPC and IsStalker(oNPC) then
+		local sNameNPC = oNPC:name()
+		for k,v in pairs(tQuestNPCs) do
+			if sNameNPC == v.name and v.ssec > 0 then
+				Check_Death_Info(sNameNPC,oNPC:alive())
+				break
+			end
+		end
+	end
+end
+--/ Проверка смерти квестовых NPCs
+function Check_Death_QuestNPCs()
+	if iTimeUpdate < time_global() then
+		iTimeUpdate = time_global() + 1000
+		for k,v in pairs(tQuestNPCs) do
+			if v.ssec > 0 then
+				local soNPC = alife():story_object(k)
+--				printf("Check_Death_QuestNPCs:Sid=[%s]:[%s]", k, "i")
+				if soNPC and IsStalker(soNPC) then
+					Check_Death_Info(v.name,soNPC:alive())
+				end
+			end
+		end
+	end
+end
+
+function Check_Death_Info(sNameNPC,bAlive)
+	local sInfo = sNameNPC.."_umer"
+	if bAlive and has_alife_info(sInfo) then
+		disable_info(sInfo)
+		printf("Check_Death_QuestNPCs:Info~>NPC=[%s]~alive<~!!!:[%s]", sNameNPC, "i")
+	elseif not bAlive and not has_alife_info(sInfo) then
+		give_info(sInfo)
+		printf("Check_Death_QuestNPCs:Info~>NPC=[%s]~death<~XXX:[%s]", sNameNPC, "i")
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Check Switch NPCs/Items (On/Off Line)
+--/ -----------------------------------------------------------------
+function Check_Switch_Obj()
+	for id,v in pairs(db.tSwitchObj) do --/ где: T[id] = flag (true/false)
+		local soObj = alife():object(id)
+		if soObj then
+			if level.object_by_id(id) then --/ soObj в он-лайне
+				if v == true then --/ есть флаг перевода в offline
+--					printf("Check_Switch_Obj:obj=[%s]~>Off:[%s]", soObj:name(), "i") --/#~#
+					_f.make_switch_offline(id)
+					db.tSwitchObj[id] = false --/ ставим флаг перевода в online
+				end
+ 			else --/ soObj в офф-лайне
+				if v == false then --/ есть флаг перевода в online
+--					printf("Check_Switch_Obj:sobj=[%s]~>On:[%s]", soObj:name(), "i") --/#~#
+					_f.make_switch_online(id)
+				end
+				db.tSwitchObj[id] = nil
+			end
+		else
+			printf("Check_Switch_Obj:NOT_sobj~>id=[%s],flg=[%s]:<%s>", id, v, "Warning!")
+			db.tSwitchObj[id] = nil
+		end
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ BugFix Радара
+--/ -----------------------------------------------------------------
+function Check_Radar_Off()
+	if not ( has_alife_info("bar_deactivate_radar_done") or check_works_timer("tm_rad_fix") ) then
+		local posA = db.actor:position()
+		if posA.z > 65 and posA.x > 350 and posA.x < 410 then
+			printf("Check_Radar_Off:>") --/#~#
+			local iPP = game.time()
+			level.add_pp_effector("fire_hit.ppe", iPP, true)
+			level.set_pp_effector_factor(iPP, 0.5)
+			start_rt("tm_rad_fix",5,iPP) --/ [name, time(sec), param]
+			register_callback("timer", Make_Fix_Radar, "tm_rad_fix")
+			unregister_callback("update", Check_Radar_Off)
+		end
+	end
+end
+
+function Make_Fix_Radar(uo,sTimerName,iPP)
+	if not (uo and uo == TimerName and iPP and db.actor) then return end --/>
+	printf("Make_Fix_Radar:iPP=[%s]:[%s]", iPP, "i") --/#~#
+	level.remove_pp_effector(iPP)
+	local posA = db.actor:position()
+	if posA.z > 65 and posA.x > 350 and posA.x < 410 then
+		printf("Make_Fix_Radar:Kill_Actor:[%s]", "X") --/#~#
+		db.actor:kill(db.actor)
+	end
+	unregister_callback("timer", Make_Fix_Radar)
+	return true
+end
+
+--/ -----------------------------------------------------------------
+--/ Проверка нахождения ГГ в укрытии
+--/ -----------------------------------------------------------------
+function Check_Actor_in_Hideout()
+	--if db.iTypeBW > 0 then return end --/>
+	if iTimeChkHide < time_global() then
+		iTimeChkHide = time_global() + 1000
+		local bInHide = false --/ outside
+		if db.gg_in_zone then
+			bInHide = true --/ inside
+		elseif db.m_hideouts then
+			bInHide = m_hideouts.check_pos_in_hideout(db.actor:position())
+		end
+		db.gg_in_hide = bInHide
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Проверка (и отметка) КПК у актора
+--/ -----------------------------------------------------------------
+local bWarningPDA = false
+
+function Check_ActorPDA()
+	local oActor = db.actor
+	local oItem = oActor:item_in_slot(7)
+	if oItem then
+		if oItem:id() == idPDA then return end --/>
+		idPDA = nil
+--		printf("Check_ActorPDA:=[%s],Cid=[%s],Sid=[%s]:[%s]", oItem:name(), get_clsid(oItem), oItem:story_id(), "i") --/#~#
+		if get_clsid(oItem) == clsid.device_pda and oItem:id() < 500 then
+			if oItem:story_id() == 3999 then
+				idPDA = oItem:id()
+			elseif not _f.load_variable("pda_gg",nil) then
+				local soItem = alife():object(oItem:id())
+				if soItem and db.wrpk then
+					local tT = m_net_utils.Get_Data_Item(soItem)
+					tT.story_id = 3999
+					local bFlg = m_net_utils.Set_Data_Item(tT, soItem)
+					if bFlg then
+						idPDA = soItem.id
+						_f.save_variable("pda_gg",idPDA)
+--						printf("Check_ActorPDA:Set_StoryId=3999~>for_Item=[%s]:[%s]", soItem:name(), "i") --/#~#
+					else
+						printf("Check_ActorPDA:Item=[%s]~Error_write:<%s>", soItem:name(), "Error!")
+					end
+				end
+			else
+				idPDA = _f.load_variable("pda_gg",nil)
+			end
+		else
+			_f.drop_item(oActor,oItem)
+			printf("Check_ActorPDA:Wrong_Item=[%s],Cid=[%s]~in_slot=7~>Drop:<%s>", oItem and oItem:name(), get_clsid(oItem), "Warning!")
+		end
+	elseif not bWarningPDA then
+		printf("Check_ActorPDA:Not_in_slot=7:<%s>", "Warning!")
+	end
+	if not (idPDA or bWarningPDA) then
+		idPDA = _f.load_variable("pda_gg",nil)
+		if not idPDA then
+			local sim = alife()
+			for i=109,115 do
+				local soObj = sim:object(i)
+				if soObj and get_clsid(oItem) == clsid.device_pda then
+					idPDA = i
+					break
+				end
+			end
+		end
+		if idPDA then
+			local sMap = _f.get_object_level_name(alife():object(idPDA))
+			printf("Check_ActorPDA:Found~>Id=[%s],Map=[%s]:<%s>", idPDA, sMap, "Warning!")
+			_f.add_spot_on_map(idPDA,"dbg_metka2","КПК Меченый "..tostring(idPDA)) --/#~# for test
+			_f.send_tip("Потерян личный КПК ["..sMap.."]", "Внимание!", 0, 15, "warning")
+		else
+			_f.send_tip("Потерян личный КПК", "Внимание!", 0, 15, "anonymous")
+		end
+		bWarningPDA = true
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Поиск/проверка/создание фейк-ящика (временное хранилище)
+--/ -----------------------------------------------------------------
+function Fake_Box_Manager()
+	local oFakeBox,soFakeBox
+	local idFakeBox = _f.load_variable("fake_box",nil)
+	if idFakeBox then
+		oFakeBox = level.object_by_id(idFakeBox)
+		if oFakeBox then
+			--_f.make_switch_offline(idFakeBox) --/ отправляем в offline
+--			printf("Fake_Box_Manager:FakeBox=[%s],id=[%s]<~found_online:[%s]", oFakeBox:name(), idFakeBox, "i") --/#~# найден в онлайне
+			return idFakeBox --/> found on current level
+		else
+			soFakeBox = alife():object(idFakeBox)
+			if soFakeBox then
+				local sMap = _f.get_object_level_name(soFakeBox)
+				if sMap and sMap == sMapNow then
+--					printf("Fake_Box_Manager:FakeBox=[%s],id=[%s]~found_in_offline~>map=[%s]:[%s]", soFakeBox:name(), idFakeBox, sMap, "i") --/#~# найден, но НЕ в онлайне
+					db.tSwitchObj[idFakeBox] = false --/ заносим в массив перевода offline->online
+					return idFakeBox --/> found on current level from offline
+				--else
+--					printf("Fake_Box_Manager:FakeBox=[%s],id=[%s]<~found_NOT_current_level:[%s]", soFakeBox:name(), idFakeBox, "i") --/#~# найден, но НЕ на текущем уровне
+				end
+			end
+		end
+		idFakeBox = nil
+	end
+	if not idFakeBox then --/ create FakeBox
+		soFakeBox = _f.spawn_obj("m_inventory_box", vector():set(0,300,0)) --/(0,-300,0)
+		if soFakeBox then
+			--
+			if db.wrpk then
+				local tT = m_net_utils.Get_Data_InvBox(soFakeBox)
+				tT.custom_data = "[logic]\ncfg = scripts\\inventory_fake_box.ltx" --/treasure_inventory_box.ltx
+				tT.object_flags = bit_not(193) --/ подвесим (1+64+128=193 => 0xffffff3e)
+				local bFlg = m_net_utils.Set_Data_InvBox(tT, soFakeBox)
+				if not bFlg then
+					printf("Fake_Box_Manager:Error_write_for_sobj=[%s]:<%s>", soFakeBox:name(), "Error!")
+				end
+			end
+			db.tSwitchObj[soFakeBox.id] = false --/ заносим в массив перевода offline->online --/#!#
+			_f.save_variable("fake_box",soFakeBox.id)
+			idFakeBox = soFakeBox.id
+--			printf("Fake_Box_Manager:FakeBox=[%s],id=[%s]<~created:[%s]", soFakeBox:name(), soFakeBox.id, "+") --/#~#
+			return soFakeBox.id --/> created
+		else
+			printf("Fake_Box_Manager:Error_create_FakeBox:<%s>", "Error!")
+		end
+	end
+	_f.del_variable("fake_box")
+	printf("Fake_Box_Manager:Error_create_FakeBox:id=[%s]:<%s>", idFakeBox, "Error!") --/#~#
+	return idFakeBox
+end
+
+--/ -----------------------------------------------------------------
+--/ Used (Droped) BackPack (create m_inventory_box) - рюкзак~>тайник
+--/ -----------------------------------------------------------------
+function Check_Used_Backpack(uo,delta)
+	if not (uo and uo == idUsed) then return end --/>
+--	printf("Check_Used_Backpack:idUsed=[%s]:[%s]", uo, ">") --/#~#
+	local oActor = db.actor
+	--local vPos = vector():set(oActor:position():add(oActor:direction():mul(1))) --/ внимание: проваливается сквозь перекрытия
+	local soObj = alife():create("m_inventory_box", oActor:position(), oActor:level_vertex_id(), oActor:game_vertex_id()) --/ спавним около ГГ
+	if soObj then
+		if db.wrpk then
+			local tT = m_net_utils.Get_Data_InvBox(soObj)
+			tT.custom_data = "[logic]\ncfg = scripts\\inventory_backpack.ltx" --/treasure_inventory_box.ltx
+			local bFlg = m_net_utils.Set_Data_InvBox(tT, soObj)
+			if not bFlg then
+				printf("Check_Used_Backpack:Error_write_for_sobj=[%s]:<%s>", soObj:name(), "Error!")
+			end
+		else
+			printf("Check_Used_Backpack:Obj=[%s]~Write_Optnion_Off:[%s]", soObj:name(), "Warning!")
+		end
+		db.tSwitchObj[soObj.id] = false --/ заносим в массив перевода offline->online --/#!#
+		if db.is_dbg2 then
+			_f.add_spot_on_map(soObj.id, "treasure_spot", "My treasure") --/#~# пометка на карте (for test)
+			printf("Check_Used_Backpack:Create_inventory_box:id=[%s]:[%s]", soObj.id, "+") --/#~#
+		end
+	else
+		printf("Check_Used_Backpack:Error_create~[m_inventory_box]:<%s>", "Error!")
+	end
+	idUsed = 0
+	unregister_callback("update", Check_Used_Backpack)
+end
+
+--/ -----------------------------------------------------------------
+--/ OTHER (...)
+--/ -----------------------------------------------------------------
+local idOutfit   = -1 --/ last actor outfit Id
+local iOutfitCond = 1 --/ last actor outfit condition
+
+function Set_OutfitCondition(iCondition)
+	local oOutfit = db.actor:get_current_outfit()
+	if oOutfit then
+		idOutfit = oOutfit:id()
+		iOutfitCond = iCondition
+		oOutfit:set_condition(iCondition)
+	end
+end
+
+function Check_Actor_Outfit()
+	local oActor = db.actor
+	if not (oActor and oActor:alive()) then return end --/>
+	local oOutfit = oActor:get_current_outfit()
+	if oOutfit then
+		if oOutfit:id() == idOutfit then
+			if oOutfit:condition() > iOutfitCond then
+				oOutfit:set_condition(iOutfitCond) -- printf("Check_Actor_Outfit:set_condition=[%s]~>outfit=[%s]:[%s]", iOutfitCond, oOutfit:section(), "i" ) --/#~# ;-)
+			else
+				iOutfitCond = oOutfit:condition()
+			end
+		else
+			idOutfit    = oOutfit:id()
+			iOutfitCond = oOutfit:condition()
+		end
+		--
+		if oActor:active_slot() == 2 then
+			local oWeapon = oActor:item_in_slot(2)
+			local sOutfitSec = oOutfit:section() or "none"
+			if oWeapon and oWeapon:section() == "wpn_pkm_a" and (not string.find(sOutfitSec, "exo")) then
+				oActor:drop_item(oWeapon)
+				local soObj = _f.spawn_item_in_inv("wpn_pkm_a")
+				oActor:transfer_item(oWeapon,oActor)
+				if soObj then
+					alife():release(soObj,true)
+				end
+			end
+		end
+		--
+	else
+		idOutfit = -1
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Quest NPCs
+--/ -----------------------------------------------------------------
+function check_quest_npcs(npc,iSid) --/Is_QuestNPC
+	if not (npc or iSid) then return false end --/>
+	local iStoryId = iSid
+	if not iStoryId and npc then
+		if type(npc.id) == "number" then
+			iStoryId = npc:story_id()
+		else
+			iStoryId = npc.m_story_id
+		end
+	end
+	if iStoryId and iStoryId ~= 4294967296 then
+		local sNameNPC = npc:name()
+		for k,v in pairs(tQuestNPCs) do
+			if k == iStoryId or v.name == sNameNPC then --/ проверка по sid или по имени
+--				printf("Is_QuestNPC:npc=[%s],sid=[%s]~Yes:[%s]", sNameNPC, iStoryId, "i")
+				return true --/>
+			end
+		end
+	end
+	return false
+end
+
+--/ -----------------------------------------------------------------
+--/ Переодевание QuestNPCs
+--/ -----------------------------------------------------------------
+function Set_Visual_NPCs() --/ одеваем в 'персональную броню'
+	for k,v in pairs(tQuestNPCs) do
+		if v.visual and v.visual ~= "" then
+			Set_Visual_NPC(k,v.visual) --/ sid,visual
+		end
+	end
+end
+
+function Set_Visual_NPC(iStoryId,sVisual)
+--	printf("Set_Visual_NPC:StoryId=[%s],visual=[%s]:[%s]", iStoryId, sVisual, ">") --/#~#
+	if not (iStoryId and iStoryId ~= 4294967296 and sVisual and db.wrpk) then return end --/>
+	local soNPC = alife():story_object(iStoryId)
+	if soNPC and IsStalker(soNPC) and soNPC:alive() then
+		local tT = m_net_utils.Get_Data_NPC(soNPC)
+		if string.find(tT.visual_name,sVisual) then
+			local sVisualPrs = sVisual.."_prs"
+			if not string.find(tT.visual_name,sVisualPrs) then
+				tT.visual_name = "actors\\"..sVisualPrs
+				local bFlg = m_net_utils.Set_Data_NPC(tT,soNPC)
+				if bFlg then
+					db.tSwitchObj[soNPC.id] = true --/ заносим в массив перевода online->offline->online
+--					printf("Set_Visual_NPC:sid=[%s],npc=[%s],visual=[%s]<~Set:{%s]", iStoryId, soNPC:name(), tT.visual_name, "!") --/#~#
+				else
+					printf("Set_Visual_NPC:npc=[%s]~Write_net-paket:<%s>", soNPC:name(), "Error!")
+				end
+			--else
+--				printf("Set_Visual_NPC:npc=[%s],sid=[%s]<~visual=[%s]:[%s]", iStoryId, soNPC:name(), tT.visual_name, "i") --/#~#
+			end
+		else
+			printf("Set_Visual_NPC:npc=[%s],sid=[%s],visual=[%s]~>[%s]:<%s>", soNPC:name(), iStoryId, sVisual, tT and tT.visual_name, "Error!")
+		end
+	else
+		printf("Set_Visual_NPC:npc(%s)=[%s/%s],alive=[%s]<~Not_Set:<%s>", iStoryId, soNPC and soNPC:name(), soNPC and _f.get_charname(soNPC), soNPC and soNPC:alive(), "Info!") --/#~#
+	end
+end
+
+function ReSet_Visual_NPC(iStoryId) --/ снимаем броню (reserve)
+--	printf("ReSet_Visual_NPC:StoryId=[%s]:[%s]", iStoryId, ">") --/#~#
+	if not (iStoryId and iStoryId ~= 4294967296 and db.wrpk) then return end --/>
+	local soNPC = alife():story_object(iStoryId)
+	if soNPC and IsStalker(soNPC) and soNPC:alive() then
+		local tT = m_net_utils.Get_Data_NPC(soNPC)
+--		printf("ReSet_Visual_NPC:npc=[%s],sid=[%s],visual=[%s]<~%s", soNPC:name(), iStoryId, tT and tT.visual_name, "reset") --/#~#
+		if string.find(tT.visual,"_prs") then --/ снимаем броню
+			for k,v in pairs(tQuestNPCs) do
+				if k == iStoryId and v.visual and v.visual ~= "" then
+					tT.visual_name = v.visual
+--				printf("ReSet_Visual_NPC:npc=[%s],sid=[%s],visual=[%s]<~%s", soNPC:name(), iStoryId, tT.visual_name, "без_брони") --/#~#
+					local bFlg = m_net_utils.Set_Data_NPC(tT,soNPC)
+					if bFlg then
+						db.tSwitchObj[soNPC.id] = true --/ заносим в массив перевода online->offline->online
+					else
+						printf("ReSet_Visual_NPC:NPC=[%s]~Write_net-paket:<%s>", soNPC:name(), "Error!")
+					end
+				end
+				break
+			end
+		end
+	end
+end
+
+--/ -----------------------------------------------------------------------------------------------
+--/ Воскрешение Quest NPC (и заготовки)
+--/ -----------------------------------------------------------------------------------------------
+function Reanimation_Quest_NPC(soNPC,iSec)
+	local iStoryId = soNPC.m_story_id
+	if iStoryId then
+		local iSpawnSection = iSec
+		if not iSpawnSection then
+			for k,v in pairs(tQuestNPCs) do
+				if k == iStoryId then
+					iSpawnSection = v.ssec
+					break
+				end
+			end
+		end
+		if iSpawnSection then
+			--local posNPC = soNPC.position
+			alife():release(soNPC, true) --/ удаляем труп
+			local soObj = iSid and alife():story_object(iSid)
+			if not soObj then
+				alife():create(iSpawnSection) --/ 'оживляем' перса
+				return true --/>
+			end
+		end
+	end
+	return false
+end
+
+function Reanimation_Quest_NPCs() --/ reserve
+	for k,v in pairs(tQuestNPCs) do
+		local soNPC = alife():story_object(k)
+		if soNPC and IsStalker(soNPC) and soNPC.alive and not soNPC:alive() then
+			printf("Reanimation_Quest_NPCs:NameNPC=[%s]<~реанимируем:[%s]", soNPC:name(), "!") --/#~#
+			--Set_Health_NPC(soNPC,2)
+			Reanimation_Quest_NPC(soNPC,v.ssec)
+		end
+	end
+end
+
+function Reanimation_NPCs() --/ reserve
+	for id=1,10000 do
+		local soNPC = alife():object(id)
+		if soNPC and IsStalker(soNPC) and soNPC.alive and not soNPC:alive() then
+			printf("Reanimation_NPCs:NameNPC=[%s]<~реанимируем:[%s]", soNPC:name(), "!") --/#~#
+			Set_Health_NPC(soNPC,1)
+		end
+	end
+end
+
+function Reanimation_NPC(iStoryId) --/ reserve
+	if not (iStoryId and iStoryId ~= 4294967296) then return end --/>
+	local soNPC = alife():story_object(iStoryId)
+	if soNPC and IsStalker(soNPC) and soNPC.alive and not soNPC:alive() then
+		Set_Health_NPC(soNPC, 1)
+	end
+end
+
+function Set_Health_NPC(soNPC, iHealth)
+	if soNPC and IsStalker(soNPC) and iHealth and iHealth <= 2 and db.wrpk then
+		local tT = m_net_utils.Get_Data_Stalker(soNPC,true)
+		tT.health = iHealth
+		tT.updhealth = iHealth
+		local bFlg = m_net_utils.Set_Data_Stalker(tT,soNPC,true)
+		if not bFlg then
+			printf("Set_Health_NPC:sobj=[%s]~Write_net-paket:<%s>", soNPC:name(), "Error!")
+		end
+	end
+end
+
+--/ -----------------------------------------------------------------
+--/ Переопределённые Binder-ы, как альтернатива net_spawn
+--/ -----------------------------------------------------------------
+function bind_anom(oObj)
+	if oObj and db.m_zones then
+		m_zones.AddToBinder(oObj)
+	end
+end
+
+function bind_ggun(oObj)
+	if oObj and db.m_gravigun then
+		m_gravigun.AddToBinder(oObj)
+	end
+end
+
+--/ binder для привязки монстров к 'bar_arena_restrictor'
+function Bind_Arena_Monster(oNPC)
+	if oNPC then
+		if db.m_aem then oNPC:add_restrictions("bar_arena_restrictor","") end
+		bind_monster.bind(oNPC)
+	end
+end
+--/ binder для привязки сталкеров к 'bar_arena_restrictor'
+function Bind_Arena_Stalker(oNPC)
+	if oNPC then
+		if db.m_aem then oNPC:add_restrictions("bar_arena_restrictor","") end
+		bind_stalker.init(oNPC)
+	end
+end
+--/ binder для привязки админов к 'bar_restrictor'
+function Bind_Arena_Admin(oNPC)
+	if oNPC then
+		if db.m_aem then
+			if has_alife_info("aem_go_bar") then
+				oNPC:add_restrictions("bar_restrictor","")
+			else
+				oNPC:remove_all_restrictions()
+			end
+		end
+		bind_stalker.init(oNPC)
+	end
+end
+
+--/ -----------------------------------------------------------------------------------------------

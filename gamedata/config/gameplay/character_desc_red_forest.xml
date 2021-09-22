@@ -1,0 +1,889 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!-------------------------------------lesnik------------------------------------------------------>
+	<specific_character id="red_forest_lesnik" team_default = "1">
+		<name>red_forest_lesnik_name</name>
+		<icon>ui_npc_u_lesnik_1</icon>
+		<bio>red_forest_lesnik_bio</bio>
+
+		<class>red_forest_lesnik</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\lesnik\lesnik</visual>
+		<supplies>
+			[spawn] \n
+			wpn_m1891_30_scope = 1 \n
+			ammo_7.62x54_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>red_forest_lesnik_start_dialog</start_dialog>
+		<actor_dialog>red_forest_lesnik_weapon_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hemul------------------------------------------------------>
+	<specific_character id="red_forest_hemul" team_default = "1">
+		<name>red_forest_hemul_name</name>
+		<icon>ui_npc_u_hemul</icon>
+		<bio>red_forest_hemul_bio</bio>
+
+		<class>red_forest_hemul</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hemul\hemul</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak103 = 1, scope \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hemul_first_dialog</start_dialog>
+		<actor_dialog>hemul_second_dialog</actor_dialog>
+		<actor_dialog>hemul_third_dialog</actor_dialog>
+		<actor_dialog>hemul_fourth_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------dinka------------------------------------------------------>
+	<specific_character id="red_forest_dinka" team_default = "1">
+		<name>red_forest_dinka_name</name>
+		<icon>ui_npc_u_dinka</icon>
+		<bio>red_forest_dinka_bio</bio>
+
+		<class>red_forest_dinka</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\dinka\dinka</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>dinka_first_dialog</start_dialog>
+		<actor_dialog>dinka_second_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_1</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_ak74m = 1, scope \n
+                        ammo_5.45x39_fmj = 1 \n
+                        grenade_f1 = 2 \n
+                        grenade_rgd5 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_2</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_akms_sk1 \n
+			ammo_7.62x39_ap = 1 \n
+			grenade_f1 = 2 \n
+			grenade_rgd5 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_3</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m = 1, launcher \n
+                        ammo_vog-25 = 2 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_5</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_5</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_akm_sk2 = 1, launcher \n
+                        ammo_vog-25 = 2 \n
+			ammo_7.62x39_ap = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_6</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_6</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_7</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_7</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_sayga12k_sk2 = 1, scope \n
+			ammo_12x70_buck = 4 \n
+                        ammo_12x76_zhekan = 1 \n
+                        ammo_12x76_dart = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ne_exoskeleton</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_ne_exoskeleton</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_sayga12k_sk1 = 1, scope \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_prapor</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\prapor</visual>
+		<supplies>
+			[spawn] \n
+                       wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak105 \n
+                        ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_skit_balon</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\skit_balon</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_skit_leader</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\skit_leader</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_sayga12k_sk1 = 1, scope \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default11" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_skit_rukzak</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\skit_rukzak</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk2 = 1, scope \n
+                        ammo_12x76_dart = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default12" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_3_mask</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_3_mask</visual>
+		<supplies>
+			[spawn] \n
+                       wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_sayga12k_sk2 = 1, scope \n
+                        ammo_12x70_buck = 4 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default13" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_2_gas</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_2_gas</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak103 = 1, scope \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default14" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_2_mask</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_2_mask</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_sayga12k_sk2 = 1, scope \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default15" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_2_ochki</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_2_ochki</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_sayga12k_sk1 = 1, scope \n
+                        ammo_12x76_zhekan = 1 \n
+                        ammo_12x70_buck = 4 \n
+                        grenade_f1 = 2 \n
+                        grenade_rgd5 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default16" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_2_rozh1</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_2_rozh1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak104 \n
+			ammo_7.62x39_ap = 1 \n
+                        grenade_f1 = 2 \n
+                        grenade_rgd5 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default17" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_2_usi</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_2_usi</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_sayga12k_sk1 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default18" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_3_gas</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_3_gas</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_sayga12k_sk1 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+                        grenade_f1 = 2 \n
+                        grenade_rgd5 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default19" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_3_rozh2</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_3_rozh2</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="red_forest_veteran_default20" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_3_usi</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_3_usi</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_rpk74_sk1 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran_corpse------------------------------------------------------>
+	<specific_character id="red_forest_veteran_corpse_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_1</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran_corpse</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_rpk74_sk1 \n
+                        ammo_5.45x39_ap = 20 \n
+                        grenade_f1 = 2 \n
+                        grenade_rgd5 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran_corpse------------------------------------------------------>
+	<specific_character id="red_forest_veteran_corpse_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_1</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran_corpse</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+                        ammo_5.45x39_ap = 2 \n
+                        grenade_f1 = 2 \n
+                        grenade_rgd5 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran_corpse------------------------------------------------------>
+	<specific_character id="red_forest_veteran_corpse_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_1</icon>
+		<bio>red_forest_veteran_bio</bio>
+
+		<class>red_forest_veteran_corpse</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_sks_cust = 1, scope \n
+                        ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+
+</xml>

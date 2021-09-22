@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="bar_rostok">
+		<text>Дикая территория - Росток</text>
+	</string>
+	<string id="car_character_use">
+		<text>Открыть дверь</text>
+	</string>
+	<string id="character_use">
+		<text>Говорить</text>
+	</string>
+	<string id="dead_character_use_or_drag">
+		<text>Обыскать труп\n Тащить труп</text>
+	</string>
+	<string id="dead_character_use">
+		<text>Обыскать труп</text>
+	</string>
+	<string id="general_complete_task">
+		<text>Задание выполнено:</text>
+	</string>
+	<string id="general_fail_task">
+		<text>Задание провалено:</text>
+	</string>
+	<string id="general_help">
+		<text>Срочно нужна аптечка, помираю!!!</text>
+	</string>
+	<string id="general_in_item">
+		<text>Получен предмет:</text>
+	</string>
+	<string id="general_in_money">
+		<text>Получены деньги:</text>
+	</string>
+	<string id="general_new_diary">
+		<text>Новая запись в дневнике.</text>
+	</string>
+	<string id="general_new_encyclopedy">
+		<text>Новая статья в энциклопедии.</text>
+	</string>
+	<string id="general_new_task">
+		<text>Новое задание:</text>
+	</string>
+	<string id="general_out_item">
+		<text>Потерян предмет:</text>
+	</string>
+	<string id="general_out_money">
+		<text>Потеряны деньги:</text>
+	</string>
+	<string id="general_update_task">
+		<text>Задание обновлено:</text>
+	</string>
+	<string id="physic_shell_use">
+		<text>Двигать объект</text>
+	</string>
+	<string id="st_codelock">
+		<text>Кодовый замок</text>
+	</string>
+	<string id="to_aes">
+		<text>На ЧАЭС</text>
+	</string>
+	<string id="to_agroprom">
+		<text>На Агропром</text>
+	</string>
+	<string id="to_agroprom_underground">
+		<text>В Катакомбы</text>
+	</string>
+	<string id="to_bar">
+		<text>На Росток</text>
+	</string>
+	<string id="to_darkvalley">
+		<text>В Тёмную долину</text>
+	</string>
+	<string id="to_escape">
+		<text>На Кордон</text>
+	</string>
+	<string id="to_garbage">
+		<text>На Свалку</text>
+	</string>
+	<string id="to_military">
+		<text>На Склады</text>
+	</string>
+	<string id="to_pripyat">
+		<text>В Припять</text>
+	</string>
+	<string id="to_radar">
+		<text>К Выжигателю мозгов</text>
+	</string>
+	<string id="to_rostok">
+		<text>На Дикую территорию</text>
+	</string>
+	<string id="to_yantar">
+		<text>На Янтарь</text>
+	</string>
+	<string id="st_helmet_countdown">
+		<text>Отключение защиты</text>
+	</string>
+	<string id="st_psy_danger">
+		<text>Критический уровень пси излучения. Немедленно покинь опасную зону!</text>
+	</string>
+	<string id="st_radiation_danger">
+		<text>Опасный уровень радиации. Нужна суперзащита, чтобы пройти!</text>
+	</string>
+	<string id="st_found_new_pda">
+		<text>Найдена информация:</text>
+	</string>
+
+	<string id="message_exit_to_predbannik">
+		<text>Переход в Предбанник</text>
+	</string>
+	<string id="message_exit_to_av_peshera">
+		<text>Переход в Лабиринт</text>
+	</string>
+	<string id="message_exit_to_jupiter_underground">
+		<text>Переход в Путепровод</text>
+	</string>
+	<string id="message_exit_to_escape">
+		<text>Переход на Кордон</text>
+	</string>
+	<string id="message_exit_to_garbage_old">
+		<text>Переход на Старую свалку</text>
+	</string>
+	<string id="message_exit_to_agroprom_nord">
+		<text>Переход в северный комплекс НИИ Агропром</text>
+	</string>
+	<string id="message_exit_to_agroprom_west">
+		<text>Переход в западный комплекс НИИ Агропром</text>
+	</string>
+	<string id="message_exit_to_darkvalley">
+		<text>Переход в Тёмную долину</text>
+	</string>
+	<string id="message_exit_to_yantar_tunnel">
+		<text>Переход на Янтарь, в туннель</text>
+	</string>
+	<string id="message_exit_to_yantar_zavod">
+		<text>Переход на Янтарь</text>
+	</string>
+	<string id="message_exit_to_control_monolith">
+		<text>Переход в Контроль Монолита</text>
+	</string>
+	<string id="message_exit_to_stancia">
+		<text>Переход на ЧАЭС-1</text>
+	</string>
+	<string id="message_exit_to_sarcofag">
+		<text>Переход в Саркофаг</text>
+	</string>
+	<string id="message_exit_to_stancia_2">
+		<text>Переход на ЧАЭС-2</text>
+	</string>
+	<string id="message_exit_to_radar_evac">
+		<text>Переход на Радар, в бункер рядом со снайпером</text>
+	</string>
+	<string id="message_exit_to_radar">
+		<text>Переход на Радар, в вагон</text>
+	</string>
+	<string id="message_exit_to_aver">
+		<text>Переход в Волчий лес</text>
+	</string>
+	<string id="message_exit_to_peshera">
+		<text>Переход в Пещеру</text>
+	</string>
+	<string id="message_exit_to_zaton">
+		<text>Переход на Затон</text>
+	</string>
+	<string id="message_exit_to_generators">
+		<text>Переход на Генераторы</text>
+	</string>
+	<string id="message_exit_to_labx8">
+		<text>Переход в Лабораторию Х-8</text>
+	</string>
+	<string id="message_exit_to_pripyat">
+		<text>Переход в Восточную Припять</text>
+	</string>
+	<string id="message_exit_to_warlab">
+		<text>Переход в Варлаб</text>
+	</string>
+	<string id="message_exit_to_yantar_old">
+		<text>Переход на Научную станцию</text>
+	</string>
+	<string id="message_exit_to_agroprom">
+		<text>Переход на Агропром</text>
+	</string>
+	<string id="message_exit_to_bar">
+		<text>Переход в Бар</text>
+	</string>
+	<string id="message_exit_to_bunker">
+		<text>Переход в Лабораторию Х-10</text>
+	</string>
+	<string id="message_exit_to_jupiter">
+		<text>Переход на Юпитер</text>
+	</string>
+	<string id="message_exit_to_labx18">
+		<text>Переход в лабораторию Х-18</text>
+	</string>
+	<string id="message_exit_to_military">
+		<text>Переход на Армейские склады</text>
+	</string>
+	<string id="message_exit_to_radar_mon">
+		<text>Переход на Радар</text>
+	</string>
+	<string id="message_exit_to_swamp_old">
+		<text>Переход на Болото Доктора</text>
+	</string>
+	<string id="message_exit_to_katakombs">
+		<text>Переход в Катакомбы</text>
+	</string>
+	<string id="message_exit_to_red_forest">
+		<text>Переход в казармы Рыжего леса</text>
+	</string>
+	<string id="message_poison_gas_on">
+		<text>Чтобы не погибнуть от ядовитых испарений, необходимо не позднее чем через 15 минут съесть нужный гриб</text>
+	</string>
+</string_table>

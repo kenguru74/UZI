@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+	<info_portion id="talk_to_klyk"></info_portion>
+	<info_portion id="bring_food_klyk"></info_portion>
+	<info_portion id="kill_darks"></info_portion>
+	<info_portion id="talking_darks"></info_portion>
+	<info_portion id="first_talking_cheburek">
+                <article>first_talking_cheburek_art</article>
+        </info_portion>
+	<info_portion id="find_av_peshera"></info_portion>
+	<info_portion id="second_talking_cheburek"></info_portion>
+	<info_portion id="kill_dark_1"></info_portion>
+	<info_portion id="kill_dark_2"></info_portion>
+	<info_portion id="kill_dark_3"></info_portion>
+	<info_portion id="kill_dark_4"></info_portion>
+	<info_portion id="kill_dark_5"></info_portion>
+	<info_portion id="first_talking_klyk"></info_portion>
+	<info_portion id="give_so"></info_portion>
+	<info_portion id="second_talking_klyk"></info_portion>
+	<info_portion id="second_talk_to_klyk"></info_portion>
+		
+</game_information_portions>

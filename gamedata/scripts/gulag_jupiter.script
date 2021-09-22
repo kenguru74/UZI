@@ -1,0 +1,380 @@
+local t = {}
+
+function load_job(sj, gname, type, squad, groups)
+
+--' created by Mora
+
+--'--------------------------------------------------------------------------
+--' JUPITER
+--'--------------------------------------------------------------------------
+
+        -- сталкеры у бункера
+	if type == "jupiter_bunker" then
+		-- у костра
+		t = { section = "logic@jupiter_bunker_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jupiter_bunker_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- сталкеры у вагончика
+	if type == "jupiter_vagon" then
+		-- сидящие
+		t = { section = "logic@jupiter_vagon_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jupiter_vagon_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- часовые
+		t = { section = "logic@jupiter_vagon_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jupiter_vagon_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jupiter_vagon_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jupiter_vagon_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jupiter_vagon_walker5",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+        -- бандиты на КПП
+	if type == "jup_kpp" then
+		-- часовые
+		t = { section = "logic@jup_kpp_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_kpp_bandit1"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_kpp_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_kpp_bandit2"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_kpp_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_kpp_bandit3"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_kpp_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_kpp_bandit4"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_kpp_walker5",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_kpp_bandit5"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_kpp_walker6",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_kpp_bandit6"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_kpp_walker7",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_kpp_bandit7"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_kpp_walker8",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_valet"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_kpp_camp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_kpp_bandit8"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_kpp_camp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_kpp_bandit9"
+			end
+		}
+		table.insert(sj, t)
+	end
+        -- бандиты на Складе контейнеров
+	if type == "jup_sklad" then
+		-- часовые
+		t = { section = "logic@jup_sklad_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_sklad_bandit1"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_sklad_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_sklad_bandit2"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_sklad_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_sklad_bandit3"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_sklad_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_sklad_bandit4"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_sklad_walker5",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_sklad_bandit5"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_sklad_walker6",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_sklad_bandit6"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_sklad_walker7",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_tuz"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_sklad_camp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_sklad_bandit7"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_sklad_camp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_sklad_bandit8"
+			end
+		}
+		table.insert(sj, t)
+	end
+        -- наёмники на Юпитере
+	if type == "jup_jup" then
+		-- часовые
+		t = { section = "logic@jup_jup_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_killer1"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_jup_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_killer2"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_jup_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_killer3"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_jup_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_killer4"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@jup_jup_walker5",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "jupiter_killer5"
+			end
+		}
+		table.insert(sj, t)
+	end
+end
+
+function load_states(gname, type)
+
+	if type == "jupiter_bunker" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "jupiter_vagon" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "jup_kpp" then
+		return function(gulag)
+			return 0
+		end
+	end
+
+	if type == "jup_sklad" then
+		return function(gulag)
+			return 0
+		end
+	end
+
+	if type == "jup_jup" then
+		return function(gulag)
+			return 0
+		end
+	end
+end
+
+--------------------------------------------------------------------------
+-- Dynamic ltx
+--------------------------------------------------------------------------
+function load_ltx(gname, type)
+	return nil
+end
+
+function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
+
+	if gulag_type == "jupiter_bunker" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "jupiter_vagon" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "jup_kpp" then
+		return npc_community == "bandit"
+	end
+
+	if gulag_type == "jup_sklad" then
+		return npc_community == "bandit"
+	end
+
+	if gulag_type == "jup_jup" then
+		return npc_community == "killer"
+	end
+
+	return false
+end
+
+function checkMonster(npc_community, gulag_type)
+
+	return false
+end

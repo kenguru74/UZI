@@ -1,0 +1,58 @@
+[logic]
+active = walker
+
+[walker]
+path_walk = predbannik_bul1_walk
+path_look = predbannik_bul1_look
+meet = no_meet
+on_actor_dist_le_nvis = 15| {-bul_first_dialog} remark@pred_bul1
+on_info = {+bul_first_dialog} walker@pred_bul3
+danger = danger_condition@bul
+
+[remark@pred_bul1]
+anim = hello
+snd = pred_bul_hello
+target = actor
+meet = no_meet
+on_signal = sound_end| walker@pred_bul2
+
+[walker@pred_bul2]
+path_walk = predbannik_bul1_walk
+path_look = predbannik_bul1_look
+meet = meet@bul
+on_info = {+bul_first_dialog} walker@pred_bul3
+danger = danger_condition@bul
+
+[walker@pred_bul3]
+path_walk = predbannik_bul2_walk
+path_look = predbannik_bul2_look
+meet = meet@bul2
+on_signal = pred_bul_come | walker@pred_bul4
+danger = danger_condition@bul
+
+[walker@pred_bul4]
+path_walk = predbannik_bul3_walk
+path_look = predbannik_bul3_look
+meet = meet@bul2
+danger = danger_condition@bul
+
+[meet@bul]
+meet_state		= 7|guard@wait
+meet_state_wpn	= 7|backoff@threat_weap
+victim		= 7|actor
+victim_wpn		= 7|actor
+use			= true
+use_wpn		= false
+syndata		= backoff@threat_weap
+meet_dialog = predbannik_bul_dialog
+
+[meet@bul2]
+meet_state		= 7|guard@wait
+meet_state_wpn	= 7|backoff@threat_weap
+victim		= 7|actor
+victim_wpn		= 7|actor
+use			= true
+use_wpn		= false
+
+[danger_condition@bul]
+ignore_distance = 0

@@ -1,0 +1,1463 @@
+[outfit_base]
+; delete full_scale_icon next update- obsolete, use full_icon_name instead !!!
+
+additional_inventory_weight = 0; +max_walk_weight
+additional_inventory_weight2 = 0 ; +40 kg
+full_icon_name = npc_icon_without_outfit
+
+[without_outfit]:outfit_base
+;базовый костюм сталкера - костюм новичка. Обычная одежда туриста - штормовка+сапоги
+full_scale_icon = 6,6
+
+
+;---------------------------------------------------------------------------------------------
+; КОМБЕЗ НОВИЧКА
+;---------------------------------------------------------------------------------------------
+[novice_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\novice_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\novice_suit
+actor_visual = actors\hero\stalker_novice.ogf
+
+ef_equipment_type = 3
+
+inv_name = outfit_soldier_name
+inv_name_short = outfit_soldier_name
+description = outfit_soldier_description
+inv_weight = 1.5
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 0
+inv_grid_y = 18
+
+full_icon_name = npc_icon_novice_outfit
+
+cost = 1000
+slot = 6
+full_scale_icon = 0,11 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_novice_outfit_immunities
+
+; нет защиты совсем
+burn_protection = 0.05
+shock_protection = 0.05
+strike_protection = 0.05
+wound_protection = 0.05
+radiation_protection = 0.0
+telepatic_protection = 0.0
+chemical_burn_protection = 0.05
+explosion_protection = 0.05
+fire_wound_protection = 0.05
+
+bones_koeff_protection = kurtka_mask_damage
+
+ ;коэффициенты повреждения самого костюма
+[sect_novice_outfit_immunities]
+burn_immunity = 0.08
+shock_immunity = 0.16
+strike_immunity = 0.16
+wound_immunity = 0.16
+radiation_immunity = 0.08
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.16
+explosion_immunity = 0.16
+fire_wound_immunity = 0.16
+
+;---------------------------------------------------------------------------------------------
+; КОМБЕЗ БАНДИТА
+;---------------------------------------------------------------------------------------------
+[bandit_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\bandit_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\bandit_suit
+actor_visual = actors\hero\stalker_bandit.ogf
+
+ef_equipment_type = 3
+
+inv_name = bandit_outfit_name
+inv_name_short = bandit_outfit_name
+description = bandit_outfit_description
+inv_weight = 2.2
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 12
+inv_grid_y = 0
+full_icon_name = npc_icon_bandit_outfit
+
+cost = 3000
+slot = 6
+full_scale_icon = 0,6 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_bandit_outfit_immunities
+
+; маленькая защита
+burn_protection = 0.05
+shock_protection = 0.05
+strike_protection = 0.05
+wound_protection = 0.1
+radiation_protection = 0
+telepatic_protection = 0
+chemical_burn_protection = 0.05
+explosion_protection = 0.05
+fire_wound_protection = 0.1
+
+bones_koeff_protection = kurtka_antigas_damage
+
+;коэффициенты повреждения самого костюма
+[sect_bandit_outfit_immunities]
+burn_immunity = 0.06
+shock_immunity = 0.12
+strike_immunity = 0.12
+wound_immunity = 0.12
+radiation_immunity = 0.06
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.12
+explosion_immunity = 0.12
+fire_wound_immunity = 0.12
+
+
+;---------------------------------------------------------------------------------------------
+; КОМБЕЗ НАЕМНИКА
+;---------------------------------------------------------------------------------------------
+[killer_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\killer_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\stalker_killer_suit
+actor_visual = actors\hero\stalker_killer.ogf 
+
+ef_equipment_type = 4
+
+inv_name = killer_outfit_name
+inv_name_short = killer_outfit_name
+description = killer_outfit_description
+inv_weight = 3.2
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 4
+inv_grid_y = 15
+full_icon_name = npc_icon_killer_outfit
+nightvision_sect = effector_nightvision_bad
+
+cost = 12000
+full_scale_icon = 4,11 ;иконка сталкера в костюме в полный рост
+immunities_sect = sect_killer_outfit_immunities
+
+
+; низкая защита
+burn_protection = 0.1
+shock_protection = 0.1
+strike_protection = 0.1
+wound_protection = 0.1
+radiation_protection = 0.1
+telepatic_protection = 0.0
+chemical_burn_protection = 0.1
+explosion_protection = 0.1
+fire_wound_protection = 0.1
+
+bones_koeff_protection = gilet_antigas_damage
+
+;коэффициенты повреждения самого костюма
+[sect_killer_outfit_immunities]
+burn_immunity = 0.05
+shock_immunity = 0.1
+strike_immunity = 0.1
+wound_immunity = 0.1
+radiation_immunity = 0.05
+telepatic_immunity = 0
+chemical_burn_immunity = 0.1
+explosion_immunity = 0.1
+fire_wound_immunity = 0.1
+
+
+
+
+;---------------------------------------------------------------------------------------------
+; КОМБЕЗ МОНОЛИТОВЦА
+;---------------------------------------------------------------------------------------------
+[monolit_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\monolit_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\monolit_suit
+actor_visual = actors\hero\stalker_monolit.ogf
+
+ef_equipment_type = 3
+
+inv_name = monolit_outfit_name
+inv_name_short = monolit_outfit_name
+description = monolit_outfit_description
+inv_weight = 3.0
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 10
+inv_grid_y = 16
+full_icon_name = npc_icon_monolit_outfit
+
+cost = 30000
+slot = 6
+full_scale_icon = 6,11 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_monolit_outfit_immunities
+
+; средняя защита
+burn_protection = 0.2
+shock_protection = 0.1
+strike_protection = 0.2
+wound_protection = 0.2
+radiation_protection = 0.35
+telepatic_protection = 0.0
+chemical_burn_protection = 0.2
+explosion_protection = 0.2
+fire_wound_protection = 0.2
+
+bones_koeff_protection = kombez_mask_damage
+
+;коэффициенты повреждения самого костюма
+[sect_monolit_outfit_immunities]
+burn_immunity = 0.04
+shock_immunity = 0.08
+strike_immunity = 0.08
+wound_immunity = 0.08
+radiation_immunity = 0.04
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.08
+explosion_immunity = 0.08
+fire_wound_immunity = 0.08
+
+
+
+;---------------------------------------------------------------------------------------------
+; КОМБЕЗ ВОЕННОГО СПЕЦНАЗА
+;---------------------------------------------------------------------------------------------
+[specops_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\specops_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\specnaz_suit
+actor_visual = actors\hero\stalker_specops.ogf
+
+ef_equipment_type = 3
+
+inv_name = specops_outfit_name
+inv_name_short = specops_outfit_name
+description = specops_outfit_description
+inv_weight = 3.5
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 10
+inv_grid_y = 13
+full_icon_name = npc_icon_specops_outfit
+nightvision_sect = effector_nightvision_bad
+
+cost = 35000
+slot = 6
+full_scale_icon = 4,6 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_specops_outfit_immunities
+
+; выше средней защита
+burn_protection = 0.1
+shock_protection = 0.1
+strike_protection = 0.2
+wound_protection = 0.2
+radiation_protection = 0.1
+telepatic_protection = 0.1
+chemical_burn_protection = 0.1
+explosion_protection = 0.2
+fire_wound_protection = 0.2
+
+bones_koeff_protection = kombez_helmet_damage
+
+;коэффициенты повреждения самого костюма
+[sect_specops_outfit_immunities]
+burn_immunity = 0.04
+shock_immunity = 0.08
+strike_immunity = 0.04
+wound_immunity = 0.04
+radiation_immunity = 0.04
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.08
+explosion_immunity = 0.04
+fire_wound_immunity = 0.04
+
+
+;---------------------------------------------------------------------------------------------
+; КОМБЕЗ ВОЛЬНОГО СТАЛКЕРА
+;---------------------------------------------------------------------------------------------
+[stalker_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\stalker_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\stalker_suit
+actor_visual = actors\hero\stalker_hood.ogf
+
+ef_equipment_type = 3
+
+inv_name = stalker_outfit_name
+inv_name_short = stalker_outfit_name
+description = stalker_outfit_description
+inv_weight = 3.0
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 6
+inv_grid_y = 15
+full_icon_name = npc_icon_stalker_outfit
+
+cost = 30000
+slot = 6
+full_scale_icon = 14,11 ;иконка сталкера в костюме в полный рост
+nightvision_sect = effector_nightvision_bad
+
+immunities_sect = sect_stalker_outfit_immunities
+
+
+; низкая защита
+burn_protection = 0.1
+shock_protection = 0.1
+strike_protection = 0.1
+wound_protection = 0.1
+radiation_protection = 0.15
+telepatic_protection = 0.0
+chemical_burn_protection = 0.1
+explosion_protection = 0.1
+fire_wound_protection = 0.15
+
+power_loss = 0.87
+bones_koeff_protection = gilet_antigas_damage
+
+;коэффициенты повреждения самого костюма
+[sect_stalker_outfit_immunities]
+burn_immunity = 0.06
+strike_immunity = 0.01
+shock_immunity = 0.06
+wound_immunity = 0.015
+radiation_immunity = 0.02
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.06
+explosion_immunity = 0.06
+fire_wound_immunity = 0.04
+
+
+
+;---------------------------------------------------------------------------------------------
+; НАУЧНЫЙ КОМБЕЗ ВОЛЬНОГО СТАЛКЕРА (СЕВА)
+;---------------------------------------------------------------------------------------------
+[scientific_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\scientific_outfit"
+$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\stalker_scient_suit 
+actor_visual = actors\hero\stalker_scien.ogf
+
+ef_equipment_type = 2
+
+inv_name = scientific_outfit_name
+inv_name_short = scientific_outfit_name
+description = scientific_outfit_description
+inv_weight = 4
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 16
+inv_grid_y = 13
+full_icon_name = npc_icon_scientific_outfit
+nightvision_sect = effector_nightvision_good
+
+cost = 55000
+full_scale_icon = 12,11 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_scientific_outfit_immunities
+
+
+; средняя-выше средней защита
+burn_protection = 0.25
+shock_protection = 0.25
+strike_protection = 0.25
+wound_protection = 0.2
+radiation_protection = 0.25
+telepatic_protection = 0.15
+chemical_burn_protection = 0.2
+explosion_protection = 0.2
+fire_wound_protection = 0.2
+
+bones_koeff_protection = kombez_kupol_damage
+
+;коэффициенты повреждения самого костюма
+[sect_scientific_outfit_immunities]
+burn_immunity = 0.04
+shock_immunity = 0.04
+strike_immunity = 0.04
+wound_immunity = 0.08
+radiation_immunity = 0.04
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.04
+explosion_immunity = 0.08
+fire_wound_immunity = 0.08
+
+
+
+;---------------------------------------------------------------------------------------------
+; ЭКЗОСКЕЛЕТ ВОЛЬНОГО СТАЛКЕРА
+;---------------------------------------------------------------------------------------------
+[exo_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\exo_outfit"
+$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\exoskelet 
+actor_visual = actors\hero\stalker_exoskeleton.ogf
+
+ef_equipment_type = 5
+
+inv_name = exo_outfit_name
+inv_name_short = exo_outfit_name
+description = exo_outfit_description
+inv_weight = 8.0
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 14
+inv_grid_y = 13
+full_icon_name = npc_icon_exo_outfit
+nightvision_sect = effector_nightvision_good
+
+cost = 60000
+full_scale_icon = 2,11 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_exo_outfit_immunities
+
+; средняя-ниже средней защита
+burn_protection = 0.15
+shock_protection = 0.1
+strike_protection = 0.2
+wound_protection = 0.2
+radiation_protection = 0.1
+telepatic_protection = 0.1
+chemical_burn_protection = 0.1
+explosion_protection = 0.3
+fire_wound_protection = 0.25
+
+;запрещение режима Sprint для Актера
+sprint_allowed = false
+bones_koeff_protection = exo_helmet_damage
+additional_inventory_weight = 20
+additional_inventory_weight2 = 20 ; 40+
+
+;коэффициенты повреждения самого костюма
+[sect_exo_outfit_immunities]
+burn_immunity = 0.025
+shock_immunity = 0.12
+strike_immunity = 0.12
+wound_immunity = 0.08
+radiation_immunity = 0.08
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.12
+explosion_immunity = 0.08
+fire_wound_immunity = 0.08
+
+
+
+
+;---------------------------------------------------------------------------------------------
+; ОБЫЧНЫЙ КОМБЕЗ СВОБОДЫ
+;---------------------------------------------------------------------------------------------
+[svoboda_light_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\svoboda_light_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\svoboda_light_suit
+actor_visual = actors\hero\stalker_svoboda_light.ogf
+
+ef_equipment_type = 3
+
+inv_name = svoboda_light_outfit_name
+inv_name_short = svoboda_light_outfit_name
+description = svoboda_light_outfit_description
+inv_weight = 2.5
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 12
+inv_grid_y = 13
+full_icon_name = npc_icon_svoboda_light_outfit
+nightvision_sect = effector_nightvision_bad
+
+cost = 20000
+slot = 6
+full_scale_icon = 10,11 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_svoboda_light_outfit_immunities
+
+; низкая защита
+burn_protection = 0.05
+shock_protection = 0.05
+strike_protection = 0.05
+wound_protection = 0.1
+radiation_protection = 0.1
+telepatic_protection = 0.1
+chemical_burn_protection = 0.1
+explosion_protection = 0.15
+fire_wound_protection = 0.1
+
+power_loss = 0.77
+bones_koeff_protection = gilet_mask_damage
+
+;коэффициенты повреждения самого костюма
+[sect_svoboda_light_outfit_immunities]
+burn_immunity = 0.06
+shock_immunity = 0.12
+strike_immunity = 0.12
+wound_immunity = 0.12
+radiation_immunity = 0.06
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.12
+explosion_immunity = 0.12
+fire_wound_immunity = 0.12
+
+
+
+
+;---------------------------------------------------------------------------------------------
+; ТЯЖЕЛЫЙ КОМБЕЗ СВОБОДЫ
+;---------------------------------------------------------------------------------------------
+[svoboda_heavy_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\svoboda_heavy_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\svoboda_heavy_suit
+actor_visual = actors\hero\stalker_svoboda_heavy.ogf
+
+ef_equipment_type = 3
+
+inv_name = svoboda_heavy_outfit_name
+inv_name_short = svoboda_heavy_outfit_name
+description = svoboda_heavy_outfit_description
+inv_weight = 3.0
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 8
+inv_grid_y = 15
+full_icon_name = npc_icon_svoboda_heavy_outfit
+nightvision_sect = effector_nightvision_good
+
+cost = 35000
+slot = 6
+full_scale_icon = 2,6 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_svoboda_heavy_outfit_immunities
+
+; средняя-ниже средней защита
+burn_protection = 0.2
+shock_protection = 0.1
+strike_protection = 0.25
+wound_protection = 0.2
+radiation_protection = 0.1
+telepatic_protection = 0.1
+chemical_burn_protection = 0.1
+explosion_protection = 0.3
+fire_wound_protection = 0.25
+
+bones_koeff_protection = kombez_antigas_damage
+
+;коэффициенты повреждения самого костюма
+[sect_svoboda_heavy_outfit_immunities]
+burn_immunity = 0.03
+shock_immunity = 0.1
+strike_immunity = 0.1
+wound_immunity = 0.1
+radiation_immunity = 0.05
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.1
+explosion_immunity = 0.1
+fire_wound_immunity = 0.1
+
+
+
+;---------------------------------------------------------------------------------------------
+; ОБЫЧНЫЙ КОМБЕЗ ДОЛГА
+;---------------------------------------------------------------------------------------------
+[dolg_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\dolg_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\dolg_suit
+actor_visual = actors\hero\stalker_dolg.ogf
+
+ef_equipment_type = 3
+
+inv_name = dolg_outfit_name
+inv_name_short = dolg_outfit_name
+description = dolg_outfit_description
+inv_weight = 2.5
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 12
+inv_grid_y = 16
+full_icon_name = npc_icon_dolg_outfit
+nightvision_sect = effector_nightvision_bad
+
+cost = 25000
+slot = 6
+full_scale_icon = 8,11 ;иконка сталкера в костюме в полный рост
+nightvision_sect = effector_nightvision_bad
+
+immunities_sect = sect_dolg_outfit_immunities
+
+; низкая защита
+burn_protection = 0.1
+shock_protection = 0.1
+strike_protection = 0.1
+wound_protection = 0.05
+radiation_protection = 0.05
+telepatic_protection = 0.05
+chemical_burn_protection = 0.05
+explosion_protection = 0.2
+fire_wound_protection = 0.1
+
+bones_koeff_protection = kombez_antigas_damage
+
+;коэффициенты повреждения самого костюма
+[sect_dolg_outfit_immunities]
+burn_immunity = 0.05
+shock_immunity = 0.12
+strike_immunity = 0.12
+wound_immunity = 0.12
+radiation_immunity = 0.05
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.12
+explosion_immunity = 0.12
+fire_wound_immunity = 0.12
+
+
+
+
+;---------------------------------------------------------------------------------------------
+; НАУЧНЫЙ КОМБЕЗ ДОЛГА
+;---------------------------------------------------------------------------------------------
+[dolg_scientific_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\dolg_scientific_outfit"
+$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\stalker_dolg_nauchniy_suit
+actor_visual = actors\hero\stalker_do_nauchniy.ogf
+
+ef_equipment_type = 4
+
+inv_name = dolg_scientific_outfit_name
+inv_name_short = dolg_scientific_outfit_name
+description = dolg_scientific_outfit_description
+inv_weight = 3.8
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 16
+inv_grid_y = 16
+full_icon_name = npc_icon_dolg_scientific_outfit
+nightvision_sect = effector_nightvision_good
+
+cost = 50000
+full_scale_icon = 8,6 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_dolg_scientific_outfit_immunities
+
+; средняя-выше средней защита
+burn_protection = 0.2
+shock_protection = 0.2
+strike_protection = 0.2
+wound_protection = 0.25
+radiation_protection = 0.2
+telepatic_protection = 0.1
+chemical_burn_protection = 0.2
+explosion_protection = 0.15
+fire_wound_protection = 0.15
+
+bones_koeff_protection = kombez_kupol_damage
+
+;коэффициенты повреждения самого костюма
+[sect_dolg_scientific_outfit_immunities]
+burn_immunity = 0.025
+shock_immunity = 0.05
+strike_immunity = 0.05
+wound_immunity = 0.05
+radiation_immunity = 0.04
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.05
+explosion_immunity = 0.12
+fire_wound_immunity = 0.12
+
+
+
+
+;---------------------------------------------------------------------------------------------
+; ОБЫЧНЫЙ КОМБЕЗ УЧЕНОГО
+;---------------------------------------------------------------------------------------------
+[ecolog_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\ecolog_outfit"
+$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\ecolog_suit.ogf 
+actor_visual = actors\hero\stalker_ecolog.ogf
+
+ef_equipment_type = 2
+
+inv_name = ecolog_outfit_name
+inv_name_short = ecolog_outfit_name
+description = ecolog_outfit_description
+inv_weight = 2.6
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 18
+inv_grid_y = 13
+full_icon_name = npc_icon_ecolog_outfit
+nightvision_sect = effector_nightvision_bad
+
+cost = 50000
+full_scale_icon = 14,6 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_ecolog_outfit_immunities
+
+
+; выше средней защита от агрессивных сред
+burn_protection = 0.25
+shock_protection = 0.25
+strike_protection = 0.2
+wound_protection = 0.05
+radiation_protection = 0.25
+telepatic_protection = 0.25
+chemical_burn_protection = 0.25
+explosion_protection = 0.05
+fire_wound_protection = 0.05
+
+bones_koeff_protection = kurtka_kupol_damage
+
+;коэффициенты повреждения самого костюма
+[sect_ecolog_outfit_immunities]
+burn_immunity = 0.025
+shock_immunity = 0.02
+strike_immunity = 0.08
+wound_immunity = 0.08
+radiation_immunity = 0.015
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.02
+explosion_immunity = 0.16
+fire_wound_immunity = 0.16
+
+
+
+
+;---------------------------------------------------------------------------------------------
+; УСИЛЕННЫЙ КОМБЕЗ УЧЕНОГО
+;---------------------------------------------------------------------------------------------
+[protection_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\protection_outfit"
+$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\scientist_suit.ogf 
+actor_visual = actors\hero\stalker_chemical.ogf
+
+ef_equipment_type = 2
+
+inv_name = protection_outfit_name
+inv_name_short = protection_outfit_name
+description = protection_outfit_description
+inv_weight = 3.0
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 14
+inv_grid_y = 16
+full_icon_name = npc_icon_protection_outfit
+nightvision_sect = effector_nightvision_good
+
+cost = 70000
+full_scale_icon = 12,6 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_protection_outfit_immunities
+
+; высокая защита от агрессивных сред
+burn_protection = 0.3
+shock_protection = 0.3
+strike_protection = 0.3
+wound_protection = 0.1
+radiation_protection = 0.3
+telepatic_protection = 0.3
+chemical_burn_protection = 0.3
+explosion_protection = 0.1
+fire_wound_protection = 0.1
+
+bones_koeff_protection = kombez_kupol_damage
+
+;коэффициенты повреждения самого костюма
+[sect_protection_outfit_immunities]
+burn_immunity = 0.015
+shock_immunity = 0.01
+strike_immunity = 0.04
+wound_immunity = 0.06
+radiation_immunity = 0.01
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.02
+explosion_immunity = 0.12
+fire_wound_immunity = 0.16
+
+
+
+;========================================================================================
+;DJekman_Armor_Mod
+;Add exoskeletons: killer, dolg, Svoboda, monolit and broken exo. Black raincoat. 
+;Mk1, Brown raincoat, Skat9 and 9М.
+;========================================================================================
+
+;=====================================НАЁМНИКИ=============================================
+
+;---------------------------------------------------------------------------------------------
+;МОДИФИЦИРОВАННЫЙ ЭКЗОСКЕЛЕТ НАЁМНИКА
+;---------------------------------------------------------------------------------------------
+[killer_blue_exoskeleton]:exo_outfit
+
+$spawn = "outfit\uniq\outfit_exo_m1"
+inv_name = killer_blue_exoskeleton_name
+inv_name_short = killer_blue_exoskeleton_name
+description = killer_blue_exoskeleton_description
+inv_grid_x = 35
+inv_grid_y = 28
+
+
+visual = equipments\exoskelet_killer
+actor_visual = actors\hero\stalker_killer_exo.ogf
+full_icon_name = npc_icon_killer_blue_exoskeleton
+
+inv_weight = 7.5
+cost = 80000
+
+
+nightvision_sect = effector_nightvision_good
+immunities_sect = sect_killer_blue_exoskeleton_immunities
+
+; средняя-ниже средней защита
+burn_protection = 0.1
+shock_protection = 0.15
+strike_protection = 0.3
+wound_protection = 0.2
+radiation_protection = 0.05
+telepatic_protection = 0.05
+chemical_burn_protection = 0.1
+explosion_protection = 0.2
+fire_wound_protection = 0.3
+
+sprint_allowed = true
+bones_koeff_protection = exo_helmet_damage
+additional_inventory_weight = 15
+additional_inventory_weight2 = 15
+
+[sect_killer_blue_exoskeleton_immunities]
+burn_immunity = 0.06
+shock_immunity = 0.12
+strike_immunity = 0.12
+wound_immunity = 0.12
+radiation_immunity = 0.06
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.12
+explosion_immunity = 0.08
+fire_wound_immunity = 0.1
+
+;============================================DOLG==========================================
+;---------------------------------------------------------------------------------------------
+;МОДИФИЦИРОВАННЫЙ ЭКЗОСКЕЛЕТ ДОЛГА
+;---------------------------------------------------------------------------------------------
+[dolg_black_exoskeleton]:exo_outfit
+$spawn = "outfit\uniq\outfit_exo_m1"
+inv_name = dolg_black_exoskeleton_name
+inv_name_short = dolg_black_exoskeleton_name
+description = dolg_black_exoskeleton_description
+inv_grid_x = 37
+inv_grid_y = 28
+
+
+visual = equipments\exoskelet
+actor_visual = actors\hero\stalker_dolg_exo.ogf
+full_icon_name = npc_icon_dolg_exo_outfit
+
+
+inv_weight = 8.0
+cost = 90000
+
+
+nightvision_sect = effector_nightvision_good
+immunities_sect = sect_dolg_black_exoskeleton_immunities
+
+; средняя-ниже средней защита
+burn_protection = 0.1
+shock_protection = 0.1
+strike_protection = 0.2
+wound_protection = 0.2
+radiation_protection = 0.1
+telepatic_protection = 0.1
+chemical_burn_protection = 0.1
+explosion_protection = 0.25
+fire_wound_protection = 0.25
+
+power_restore_speed = 0.005
+
+sprint_allowed = true
+bones_koeff_protection = exo_helmet_damage
+additional_inventory_weight = 10
+additional_inventory_weight2 = 10
+ 
+[sect_dolg_black_exoskeleton_immunities]
+burn_immunity = 0.05
+shock_immunity = 0.1
+strike_immunity = 0.1
+wound_immunity = 0.12
+radiation_immunity = 0.06
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.12
+explosion_immunity = 0.08
+fire_wound_immunity = 0.1
+;============================================SVOBODA==========================================
+
+;---------------------------------------------------------------------------------------------
+;МОДИФИЦИРОВАННЫЙ ЭКЗОСКЕЛЕТ СВОБОДЫ
+;---------------------------------------------------------------------------------------------
+[svoboda_exoskeleton]:exo_outfit
+$spawn = "outfit\uniq\outfit_exo_m1"
+inv_name = svoboda_exoskeleton_name
+inv_name_short = svoboda_exoskeleton_name
+description = svoboda_exoskeleton_description
+inv_grid_x = 39
+inv_grid_y = 28
+
+visual = equipments\exoskelet_freedom
+actor_visual = actors\hero\stalker_svoboda_exo.ogf
+full_icon_name = npc_icon_svoboda_exo_outfit
+
+inv_weight = 7.0
+cost = 90000
+
+nightvision_sect = effector_nightvision_good
+
+; средняя-ниже средней защита
+burn_protection = 0.1
+shock_protection = 0.2
+strike_protection = 0.1
+wound_protection = 0.25
+radiation_protection = 0.1
+telepatic_protection = 0.1
+chemical_burn_protection = 0.1
+explosion_protection = 0.2
+fire_wound_protection = 0.25
+
+immunities_sect = sect_svoboda_exoskeleton_immunities
+sprint_allowed = true
+bones_koeff_protection = exo_helmet_damage
+additional_inventory_weight = 15
+additional_inventory_weight2 = 15 
+
+[sect_svoboda_exoskeleton_immunities]
+burn_immunity = 0.06
+shock_immunity = 0.12
+strike_immunity = 0.12
+wound_immunity = 0.12
+radiation_immunity = 0.05
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.1
+explosion_immunity = 0.1
+fire_wound_immunity = 0.1
+
+;=========================================Monolit=======================================
+
+;---------------------------------------------------------------------------------------------
+;МОДИФИЦИРОВАННЫЙ ЭКЗОСКЕЛЕТ МОНОЛИТА
+;---------------------------------------------------------------------------------------------
+[monolit_exoskeleton]:exo_outfit
+$spawn = "outfit\uniq\outfit_exo_m1"
+inv_name = monolit_exoskeleton_name
+inv_name_short = monolit_exoskeleton_name
+description = monolit_exoskeleton_description
+
+inv_grid_x = 35
+inv_grid_y = 31
+
+
+visual = equipments\exoskelet_monolith
+actor_visual = actors\hero\stalker_monolit_exo.ogf
+full_icon_name = npc_icon_monolit_exo_outfit
+
+
+inv_weight = 6.5
+cost = 100000
+
+
+nightvision_sect = effector_nightvision_bast ; is not installed
+
+; средняя-выше средней защита
+burn_protection = 0.25
+shock_protection = 0.25
+strike_protection = 0.25
+wound_protection = 0.25
+radiation_protection = 0.3
+telepatic_protection = 0
+chemical_burn_protection = 0.2
+explosion_protection = 0.1
+fire_wound_protection = 0.2
+
+
+health_restore_speed = 0.0007
+immunities_sect = sect_monolit_exoskeleton_immunities
+sprint_allowed = true
+bones_koeff_protection = exo_helmet_damage
+additional_inventory_weight = 25
+additional_inventory_weight2 = 25
+
+[sect_monolit_exoskeleton_immunities]
+burn_immunity = 0.035
+shock_immunity = 0.08
+strike_immunity = 0.08
+wound_immunity = 0.12
+radiation_immunity = 0.04
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.08
+explosion_immunity = 0.1
+fire_wound_immunity = 0.1
+
+;=========================================Broken=======================================
+
+;---------------------------------------------------------------------------------------------
+;МОДИФИЦИРОВАННЫЙ ЭКЗОСКЕЛЕТ ПОВРЕЖДЁННЫЙ
+;---------------------------------------------------------------------------------------------
+[broken_exoskeleton]:exo_outfit
+$spawn = "outfit\uniq\outfit_exo_m1"
+inv_name = broken_exoskeleton_name
+inv_name_short = broken_exoskeleton_name
+description = broken_exoskeleton_description
+inv_grid_x = 14
+inv_grid_y = 13
+
+
+visual = equipments\exoskelet
+actor_visual = actors\stalker_zombi\zombie_exoskeleton.ogf
+full_icon_name = npc_icon_broken_exo_outfit
+
+
+inv_weight = 8.0
+cost = 15000
+
+
+
+nightvision_sect = ; destroy
+immunities_sect = sect_broken_exoskeleton_immunities
+
+; ниже средней защита
+burn_protection = 0.1
+shock_protection = 0.1
+strike_protection = 0.2
+wound_protection = 0.1
+radiation_protection = 0.1
+telepatic_protection = 0
+chemical_burn_protection = 0
+explosion_protection = 0.1
+fire_wound_protection = 0.15
+
+sprint_allowed = false
+
+additional_inventory_weight = 5
+additional_inventory_weight2 = 5 
+
+[sect_broken_exoskeleton_immunities]
+burn_immunity = 0.08
+shock_immunity = 0.16
+strike_immunity = 0.16
+wound_immunity = 0.2
+radiation_immunity = 0.08
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.08
+explosion_immunity = 0.2
+fire_wound_immunity = 0.1
+
+;==========================================end exo===================================================
+
+;=====================================Master_bandit===================================================
+;---------------------------------------------------------------------------------------------
+;КОМБЕЗ БАНДИТА МАСТЕРА
+;---------------------------------------------------------------------------------------------
+[bandit_master_outfit]:bandit_outfit
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\bandit_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\bandit_suit
+actor_visual = actors\hero\stalker_bandit_master.ogf
+
+ef_equipment_type = 3
+
+inv_name = bandit_master_outfit_name
+inv_name_short = bandit_master_outfit_name
+description = bandit_master_outfit_description
+inv_weight = 3.5
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 39
+inv_grid_y = 31
+full_icon_name = npc_icon_bandit_master_outfit
+
+cost = 30000
+slot = 6
+full_scale_icon = 0,6
+
+bleeding_restore_speed = -0.006
+
+
+; ниже средней защита
+burn_protection = 0.15
+shock_protection = 0.1
+strike_protection = 0.15
+wound_protection = 0.15
+radiation_protection = 0.1
+telepatic_protection = 0.05
+chemical_burn_protection = 0.1
+explosion_protection = 0.1
+fire_wound_protection = 0.15
+
+[sect_bandit_master_outfit_immunities]
+burn_immunity = 0.07
+shock_immunity = 0.16
+strike_immunity = 0.16
+wound_immunity = 0.16
+radiation_immunity = 0.06
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.16
+explosion_immunity = 0.12
+fire_wound_immunity = 0.16
+
+;===================================From Lexx_antigas_mod=========================
+;===========================================Veteran_bandit========================
+;---------------------------------------------------------------------------------------------
+;КОМБЕЗ БАНДИТА ВЕТЕРАНА
+;---------------------------------------------------------------------------------------------
+[bandit_veteran_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\bandit_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\bandit_suit
+actor_visual = actors\hero\stalker_bandit_veteran.ogf
+
+ef_equipment_type = 3
+
+inv_name = bandit_veteran_outfit_name
+inv_name_short = bandit_veteran_outfit_name
+description = bandit_veteran_outfit_description
+inv_weight = 3.0
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 35
+inv_grid_y = 34
+full_icon_name = npc_icon_bandit_veteran_outfit
+
+cost = 25000
+slot = 6
+full_scale_icon = 0,6
+
+
+
+; мало-мальская защита
+burn_protection = 0.07
+shock_protection = 0.07
+strike_protection = 0.07
+wound_protection = 0.1
+radiation_protection = 0.05
+telepatic_protection = 0
+chemical_burn_protection = 0.07
+explosion_protection = 0.07
+fire_wound_protection = 0.15
+
+
+immunities_sect = sect_bandit_veteran_outfit_immunities
+
+[sect_bandit_veteran_outfit_immunities]
+burn_immunity = 0.05
+shock_immunity = 0.12
+strike_immunity = 0.12
+wound_immunity = 0.1
+radiation_immunity = 0.05
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.12
+explosion_immunity = 0.1
+fire_wound_immunity = 0.12
+;==========================================end from Lexx==========================
+
+;==========================================SKAT9==================================
+;---------------------------------------------------------------------------------------------
+;КОМБЕЗ АРМЕЙСКИЙ СКАТ9 (ЗЕЛЁНО-ЧЁРНЫЙ)
+;---------------------------------------------------------------------------------------------
+[military_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\military_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\stalker_military_suit
+actor_visual = actors\soldier\stalker_military_green.ogf
+
+ef_equipment_type = 4
+
+inv_name = military_outfit1_name
+inv_name_short = military_outfit1_name
+description = military_outfit1_description
+inv_weight = 3.5
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 18
+inv_grid_y = 17
+full_icon_name = npc_icon_military_outfit
+nightvision_sect = effector_nightvision_good
+
+cost = 80000
+full_scale_icon = 26,11 ;иконка сталкера в костюме в полный рост
+immunities_sect = sect_military_stalker_outfit_immunities
+
+; средняя защита
+burn_protection = 0.1
+shock_protection = 0.15
+strike_protection = 0.15
+wound_protection = 0.2
+radiation_protection = 0.15
+telepatic_protection = 0.15
+chemical_burn_protection = 0.1
+explosion_protection = 0.2
+fire_wound_protection = 0.25
+
+bones_koeff_protection = armor_helmet_damage
+
+;коэффициенты повреждения самого костюма
+[sect_military_stalker_outfit_immunities]
+burn_immunity = 0.05
+shock_immunity = 0.1
+strike_immunity = 0.1
+wound_immunity = 0.1
+radiation_immunity = 0.05
+telepatic_immunity = 0
+chemical_burn_immunity = 0.1
+explosion_immunity = 0.1
+fire_wound_immunity = 0.1
+
+
+;==========================================SKAT9М==================================
+;---------------------------------------------------------------------------------------------
+;КОМБЕЗ АРМЕЙСКИЙ СКАТ9М (ЧЁРНЫЙ)
+;---------------------------------------------------------------------------------------------
+[military_stalker_commander_outfit]:military_outfit
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\military_outfit"
+;$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\stalker_comander_suit
+actor_visual = actors\hero\stalker_commander.ogf 
+
+ef_equipment_type = 4
+
+inv_name = military_outfit2_name
+inv_name_short = military_outfit2_name
+description = military_outfit2_description
+inv_weight = 4.0
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 18
+inv_grid_y = 17
+full_icon_name = npc_icon_military_stalker_commander_outfit
+nightvision_sect = effector_nightvision_bast
+
+cost = 85000
+;НЕПОНЯТНО ПОЧЕМУ, НО ФУЛЛ ИКОНКА НЕ РАБОТАЕТ ЗДЕСЬ (БЕРЁТСЯ ОТКУДА-ТО ИЗ ДРУГОГО МЕСТА)
+full_scale_icon = 26,6 ;иконка сталкера в костюме в полный рост
+immunities_sect = sect_military_stalker_commander_outfit_immunities
+
+; выше средней-высокая защита
+burn_protection = 0.15
+shock_protection = 0.15
+strike_protection = 0.2
+wound_protection = 0.2
+radiation_protection = 0.15
+telepatic_protection = 0.15
+chemical_burn_protection = 0.1
+explosion_protection = 0.25
+fire_wound_protection = 0.3
+
+bones_koeff_protection = armor_helmet_damage
+
+;коэффициенты повреждения самого костюма
+[sect_military_stalker_commander_outfit_immunities]
+burn_immunity = 0.04
+strike_immunity = 0.04
+shock_immunity = 0.04
+wound_immunity = 0.04
+radiation_immunity = 0.04
+telepatic_immunity = 0.00
+chemical_burn_immunity = 0.04
+explosion_immunity = 0.04
+fire_wound_immunity = 0.04
+;=================================================================================
+;end DJekman mod
+;=================================================================================
+
+;---------------------------------------------------------------------------------------------
+; НАУЧНЫЙ КОМБЕЗ ЧИСТОГО НЕБА
+;---------------------------------------------------------------------------------------------
+[nebo_scientific_outfit]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\nebo_scientific_outfit"
+$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\nebo_nauchniy_suit
+actor_visual = actors\hero\stalker_nebo_nauchniy.ogf
+
+ef_equipment_type = 4
+
+inv_name = nebo_scientific_outfit_name
+inv_name_short = nebo_scientific_outfit_name
+description = nebo_scientific_outfit_description
+inv_weight = 3.0
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 26
+inv_grid_y = 22
+full_icon_name = npc_icon_stalker_nebo_nauchniy_outfit
+
+cost = 100000
+
+full_scale_icon = 20,6 ;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_nebo_scientific_outfit_immunities
+
+nightvision_sect = effector_nightvision_bast
+
+; выше средней-высокая защита
+burn_protection = 0.8
+shock_protection = 0.5
+strike_protection = 0.3
+wound_protection = 0.9
+radiation_protection = 0.95
+telepatic_protection = 0.3
+chemical_burn_protection = 0.8
+explosion_protection = 0.3
+fire_wound_protection = 0.3
+
+bones_koeff_protection = kombez_kupol_damage
+
+;коэффициенты повреждения самого костюма
+[sect_nebo_scientific_outfit_immunities]
+burn_immunity = 0.002
+shock_immunity = 0.005
+strike_immunity = 0.005
+wound_immunity = 0.005
+radiation_immunity = 0.001
+telepatic_immunity = 0.0
+chemical_burn_immunity = 0.002
+explosion_immunity = 0.005
+fire_wound_immunity = 0.005
+
+;---------------------------------------------------------------------------------------------
+; НАУЧНЫЙ КОМБЕЗ ЧИСТОГО НЕБА КВЕСТОВЫЙ
+;---------------------------------------------------------------------------------------------
+[nebo_scientific_outfit_u]:outfit_base
+GroupControlSection = spawn_group
+discovery_dependency = 
+$spawn = "outfit\nebo_scientific_outfit"
+$prefetch = 32
+class = E_STLK
+cform = skeleton
+visual = equipments\nebo_nauchniy_suit
+actor_visual = actors\hero\stalker_nebo_nauchniy.ogf
+
+quest_item = true
+
+ef_equipment_type = 4
+
+inv_name = nebo_scientific_outfit_name
+inv_name_short = nebo_scientific_outfit_name
+description = nebo_scientific_outfit_description
+inv_weight = 3.0
+slot = 6
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 26
+inv_grid_y = 22
+full_icon_name = npc_icon_stalker_nebo_nauchniy_outfit
+
+cost = 0
+
+full_scale_icon = 20,6;иконка сталкера в костюме в полный рост
+
+immunities_sect = sect_nebo_scientific_outfit_immunities
+nightvision_sect = effector_nightvision_good
+
+; выше средней-высокая защита
+burn_protection = 0.8
+shock_protection = 0.5
+strike_protection = 0.3
+wound_protection = 0.9
+radiation_protection = 0.95
+telepatic_protection = 0.3
+chemical_burn_protection = 0.8
+explosion_protection = 0.3
+fire_wound_protection = 0.3
+
+bones_koeff_protection = kombez_kupol_damage
+
+;---------------------------------------------------------------------------------------------

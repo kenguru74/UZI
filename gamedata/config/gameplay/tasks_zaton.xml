@@ -1,0 +1,105 @@
+<game_task id="zaton_spartak_help">
+   <title>Помочь Спартаку разыскать пропавших сталкеров</title>
+   <objective>
+      <text>Сопроводить сталкеров к Спартаку</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>spartak_boys_to_home</infoportion_complete>
+      <infoportion_fail>zaton_stalker_corpse</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Ноем</text>
+      <map_location_type hint="Ной">blue_location</map_location_type>
+      <object_story_id>zaton_noah</object_story_id>
+      <infoportion_complete>find_pda</infoportion_complete>
+      <infoportion_fail>zaton_stalker_corpse</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Найти ПДА Ноя</text>
+      <map_location_type hint="Глаз">blue_location</map_location_type>
+      <object_story_id>zaton_glaz</object_story_id>
+      <function_complete>zaton_dialog.pda_have</function_complete>
+      <infoportion_set_complete>bring_noah_pda</infoportion_set_complete>
+      <infoportion_fail>zaton_stalker_corpse</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Принести ПДА Ною</text>
+      <map_location_type hint="Ной">blue_location</map_location_type>
+      <object_story_id>zaton_noah</object_story_id>
+      <infoportion_complete>bring_pda</infoportion_complete>
+      <infoportion_fail>zaton_stalker_corpse</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Принять сигнал пропавших сталкеров</text>
+      <infoportion_complete>give_signal</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Ноем</text>
+      <map_location_type hint="Ной">blue_location</map_location_type>
+      <object_story_id>zaton_noah</object_story_id>
+      <infoportion_complete>find_lab</infoportion_complete>
+      <infoportion_fail>zaton_stalker_corpse</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Проникнуть в испытательный цех</text>
+      <infoportion_complete>find_rubilnik</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти рубильник и отключить установку</text>
+      <infoportion_complete>zaton_lab_power_off</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Разыскать пропавших сталкеров</text>
+      <map_location_type hint="Сталкеры">blue_location</map_location_type>
+      <object_story_id>zaton_angar_stalker</object_story_id>
+      <infoportion_complete>stalker_talk</infoportion_complete>
+      <infoportion_fail>zaton_stalker_corpse</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Сопроводить сталкеров к Спартаку</text>
+      <map_location_type hint="Спартак">blue_location</map_location_type>
+      <object_story_id>zaton_spartak</object_story_id>
+      <infoportion_complete>spartak_boys_to_home</infoportion_complete>
+      <infoportion_fail>zaton_stalker_corpse</infoportion_fail>
+   </objective>
+</game_task>
+
+<game_task id="zaton_jo_quest">
+   <title>Помочь сталкерам на Портовых кранах</title>
+   <objective>
+      <text>Подойти к Джо за наградой</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>zaton_dialog_jo</infoportion_complete>
+      <infoportion_fail>jo_quest_fail</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Уничтожить нечисть</text>
+      <map_location_type hint="Портовые краны">blue_location</map_location_type>
+      <object_story_id>zaton_restrictor_kranes</object_story_id>
+      <infoportion_complete>zat_bloodsucker_death</infoportion_complete>
+      <infoportion_fail>jo_quest_fail</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Поговорить со сталкерами</text>
+      <infoportion_complete>zaton_dialog_kran</infoportion_complete>
+      <infoportion_fail>jo_quest_fail</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Подойти к Джо за наградой</text>
+      <map_location_type hint="Джо">blue_location</map_location_type>
+      <object_story_id>zaton_skadovsk_barman</object_story_id>
+      <infoportion_complete>zaton_dialog_jo</infoportion_complete>
+      <infoportion_fail>jo_quest_fail</infoportion_fail>
+   </objective>
+</game_task>

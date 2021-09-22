@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="dialog_with_darks">
+        <has_info>third_talking_doctor</has_info>
+        <dont_has_info>talking_darks</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>dialog_with_darks_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>dialog_with_darks_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>dialog_with_darks_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>dialog_with_darks_3</text>
+                <give_info>talking_darks</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="first_dialog_with_cheburek">
+        <has_info>talking_darks</has_info>
+        <dont_has_info>first_talking_cheburek</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>first_dialog_with_cheburek_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>first_dialog_with_cheburek_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>first_dialog_with_cheburek_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>first_dialog_with_cheburek_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>first_dialog_with_cheburek_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>first_dialog_with_cheburek_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>first_dialog_with_cheburek_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>first_dialog_with_cheburek_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>first_dialog_with_cheburek_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>first_dialog_with_cheburek_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>first_dialog_with_cheburek_10</text>
+                <next>101</next>
+                <next>102</next>
+            </phrase>
+            <phrase id="101">
+                <precondition>av_peshera_dialog.have_strelok_money</precondition>
+                <text>first_dialog_with_cheburek_101</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <action>av_peshera_dialog.give_cheburek_money</action>
+                <text>first_dialog_with_cheburek_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>first_dialog_with_cheburek_12</text>
+                <next>13</next>
+            </phrase>
+            <phrase id="13">
+                <text>first_dialog_with_cheburek_13</text>
+                <next>14</next>
+            </phrase>
+            <phrase id="14">
+                <text>first_dialog_with_cheburek_14</text>
+                <next>15</next>
+            </phrase>
+            <phrase id="15">
+                <text>first_dialog_with_cheburek_15</text>
+                <next>16</next>
+            </phrase>
+            <phrase id="16">
+                <text>first_dialog_with_cheburek_16</text>
+                <give_info>first_talking_cheburek</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="102">
+                <text>first_dialog_with_cheburek_102</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="second_dialog_with_cheburek">
+        <has_info>seventh_talking_doctor</has_info>
+        <dont_has_info>second_talking_cheburek</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>second_dialog_with_cheburek_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>second_dialog_with_cheburek_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>second_dialog_with_cheburek_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>second_dialog_with_cheburek_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>second_dialog_with_cheburek_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>second_dialog_with_cheburek_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>second_dialog_with_cheburek_6</text>
+                <give_info>second_talking_cheburek</give_info>
+                <give_info>kill_darks</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="first_dialog_klyk">
+        <has_info>peshera_code_door_unlocked</has_info>
+        <dont_has_info>first_talking_klyk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>first_dialog_klyk_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>first_dialog_klyk_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>first_dialog_klyk_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>first_dialog_klyk_3</text>
+                <action>av_peshera_dialog.give_klyk_so</action>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>first_dialog_klyk_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>first_dialog_klyk_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>first_dialog_klyk_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>first_dialog_klyk_7</text>
+                <give_info>first_talking_klyk</give_info>
+                <action>av_peshera_dialog.spawn_things_klyk</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="second_dialog_klyk">
+        <has_info>second_talk_to_klyk</has_info>
+        <dont_has_info>second_talking_klyk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>second_dialog_klyk_0</text>
+                <action>av_peshera_dialog.give_things_klyk</action>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>second_dialog_klyk_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>second_dialog_klyk_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>second_dialog_klyk_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>second_dialog_klyk_4</text>
+                <give_info>second_talking_klyk</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+</game_dialogs>

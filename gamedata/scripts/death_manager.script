@@ -1,0 +1,422 @@
+
+--' Ключом является группировка персонажа. Значением является таблица, содержашая имена секций предметов.
+local item_by_community = {}
+
+--' Зависимости в спауне предметов. Предмет спауниться только если есть хотя бы один из зависимых.
+local item_dependence = {}
+
+--' Множители и минимаксы для выпадения вещей в зависимости от уровня
+local mul_by_level = {}
+local count_by_level = {}
+
+--' Предметы, которые нельзя удалять (квестовые например)
+local always_keep_item = {}
+
+--' Предметы, относящиеся к патронам. Их надо спаунить другим методом.
+local ammo_sections = {}
+
+--' (by alex5773) с включеной этой опцией можно видеть что насобирали\покупали сталкеры за свою жизнь - true\вкл, false\выкл.
+local dm_keep_items = false
+
+--' (by alex5773) не разряжать оружие после смерти НПЦ - true\вкл, false\выкл.
+local dm_keep_ammo = false
+
+--' Снятие пиджаков почивших НПЦ с вероятностью 1:10 - true\вкл, false\выкл.
+local dm_spawn_armor = false
+
+local death_ini = ini_file("misc\\death_generic.ltx")
+
+function init_drop_settings()
+	local community_list = {"trader", "stalker", "dolg", "freedom", "bandit", "military", "zombied", "ecolog", "killer", "monolith", "arena_enemy", "actor_dolg", "formers", "hunters", "monolits", "dark"}
+
+	local n, id, value
+	for k,v in pairs(community_list) do
+		--' Необходимо заполнить таблицу
+		item_by_community[v] = {}
+		if death_ini:section_exist(v) then
+			n = death_ini:line_count(v)
+			id, value = "", ""
+			for i=0, n-1 do
+				result, id, value = death_ini:r_line(v,i,"","")
+				item_by_community[v][id] = 100*tonumber(value)
+			end
+		end
+	end
+
+	--' Заполняем таблицу зависимостей
+	n = death_ini:line_count("item_dependence")
+	id, value = "", ""
+	for i=0, n-1 do
+		result, id, value = death_ini:r_line("item_dependence",i,"","")
+		item_dependence[id] = {}
+		local vvv = parse_names(value)
+		for k,v in pairs(vvv) do
+			item_dependence[id][v] = true
+		end
+	end
+
+	--' Множители и минимаксы для выпадения вещей в зависимости от уровня
+	local level_name = level.name()
+	if not death_ini:section_exist(level_name) then
+		level_name = "default"
+	end
+
+	n = death_ini:line_count(level_name)
+	id, value = "", ""
+	for i=0, n-1 do
+		result, id, value = death_ini:r_line(level_name,i,"","")
+		mul_by_level[id] = tonumber(value)
+	end
+
+	local item_count_section = "item_count_" .. level.get_game_difficulty()
+	n = death_ini:line_count(item_count_section)
+	for i=0, n-1 do
+		result, id, value = death_ini:r_line(item_count_section,i,"","")
+		--' Нужно распарсить value в два значения
+		local t = parse_nums(value)
+		if t[1] == nil then
+			abort("Error on [death_ini] declaration. Section [%s], line [%s]", item_count_section, tostring(id))
+		end
+		local min = t[1]
+		local max = t[2]
+		if max == nil then
+			max = min
+		end
+
+		if mul_by_level[id] == nil then
+			mul_by_level[id] = 0
+		end
+
+		min = tonumber(min) * mul_by_level[id]
+		max = tonumber(max) * mul_by_level[id]
+		count_by_level[id] = {min = min, max = max}
+	end
+
+	--' Предметы, которые нельзя удалять (квестовые например)
+	n = death_ini:line_count("keep_items")
+	for i=0, n-1 do
+		result, id, value = death_ini:r_line("keep_items",i,"","")
+		if value == "true" then
+			always_keep_item[id] = true
+		end
+	end
+
+	--' Предметы, относящиеся к патронам. Их надо спаунить другим методом.
+	ammo_sections = {}
+	n = death_ini:line_count("ammo_sections")
+	id, value = "", ""
+	for i=0, n-1 do
+		result, id, value = death_ini:r_line("ammo_sections",i,"","")
+		ammo_sections[id] = true
+	end
+end
+
+class "drop_manager"
+function drop_manager:__init(npc)
+	self.npc = npc
+end
+
+function drop_manager:create_release_item()
+	--' Спрашиваем у серверного объекта генерились ли предметы
+	local se_obj = alife():object(self.npc:id())
+
+	if se_obj.death_droped == true then
+		return
+	end
+
+	se_obj.death_droped = true
+
+    	--' Запускаем итератор на удаление предметов
+    	self.npc:iterate_inventory(keep_item, self.npc)
+
+    	--' Проверка на отсутствие спауна лута
+    	local ini = self.npc:spawn_ini()
+
+    	if ini and ini:section_exist("dont_spawn_loot") then
+        	return
+    	end
+
+    	--' Доспавниваем необходимое количество итемов:
+    	--' Необходимо составить список объектов которые могут быть заспавнены для персонажа
+	local npc_sec = self.npc:section()
+	local npc_comm = self.npc:character_community()
+	local spawn_items = item_by_community[npc_comm]
+
+    	for k,v in pairs(spawn_items) do
+        	--' По каждому объекту необходимо получить зависимости		
+        	if check_item_dependence(self.npc, k) == true then
+            		--' По каждому объекту необходимо получить количество
+            		local number = math.ceil(math.random(count_by_level[k].min, count_by_level[k].max))
+            		--' Необходимо заспавнить нужное количество.
+			if not string.find(npc_sec,"arena") and not string.find(npc_sec,"aem") and npc_comm ~= "arena_enemy" then
+				this.create_items(self.npc, k, number, v)
+			end
+	  	end
+    	end
+
+	if has_alife_info("pri_trader_arny_task") and string.find(self.npc:name(), "aem_arny") then 
+		amk.spawn_item_in_inv("zapiska", self.npc) 
+	end
+
+	if has_alife_info("pri_trader_dolg_task") and self.npc:name()=="bar_dolg_leader" then 
+		amk.spawn_item_in_inv("zapiska_m1", self.npc) 
+	end
+
+	if has_alife_info("pri_trader_freedom_task") and self.npc:name()=="mil_freedom_member0012" then 
+		amk.spawn_item_in_inv("zapiska_m2", self.npc) 
+	end
+
+	--' Ber188 start
+
+	-- RealArmor by KamikaZze
+	local params, vis, otf, sect
+	if dm_spawn_armor then
+		if se_obj then
+			params = xrs_utils.read_stalker_params(se_obj)
+			vis = tostring(params.visual)
+			if vis then
+				-- bandit
+				if string.find(vis, "stalker_bandit") then
+					-- bandit_antigas
+					if vis == "stalker_bandit_8" then
+						--sect = "bandit_antigas_outfit"
+					elseif vis == "stalker_bandit_veteran" then
+						sect = "bandit_veteran_outfit"
+					elseif vis == "stalker_bandit_master" then
+						sect = "bandit_master_outfit"
+					else
+						sect = "bandit_outfit"
+					end
+
+				-- dolg
+				elseif string.find(vis, "stalker_do") then
+					-- dolg_antigas
+					if vis == "stalker_do_antigas" then
+						--sect = "dolg_antigas_outfit"
+					elseif vis == "stalker_do_nauchniy" then
+						sect = "dolg_scientific_outfit"
+					elseif vis == "stalker_do_exoskeleton" then
+						sect = "dolg_black_exoskeleton"
+					else
+						sect = "dolg_outfit"
+					end
+
+				-- merc
+				elseif string.find(vis, "stalker_ki") then
+					-- killer_antigas
+					if vis == "stalker_ki_antigas" then
+						--sect = "killer_antigas_outfit"
+					elseif vis == "stalker_ki_nauchniy" then
+						sect = "merc_scientific_outfit"
+					elseif vis == "stalker_ki_exoskeleton" then
+						sect = "killer_blue_exoskeleton"
+					else
+						sect = "killer_outfit"
+					end
+
+				-- monolith
+				elseif string.find(vis, "stalker_mo") then
+					-- monolith_antigas
+					if vis == "stalker_mo_hood_9" then
+						--sect = "monolit_antigas_outfit"
+					elseif vis == "stalker_mo_nauchniy" then
+						sect = "monolit_scientific_outfit"
+					elseif vis == "stalker_mo_exo" then
+						sect = "monolit_exoskeleton"
+					else
+						sect = "monolit_outfit"
+					end
+
+				-- freedom
+				elseif string.find(vis, "stalker_sv") then
+					-- freedom_antigas
+					if vis == "stalker_sv_hood_91" then
+						--sect = "svoboda_antigas_outfit"
+					elseif vis == "stalker_sv_hood_9" then
+						--sect = "svoboda_heavy_antigas_outfit"
+					elseif (vis == "stalker_sv_rukzak_1_1" or 
+						vis == "stalker_sv_rukzak_3")
+					then
+						sect = "svoboda_light_outfit"
+					elseif vis == "stalker_sv_nauchniy" then
+						sect = "freedom_scientific_outfit"
+					elseif vis == "stalker_sv_exoskeleton" then
+						sect = "svoboda_exoskeleton"
+					else
+						sect = "svoboda_heavy_outfit"
+					end
+
+				-- ecolog
+				elseif string.find(vis, "stalker_ecolog") then
+					if vis == "stalker_ecolog_military" then
+						sect = "protection_outfit"
+					else
+						sect = "ecolog_outfit"
+					end
+
+				-- stalker_military
+				elseif string.find(vis, "stalker_militar") then
+					if (vis == "stalker_militari_1" or 
+						vis == "stalker_militari_antigas_1" or 
+						vis == "stalker_military_green") then
+						sect = "military_outfit"
+					elseif (vis == "stalker_militari_2" or 
+						vis == "stalker_militari_antigas_2" or 
+						vis == "stalker_military_black")
+					then
+						sect = "military_stalker_commander_outfit"
+					end
+
+				-- soldier
+				elseif string.find(vis, "soldier") then
+					if (vis == "soldier_antigas" or 
+						vis == "soldier_mask" or 
+						vis == "soldier_spetsnaz")
+					then
+						sect = "specops_outfit"
+					else
+						sect = "soldier_outfit"
+					end
+
+				-- green_stalker
+				elseif string.find(vis, "green_stalker") then
+					-- novice_antigas
+					if vis == "green_stalker_antigas" then
+						--sect = "novice_antigas_outfit"
+					elseif (vis == "green_stalker_5" or 
+						vis == "green_stalker_10")
+					then
+						--sect = "novice_white_outfit"
+					else
+						sect = "novice_outfit"
+					end
+
+				-- loners
+				elseif string.find(vis, "stalker_neytral") then
+					-- stalker_neytral_antigas
+					if vis == "stalker_neytral_hood_9" then
+						--sect = "neytral_antigas_outfit"
+					elseif vis == "stalker_neytral_nauchniy" then
+						sect = "scientific_outfit"
+					elseif vis == "stalker_neytral_exoskeleton" then
+						sect = "exo_outfit"
+					else
+						sect = "stalker_outfit"
+					end
+
+				-- bar guard
+				elseif string.find(vis, "stalker_bar_security") then
+					sect = "soldier_outfit"
+
+				-- hunters
+				elseif string.find(vis, "hunter") then
+					--sect = "hunter_outfit"
+				else
+					sect = nil
+				end
+			end
+		end
+	end
+
+	if sect ~= nil and (
+		self.npc:story_id() == 4294967296 and 
+		not string.find(npc_sec,"arena") and 
+		not string.find(npc_sec,"aem") and 
+		npc_comm ~= "arena_enemy")
+	then
+		otf = create_items(self.npc, sect, 1, 10)
+		if otf then
+			amk.start_timer("otf", 1, otf.id)
+		end
+	end
+
+	--'Ber188 finish
+end
+
+--' Функция вызывается для каждого предмета, если вернет false то предмет удалится.
+function keep_item(npc, item)
+	local sim = alife()
+	local item_id = item:id()
+	local obj = sim:object(item_id)
+	if item == nil or obj == nil then
+		return
+	end
+
+	local section = item:section()
+	--' бодяга какаято. Хм...
+	if section == "bolt" then
+		return
+	end
+
+	if always_keep_item[section] == true then
+		return
+	end
+
+	if isWeapon(item,nil) and not string.find(section,"grenade") and not string.find(section,"addon") then
+		for i=1, 2 do
+			local item_in_slot = npc:item_in_slot(i)
+			if item_in_slot and item_in_slot:id() == item_id then
+				if dm_keep_ammo ~= true then
+					item:unload_magazine()
+				end
+				--' Тут надо уменьшить кондишн оружия
+				local condition = (math.random(15)+75)/100
+				item:set_condition(condition)
+				return
+			end
+		end
+	end
+
+	if obj then
+		if dm_keep_items ~= true then
+			sim:release(obj)
+		else
+			if (string.find(section,"device_torch")) or
+				(string.find(section,"device_pda")) or
+				(string.find(section,"hand_radio")) or
+				(string.find(section,"guitar_a")) or
+				(string.find(section,"harmonica_a")) or
+				(string.find(section,"wpn_knife"))
+			then
+				sim:release(obj)
+			end
+		end
+	end
+end
+
+--' Функция спавнит необходимое число предметов
+function create_items(npc, section, number, rnd)
+	--' printf("create %s of %s", tostring(number), tostring(section))
+	local pos, lvid, gvid, id = npc:position(), npc:level_vertex_id(), npc:game_vertex_id(), npc:id()
+	if ammo_sections[section] == true then
+		if number > 0 then
+			se_respawn.create_ammo(section, pos, lvid, gvid, id, number)
+		end
+	else
+		for i=1, number do
+			--' Проверяем вероятность появить каждый объект в отдельности
+			if math.random(100) < rnd then
+				local sobj = alife():create(section, pos, lvid, gvid, id)
+				return sobj
+			end
+		end
+	end
+end
+
+--' Функция проверяет есть ли хоть один из зависимых объектов у персонажа
+function check_item_dependence(npc, section)
+	local sect = section and item_dependence[section]
+	if not sect then
+		return true
+	end
+
+	local d_flag = true
+	for k,v in pairs(sect) do
+		local obj = npc:object(k)
+		if obj and not npc:marked_dropped(obj) then
+			return true
+		end
+		d_flag = false
+	end
+	return d_flag
+end

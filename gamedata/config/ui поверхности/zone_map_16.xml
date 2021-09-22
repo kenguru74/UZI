@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<window>
+	<minimap>
+		<level_frame x="-10" y="-10" width="0" height="0"/>
+		
+		<background x="-10" y="-10" width="0" height="0" stretch="1"> 
+			<texture></texture>
+			
+			<dist_text x="0" y="0" width="0" height="0">
+				<text align="l" font="letterica16" color="ui_clr_1"/>
+			</dist_text>
+		</background>
+		
+		<compass x="-10" y="-10" width="0" height="0" heading="1" stretch="1">
+			<texture></texture>
+		</compass>
+		
+		<center width="0" height="0" alignment="c" stretch="1"> 
+			<texture ></texture>
+		</center>
+	
+	</minimap>
+</window>

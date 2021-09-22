@@ -1,0 +1,777 @@
+local t = {}
+
+function load_job(sj, gname, type, squad, groups)
+
+--' created by Mora
+
+--'--------------------------------------------------------------------------
+--' PREDBANNIK
+--'--------------------------------------------------------------------------
+
+	--' Солдаты на блокпосте
+	if type == "pred_blockpost" then
+		t = { section = "logic@pred_blockpost_post1",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = "predbannik_blockpost_zone"
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_blockpost_post2",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = "predbannik_blockpost_zone"
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_blockpost_post3",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = "predbannik_blockpost_zone"
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_blockpost_post4",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = "predbannik_blockpost_zone"
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_blockpost_post5",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = "predbannik_blockpost_zone"
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_blockpost_post6",
+			idle = 0,
+			prior = 15, state = {0,1},
+			in_rest = "", out_rest = "predbannik_blockpost_zone",
+			predicate = function(obj_info)
+			            	return obj_info.profile_name == "pred_soldier_commander"
+			            end
+		}
+		table.insert(sj, t)
+	end
+	--' Солдаты на вертолётной площадке
+	if type == "pred_helipad" then
+                -- блокпост
+		t = { section = "logic@pred_helipad_post1",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post2",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post3",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post4",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+                -- часовые, наблюдатели
+		t = { section = "logic@pred_helipad_post5",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post6",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post7",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post8",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+                -- снайперы на вышках
+		t = { section = "logic@pred_helipad_post9",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post10",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post11",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post12",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+                -- солдаты в столовой
+		t = { section = "logic@pred_helipad_post13",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post14",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post15",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_post16",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+                -- патрулирующие
+		t = { section = "logic@pred_helipad_walker17",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_walker18",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+                -- солдаты у 1 костра
+		t = { section = "logic@pred_helipad_kamp1",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_kamp2",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad_kamp3",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	if type == "pred_helipad1" then
+                -- солдаты у 2 костра
+		t = { section = "logic@pred_helipad1_kamp1",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_helipad1_kamp2",
+			idle = 0,
+			prior = 7, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	--' Лагерь слева от тоннеля
+	if type == "pred_left_tunnel" then
+		-- у костра
+		t = { section = "logic@pred_left_tunnel_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_left_tunnel_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- часовые
+		t = { section = "logic@pred_left_tunnel_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_left_tunnel_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- патрулирующий
+		t = { section = "logic@pred_left_tunnel_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	--' Лагерь у палатки
+	if type == "pred_tent" then
+		-- сидящие у костра
+		t = { section = "logic@pred_tent_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_tent_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_tent_kamp3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- охранники
+		t = { section = "logic@pred_tent_zoneguard1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_tent_zoneguard2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	--' Лагерь у Скупого
+	if type == "pred_lager" then
+		-- сидящие у 1 костра
+		t = { section = "logic@pred_lager_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_lager_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_lager_kamp3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- патрулирующий
+		t = { section = "logic@pred_lager_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- охранники
+		t = { section = "logic@pred_lager_zoneguard1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_lager_zoneguard2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	-- сидящие у 2 костра днем
+	if type == "pred_lager1" then
+		t = { section = "logic@pred_lager1_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_lager1_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_lager1_kamp3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- спящие ночью
+		t = { section = "logic@pred_lager1_sleeper1",
+			idle = 0,
+			prior = 3, state = {1},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_lager1_sleeper2",
+			idle = 0,
+			prior = 3, state = {1},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_lager1_sleeper3",
+			idle = 0,
+			prior = 3, state = {1},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	--' Лагерь справа от тоннеля
+	if type == "pred_right_tunnel" then
+		-- патрулирующие
+		t = { section = "logic@pred_right_tunnel_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_right_tunnel_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_right_tunnel_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_right_tunnel_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- праздношатающиейся
+		t = { section = "logic@pred_right_tunnel_walker5",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_right_tunnel_walker6",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_right_tunnel_walker7",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_right_tunnel_walker8",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	--' Лагерь на заводе
+	if type == "pred_plant" then
+		-- патрулирующие
+		t = { section = "logic@pred_plant_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_plant_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_plant_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- часовые
+		t = { section = "logic@pred_plant_post_walker1",
+			idle = 0,
+        		prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_plant_post_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_plant_post_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_plant_post_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	--' Лагерь в городке
+	if type == "pred_town_ecolog" then
+		-- учёные на балконах
+		t = { section = "logic@pred_town_ecolog_post_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_town_ecolog_post_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- спящие учёные
+		t = { section = "logic@pred_town_ecolog_sleeper1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_town_ecolog_sleeper2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	if type == "pred_town_stalker" then
+		-- сталкер в гараже
+		t = { section = "logic@pred_town_stalker_post_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- сталкеры в беседке
+		t = { section = "logic@pred_town_stalker_post_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_town_stalker_post_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- сталкер в оружейке
+		t = { section = "logic@pred_town_stalker_post_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	if type == "pred_town_formers" then
+		-- военные на блокпосте
+		t = { section = "logic@pred_town_formers_post_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_town_formers_post_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- военные на крыше 1 дома
+		t = { section = "logic@pred_town_formers_post_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_town_formers_post_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- военные на крыше 2 дома
+		t = { section = "logic@pred_town_formers_post_walker5",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_town_formers_post_walker6",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- военный на лесах
+		t = { section = "logic@pred_town_formers_post_walker7",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- командир блокпоста
+		t = { section = "logic@pred_town_formers_post_walker8",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- патрулирующие
+		t = { section = "logic@pred_town_formers_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@pred_town_formers_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+end
+
+function load_states(gname, type)
+
+	if type == "pred_blockpost" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_helipad" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_helipad1" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_left_tunnel" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_tent" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_lager" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_lager1" then
+		return function(gulag)
+			local actor = db.actor
+			if not actor then
+				return gulag.state
+			end
+                        if level.get_time_hours() >= 5 and level.get_time_hours() <= 22 then
+				return 0  -- день
+			else
+				return 1  -- ночь
+			end
+		end
+	end
+
+	if type == "pred_right_tunnel" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_plant" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_town_ecolog" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_town_stalker" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "pred_town_formers" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+end
+
+
+
+--------------------------------------------------------------------------
+-- Dynamic ltx
+--------------------------------------------------------------------------
+function load_ltx(gname, type)
+	return nil
+end
+
+function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
+
+	if gulag_type == "pred_blockpost" then
+		return npc_community == "military"
+	end
+
+	if gulag_type == "pred_helipad" then
+		return npc_community == "military"
+	end
+
+	if gulag_type == "pred_helipad1" then
+		return npc_community == "military"
+	end
+
+	if gulag_type == "pred_left_tunnel" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "pred_tent" then
+		return npc_community == "stalker"
+	end
+	
+	if gulag_type == "pred_lager" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "pred_lager1" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "pred_right_tunnel" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "pred_plant" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "pred_town_stalker" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "pred_town_ecolog" then
+		return npc_community == "ecolog"
+	end
+
+	if gulag_type == "pred_town_formers" then
+		return npc_community == "formers"
+	end
+
+	return false
+end
+
+function checkMonster(npc_community, gulag_type)
+
+	return false
+end

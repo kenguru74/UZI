@@ -1,0 +1,10 @@
+<ui_texture>
+    <file_name>ui\ui_npc_unique2</file_name>
+
+     <texture id="ui_npc_u_hunter_5_novice" x="660" y="1944" width="165" height="108" />
+     <texture id="ui_npc_u_hunter_3_novice" x="825" y="1944" width="165" height="108" />
+     <texture id="ui_npc_u_hunter_1_novice" x="990" y="1944" width="165" height="108" />
+     <texture id="ui_npc_u_hunter_4_novice" x="1155" y="1944" width="165" height="108" />
+
+
+</ui_texture>

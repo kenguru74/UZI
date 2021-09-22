@@ -1,0 +1,6 @@
+function povar_mapspot_no()
+ local obj = alife():object( "mil_rg6_hint2" )
+ if obj then
+  level.map_remove_object_spot(obj.id, "green_location")
+ end
+end

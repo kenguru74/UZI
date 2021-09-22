@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!-------------------------- Ярик ------------------------>
+    <specific_character id="generators_yarik" team_default = "1">
+        <name>generators_yarik_name</name>
+        <icon>ui_npc_dark_1</icon>
+        <map_icon x="1" y="0"></map_icon>
+        <bio>generators_yarik_bio</bio>
+
+        <class>generators_yarik</class>
+        <community>dark</community> <terrain_sect>stalker_dark_terrain</terrain_sect>
+
+        <rank>859</rank>
+        <reputation>-145</reputation>
+	<money min="2000" max="6000" infinitive="0"/>
+
+	<visual>actors\dark_stalker\dark_stalker_1</visual>
+        <snd_config>characters_voice\human_02\bandit\</snd_config>
+		<supplies>
+			[spawn] \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+    </specific_character>
+
+</xml>

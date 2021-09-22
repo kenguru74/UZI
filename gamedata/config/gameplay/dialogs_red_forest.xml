@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="red_forest_lesnik_start_dialog">
+        <dont_has_info>red_forest_lesnik_find_weapon</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>red_forest_lesnik_start_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text />
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text />
+                <next>12</next>
+                <next>13</next>
+            </phrase>
+            <phrase id="12">
+                <dont_has_info>second_dialog_aver</dont_has_info>
+                <text>red_forest_lesnik_start_dialog_12</text>
+                <next>121</next>
+            </phrase>
+            <phrase id="13">
+                <has_info>second_dialog_aver</has_info>
+                <text>red_forest_lesnik_start_dialog_13</text>
+                <next>131</next>
+            </phrase>
+            <phrase id="121">
+                <text>red_forest_lesnik_start_dialog_121</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="131">
+                <text>red_forest_lesnik_start_dialog_131</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>red_forest_lesnik_start_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>red_forest_lesnik_start_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>red_forest_lesnik_start_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>red_forest_lesnik_start_dialog_6</text>
+                <next>61</next>
+                <next>62</next>
+            </phrase>
+            <phrase id="61">
+                <text>red_forest_lesnik_start_dialog_61</text>
+                <give_info>red_forest_lesnik_find_weapon</give_info>
+            </phrase>
+            <phrase id="62">
+                <text>red_forest_lesnik_start_dialog_62</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="red_forest_lesnik_weapon_dialog">
+        <dont_has_info>red_forest_lesnik_bring_weapon</dont_has_info>
+        <has_info>red_forest_lesnik_take_weapon</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>red_forest_lesnik_weapon_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>red_forest_lesnik_weapon_dialog_1</text>
+                <action>red_forest_dialog.mosin_bring</action>
+                <give_info>red_forest_lesnik_bring_weapon</give_info>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>red_forest_lesnik_weapon_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>red_forest_lesnik_weapon_dialog_3</text>
+                <give_info>shuhov_first_talk</give_info>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>red_forest_lesnik_weapon_dialog_4</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="hemul_first_dialog">
+        <has_info>find_hemul</has_info>
+        <dont_has_info>find_dinka</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>hemul_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>hemul_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>hemul_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>hemul_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>hemul_first_dialog_4</text>
+                <next>41</next>
+                <next>42</next>
+            </phrase>
+            <phrase id="41">
+                <text>hemul_first_dialog_41</text>
+                <give_info>find_dinka</give_info>
+            </phrase>
+            <phrase id="42">
+                <text>hemul_first_dialog_42</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="hemul_second_dialog">
+        <has_info>hemul_to_place</has_info>
+        <dont_has_info>dinka_dead</dont_has_info>
+        <dont_has_info>dinka_alive</dont_has_info>
+        <dont_has_info>all_right</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>hemul_second_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>hemul_second_dialog_1</text>
+                <give_info>dinka_alive</give_info>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>hemul_second_dialog_2</text>
+                <give_info>all_right</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="hemul_third_dialog">
+        <has_info>dinka_dead</has_info>
+        <dont_has_info>hemul_end_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>hemul_third_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>hemul_third_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>hemul_third_dialog_2</text>
+                <give_info>hemul_end_talk</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="hemul_fourth_dialog">
+        <has_info>dinka_to_place</has_info>
+        <dont_has_info>hemul_fourth_dialog_end</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>hemul_fourth_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>hemul_fourth_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>hemul_fourth_dialog_2</text>
+                <give_info>hemul_fourth_dialog_end</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="dinka_first_dialog">
+        <dont_has_info>dinka_first_talk</dont_has_info>
+        <has_info>find_dinka</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>dinka_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>dinka_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>dinka_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>dinka_first_dialog_3</text>
+                <give_info>dinka_first_talk</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="dinka_second_dialog">
+        <has_info>controller_corpse</has_info>
+        <dont_has_info>dinka_escort</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>dinka_second_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>dinka_second_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>dinka_second_dialog_2</text>
+                <give_info>dinka_escort</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+</game_dialogs>

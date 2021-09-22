@@ -1,0 +1,25 @@
+[logic]
+active = walker
+combat_ignore = combat_ignore
+on_death = death
+
+[walker]
+path_walk = mar_vorot_walk
+path_look = mar_vorot_look
+on_info = {+mar_bloodsucker_online} walker2
+
+[walker2]
+path_walk = mar_vorot_walk1
+path_look = mar_vorot_look1
+combat_ignore_cond = {+marsh_bloodsucker_death}
+on_info = {+marsh_bloodsucker_death} kamp
+
+[kamp]
+center_point  = marsh_camp_center
+path_walk = marsh_camp_center_task
+combat_ignore_cond = {+marsh_bloodsucker_death}
+
+[combat_ignore]
+
+[death]
+on_info = %+vorot_death%

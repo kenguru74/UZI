@@ -1,0 +1,131 @@
+--' Солдаты на блокпосте
+function has_soldiers_bribe(actor, npc)
+	return actor:money() >= 5000
+end
+
+function give_soldiers_bribe(actor, npc)
+	dialogs.relocate_money(npc, 5000, "out")	
+end
+
+function has_10000(actor, npc)
+	return actor:money() >= 10000
+end
+
+function has__10000(actor, npc)
+	return actor:money() < 10000
+end
+
+function give_10000(actor, npc)
+	dialogs.relocate_money(npc, 10000, "out")	
+end
+
+function start_time()
+ amk.g_start_timer("stt",0, 0, 5)
+end
+
+--'  Квест Скупого на ФН2000
+function weapon_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("wpn_fn2000u") ~= nil
+   end
+   return false
+end
+
+function weapon_bring(first_speaker, second_speaker)
+   dialogs.relocate_item_section(first_speaker, "wpn_fn2000u", "out")
+   dialogs.relocate_item_section(first_speaker, "af_gold_fish_u", "in")
+   first_speaker:set_relation(game_object.friend, second_speaker)
+   db.actor:set_character_rank(db.actor:character_rank() + 120)
+end
+
+--'  Квест Хозяина на костюм учёных
+function outfit_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("nebo_scientific_outfit_u") ~= nil
+   end
+   return false
+end
+
+function outfit_bring(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "nebo_scientific_outfit_u", "out")
+   dialogs.relocate_item_section(first_speaker, "af_fireball_u", "in")
+   first_speaker:set_relation(game_object.friend, second_speaker)
+   db.actor:set_character_rank(db.actor:character_rank() + 45)
+end
+
+--'  Квест Жиклёра на СВД дальнобойщик
+function gikler_weapon_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("wpn_svd_m1u") ~= nil
+   end
+   return false
+end
+
+function gikler_weapon_bring(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "wpn_svd_m1u", "out")
+   dialogs.relocate_item_section(first_speaker, "af_dummy_spring", "in")
+   dialogs.relocate_item_section(first_speaker, "af_dummy_dummy", "in")
+   dialogs.relocate_item_section(first_speaker, "af_dummy_pellicle", "in")
+   first_speaker:set_relation(game_object.friend, second_speaker)
+   db.actor:set_character_rank(db.actor:character_rank() + 35)
+end
+
+--'  Квест чучельника на руку зомби-камикадзе
+function chuchelnik_hand_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("af_zombie_hand") ~= nil
+   end
+   return false
+end
+
+function chuchelnik_hand_bring(first_speaker, second_speaker)
+   dialogs.relocate_item_section(first_speaker, "af_zombie_hand", "out")
+   dialogs.relocate_item_section(first_speaker, "af_fuzz_kolobok_u", "in")
+   first_speaker:set_relation(game_object.friend, second_speaker)
+   db.actor:set_character_rank(db.actor:character_rank() + 40)
+end
+
+function has_2500_money(first_speaker, second_speaker)
+	return first_speaker:money() >= 2500
+end
+
+function give_borzii_money(actor, npc)	
+	dialogs.relocate_money(npc, 2500, "out")
+end
+
+--'  Спавн документов в экспериментальном цехе
+function spawn_docs_on_zaton()
+   alife():create("blocknotes",vector():set(-421.84710693359,24.204446792603,-384.14385986328),143019,3664)
+end
+
+function has_1100000_money(first_speaker, second_speaker)
+	return first_speaker:money() >= 1100000
+end
+
+function send_money(actor, npc)	
+	dialogs.relocate_money(npc, 1100000, "out")
+        db.actor:set_character_rank(db.actor:character_rank() + 100)
+end
+
+function give_2000(actor, npc)
+   dialogs.relocate_money(actor, 2000, "out")
+   local robj = alife():object("jupiter_bet_vanna")
+   if robj then
+     level.map_add_object_spot_ser(robj.id, "uzi_spot_max", "Примерное место поиска аномальной пушки")
+   end
+end
+
+function spawn_gpistol()
+ amk.g_start_timer("gpis",0, 0, 1)
+end
+
+function gpistol_have(task, objective)
+   if db.actor ~= nil and db.actor:object("wpn_gungauss") ~= nil then
+       local robj = alife():object("jupiter_bet_vanna")
+       if robj then
+         level.map_remove_object_spot(robj.id, "uzi_spot_max")
+       end
+       return true
+   end
+   return false
+end

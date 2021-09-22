@@ -1,0 +1,1352 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="german_first_dialog">
+        <has_info>go_to_german</has_info>
+        <dont_has_info>german_first_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>german_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>german_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>german_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>german_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>german_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>german_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>german_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>german_first_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>german_first_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>german_first_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>german_first_dialog_10</text>
+                <next>101</next>
+                <next>102</next>
+            </phrase>
+            <phrase id="101">
+                <text>german_first_dialog_101</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>german_first_dialog_11</text>
+                <action>jupiter_dialog.german_give_equipment</action>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>german_first_dialog_12</text>
+                <give_info>german_first_talk</give_info>
+                <action>jupiter_dialog.spawn_disk_on_yantar_old</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="102">
+                <text>german_first_dialog_102</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="german_second_dialog">
+        <has_info>german_find_disk</has_info>
+        <dont_has_info>german_second_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>german_second_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>german_second_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>german_second_dialog_2</text>
+                <action>jupiter_dialog.german_take_disk</action>
+                <give_info>german_bring_docs_labs</give_info>
+                <give_info>german_second_talk</give_info>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>german_second_dialog_3</text>
+                <next>31</next>
+                <next>32</next>
+            </phrase>
+            <phrase id="31">
+                <text>german_second_dialog_31</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="32">
+                <text>german_second_dialog_32</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="german_third_dialog">
+        <has_info>german_find_decoder</has_info>
+        <dont_has_info>german_third_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>german_third_dialog_0</text>
+                <action>jupiter_dialog.german_take_decoder</action>
+                <give_info>german_bring_decoder</give_info>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>german_third_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>german_third_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>german_third_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>german_third_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>german_third_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>german_third_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>german_third_dialog_7</text>
+                <next>71</next>
+                <next>72</next>
+            </phrase>
+            <phrase id="71">
+                <text>german_third_dialog_71</text>
+                <give_info>german_third_talk</give_info>
+                <action>jupiter_dialog.spawn_docs_in_labx8</action>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>german_third_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>german_third_dialog_9</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="72">
+                <text>german_third_dialog_72</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="german_fourth_dialog">
+        <has_info>german_find_docs_x8</has_info>
+        <dont_has_info>german_fourth_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>german_fourth_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>german_fourth_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>german_fourth_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>german_fourth_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>german_fourth_dialog_4</text>
+                <action>jupiter_dialog.german_take_docs_x8</action>
+                <give_info>german_bring_docs_labx8</give_info>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>german_fourth_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>german_fourth_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>german_fourth_dialog_7</text>
+                <action>jupiter_dialog.german_secret_labs</action>
+                <give_info>known_secret_labs</give_info>
+                <give_info>german_fourth_talk</give_info>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>german_fourth_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>german_fourth_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>german_fourth_dialog_10</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="german_fifth_dialog">
+        <has_info>german_find_docs_zech</has_info>
+        <dont_has_info>german_fifth_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>german_fifth_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>german_fifth_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>german_fifth_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>german_fifth_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>german_fifth_dialog_4</text>
+                <action>jupiter_dialog.german_take_docs_zech</action>
+                <give_info>german_take_docszech</give_info>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>german_fifth_dialog_5</text>
+                <next>51</next>
+                <next>52</next>
+            </phrase>
+            <phrase id="51">
+                <text>german_fifth_dialog_51</text>
+                <action>jupiter_dialog.strelok_take_docs_zech</action>
+                <give_info>german_fifth_talk</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="52">
+                <text>german_fifth_dialog_52</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="german_quest_dialog">
+        <has_info>give_german_arts</has_info>
+        <dont_has_info>dialog_quest_german</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>german_quest_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>german_quest_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>german_quest_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>german_quest_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>german_quest_dialog_4</text>
+                <action>jupiter_dialog.give_arts_german</action>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>german_quest_dialog_5</text>
+                <action>jupiter_dialog.have_money_german</action>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>german_quest_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>german_quest_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>german_quest_dialog_8</text>
+                <give_info>dialog_quest_german</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="german_quest_dialog2">
+        <has_info>loki_dialog</has_info>
+        <dont_has_info>dialog_quest2_german</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>german_quest_dialog2_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>german_quest_dialog2_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>german_quest_dialog2_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>german_quest_dialog2_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>german_quest_dialog2_4</text>
+                 <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>german_quest_dialog2_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>german_quest_dialog2_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>german_quest_dialog2_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>german_quest_dialog2_8</text>
+                <give_info>dialog_quest2_german</give_info>
+                <action>jupiter_dialog.spawn_jammer</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="german_quest_dialog3">
+        <has_info>dialog_quest3_german</has_info>
+        <dont_has_info>give_jammer_german</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>german_quest_dialog3_0</text>
+                 <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>german_quest_dialog3_1</text>
+                <action>jupiter_dialog.give_jammer</action>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>german_quest_dialog3_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>german_quest_dialog3_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>german_quest_dialog3_4</text>
+                <give_info>give_jammer_german</give_info>
+                <action>jupiter_dialog.give_message_strelok</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="first_black_box_dialog_german">
+        <has_info>take_kozlov_message</has_info>
+        <dont_has_info>german_black_box_first_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>first_black_box_dialog_german_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>first_black_box_dialog_german_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>first_black_box_dialog_german_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>first_black_box_dialog_german_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>first_black_box_dialog_german_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>first_black_box_dialog_german_5</text>
+                <give_info>take_black_box_info_german</give_info>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>first_black_box_dialog_german_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>first_black_box_dialog_german_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>first_black_box_dialog_german_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>first_black_box_dialog_german_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>first_black_box_dialog_german_10</text>
+                <give_info>german_black_box_first_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="second_black_box_dialog_german">
+        <has_info>have_containers</has_info>
+        <dont_has_info>german_black_box_second_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>second_black_box_dialog_german_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>second_black_box_dialog_german_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>second_black_box_dialog_german_2</text>
+                <action>jupiter_dialog.give_containers</action>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>second_black_box_dialog_german_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>second_black_box_dialog_german_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>second_black_box_dialog_german_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>second_black_box_dialog_german_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>second_black_box_dialog_german_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>second_black_box_dialog_german_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>second_black_box_dialog_german_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>second_black_box_dialog_german_10</text>
+                <give_info>german_black_box_second_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="third_black_box_dialog_german">
+        <has_info>have_flight_map</has_info>
+        <dont_has_info>german_black_box_third_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>third_black_box_dialog_german_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>third_black_box_dialog_german_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>third_black_box_dialog_german_2</text>
+                <action>jupiter_dialog.give_karta</action>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>third_black_box_dialog_german_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>third_black_box_dialog_german_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>third_black_box_dialog_german_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>third_black_box_dialog_german_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>third_black_box_dialog_german_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>third_black_box_dialog_german_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>third_black_box_dialog_german_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>third_black_box_dialog_german_10</text>
+                <give_info>german_black_box_third_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="fourth_black_box_dialog_german">
+        <has_info>sahar_corpse</has_info>
+        <dont_has_info>german_black_box_fourth_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>fourth_black_box_dialog_german_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>fourth_black_box_dialog_german_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>fourth_black_box_dialog_german_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>fourth_black_box_dialog_german_3</text>
+                <action>jupiter_dialog.have_money</action>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>fourth_black_box_dialog_german_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>fourth_black_box_dialog_german_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>fourth_black_box_dialog_german_6</text>
+                <give_info>german_black_box_fourth_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="azot_first_dialog">
+        <has_info>german_second_talk</has_info>
+        <dont_has_info>azot_first_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>azot_first_dialog_0</text>
+                <give_info>come_to_azot</give_info>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>azot_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>azot_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>azot_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>azot_first_dialog_4</text>
+                <next>41</next>
+                <next>42</next>
+            </phrase>
+            <phrase id="41">
+                <text>azot_first_dialog_41</text>
+                <give_info>azot_first_talk</give_info>
+                <action>jupiter_dialog.spawn_radioparts_on_jupiter</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="42">
+                <text>azot_first_dialog_42</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="azot_second_dialog">
+        <has_info>azot_find_parts</has_info>
+        <dont_has_info>azot_second_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>azot_second_dialog_0</text>
+                <action>jupiter_dialog.azot_jupiter_parts</action>
+                <give_info>bring_azot_decoder</give_info>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>azot_second_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>azot_second_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>azot_second_dialog_3</text>
+                <action>jupiter_dialog.azot_german_decoder</action>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>azot_second_dialog_4</text>
+                <give_info>azot_second_talk</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="first_black_box_dialog_azot">
+        <has_info>third_dialog_lozman</has_info>
+        <dont_has_info>black_box_dialog_azot_first</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>first_black_box_dialog_azot_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>first_black_box_dialog_azot_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>first_black_box_dialog_azot_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>first_black_box_dialog_azot_3</text>
+                <action>jupiter_dialog.give_black_box_azot</action>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>first_black_box_dialog_azot_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>first_black_box_dialog_azot_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>first_black_box_dialog_azot_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>first_black_box_dialog_azot_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>first_black_box_dialog_azot_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>first_black_box_dialog_azot_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>first_black_box_dialog_azot_10</text>
+                <give_info>black_box_dialog_azot_first</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="second_black_box_dialog_azot">
+        <has_info>have_accumulators</has_info>
+        <dont_has_info>black_box_dialog_azot_second</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>second_black_box_dialog_azot_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>second_black_box_dialog_azot_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>second_black_box_dialog_azot_2</text>
+                <action>jupiter_dialog.give_accumulators_azot</action>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>second_black_box_dialog_azot_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>second_black_box_dialog_azot_4</text>
+                <give_info>black_box_dialog_azot_second</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="third_black_box_dialog_azot">
+        <has_info>take_message_azot</has_info>
+        <dont_has_info>black_box_dialog_azot_third</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>third_black_box_dialog_azot_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>third_black_box_dialog_azot_1</text>
+                <action>jupiter_dialog.take_black_box_azot</action>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>third_black_box_dialog_azot_2</text>
+                <give_info>black_box_dialog_azot_third</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="topol_first_dialog">
+        <dont_has_info>first_dialog_topol</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>topol_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>topol_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>topol_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>topol_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>topol_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>topol_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>topol_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>topol_first_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>topol_first_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>topol_first_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>topol_first_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>topol_first_dialog_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>topol_first_dialog_12</text>
+                <next>13</next>
+            </phrase>
+            <phrase id="13">
+                <text>topol_first_dialog_13</text>
+                <give_info>first_dialog_topol</give_info>
+                <action>jupiter_dialog.mapspot_jupiter</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="topol_second_dialog">
+        <has_info>dialog_quest_german</has_info>
+        <dont_has_info>second_dialog_topol</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>topol_second_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>topol_second_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>topol_second_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>topol_second_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>topol_second_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>topol_second_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>topol_second_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>topol_second_dialog_7</text>
+                <action>jupiter_dialog.take_topol_secret</action>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>topol_second_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>topol_second_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>topol_second_dialog_10</text>
+                <give_info>second_dialog_topol</give_info>
+                <action>jupiter_dialog.topol_friend</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="usach_dialog">
+        <dont_has_info>dialog_usach</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>usach_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>usach_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>usach_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>usach_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>usach_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>usach_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>usach_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>usach_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>usach_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>usach_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>usach_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>usach_dialog_11</text>
+                <give_info>dialog_usach</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="usach_dialog2">
+        <has_info>heli_move</has_info>
+        <dont_has_info>dialog_usach2</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>usach_dialog2_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>usach_dialog2_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>usach_dialog2_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>usach_dialog2_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>usach_dialog2_4</text>
+                <give_info>dialog_usach2</give_info>
+                <action>jupiter_dialog.spawn_flash</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="zulus_first_dialog">
+        <has_info>dialog_military</has_info>
+        <dont_has_info>zulus_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>zulus_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>zulus_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>zulus_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>zulus_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>zulus_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>zulus_first_dialog_5</text>
+                <give_info>zulus_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="vano_first_dialog">
+        <has_info>zulus_dialog</has_info>
+        <dont_has_info>vano_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>vano_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>vano_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>vano_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>vano_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>vano_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>vano_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>vano_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>vano_first_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>vano_first_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>vano_first_dialog_9</text>
+                <give_info>vano_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="garik_first_dialog">
+        <has_info>vano_dialog</has_info>
+        <dont_has_info>garik_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>garik_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>garik_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>garik_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>garik_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>garik_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>garik_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>garik_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>garik_first_dialog_7</text>
+                <give_info>garik_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="lozman_first_dialog">
+        <has_info>garik_dialog</has_info>
+        <dont_has_info>lozman_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>lozman_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>lozman_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>lozman_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>lozman_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>lozman_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>lozman_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>lozman_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>lozman_first_dialog_7</text>
+                <give_info>lozman_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="second_lozman_dialog">
+        <has_info>suhar_give_habar</has_info>
+        <dont_has_info>second_dialog_lozman</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>second_lozman_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>second_lozman_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>second_lozman_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>second_lozman_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>second_lozman_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>second_lozman_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>second_lozman_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>second_lozman_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>second_lozman_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>second_lozman_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>second_lozman_dialog_10</text>
+                <give_info>second_dialog_lozman</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="third_lozman_dialog">
+        <has_info>have_black_box</has_info>
+        <dont_has_info>third_dialog_lozman</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>third_lozman_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>third_lozman_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>third_lozman_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>third_lozman_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>third_lozman_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>third_lozman_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>third_lozman_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>third_lozman_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>third_lozman_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>third_lozman_dialog_9</text>
+                <action>jupiter_dialog.lozman_money</action>
+                <give_info>talk_with_lozman</give_info>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>third_lozman_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>third_lozman_dialog_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>third_lozman_dialog_12</text>
+                <give_info>third_dialog_lozman</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="loki_first_dialog">
+        <has_info>lozman_dialog</has_info>
+        <dont_has_info>loki_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>loki_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>loki_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>loki_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>loki_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>loki_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>loki_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>loki_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>loki_first_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>loki_first_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>loki_first_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>loki_first_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>loki_first_dialog_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>loki_first_dialog_12</text>
+                <next>13</next>
+            </phrase>
+            <phrase id="13">
+                <text>loki_first_dialog_13</text>
+                <next>14</next>
+            </phrase>
+            <phrase id="14">
+                <text>loki_first_dialog_14</text>
+                <next>15</next>
+            </phrase>
+            <phrase id="15">
+                <text>loki_first_dialog_15</text>
+                <give_info>loki_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="dialog_kozlov">
+        <has_info>black_box_dialog_azot_third</has_info>
+        <dont_has_info>kozlov_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>dialog_kozlov_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>dialog_kozlov_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>dialog_kozlov_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>dialog_kozlov_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>dialog_kozlov_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>dialog_kozlov_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>dialog_kozlov_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>dialog_kozlov_7</text>
+                <action>jupiter_dialog.give_black_box_kozlov</action>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>dialog_kozlov_8</text>
+                <give_info>kozlov_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+</game_dialogs>

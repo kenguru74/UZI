@@ -1,0 +1,1157 @@
+--[[ ----------------------------------------------------------------------------------------------
+ File       : m_respawn.script
+ Description: функции спавна техники и неписей
+ Copyright  : 2008 © SIMBION:SHOC mod
+ Author     : Artos & Lost_Stranger (+ материалы АМК)
+ Last edit  : 03.08.2010 (by Artos)
+--]] ----------------------------------------------------------------------------------------------
+local sModule = "m_respawn" --/ строковое имя файла-модуля
+local bInit   = false       --/ флаг инициализации модуля
+--/ -----------------------------------------------------------------
+--/ Print-Log (вывод отладочной информации)
+--/ -----------------------------------------------------------------
+local function printf(fmt, ...)
+	db.log(string.format("%s:%s",sModule,fmt),...)
+end
+--/ -----------------------------------------------------------------
+--/ VARIABLEs
+--/ -----------------------------------------------------------------
+local bEnabled       = false --/ true/false - разрешен/запрещен
+local bEnabledSmb    = false --/ true/false - разрешен/запрещен
+local bDebug         = false --/ true/false - разрешен/запрещен
+local bSet           = false --/ флаг инициализации переменных
+local ltx            = ini_file("mods\\"..sModule..".ltx")
+local tTypeRespawns  = {} --/ массив секций респавна ("sections_respawners")
+local tTypeMobs      = {} --/ массив секций монстров, прописанных в ltx
+local tTypeHums      = {} --/ массив секций сталкеров, прописанных в ltx
+local tDefValues     = {} --/ массив default_values респавна
+local tRndValues     = {} --/ массив random_values респавна
+local tLvVertexes    = {} --/ массив вертексов
+local tExludedLevels = {} --/ underground levels
+local tRespawners    = {} --/ дин.массив заспавненых
+local sMapNow        = "" --/ текущий уровень
+local iGvidMin       = -1
+local iGvidMax       = -1
+local iLvidMax       = 0
+local i,j,idx,k,v,kk,vv
+--/ -----------------------------------------------------------------
+--/ Initialize Module (инициализация, выполняется единожды)
+--/ -----------------------------------------------------------------
+function init()
+--	printf("init:[%s]", "info") --/#~#
+	register_callback("game_load", load_variables, nil)
+	
+end
+--/ -----------------------------------------------------------------------------------------------
+--/ Process (функции)
+--/ -----------------------------------------------------------------------------------------------
+function load_variables()
+
+	bInit = true
+--	printf("load_variables:[%s]", ">") --/#~#
+
+	if not bInit then abort(sModule..":Not_initialised!") end
+
+	bDebug      = _f.ReadFromIni(ltx,"main", "debug", bDebug, "bool")
+	bEnabled    = _f.ReadFromIni(ltx,"main", "enabled", bEnabled, "bool")
+	bEnabledSmb = _f.ReadFromIni(ltx,"respawn_smb", "enabled", bEnabledSmb, "bool")
+
+	tExludedLevels = _f.get_ltx_section(ltx, "levels_exluded", "true")
+	tLvVertexes    = _f.get_ltx_section(ltx, "level_vertexes", "number")
+	tTypeMobs      = _f.get_ltx_section(ltx, "types_monsters", "string")
+	tTypeHums      = _f.get_ltx_section(ltx, "types_stalkers", "string")
+	tTypeRespawns  = _f.get_ltx_section(ltx, "respawns",       "true") --/ "sections_respawners"
+
+	sMapNow = db.sMapNow
+
+	if not bSet then
+		tRespawners = Get_Respawners() --/ массив заспавненых
+		tDefValues  = Get_Respawn_Values("default_values")
+		tRndValues  = Get_Respawn_Values("random_values")
+		bSet = true
+	end
+
+	if bEnabled then
+
+		if sMapNow ~= "" and sMapNow ~= db.sMapSav then --/ проверка смены уровня
+			Spawn_Unspawned()
+		end
+		
+		_m.Register_Callback("respawn", Reinit_Respawner, nil)
+	end
+
+	local ltx = ini_file("mods\\_common.ltx")
+
+	for i=0,ltx:line_count("vertexes")-1 do
+
+		local result,idx,value = ltx:r_line("vertexes",i,"","")
+
+		if idx and idx == sMapNow and value and _f.trim(value) and _f.trim(value) ~= "" then
+
+			local tS = _f.Parse_Str_to_Tbl(value, ",", true)
+
+			if not (tS[1] and tS[2] and tS[3]) then
+				abort("%s:init:Error while parsing vertexes at sections line=[%s]", sModule, tonumber(i+1) )
+			end
+
+			iGvidMin = tonumber(tS[1])
+			iGvidMax = tonumber(tS[2])
+			iLvidMax = tonumber(tS[3])
+		end
+	end
+
+	if not _m.Check_Works_Timer("tmr_smb") then
+		--/ (пере)запуск таймера (если не запущен!)
+		Start_TimerSmb_ReSpawn()
+	end
+	
+end
+
+
+
+--/ -----------------------------------------------------------------
+--/ "Штатный" респавн
+--/ -----------------------------------------------------------------
+function Spawn_Unspawned() --/ вызов при загрузке игры
+
+	local iCnt = 0
+
+	for k,v in pairs(tTypeRespawns) do
+
+		if v and not tRespawners[k] then
+
+			local tRespData = _f.ReadSectionFromIni(ltx, k)
+			local tPoint = _f.Parse_Str_to_Tbl(tRespData.xyzlg, ",", true, true)
+			local iLvid,iGvid = tPoint[4], tPoint[5]
+			local sLvName = _f.Get_LevelName(iGvid)
+
+			if sLvName and (sLvName == sMapNow or db.tMapKnow[sLvName]) then
+
+				local vPos = vector():set(tPoint[1]+math.random(-10,10)/10, tPoint[2], tPoint[3]+math.random(-10,10)/10)
+
+--				printf("Spawn_Unspawned:sec=[%s],x=[%s],y=[%s],z=[%s],lv=[%s],gv=[%s]:[%s]", k, vPos.x, vPos.y, vPos.z, iLvid, iGvid, "i") --/#~#
+
+				local soObj = alife():create("respawn", vPos, iLvid, iGvid)
+
+				if soObj and db.wrpk then
+
+					tRespData.xyzlg = nil
+					tRespData.m_name = k
+           
+					for kk,vv in pairs(tDefValues) do
+
+						if not tRespData[kk] then
+							tRespData[kk] = vv
+						end
+					end
+
+					local tCD = {respawn = tRespData}
+					local tT = m_net_utils.Get_Data_Respawn(soObj)
+					tT.custom_data = _f.Fill_CustomData(tCD)
+
+--					printf("Spawn_Unspawned:cd=(%s)", tT.custom_data) --/#~#
+
+					local bFlg = m_net_utils.Set_Data_Respawn(tT, soObj)
+
+					if bFlg then
+						iCnt = iCnt +1
+						se_respawn.Reinit_Respawner(soObj:name()) --/> первичная инициализация
+						if bDebug then printf("Spawn_Unspawned:sec=[%s],obj=[%s],id=[%s],map=[%s]:[%s]", k, soObj:name(), soObj.id, sLvName, "+") end --/#~#
+					else
+						printf("Spawn_Unspawned:Obj=[%s],Id=[%s]~Wrong write:<%s>", k, soObj.id, "Warning!")
+						alife():release(soObj, true)
+					end
+				end
+			end
+		elseif not v then
+			se_respawn.Del_Respawner(k)
+		end
+	end
+
+	--if iCnt > 0 then
+	--	printf("Spawn_Unspawned:Cnt=[%s]:[%s]", iCnt, "<") --/#~#
+	--end
+end
+
+function Reinit_Respawner(uo,soObj,Respawner) --/ вызов из se_respawn.script (через _m.script)
+
+	get_console():execute("Reinit_Respawner") -- ber188
+	news_manager.send_tip(db.actor, "Reinit_Respawner", nil, nil, 30000)
+
+
+	if soObj and Respawner and db.wrpk then
+		local FuncGet, FuncSet, FuncAdd, bMob
+		if IsStalker(soObj) then
+			FuncGet = m_net_utils.Get_Data_Stalker
+			FuncSet = m_net_utils.Set_Data_Stalker
+			FuncAdd = db.add_hum
+		elseif IsMonster(soObj) then
+			FuncGet = m_net_utils.Get_Data_Monster
+			FuncSet = m_net_utils.Set_Data_Monster
+			FuncAdd = db.add_mob
+			bMob = true
+		else
+			return --/>
+		end
+		local ini = Respawner:spawn_ini()
+		if ini and ini:line_exist("respawn", "creature_binded_logic") == true then
+			local sCfgName = _f.ReadFromIni(ini, "respawn", "creature_binded_logic", "", "string")
+			local sLtxLogic = "mods\\respawn\\"..sCfgName..".ltx"
+			local tT = FuncGet(soObj)
+			tT.custom_data = "[logic]\ncfg = "..sLtxLogic
+			if not ini_file(sLtxLogic):section_exist("smart_terrains") then
+				printf("Spawn_FreeNPC:CustomData=[%s]<~Add_Smrt:<%s>", tT.custom_data, "Warting!")
+				tT.custom_data = "[smart_terrains]\nnone = true\n"..tT.custom_data
+			end
+			local bFlg = FuncSet(tT, soObj)
+			if bFlg then
+				if soObj.id ~= 65535 then
+					FuncAdd(soObj.id)
+				end
+--				printf("Reinit_Respawner:Obj=[%s],Logic=[%s]:[%s]", soObj:name(), sCfgName, "+") --/#~#
+				--if bDebug then _f.add_spot_on_map(soObj.id,"red_location", sCfgName) end --/#~# для теста
+				if bMob then
+					se_monster.tNeedBe_OnLine[soObj.id] = (Respawner.spawned_goes_online == true) --/ switch monster online/offline (true/false)
+				end
+				if db.opt_news then m_news.check_spawn(nil,soObj) end --/даем в новости
+			else
+				printf("Reinit_Respawner:release~>Obj=[%s]~Wrong_write:<%s>", soObj:name(), "Warning!")
+				alife():release(soObj, true)
+			end
+		end
+	end
+end
+
+--/ подсчет уже заспавненых
+function Get_Respawners()
+	tRespawners = {}
+	local sim = alife()
+	for i=1,65534 do
+		local soObj = sim:object(i)
+		if soObj then
+			local ini = soObj:spawn_ini()
+			if ini:line_exist ("respawn", "m_name") then
+				local sObjName = _f.ReadFromIni(ini, "respawn", "m_name", nil, "string")
+				if sObjName then
+					tRespawners[sObjName] = true
+					if bDebug then printf("Get_Respawners:Obj=[%s]:[%s]", sObjName, "+") end --/#~#
+				end
+			end
+		end
+	end
+	if bDebug then printf("Get_Respawners:Cnt=[%s]:[%s]", _f.get_n_table(tRespawners), "i") end --/#~#
+	return tRespawners
+end
+
+--/ получаем дефолтные или рандомные параметры респавна
+function Get_Respawn_Values(sSection) --/"default_values" or "random_values"
+	local tT = {}
+	if ltx:section_exist(sSection) then
+		for i=0,ltx:line_count(sSection)-1 do
+			local result, idx, value = ltx:r_line(sSection,i,"","")
+			if idx and _f.trim(idx) and _f.trim(idx) ~= "" then
+				tT[_f.trim(idx)] = _f.trim(value)
+--				printf("Get_Respawn_Values:section=[%s],id=[%s],value=[%s]:[%s]", sSection, _f.trim(idx), _f.trim(value), "i") --/#~#
+			end
+		end
+	end
+	return tT
+end
+
+--/ ------------------------------------------------------------------
+--/ Рандомный респавн
+--/ ------------------------------------------------------------------
+function Random_Respawns() --/ reserve
+--	printf("Random_Respawns:[%s]", ">") --/#~#
+	if tLvVertexes[sMapNow] and not tExludedLevels[sMapNow] then --/ на исключенных уровнях не спавним
+		return --/>
+	end
+	local iNumMob = math.random(#tTypeMobs)
+	local sTypMob = tTypeMobs[iNumMob][1] --/ секция из массива
+	local iCntMob = tonumber( math.random(tTypeMobs[iNumMob][2]) ) or 1 --/ кол-во из массива
+	if sTypMob then
+		printf("Random_Respawns:monsters:type=[%s],cnt=[%s]:[%s,%s]", sTypMob, iCntMob, iNumMob, #tTypeMobs ) --/#~#
+		Spawn_Random_Respawners(sTypMob, iCntMob)
+	end
+	
+	local iNumHum = math.random(#tTypeHums)
+	local sTypHum = tTypeHums[iNumHum][1] --/ секция из массива
+	local iCntHum = tonumber( math.random(tTypeHums[iNumHum][2]) ) or 1 --/ кол-во из массива
+	if sTypHum then
+		printf("Random_Respawns:stalkers:type=[%s],cnt=[%s]:[%s,%s]", sTypHum, iCntHum, iNumHum, #tTypeHums )--/#~#
+		Spawn_Random_Respawners(sTypHum, iCntHum)
+	end
+end
+
+function Spawn_Random_Respawners(sSection, iCount)
+	local oActor = db.actor
+	if oActor then
+		local iGvid = oActor:game_vertex_id()
+		local iLvid = oActor:level_vertex_id()
+		if math.random() > 0.5 then
+			iLvid = iLvid + math.random(1000,2000)
+		else
+			iLvid = iLvid - math.random(1000,2000)
+		end
+		if iLvid < 1 or iLvid > tLvVertexes[sMapNow] then
+			iLvid = math.random(1000,2000)
+		end
+		local vPos = level.vertex_position(iLvid)
+--		printf("Spawn_Random_Respawners:sec=[%s],pos=[%s],lv=[%s],gv=[%s]:[%s]", sSection, vec_to_str(vPos), iLvid, iGvid, ">") --/#~#
+		for i=1,iCount do
+			if i > 1 then
+				vPos = vector():set(vPos.x+math.random(-10,10)/10, vPos.y, vPos.z+math.random(-10,10)/10)
+			end
+			Spawn_FreeNPC(sSection, vPos, iLvid, iGvid)
+		end
+		--printf("Spawn_Random_Respawners:[%s]", "<") --/#~#
+	end
+end
+
+function Spawn_FreeNPC(sSection, vPos, iLvid, iGvid, sLogic)
+	local soObj = alife():create(sSection, vPos, iLvid, iGvid)
+	--/ set_free_custom_data
+	if soObj and db.wrpk then
+		local FuncGet, FuncSet, FuncAdd
+		if IsStalker(soObj) then
+			FuncGet = m_net_utils.Get_Data_Stalker
+			FuncSet = m_net_utils.Set_Data_Stalker
+			FuncAdd = db.add_hum
+		elseif IsMonster(soObj) then
+			FuncGet = m_net_utils.Get_Data_Monster
+			FuncSet = m_net_utils.Set_Data_Monster
+			FuncAdd = db.add_mob
+		else
+			printf("Spawn_FreeNPC:sobj_not_Stalker_or_Monster~[%s]:<%s>", sSection, "Warning!")
+			return --/>
+		end
+		
+		local sCustomData = "[logic]\ncfg = mods\\respawn\\logic\\free_obj.ltx" --/ дефолтная логика
+		if sLogic then
+			if string.find(sLogic,"=") then --/ or string.find(sLogic,"\[") TODO: доработать!
+				sCustomData = sLogic
+				if not string.find(sLogic,"smart_terrains") then
+					printf("Spawn_FreeNPC:Logic=[%s]<~Add_Smrt:<%s>", sLogic, "Warting!")
+					sCustomData = "[smart_terrains]\nnone = true\n"..sCustomData
+				end
+			else
+				sCustomData = "scripts\\"..sLogic..".ltx"
+				if not ini_file(sCustomData):section_exist("smart_terrains") then
+					printf("Spawn_FreeNPC:Logic=[%s]<~Add_Smrt:<%s>", sLogic, "Warting!")
+					sCustomData = "[smart_terrains]\nnone = true\n"..sLogic
+				end
+			end
+		end
+		
+		local tT = FuncGet(soObj)
+		tT.custom_data = sCustomData
+		local bFlg = FuncSet(tT, soObj)
+		if bFlg then
+			if soObj.id ~= 65535 then
+				FuncAdd(soObj.id)
+			end
+--			printf("Spawn_FreeNPC:=[%s],Logic=[%s]:[%s]", soObj:name(), sLogic, "+") --/#~#
+			--_f.add_spot_on_map(soObj.id,"red_location", sSection) --/#~#
+			return soObj
+		else
+			printf("Spawn_FreeNPC:section=[%s],id=[%s]~error write:<%s>", sSection, soObj.id, "Warning!")
+			alife():release(soObj, true)
+		end
+	else
+		printf("Spawn_FreeNPC:section=[%s]~NOT_spawn:[%s]", sSection, "Warning!")
+	end
+end
+
+--/------------------------------------------------------------------------------------------------
+--/ ReSpawn Simbion
+--/------------------------------------------------------------------------------------------------
+function Run_SmbSpwn()
+	--/ пока зарезервировано
+end
+
+function Start_TimerSmb_ReSpawn(iHours)
+
+
+	get_console():execute("Start_TimerSmb_ReSpawn") -- ber188
+	news_manager.send_tip(db.actor, "Start_TimerSmb_ReSpawn", nil, nil, 30000)  -- ber188
+
+
+	local iTime = iHours
+	--local iOpt = _f.load_variable("opt_spawn", 2)
+
+	if not iTime then
+		--iTime = _f.ReadFromIni(ltx,"respawn_smb","time_"..tostring(iOpt),999,"number") by Ber188
+		iTime = _f.ReadFromIni(ltx,"respawn_smb","time_"..tostring(1),999,"number")
+	end
+
+
+	iTime = iTime*60 --/ переводим в минуты
+
+	local iShift = iTime/5
+	
+	iTime = iTime + math.random(-iShift,iShift)
+
+	news_manager.send_tip(db.actor, "iTime после math.random(-iShift,iShift) = "..iTime , nil, nil, 30000)  -- ber188
+
+	_m.Start_Timer("spwn_smb",0,0,iTime,"tmr_smb") 
+	--start_gt("spwn_smb",0,0,iTime,"tmr_smb")    -- replaced by Ber188
+
+	_m.Register_Callback("timer", Update_TimerSmb_ReSpawn, "tmr_smb")
+
+	get_console():execute("Update_TimerSmb_ReSpawn произошел") -- ber188
+	news_manager.send_tip(db.actor, "Update_TimerSmb_ReSpawn произошел", nil, nil, 30000)
+
+--	printf("Start_ReSpawn_SmbTimer:Opt=[%s],Time=[%s]gm:[%s]", iOpt, iTime, ">") --/#~#
+end
+
+
+function Update_TimerSmb_ReSpawn(uo,sTimerName,iPhase)
+
+	get_console():execute("Update_TimerSmb_ReSpawn") -- ber188
+	news_manager.send_tip(db.actor, "Update_TimerSmb_ReSpawn", nil, nil, 30000)
+
+	if not (uo and uo == sTimerName) then return end --/>
+
+	local iHours
+
+	if bEnabledSmb then
+
+		if tExludedLevels[sMapNow] then
+
+			--/ в подземельях не спавним
+
+		elseif sMapNow ~= "l05_bar" then
+
+			get_console():execute("Get_ReSpawn") -- ber188
+			news_manager.send_tip(db.actor, "перед Get_ReSpawn", nil, nil, 30000)
+
+			Get_ReSpawn()
+		else
+			--/ точки "зоны безопасности"
+			local vPosC1 = vector():set(130.5, -4.8, 22.9) --/ стойка бармена
+			local vPosC2 = vector():set(152.49,-21.1, 107.7) --/ центр Арены
+			if vPosC1:distance_to_sqr(db.actor:position()) < 30 or vPosC2:distance_to_sqr(db.actor:position()) < 50 then
+				iHours = 0.15 --/ тайм-аут 
+			else
+				Get_ReSpawn()
+			end
+		end
+	end
+
+	get_console():execute("после Get_ReSpawn") -- ber188
+	news_manager.send_tip(db.actor, "после Get_ReSpawn", nil, nil, 30000)
+
+
+	Start_ReSpawn_SmbTimer(iHours)
+	return true
+end
+
+--/-------------------------------------------------------------------
+--/ работа с монстрами и людьми
+--/ для спавна неписей смотрим config\creatures\spawn_sections.ltx
+--/ - где написаны имена секций для разных типов неписей
+--/-------------------------------------------------------------------
+function Get_ReSpawn()
+	--printf("Get_ReSpawn:SMB") --/#~#
+	get_console():execute("Get_ReSpawn") -- ber188
+	news_manager.send_tip(db.actor, "Get_ReSpawn", nil, nil, 30000)
+
+	
+	local iNumMob,iNumHum = 20,105
+	local iCntMob, sProfMob
+	local iCntNum, sProfHum
+	printf("Get_ReSpawn:Установка_параметров спавна") --/#~#
+	if sMapNow == "l03u_agr_underground" or
+		 sMapNow == "l04u_labx18" or
+		 sMapNow == "l08u_brainlab" or
+		 sMapNow == "l10u_bunker" or
+		 sMapNow == "l12u_control_monolith" or
+		 sMapNow == "l12u_sarcofag" then
+		return --/>
+	--/ рандомный выбор
+	elseif sMapNow == "l01_escape" then
+	       news_manager.send_tip(db.actor, "l01_escape", nil, nil, 30000) -- Ber188
+		iNumMob = math.random(11)
+		iNumHum = math.random(17)
+		iCntMob = math.random(5)
+		iCntNum = math.random(6,8)
+	elseif sMapNow == "l02_garbage" then
+		iCntMob = math.random(8)
+		iCntNum = math.random(8,12)
+	elseif sMapNow == "l03_agroprom" then
+		iCntMob = math.random(10)
+		iCntNum = math.random(8,12)
+	elseif sMapNow == "l04_darkvalley" then
+		iCntMob = math.random(10)
+		iCntNum = math.random(10,15)
+	elseif sMapNow == "l05_bar" then
+		iNumMob = math.random(9,10)
+		iNumHum = math.random(39,40)
+		iCntMob = math.random(6) --/#~# 12
+		iCntNum = math.random(3,6) --/#~# 4,8
+	elseif sMapNow == "l06_rostok" then
+		iCntMob = math.random(10)
+		iCntNum = math.random(8,12)
+	elseif sMapNow == "l08_yantar" then
+		iCntMob = math.random(8)
+		iCntNum = math.random(8,12)
+	elseif sMapNow == "l07_military" then
+		iCntMob = math.random(8)
+		iCntNum = math.random(8,12)
+	elseif sMapNow == "l10_radar" then
+		iCntMob = math.random(10)
+		iCntNum = math.random(10,15)
+	elseif sMapNow == "l11_pripyat" then
+		iNumMob = math.random(9,20)
+		iCntMob = math.random(8)
+		iCntNum = math.random(6,8)
+	elseif sMapNow == "l12_stancia" then
+		iNumMob = math.random(11,20)
+		iCntMob = math.random(10)
+		iNumHum = math.random(49,59)
+		iCntNum = math.random(10,20)
+	elseif sMapNow == "l12_stancia_2" then
+		iNumMob = math.random(11,20)
+		iNumHum = math.random(49,59)
+		iCntMob = math.random(10)
+		iCntNum = math.random(10,15)
+        elseif sMapNow == "zaton" then
+         	news_manager.send_tip(db.actor, "выбран zaton", nil, nil, 30000) -- Ber188
+		iNumMob = math.random(11)
+		iNumHum = math.random(17)
+		iCntMob = math.random(5)
+		iCntNum = math.random(6,8)	
+	end
+	--/ монстры
+	printf("Выбираем_Monsters_для_спавна") --/#~#
+	if iNumMob == 1 then
+		sProfMob = "tushkano_normal"
+		iCntMob = math.random(5,8)
+	elseif iNumMob == 2 then
+		sProfMob = "cat_weak"
+		iCntMob = math.random(3,5)
+	elseif iNumMob == 3 then
+		sProfMob = "fracture_weak"
+	elseif iNumMob == 4 then
+		sProfMob = "flesh_strong"
+	elseif iNumMob == 5 then
+		sProfMob = "boar_strong"
+	elseif iNumMob == 6 then
+		sProfMob = "m_poltergeist_tele_outdoor"
+	elseif iNumMob == 7 then
+		sProfMob = "m_poltergeist_normal_flame"
+	elseif iNumMob == 8 then
+		sProfMob = "m_poltergeist_normal_tele"
+	elseif iNumMob == 9 then
+		sProfMob = "zombie_hell"
+	elseif iNumMob == 10 then
+		sProfMob = "zombie_strong"
+	elseif iNumMob == 11 then
+		sProfMob = "snork_normal"
+	elseif iNumMob == 12 then
+		sProfMob = "snork_strong"
+	elseif iNumMob == 13 then
+		sProfMob = "pseudodog_strong"
+	elseif iNumMob == 14 then
+		sProfMob = "bloodsucker_strong"
+	elseif iNumMob == 15 then
+		sProfMob = "chimera_weak"
+	elseif iNumMob == 16 then
+		sProfMob = "burer_weak"
+	elseif iNumMob == 17 then
+		sProfMob = "m_controller_normal"
+		iCntMob = 1
+	elseif iNumMob == 18 then
+		sProfMob = "m_controller_old_fat"
+		iCntMob = 1
+	elseif iNumMob == 19 then
+		sProfMob = "bloodsucker_hell"
+		iCntMob = math.random(1,3)
+	elseif iNumMob == 20 then
+		sProfMob = "gigant_strong"
+		iCntMob = math.random(1,3)
+	else
+		printf("set_respawn_smb:Не_выбран_тип_Monsters:[%s]", "Warning!")
+	end
+	if sProfMobl and iCntMob then
+		if sMapNow ~= "l05_bar" or math.random() > 0.5 then
+			printf("Начат_спавн_Monsters:=[%s]_в_кол-ве:=[%s]", iNumMob, iCntMob) --/#~#
+			get_random_spawn(sProfMob, iCntMob)
+		end
+	else
+		printf("set_respawn_smb:Ошибка_выбора_кол-ва_mob=[%s]:[%s]", iCntMob, "Warning!")
+	end
+	--/ люди
+--	printf("Выбираем_Humans_для_спавна") --/#~#
+	if iNumHum == 1 then
+		sProfHum = "esc_stalker_respawn_1"
+	elseif iNumHum == 2 then
+		sProfHum = "esc_stalker_respawn_2"
+	elseif iNumHum == 3 then
+		sProfHum = "esc_bandit_respawn_1"
+	elseif iNumHum == 4 then
+		sProfHum = "esc_bandit_respawn_2"
+	elseif iNumHum == 5 then
+		sProfHum = "esc_soldier_respawn_1"
+	elseif iNumHum == 6 then
+		sProfHum = "esc_soldier_respawn_specnaz"
+	elseif iNumHum == 7 and sMapNow ~= "l01_escape" then --/#~#
+		sProfHum = "dolg_regular"
+	elseif iNumHum == 8 then
+		sProfHum = "agr_stalker_regular"
+	elseif iNumHum == 9 then
+		sProfHum = "agr_stalker_veteran"
+	elseif iNumHum == 10 then
+		sProfHum = "agr_soldier_regular"
+	elseif iNumHum == 11 then
+		sProfHum = "agr_soldier_veteran"
+	elseif iNumHum == 12 then
+		sProfHum = "agr_bandit_respawn_1"
+	elseif iNumHum == 13 then
+		sProfHum = "agr_bandit_respawn_2"
+	elseif iNumHum == 14 then
+		sProfHum = "cit_killer_respawn_1"
+	elseif iNumHum == 15 then
+		sProfHum = "cit_killer_respawn_2"
+	elseif iNumHum == 16 then
+		sProfHum = "cit_killer_respawn_3"
+	elseif iNumHum == 17 then
+		sProfHum = "mil_killer_respawn_4"
+	elseif iNumHum == 18 then
+		sProfHum = "mil_freedom_respawn_1"
+	elseif iNumHum == 19 then
+		sProfHum = "mil_freedom_respawn_2"
+	elseif iNumHum == 20 then
+		sProfHum = "mil_freedom_respawn_3"
+	elseif iNumHum == 21 then
+		sProfHum = "mil_freedom_respawn_sniper"
+	elseif iNumHum == 22 then
+		sProfHum = "mil_freedom_barier_respawn_1"
+	elseif iNumHum == 23 then
+		sProfHum = "mil_neutral_barier_respawn_1"
+	elseif iNumHum == 24 then
+		sProfHum = "mil_monolit_rush_respawn_1"
+	elseif iNumHum == 25 then
+		sProfHum = "mil_stalker_respawn_1"
+	elseif iNumHum == 26 then
+		sProfHum = "mil_stalker_respawn_2"
+	elseif iNumHum == 27 then
+		sProfHum = "mil_stalker_respawn_3"
+	elseif iNumHum == 28 then
+		sProfHum = "pri_monolith_respawn_1"
+	elseif iNumHum == 29 then
+		sProfHum = "pri_monolith_respawn_2"
+	elseif iNumHum == 30 then
+		sProfHum = "pri_monolith_respawn_3"
+	elseif iNumHum == 31 then
+		sProfHum = "pri_respawn_dolg-a"
+	--/ здесь и далее -а: создана дополнительная секция без запроса пути
+	elseif iNumHum == 32 then
+		sProfHum = "pri_respawn_freedom-a"
+	elseif iNumHum == 33 then
+		sProfHum = "pri_respawn_neutral-a"
+	elseif iNumHum == 34 then
+		sProfHum = "pri_respawn_military-a"
+	elseif iNumHum == 35 then
+		sProfHum = "gar_bandit_respawn_1"
+	elseif iNumHum == 36 then
+		sProfHum = "gar_bandit_respawn_2"
+	elseif iNumHum == 37 then
+		sProfHum = "gar_stalker_respawn_1"
+	elseif iNumHum == 38 then
+		sProfHum = "gar_stalker_respawn_2"
+	elseif iNumHum == 39 then
+		sProfHum = "gar_dolg_respawn_1"
+	elseif iNumHum == 40 then
+		sProfHum = "gar_dolg_respawn_2"
+	elseif iNumHum == 41 then
+		sProfHum = "ds_stalker_respawn_1"
+	elseif iNumHum == 42 then
+		sProfHum = "ds_stalker_respawn_2"
+	elseif iNumHum == 43 then
+		sProfHum = "ds_bandit_respawn_1"
+	elseif iNumHum == 44 then
+		sProfHum = "ds_bandit_respawn_2"
+	elseif iNumHum == 45 then
+		sProfHum = "ds_bandit_respawn_3"
+	elseif iNumHum == 46 then
+		sProfHum = "rad_soldier_master"
+	elseif iNumHum == 47 then
+		sProfHum = "rad_monolith_respawn_2"
+	elseif iNumHum == 48 then
+		sProfHum = "rad_zombied_respawn_1"
+	elseif iNumHum == 49 then
+		sProfHum = "rad_monolith_respawn_1"
+	elseif iNumHum == 50 then
+		sProfHum = "rad_monolith_respawn_2"
+	elseif iNumHum == 51 then
+		sProfHum = "rad_monolith_respawn_3"
+	elseif iNumHum == 52 then
+		sProfHum = "rad_specnaz_respawn_specnaz"
+	elseif iNumHum == 53 then
+		sProfHum = "rad_soldier_master"
+	elseif iNumHum == 54 then
+		sProfHum = "rad_zombied_respawn_1"
+	elseif iNumHum == 55 then
+		sProfHum = "rad_zombied_respawn_2"
+	elseif iNumHum == 56 then
+		sProfHum = "rad_zombied_respawn_3"
+	elseif iNumHum == 57 then
+		sProfHum = "yan_zombied_respawn_1"
+	elseif iNumHum == 58 then
+		sProfHum = "yan_zombied_respawn_2"
+	elseif iNumHum == 59 then
+		sProfHum = "yan_zombied_respawn_3"
+	elseif iNumHum == 60 then
+		sProfHum = "yan_ecolog_respawn_1"
+	elseif iNumHum == 61 then
+		sProfHum = "bar_stalker_respawn_1"
+	elseif iNumHum == 62 then
+		sProfHum = "bar_stalker_respawn_2"
+	elseif iNumHum == 63 then
+		sProfHum = "bar_stalker_respawn_3"
+	elseif iNumHum == 64 then
+		sProfHum = "bar_stalker_respawn_4"
+	elseif iNumHum == 65 then
+		sProfHum = "bar_dolg_respawn_1"
+	elseif iNumHum == 66 then
+		sProfHum = "bar_dolg_respawn_2"
+	elseif iNumHum == 67 then
+		sProfHum = "bar_dolg_respawn_3"
+	elseif iNumHum == 68 then
+		sProfHum = "cit_killer_respawn_1"
+	elseif iNumHum == 69 then
+		sProfHum = "cit_killer_respawn_2"
+	elseif iNumHum == 70 then
+		sProfHum = "cit_killer_respawn_3"
+	elseif iNumHum == 71 then
+		sProfHum = "cit_bandit_respawn_1"
+	elseif iNumHum == 72 then
+		sProfHum = "cit_bandit_respawn_2"
+	elseif iNumHum == 73 then
+		sProfHum = "val_bandit_respawn_1"
+	elseif iNumHum == 74 then
+		sProfHum = "val_bandit_respawn_2"
+	elseif iNumHum == 75 then
+		sProfHum = "val_bandit_respawn_3"
+	elseif iNumHum == 76 then
+		sProfHum = "val_bandit_respawn_4"
+	elseif iNumHum == 77 then
+		sProfHum = "val_bandit_respawn_5"
+	elseif iNumHum == 78 then
+		sProfHum = "val_soldier_respawn_1"
+	elseif iNumHum == 79 then
+		sProfHum = "ros_killer_respawn_1"
+	elseif iNumHum == 80 then
+		sProfHum = "ros_killer_respawn_2"
+	elseif iNumHum == 81 then
+		sProfHum = "ros_killer_respawn_3"
+	elseif iNumHum == 82 then
+		sProfHum = "ros_killer_respawn_4"
+	elseif iNumHum == 83 then
+		sProfHum = "ros_bandit_respawn_3"
+	elseif iNumHum == 84 then
+		sProfHum = "ros_bandit_respawn_4"
+	elseif iNumHum == 85 then
+		sProfHum = "sar_monolith_respawn-a"
+	elseif iNumHum == 86  then
+		sProfHum = "esc_dark_stalker_1"
+	elseif iNumHum == 87 then
+		sProfHum = "esc_dark_stalker_2"
+	elseif iNumHum == 88 then
+		sProfHum = "esc_dark_stalker_3"
+	elseif iNumHum == 89 then
+		sProfHum = "esc_dark_stalker_4"
+	elseif iNumHum == 90 then
+		sProfHum = "esc_dark_stalker_5"
+	elseif iNumHum == 91 then
+		sProfHum = "esc_dark_stalker_voron"
+	elseif iNumHum == 92 then
+		sProfHum = "ecolog_student"
+	elseif iNumHum == 93 then
+		sProfHum = "sim_freedom_master_quest"
+	elseif iNumHum == 94 then
+		sProfHum = "esc_dark_stalker_1"
+	elseif iNumHum == 95 then
+		sProfHum = "esc_dark_stalker_2"
+	elseif iNumHum == 96 then
+		sProfHum = "esc_dark_stalker_3"
+	elseif iNumHum == 97 then
+		sProfHum = "esc_dark_stalker_4"
+	elseif iNumHum == 98 then
+		sProfHum = "war_commun_dolg_1"
+	elseif iNumHum == 99 then
+		sProfHum = "war_commun_dolg_2"
+	elseif iNumHum == 100 then
+		sProfHum = "war_commun_dolg_3"
+	elseif iNumHum == 101 then
+		sProfHum = "gar_bandit_war_1"
+	elseif iNumHum == 102 then
+		sProfHum = "gar_bandit_war_2"
+	elseif iNumHum == 103 then
+		sProfHum = "amk_zombied_1"
+	elseif iNumHum == 104 then
+		sProfHum = "amk_zombied_2"
+	elseif iNumHum == 105 then
+		sProfHum = "amk_zombied_3"
+	else
+		printf("set_respawn_smb:Не_выбран_тип_Humans:<%s>", "Warning!")
+	end
+	if sProfHum and iCntNum then
+		if sMapNow ~= "l05_bar" or math.random() > 0.1 then
+			printf("Начат_спавн_Humans:=[%s]~в_кол-ве:=[%s]", sProfHum, iCntNum) --/#~#
+
+			get_random_spawn(sProfHum, iCntNum)
+
+		end
+	else
+		printf("set_respawn_smb:Ошибка_выбора_кол-ва_npc=[%s]:[%s]", iNumHum, "Warning!")
+	end
+end
+
+--/-------------------------------------------------------------------
+--/ Спавн неписей (with added by OffBar 2007)
+--/-------------------------------------------------------------------
+function get_random_spawn(sSectSpawn, iNum)
+	if db.actor then
+		local FuncSpawn = _f.Spawn_NPC
+		local iLvid = db.actor:level_vertex_id()
+		local iGvid = db.actor:game_vertex_id()
+
+		for i=1,iNum do
+			for j=1,4 do
+				local iRnd = math.random(1000,2000)
+
+				if math.random() > 0.5 then
+				
+					iLvid = iLvid + iRnd
+				else
+					iLvid = iLvid - iRnd
+				end
+
+		
+		local text = "Параметры:\\iLvid= "..iLvid.."\\iLvidMax= "..iLvidMax  --.."\\db.actor:accessible(iLvid)= "..db.actor:accessible(iLvid) -- Ber188
+         	news_manager.send_tip(db.actor, text, nil, nil, 30000)  -- Ber188
+
+
+				if iLvid > 0 and db.actor:accessible(iLvid) then --/#???#
+
+					local vPosSpawn = level.vertex_position(iLvid)
+
+					--local vertex = level.vertex_id(vPosS) --/#?# for SCOP
+					--if vertex and npc:accessible(vertex) then
+		news_manager.send_tip(db.actor, "перед FuncSpawn", nil, nil, 30000) -- Ber188
+
+						FuncSpawn(sSectSpawn, vPosSpawn, iLvid, iGvid)
+		news_manager.send_tip(db.actor, "после FuncSpawn", nil, nil, 30000) -- Ber188
+						break
+					--end
+				end
+			end
+		end
+
+		news_manager.send_tip(db.actor, "get_random_spawn после цикла", nil, nil, 30000) -- Ber188
+--		printf("get_random_spawn:prof=[%s],Num=[%s]:[%s]", prof, iNum, "i") --/#~#
+	end
+end
+--/-------------------------------------------------------------------
+
+
+
+--by ber188--------------------------------------------------------------------------------
+function Spawn_Monsters()
+--get_console():execute("вошёл_в_Spawn_Monsters")
+news_manager.send_tip(db.actor, "вошёл_в_Spawn_Monsters", nil, nil, 30000)
+
+local text = ""	
+local level_name = level.name()
+local pos = db.actor:position()
+local number_objects, count_objects, name_object
+local number_objects_human, count_objects_human, name_object_human
+
+--get_console():execute("устанавливаю_параметры")
+	
+	if level_name == "zaton" then
+		number_objects = math.random(22)
+		count_objects = math.random(10)
+		number_objects_human = math.random(138)
+		count_objects_human = math.random(5,8)
+	end
+	
+	if number_objects == 1 then
+		name_object = "tushkano_normal"
+	elseif number_objects == 2 then	
+		name_object = "dog_normal"		
+	end
+	
+--	get_console():execute("начал_спавн_монстров_"..name_object.."_в_количестве_"..count_objects)
+	text = "начал_спавн_монстров_"..tostring(name_object).."_в_количестве_"..tostring(count_objects)
+	news_manager.send_tip(db.actor, text , nil, nil, 30000)
+	spawns( name_object, pos, tonumber(count_objects) )
+	
+	--люди 
+	if number_objects_human == 1 then
+		name_object_human = "esc_stalker_respawn_1"
+	elseif number_objects_human == 2 then	
+		name_object_human = "esc_stalker_respawn_2"
+	elseif number_objects_human == 3 or number_objects_human == 86 then	
+		name_object_human = "esc_bandit_respawn_1"
+	elseif number_objects_human == 4 then	
+		name_object_human = "esc_bandit_respawn_2"
+	elseif number_objects_human == 5 then	
+		name_object_human = "esc_soldier_respawn_1"
+	elseif number_objects_human == 6 then	
+		name_object_human = "esc_soldier_respawn_specnaz"
+	elseif number_objects_human == 7 then	
+		name_object_human = "dolg_regular"
+	elseif number_objects_human == 8 then	
+		name_object_human = "agr_stalker_regular"
+	elseif number_objects_human == 9 then	
+		name_object_human = "agr_stalker_veteran"
+	elseif number_objects_human == 10 then	
+		name_object_human = "agr_soldier_regular"		
+	elseif number_objects_human == 11 then	
+		name_object_human = "agr_soldier_veteran"
+	elseif number_objects_human == 12 then	
+		name_object_human = "agr_bandit_respawn_1"
+	elseif number_objects_human == 13 then	
+		name_object_human = "agr_bandit_respawn_2"
+	elseif number_objects_human == 14 then	
+		name_object_human = "mil_killer_respawn_1"
+	elseif number_objects_human == 15 then	
+		name_object_human = "mil_killer_respawn_2"
+	elseif number_objects_human == 16 then	
+		name_object_human = "mil_killer_respawn_3"
+	elseif number_objects_human == 17 then	
+		name_object_human = "mil_killer_respawn_4"
+	elseif number_objects_human == 18 then	
+		name_object_human = "mil_freedom_respawn_1"
+	elseif number_objects_human == 19 then	
+		name_object_human = "mil_freedom_respawn_2"
+	elseif number_objects_human == 20 then	
+		name_object_human = "mil_freedom_respawn_3"
+	elseif number_objects_human == 21 then	
+		name_object_human = "mil_freedom_respawn_sniper"
+	elseif number_objects_human == 22 then	
+		name_object_human = "mil_freedom_barier_respawn_1"
+	elseif number_objects_human == 23 then	
+		name_object_human = "mil_neutral_barier_respawn_1"		
+	elseif number_objects_human == 24 then	
+		name_object_human = "mil_monolit_rush_respawn_1"
+	elseif number_objects_human == 25 then	
+		name_object_human = "mil_stalker_respawn_1"
+	elseif number_objects_human == 26 then	
+		name_object_human = "mil_stalker_respawn_2"
+	elseif number_objects_human == 27 then	
+		name_object_human = "mil_stalker_respawn_3"
+	elseif number_objects_human == 28 then	
+		name_object_human = "pri_monolith_respawn_1"
+	elseif number_objects_human == 29 then	
+		name_object_human = "pri_monolith_respawn_2"
+	elseif number_objects_human == 30 then	
+		name_object_human = "pri_monolith_respawn_3"
+	elseif number_objects_human == 31 then	
+		name_object_human = "pri_respawn_dolg"
+	elseif number_objects_human == 32 then	
+		name_object_human = "pri_respawn_freedom"
+	elseif number_objects_human == 33 then	
+		name_object_human = "pri_respawn_neutral"
+	elseif number_objects_human == 34 then	
+		name_object_human = "pri_respawn_military"
+	elseif number_objects_human == 35 then	
+		name_object_human = "gar_bandit_respawn_1"
+	elseif number_objects_human == 36 then	
+		name_object_human = "gar_bandit_respawn_2"		
+	elseif number_objects_human == 37 then	
+		name_object_human = "gar_stalker_respawn_1"
+	elseif number_objects_human == 38 then	
+		name_object_human = "gar_stalker_respawn_2"
+	elseif number_objects_human == 39 then	
+		name_object_human = "gar_dolg_respawn_1"
+	elseif number_objects_human == 40 then	
+		name_object_human = "gar_dolg_respawn_2"
+	elseif number_objects_human == 41 then	
+		name_object_human = "ds_stalker_respawn_1"
+	elseif number_objects_human == 42 then	
+		name_object_human = "ds_stalker_respawn_2"
+	elseif number_objects_human == 43 then	
+		name_object_human = "ds_bandit_respawn_1"
+	elseif number_objects_human == 44 then	
+		name_object_human = "ds_bandit_respawn_2"
+	elseif number_objects_human == 45 then	
+		name_object_human = "ds_bandit_respawn_3"
+	elseif number_objects_human == 46 then	
+		name_object_human = "rad_freedom_respawn_2"
+	elseif number_objects_human == 47 then	
+		name_object_human = "rad_freedom_respawn_1"
+	elseif number_objects_human == 48 then	
+		name_object_human = "rad_freedom_respawn_3"
+	elseif number_objects_human == 49 then	
+		name_object_human = "rad_monolith_respawn_1"		
+	elseif number_objects_human == 50 then	
+		name_object_human = "rad_monolith_respawn_2"
+	elseif number_objects_human == 51 then	
+		name_object_human = "rad_monolith_respawn_3"
+	elseif number_objects_human == 52 then	
+		name_object_human = "rad_specnaz_respawn_specnaz"
+	elseif number_objects_human == 53 then	
+		name_object_human = "rad_soldier_master"
+	elseif number_objects_human == 54 then	
+		name_object_human = "rad_zombied_respawn_1"
+	elseif number_objects_human == 55 then	
+		name_object_human = "rad_zombied_respawn_2"
+	elseif number_objects_human == 56 then	
+		name_object_human = "rad_zombied_respawn_3"
+	elseif number_objects_human == 57 then	
+		name_object_human = "yan_zombied_respawn_1"
+	elseif number_objects_human == 58 then	
+		name_object_human = "yan_zombied_respawn_2"
+	elseif number_objects_human == 59 then	
+		name_object_human = "yan_zombied_respawn_3"
+	elseif number_objects_human == 60 then	
+		name_object_human = "yan_ecolog_respawn_1"
+	elseif number_objects_human == 61 then	
+		name_object_human = "bar_stalker_respawn_1"
+	elseif number_objects_human == 62 then	
+		name_object_human = "bar_stalker_respawn_2"		
+	elseif number_objects_human == 63 then	
+		name_object_human = "bar_stalker_respawn_3"
+	elseif number_objects_human == 64 then	
+		name_object_human = "bar_stalker_respawn_4"
+	elseif number_objects_human == 65 then	
+		name_object_human = "bar_dolg_respawn_1"
+	elseif number_objects_human == 66 then	
+		name_object_human = "bar_dolg_respawn_2"
+	elseif number_objects_human == 67 then	
+		name_object_human = "bar_dolg_respawn_3"
+	elseif number_objects_human == 68 then	
+		name_object_human = "cit_killer_respawn_1"
+	elseif number_objects_human == 69 then	
+		name_object_human = "cit_killer_respawn_2"
+	elseif number_objects_human == 70 then	
+		name_object_human = "cit_killer_respawn_3"
+	elseif number_objects_human == 71 then	
+		name_object_human = "cit_bandit_respawn_1"
+	elseif number_objects_human == 72 then	
+		name_object_human = "cit_bandit_respawn_2"
+	elseif number_objects_human == 73 then	
+		name_object_human = "val_bandit_respawn_1"
+	elseif number_objects_human == 74 then	
+		name_object_human = "val_bandit_respawn_2"
+	elseif number_objects_human == 75 then	
+		name_object_human = "val_bandit_respawn_3"		
+	elseif number_objects_human == 76 then	
+		name_object_human = "val_bandit_respawn_4"
+	elseif number_objects_human == 77 then	
+		name_object_human = "val_bandit_respawn_5"
+	elseif number_objects_human == 78 then	
+		name_object_human = "val_soldier_respawn_1"
+	elseif number_objects_human == 79 then	
+		name_object_human = "ros_killer_respawn_1"	
+	elseif number_objects_human == 80 then	
+		name_object_human = "ros_killer_respawn_2"
+	elseif number_objects_human == 81 then	
+		name_object_human = "ros_killer_respawn_3"
+	elseif number_objects_human == 82 then	
+		name_object_human = "ros_killer_respawn_4"
+	elseif number_objects_human == 83 then	
+		name_object_human = "ros_bandit_respawn_3"
+	elseif number_objects_human == 84 then	
+		name_object_human = "ros_bandit_respawn_4"
+	elseif number_objects_human == 85 then	
+		name_object_human = "sar_monolith_respawn"	
+	end	
+
+	text = "начал_спавн_людей_"..tostring(name_object_human).."_в_количестве_"..tostring(count_objects_human)
+	news_manager.send_tip(db.actor, text , nil, nil, 30000)
+	-- get_console():execute("начал_спавн_людей_"..tostring(name_object_human).."_в_количестве_"..tostring(count_objects_human))
+	spawns_human( name_object_human, pos, count_objects_human )
+	
+end
+
+
+--------------------- работа с монстрами
+function spawns( namesp, posit, mon_c )
+
+local ind, dist_between
+local new_position
+local dir_rand_x, rez_dir_rand_x, dir_rand_z, rez_dir_rand_z 
+local actor_pos = db.actor:position()
+
+	dir_rand_x = math.random (1,2)
+
+	if dir_rand_x == 1 then	rez_dir_rand_x = -1 else rez_dir_rand_x = 1 end
+
+	dir_rand_z = math.random (1,2)
+
+	if dir_rand_z == 1 then rez_dir_rand_z = -1 else rez_dir_rand_z = 1 end
+
+	local iCnt = tonumber(mon_c) 
+
+	for ind = 1, iCnt
+
+		new_position = vector():set(
+                    posit.x + (math.random(50,100)*rez_dir_rand_x),
+                    posit.y + 5,
+                    posit.z + (math.random(50,100)*rez_dir_rand_z)
+                )
+
+	    	dist_between = distance_2d(actor_pos, new_position)
+
+	    	while dist_between  < 20  do	
+
+			new_position.x = new_position.x + 20
+			dist_between = distance_2d(actor_pos, new_position)
+	    	end
+
+	    	if actor_pos.y >= 0 then
+			alife():create(namesp,new_position, db.actor:level_vertex_id(), db.actor:game_vertex_id())
+	    	else
+			alife():create(namesp,new_position, 1, db.actor:game_vertex_id())
+	    	end
+
+	end
+
+end
+
+function spawns_human( namesp, posit, mon_c )
+
+local ind, dist_between
+local new_position
+local dir_rand_x, rez_dir_rand_x, dir_rand_z, rez_dir_rand_z 
+local actor_pos = db.actor:position()
+
+	dir_rand_x = math.random (1,2)
+
+	if dir_rand_x == 1 then rez_dir_rand_x = -1 else rez_dir_rand_x = 1 end
+
+	dir_rand_z = math.random (1,2)
+
+	if dir_rand_z == 1 then rez_dir_rand_z = -1 else rez_dir_rand_z = 1 end
+
+	local iCnt = tonumber(mon_c) 
+
+	for ind = 1, iCnt
+
+		new_position = vector():set(
+                    posit.x + (math.random(50,100)*rez_dir_rand_x),
+                    posit.y + 5,
+                    posit.z + (math.random(50,100)*rez_dir_rand_z)
+                )
+
+	dist_between = distance_2d(actor_pos, new_position)
+
+	while dist_between  < 50  do	
+		new_position.x = new_position.x + 50
+		dist_between = distance_2d(actor_pos, new_position)
+	end
+
+	if actor_pos.y >= 0 then
+		alife():create(namesp,new_position, db.actor:level_vertex_id(), db.actor:game_vertex_id())
+	else
+		alife():create(namesp,new_position, 1, db.actor:game_vertex_id())
+	end
+ --	get_console():execute("Spawns_OK")
+
+	end
+

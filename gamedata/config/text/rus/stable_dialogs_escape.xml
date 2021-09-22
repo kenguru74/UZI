@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+<!--*****************************************-->
+<!-- Sidorovich Factions Repair dialog start -->
+<!--*****************************************-->
+	<string id="list_factions_repair_0">
+		<text>Восстановить отношения с "Долгом": </text>
+	</string>
+	<string id="list_factions_repair_1">
+		<text>Вступить в "Долг": </text>
+	</string>
+	<string id="list_factions_repair_2">
+		<text>Восстановить отношения со "Свободой": </text>
+	</string>
+	<string id="list_factions_repair_3">
+		<text>Вступить в "Свободу": </text>
+	</string>
+	<string id="list_factions_repair_4">
+		<text>Восстановить отношения со Сталкерами: </text>
+	</string>
+	<string id="list_factions_repair_5">
+		<text>Вступить в группировку Монолит: </text>
+	</string>
+	<string id="list_factions_repair_6">
+		<text>Вступить в ряды ЧВК: </text>
+	</string>
+	<string id="list_factions_repair_7">
+		<text>Присоединиться к бандитам: </text>
+	</string>
+	<string id="list_factions_repair_8">
+		<text>Присоединиться к наёмникам: </text>
+	</string>
+	<string id="list_factions_repair_9">
+		<text>Покинуть группировку: </text>
+	</string>
+	<string id="list_factions_repair_10">
+		<text>Присоединиться к Экологам: </text>
+	</string>
+	<string id="escape_trader_factions_0">
+		<text>У тебя ведь есть связи с другими группировками?</text>
+	</string>
+	<string id="escape_trader_factions_1">
+		<text>А как же, обижаешь, Стрелок! Только стоит это недёшево...\nСкажем, если поссоришься со сталкерами - смогу помирить.. Взламываю сталкерскую сеть - и ты снова чист! Чем больше у тебя проблем с группировкой - тем дороже тебе будет восстановить с ними отношения.\n\nМинимальная цена - пять тысяч...</text>
+	</string>
+	<string id="escape_trader_factions_2">
+		<text>Долговцы охотятся за моей головой, поможешь с ними поладить?</text>
+	</string>
+	<string id="escape_trader_factions_3">
+		<text>Я хочу вступить в Долг, поможешь?</text>
+	</string>
+	<string id="escape_trader_factions_4">
+		<text>Свободовцы меня везде преследуют, поможешь уладить с ними отношения?</text>
+	</string>
+	<string id="escape_trader_factions_5">
+		<text>Хочу вступить в Свободу!</text>
+	</string>
+	<string id="escape_trader_factions_6">
+		<text>За мной вольные охотятся, помоги!?</text>
+	</string>
+	<string id="escape_trader_factions_7">
+		<text>Ладно, забыли пока..</text>
+	</string>
+	<string id="escape_trader_factions_8">
+		<text>Хорошо, но подобные услуги стоят недёшево. \nИтак, сейчас проверю твой статус.\nТы точно уверен в том, что хочешь это сделать?\n\nГотово!</text>
+	</string>
+	<string id="escape_trader_factions_9">
+		<text>Подожди, сейчас влезу в базу... Ну вот, теперь всё в порядке! </text>
+	</string>
+	<string id="escape_trader_factions_10">
+		<text>Да, я хочу восстановить отношения с Долгом!</text>
+	</string>
+	<string id="escape_trader_factions_11">
+		<text>Да, зачисляй меня в Долг!</text>
+	</string>
+	<string id="escape_trader_factions_12">
+		<text>Да, помоги восстановить отношения со Свободой!</text>
+	</string>
+	<string id="escape_trader_factions_13">
+		<text>Хочу быть свободным, да здравствует Свобода!</text>
+	</string>
+	<string id="escape_trader_factions_14">
+		<text>Да, я хочу восстановить отношения с вольными!</text>
+	</string>
+	<string id="escape_trader_factions_15">
+		<text>Спасибо! </text>
+	</string>
+	<string id="escape_trader_factions_16">
+		<text>Я слышал зов Монолита, можешь меня к ним определить?</text>
+	</string>
+	<string id="escape_trader_factions_17">
+		<text>Да, я хочу быть с монолитовцами!</text>
+	</string>
+	<string id="escape_trader_factions_18">
+		<text>Слышал что ЧВК объявили набор, а я не хочу упускать такую возможность!</text>
+	</string>
+	<string id="escape_trader_factions_19">
+		<text>Сэр, да, сэр! Так точно, сэр!</text>
+	</string>
+	<string id="escape_trader_factions_20">
+		<text>Задолбало меня всё, пожалуй, пойду в бандиты!</text>
+	</string>
+	<string id="escape_trader_factions_21">
+		<text>Я два раза повторять не буду, понял, в натуре!?</text>
+	</string>
+	<string id="escape_trader_factions_22">
+		<text>Всё, я больше не могу так жить, хочу быть вольнягой, сам по себе!</text>
+	</string>
+	<string id="escape_trader_factions_23">
+		<text>Да, я так и сказал.</text>
+	</string>
+	<string id="escape_trader_factions_24">
+		<text>Можешь посоветовать, как вступить в картель к наёмникам?</text>
+	</string>
+	<string id="escape_trader_factions_25">
+		<text>Да, я хочу быть наёмником!</text>
+	</string>
+	<string id="escape_trader_factions_26">
+		<text>Можешь посодействовать со вступлением к экологам?</text>
+	</string>
+	<string id="escape_trader_factions_27">
+		<text>Да, я хочу быть экологом!</text>
+	</string>
+
+
+
+	<string id="esc_bridge_soldiers_start_11">
+		<text>Слыш, чувак, ты куда намылился?!</text>
+	</string>
+	<string id="esc_bridge_soldiers_start_12">
+		<text>Мне бы пройти...</text>
+	</string>
+	<string id="esc_bridge_soldiers_start_13">
+		<text>Охренел?! \nНо если очень хочется, то можно! Гони 5 штук!</text>
+	</string>
+	<string id="esc_bridge_soldiers_start_14">
+		<text>Держи, чего уж там...</text>
+	</string>
+	<string id="esc_bridge_soldiers_start_15">
+		<text>Теперь слушай сюда! Мы некоторое время делаем вид, что тебя тут нет, так что бегом давай!</text>
+	</string>
+	<string id="esc_bridge_soldiers_start_21">
+		<text>Шагай, шагай отсюда!</text>
+	</string>
+	<string id="esc_bridge_soldiers_start_24">
+		<text>Денег у меня нет...</text>
+	</string>
+	<string id="esc_bridge_soldiers_start_25">
+		<text>Тогда вали нах отсюда! А решишь пробраться втихаря - как собаку пристрелим!</text>
+	</string>
+
+
+	<string id="esc_lager_no_talk_11">
+		<text>Здоров, брат!</text>
+	</string>
+	<string id="esc_lager_no_talk_111">
+		<text>И тебе не хворать..</text>
+	</string>
+	<string id="esc_lager_no_talk_21">
+		<text>Здоров.</text>
+	</string>
+	<string id="esc_lager_no_talk_31">
+		<text>Здорово, брат! Тут тебя старший хотел видеть.</text>
+	</string>
+	<string id="esc_lager_no_talk_32">
+		<text>Ага, я знаю.</text>
+	</string>
+
+
+	<string id="esc_provodnik_start_11">
+		<text>Поздорову, брат!</text>
+	</string>
+	<string id="esc_provodnik_start_12">
+		<text>Здоров. От Дока есть чего?</text>
+	</string>
+	<string id="esc_provodnik_start_13">
+		<text>Есть, но немного. На Агро иди, ты знаешь где и что искать. Если помощь нужна, то говори.</text>
+	</string>
+	<string id="esc_provodnik_start_14">
+		<text>Спасибо, брат, но я сам.</text>
+	</string>
+	<string id="esc_provodnik_start_15">
+		<text>Как знаешь. Если что - зови!</text>
+	</string>
+	<string id="esc_provodnik_start_16">
+		<text>Спасибо!</text>
+	</string>
+	<string id="esc_provodnik_start_21">
+		<text>Здравствуй, брат!</text>
+	</string>
+
+
+	<string id="esc_stalker_talk_level_0">
+		<text>Не расскажешь что тут нового?</text>
+	</string>
+	<string id="esc_stalker_talk_level_1">
+		<text>Да есть новое, мать его... Вот, например: раньше с военными хоть как-то договориться можно было, а теперь - всё. Потому как это не военные, а хрен пойми кто, только выглядят как они. Сброд отмороженный. Поэтому - будь настороже и лучше не связывайся.</text>
+	</string>
+	<string id="esc_stalker_talk_level_10">
+		<text>А под мостом что?</text>
+	</string>
+	<string id="esc_stalker_talk_level_11">
+		<text>Под мостом тоже не пойми кто, но, говорят, если забашляешь, то могут даже пропустить. Хотя я лично не верю. Мы поверху ходим, через насыпь. Там радиация и мутанты, но ходим как-то.</text>
+	</string>
+	<string id="esc_stalker_talk_level_2">
+		<text>Ясно... Еще есть что?</text>
+	</string>
+	<string id="esc_stalker_talk_level_21">
+		<text>Да в общем больше ничего. А, ну еще на переходе на Свалку частенько бандиты сидят. Но это не новое - это всегда было. Выбиваем их, они снова приходят. Нет бы нам собраться, да сделать там свой типа блок-пост, но мы ж не можем, мы ж каждый за себя... Пока не прижмет! Эхх...</text>
+	</string>
+
+
+	<string id="escape_factory_assault_start_31">
+		<text>Здоров. Волк меня предупредил...</text>
+	</string>
+	<string id="escape_factory_assault_start_311">
+		<text>Ага. Так, сколько там этих сявок мокрожопых?</text>
+	</string>
+	<string id="escape_factory_assault_start_3111">
+		<text>Да голов семь-восемь. Две штуки в районе ворот, две в правом здании у костра, две в здании слева - там и Шустрого держат... По двору ещё временами кто-то шляется... а так вроде всё. Ну что, начнём, помолясь?</text>
+	</string>
+	<string id="escape_factory_assault_start_31111">
+		<text>Начнём, герои... Поднимай своих.</text>
+	</string>
+	<string id="escape_factory_assault_start_31112">
+		<text>Не, не надо. Сидите здесь тихо и не высовывайтесь.</text>
+	</string>
+	<string id="escape_factory_assault_start_311121">
+		<text>Хм... Ладно... Ну, тогда удачи. Рембо, блин...</text>
+	</string>
+	<string id="escape_factory_assault_start_31113">
+		<text>Ага, погнали наши городских!</text>
+	</string>
+	<string id="escape_factory_assault_start_31114">
+		<text>Погнали!</text>
+	</string>
+	<string id="escape_factory_assault_start_41">
+		<text>Уж настрелялись, так настрелялись... Думаю, Волк будет доволен!</text>
+	</string>
+	<string id="escape_factory_assault_start_51">
+		<text>Ещё не всех положили! Ищите этих уродов, валите их!..</text>
+	</string>
+	<string id="escape_factory_assault_start_61">
+		<text>Ну, брат, спасибо. Мощно ты их... Уважуха.</text>
+	</string>
+	<string id="escape_factory_assault_start_71">
+		<text>Ну, и где штабеля поверженных врагов? Эх, ты! Ничего не умеешь, кроме как языком трепать... Вали отсюда!</text>
+	</string>
+
+
+	<string id="escape_fox_hello_dialog_2">
+		<text>Извини, браток, давай в следующий раз. Посижу я тут, отдохну, оклемаюсь...</text>
+	</string>
+	<string id="escape_fox_hello_dialog_21">
+		<text>Слушай, есть у меня пара вопросов...</text>
+	</string>
+	<string id="escape_fox_hello_dialog_211">
+		<text>Спрашивай.</text>
+	</string>
+	<string id="escape_fox_hello_dialog_2111">
+		<text>Как обстановка? Что нового, что необычного?</text>
+	</string>
+	<string id="escape_fox_hello_dialog_21111">
+		<text>Хм... Много чего, тут в двух словах не расскажешь. А рассказчик сейчас из меня никакой, уж извини.\nНу, если коротко... Тревожно стало. Понимаешь, как-то всё учёные забегали, засуетились в последнее время. Военные лютуют. Пару дней относительно тихо, а бывает прям не Зона, а проспект - толпами ходят. Наши на неврозе, бандюки тоже с катушек съехали. Муты оборзели, опять таки...  Слушай брат, без обид, давай все же в другой раз, а я тут отдохну маленько, да почапаю к Сидору.</text>
+	</string>
+	<string id="escape_fox_hello_dialog_2113">
+		<text>Передумал я. Спасибо!</text>
+	</string>
+	<string id="escape_fox_hello_dialog_2114">
+		<text>Спасибо за информацию.</text>
+	</string>
+	<string id="escape_fox_hello_dialog_3">
+		<text>Спасибо! \nТак, теперь я тебя внимательно слушаю!</text>
+	</string>
+	<string id="escape_fox_hello_dialog_31">
+		<text>Лис, браток, что-то все темнят...</text>
+	</string>
+	<string id="escape_fox_hello_dialog_311">
+		<text>В смысле?</text>
+	</string>
+	<string id="escape_fox_hello_dialog_3111">
+		<text>Да вот Сидорович предложил к тебе обратиться. Что-то у тебя для меня есть. А?</text>
+	</string>
+	<string id="escape_fox_hello_dialog_3112">
+		<text>Ясно. Привет тебе от Дока, вот что.</text>
+	</string>
+	<string id="escape_fox_hello_dialog_3113">
+		<text>Та-ак. Спасибо. Что-то ещё?</text>
+	</string>
+	<string id="escape_fox_hello_dialog_3114">
+		<text>Ещё... Док передал, чтобы ты обратился к Серому. У Серого узнаешь насчёт Агропрома что-то там.</text>
+	</string>
+	<string id="escape_fox_hello_dialog_3115">
+		<text>Мда. Темните вы, ребята.</text>
+	</string>
+	<string id="escape_fox_hello_dialog_3116">
+		<text>Не мы темним, а Док. \n \nПоможешь от нечисти отбиться?</text>
+	</string>
+	<string id="escape_fox_hello_dialog_3117">
+		<text>Не вопрос, брат. Ща покрошим твою нечисть в мелкий винегрет...</text>
+	</string>
+	<string id="escape_fox_hello_dialog_5">
+		<text>Аптечку! Дай аптечку!</text>
+	</string>
+	<string id="escape_fox_hello_dialog_55">
+		<text>Держи</text>
+	</string>
+	<string id="escape_fox_hello_dialog_551">
+		<text>Спасибо, Стрелок.</text>
+	</string>
+	<string id="escape_fox_hello_dialog_552">
+		<text>Да не за что, брат.</text>
+	</string>
+	<string id="escape_fox_hello_dialog_56">
+		<text>Нет у меня аптечки. Сожалею!</text>
+	</string>
+	<string id="escape_fox_hello_dialog_61">
+		<text>Спасибо, брат, снова ты меня выручил... Как-то странно история повторяется, не находишь? \nВозьми вот, уж чем богат. \nПро наш схрон в Катакомбах не забыл? Мы с ребятами свое забрали, а твое все на месте. Если пойдешь туда и понадобится помощь - зови, поможем.</text>
+	</string>
+	<string id="escape_fox_hello_dialog_611">
+		<text>Нахожу, братка, еще как нахожу... \nА про схрон помню конечно. Спасибо за предложение, если что - обращусь.</text>
+	</string>
+
+
+	<string id="escape_lager_guard_start_dialog_121">
+		<text>Стрелок, поговори с Волком, у него к тебе дело.</text>
+	</string>
+	<string id="escape_lager_guard_start_dialog_2">
+		<text>Стой, мужик! Ты откуда здесь?</text>
+	</string>
+	<string id="escape_lager_guard_start_dialog_21">
+		<text>Оттуда. Расслабься, парень, свои.</text>
+	</string>
+	<string id="escape_lager_guard_start_dialog_212">
+		<text>Свои все здесь, а ты чужой!</text>
+	</string>
+	<string id="escape_lager_guard_start_dialog_2121">
+		<text>Расслабся, парень. Мне вон к Волку надо.</text>
+	</string>
+	<string id="escape_lager_guard_start_dialog_21211">
+		<text>Волка знаешь? Ну... Иди давай. Только знай, начнешь бузить - пристрелим!</text>
+	</string>
+	<string id="escape_lager_guard_start_dialog_2122">
+		<text>Да будет тебе...</text>
+	</string>
+	<string id="escape_lager_guard_start_dialog_21221">
+		<text>Без обид, мужик. Зайди к Сидору.</text>
+	</string>
+	<string id="escape_lager_guard_start_dialog_22">
+		<text>Да будет тебе...</text>
+	</string>
+	<string id="escape_lager_guard_start_dialog_3">
+		<text>Привет, Стрелок!</text>
+	</string>
+
+
+	<string id="escape_lager_leader_hello_11">
+		<text>Здоров, Стрелок, рад видеть!</text>
+	</string>
+	<string id="escape_lager_leader_hello_111">
+		<text>Здорово, братка, взаимно. А Волк в ходке?</text>
+	</string>
+	<string id="escape_lager_leader_hello_1111">
+		<text>Да он к Бармену подался, так, перетереть кой-чего... А потом на Склады собирался. Так что я тут один и, похоже, надолго. \nСлушай, Стрелок, тут опять мерки борзонули. Мы, в принципе, сами с усами - как видишь, молодняк теперь посерьёзней стал, не то что раньше. Но всё ж опыта маловато реального боевого, только пара-тройка из них более-менее воевать могут. Так что твоя помощь очень пригодилась бы.</text>
+	</string>
+	<string id="escape_lager_leader_hello_11111">
+		<text>Понял. Так, короче, сейчас распихай свой детсад по норам-подвалам, сам будь здесь и следи, чтоб они носу не казали.</text>
+	</string>
+	<string id="escape_lager_leader_hello_111111">
+		<text>Не понял... Стрелок, вообще-то я сам решаю, что мне делать!</text>
+	</string>
+	<string id="escape_lager_leader_hello_1111111">
+		<text>Да, разумеется. Но давай без обид: у кого контракт насчёт "воспитания детишек"? Вот именно. Так что, пожалуйста, береги щенков, а я уж как-нибудь сам, мне так проще, я так привык.</text>
+	</string>
+	<string id="escape_lager_leader_hello_11111111">
+		<text>Хм... Ну... Ну ладно, брат. Если что, я...</text>
+	</string>
+	<string id="escape_lager_leader_hello_111111111">
+		<text>Замазали.</text>
+	</string>
+	<string id="escape_lager_leader_hello_1111112">
+		<text>Нет, я пока не готов...</text>
+	</string>
+	<string id="escape_lager_leader_hello_11111121">
+		<text>Жаль! Такой боец, как ты, нам бы сильно пригодился. Придётся своими силами...</text>
+	</string>
+	<string id="escape_lager_leader_hello_21">
+		<text>Ждём этих красавцев. Скоро пожалуют!</text>
+	</string>
+	<string id="escape_lager_leader_hello_31">
+		<text>Да, Стрелок, форму ты точно не потерял! Уважуха!</text>
+	</string>
+	<string id="escape_lager_leader_hello_311">
+		<text>Стараюсь...</text>
+	</string>
+	<string id="escape_lager_leader_hello_3111">
+		<text>Вот, держи хабарок. И - спасибо!</text>
+	</string>
+	<string id="escape_lager_leader_hello_3112">
+		<text>Обращайся, брат.</text>
+	</string>
+	<string id="escape_lager_leader_hello_41">
+		<text>Здорова, Стрелок, рад тебя видеть!</text>
+	</string>
+	<string id="escape_lager_leader_hello_411">
+		<text>И тебе привет!</text>
+	</string>
+	<string id="escape_lager_leader_hello_412">
+		<text>Кстати, а куда Волк опять подевался?</text>
+	</string>
+	<string id="escape_lager_leader_hello_4121">
+		<text>Да он тут недавно получил от одного из проходивших сталкеров какое-то послание, тут же собрался и ломанулся в сторону Бара. Я как раз от ранения оклёмывался на Кордоне, он и попросил меня присмотреть за молодняком. Так что я вместо него на контракте.</text>
+	</string>
+
+
+	<string id="escape_lager_volk_info_0">
+		<text>У меня есть вопросы.</text>
+	</string>
+	<string id="escape_lager_volk_info_1">
+		<text>Спрашивай, постараюсь помочь.</text>
+	</string>
+	<string id="escape_lager_volk_info_10">
+		<text>Спасибо!</text>
+	</string>
+	<string id="escape_lager_volk_info_2">
+		<text>Что нового в Зоне?</text>
+	</string>
+	<string id="escape_lager_volk_info_21">
+		<text>Много чего. Спрашивай конкретнее.</text>
+	</string>
+	<string id="escape_lager_volk_info_211">
+		<text>Что там, ближе к центру, не в курсе случаем?</text>
+	</string>
+	<string id="escape_lager_volk_info_2111">
+		<text>Да уж, вопросец... Жопа там полная, как говорят. Я сам не знаю.</text>
+	</string>
+	<string id="escape_lager_volk_info_21111">
+		<text>Расскажи-ка старую байку об Исполнителе?</text>
+	</string>
+	<string id="escape_lager_volk_info_211111">
+		<text>Да, есть такая легенда красивая, помню. Вроде бы есть в центре Зоны место, где исполняются любые, даже самые невероятные, прихоти. \nТолько знаешь что скажу? Я точно знаю, что в центре Зоны до фига шансов загнуться, а в Исполнитель этот уже не верю. Не рискуй попусту. Не советую!</text>
+	</string>
+	<string id="escape_lager_volk_info_212">
+		<text>Блин, откуда здесь стольно нечисти?</text>
+	</string>
+	<string id="escape_lager_volk_info_2121">
+		<text>Здесь после тебя всё сначала кувырком было, потом на довольно долгое время устаканилось, а вот теперь снова поперло.</text>
+	</string>
+	<string id="escape_lager_volk_info_213">
+		<text>Что тебя-то опять привело в Зону?</text>
+	</string>
+	<string id="escape_lager_volk_info_2131">
+		<text>Ну... Так вышло.</text>
+	</string>
+	<string id="escape_lager_volk_info_214">
+		<text>Хочу понять что изменилось, пока меня не было. Может какие новые опасности появились?</text>
+	</string>
+	<string id="escape_lager_volk_info_2141">
+		<text>Люди. Люди как были главной опасностью, так и остались.</text>
+	</string>
+	<string id="escape_lager_volk_info_3">
+		<text>Слышал что-нибудь о Диггере?</text>
+	</string>
+	<string id="escape_lager_volk_info_31">
+		<text>Кажется сталкер из крутых. Лично не знаком - ну так я давно уже близко к центру не лазил, а здесь, на окраине, в основном только зелёные бродят.</text>
+	</string>
+	<string id="escape_lager_volk_info_4">
+		<text>Что нового о "грузовиках смерти"?</text>
+	</string>
+	<string id="escape_lager_volk_info_41">
+		<text>Да ничего. Нету их больше.</text>
+	</string>
+
+
+	<string id="escape_lager_volk_talk_11">
+		<text>Здорово, Стрелок!</text>
+	</string>
+	<string id="escape_lager_volk_talk_111">
+		<text>И тебе не хворать! Как жизнь, как дела?</text>
+	</string>
+	<string id="escape_lager_volk_talk_1111">
+		<text>Как сажа бела... Слушай, Стрелок, нужна помощь.</text>
+	</string>
+	<string id="escape_lager_volk_talk_11111">
+		<text>Да это я уж понял, Сидорович сказал.</text>
+	</string>
+	<string id="escape_lager_volk_talk_111111">
+		<text>Угум, сказал... И про то, что я ему должен, тоже небось сказал?</text>
+	</string>
+	<string id="escape_lager_volk_talk_1111111">
+		<text>Ну да, сказал. И что? Не нервничай, я же все понимаю и помогу в любом случае. Есть какие подробности по Шустрому?</text>
+	</string>
+	<string id="escape_lager_volk_talk_11111111">
+		<text>Есть немного. Я послал Петруху с пацанами, чтобы пока понаблюдали за уродами и ждали "подкрепления". \nКороче, эти уроды где-то Шустрого с пацанами поймали и скинули сообщение, требуют выкуп. Хабаром, стволами, баблом... Сам Шустрый вроде жив пока, а остальных, похоже, привалили.\nМы никак не справляемся с бандосами. Сам понимаешь, некому тут воевать и я не могу из-за этого долга гребанного...</text>
+	</string>
+	<string id="escape_lager_volk_talk_21111111">
+		<text>Ясно.</text>
+	</string>
+	<string id="escape_lager_volk_talk_31111111">
+		<text>Ща я Петрухе сообщу, что помощь идет. И это... Не обращай внимания на его борзоту. Он тут давно, сам знаешь, ну и вроде как тоже себя чуть ли не ветераном ощущает. Но мы-то знаем, что толку с него не выйдет. Короче, брат, не напрягайся на его базары, этот чудило, какой бы он ни был, мне ещё пригодится здесь.</text>
+	</string>
+	<string id="escape_lager_volk_talk_41111111">
+		<text>Ладно, братка, я понял.</text>
+	</string>
+	<string id="escape_lager_volk_talk_51111111">
+		<text>Спасибо, брат, отплачу хабаром.</text>
+	</string>
+	<string id="escape_lager_volk_talk_61111111">
+		<text>Лады, сделаем.</text>
+	</string>
+	<string id="escape_lager_volk_talk_1111111111">
+		<text>Уважаю! Вот координаты парней. Насчёт тебя сейчас предупрежу. \nТолько не напрягайся их тону - они себя тут эдакими Терминаторами чувствуют. Хы.. Ну, ни пуха.</text>
+	</string>
+	<string id="escape_lager_volk_talk_11111111111">
+		<text>К чёрту.</text>
+	</string>
+	<string id="escape_lager_volk_talk_111111112">
+		<text>Достало уже Шустрика вытаскивать - не пойду!</text>
+	</string>
+	<string id="escape_lager_volk_talk_111111121">
+		<text>Значит, вот как... Ну и хер с ним на самом деле! Сколько можно их, как котят, из лужи таскать? \nИли взорвать на хрен это АТП уже? Да толку-то.. Этих мороженых всё равно не перестрелять. Каждый день в Зону пачками просачиваются.</text>
+	</string>
+	<string id="escape_lager_volk_talk_21">
+		<text>Ну, как там было?</text>
+	</string>
+	<string id="escape_lager_volk_talk_211">
+		<text>Чисто сработали.</text>
+	</string>
+	<string id="escape_lager_volk_talk_2111">
+		<text>Отлично, друг! Вот, держи!</text>
+	</string>
+	<string id="escape_lager_volk_talk_212">
+		<text>Как было? Не хотелось бы хвастаться, но было легко.</text>
+	</string>
+	<string id="escape_lager_volk_talk_2121">
+		<text>Стрелок, спасибо, брат! Гора с плеч... Вот, как и обещал!</text>
+	</string>
+	<string id="escape_lager_volk_talk_21211">
+		<text>Отлично. Ну что ж, пойду к Сидору.</text>
+	</string>
+	<string id="escape_lager_volk_talk_212111">
+		<text>Постой...</text>
+	</string>
+	<string id="escape_lager_volk_talk_212112">
+		<text>Да?</text>
+	</string>
+	<string id="escape_lager_volk_talk_212113">
+		<text>Ты вообще как, надолго сюда?</text>
+	</string>
+	<string id="escape_lager_volk_talk_212114">
+		<text>Да хрен знает, как пойдет.</text>
+	</string>
+	<string id="escape_lager_volk_talk_212115">
+		<text>Ясно... Ладно, давай к Сидору, у него там дело какое-то, которое никому кроме тебя поручать не хочет.</text>
+	</string>
+	<string id="escape_lager_volk_talk_212116">
+		<text>Ну да... Он мне про это дело весточку аж в Предбанник доставил, аккурат к моему приходу в Зону. Видать и правда что-то серьезное. \nНу бывай, брат.</text>
+	</string>
+	<string id="escape_lager_volk_talk_213">
+		<text>Пока нечем...</text>
+	</string>
+	<string id="escape_lager_volk_talk_2131">
+		<text>Держи меня в курсе, ладно?</text>
+	</string>
+	<string id="escape_lager_volk_talk_31">
+		<text>Здрав будь, брат, наконец-то вернулся, рад видеть! Только это... Давай попозже поговорим, а то у нас тут шухер небольшой... Ща я тут разгребусь с делами... А ты зайди пока к Сидоровичу, лады?</text>
+	</string>
+	<string id="escape_lager_volk_talk_311">
+		<text>Понятно... Лады, ща зайду.</text>
+	</string>
+	<string id="escape_lager_volk_talk_41">
+		<text>Здоров!</text>
+	</string>
+	<string id="escape_lager_volk_talk_51">
+		<text>Ну, как там было?</text>
+	</string>
+	<string id="escape_lager_volk_talk_511">
+		<text>Как было? Не хотелось бы хвастаться, но было легко.</text>
+	</string>
+	<string id="escape_lager_volk_talk_5111">
+		<text>Спасибо, брат! Гора с плеч... Вот, как и обещал.</text>
+	</string>
+	<string id="escape_lager_volk_talk_5112">
+		<text>Отлично. Ну что ж, пойду к Сидору.</text>
+	</string>
+	<string id="escape_lager_volk_talk_5113">
+		<text>Постой...</text>
+	</string>
+	<string id="escape_lager_volk_talk_5114">
+		<text>Да?</text>
+	</string>
+	<string id="escape_lager_volk_talk_5115">
+		<text>Ты вообще как, надолго сюда?</text>
+	</string>
+	<string id="escape_lager_volk_talk_5116">
+		<text>Да хрен знает, как пойдет.</text>
+	</string>
+	<string id="escape_lager_volk_talk_5117">
+		<text>Ясно... Ладно, давай к Сидору, у него там дело какое-то, которое никому кроме тебя поручать не хочет.</text>
+	</string>
+	<string id="escape_lager_volk_talk_5118">
+		<text>Ну да... Он мне про это дело весточку аж в Предбанник доставил, аккурат к моему приходу в Зону. Видать и правда что-то серьезное. \nНу бывай, брат.</text>
+	</string>
+
+
+	<string id="escape_shustryi_start_11">
+		<text>Спасибо, брат! Даже не знаю, как и благодарить тебя!!</text>
+	</string>
+	<string id="escape_shustryi_start_111">
+		<text>Расслабься уже, парень. Давай эту долбаную флэху, сам отнесу.</text>
+	</string>
+	<string id="escape_shustryi_start_1111">
+		<text>Ага, ща... Вот она! Эти олухи сначала отобрали - думали, на ней музыка или порнуха. А подключать-то некуда! Идиоты! Их старший её чуть в костёр не кинул, а потом вдруг передумал, вернул и сказал: "Чтоб в карманах не валялась!" Дважды идиоты!</text>
+	</string>
+	<string id="escape_shustryi_start_11111">
+		<text>Понятно... Есть ещё какая инфа?</text>
+	</string>
+	<string id="escape_shustryi_start_111111">
+		<text>Ага, есть! Я быкам наплёл про нычку с артами - так они одного туда отправили. Нычка там действительно есть, только артефакт там всего один. Если хочешь, скину тебе в КПК координаты.</text>
+	</string>
+	<string id="escape_shustryi_start_21">
+		<text>Дороги бархатом, сталкер!</text>
+	</string>
+	<string id="escape_shustryi_start_311">
+		<text>А давай.</text>
+	</string>
+	<string id="escape_shustryi_start_3111">
+		<text>Только не забудь - там зверья всякого много. И бандит, который туда отправился, тоже не с совочком - так ты будь осторожен!</text>
+	</string>
+	<string id="escape_shustryi_start_31111">
+		<text>Разберёмся.</text>
+	</string>
+	<string id="escape_shustryi_start_311111">
+		<text>Ну всё, спасибо, Стрелок!</text>
+	</string>
+	<string id="escape_shustryi_start_3111112">
+		<text>Угум... Бывай.</text>
+	</string>
+
+
+	<string id="escape_trader_done_blockpost_box_0">
+		<text>Вот, держи свой ящик.</text>
+	</string>
+	<string id="escape_trader_done_blockpost_box_2">
+		<text>Вот спасибо, уважил старика! Держи за работу, всё по-честному.</text>
+	</string>
+
+
+	<string id="escape_trader_jobs_0">
+		<text>Особые задания есть?</text>
+	</string>
+	<string id="escape_trader_jobs_1">
+		<text>Нет ничего.</text>
+	</string>
+	<string id="escape_trader_jobs_12">
+		<text>Какие такие "особые" задания? Ты ещё со старым не справился!</text>
+	</string>
+	<string id="escape_trader_jobs_5">
+		<text>Слушай, такое дело... На блокпост передали ящик с отчётом одной из экспедиций, что к северу ходила. \nОхраняют его так, будто он чистым плутонием наполнен... Короче, как насчёт достать этот ящичек?</text>
+	</string>
+	<string id="escape_trader_jobs_51">
+		<text>Хрена ж себе у тебя запросы, отец...</text>
+	</string>
+	<string id="escape_trader_jobs_511">
+		<text>Запросы, сынок, самые обычные. Ну так что, будем разговоры разговаривать или дело делать?</text>
+	</string>
+	<string id="escape_trader_jobs_5111">
+		<text>Ладно, попробую.</text>
+	</string>
+	<string id="escape_trader_jobs_51111">
+		<text>Отлично. Отплачу, как положено, Стрелок. Ты, главное, не подшуми там, а то... Да сам понимаешь, что я тебя учу.</text>
+	</string>
+	<string id="escape_trader_jobs_52">
+		<text>Нее, ты уж извини, но к военным я не сунусь.</text>
+	</string>
+	<string id="escape_trader_jobs_521">
+		<text>Хм... Жаль. Ладно. Но знай, что я на тебя, между прочим, сильно рассчитывал.</text>
+	</string>
+	<string id="escape_trader_jobs_6">
+		<text>Так, Стрелок, дело есть.</text>
+	</string>
+	<string id="escape_trader_jobs_61">
+		<text>Слушаю.</text>
+	</string>
+	<string id="escape_trader_jobs_611">
+		<text>В Зоне опять чёрт-те что творится, и касается это всех, а тебя так вообще в первую очередь.</text>
+	</string>
+	<string id="escape_trader_jobs_6111">
+		<text>Что что-то не так в Зоне, я уже успел заметить. А почему именно меня касается, будут объяснения?</text>
+	</string>
+	<string id="escape_trader_jobs_61111">
+		<text>Объяснения какие-то будут... \nВ общем тебе снова надо на Агропром сходить, и снова за документами. Повторяется история... Только учти, там сейчас не армия, а эти уроды из частной шараги. Скупой должен был о них сказать. \nА теперь самое главное... \nНа Агро у этих ЧВК переполох недавно был - боец у них дезертировал и прошла информация, что этот малый что-то важное спер при побеге. Я тут посовещался кое с кем и мы решили, что что-то не так с этим дезертиром: не станут эти козлы ради одного бойца шухер устраивать - сбёг, да и хрен с ним, сам где-нибудь сгинет или сожрут. Им насрать на своих, это же не армия. Уверен, что стоит поискать этого малого, возможно он что-то знает о нужных нам документах. И поторопись, как бы его раньше тебя не нашли. \nВозмешь документы - неси их Бармену, как и в прошлый раз. \nКстати, чтоб ты знал: под мостом уроды проход держат и если сунешься туда, то можешь огрести. Но могут и пропустить, если в адеквате будут. И пропустят, ясен пень, не забесплатно, а вот за сколько - это как у них в мозгу переклинит. Но все же не советую с ними связываться. Мужики вон через насыпь потихонечку ходят, и ты лучше так же иди.</text>
+	</string>
+	<string id="escape_trader_jobs_611111">
+		<text>Опять Агро. Опять документы...</text>
+	</string>
+	<string id="escape_trader_jobs_6111111">
+		<text>Не опять, а снова. \nЭто не моя прихоть, Стрелок. Просто просили передать.</text>
+	</string>
+	<string id="escape_trader_jobs_61111111">
+		<text>Кто просил? Доктор?</text>
+	</string>
+	<string id="escape_trader_jobs_611111111">
+		<text>Он самый.</text>
+	</string>
+	<string id="escape_trader_jobs_611111112">
+		<text>Ну а чего темнишь тогда? "Просили передать"... Так и сказал бы - приходил Док, попросил сделать...</text>
+	</string>
+	<string id="escape_trader_jobs_611111113">
+		<text>Потому что я в эти дела стараюсь не лезть. Вообще. Попросили - помог. Свою задачу я выполнил - тебя дождался и передал просьбу. Всё, дальше вы там сами.</text>
+	</string>
+	<string id="escape_trader_jobs_611111114">
+		<text>Ладно, не ворчи, все понятно.</text>
+	</string>
+	<string id="escape_trader_jobs_611111115">
+		<text>Вот и хорошо, что понятно. \nВсё, ступай.</text>
+	</string>
+	<string id="escape_trader_jobs_611111116">
+		<text>Постой, еще такой вопрос: вертушка тут пролетала, эти летуны, они вообще от какой "конторы", от армии или от этих мутных ЧВК? Скупой ничего не сказал про них, забыл наверное.</text>
+	</string>
+	<string id="escape_trader_jobs_611111117">
+		<text>Дельный вопрос! \nЗапомни, летчики - это армия, и у них приказ сталкеров не трогать. Это абсолютно точная информация. Полеты у них наблюдательные в основном. Иногда привлекают для помощи ученым, ну там, грузы доставить или вывезти, зачистить с воздуха территорию от зомби или мутантов... Ну и еще десант уродов, ихний "спецназ", на точку могут выбросить.  \nНе, ну могут и пальнуть, если ты вдруг с какого-то перехеру решишь их обстрелять. А так сами не тронут. Не должны, во всяком случае.</text>
+	</string>
+	<string id="escape_trader_jobs_611111118">
+		<text>Вот это оч-чень полезная информация, спасибо! Ладно, бывай, береги здоровье. </text>
+	</string>
+
+
+	<string id="escape_trader_start_dialog_111">
+		<text>Значит, вот что, Стрелок. Послал я Шустрого с ребятами по одному важному делу, а на обратном пути их братки поймали, идиотов.  Короче: найди Шустрого, живого или мёртвого, главное, чтобы флешка при нём была!</text>
+	</string>
+	<string id="escape_trader_start_dialog_1111">
+		<text>Это всё?</text>
+	</string>
+	<string id="escape_trader_start_dialog_171">
+		<text>Здорово, Стрелок. Что новенького расскажешь?</text>
+	</string>
+	<string id="escape_trader_start_dialog_181">
+		<text>Стрелок, ты чего здесь делаешь? Я же тебе сказал - дуй искать Шустрого!</text>
+	</string>
+	<string id="escape_trader_start_dialog_191">
+		<text>Поздорову, бродяга!</text>
+	</string>
+	<string id="escape_trader_start_dialog_1911">
+		<text>Здрав будь!</text>
+	</string>
+	<string id="escape_trader_start_dialog_19111">
+		<text>Есть что?</text>
+	</string>
+	<string id="escape_trader_start_dialog_19112">
+		<text>Есть. Вот эти вонючие документы.</text>
+	</string>
+	<string id="escape_trader_start_dialog_19113">
+		<text>Ага. Та-а-ак... \nТеперь их надо отдать Бармену, как я уже говорил.</text>
+	</string>
+	<string id="escape_trader_start_dialog_19114">
+		<text>Помню я, помню.</text>
+	</string>
+	<string id="escape_trader_start_dialog_19115">
+		<text>Вот и хорошо, что помнишь.</text>
+	</string>
+	<string id="escape_trader_start_dialog_19116">
+		<text>Надо же... Прям дежавю...</text>
+	</string>
+	<string id="escape_trader_start_dialog_19117">
+		<text>Чего?</text>
+	</string>
+	<string id="escape_trader_start_dialog_19118">
+		<text>Да так, ничего. Ладно, пошел к Бармену. Бывай!</text>
+	</string>
+	<string id="escape_trader_start_dialog_19119">
+		<text>Удачи, Стрелок!</text>
+	</string>
+	<string id="escape_trader_start_dialog_199">
+		<text>Стой! Вот, держи ствол нормальный хоть, да ПМ прихвати! Ты что, бери - не с голыми руками же тебе идти! \nКстати, когда тебя тогда приволокли, у тебя при себе нож был. Я его тогда затихарил на память, извини - забирай его обратно!</text>
+	</string>
+	<string id="escape_trader_start_dialog_1999">
+		<text>Сидор, ну я же не дурак - в Зону даже без ножа прийти! А за Грозу - спасибо!</text>
+	</string>
+	<string id="escape_trader_start_dialog_200">
+		<text>Ну что, Стрелок? По нашим делам ничего не продвинулось?</text>
+	</string>
+	<string id="escape_trader_start_dialog_3">
+		<text>Поздорову, бродяга. Рад видеть.</text>
+	</string>
+	<string id="escape_trader_start_dialog_300">
+		<text>Привет, Стрелок! Тут как раз есть дельце одно для тебя..</text>
+	</string>
+	<string id="escape_trader_start_dialog_31">
+		<text>Давай, как с новичком! Сто лет здесь не был!</text>
+	</string>
+	<string id="escape_trader_start_dialog_32">
+		<text>Здрав будь! Мне тут Скупой шепнул, чтоб я к тебе обязательно зашел. И кстати, спасибо за тайничок в Предбаннике.</text>
+	</string>
+	<string id="escape_trader_start_dialog_321">
+		<text>Да, молодец что зашел, есть дело... Но это чуть попожжа. Сначала помоги мне с другим дельцем. Это насчёт Шустрого... \nПослал я его с ребятами по одному срочному делу, а на обратном пути их братки поймали, идиотов.  Короче: найди Шустрого, живого или мёртвого, но главное, чтобы флешка при нём была! \nВолку я пока запретил покидать деревню - он мне должен. А ну как застрелят, кто должок отдаст? Поэтому сам не пойдет воевать, а пошлет кого-нибудь из молодых. Того же Петруху, например. Так что твоя помощь будет очень кстати. Но с Волком поговори в любом случае.</text>
+	</string>
+	<string id="escape_trader_start_dialog_3211">
+		<text>Опа... История повторяется?</text>
+	</string>
+	<string id="escape_trader_start_dialog_32111">
+		<text>Всё, Стрелок! Иди к Волку.</text>
+	</string>
+	<string id="escape_trader_start_dialog_321111">
+		<text>Что-то ты нервный... Ладно, не вопрос.</text>
+	</string>
+	<string id="escape_trader_start_dialog_4">
+		<text>Здоров, Стрелок!</text>
+	</string>
+	<string id="escape_trader_start_dialog_5">
+		<text>Как успехи?</text>
+	</string>
+	<string id="escape_trader_start_dialog_51">
+		<text>Задание выполнил. Вот артефакт!</text>
+	</string>
+	<string id="escape_trader_start_dialog_511">
+		<text>Отлично! Ещё одна мелкая услуга...</text>
+	</string>
+	<string id="escape_trader_start_dialog_5111">
+		<text>Какая услуга?</text>
+	</string>
+	<string id="escape_trader_start_dialog_52">
+		<text>Ситуация прояснилась...</text>
+	</string>
+	<string id="escape_trader_start_dialog_52111">
+		<text>Флешка-то с информацией где?</text>
+	</string>
+	<string id="escape_trader_start_dialog_521111">
+		<text>Да вот она, не нервничай.</text>
+	</string>
+	<string id="escape_trader_start_dialog_5211111">
+		<text>Хорошая работа, Стрелок.</text>
+	</string>
+	<string id="escape_trader_start_dialog_521112">
+		<text>Нет у меня её..</text>
+	</string>
+	<string id="escape_trader_start_dialog_5211121">
+		<text>Это херово, Стрелок! Это очень даже херово. Учти - я не стукач, но у меня сердце слабое!</text>
+	</string>
+	<string id="escape_trader_start_dialog_521211">
+		<text>Вот она, держи.</text>
+	</string>
+	<string id="escape_trader_start_dialog_5212111">
+		<text>Хорошо...</text>
+	</string>
+	<string id="escape_trader_start_dialog_56">
+		<text>Пока никак.</text>
+	</string>
+	<string id="escape_trader_start_dialog_571">
+		<text>Ну что, принёс артефакт?</text>
+	</string>
+	<string id="escape_trader_start_dialog_5711">
+		<text>Нет пока.</text>
+	</string>
+	<string id="escape_trader_start_dialog_57111">
+		<text>Значит, пока не принесёшь - говорить нам не о чем! Уяснил?</text>
+	</string>
+	<string id="escape_trader_start_dialog_6">
+		<text>Стрелок, я тебе уже всё рассказал.</text>
+	</string>
+	<string id="escape_trader_start_dialog_661">
+		<text>Ну, что новенького расскажешь?</text>
+	</string>
+
+
+	<string id="escape_trader_talk_info_0">
+		<text>Мне нужны ответы на кое-какие вопросы.</text>
+	</string>
+	<string id="escape_trader_talk_info_1">
+		<text>Спрашивай.</text>
+	</string>
+	<string id="escape_trader_talk_info_100">
+		<text>Расскажи мне в общих чертах, что сейчас творится.</text>
+	</string>
+	<string id="escape_trader_talk_info_101">
+		<text>Спрашивай.</text>
+	</string>
+	<string id="escape_trader_talk_info_2">
+		<text>Что в Зоне делают ЧВК?</text>
+	</string>
+	<string id="escape_trader_talk_info_21">
+		<text>А вот этого ни я не знаю, и никто не знает. Возможно Доктор знает, спроси когда встретишь.</text>
+	</string>
+	<string id="escape_trader_talk_info_3">
+		<text>Расскажи мне в общих чертах, что сейчас творится.</text>
+	</string>
+	<string id="escape_trader_talk_info_31">
+		<text>Что творится... Творится нехорошее. Раньше ведь как было: военные сидели на своих блок-постах, да военсталкеры в Зону ходили, и ни те, ни другие особо сталкеров не трогали. Ну почти. Пока не находился какой-нибудь дебил, решивший подстрелить солдата. Тут же как: говно не трогай, вонять не будет. Ну а тронул - получи по всей роже. Это все раньше так было, а теперь и трогать не надо - они сами всех мочат без разбору. Это ща еще затишье, особенно здесь, на Кордоне. А что было месяц назад - мама не горюй! При всем при этом еще и бандиты активизировались, наемники, мутанты опять-таки. Беда, короче.</text>
+	</string>
+	<string id="escape_trader_talk_info_311">
+		<text>Да-а, дела...</text>
+	</string>
+	<string id="escape_trader_talk_info_3111">
+		<text>Ага, дела. Как сажа бела...</text>
+	</string>
+	<string id="escape_trader_talk_info_312">
+		<text>А насчет мутантов подробнее?</text>
+	</string>
+	<string id="escape_trader_talk_info_3121">
+		<text>Подробнее? Ну, они вроде как расплодились, какие-то, говорят, новые виды появились. А раз расплодились, значит больше жратвы надо. Значит - только успевай отбиваться, да когда идешь, особенно в одиночку, верти башкой на 360 градусов.</text>
+	</string>
+	<string id="escape_trader_talk_info_313">
+		<text>Новые виды, говоришь? Встретил я уже один такой новый вид. Мож слыхал - кровосос болотный?</text>
+	</string>
+	<string id="escape_trader_talk_info_3131">
+		<text>Слыхал. Но не видал. Их тут нету пока что, спасибо Зоне.</text>
+	</string>
+	<string id="escape_trader_talk_info_4">
+		<text>А по аномалиям что-нибудь новенькое есть?</text>
+	</string>
+	<string id="escape_trader_talk_info_41">
+		<text>Есть, как не быть... Сразу скажу: самая страшная аномалия - это Хваталка. Никакой комбез, научный или военный скафандр не защитит. Эту пакость даже ианомалией-то не назовешь. Скорее на растение или даже на животное похоже.</text>
+	</string>
+	<string id="escape_trader_talk_info_5">
+		<text>Да, про эту мерзость я слыхал.</text>
+	</string>
+	<string id="escape_trader_talk_info_51">
+		<text>Есть и еще новые. Но подробностей я не знаю.</text>
+	</string>
+	<string id="escape_trader_talk_info_6">
+		<text>Ясно.</text>
+	</string>
+	<string id="escape_trader_talk_info_61">
+		<text>Главное помни - детектор не все аномалии видит. Так что по старинке - болтиками, гаечками или камешками. Ну или гильзами.</text>
+	</string>
+	<string id="escape_trader_talk_info_99">
+		<text>Что тут поблизости творится?</text>
+	</string>
+	<string id="escape_trader_talk_info_999">
+		<text>А! Ну, это второй предбанник Зоны.. Вот, вроде, и всё.</text>
+	</string>
+	<string id="escape_trader_talk_info_9991">
+		<text>Расскажи побольше об обстановке на южном блокпосте?</text>
+	</string>
+	<string id="escape_trader_talk_info_99911">
+		<text>Караул с приказом стрелять без предупреждения, потому лучше обходи его стороной! Если их обидеть, то могут вызвать спецназ с дальнего кордона или вообще вертушку. Тогда такой тут шорох наведут - у меня месяц клиентов не будет! \nКомандира зольдов знаю немного: любит он за воротник заложить. Вот благодаря ему и держусь до сих здесь.</text>
+	</string>
+	<string id="escape_trader_talk_info_9992">
+		<text>Как там дела на упавшем мосте?</text>
+	</string>
+	<string id="escape_trader_talk_info_99922">
+		<text>Да тут два шага ж до него - сходи и увидишь! Кузнецов там пост всё так же держит, и вроде как никого не пускает... но подмазать если, вполне пропустит. \nВообще там лучше не светиться - разве только нагружен сильно или ранен. И даже стрелять в их сторону не смей - во враги запишут!</text>
+	</string>
+	<string id="escape_trader_talk_info_9993">
+		<text>На фабрике-то тихо?</text>
+	</string>
+	<string id="escape_trader_talk_info_99933">
+		<text>Излюбленное место отморозков всё так же. Не знаю, есть ли они сейчас там, но на всякий случай поосторожнее. С тебя взять, конечно, трудновато им будет... только оно тебе надо - мороки этой?</text>
+	</string>
+	<string id="escape_trader_talk_info_9994">
+		<text>Ну а дальше там, на ферме?</text>
+	</string>
+	<string id="escape_trader_talk_info_99944">
+		<text>Ох, ну ты и нудный! Ну ферма себе как ферма. Свиньи там ещё до перестройки все передохли!</text>
+	</string>
+	<string id="escape_trader_talk_info_9995">
+		<text>Спасибо, старый, это всё...</text>
+	</string>
+	<string id="escape_trader_talk_info_9996">
+		<text>Я бы хотел ещё кое-что узнать!</text>
+	</string>
+
+
+	<string id="escape_trader_talk_level_0">
+		<text>Расскажи мне - какой сейчас статус у Кордона?</text>
+	</string>
+	<string id="escape_trader_talk_level_1">
+		<text>А! Ну, это по-прежнему второй предбанник Зоны.. Вот, вроде, и всё.</text>
+	</string>
+	<string id="escape_trader_talk_level_10">
+		<text>Лады, спасибо!</text>
+	</string>
+	<string id="escape_trader_talk_level_2">
+		<text>Расскажи побольше о блокпосте?</text>
+	</string>
+	<string id="escape_trader_talk_level_21">
+		<text>Караул с приказом стрелять без предупреждения, потому лучше обходи его стороной! Если их обидеть, то могут вызвать спецназ с дальнего кордона или вообще вертушку. Тогда такой тут шорох наведут - у меня месяц клиентов не будет! \nКомандира зольдов знаю немного: любит он за воротник заложить. Вот благодаря ему и держусь до сих здесь.</text>
+	</string>
+	<string id="escape_trader_talk_level_3">
+		<text>Как там дела на упавшем мосте?</text>
+	</string>
+	<string id="escape_trader_talk_level_31">
+		<text>Да тут два шага ж до него - сходи и увидишь! Кузнецов там пост всё так же держит, и вроде как никого не пускает... но подмазать если, вполне пропустит. \nВообще там лучше не светиться - разве только нагружен сильно или ранен. И даже стрелять в их сторону не смей - во враги запишут!</text>
+	</string>
+	<string id="escape_trader_talk_level_4">
+		<text>На фабрике-то тихо?</text>
+	</string>
+	<string id="escape_trader_talk_level_41">
+		<text>Излюбленное место отморозков всё так же. Не знаю, есть ли они сейчас там, но на всякий случай поосторожнее. С тебя взять, конечно, трудновато им будет... только оно тебе надо - мороки этой?</text>
+	</string>
+	<string id="escape_trader_talk_level_5">
+		<text>Ну а дальше там, на ферме?</text>
+	</string>
+	<string id="escape_trader_talk_level_51">
+		<text>Ох, ну ты и нудный! Ну ферма себе как ферма. Свиньи там ещё до перестройки все передохли.</text>
+	</string>
+
+
+	<string id="tutorial_wounded_give_medkit_1">
+		<text>Пока да... кровь хлещет. Аптечку дай, а?</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_121">
+		<text>Спасибо, брат!</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_2">
+		<text>Держи!</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_21">
+		<text>Спасибо, друг! Ещё б чуток, и "того"...\nЯ твой должник!</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_211">
+		<text>Что вообще стряслось?</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_2111">
+		<text>Да с вылазки шли... и напоролись на банду. Одного нашего сразу грохнули. Шустрого с собой уволокли - он им лапши навешал, что знает нычку с кучей артефактов. А я мёртвым прикинулся - вот и обошлось!</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_21111">
+		<text>Мне вот Шустрый как раз нужен... Пойду за ним. Компанию не желаешь составить?</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_211111">
+		<text>Ох, друг... Боец из меня сейчас, как из говна пуля. Вот оклемаюсь чуток, да в лагерь почапаю. Я народу обязательно расскажу, что ты мне помог! Спасибо ещё раз!</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_2111111">
+		<text>Ну, тогда давай, ковыляй в деревню потихонечку, боец. Поправляйся!</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_3">
+		<text>Извини, брат. Нету аптечки..</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_31">
+		<text>На телах посмотри... У ребят из нашей группы должны... должны были быть!</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_5111">
+		<text>Помалу. Жить буду. Ёлки, до сих пор на комбез не накопил! А без него вглубь Зоны идти - дохлый номер!</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_6">
+		<text>Ч-чёрт, хреново-то как... помираю...</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_61">
+		<text>Ты как, живой?</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_7">
+		<text>Уф-ф...</text>
+	</string>
+	<string id="tutorial_wounded_give_medkit_8">
+		<text>Ну, как ты?</text>
+	</string>
+</string_table>

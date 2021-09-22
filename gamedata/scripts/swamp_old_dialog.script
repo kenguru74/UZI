@@ -1,0 +1,180 @@
+--'  Спавн записки Клыка 1 в подземке Агро
+function spawn_zap_klyk1_on_l03underground()
+ alife():create("zapiska_klyk1",vector():set(-69.73110991611406,-5.71550464630127,-64.8403854370117),3118,717)
+end
+
+function send_klyk_zapiska3(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "zapiska_klyk2", "out")
+   dialogs.relocate_item_section(second_speaker, "zapiska_klyk3", "out")
+   dialogs.relocate_item_section(second_speaker, "radiophone", "out")
+   db.actor:set_character_rank(db.actor:character_rank() + 150)
+end
+
+function send_klyk_zapiska1(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "zapiska_klyk1", "out")
+   db.actor:give_info_portion("bring_doctor_klyk_zapiska1")
+end
+
+function take_pelengator(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "pelengator", "in")
+   db.actor:set_character_rank(db.actor:character_rank() + 85)
+end
+
+function give_pelengator(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "pelengator", "out")
+end
+
+function spawn_arts_on_sarcofag()
+ alife():create("af_compass",vector():set(24.983026504517,-4.7521796226501,3.2652802467346),4684,2424)
+ alife():create("af_baloon",vector():set(20.169702529907,-3.6200952529907,13.285930633545),4699,2424)
+ alife():create("af_fire",vector():set(35.786476135254,-0.36167693138123,7.5073919296265),6704,2423)
+ alife():create("af_eye",vector():set(10.105488777161,-0.43192633986473,6.8638334274292),3588,2424)
+ alife():create("af_glass",vector():set(26.31470489502,53.523593902588,34.865184783936),5187,2417)
+ alife():create("af_ice",vector():set(10.239854812622,48.246574401855,16.184955596924),3610,2417)
+ db.actor:set_character_rank(db.actor:character_rank() + 190)
+end
+
+function give_unique_arts(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "af_compass", "out")
+   dialogs.relocate_item_section(second_speaker, "af_baloon", "out")
+   dialogs.relocate_item_section(second_speaker, "af_fire", "out")
+   dialogs.relocate_item_section(second_speaker, "af_eye", "out")
+   dialogs.relocate_item_section(second_speaker, "af_glass", "out")
+   dialogs.relocate_item_section(second_speaker, "af_ice", "out")
+   db.actor:give_info_portion("bring_doctor_unique_arts")
+end
+
+function take_so(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "af_cristall_plant", "in")
+   db.actor:set_character_rank(db.actor:character_rank() + 110)
+end
+
+function actor_walk()
+ amk.g_start_timer("ggw",0, 0, 30)
+end
+
+function respawn_klyk()
+ if level.name()=="swamp_old" and has_alife_info("second_talking_klyk") and (not has_alife_info("free_klyk")) then
+   db.actor:give_info_portion("free_klyk")
+ end
+end
+
+function doctor_friend(first_speaker, second_speaker)
+   second_speaker:set_relation(game_object.friend, first_speaker)
+   db.actor:set_character_rank(db.actor:character_rank() + 135)
+end
+
+function give_izomorf(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "af_izomorf", "in")
+end
+
+-- function mapspot_labirint()
+-- local obj = alife():object( "zaton_labirint" )
+-- if obj then
+--   level.map_add_object_spot_ser(obj.id, "green_location", "Вход в Лабиринт")
+-- end
+-- end
+
+function spawn_mushrooms()
+--------------------------------------------первое поле-------------------------------------------------------
+ alife():create("grib_1",vector():set(169.27691650391,2.0630905628204,183.51518249512),1517068,4393)
+ alife():create("grib_4",vector():set(168.8014831543,2.0219986438751,181.65855407715),1515530,4393)
+ alife():create("grib_8",vector():set(169.43162536621,1.9551705121994,177.83547973633),1517060,4393) 
+ alife():create("grib_3",vector():set(167.48265075684,1.7569011449814,177.08026123047),1512510,4393)
+ alife():create("grib_5",vector():set(165.77328491211,1.788085103035,178.40182495117),1509517,4393)
+ alife():create("grib_9",vector():set(160.21961975098,1.7120050191879,179.21208190918),1497447,4393)
+ alife():create("grib_6",vector():set(160.73461914063,1.6149682998657,181.26324462891),1498971,4393)
+ alife():create("grib_2",vector():set(164.83486938477,1.8950587511063,180.37236022949),1506513,4393)
+ alife():create("grib_7",vector():set(163.19830322266,1.6932138204575,182.82496643066),1503509,4393)
+--------------------------------------------второе поле-------------------------------------------------------
+ alife():create("grib_3",vector():set(248.0665435791,1.7186061143875,242.19149780273),1687299,4393)
+ alife():create("grib_6",vector():set(246.67204284668,1.6761034727097,243.02491760254),1684256,4393)
+ alife():create("grib_2",vector():set(244.20388793945,1.6309044361115,242.74339294434),1679693,4393) 
+ alife():create("grib_4",vector():set(245.68850708008,1.8163336515427,241.85494995117),1682733,4393)
+ alife():create("grib_5",vector():set(245.31272888184,1.7436782121658,242.5633392334),1681210,4393)
+ alife():create("grib_8",vector():set(246.87231445313,1.966083407402,240.46405029297),1685776,4393)
+ alife():create("grib_9",vector():set(246.72125244141,1.7042433023453,242.58865356445),1684256,4393)
+ alife():create("grib_1",vector():set(244.18550109863,1.6277929544449,242.80458068848),1679693,4393)
+ alife():create("grib_7",vector():set(241.0322265625,1.70190513134,243.25161743164),1672107,4393)
+--------------------------------------------третье поле-------------------------------------------------------
+ alife():create("grib_6",vector():set(129.52136230469,2.4530992507935,303.35845947266),1430657,4390)
+ alife():create("grib_9",vector():set(128.51025390625,2.161625623703,302.6796875),1429126,4390)
+ alife():create("grib_7",vector():set(127.00361633301,2.5704176425934,304.24755859375),1424523,4390) 
+ alife():create("grib_8",vector():set(123.69737243652,2.3478417396545,303.11508178711),1418358,4390)
+ alife():create("grib_1",vector():set(122.69035339355,2.2801902294159,303.55139160156),1415268,4390)
+ alife():create("grib_4",vector():set(121.14496612549,2.0638806819916,302.73886108398),1412170,4390)
+ alife():create("grib_5",vector():set(129.45671081543,2.3257751464844,298.64993286133),1430651,4390)
+ alife():create("grib_2",vector():set(130.87837219238,2.4233493804932,299.31707763672),1433711,4390)
+ alife():create("grib_3",vector():set(130.43501281738,2.4249632358551,299.51950073242),1432183,4390)
+
+ local points={
+       {
+        position={x=167.34230041504,y=2.0209250450134,z=182.16464233398},
+        gv=4393,
+        lv=1512517
+        },
+       {
+        position={x=241.76135253906,y=1.7023462057114,z=242.98095703125},
+        gv=4393,
+        lv=1673625
+        },
+       {					
+        position={x=135.28514099121,y=2.0837287902832,z=310.51699829102},
+        gv=4390,
+        lv=1442934
+        }
+             }
+
+ local a = points[math.random(table.getn(points))]
+ alife():create("grib_10", vector():set(a.position.x,a.position.y,a.position.z), a.lv, a.gv)
+
+ local obj = alife():object("swamp_old_mushrooms_restrictor_03")
+ if obj and has_alife_info("first_talking_doctor_muhomor") then
+  level.map_add_object_spot_ser(obj.id, "ogsm_hide_spot_max", "Место для поиска грибов")
+ end
+ local obj = alife():object("swamp_old_mushrooms_restrictor_04")
+ if obj and has_alife_info("first_talking_doctor_muhomor") then
+  level.map_add_object_spot_ser(obj.id, "ogsm_hide_spot_max", "Место для поиска грибов")
+ end
+ local obj = alife():object("swamp_old_mushrooms_restrictor_05")
+ if obj and has_alife_info("first_talking_doctor_muhomor") then
+  level.map_add_object_spot_ser(obj.id, "ogsm_hide_spot_max", "Место для поиска грибов")
+ end
+end
+
+function show_static2()
+ get_hud():AddCustomStatic("static_poison_gas_on", true)
+ get_hud():GetCustomStatic("static_poison_gas_on"):wnd():SetTextST("message_poison_gas_on")
+ amk.g_start_timer("po2",0, 0, 2)
+end
+
+function gribok_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("grib_10") ~= nil
+   end
+   return false
+end
+
+function give_health_grib(first_speaker, second_speaker)
+   dialogs.relocate_item_section(first_speaker, "grib_10", "out")
+end
+
+function clear_swamp_mapspots()
+ local obj = alife():object("swamp_old_mushrooms_restrictor_03")
+ if obj then
+  level.map_remove_object_spot(obj.id, "ogsm_hide_spot_max")
+ end
+ local obj = alife():object("swamp_old_mushrooms_restrictor_04")
+ if obj then
+  level.map_remove_object_spot(obj.id, "ogsm_hide_spot_max")
+ end
+ local obj = alife():object("swamp_old_mushrooms_restrictor_05")
+ if obj then
+  level.map_remove_object_spot(obj.id, "ogsm_hide_spot_max")
+ end
+ amk.g_start_timer("po3",0, 0, 30)
+end
+
+function give_mixtura(first_speaker, second_speaker)
+   dialogs.relocate_item_section(first_speaker, "mixtura", "in")
+end

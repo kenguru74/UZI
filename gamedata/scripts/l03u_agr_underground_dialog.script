@@ -1,0 +1,7 @@
+--'  Квест Доктора на документы в подземке Агро
+function books_research_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("zapiska_klyk1") ~= nil
+   end
+   return false
+end

@@ -1,0 +1,837 @@
+;-------------------------------------------------------------------------------------------------
+;-- Блокпост у перехода на Кордон
+;-------------------------------------------------------------------------------------------------
+
+[logic@pred_blockpost_post1]
+active = walker@pred_blockpost_post1
+combat_ignore = combat_ignore@pred_blockpost
+on_hit = hit@soldier_pred
+on_death = death@soldier_pred
+
+[walker@pred_blockpost_post1]
+path_walk = post1_walk
+path_look = post1_look
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[logic@pred_blockpost_post2]
+active = walker@pred_blockpost_post2
+combat_ignore = combat_ignore@pred_blockpost
+on_hit = hit@soldier_pred
+on_death = death@soldier_pred
+
+[walker@pred_blockpost_post2]
+path_walk = post2_walk
+path_look = post2_look
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[logic@pred_blockpost_post3]
+active = walker@pred_blockpost_post3
+combat_ignore = combat_ignore@pred_blockpost
+on_hit = hit@soldier_pred
+on_death = death@soldier_pred
+
+[walker@pred_blockpost_post3]
+path_walk = post3_walk
+path_look = post3_look
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[logic@pred_blockpost_post4]
+active = walker@pred_blockpost_post4
+combat_ignore = combat_ignore@pred_blockpost
+on_hit = hit@soldier_pred
+on_death = death@soldier_pred
+
+[walker@pred_blockpost_post4]
+path_walk = post4_walk
+path_look = post4_look
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[logic@pred_blockpost_post5]
+active = walker@pred_blockpost_post5
+combat_ignore = combat_ignore@pred_blockpost
+on_hit = hit@soldier_pred
+on_death = death@soldier_pred
+
+[walker@pred_blockpost_post5]
+path_walk = post5_walk
+path_look = post5_look
+meet = meet@pred_sold_zoneguard
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+on_actor_dist_le = 25| remark@pred_blockpost_post6
+on_info = {+pred_blockpost_pass_fire} walker3@pred_blockpost_post5
+
+[remark@pred_blockpost_post5]
+anim = guard
+target = actor
+snd = pred_blockpost_soldiers
+on_signal = sound_end| walker2@pred_blockpost_post5
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[walker2@pred_blockpost_post5]
+path_walk = post5_walk
+path_look = post5_look
+meet = meet@pred_sold_zoneguard
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[walker3@pred_blockpost_post5]
+path_walk = post5_walk
+path_look = post5_look
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[logic@pred_blockpost_post6]
+active = walker@pred_blockpost_post6
+combat_ignore = combat_ignore@pred_blockpost
+on_hit = hit@soldier_pred
+on_death = death@soldier_remez_pred
+
+[walker@pred_blockpost_post6]
+path_walk = post6_walk
+path_look = post6_look
+meet = meet@sold_zoneguard
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+on_actor_dist_le_nvis = 35 | remark@pred_blockpost_post6_1
+on_info = {+pred_blockpost_pass_fire} walker3@pred_blockpost_post6
+
+[remark@pred_blockpost_post6_1]
+anim = guard
+target = actor
+on_actor_dist_le_nvis = 20 | remark@pred_blockpost_post6
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+on_info = {+pred_blockpost_pass_fire} walker3@pred_blockpost_post6
+
+[remark@pred_blockpost_post6]
+anim = guard
+target = actor
+snd = pred_blockpost_soldiers
+on_signal = sound_end| walker2@pred_blockpost_post6
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[walker2@pred_blockpost_post6]
+path_walk = post6_walk
+path_look = post6_look
+meet = meet@pred_sold_zoneguard
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[walker3@pred_blockpost_post6]
+path_walk = post6_walk
+path_look = post6_look
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor =is_alive(54500)}
+
+[meet@pred_sold_zoneguard]
+meet_state 		= 30| {+pred_blockpost_pass_on} guard, guard@ {+pred_blockpost_pass_on} talk_hello, wait
+meet_state_wpn 	= 30| {+pred_blockpost_pass_on} guard, guard@ {+pred_blockpost_pass_on} talk_hello, wait
+victim 			= 30| actor
+victim_wpn 		= 30| actor
+use			= true
+use_wpn		= true
+meet_dialog		= pred_blockpost_soldiers_start
+precond = visibility
+
+[combat_ignore@pred_blockpost]
+combat_ignore_cond = {-pred_blockpost_pass_fire =fighting_actor}
+
+[hit@soldier_pred]
+on_info = {=hit_by_actor} %+pred_blockpost_pass_fire%
+
+[death@soldier_pred]
+on_info = {=killed_by_actor} %+pred_blockpost_pass_fire%
+
+[death@soldier_remez_pred]
+on_info = {=killed_by_actor} %+pred_blockpost_pass_fire%
+
+
+;-------------------------------------------------------------------------------------------------
+;-- Лагерь на вертолетной площадке
+;-------------------------------------------------------------------------------------------------
+
+;блокпост
+[logic@pred_helipad_post1]
+active = walker1@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker1@pred_helipad]
+path_walk = post1_walk
+path_look = post1_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post2]
+active = walker2@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker2@pred_helipad]
+path_walk = post2_walk
+path_look = post2_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post3]
+active = walker3@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker3@pred_helipad]
+path_walk = post3_walk
+path_look = post3_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post4]
+active = walker4@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker4@pred_helipad]
+path_walk = post4_walk
+path_look = post4_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+;часовые, наблюдатели
+[logic@pred_helipad_post5]
+active = walker5@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker5@pred_helipad]
+path_walk = post5_walk
+path_look = post5_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post6]
+active = walker6@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker6@pred_helipad]
+path_walk = post6_walk
+path_look = post6_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post7]
+active = walker7@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker7@pred_helipad]
+path_walk = post7_walk
+path_look = post7_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post8]
+active = walker8@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker8@pred_helipad]
+path_walk = post8_walk
+path_look = post8_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+;снайперы на вышках
+[logic@pred_helipad_post9]
+active = walker9@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker9@pred_helipad]
+path_walk = post9_walk
+path_look = post9_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post10]
+active = walker10@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker10@pred_helipad]
+path_walk = post10_walk
+path_look = post10_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post11]
+active = walker11@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker11@pred_helipad]
+path_walk = post11_walk
+path_look = post11_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post12]
+active = walker12@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker12@pred_helipad]
+path_walk = post12_walk
+path_look = post12_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+;солдаты в столовой
+[logic@pred_helipad_post13]
+active = walker13@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker13@pred_helipad]
+path_walk = post13_walk
+path_look = post13_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post14]
+active = walker14@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker14@pred_helipad]
+path_walk = post14_walk
+path_look = post14_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post15]
+active = walker15@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker15@pred_helipad]
+path_walk = post15_walk
+path_look = post15_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_post16]
+active = walker16@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker16@pred_helipad]
+path_walk = post16_walk
+path_look = post16_look
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+;патрулирующие
+[logic@pred_helipad_walker17]
+active = walker17@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker17@pred_helipad]
+path_walk  = patrol1_walk
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[logic@pred_helipad_walker18]
+active = walker18@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[walker18@pred_helipad]
+path_walk  = patrol2_walk
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+;солдаты у 1 костра
+[logic@pred_helipad_kamp1]
+active = kamp@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[logic@pred_helipad_kamp2]
+active = kamp@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[logic@pred_helipad_kamp3]
+active = kamp@pred_helipad
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[kamp@pred_helipad]
+center_point  = camp_center
+path_walk = camp_center_task
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+;солдаты у 2 костра
+[logic@pred_helipad1_kamp1]
+active = kamp@pred_helipad1
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[logic@pred_helipad1_kamp2]
+active = kamp@pred_helipad1
+combat_ignore = combat_ignore@pred_helipad
+on_hit = hit@helipad_pred
+on_death = death@helipad_pred
+
+[kamp@pred_helipad1]
+center_point  = camp_center
+path_walk = camp_center_task
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+meet = meet@pred_helipad
+
+[combat_ignore@pred_helipad]
+combat_ignore_cond = {+remesov_first_dialog =fighting_actor}
+
+[hit@helipad_pred]
+on_info = {=hit_by_actor} %-remesov_first_dialog%
+
+[death@helipad_pred]
+on_info = {=killed_by_actor} %-remesov_first_dialog%
+
+[meet@pred_helipad]
+meet_state 	= 5
+meet_state_wpn 	= 5
+victim 			= 5| actor
+victim_wpn 		= 5| actor
+use			= true
+meet_dialog		= pred_helipad_soldiers_dialog
+precond = visibility
+
+;-------------------------------------------------------------------------------------------------
+;-- Лагерь слева от тоннеля
+;-------------------------------------------------------------------------------------------------
+
+; сидящие у костра
+[logic@pred_left_tunnel_kamp1]
+active = kamp@pred_left_tunnel
+
+[logic@pred_left_tunnel_kamp2]
+active = kamp@pred_left_tunnel
+
+[kamp@pred_left_tunnel]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;часовые
+[logic@pred_left_tunnel_walker1]
+active = walker1@pred_left_tunnel
+
+[walker1@pred_left_tunnel]
+path_walk  = post1_walk
+path_look  = post1_look
+
+
+[logic@pred_left_tunnel_walker2]
+active = walker2@pred_left_tunnel
+
+[walker2@pred_left_tunnel]
+path_walk  = post2_walk
+path_look  = post2_look
+
+;патрулирующий
+
+[logic@pred_left_tunnel_walker3]
+active = walker3@pred_left_tunnel
+
+[walker3@pred_left_tunnel]
+path_walk  = patrol1_walk
+
+;-------------------------------------------------------------------------------------------------
+;-- Лагерь у палатки
+;-------------------------------------------------------------------------------------------------
+
+;сидящие у костра
+[logic@pred_tent_kamp1]
+active = kamp@pred_tent
+
+[logic@pred_tent_kamp2]
+active = kamp@pred_tent
+
+[logic@pred_tent_kamp3]
+active = kamp@pred_tent
+
+[kamp@pred_tent]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;охранники
+[logic@pred_tent_zoneguard1]
+active = walker@pred_tent_zoneguard1
+
+[walker@pred_tent_zoneguard1]
+path_walk  = guard_walk1
+path_look  = guard_look1
+meet = meet@zoneguard_pred_tent
+
+[logic@pred_tent_zoneguard2]
+active = walker@pred_tent_zoneguard2
+
+[walker@pred_tent_zoneguard2]
+path_walk  = guard_walk2
+path_look  = guard_look2
+meet = meet@zoneguard_pred_tent
+
+[meet@zoneguard_pred_tent]
+meet_state 		= 10| wait@talk_hello
+meet_state_wpn 	= 10| threat@threat_weap
+victim 			= 10| actor
+victim_wpn 		= 10| actor
+use			= true
+use_wpn		= true
+meet_dialog		= {-pred_tent_start} pred_tent_guard_start, pred_tent_guard_start_2
+
+;-------------------------------------------------------------------------------------------------
+;-- Лагерь у Скупого
+;-------------------------------------------------------------------------------------------------
+
+;сидящие у 1 костра
+[logic@pred_lager_kamp1]
+active = kamp@pred_lager
+
+[logic@pred_lager_kamp2]
+active = kamp@pred_lager
+
+[logic@pred_lager_kamp3]
+active = kamp@pred_lager
+
+[kamp@pred_lager]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;сидящие у 2 костра днем
+[logic@pred_lager1_kamp1]
+active = kamp@pred_lager1
+
+[logic@pred_lager1_kamp2]
+active = kamp@pred_lager1
+
+[logic@pred_lager1_kamp3]
+active = kamp@pred_lager1
+
+[kamp@pred_lager1]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;спящие ночью
+[logic@pred_lager1_sleeper1]
+active = sleeper1@pred_lager1
+
+[sleeper1@pred_lager1]
+path_main = sleep1
+
+[logic@pred_lager1_sleeper2]
+active = sleeper2@pred_lager1
+
+[sleeper2@pred_lager1]
+path_main = sleep2
+
+[logic@pred_lager1_sleeper3]
+active = sleeper3@pred_lager1
+
+[sleeper3@pred_lager1]
+path_main = sleep3
+
+;патрулирующий
+[logic@pred_lager_walker1]
+active = walker1@pred_lager
+
+[walker1@pred_lager]
+path_walk  = patrol1_walk
+
+;охранники
+[logic@pred_lager_zoneguard1]
+active = walker@pred_lager_zoneguard1
+
+[walker@pred_lager_zoneguard1]
+path_walk  = guard_walk1
+path_look  = guard_look1
+meet = meet@zoneguard_pred_lager
+
+[logic@pred_lager_zoneguard2]
+active = walker@pred_lager_zoneguard2
+
+[walker@pred_lager_zoneguard2]
+path_walk  = guard_walk2
+path_look  = guard_look2
+meet = meet@zoneguard_pred_lager
+
+[meet@zoneguard_pred_lager]
+meet_state 		= 10| wait@talk_hello
+meet_state_wpn 	= 10| threat@threat_weap
+victim 			= 10| actor
+victim_wpn 		= 10| actor
+use			= true
+use_wpn		= true
+meet_dialog		= {-pred_lager_start} pred_lager_guard_start_dialog, pred_lager_guard_start_dialog_2
+
+;-------------------------------------------------------------------------------------------------
+;-- Лагерь справа от тоннеля
+;-------------------------------------------------------------------------------------------------
+
+;патрулирующие
+[logic@pred_right_tunnel_walker1]
+active = walker1@pred_right_tunnel
+
+[walker1@pred_right_tunnel]
+path_walk  = patrol1_walk
+
+[logic@pred_right_tunnel_walker2]
+active = walker2@pred_right_tunnel
+
+[walker2@pred_right_tunnel]
+path_walk  = patrol2_walk
+
+[logic@pred_right_tunnel_walker3]
+active = walker3@pred_right_tunnel
+
+[walker3@pred_right_tunnel]
+path_walk  = patrol3_walk
+
+[logic@pred_right_tunnel_walker4]
+active = walker4@pred_right_tunnel
+
+[walker4@pred_right_tunnel]
+path_walk  = patrol4_walk
+
+;праздношатающиеся
+[logic@pred_right_tunnel_walker5]
+active = walker5@pred_right_tunnel
+
+[walker5@pred_right_tunnel]
+path_walk  = patrol5_walk
+
+[logic@pred_right_tunnel_walker6]
+active = walker6@pred_right_tunnel
+
+[walker6@pred_right_tunnel]
+path_walk  = patrol6_walk
+
+[logic@pred_right_tunnel_walker7]
+active = walker7@pred_right_tunnel
+
+[walker7@pred_right_tunnel]
+path_walk  = patrol7_walk
+
+[logic@pred_right_tunnel_walker8]
+active = walker8@pred_right_tunnel
+
+[walker8@pred_right_tunnel]
+path_walk  = patrol8_walk
+
+;-------------------------------------------------------------------------------------------------
+;-- Лагерь на заводе
+;-------------------------------------------------------------------------------------------------
+
+;патрулирующие
+[logic@pred_plant_walker1]
+active = walker1@pred_plant
+
+[walker1@pred_plant]
+path_walk  = patrol1_walk
+
+[logic@pred_plant_walker2]
+active = walker2@pred_plant
+
+[walker2@pred_plant]
+path_walk  = patrol2_walk
+
+[logic@pred_plant_walker3]
+active = walker3@pred_plant
+
+[walker3@pred_plant]
+path_walk  = patrol3_walk
+
+;часовые
+[logic@pred_plant_post_walker1]
+active = walker1@pred_plant_post
+
+[walker1@pred_plant_post]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@pred_plant_post_walker2]
+active = walker2@pred_plant_post
+
+[walker2@pred_plant_post]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[logic@pred_plant_post_walker3]
+active = walker3@pred_plant_post
+
+[walker3@pred_plant_post]
+path_walk  = post3_walk
+path_look  = post3_look
+
+[logic@pred_plant_post_walker4]
+active = walker4@pred_plant_post
+
+[walker4@pred_plant_post]
+path_walk  = post4_walk
+path_look  = post4_look
+
+;-------------------------------------------------------------------------------------------------
+;-- Лагерь в городке
+;-------------------------------------------------------------------------------------------------
+
+;учёные на балконах
+[logic@pred_town_ecolog_post_walker1]
+active = walker1@pred_town_ecolog_post
+
+[walker1@pred_town_ecolog_post]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@pred_town_ecolog_post_walker2]
+active = walker2@pred_town_ecolog_post
+
+[walker2@pred_town_ecolog_post]
+path_walk  = post2_walk
+path_look  = post2_look
+
+;спящие учёные
+[logic@pred_town_ecolog_sleeper1]
+active = sleeper1@pred_town_ecolog
+
+[sleeper1@pred_town_ecolog]
+path_main = sleep1
+
+[logic@pred_town_ecolog_sleeper2]
+active = sleeper2@pred_town_ecolog
+
+[sleeper2@pred_town_ecolog]
+path_main = sleep2
+
+;сталкер в гараже
+[logic@pred_town_stalker_post_walker1]
+active = walker1@pred_town_stalker_post
+
+[walker1@pred_town_stalker_post]
+path_walk  = post1_walk
+path_look  = post1_look
+
+;сталкеры в беседке
+[logic@pred_town_stalker_post_walker2]
+active = walker2@pred_town_stalker_post
+
+[walker2@pred_town_stalker_post]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[logic@pred_town_stalker_post_walker3]
+active = walker3@pred_town_stalker_post
+
+[walker3@pred_town_stalker_post]
+path_walk  = post3_walk
+path_look  = post3_look
+
+;сталкер в оружейке
+[logic@pred_town_stalker_post_walker4]
+active = walker4@pred_town_stalker_post
+
+[walker4@pred_town_stalker_post]
+path_walk  = post4_walk
+path_look  = post4_look
+
+;военные на блокпосте
+[logic@pred_town_formers_post_walker1]
+active = walker1@pred_town_formers_post
+
+[walker1@pred_town_formers_post]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@pred_town_formers_post_walker2]
+active = walker2@pred_town_formers_post
+
+[walker2@pred_town_formers_post]
+path_walk  = post2_walk
+path_look  = post2_look
+
+;военные на крыше 1 дома
+[logic@pred_town_formers_post_walker3]
+active = walker3@pred_town_formers_post
+
+[walker3@pred_town_formers_post]
+path_walk  = post3_walk
+path_look  = post3_look
+
+[logic@pred_town_formers_post_walker4]
+active = walker4@pred_town_formers_post
+
+[walker4@pred_town_formers_post]
+path_walk  = post4_walk
+path_look  = post4_look
+
+
+;военные на крыше 2 дома
+[logic@pred_town_formers_post_walker5]
+active = walker5@pred_town_formers_post
+
+[walker5@pred_town_formers_post]
+path_walk  = post5_walk
+path_look  = post5_look
+
+[logic@pred_town_formers_post_walker6]
+active = walker6@pred_town_formers_post
+
+[walker6@pred_town_formers_post]
+path_walk  = post6_walk
+path_look  = post6_look
+
+;военный на лесах
+[logic@pred_town_formers_post_walker7]
+active = walker7@pred_town_formers_post
+
+[walker7@pred_town_formers_post]
+path_walk  = post7_walk
+path_look  = post7_look
+
+;командир блокпоста
+[logic@pred_town_formers_post_walker8]
+active = walker8@pred_town_formers_post
+
+[walker8@pred_town_formers_post]
+path_walk  = post8_walk
+path_look  = post8_look
+
+;патрулирующие
+[logic@pred_town_formers_walker1]
+active = walker1@pred_town_formers
+
+[walker1@pred_town_formers]
+path_walk  = patrol1_walk
+
+[logic@pred_town_formers_walker2]
+active = walker2@pred_town_formers
+
+[walker2@pred_town_formers]
+path_walk  = patrol2_walk

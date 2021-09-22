@@ -1,0 +1,5 @@
+--'  Самоубийство Колобка
+function kill_kolobok()
+ local npc = level_object_by_sid (54548)
+ npc:kill(npc)
+end

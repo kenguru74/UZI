@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+	<!-- Инфопоршни для Лесника -->
+	<info_portion id="red_forest_lesnik_find_weapon">
+                <task>red_forest_lesnik_k98</task>
+        </info_portion>
+	<info_portion id="red_forest_lesnik_take_weapon"></info_portion>
+	<info_portion id="red_forest_lesnik_bring_weapon"></info_portion>
+
+	<!-- Инфопоршень для разговора с Шуховым -->
+	<info_portion id="shuhov_first_talk"></info_portion>
+
+	<!-- Инфопоршни для Хемуля и Динки-->
+	<info_portion id="find_dinka"></info_portion>
+	<info_portion id="dinka_first_talk"></info_portion>
+	<info_portion id="controller_spawn"></info_portion>
+	<info_portion id="controller_corpse"></info_portion>
+	<info_portion id="dinka_escort"></info_portion>
+	<info_portion id="dinka_alive"></info_portion>
+	<info_portion id="hemul_end_talk"></info_portion>
+	<info_portion id="red_forest_npc_dead"></info_portion>
+	<info_portion id="dinka_to_place"></info_portion>
+	<info_portion id="hemul_to_place"></info_portion>
+	<info_portion id="hemul_fourth_dialog_end"></info_portion>
+	<info_portion id="all_right"></info_portion>
+		
+</game_information_portions>

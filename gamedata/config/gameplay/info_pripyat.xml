@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+        <!-- Двери в Прачечной -->
+
+	<info_portion id="actor_prachka_door_01"></info_portion>
+	<info_portion id="actor_prachka_door_07"></info_portion>
+
+        <info_portion id="komandor_first_talk">
+                <article>komandor_first_talk_art</article>
+        </info_portion>
+        <info_portion id="komandor_second_talk">
+                <article>komandor_second_talk_art</article>
+        </info_portion>
+        <info_portion id="german_first_message_sending">
+                <article>german_first_message_send</article>
+        </info_portion>
+
+	<info_portion id="prip_neutral_corpse">
+                <article>prip_neutral_corpse_art</article>
+        </info_portion>
+	
+</game_information_portions>

@@ -1,0 +1,7 @@
+--'  Квест Германа на документы в секретной лаборатории
+function disk_code_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("disk_code") ~= nil
+   end
+   return false
+end

@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!-------------------------------------zveroboi------------------------------------------------------>
+	<specific_character id="lost_village_zveroboi" team_default = "1">
+		<name>lost_village_zveroboi_name</name>
+		<icon>ui_inGame2_Zveroboy</icon>
+		<bio>lost_village_zveroboi_bio</bio>
+
+		<class>lost_village_zveroboi</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_neutral\stalker_neutral_2_face_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk2 = 1, scope \n
+                        ammo_12x76_dart = 10 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>zveroboi_first_dialog</start_dialog>
+		<actor_dialog>zveroboi_second_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="lost_hunter_novice_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_4_novice</icon>
+		<bio>lost_hunter_novice_bio</bio>
+
+		<class>lost_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 = 1, scope \n
+			ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="lost_hunter_novice_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_3_novice</icon>
+		<bio>lost_hunter_novice_bio</bio>
+
+		<class>lost_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk2 = 1, scope \n
+			ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="lost_hunter_novice_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_4_novice</icon>
+		<bio>lost_hunter_novice_bio</bio>
+
+		<class>lost_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter4</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="lost_hunter_novice_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_5_novice</icon>
+		<bio>lost_hunter_novice_bio</bio>
+
+		<class>lost_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter5</visual>
+		<supplies>
+			[spawn] \n
+			wpn_m1891_30_scope \n
+			ammo_7.62x54_ap = 20 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="lost_hunter_novice_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_1_novice</icon>
+		<bio>lost_hunter_novice_bio</bio>
+
+		<class>lost_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter6</visual>
+		<supplies>
+			[spawn] \n
+			wpn_m1891_30_scope \n
+			ammo_7.62x54_ap = 20 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="lost_hunter_novice_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_4_novice</icon>
+		<bio>lost_hunter_novice_bio</bio>
+
+		<class>lost_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_toz34 \n
+			ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="lost_hunter_novice_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_3_novice</icon>
+		<bio>lost_hunter_novice_bio</bio>
+
+		<class>lost_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+                        ammo_12x70_buck = 1 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="lost_hunter_novice_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_4_novice</icon>
+		<bio>lost_hunter_novice_bio</bio>
+
+		<class>lost_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter4</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sks_s \n
+                        ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="lost_hunter_novice_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_5_novice</icon>
+		<bio>lost_hunter_novice_bio</bio>
+
+		<class>lost_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter5</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+             ammo_12x70_buck = 1 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+
+</xml>

@@ -1,0 +1,77 @@
+-- названия локаций
+local level_name = {
+	["l01_escape"] = "Кордон",
+	["l02_garbage"] = "Свалка",
+	["l03_agroprom"] = "Агропром",
+	--["l03u_agr_underground"] = "Подземелье Агропрома",
+	["l04_darkvalley"] = "Тёмная долина",
+	--["l04u_labx18"] = "Лаборатория X-18",
+	["l05_bar"] = "Бар",
+	["l06_rostok"] = "Дикая территория",
+	["l07_military"] = "Армейские склады",
+	["l08_yantar"] = "Янтарь",
+	--["l08u_brainlab"] = "Лаборатория X-16",
+	["l10_radar"] = "Радар",
+	--["l10u_bunker"] = "Лаборатория X-10",
+	["l11_pripyat"] = "Припять",
+	["l12_stancia"] = "ЧАЭС-1",
+	["l12_stancia_2"] = "ЧАЭС-2",
+	--["l12u_sarcofag"] = "Саркофаг",
+	--["l12u_control_monolith"] = "Контроль Монолита",
+	["atp_for_test22"] = "Совхоз",
+	--["peshera"] = "Пещера",
+	["puzir"] = "Пузырь",
+	["aver"] = "Волчий лес",
+	--["av_peshera"] = "Лабиринт",
+	["limansk"] = "Лиманск",
+	["hospital"] = "Госпиталь",
+	["generators"] = "Генераторы",
+	--["warlab"] = "Военная лаборатория",
+	["red_forest"] = "Рыжий лес",
+	["lost_village"] = "Забытая деревня",
+	["marsh"] = "Болота",
+	["dead_city"] = "Мёртвый город",
+	["zaton"] = "Затон",
+	["jupiter"] = "Юпитер",
+	["pripyat"] = "Восток Припяти",
+	--["jupiter_underground"] = "Путепровод",
+	--["labx8"] = "Лаборатория Х-8",
+	--["cs_agroprom_underground"] = "Катакомбы",
+	["predbannik"] = "Предбанник",
+	["garbage_old"] = "Старая свалка",
+	["yantar_old"] = "Научная станция",
+	["swamp_old"] = "Болото Доктора"
+}
+
+-- названия группировок
+local community = {
+	["stalker"] = "Вольный",
+	--["monolith"] = "Монолит",
+	--["military"] = "ЧВК",
+	--["killer"] = "Наёмник",
+	["ecolog"] = "Эколог",
+	["dolg"] = "Долг",
+	["freedom"] = "Свобода",
+	--["bandit"] = "Бандит",
+	--["zombied"] = "Зомбированный",
+	["stranger"] = "Странник",
+	["trader"] = "Торговец",
+	--["arena_enemy"] = "Противник на Арене",
+	--["formers"] = "Военный",
+	["hunters"] = "Охотник",
+	--["monolits"] = "Монолит",
+	--["dark"] = "Тёмный"
+}
+
+local dead_news = ""
+local snd_obj = xr_sound.get_safe_sound_object([[device\pda\pda_tip]]) -- путь до звукового файла
+
+function kill_npc(victim, who)
+	local lname, comm, sec = level.name(), victim:character_community(), victim:section()
+	
+	if level_name[lname] and community[comm] and not string.find(sec,"aem") and not string.find(sec,"specnaz") then
+		-- определяется какая группировка у убитого, его имя, локация
+	dead_news = "\\n%c[255,160,160,160]Погиб сталкер: %c[default]"..victim:character_name()..". "..community[comm].." - "..level_name[lname].."."
+		db.actor:give_game_news(dead_news, "ui\\ui_iconsTotal", Frect():set(0,658,83,47), math.random(3000, 5000), 5000)
+	end
+end

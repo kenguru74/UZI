@@ -1,0 +1,15 @@
+[logic]
+active = walker
+combat_ignore = combat_ignore@av_pesh
+on_death = death
+
+[walker]
+path_walk = av_peshera_temnyi_3_walk
+path_look = av_peshera_temnyi_3_look
+combat_ignore_cond = {-kill_darks =fighting_actor}
+
+[combat_ignore@av_pesh]
+combat_ignore_cond = {-kill_darks =fighting_actor}
+
+[death]
+on_info = %+kill_dark_3%

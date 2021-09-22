@@ -1,0 +1,1228 @@
+local level_scripts = {
+	escape_tasks,
+	garbage_tasks,
+	agroprom_tasks,
+	darkvalley_tasks,
+	bar_rostok_tasks,
+    yantar_tasks,
+    mil_tasks,
+	radar_tasks,
+	pripyat_tasks
+}
+
+
+local jump_level_by_name = {
+	l01_escape				= "l02_garbage",
+	l02_garbage				= "l03_agroprom",
+	l03_agroprom			= "l03u_agr_underground",
+	l03u_agr_underground	= "l04_darkvalley",
+	l04_darkvalley			= "l04u_labx18",
+	l04u_labx18				= "l05_bar",
+	l05_bar					= "l06_rostok",
+	l06_rostok				= "l07_military",
+	l07_military			= "l08_yantar",
+	l08_yantar				= "l08u_brainlab",
+	l08u_brainlab			= "l10_radar",
+	l10_radar				= "l10u_bunker",
+	l10u_bunker				= "l11_pripyat",
+	l11_pripyat				= "l12_stancia",
+	l12_stancia				= "l12u_sarcofag",
+	l12u_sarcofag			= "l12u_control_monolith",
+	l12u_control_monolith	= "l12_stancia_2",
+	l12_stancia_2			= "l01_escape"
+}
+
+function proceed()
+	if db.actor == nil then
+		return
+	end
+	for k, v in pairs( level_scripts ) do
+		v.proceed()
+	end
+
+	if db.actor:has_info("autojump_enabled") then
+		local jname = jump_level_by_name[level.name()]
+		if jname ~= nil then
+--			get_console():execute("flush")
+			get_console():execute("jump_to_level "..jname)
+		end
+	end
+end
+
+function autojump()
+	db.actor:give_info_portion("autojump_enabled")
+end
+
+function process_info_portion(info_id)
+	if db.actor == nil then
+		return
+	end
+	for k, v in pairs( level_scripts ) do
+		if v.process_info_portion(info_id) then
+			return
+		end
+	end
+end
+
+function add_location(sid, location, hint)
+	local sim = alife()
+	if sim then
+		local obj = sim:story_object(sid)
+		
+		if obj then
+			if hint then
+				level.map_add_object_spot(obj.id, location, hint)
+			else
+				level.map_add_object_spot(obj.id, location, "")
+			end
+		end
+	end
+end
+
+function remove_location(sid, location)
+	local sim = alife()
+	if sim then
+		local obj = sim:story_object(sid)
+		if obj and level.map_has_object_spot(obj.id, location) then
+			level.map_remove_object_spot(obj.id, location)
+		end
+	end
+end
+
+function remove_location_safe(sid, location)
+	local sim = alife()
+	if sim then
+		local obj = sim:story_object(sid)
+		if obj then
+		   for a = 1, level.map_has_object_spot(obj.id, location), 1 do
+			   level.map_remove_object_spot(obj.id, location)
+		   end	
+		end
+	end
+end
+
+function is_map_spot_present(sid, location)
+	local sim = alife()
+	if sim then
+		local obj = sim:story_object(sid)
+		if obj and level.map_has_object_spot(obj.id, location) ~= 0 then
+		   return true
+		end
+	end
+	return false
+end
+  
+
+function add_lchanger_location()
+	local sim = alife()
+	if sim then
+		
+		-- by kenguru74 & Mora
+	
+	
+		obj = sim:story_object(50101)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Предбанник")
+		end
+		
+		obj = sim:story_object(50102)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болота")
+		end
+		
+		obj = sim:story_object(50103)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Свалку")
+		end
+		
+		obj = sim:story_object(50104)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Старую свалку")
+		end
+		
+		obj = sim:story_object(50105)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пещеру")
+		end
+		
+		obj = sim:story_object(50201)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Волчий лес")
+		end
+		
+		obj = sim:story_object(50202)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		
+		obj = sim:story_object(50203)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Бар")
+		end
+		
+		obj = sim:story_object(50204)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(50205)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Кордон")
+		end
+		
+		obj = sim:story_object(50301)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болота")
+		end
+		
+		obj = sim:story_object(50302)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(50303)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Подземелье Агропрома")
+		end
+		
+		obj = sim:story_object(50304)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Росток")
+		end
+		
+		obj = sim:story_object(50305)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Подземелье Агропрома")
+		end
+		
+		obj = sim:story_object(50306)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Свалку")
+		end
+		
+		obj = sim:story_object(50307)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Янтарь")
+		end
+		
+		obj = sim:story_object(50401)
+		if obj and level.name()=="l03u_agr_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		
+		obj = sim:story_object(50402)
+		if obj and level.name()=="l03u_agr_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		
+		obj = sim:story_object(50501)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Старую свалку")
+		end
+		
+		obj = sim:story_object(50502)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Волчий лес")
+		end
+		
+		obj = sim:story_object(50503)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(50504)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-18")
+		end
+		
+		obj = sim:story_object(50601)
+		if obj and level.name()=="l04u_labx18" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Тёмную долину")
+		end
+		
+		obj = sim:story_object(50602)
+		if obj and level.name()=="l04u_labx18" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(50701)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Свалку")
+		end
+		
+		obj = sim:story_object(50702)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(50703)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Росток")
+		end
+		
+		obj = sim:story_object(50704)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Армейские склады")
+		end
+		
+		obj = sim:story_object(50801)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Бар")
+		end
+		
+		obj = sim:story_object(50802)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Янтарь")
+		end
+		
+		obj = sim:story_object(50803)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		
+		obj = sim:story_object(50901)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Росток")
+		end
+		
+		obj = sim:story_object(50902)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		
+		obj = sim:story_object(50903)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болота")
+		end
+		
+		obj = sim:story_object(50904)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болото Доктора")
+		end
+		
+		obj = sim:story_object(50905)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-16")
+		end
+		
+		obj = sim:story_object(51001)
+		if obj and level.name()=="l08u_brainlab" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Янтарь")
+		end
+		
+		obj = sim:story_object(51002)
+		if obj and level.name()=="l08u_brainlab" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Янтарь")
+		end
+		
+		obj = sim:story_object(51101)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Бар")
+		end
+		
+		obj = sim:story_object(51102)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Радар")
+		end
+		
+		obj = sim:story_object(51103)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Совхоз")
+		end
+		
+		obj = sim:story_object(51104)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(51301)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(51302)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Армейские склады")
+		end
+		
+		obj = sim:story_object(51303)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Припять")
+		end
+		
+		obj = sim:story_object(51304)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-10")
+		end
+		
+		obj = sim:story_object(51305)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-10 эвакуационный")
+		end
+		
+		obj = sim:story_object(51401)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Юпитер")
+		end
+		
+		obj = sim:story_object(51402)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-1")
+		end
+		
+		obj = sim:story_object(51403)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Радар")
+		end
+		
+		obj = sim:story_object(51404)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Восток Припяти")
+		end
+		
+		obj = sim:story_object(51501)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Саркофаг")
+		end
+		
+		obj = sim:story_object(51502)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Припять")
+		end
+		
+		obj = sim:story_object(51503)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Научную станцию")
+		end
+		
+		obj = sim:story_object(51504)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-2")
+		end
+		
+		obj = sim:story_object(51505)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Восток Припяти")
+		end
+		
+		obj = sim:story_object(51601)
+		if obj and level.name()=="l12u_sarcofag" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Контроль Монолита")
+		end
+		
+		obj = sim:story_object(51602)
+		if obj and level.name()=="l12u_sarcofag" then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-1")
+		end
+		
+		obj = sim:story_object(51701)
+		if obj and level.name()=="l12u_control_monolith" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Саркофаг")
+		end
+		
+		obj = sim:story_object(51702)
+		if obj and level.name()=="l12u_control_monolith" then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-2")
+		end
+		
+		obj = sim:story_object(51901)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Контроль Монолита")
+		end
+		
+		obj = sim:story_object(51902)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Генераторы")
+		end
+		
+		obj = sim:story_object(51903)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-1")
+		end
+		
+		obj = sim:story_object(52001)
+		if obj and level.name()=="l10u_bunker" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Радар")
+		end
+		
+		obj = sim:story_object(52002)
+		if obj and level.name()=="l10u_bunker" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(52003)
+		if obj and level.name()=="l10u_bunker" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Радар эвакуационный")
+		end
+		
+		obj = sim:story_object(52201)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Армейские склады")
+		end
+		
+		obj = sim:story_object(52202)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Рыжий лес")
+		end
+		
+		obj = sim:story_object(52203)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пузырь")
+		end
+		
+		obj = sim:story_object(52301)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Предбанник")
+		end
+		
+		obj = sim:story_object(52302)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Кордон")
+		end
+				
+		obj = sim:story_object(52303)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Старую свалку")
+		end
+		
+		obj = sim:story_object(52401)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Юпитер")
+		end
+		
+		obj = sim:story_object(52402)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Совхоз")
+		end
+		
+		obj = sim:story_object(52403)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Рыжий лес")
+		end
+		
+		obj = sim:story_object(52501)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабиринт")
+		end
+		
+		obj = sim:story_object(52502)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Свалку")
+		end
+		
+		obj = sim:story_object(52503)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Тёмную долину")
+		end
+		
+		obj = sim:story_object(52601)
+		if obj and level.name()=="av_peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Волчий лес")
+		end
+		
+		obj = sim:story_object(52701)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Рыжий лес")
+		end
+		
+		obj = sim:story_object(52702)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Госпиталь")
+		end
+		
+		
+		obj = sim:story_object(52801)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лиманск")
+		end
+		
+		obj = sim:story_object(52802)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Мёртвый город")
+		end
+		
+		obj = sim:story_object(52901)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Военную лабораторию")
+		end
+		
+		obj = sim:story_object(52902)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-2")
+		end
+		
+		obj = sim:story_object(52903)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Научную станцию")
+		end
+		
+		obj = sim:story_object(52904)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Мёртвый город")
+		end
+		
+		obj = sim:story_object(53001)
+		if obj and level.name()=="warlab" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Генераторы")
+		end
+		
+		obj = sim:story_object(53101)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пузырь")
+		end
+		
+		obj = sim:story_object(53102)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Совхоз")
+		end
+		
+		obj = sim:story_object(53103)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Забытую деревню")
+		end
+		
+		
+		obj = sim:story_object(53104)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лиманск")
+		end
+		
+		obj = sim:story_object(53105)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Юпитер")
+		end
+		
+		obj = sim:story_object(53201)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болото Доктора")
+		end
+		
+		obj = sim:story_object(53202)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Рыжий лес")
+		end
+		
+		obj = sim:story_object(53301)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Предбанник")
+		end
+		
+		obj = sim:story_object(53302)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Кордон")
+		end
+		
+		obj = sim:story_object(53303)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		
+		obj = sim:story_object(53304)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Янтарь")
+		end
+		
+		obj = sim:story_object(53305)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болото Доктора")
+		end
+		
+		obj = sim:story_object(53306)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Волчий лес")
+		end
+		
+		obj = sim:story_object(53307)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Тёмную долину")
+		end
+		
+		obj = sim:story_object(53401)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Научную станцию")
+		end
+				
+		obj = sim:story_object(53402)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Госпиталь")
+		end
+		
+		obj = sim:story_object(53403)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Генераторы")
+		end
+		
+		obj = sim:story_object(53501)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Юпитер")
+		end
+		
+		obj = sim:story_object(53502)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Научную станцию")
+		end
+		
+		obj = sim:story_object(53503)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Катакомбы")
+		end
+		
+		obj = sim:story_object(53601)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Затон")
+		end
+		
+		obj = sim:story_object(53602)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Припять")
+		end
+		
+		obj = sim:story_object(53603)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(53604)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Рыжий лес")
+		end
+		
+		obj = sim:story_object(53605)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пузырь")
+		end
+				
+		obj = sim:story_object(53701)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Припять")
+		end
+		
+		obj = sim:story_object(53702)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-8")
+		end
+		
+		obj = sim:story_object(53703)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(53704)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-1")
+		end
+		
+		obj = sim:story_object(53801)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Юпитер")
+		end
+		
+		obj = sim:story_object(53802)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-10")
+		end
+		
+		obj = sim:story_object(53803)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Радар")
+		end
+		
+		obj = sim:story_object(53804)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Припять")
+		end
+		
+		obj = sim:story_object(53805)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Армейские склады")
+		end
+		
+		obj = sim:story_object(53806)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Тёмную долину")
+		end
+		
+		obj = sim:story_object(53807)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Бар")
+		end
+		
+		obj = sim:story_object(53808)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-18")
+		end
+		
+		obj = sim:story_object(53809)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		
+		obj = sim:story_object(53810)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Кордон")
+		end
+		
+		obj = sim:story_object(53811)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Старую свалку")
+		end
+		
+		obj = sim:story_object(53901)
+		if obj and level.name()=="labx8" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Восточную Припять")
+		end
+		
+		obj = sim:story_object(54001)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Научную станцию")
+		end
+		
+		obj = sim:story_object(54002)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Затон")
+		end
+		
+		obj = sim:story_object(54101)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болота")
+		end
+		
+		obj = sim:story_object(54102)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Кордон")
+		end
+				
+		obj = sim:story_object(54103)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Старую свалку")
+		end
+		
+		obj = sim:story_object(54104)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пещеру")
+		end
+		
+		obj = sim:story_object(54105)
+		if obj and level.name()=="warlab" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-8")
+		end
+		
+		obj = sim:story_object(54201)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Тёмную долину")
+		end
+		
+		obj = sim:story_object(54202)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(54203)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Кордон")
+		end
+		
+		obj = sim:story_object(54204)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пещеру")
+		end
+		
+		obj = sim:story_object(54205)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Предбанник")
+		end
+		
+		obj = sim:story_object(54301)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-1")
+		end
+		
+		obj = sim:story_object(54302)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Затон")
+		end
+		
+		obj = sim:story_object(54303)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Мёртвый город")
+		end
+		
+		obj = sim:story_object(54304)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Генераторы")
+		end
+		
+		obj = sim:story_object(54305)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Катакомбы")
+		end
+		
+		obj = sim:story_object(54401)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Янтарь")
+		end
+		
+		obj = sim:story_object(54402)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болота")
+		end
+		
+		obj = sim:story_object(54403)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Забытую деревню")
+		end
+		
+		obj = sim:story_object(54404)
+		if obj and level.name()=="labx8" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Военную лабораторию")
+		end
+
+		obj = sim:story_object(54405)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабиринт")
+		end
+		
+		obj = sim:story_object(54406)
+		if obj and level.name()=="av_peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пещеру")
+		end
+
+		obj = sim:story_object(54408)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабиринт")
+		end
+
+		obj = sim:story_object(54409)
+		if obj and level.name()=="av_peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Затон")
+		end
+
+		obj = sim:story_object(54410)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+
+		obj = sim:story_object(54411)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+
+		obj = sim:story_object(54412)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болото Доктора")
+		end
+
+		obj = sim:story_object(54413)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Затон")
+		end
+
+		obj = sim:story_object(54414)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Катакомбы")
+		end
+
+		obj = sim:story_object(54415)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Катакомбы")
+		end
+
+		obj = sim:story_object(54416)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+
+		obj = sim:story_object(54417)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Катакомбы")
+		end
+
+		obj = sim:story_object(54418)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+
+		obj = sim:story_object(54419)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Катакомбы")
+		end
+
+		obj = sim:story_object(54420)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пещеру")
+		end
+
+		obj = sim:story_object(54421)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+
+		obj = sim:story_object(54422)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Рыжий лес")
+		end
+
+		obj = sim:story_object(54423)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+
+		obj = sim:story_object(54424)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "В Совхоз")
+		end
+		
+		obj = sim:story_object(54425)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болото Доктора")
+		end
+
+	end
+end
+
+function add_lchanger_underlocation()
+	local sim = alife()
+	if sim then
+		
+		-- by Mora
+	
+		obj = sim:story_object(50401)
+		if obj and level.name()=="l03u_agr_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		
+		obj = sim:story_object(50402)
+		if obj and level.name()=="l03u_agr_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		obj = sim:story_object(50601)
+		if obj and level.name()=="l04u_labx18" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Тёмную долину")
+		end
+		
+		obj = sim:story_object(50602)
+		if obj and level.name()=="l04u_labx18" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		obj = sim:story_object(51001)
+		if obj and level.name()=="l08u_brainlab" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Янтарь")
+		end
+		
+		obj = sim:story_object(51002)
+		if obj and level.name()=="l08u_brainlab" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Янтарь")
+		end
+		obj = sim:story_object(51601)
+		if obj and level.name()=="l12u_sarcofag" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Контроль Монолита")
+		end
+		
+		obj = sim:story_object(51602)
+		if obj and level.name()=="l12u_sarcofag" then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-1")
+		end
+		obj = sim:story_object(51701)
+		if obj and level.name()=="l12u_control_monolith" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Саркофаг")
+		end
+		
+		obj = sim:story_object(51702)
+		if obj and level.name()=="l12u_control_monolith" then
+			level.map_add_object_spot(obj.id, "level_changer", "На ЧАЭС-2")
+		end
+		obj = sim:story_object(52001)
+		if obj and level.name()=="l10u_bunker" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Радар")
+		end
+		
+		obj = sim:story_object(52002)
+		if obj and level.name()=="l10u_bunker" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+		
+		obj = sim:story_object(52003)
+		if obj and level.name()=="l10u_bunker" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Радар эвакуационный")
+		end
+		obj = sim:story_object(52301)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Предбанник")
+		end
+		
+		obj = sim:story_object(52302)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Кордон")
+		end
+				
+		obj = sim:story_object(52303)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Старую свалку")
+		end
+		obj = sim:story_object(52601)
+		if obj and level.name()=="av_peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Волчий лес")
+		end
+
+		obj = sim:story_object(53001)
+		if obj and level.name()=="warlab" then
+         		level.map_add_object_spot(obj.id, "level_changer", "На Генераторы")
+		end
+
+		obj = sim:story_object(53801)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Юпитер")
+		end
+		
+		obj = sim:story_object(53802)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-10")
+		end
+		
+		obj = sim:story_object(53803)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Радар")
+		end
+		
+		obj = sim:story_object(53804)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Припять")
+		end
+		
+		obj = sim:story_object(53805)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Армейские склады")
+		end
+		
+		obj = sim:story_object(53806)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Тёмную долину")
+		end
+		
+		obj = sim:story_object(53807)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Бар")
+		end
+		
+		obj = sim:story_object(53808)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-18")
+		end
+		
+		obj = sim:story_object(53809)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+		
+		obj = sim:story_object(53810)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Кордон")
+		end
+		
+		obj = sim:story_object(53811)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Старую свалку")
+		end
+
+		obj = sim:story_object(53901)
+		if obj and level.name()=="labx8" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Восточную Припять")
+		end
+
+		obj = sim:story_object(54001)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Научную станцию")
+		end
+		
+		obj = sim:story_object(54002)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Затон")
+		end
+
+		obj = sim:story_object(54105)
+		if obj and level.name()=="warlab" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабораторию Х-8")
+		end
+
+		obj = sim:story_object(54404)
+		if obj and level.name()=="labx8" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Военную лабораторию")
+		end
+
+		obj = sim:story_object(54405)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Лабиринт")
+		end
+		
+		obj = sim:story_object(54406)
+		if obj and level.name()=="av_peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пещеру")
+		end
+
+		obj = sim:story_object(54409)
+		if obj and level.name()=="av_peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Затон")
+		end
+
+		obj = sim:story_object(54412)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Болото Доктора")
+		end
+
+		obj = sim:story_object(54413)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Затон")
+		end
+
+		obj = sim:story_object(54414)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Катакомбы")
+		end
+
+		obj = sim:story_object(54415)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Катакомбы")
+		end
+
+		obj = sim:story_object(54416)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "На Агропром")
+		end
+
+		obj = sim:story_object(54418)
+		if obj and level.name()=="cs_agroprom_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+
+		obj = sim:story_object(54419)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Катакомбы")
+		end
+
+		obj = sim:story_object(54420)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Пещеру")
+		end
+
+		obj = sim:story_object(54421)
+		if obj and level.name()=="peshera" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Путепровод")
+		end
+
+		obj = sim:story_object(54422)
+		if obj and level.name()=="jupiter_underground" then
+			level.map_add_object_spot(obj.id, "level_changer", "В Рыжий лес")
+		end
+
+	end
+end
+
+
+function set_task_state(id_state, id_task, id_subtask)
+	if db.actor then
+		db.actor:set_task_state(id_state, id_task, id_subtask)
+	end
+end
+
+function notify_new_task()
+end

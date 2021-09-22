@@ -1,0 +1,178 @@
+class "cheat" (CUIScriptWnd)
+ 
+function cheat:__init(owner) super()
+	self.owner = owner
+	self:InitControls()
+	self:InitCallBacks()
+end
+ 
+function cheat:__finalize()
+ 
+end
+ 
+function cheat:InitControls()
+	self:Init(50,50,550,450)
+	local xml = CScriptXmlInit()
+	xml:ParseFile("ui_cheat_wnd2.xml")
+	xml:InitStatic("back_video", self)
+	xml:InitStatic("background", self)
+	self:Register(xml:Init3tButton("btn_1", self),"btn_1")
+	self:Register(xml:Init3tButton("btn_2", self),"btn_2")
+	self:Register(xml:Init3tButton("btn_3", self),"btn_3")
+	self:Register(xml:Init3tButton("btn_4", self),"btn_4")
+	self:Register(xml:Init3tButton("btn_5", self),"btn_5")
+	self:Register(xml:Init3tButton("btn_6", self),"btn_6")
+	self:Register(xml:Init3tButton("btn_7", self),"btn_7")
+	self:Register(xml:Init3tButton("btn_8", self),"btn_8")
+	self:Register(xml:Init3tButton("btn_9", self),"btn_9")
+	self:Register(xml:Init3tButton("btn_10", self),"btn_10")
+	self:Register(xml:Init3tButton("btn_11", self),"btn_11")
+	self:Register(xml:Init3tButton("btn_12", self),"btn_12")
+	self:Register(xml:Init3tButton("btn_13", self),"btn_13")
+	self:Register(xml:Init3tButton("btn_14", self),"btn_14")
+	self:Register(xml:Init3tButton("btn_15", self),"btn_15")
+	self:Register(xml:Init3tButton("btn_16", self),"btn_16")
+	self:Register(xml:Init3tButton("btn_17", self),"btn_17")
+	self:Register(xml:Init3tButton("btn_18", self),"btn_18")
+	self:Register(xml:Init3tButton("btn_19", self),"btn_19")
+	self:Register(xml:Init3tButton("btn_20", self),"btn_20")
+	self:Register(xml:Init3tButton("btn_quit", self),"btn_quit")
+ 
+end
+ 
+function cheat:InitCallBacks()
+	self:AddCallback("btn_1", ui_events.BUTTON_CLICKED, self.cheat1, self)
+	self:AddCallback("btn_2", ui_events.BUTTON_CLICKED, self.cheat2, self)
+	self:AddCallback("btn_3", ui_events.BUTTON_CLICKED, self.cheat3, self)
+	self:AddCallback("btn_4", ui_events.BUTTON_CLICKED, self.cheat4, self)
+	self:AddCallback("btn_5", ui_events.BUTTON_CLICKED, self.cheat5, self)
+	self:AddCallback("btn_6", ui_events.BUTTON_CLICKED, self.cheat6, self)
+	self:AddCallback("btn_7", ui_events.BUTTON_CLICKED, self.cheat7, self)
+	self:AddCallback("btn_8", ui_events.BUTTON_CLICKED, self.cheat8, self)
+	self:AddCallback("btn_9", ui_events.BUTTON_CLICKED, self.cheat9, self)
+	self:AddCallback("btn_10", ui_events.BUTTON_CLICKED, self.cheat10, self)
+	self:AddCallback("btn_11", ui_events.BUTTON_CLICKED, self.cheat11, self)
+	self:AddCallback("btn_12", ui_events.BUTTON_CLICKED, self.cheat12, self)
+	self:AddCallback("btn_13", ui_events.BUTTON_CLICKED, self.cheat13, self)
+	self:AddCallback("btn_14", ui_events.BUTTON_CLICKED, self.cheat14, self)
+	self:AddCallback("btn_15", ui_events.BUTTON_CLICKED, self.cheat15, self)
+	self:AddCallback("btn_16", ui_events.BUTTON_CLICKED, self.cheat16, self)
+	self:AddCallback("btn_17", ui_events.BUTTON_CLICKED, self.cheat17, self)
+	self:AddCallback("btn_18", ui_events.BUTTON_CLICKED, self.cheat18, self)
+	self:AddCallback("btn_19", ui_events.BUTTON_CLICKED, self.cheat19, self)
+	self:AddCallback("btn_20", ui_events.BUTTON_CLICKED, self.cheat20, self)
+	self:AddCallback("btn_quit", ui_events.BUTTON_CLICKED, self.on_quit, self)
+end
+ 
+function cheat:check_game()
+	local check = false
+	if level.present() and (db.actor ~= nil) and db.actor:alive() then
+		check = true
+	end
+	return check
+end
+ 
+function cheat:on_quit()
+	local console = get_console()
+	self:GetHolder():start_stop_menu (self.owner, true)
+	self:GetHolder():start_stop_menu (self,true)
+	self.owner:Show	(true)
+	if self:check_game() then
+		console:execute("main_menu off")
+	end
+end
+ 
+function cheat:spawn_item(spawn_item, dist)
+	if self:check_game() then
+		self:on_quit()
+		local	pos = db.actor:position()
+		local	dir = db.actor:direction()
+		pos = pos:add(dir:mul(dist))
+		pos = pos:add(pos,0.25)
+		alife():create(spawn_item, pos, 3, db.actor:game_vertex_id())
+	end
+end
+ 
+function cheat:OnKeyboard(dik, keyboard_action)
+	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+ 
+		if     dik == DIK_keys.DIK_ESCAPE then self:on_quit()
+		elseif dik == DIK_keys.DIK_NUMPAD1 then	self:cheat1()
+		elseif dik == DIK_keys.DIK_NUMPAD2 then	self:cheat2()
+		elseif dik == DIK_keys.DIK_NUMPAD3 then	self:cheat3()
+		elseif dik == DIK_keys.DIK_NUMPAD4 then	self:cheat4()
+		elseif dik == DIK_keys.DIK_NUMPAD5 then	self:cheat5()
+		elseif dik == DIK_keys.DIK_NUMPAD6 then	self:cheat6()
+		elseif dik == DIK_keys.DIK_NUMPAD7 then	self:cheat7()
+		elseif dik == DIK_keys.DIK_NUMPAD8 then	self:cheat8()
+		elseif dik == DIK_keys.DIK_NUMPAD9 then	self:cheat9()
+		end
+	end
+	return true
+end
+ 
+function cheat:cheat1()
+	self:spawn_item("vehicle_niva2", 5)
+end
+function cheat:cheat2()
+	self:spawn_item("vehicle_uaz2", 5)
+end
+function cheat:cheat3()
+	self:spawn_item("vehicle_kamaz", 5)
+end
+function cheat:cheat4()
+	self:spawn_item("vehicle_tr13", 5)
+end
+function cheat:cheat5()
+	self:spawn_item("vehicle_btr", 5)
+end
+function cheat:cheat6()
+	self:spawn_item("vehicle_zaz", 5)
+end
+function cheat:cheat7()
+	self:spawn_item("vehicle_uaz", 5)
+end
+function cheat:cheat8()
+	self:spawn_item("vehicle_niva", 5)
+end
+function cheat:cheat9()
+	self:spawn_item("vehicle_moskvich", 5)
+end
+function cheat:cheat10()
+	self:spawn_item("vehicle_moskvich2", 5)
+end
+function cheat:cheat11()
+	self:spawn_item("vehicle_avtobuszil", 5)
+end
+function cheat:cheat12()
+	self:spawn_item("vehicle_uazbuhanka", 5)
+end
+function cheat:cheat13()
+	self:spawn_item("vehicle_avtobuslaz", 5)
+end
+function cheat:cheat14()
+	self:spawn_item("vehicle_2106", 5)
+end
+function cheat:cheat15()
+	self:spawn_item("vehicle_zaz_968", 5)
+end
+function cheat:cheat16()
+	self:spawn_item("vehicle_zilmmz", 5)
+end
+function cheat:cheat17()
+	self:spawn_item("vehicle_furanopricep", 5)
+end
+function cheat:cheat18()
+	self:spawn_item("vehicle_zil131", 5)
+end
+function cheat:cheat19()
+	self:spawn_item("vehicle_gaz66", 5)
+end
+function cheat:cheat20()
+	self:spawn_item("vehicle_zaz", 5)
+end
+function cheat:cheat21()
+    raschet.srp_raschet ()
+end
+

@@ -1,0 +1,29 @@
+[logic]
+active = ph_door@locked
+
+[ph_door@locked]
+locked = true
+closed = true
+snd_open_start = wood_small_open
+snd_close_start = wood_small_close_start
+snd_close_stop = wood_small_close_stop
+show_tips = false
+on_info = {+klyk_first_message} ph_door@closed
+
+[ph_door@closed]
+locked = false
+closed = true
+on_use = ph_door@open
+snd_open_start = wood_small_open
+snd_close_start = wood_small_close_start
+snd_close_stop = wood_small_close_stop
+show_tips = true
+
+[ph_door@open]
+locked = false
+closed = false
+on_use = ph_door@closed
+snd_open_start = wood_small_open
+snd_close_start = wood_small_close_start
+snd_close_stop = wood_small_close_stop
+show_tips = true

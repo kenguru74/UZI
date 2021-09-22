@@ -1,0 +1,407 @@
+;=================================================
+;--/ для модуля "реСпавн" (m_respawn.script)
+;=================================================
+[main]
+enabled = true  ;--/ true/false - разрешен/запрещен
+debug   = false ;--/ false/true - (от)включен режим отладки
+
+[respawn_smb]
+enabled = false ;--/ Спавн (true/false - разрешен/запрет)
+time_0  =  1   ;--/ ~1 - период между спавнами (игр. час)
+time_1  =  4   ;--/ ~4
+time_2  = 12   ;--/ ~12
+time_3  = 24   ;--/ >24
+
+[respawn_veh]
+enabled = false ;--/ Спавн (true/false - разрешен/запрет)
+time_0  =  1   ;--/ ~1 - период между спавнами (игр. час)
+time_1  =  4   ;--/ ~4
+time_2  = 12   ;--/ ~12
+time_3  = 24   ;--/ >24
+
+[respawn_rnd]
+enabled = true ;--/ Спавн (true/false - разрешен/запрет)
+time_0  =  1   ;--/ ~1 - период между спавнами (игр. час)
+time_1  =  4   ;--/ ~4
+time_2  = 12   ;--/ ~12
+time_3  = 24   ;--/ >24
+
+[default_values]
+respawn_radius = 1
+max_count      = 1
+idle_spawn     = 1
+creature_binded_logic = logic\free_obj
+
+[random_values]
+respawn_radius = 3
+spawn_once     = true
+max_count      = 1
+;idle_spawn     = 259200
+creature_binded_logic = logic\free_obj
+
+[respawns] ;--sections respawners
+;-----------------------------
+;--/ Monsters
+;-----------------------------
+;esc_rat1         = true
+;esc_rat2         = true
+esc_tush1        = true
+esc_tush2        = true
+esc_tush3        = true
+esc_tush4        = true
+
+garb_himera      = false
+garb_cars        = true
+garb_tush1       = true
+garb_tush11      = true
+
+agr_tush1        = true
+agr_tush2        = true
+agr_cats         = true
+agr_blood        = true
+
+dark_zomb1       = true
+dark_zomb2       = true
+dark_zomb3       = true
+dark_zomb4       = true
+dark_random1     = true
+dark_random3     = true
+dark_random5     = true
+dark_mob_nlc    = true
+
+bar_dogs         = true
+bar_kaban        = true
+bar_mobs1_nlc    = true
+bar_mobs2_nlc    = true
+
+mil_random1      = false
+mil_tush1        = true
+mil_tush2        = true
+mil_himer_family = true
+mil_village1     = true
+mil_village2     = true
+mil_village3     = true
+
+ros_random       = true
+ros_random2      = true
+ros_random3      = true
+ros_zomb1        = false
+ros_zomb2        = true
+ros_ways         = true
+ros_house_z1     = true
+ros_house_z2     = true
+ros_house_z3     = true
+ros_hl           = true
+
+yan_lager        = true
+yan_tunel1       = true
+yan_garazh       = true
+yan_angar        = true
+yan_center       = true
+yan_house        = true
+yan_house2       = true
+yan_dvor         = true
+
+x18_burer1       = true
+x18_burer2       = true
+x18_burer3       = true
+
+radar_random1    = true
+radar_random2    = true
+radar_random3    = true
+radar_random4    = true
+radar_random5    = true
+radar_random6    = true
+radar_random7    = true
+radar_random8    = true
+radar_random9    = true
+radar_random10   = true
+radar_random11   = true
+radar_random12   = true
+radar_random13   = true
+
+prip_random1     = true
+prip_random2     = true
+prip_random3     = true
+prip_random4     = true
+prip_random5     = true
+prip_random6     = true
+prip_random7     = true
+prip_random8     = true
+prip_random9     = true
+prip_random10    = true
+prip_random11    = true
+prip_random12    = true
+prip_random13    = true
+prip_random14    = true
+
+;=================================================
+;--/ Includes
+;=================================================
+#include "respawn\escape.ltx"
+#include "respawn\garbage.ltx"
+#include "respawn\agroprom.ltx"
+#include "respawn\darkvalley.ltx"
+#include "respawn\bar.ltx"
+#include "respawn\military.ltx"
+#include "respawn\rostok.ltx"
+#include "respawn\yantar.ltx"
+#include "respawn\x18.ltx"
+#include "respawn\pripyat.ltx"
+#include "respawn\radar.ltx"
+
+;=================================================
+
+[level_vertexes]
+;--/ levels           | lvids |    gvids
+l01_escape            = 595499; --/    0,  251
+l02_garbage           = 382663; --/  252,  415
+l03_agroprom          = 437420; --/  416,  702
+;l03u_agr_underground  =      0; --/  703,  810
+l04_darkvalley        = 390124; --/  811, 1108
+;l04u_labx18           =      0; --/ 1109, 1167
+l05_bar               =  99538; --/ 1168, 1307
+l06_rostok            =  67712; --/ 1308, 1437
+l07_military          = 418267; --/ 1545, 1861
+l08_yantar            = 141470; --/ 1438, 1528
+;l08u_brainlab         =      0; --/ 1529, 1544
+l10_radar             = 227188; --/ 1862, 2116
+;l10u_bunker           =      0; --/ 2661, 2791
+l11_pripyat           = 261218; --/ 2117, 2272
+l12_stancia           = 477922; --/ 2273, 2401
+;l12_stancia_2         =      0; --/ 2517, 2660
+;l12u_sarcofag         =      0; --/ 2402, 2466
+;l12u_control_monolith =      0; --/ 2467, 2516
+atp_for_test22          =  1043966
+;peshera                 =  0 ;32109
+;puzir                   =  0 ;366675
+;aver                    =  0 ;1765298
+;av_peshera              =  0 ;172361
+limansk                 =  60467
+;hospital                =  0 ;7818
+generators              =  625954
+;warlab                  =  0 ;7747
+red_forest              =  165896
+lost_village            =  48854
+marsh                   =  528954
+dead_city               =  531706
+zaton                   =  1843840
+jupiter                 =  1425786
+pripyat                 =  427661
+;jupiter_underground     =  0 ;40830
+;labx8                   =  0 ;5799
+;cs_agroprom_underground =  0 ;4856
+predbannik              =  1216832
+garbage_old             =  1228368
+yantar_old              =  585301
+swamp_old               =  1735357 
+
+[levels_exluded] ;--/ underground
+l03u_agr_underground  = true
+l04u_labx18           = true
+l08u_brainlab         = true
+l10u_bunker           = true
+l12_stancia_2         = true ;--/?
+l12u_control_monolith = true
+l12u_sarcofag         = true
+peshera               = true
+puzir                 = true
+aver                  = true
+av_peshera            = true
+hospital              = true
+warlab                = true
+jupiter_underground   = true
+labx8                   = true
+cs_agroprom_underground = true
+
+;---------------------------------------------------------------------
+;--/ Зоны антиспавна (anti_spawn_zones)
+;---------------------------------------------------------------------
+[anti_spawn_zones]
+ 130.5,  -4.8,  22.9, 30 ;--/ стойка бармена
+ 152.49,-21.1, 107.7, 50 ;--/ Арена
+
+
+[types_monsters] ;--/ 
+;aes_snork                         =  5
+bloodsucker_fast                  =  3
+bloodsucker_hell                  =  3
+bloodsucker_jumper                =  3
+;bloodsucker_jumper_deadly         =  3
+;bloodsucker_marsh                 =  5
+;bloodsucker_mil                   =  3
+bloodsucker_night_king            =  1
+bloodsucker_normal                =  4
+;bloodsucker_redforest             =  3
+;bloodsucker_redhunter             =  3
+bloodsucker_strong                =  2
+bloodsucker_weak                  =  5
+;boar_fake                         =  5
+boar_normal                       =  7
+boar_strong                       =  5
+boar_weak                         = 10
+;boar_zoo                          =  5
+burer_indoor                      =  2
+burer_normal                      =  2
+burer_outdoor                     =  2
+burer_strong                      =  1
+burer_weak                        =  3
+;cat_normal                        =  3
+;cat_strong                        =  3
+cat_weak                          =  5
+chimera_normal                    =  3
+chimera_weak                      =  3
+controller_tubeman                =  1
+dog_normal                        = 10
+;dog_normal_fearless_garbage       = 10
+dog_strong                        =  7
+dog_weak                          = 15
+;dog_weak_fearless_garbage         = 10
+electro_chimera                   =  1
+flesh_normal                      =  7
+flesh_strong                      =  5
+flesh_weak                        = 10
+;flesh_zoo                         =  5
+fracture_normal                   =  3
+fracture_weak                     =  5
+gigant_normal                     =  1
+gigant_strong                     =  1
+gigant_weak                       =  2
+m_controller_normal               =  1
+m_controller_normal_fat           =  1
+;m_controller_old                  =  1
+;m_controller_old_fat              =  1
+m_poltergeist_normal_flame        =  4
+m_poltergeist_normal_tele         =  4
+m_poltergeist_strong_flame        =  3
+pseudodog_normal                  =  4
+;pseudodog_normal_fearless_garbage =  5
+pseudodog_strong                  =  3
+pseudodog_weak                    =  5
+psy_dog                           =  5
+;psy_dog_phantom                   =  5
+;psy_dog_radar                     =  5
+;snork_indoor                      =  5
+snork_jumper                      =  5
+snork_normal                      =  5
+;snork_outdoor                     =  5
+snork_strong                      =  3
+snork_weak                        =  7
+tushkano_normal                   =  5
+;tushkano_strong                   = 10
+tushkano_weak                     =  8
+;zombie_beee                       =  5
+;zombie_ghost                      =  5
+;zombie_hell                       =  5
+zombie_immortal                   =  3
+zombie_normal                     =  5
+;zombie_old                        =  5
+zombie_strong                     =  5
+;zombie_trup                       =  5
+;zombie_trup2                      =  5
+zombie_weak                       =  5
+
+[types_stalkers] ;--/ from spawn_sections.ltx
+esc_stalker_respawn_1        = 3
+esc_stalker_respawn_2        = 3
+esc_bandit_respawn_1         = 3
+esc_bandit_respawn_2         = 3
+esc_soldier_respawn_1        = 3
+esc_soldier_respawn_specnaz  = 3
+dolg_regular                 = 3
+agr_stalker_regular          = 3
+agr_stalker_veteran          = 3
+agr_soldier_regular          = 3
+agr_soldier_veteran          = 3
+agr_bandit_respawn_1         = 3
+agr_bandit_respawn_2         = 3
+cit_killer_respawn_1         = 3
+cit_killer_respawn_2         = 3
+cit_killer_respawn_3         = 3
+mil_killer_respawn_4         = 3
+mil_freedom_respawn_1        = 3
+mil_freedom_respawn_2        = 3
+mil_freedom_respawn_3        = 3
+mil_freedom_respawn_sniper   = 3
+mil_freedom_barier_respawn_1 = 3
+mil_neutral_barier_respawn_1 = 3
+mil_monolit_rush_respawn_1   = 3
+mil_stalker_respawn_1        = 3
+mil_stalker_respawn_2        = 3
+mil_stalker_respawn_3        = 3
+pri_monolith_respawn_1       = 3
+pri_monolith_respawn_2       = 3
+pri_monolith_respawn_3       = 3
+pri_respawn_dolg-a           = 3
+pri_respawn_freedom-a        = 3
+pri_respawn_neutral-a        = 3
+pri_respawn_military-a       = 3
+gar_bandit_respawn_1         = 3
+gar_bandit_respawn_2         = 3
+gar_stalker_respawn_1        = 3
+gar_stalker_respawn_2        = 3
+gar_dolg_respawn_1           = 3
+gar_dolg_respawn_2           = 3
+ds_stalker_respawn_1         = 3
+ds_stalker_respawn_2         = 3
+ds_bandit_respawn_1          = 3
+ds_bandit_respawn_2          = 3
+ds_bandit_respawn_3          = 3
+rad_soldier_master           = 3
+rad_monolith_respawn_2       = 3
+rad_zombied_respawn_1        = 3
+rad_monolith_respawn_1       = 3
+rad_monolith_respawn_2       = 3
+rad_monolith_respawn_3       = 3
+rad_specnaz_respawn_specnaz  = 3
+rad_soldier_master           = 3
+rad_zombied_respawn_1        = 3
+rad_zombied_respawn_2        = 3
+rad_zombied_respawn_3        = 3
+yan_zombied_respawn_1        = 3
+yan_zombied_respawn_2        = 3
+yan_zombied_respawn_3        = 3
+yan_ecolog_respawn_1         = 3
+bar_stalker_respawn_1        = 3
+bar_stalker_respawn_2        = 3
+bar_stalker_respawn_3        = 3
+bar_stalker_respawn_4        = 3
+bar_dolg_respawn_1           = 3
+bar_dolg_respawn_2           = 3
+bar_dolg_respawn_3           = 3
+cit_killer_respawn_1         = 3
+cit_killer_respawn_2         = 3
+cit_killer_respawn_3         = 3
+cit_bandit_respawn_1         = 3
+cit_bandit_respawn_2         = 3
+val_bandit_respawn_1         = 3
+val_bandit_respawn_2         = 3
+val_bandit_respawn_3         = 3
+val_bandit_respawn_4         = 3
+val_bandit_respawn_5         = 3
+val_soldier_respawn_1        = 3
+ros_killer_respawn_1         = 3
+ros_killer_respawn_2         = 3
+ros_killer_respawn_3         = 3
+ros_killer_respawn_4         = 3
+ros_bandit_respawn_3         = 3
+ros_bandit_respawn_4         = 3
+sar_monolith_respawn-a       = 3
+sim_freedom_master_quest     = 3
+war_commun_dolg_1            = 3
+war_commun_dolg_2            = 3
+war_commun_dolg_3            = 3
+gar_bandit_war_1             = 3
+gar_bandit_war_2             = 3
+amk_zombied_1                = 3
+amk_zombied_2                = 3
+amk_zombied_3                = 3
+esc_dark_stalker_1           = 4
+esc_dark_stalker_2           = 3
+esc_dark_stalker_3           = 3
+esc_dark_stalker_4           = 2
+esc_dark_stalker_5           = 2
+esc_dark_stalker_voron       = 1
+ecolog_student               = 3
+
+;=================================================

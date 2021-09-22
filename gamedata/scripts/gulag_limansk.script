@@ -1,0 +1,134 @@
+local t = {}
+
+function load_job(sj, gname, type, squad, groups)
+
+--' created by Mora
+
+--'--------------------------------------------------------------------------
+--' LIMANSK
+--'--------------------------------------------------------------------------
+
+        -- база сталкеров
+	if type == "limansk_baza" then
+		-- у костра
+		t = { section = "logic@limansk_baza_post_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker5",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker6",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker7",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker8",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker9",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker10",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker11",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker12",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker13",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@limansk_baza_post_walker14",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+end
+
+function load_states(gname, type)
+
+	if type == "limansk_baza" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+end
+
+--------------------------------------------------------------------------
+-- Dynamic ltx
+--------------------------------------------------------------------------
+function load_ltx(gname, type)
+	return nil
+end
+
+function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
+
+	if gulag_type == "limansk_baza" then
+		return npc_community == "stalker"
+	end
+
+	return false
+end
+
+function checkMonster(npc_community, gulag_type)
+
+	return false
+end

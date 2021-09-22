@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+        <info_portion id="first_dialog_lost_village">
+                <task>lost_village_zveroboi_help</task>
+        </info_portion>
+        <info_portion id="second_dialog_lost_village"></info_portion>
+		
+</game_information_portions>

@@ -1,0 +1,19 @@
+function find_sarcofag()
+ if level.name()=="l12u_sarcofag" and has_alife_info("fifth_talking_doctor") and (not has_alife_info("sarcofag")) then
+   db.actor:give_info_portion("find_sarcofag")
+ end
+end
+
+local doctor_arts = {"af_compass", "af_ice", "af_glass", "af_fire", "af_eye", "af_baloon"}
+function unique_arts_have(task, objective)
+    local gg = db.actor
+    if gg then
+        for i=1,#doctor_arts  do
+            if not gg:object(doctor_arts[i]) then 
+                return false
+            end
+        end
+        return true 
+    end
+    return false
+end

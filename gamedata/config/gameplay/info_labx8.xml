@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+        <info_portion id="german_find_docs_x8">
+                <article>german_find_docs_x8_art</article>
+        </info_portion>
+		
+</game_information_portions>

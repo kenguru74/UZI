@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="spartak_first_dialog">
+        <dont_has_info>go_to_noah</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>spartak_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>spartak_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>spartak_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>spartak_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>spartak_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>spartak_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>spartak_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>spartak_first_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>spartak_first_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>spartak_first_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>spartak_first_dialog_10</text>
+                <next>111</next>
+                <next>112</next>
+            </phrase>
+            <phrase id="111">
+                <text>spartak_first_dialog_111</text>
+                <give_info>go_to_noah</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="112">
+                <text>spartak_first_dialog_112</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="spartak_second_dialog">
+        <dont_has_info>spartak_help</dont_has_info>
+        <has_info>spartak_boys_to_home</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>spartak_second_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>spartak_second_dialog_1</text>
+                <action>zaton_dialog.spartak_help</action>
+                <give_info>spartak_help</give_info>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>spartak_second_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>spartak_second_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>spartak_second_dialog_4</text>
+                <give_info>go_to_german</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="noah_first_dialog">
+        <dont_has_info>find_pda</dont_has_info>
+        <has_info>go_to_noah</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>noah_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>noah_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>noah_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>noah_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>noah_first_dialog_4</text>
+                <next>51</next>
+                <next>52</next>
+            </phrase>
+            <phrase id="51">
+                <text>noah_first_dialog_51</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>noah_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>noah_first_dialog_7</text>
+                <give_info>find_pda</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="52">
+                <text>noah_first_dialog_52</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="noah_second_dialog">
+        <dont_has_info>list_signal</dont_has_info>
+        <has_info>bring_noah_pda</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>noah_second_dialog_0</text>
+                <give_info>bring_pda</give_info>
+                <action>zaton_dialog.noah_friend</action>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>noah_second_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>noah_second_dialog_2</text>
+                <give_info>list_signal</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="noah_third_dialog">
+        <dont_has_info>find_lab</dont_has_info>
+        <has_info>give_signal</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>noah_third_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>noah_third_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>noah_third_dialog_2</text>
+                <give_info>find_lab</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="noah_fourth_dialog">
+    <has_info>take_zver_message</has_info>
+    <dont_has_info>fourth_dialog_noah</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>noah_fourth_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>noah_fourth_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>noah_fourth_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>noah_fourth_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>noah_fourth_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>noah_fourth_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>noah_fourth_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>noah_fourth_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>noah_fourth_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>noah_fourth_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>noah_fourth_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>noah_fourth_dialog_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>noah_fourth_dialog_12</text>
+                <action>zaton_dialog.spawn_docs</action>
+                <give_info>fourth_dialog_noah</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="noah_fifth_dialog">
+    <has_info>have_heli_docs</has_info>
+    <dont_has_info>fifth_dialog_noah</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>noah_fifth_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>noah_fifth_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>noah_fifth_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>noah_fifth_dialog_3</text>
+                <action>zaton_dialog.give_heli_docs</action>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>noah_fifth_dialog_4</text>
+                <give_info>fifth_dialog_noah</give_info>
+                <action>zaton_dialog.noah_message</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="noah_sixth_dialog">
+    <has_info>give_message_noah</has_info>
+    <dont_has_info>sixth_dialog_noah</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>noah_sixth_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>noah_sixth_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>noah_sixth_dialog_2</text>
+                <give_info>sixth_dialog_noah</give_info>
+                <action>zaton_dialog.take_access_card</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="noah_seventh_dialog">
+    <has_info>first_dialog_zver</has_info>
+    <dont_has_info>seventh_dialog_noah</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>noah_seventh_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>noah_seventh_dialog_1</text>
+                <action>zaton_dialog.give_access_card</action>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>noah_seventh_dialog_2</text>
+                <give_info>seventh_dialog_noah</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="zaton_helicopter_dialog">
+        <dont_has_info>stalker_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>zaton_helicopter_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>zaton_helicopter_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>zaton_helicopter_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>zaton_helicopter_dialog_3</text>
+                <give_info>stalker_talk</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="zver_first_dialog">
+    <has_info>spawn_new_zver</has_info>
+    <dont_has_info>first_dialog_zver</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>zver_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>zver_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>zver_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>zver_first_dialog_3</text>
+                <give_info>first_dialog_zver</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="zver_second_dialog">
+    <has_info>seventh_dialog_noah</has_info>
+    <dont_has_info>second_dialog_zver</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>zver_second_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>zver_second_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>zver_second_dialog_2</text>
+                <give_info>second_dialog_zver</give_info>
+                <action>zaton_dialog.zver_friend</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="zaton_road_talk">
+        <dont_has_info>zaton_dialog_road</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>zaton_road_talk_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>zaton_road_talk_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>zaton_road_talk_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>zaton_road_talk_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>zaton_road_talk_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>zaton_road_talk_5</text>
+                <give_info>zaton_dialog_road</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="zaton_kran_talk">
+        <dont_has_info>zaton_dialog_kran</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>zaton_kran_talk_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>zaton_kran_talk_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>zaton_kran_talk_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>zaton_kran_talk_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>zaton_kran_talk_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>zaton_kran_talk_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>zaton_kran_talk_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>zaton_kran_talk_7</text>
+                <give_info>zaton_dialog_kran</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="zaton_jo_dialog">
+        <has_info>zaton_dialog_kran</has_info>
+        <dont_has_info>zaton_dialog_jo</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>zaton_jo_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>zaton_jo_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>zaton_jo_dialog_2</text>
+                <next>21</next>
+                <next>22</next>
+                <next>23</next>
+                <next>24</next>
+            </phrase>
+            <phrase id="21">
+                <text>zaton_jo_dialog_21</text>
+                <action>zaton_dialog.jo_give_things1</action>
+                <give_info>zaton_dialog_jo</give_info>
+                <next>3</next>
+            </phrase>
+            <phrase id="22">
+                <text>zaton_jo_dialog_22</text>
+                <action>zaton_dialog.jo_give_things2</action>
+                <give_info>zaton_dialog_jo</give_info>
+                <next>3</next>
+            </phrase>
+            <phrase id="23">
+                <text>zaton_jo_dialog_23</text>
+                <action>zaton_dialog.jo_give_things3</action>
+                <give_info>zaton_dialog_jo</give_info>
+                <next>3</next>
+            </phrase>
+            <phrase id="24">
+                <text>zaton_jo_dialog_24</text>
+                <action>zaton_dialog.jo_give_things4</action>
+                <give_info>zaton_dialog_jo</give_info>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>zaton_jo_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>zaton_jo_dialog_4</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+</game_dialogs>

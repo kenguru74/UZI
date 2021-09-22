@@ -1,0 +1,15 @@
+function find_generators()
+ if level.name()=="generators" and has_alife_info("fourth_talking_doctor") and (not has_alife_info("find_generators")) then
+   db.actor:give_info_portion("find_generators")
+ end
+end
+
+function remove_label()
+ if level.name()=="generators" and has_alife_info("generators_yarik_corpse") and (not has_alife_info("remove_mapspot")) then
+   local obj = alife():object( "generators_mess_doc_2" )
+   if obj then
+     level.map_remove_object_spot(obj.id, "find_item_location")
+   end
+   db.actor:give_info_portion("remove_mapspot")
+ end
+end

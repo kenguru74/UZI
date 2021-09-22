@@ -1,0 +1,23 @@
+harmonica_a = 1, prob=0.45 \n
+device_torch = 1, prob=0.45 \n
+
+guitar_a = 1, prob=0.01 \n
+
+antirad = 1, prob=0.005 \n
+magazak = 1, prob=0.005 \n
+magazaps = 1, prob=0.005 \n
+olives = 1, prob=0.005 \n
+sgus = 1, prob=0.005 \n
+bread_a = 1, prob=0.005 \n
+kolbasa_a = 1, prob=0.005 \n
+mutant_dog_tail = 1, prob=0.005 \n
+galet = 1, prob=0.005 \n
+mutant_flesh_eye = 1, prob=0.005 \n
+vodka_a = 1, prob=0.005 \n
+mutant_face_tushkano = 1, prob=0.005 \n
+bread = 1, prob=0.005 \n
+repair_kit = 1, prob=0.005 \n
+sigaret = 1, prob=0.005 \n
+vodka_u = 1, prob=0.005 \n
+syrok = 1, prob=0.005 \n
+bandage = 1, prob=0.005

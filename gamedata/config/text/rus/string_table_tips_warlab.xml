@@ -1,0 +1,18 @@
+	<string id="tips_warlab_press_1">
+		<text>Чтобы отключить 1-й накопитель, нажмите ($$ACTION_USE$$).</text>
+	</string>
+	<string id="tips_warlab_press_2">
+		<text>Чтобы отключить 2-й накопитель, нажмите ($$ACTION_USE$$).</text>
+	</string>
+	<string id="tips_warlab_press_3">
+		<text>Чтобы отключить 3-й накопитель, нажмите ($$ACTION_USE$$).</text>
+	</string>
+	<string id="tips_warlab_press_4">
+		<text>Чтобы отключить 4-й накопитель, нажмите ($$ACTION_USE$$).</text>
+	</string>
+	<string id="tips_warlab_press_5">
+		<text>Чтобы отключить 5-й накопитель, нажмите ($$ACTION_USE$$).</text>
+	</string>
+	<string id="tips_warlab_press">
+		<text>Чтобы отключить питание главного накопителя, нажмите ($$ACTION_USE$$).</text>
+	</string>

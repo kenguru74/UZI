@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+        <info_portion id="klyk_first_message">
+                <article>klyk_first_message_art</article>
+        </info_portion>
+        <info_portion id="klyk_zapiska2">
+                <article>klyk_zapiska2_art</article>
+        </info_portion>
+		
+</game_information_portions>

@@ -1,0 +1,61 @@
+;=================================================
+;--/ для модуля "Спаун техники" (m_vehicles.script)
+;=================================================
+[main]
+enabled = true  ;--/ true/false - разрешен/запрещен
+debug   = false ;--/ false/true - (от)включен режим отладки
+
+[levels_exluded] ;--/ underground
+l03u_agr_underground  = true
+l04u_labx18           = true
+l08u_brainlab         = true
+l10u_bunker           = true
+l12_stancia_2         = true ;--/?
+l12u_control_monolith = true
+l12u_sarcofag         = true
+
+[map_vehicles]
+l01_escape     = true
+l02_garbage    = true
+l03_agroprom   = true
+l04_darkvalley = true
+l07_military   = true
+l08_yantar     = true
+
+[l01_escape]
+vehicle_zaz   = -226.2, -20.3, -158.4,  28485,  48
+vehicle_uaz   = -148.15,-30.0, -383.0, 101494,  15
+vehicle_niva  =  128.5,  -7.7,   -7.0, 432757, 134
+vehicle_kamaz =    9.0,   0.5,  280.3, 286415, 181
+
+[l02_garbage]
+vehicle_kamaz =  -82.1, -2.6, -224.7, 124015, 271
+vehicle_msk   =  -90.2, -2.6, -233.6, 118856, 271
+vehicle_uaz2  =   74.0,  0.6,  163.3, 244359, 364
+
+[l03_agroprom]
+vehicle_uaz2  =  165.3,  0.2,   33.6, 989487, 584
+vehicle_niva  =   96.1,  0.4, -125.7, 330377, 611
+vehicle_msk2  = -143.9, -0.2, -212.7,  93986, 677
+
+[l04_darkvalley]
+vehicle_uaz   = 113.6,  0.0,  -33.5, 310222, 981
+vehicle_zaz   = 114.0,  0.2, -269.2, 310735, 955
+vehicle_tr13  =  16.8, -1.6, -151.0, 194168, 871
+
+[l07_military]
+vehicle_msk2  = -218.0, -12.5,  63.5, 111228, 1679
+vehicle_niva2 =  -98.1, -20.0, 224.8, 216874, 1734
+vehicle_zaz   =   -2.6,  -6.9, 105.9, 304939, 1636
+
+[l08_yantar]
+vehicle_btr   = 152.5, 2.0, -245.7, 125438, 1438
+
+[respawn_veh]
+enabled = false ;--/ Спавн (true/false - разрешен/запрет)
+time_0  =  1   ;--/ ~1 - период между спавнами (игр. час)
+time_1  =  4   ;--/ ~4
+time_2  = 12   ;--/ ~12
+time_3  = 24   ;--/ >24
+
+;=================================================

@@ -1,0 +1,1613 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!-------------------------------------jupiter_barman----------------------------------------------------->
+	<specific_character id="jupiter_barman" no_random = "1">
+		<name>jupiter_barman_name</name>
+		<icon>ui_inGame2_Gavaets</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>jupiter_barman_bio</bio>
+
+		<class>jupiter_barman</class>
+		<community>trader</community>
+		<money min="1500000" max="1510000" infinitive="1"></money>
+		
+		<rank>700</rank>
+		<reputation>50</reputation>
+		<visual>actors\stalker_neutral\stalker_neutral_2_face_3</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>tm_gavaez_dialog</actor_dialog>
+		<actor_dialog>tm_gavaez_reward</actor_dialog>
+	</specific_character>
+<!-------------------------------------jupiter_grek------------------------------------------------------>
+	<specific_character id="jupiter_grek" team_default = "1">
+		<name>jupiter_grek_name</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_1</icon>
+		<bio>jupiter_grek_bio</bio>
+
+		<class>jupiter_grek</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>152</rank>
+		<reputation>88</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+			
+	</specific_character>
+<!-------------------------------------jupiter_usach------------------------------------------------------>
+	<specific_character id="jupiter_usach" team_default = "1">
+		<name>jupiter_usach_name</name>
+		<icon>ui_npc_u_neutral_2_face_2</icon>
+		<bio>jupiter_usach_bio</bio>
+
+		<class>jupiter_usach</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>1012</rank>
+		<reputation>88</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_neutral\stalker_neutral_2_face_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak103 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>usach_dialog</start_dialog>
+		<actor_dialog>usach_dialog2</actor_dialog>
+		<actor_dialog>hello_dialog</actor_dialog>
+			
+	</specific_character>
+<!-------------------------------------jupiter_zulus------------------------------------------------------>
+	<specific_character id="jupiter_zulus" team_default = "1">
+		<name>jupiter_zulus_name</name>
+		<icon>ui_inGame2_Zulus</icon>
+		<bio>jupiter_zulus_bio</bio>
+
+		<class>jupiter_zulus</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_dolg\stalker_dolg_1_face_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_pkm \n
+			ammo_7.62x54r = 4 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>zulus_first_dialog</start_dialog>
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_garik------------------------------------------------------>
+	<specific_character id="jupiter_garik" team_default = "1">
+		<name>jupiter_garik_name</name>
+		<icon>ui_inGame2_Garik</icon>
+		<bio>jupiter_garik_bio</bio>
+
+		<class>jupiter_garik</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>568</rank>
+		<reputation>112</reputation>
+		<money min="1000" max="3500" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_neutral\stalker_neutral_2_face_4</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_pb = 1, silencer \n
+                        ammo_9x18_fmj = 10 \n
+			wpn_ak103 = 1, scope \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>garik_first_dialog</start_dialog>
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_lozman------------------------------------------------------>
+	<specific_character id="jupiter_lozman" team_default = "1">
+		<name>jupiter_lozman_name</name>
+		<icon>ui_inGame2_Lotsman</icon>
+		<bio>jupiter_lozman_bio</bio>
+
+		<class>jupiter_lozman</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>568</rank>
+		<reputation>112</reputation>
+		<money min="1000" max="3500" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_neutral\stalker_neutral_2_face_5</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk2 = 1, scope \n
+			ammo_12x76_dart = 4 \n
+                        ammo_12x76_zhekan = 1 \n
+                        ammo_12x70_buck = 4 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>lozman_first_dialog</start_dialog>
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>second_lozman_dialog</actor_dialog>
+		<actor_dialog>third_lozman_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_vano------------------------------------------------------>
+	<specific_character id="jupiter_vano" team_default = "1">
+		<name>jupiter_vano_name</name>
+		<icon>ui_inGame2_Vano</icon>
+		<bio>jupiter_vano_bio</bio>
+
+		<class>jupiter_vano</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>568</rank>
+		<reputation>112</reputation>
+		<money min="1000" max="2200" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_neutral\stalker_neutral_1_face_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sks_s \n
+                        ammo_7.62x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>vano_first_dialog</start_dialog>
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_medik----------------------------------------------------->
+	<specific_character id="jupiter_medik" no_random = "1">
+		<name>jupiter_medik_name</name>
+		<icon>ui_inGame2_Kostoprav</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>jupiter_medik_bio</bio>
+
+		<class>jupiter_medik</class>
+		<community>trader</community>
+		<money min="100000" max="110000" infinitive="1"></money>
+		
+		<rank>600</rank>
+		<reputation>124</reputation>
+		<visual>actors\stalker_neutral\stalker_neutral_1_face_2</visual>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------jupiter_technik----------------------------------------------------->
+	<specific_character id="jupiter_technik" no_random = "1">
+		<name>jupiter_technik_name</name>
+		<icon>ui_inGame2_Azot</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>jupiter_technik_bio</bio>
+
+		<class>jupiter_technik</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="2800" max="4900" infinitive="0"/>
+		
+		<rank>1230</rank>
+		<reputation>585</reputation>
+		<visual>actors\stalker_neutral\stalker_neutral_nauchniy_face_3</visual>
+		<snd_config>characters_voice\stalker_03\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj = 1 \n
+		</supplies>
+		<start_dialog>azot_first_dialog</start_dialog>
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>azot_second_dialog</actor_dialog>
+		<actor_dialog>first_black_box_dialog_azot</actor_dialog>
+		<actor_dialog>second_black_box_dialog_azot</actor_dialog>
+		<actor_dialog>third_black_box_dialog_azot</actor_dialog>
+		<actor_dialog>jupiter_technik_repair</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_loki------------------------------------------------------>
+	<specific_character id="jupiter_loki" team_default = "1">
+		<name>jupiter_loki_name</name>
+		<icon>ui_inGame2_Loki</icon>
+		<bio>jupiter_loki_bio</bio>
+
+		<class>jupiter_loki</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>1214</rank>
+		<reputation>258</reputation>
+		<money min="3300" max="4900" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_freedom\stalker_freedom_3_face_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>loki_first_dialog</start_dialog>
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_german------------------------------------------------------>
+	<specific_character id="jupiter_german" team_default = "1">
+		<name>jupiter_german_name</name>
+		<icon>ui_inGame2_German</icon>
+		<bio>jupiter_german_bio</bio>
+
+		<class>jupiter_german</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>1131</rank>
+		<reputation>314</reputation>
+		<money min="3000" max="4500" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_ucheniy\stalker_ucheniy_1_face_1</visual>
+		<supplies>
+			[spawn] \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>german_first_dialog</start_dialog>
+		<actor_dialog>german_second_dialog</actor_dialog>
+		<actor_dialog>german_third_dialog</actor_dialog>
+		<actor_dialog>german_fourth_dialog</actor_dialog>
+		<actor_dialog>german_fifth_dialog</actor_dialog>
+		<actor_dialog>german_quest_dialog</actor_dialog>
+		<actor_dialog>german_quest_dialog2</actor_dialog>
+		<actor_dialog>german_quest_dialog3</actor_dialog>
+		<actor_dialog>first_black_box_dialog_german</actor_dialog>
+		<actor_dialog>second_black_box_dialog_german</actor_dialog>
+		<actor_dialog>third_black_box_dialog_german</actor_dialog>
+		<actor_dialog>fourth_black_box_dialog_german</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_novikov------------------------------------------------------>
+	<specific_character id="jupiter_novikov" no_random = "1">
+		<name>jupiter_novikov_name</name>
+		<icon>ui_inGame2_Novikov</icon>
+		<bio>jupiter_novikov_bio</bio>
+
+		<class>jupiter_novikov</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>742</rank>
+		<reputation>182</reputation>
+		<money min="1500000" max="1510000" infinitive="1"></money>
+		
+                <snd_config>characters_voice\human_02\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\nebo\stalker_nebo_2_face_11</visual>
+		<supplies>
+			[spawn] \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>dialog_kozlov</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_topol------------------------------------------------------>
+	<specific_character id="jupiter_topol" team_default = "1">
+		<name>jupiter_topol_name</name>
+		<icon>ui_inGame2_neutral_2_mask</icon>
+		<bio>jupiter_topol_bio</bio>
+
+		<class>jupiter_topol</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>359</rank>
+		<reputation>78</reputation>
+		<money min="400" max="2300" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_neutral\stalker_neutral_2_mask</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_sayga12k_sk2 = 1, scope \n
+			ammo_12x76_dart = 3 \n
+                        ammo_12x76_zhekan = 1 \n
+                        ammo_12x70_buck = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>topol_first_dialog</start_dialog>
+		<actor_dialog>topol_second_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_stalker_bunker------------------------------------------------------>
+	<specific_character id="jupiter_stalker_bunker_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>jupiter_stalker_bunker_bio</bio>
+
+		<class>jupiter_stalker_bunker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_stalker_bunker------------------------------------------------------>
+	<specific_character id="jupiter_stalker_bunker_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>jupiter_stalker_bunker_bio</bio>
+
+		<class>jupiter_stalker_bunker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------jupiter_valet---------------------->
+	<specific_character id="jupiter_valet" team_default="1">
+		<name>jupiter_valet_name</name>
+		<icon>ui_npc_u_stalker_bandit_master</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_valet_bio</bio>
+		
+		<class>jupiter_valet</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>808</rank>
+		<reputation>-132</reputation>
+
+		<visual>actors\bandit\stalker_bandit_master</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_tt33_sk1 \n
+			ammo_7.62x25_p \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!-------------------------------------jupiter_killer------------------------------------------------------>
+	<specific_character id="jupiter_killer1_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
+		<bio>jupiter_killer_bio</bio>
+
+		<class>jupiter_killer1</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_killer------------------------------------------------------>
+	<specific_character id="jupiter_killer2_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
+		<bio>jupiter_killer_bio</bio>
+
+		<class>jupiter_killer2</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_killer------------------------------------------------------>
+	<specific_character id="jupiter_killer3_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
+		<bio>jupiter_killer_bio</bio>
+
+		<class>jupiter_killer3</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_killer------------------------------------------------------>
+	<specific_character id="jupiter_killer4_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
+		<bio>jupiter_killer_bio</bio>
+
+		<class>jupiter_killer4</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_killer------------------------------------------------------>
+	<specific_character id="jupiter_killer5_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
+		<bio>jupiter_killer_bio</bio>
+
+		<class>jupiter_killer5</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------jupiter_tuz---------------------->
+	<specific_character id="jupiter_tuz" team_default="1">
+		<name>jupiter_tuz_name</name>
+		<icon>ui_npc_u_stalker_bandit_master</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_tuz_bio</bio>
+		
+		<class>jupiter_tuz</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>808</rank>
+		<reputation>-132</reputation>
+
+		<visual>actors\bandit\stalker_bandit_master</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_tt33_sk1 \n
+			ammo_7.62x25_p \n
+			wpn_ak104 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!-------------------------------------jupiter_hemul------------------------------------------------------>
+	<specific_character id="jupiter_hemul" team_default = "1">
+		<name>jupiter_hemul_name</name>
+		<icon>ui_npc_u_hemul</icon>
+		<bio>jupiter_hemul_bio</bio>
+
+		<class>jupiter_hemul</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hemul\hemul</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak103 = 1, scope \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_dinka------------------------------------------------------>
+	<specific_character id="jupiter_dinka" team_default = "1">
+		<name>jupiter_dinka_name</name>
+		<icon>ui_npc_u_dinka</icon>
+		<bio>jupiter_dinka_bio</bio>
+
+		<class>jupiter_dinka</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\dinka\dinka</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_vintorez \n
+			ammo_9x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>dinka_first_dialog</start_dialog>
+		<actor_dialog>dinka_second_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_stalker_vagon------------------------------------------------------>
+	<specific_character id="jupiter_stalker_vagon_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>jupiter_stalker_vagon_bio</bio>
+
+		<class>jupiter_stalker_vagon</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_stalker_vagon------------------------------------------------------>
+	<specific_character id="jupiter_stalker_vagon_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>jupiter_stalker_vagon_bio</bio>
+
+		<class>jupiter_stalker_vagon</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_akm_sk2 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_stalker_vagon------------------------------------------------------>
+	<specific_character id="jupiter_stalker_vagon_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>jupiter_stalker_vagon_bio</bio>
+
+		<class>jupiter_stalker_vagon</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m = 1, launcher \n
+                        ammo_vog-25 = 4 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_stalker_vagon------------------------------------------------------>
+	<specific_character id="jupiter_stalker_vagon_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>jupiter_stalker_vagon_bio</bio>
+
+		<class>jupiter_stalker_vagon</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak103 = 1, scope \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_stalker_vagon------------------------------------------------------>
+	<specific_character id="jupiter_stalker_vagon_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>jupiter_stalker_vagon_bio</bio>
+
+		<class>jupiter_stalker_vagon</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk2 \n
+			ammo_12x76_dart = 1 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_stalker_vagon------------------------------------------------------>
+	<specific_character id="jupiter_stalker_vagon_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>jupiter_stalker_vagon_bio</bio>
+
+		<class>jupiter_stalker_vagon</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 = 1, scope \n
+                        ammo_12x76_zhekan = 1 \n
+			ammo_12x70_buck = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------jupiter_stalker_vagon------------------------------------------------------>
+	<specific_character id="jupiter_stalker_vagon_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>jupiter_stalker_vagon_bio</bio>
+
+		<class>jupiter_stalker_vagon</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak104 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="jupiter_veteran_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_1</icon>
+		<bio>jupiter_veteran_bio</bio>
+
+		<class>jupiter_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>896</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_ecolog------------------------------------------------------>
+	<specific_character id="jupiter_ecolog_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ecolog_military</icon>
+		<bio>jupiter_ecolog_bio</bio>
+
+		<class>jupiter_ecolog</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>103</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\ecolog\stalker_ecolog_military</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 4 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------jupiter_kpp_bandit---------------------->
+	<specific_character id="jupiter_kpp_bandit1_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_veteran</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_kpp_bandit1</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_veteran</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_kpp_bandit---------------------->
+	<specific_character id="jupiter_kpp_bandit2_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_veteran</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_kpp_bandit2</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_veteran</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_fmj = 10 \n
+			wpn_ak105 \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_kpp_bandit---------------------->
+	<specific_character id="jupiter_kpp_bandit3_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_3</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_kpp_bandit3</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_3</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 10 \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_kpp_bandit---------------------->
+	<specific_character id="jupiter_kpp_bandit4_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_4</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_kpp_bandit4</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_4</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_kpp_bandit---------------------->
+	<specific_character id="jupiter_kpp_bandit5_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_5</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_kpp_bandit5</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_5</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_ak74u \n
+                        ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_bandit---------------------->
+	<specific_character id="jupiter_kpp_bandit6_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_8</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_kpp_bandit6</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_8</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_kpp_bandit---------------------->
+	<specific_character id="jupiter_kpp_bandit7_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_3</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_kpp_bandit7</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_3</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_kpp_bandit---------------------->
+	<specific_character id="jupiter_kpp_bandit8_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_4</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_kpp_bandit8</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_4</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_kpp_bandit---------------------->
+	<specific_character id="jupiter_kpp_bandit9_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_5</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_kpp_bandit9</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_5</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_akms_sk1 \n
+                        ammo_7.62x39_fmj = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_sklad_bandit---------------------->
+	<specific_character id="jupiter_sklad_bandit1_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_veteran</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_sklad_bandit1</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_veteran</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp5 \n
+                        ammo_9x19_fmj = 20 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_sklad_bandit---------------------->
+	<specific_character id="jupiter_sklad_bandit2_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_veteran</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_sklad_bandit2</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_veteran</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_fmj = 10 \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_sklad_bandit---------------------->
+	<specific_character id="jupiter_sklad_bandit3_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_3</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_sklad_bandit3</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_3</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_sklad_bandit---------------------->
+	<specific_character id="jupiter_sklad_bandit4_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_4</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_sklad_bandit4</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_4</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_sklad_bandit---------------------->
+	<specific_character id="jupiter_sklad_bandit5_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_5</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_sklad_bandit5</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_5</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 10 \n
+			wpn_ak74u \n
+                        ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_sklad_bandit---------------------->
+	<specific_character id="jupiter_sklad_bandit6_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_8</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_sklad_bandit6</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_8</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_sklad_bandit---------------------->
+	<specific_character id="jupiter_sklad_bandit7_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_3</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_sklad_bandit7</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_3</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<!---------------------------jupiter_sklad_bandit---------------------->
+	<specific_character id="jupiter_sklad_bandit8_default1" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_4</icon>
+		<map_icon x="3" y="2"></map_icon>
+		<bio>jupiter_bandit_bio</bio>
+		
+		<class>jupiter_sklad_bandit8</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>759</rank>
+		<reputation>-128</reputation>
+
+		<visual>actors\bandit\stalker_bandit_4</visual>
+		<snd_config>characters_voice\human_02\bandit\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+		
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_4.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+</xml>

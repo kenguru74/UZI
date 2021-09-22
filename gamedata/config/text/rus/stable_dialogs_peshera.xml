@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+	<string id="dialog_with_strelok_0">
+		<text>Сталкер... ты откуда тут?</text>
+	</string>
+	<string id="dialog_with_strelok_1">
+		<text>Поздорову, брат. Колобок?</text>
+	</string>
+	<string id="dialog_with_strelok_2">
+		<text>Ну да, Колобок... А ты кто?</text>
+	</string>
+	<string id="dialog_with_strelok_3">
+		<text>Стрелок я. Мне про тебя Доктор сказал. Сказал, что ты был знаком с Клыком.</text>
+	</string>
+	<string id="dialog_with_strelok_4">
+		<text>Доктор, значит... ... Ты вовремя, Стрелок... Как хреново-то...</text>
+	</string>
+	<string id="dialog_with_strelok_5">
+		<text>Я могу чем-то помочь, брат?</text>
+	</string>
+	<string id="dialog_with_strelok_6">
+		<text>Нет, браток, ничем... Даже Док не помог... Заразу... Или не заразу... хрен знает что... неизвестное в Зоне... подцепил... Сил совсем не осталось... Да... А про Клыка... давно не слышал... в последний раз... он сказал, что... собирается... в Пузырь... Оох-х-х, блииин... Помираю я, браток... Найдёшь Клыка, скажи ему... Хотя... нет, ничего... не говори... Я всё... ...</text>
+	</string>
+	<string id="dialog_with_strelok_7">
+		<text>Прощай, брат...</text>
+	</string>
+
+</string_table>

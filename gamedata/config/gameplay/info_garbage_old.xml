@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+	<!-- Инфопоршни для Шухова -->
+	<info_portion id="find_hemul">
+                <task>red_forest_hemul_help</task>
+        </info_portion>
+	<info_portion id="shuhov_hemul_complete"></info_portion>
+		
+</game_information_portions>

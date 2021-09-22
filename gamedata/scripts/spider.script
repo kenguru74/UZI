@@ -1,0 +1,23 @@
+function spawn_item(spawn_item, pos, gv,lv)
+  if gv==nil then gv=db.actor:game_vertex_id() end
+  if lv==nil then lv=db.actor:level_vertex_id() end
+  return alife():create(spawn_item, pos, lv, gv)
+end
+
+function add_spider()
+ spawn_item("spider",vector():set(-64.01,-18.17,-195.52),106,211771) 
+end
+
+function blow(obj)
+	local particle_blow = particles_object([[anomaly2\body_tear_00]])
+	particle_blow:play_at_pos(obj:bone_position("bip01_tail3"))
+	local id = obj:id()
+	local pos = obj:position()
+	local lvid = obj:level_vertex_id()
+	local gvid = obj:game_vertex_id()
+	for i = 1,6 do
+		local pos1 = obj:position():add(vector():set((math.random()*2-1),1,(math.random()*2-1)))
+		alife():create("spider_pt"..i, pos1, lvid, gvid)
+	end
+	alife():create("spider_corpse", pos, lvid, gvid)
+end

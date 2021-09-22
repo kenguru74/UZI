@@ -1,0 +1,70 @@
+--'  Выдача Командором награды
+function komandor_give_reward(first_speaker, second_speaker)
+   dialogs.relocate_item_section(first_speaker, "af_dummy_dummy_u", "in")
+   first_speaker:set_relation(game_object.friend, second_speaker)
+end
+
+--'  Сдача Командору документов из экспериментального цеха
+function komandor_take_docs_zech(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "blocknotes", "out")
+end
+
+--'  Сдача Командору прототипа Гаусс-пушки
+function komandor_take_prototip(first_speaker, second_speaker)
+   dialogs.relocate_item_section(second_speaker, "wpn_gaussu", "out")
+   db.actor:set_character_rank(db.actor:character_rank() + 70)
+end
+
+function german_message()
+ if level.name()=="pripyat" and has_alife_info("german_fifth_talk") and not has_alife_info("german_first_message_sending") then
+	local obj
+	local id
+	for i=1,65535 do
+		obj = alife():object(i)
+		if obj and string.find(obj:name(), "jupiter_german") then
+			id = obj.id
+		end
+	end
+	if id then
+		amk.send_tip("Стрелок! Я по своим каналам узнал, что Ковальский теперь зовётся Командором и базируется со своими людьми в Восточной Припяти, в бывшей Прачечной. Ищи его там. Удачи тебе!","Сообщение от Германа:",10,10,"stalker")
+                db.actor:give_info_portion("german_first_message_sending")
+	end
+ end
+end
+
+--' Проверка на доки монолитовцев
+function spravka_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("raport") ~= nil
+   end
+   return false
+end
+
+function sending_message_german()
+ local text = "Стрелок - Герману: Проф, у монолитовцев в В. Припяти никаких списков нет. Нашёл только рапорт их главному, что небезывестный вам Харон сбежал. Вы не могли бы попытаться определить его местонахождение, Проф? Жду Вашего ответа."
+ news_manager.send_tip(db.actor, text, nil, nil, 30000)
+ amk.g_start_timer("mg2",0, 0, 8)
+end
+
+function haron_message_german()
+ local text = "Стрелок - Герману: Проф, Харона нашёл. Он ранен и хочет уйти из Зоны. Его ищут монолитовцы и ему требуется помощь. Нужна вертушка. И если Вы не откажете, думаю, он сможет многое рассказать Вам. Надеюсь на Вас, Проф."
+ news_manager.send_tip(db.actor, text, nil, nil, 30000)
+ amk.g_start_timer("mg3",0, 0, 8)
+end
+
+function haron_start_heli()
+ amk.g_start_timer("he3",0, 0, 1)
+end
+
+--' Проверка на списки в Контроле Монолита
+function docs_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("spisok") ~= nil
+   end
+   return false
+end
+
+-- Спавн доков Монолита
+function spawn_docs_monolit()
+  alife():create("spisok",vector():set(-11.881869316101,-31.703483581543,23.419380187988),1413,2511)
+end

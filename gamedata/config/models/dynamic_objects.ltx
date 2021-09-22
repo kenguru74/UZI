@@ -1,0 +1,37 @@
+;***************************************************************
+;*                                Õ≈ »«Ã≈Õﬂ“‹!!!!!!!!!!!!!!!                                           *
+;***************************************************************
+
+[physic_object]
+GroupControlSection = spawn_group
+$spawn        = "physics\object"
+$prefetch       = 8
+class       = O_PHYS_S
+remove_time     = 60; after this time  unbreaked removable bone will be removed
+script_binding      = bind_physic_object.init
+
+[physic_destroyable_object]
+GroupControlSection = spawn_group
+$spawn        = "physics\destroyable_object"
+;$prefetch      = 8
+class       = O_DSTR_S
+remove_time     = 60; after this time  unbreaked removable bone will be removed
+script_binding      = bind_physic_object.init
+
+
+[physic_door]
+GroupControlSection = spawn_group
+$spawn        	= "physics\door"
+;$prefetch      = 8
+class       	= O_DSTR_S
+remove_time     = 60; after this time  unbreaked removable bone will be removed
+script_binding  = bind_physic_object.init
+is_ai_obstacle	= false
+
+;*******************************************************************************
+;*                                ƒ¿À‹ÿ≈ ÃŒ∆ÕŒ Ã≈Õﬂ“‹:-)                                                   *
+;*******************************************************************************
+
+[door_lab_x8]:physic_object
+$spawn        	= "physics\door_lab_x8"
+script_binding  = bind_door_labx8.bind

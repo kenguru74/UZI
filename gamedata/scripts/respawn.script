@@ -1,0 +1,229 @@
+function spawn_mobs()
+ sim = alife()
+ gg = game_graph()
+
+ local loc = level.name()
+
+ local kol_flesh, kol_dog, kol_boar, kol_tushkano, kol_pseudodog, kol_bloodsucker, kol_snork, kol_controller, kol_cat, kol_fracture, kol_zombie, gvid, obj, sect
+
+ local dog = 0
+ local flesh = 0
+ local boar = 0
+ local tushkano = 0
+ local pseudodog = 0
+ local bloodsucker = 0
+ local snork = 0
+ local controller = 0
+ local cat = 0
+ local fracture = 0
+ local zombie = 0
+
+ if (not has_alife_info("new_game")) and (xr_logic.pstor_retrieve(db.actor, "lvl", "predbannik") == loc) then
+   db.actor:give_info_portion("new_game")
+   xr_logic.pstor_store(db.actor, "lvl", loc)
+ end
+ 
+ if (has_alife_info("new_game")) and (xr_logic.pstor_retrieve(db.actor, "lvl", "predbannik") == loc) then
+ else
+
+ for i = 1,65534 do
+  obj = sim:object( i )
+  if obj then
+    gvid = obj.m_game_vertex_id
+    if (IsMonster(obj)) and (obj:alive()) and (gg:valid_vertex_id(gvid)) then
+--      if (gvid >= 3870) and (gvid < 4032) and (loc == "predbannik") then --// Предбанник
+--        sect = obj:section_name()
+--        if sect == "flesh_weak" then
+--          flesh = flesh + 1
+--          elseif sect == "dog_weak" then
+--                 dog = dog + 1
+--        end
+--      elseif (gvid >= 3337) and (gvid < 3581) and (loc == "marsh") then --// Болота
+      if (gvid >= 3337) and (gvid < 3581) and (loc == "marsh") then --// Болота
+        sect = obj:section_name()
+        if sect == "flesh_weak" then
+          flesh = flesh + 1
+          elseif sect == "dog_weak" then
+                 dog = dog + 1
+          elseif sect == "boar_normal" then
+                 boar = boar + 1
+          elseif sect == "tushkano_normal" then
+                 tushkano = tushkano + 1
+          elseif (sect == "pseudodog_weak") or (sect == "pseudodog_strong") then
+                 pseudodog = pseudodog + 1
+          elseif sect == "bloodsucker_strong" then
+                 bloodsucker = bloodsucker + 1
+        end
+      elseif (gvid >= 4385) and (loc == "swamp_old") then --// Болото Доктора
+        sect = obj:section_name()
+        if sect == "flesh_weak" then
+          flesh = flesh + 1
+          elseif sect == "boar_weak" then
+                 boar = boar + 1
+          elseif sect == "tushkano_normal" then
+                 tushkano = tushkano + 1
+          elseif sect == "bloodsucker_strong" then
+                 bloodsucker = bloodsucker + 1
+          elseif sect == "snork_normal" then
+                 snork = snork + 1
+          elseif sect == "controller_tubeman" then
+                 controller = controller + 1
+          elseif sect == "m_cat_e" then
+                 cat = cat + 1
+          elseif sect == "m_fracture_e" then
+                 fracture = fracture + 1
+          elseif sect == "zombie_normal" then
+                 zombie = zombie + 1
+        end
+      end
+    end
+    if (IsMonster(obj)) and (not obj:alive()) and (gg:valid_vertex_id(gvid)) then
+      if (gvid >= 3870) and (gvid < 4032) and (loc == "predbannik") then --// Предбанник
+       alife():release(obj,true)
+      elseif (gvid >= 3337) and (gvid < 3581) and (loc == "marsh") then --// Болота
+       alife():release(obj,true)
+      elseif (gvid >= 4385) and (loc == "swamp_old") then --// Болото Доктора
+       alife():release(obj,true)
+      end
+    end
+  end
+ end
+
+------------------------ Предбанник ---------------------
+-- if loc == "predbannik" then
+-- if flesh < 8 then
+--  kol_flesh = 8 - flesh
+--  for s = 1, kol_flesh do
+--   alife():create("flesh_weak",vector():set(-314.89,9.63,24.03),456209,3922)
+--  end
+--  news_manager.send_tip(db.actor, "Предбанник: респавнено плотей - "..kol_flesh, nil, nil, 30000)
+-- end
+-- if dog < 20 then
+--  kol_dog = 20 - dog
+--  for s = 1, kol_dog do
+--   alife():create("dog_weak",vector():set(-419.34,16.44,-25.01),299432,3916)
+--  end
+--  news_manager.send_tip(db.actor, "Предбанник: респавнено собак - "..kol_dog, nil, nil, 30000)
+-- end
+-- end
+
+------------------------ Болота ---------------------
+if loc == "marsh" then
+ if flesh < 14 then
+  kol_flesh = 14 - flesh
+  for s = 1, kol_flesh do
+   alife():create("flesh_weak",vector():set(414.96,3.55,-126.32),413605,3551)
+  end
+  news_manager.send_tip(db.actor, "Болота: респавнено плотей - "..kol_flesh, nil, nil, 30000)
+ end
+ if boar < 14 then
+  kol_boar = 14 - boar
+  for s = 1, kol_boar do
+   alife():create("boar_normal",vector():set(179.56,3.55,-180.59),243405,3478)
+  end
+  news_manager.send_tip(db.actor, "Болота: респавнено кабанов - "..kol_boar, nil, nil, 30000)
+ end
+ if tushkano < 6 then
+  kol_tushkano = 6 - tushkano
+  for s = 1, kol_tushkano do
+   alife():create("tushkano_normal",vector():set(234.48,0.57,-68.83),283638,3513)
+  end
+  news_manager.send_tip(db.actor, "Болота: респавнено тушканов - "..kol_tushkano, nil, nil, 30000)
+ end
+ if dog < 17 then
+  kol_dog = 17 - dog
+  for s = 1, kol_dog do
+   alife():create("dog_weak",vector():set(469.90,2.83,399.85),455417,3560)
+  end
+  news_manager.send_tip(db.actor, "Болота: респавнено собак - "..kol_dog, nil, nil, 30000)
+ end
+ if pseudodog < 3 then
+  kol_pseudodog = 3 - pseudodog
+  for s = 1, kol_pseudodog do
+   alife():create("pseudodog_strong",vector():set(177.74,10.81,576.46),242387,3487)
+  end
+  news_manager.send_tip(db.actor, "Болота: респавнено псевдособак - "..kol_pseudodog, nil, nil, 30000)
+ end
+ if bloodsucker < 1 then
+  kol_bloodsucker = 1 - bloodsucker
+  for s = 1, kol_bloodsucker do
+   alife():create("bloodsucker_strong",vector():set(149.81,0.82,450.12),226156,3474)
+  end
+  news_manager.send_tip(db.actor, "Болота: респавнено кровососов - "..kol_bloodsucker, nil, nil, 30000)
+ end
+end
+
+------------------------ Болото Доктора ---------------------
+if loc == "swamp_old" then
+ if flesh < 9 then
+  kol_flesh = 9 - flesh
+  for s = 1, kol_flesh do
+   alife():create("flesh_weak",vector():set(155.24,1.93,-238.63),1486161,4395)
+  end
+  news_manager.send_tip(db.actor, "Болото Доктора: респавнено плотей - "..kol_flesh, nil, nil, 30000)
+ end
+ if boar < 16 then
+  kol_boar = 16 - boar
+  for s = 1, kol_boar do
+   alife():create("boar_weak",vector():set(22.10,1.70,-196.20),1193913,4387)
+  end
+  news_manager.send_tip(db.actor, "Болото Доктора: респавнено кабанов - "..kol_boar, nil, nil, 30000)
+ end
+ if tushkano < 35 then
+  kol_tushkano = 35 - tushkano
+  for s = 1, kol_tushkano do
+   alife():create("tushkano_normal",vector():set(-33.69,2.64,168.54),1071586,4385)
+  end
+  news_manager.send_tip(db.actor, "Болото Доктора: респавнено тушканов - "..kol_tushkano, nil, nil, 30000)
+ end
+ if bloodsucker < 5 then
+  kol_bloodsucker = 5 - bloodsucker
+  for s = 1, kol_bloodsucker do
+   alife():create("bloodsucker_strong",vector():set(57.99,4.96,-244.28),1272858,4395)
+  end
+  news_manager.send_tip(db.actor, "Болото Доктора: респавнено кровососов - "..kol_bloodsucker, nil, nil, 30000)
+ end
+ if snork < 9 then
+  kol_snork = 9 - snork
+  for s = 1, kol_snork do
+   alife():create("snork_normal",vector():set(37.90,1.48,-119.12),1227986,4387)
+  end
+  news_manager.send_tip(db.actor, "Болото Доктора: респавнено снорков - "..kol_snork, nil, nil, 30000)
+ end
+ if controller < 1 then
+  kol_controller = 1 - controller
+  for s = 1, kol_controller do
+   alife():create("controller_tubeman",vector():set(-39.33,5.52,280.62),1059628,4385)
+  end
+  news_manager.send_tip(db.actor, "Болото Доктора: респавнено контролёров - "..kol_controller, nil, nil, 30000)
+ end
+ if cat < 10 then
+  kol_cat = 10 - cat
+  for s = 1, kol_cat do
+   alife():create("m_cat_e",vector():set(245.88,2.36,-172.06),1682141,4399)
+  end
+  news_manager.send_tip(db.actor, "Болото Доктора: респавнено котов - "..kol_cat, nil, nil, 30000)
+ end
+ if fracture < 1 then
+  kol_fracture = 1 - fracture
+  for s = 1, kol_fracture do
+   alife():create("m_fracture_e",vector():set(-57.12,2.14,268.15),1020119,4385)
+  end
+  news_manager.send_tip(db.actor, "Болото Доктора: респавнено изломов - "..kol_fracture, nil, nil, 30000)
+ end
+ if zombie < 13 then
+  kol_zombie = 13 - zombie
+  for s = 1, kol_zombie do
+   alife():create("zombie_normal",vector():set(-47.97,5.58,281.92),1039712,4385)
+  end
+  news_manager.send_tip(db.actor, "Болото Доктора: респавнено зомби - "..kol_zombie, nil, nil, 30000)
+ end
+end
+
+end
+
+ if has_alife_info("new_game") then
+   xr_logic.pstor_store(db.actor, "lvl", loc)
+ end
+
+end

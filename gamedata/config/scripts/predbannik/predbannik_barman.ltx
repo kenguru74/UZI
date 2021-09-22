@@ -1,0 +1,30 @@
+[logic]
+active = walker@at_hole
+combat_ignore = combat_ignore
+trade = misc\trade_pred_barman.ltx
+inv_max_weight = 10000
+ 
+[walker@at_hole]
+path_walk = predbannik_barman_hole_walk
+path_look = predbannik_barman_hole_look
+def_state_standing = barman_wait_free
+def_state_moving1 = barman_walk_free
+def_state_moving2 = barman_walk_free
+def_state_moving3 = barman_walk_free
+meet = meet@at_hole
+danger = danger_condition@barman
+
+[meet@at_hole]
+meet_state = 2|barman_talk_free@pred_bar_barmen_hello
+meet_state_wpn = 2|barman_talk_free@pred_bar_barmen_hello
+victim = 2|actor
+victim_wpn = 2|actor
+use = true
+use_wpn = true
+meet_dialog		=  predbannik_bar_barmen_start
+
+[danger_condition@barman]
+ignore_distance       = 0
+
+[combat_ignore]
+combat_ignore_cond = always

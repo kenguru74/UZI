@@ -1,0 +1,46 @@
+-- проверка лечения броней
+local uptime
+function update(tg)
+	if (uptime or 0) > tg then
+		return
+	end
+	uptime = tg + 200
+	this.heal_armor(db.actor)
+end
+
+function heal_armor(actor)
+	if actor and actor:alive() then
+		local health_restore_speed = 0
+		local bleeding_restore_speed = 0
+		local power_restore_speed = 0
+		local armor = actor:get_current_outfit() or actor:item_in_slot(6)
+		if armor then
+			local ini, sec = system_ini(), armor:section()
+			if ini:line_exist(sec, "health_restore_speed") then
+				health_restore_speed = ini:r_float(sec, "health_restore_speed")
+			end
+
+			if ini:line_exist(sec, "bleeding_restore_speed") then
+				bleeding_restore_speed = 1
+			end
+
+			if ini:line_exist(sec, "power_restore_speed") then
+				power_restore_speed = ini:r_float(sec, "power_restore_speed")
+			end	
+		end
+
+		if actor.health < 1 and health_restore_speed ~= 0 then
+			actor.health = health_restore_speed
+		end
+
+		if actor:get_bleeding() > 0.1 and bleeding_restore_speed ~= 0 then
+			amk.spawn_item_in_inv("bandage")
+			local bint = actor:object("bandage")
+			actor:eat(bint)
+		end
+
+		if actor.power < 1 and power_restore_speed ~= 0 then
+			actor.power = power_restore_speed
+		end
+	end
+end

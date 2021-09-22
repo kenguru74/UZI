@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+	<!-- infoportions for doctor -->
+	<info_portion id="first_talking_doctor">
+                <task>know_for_fate_of_klyk</task>
+        </info_portion>
+	<info_portion id="second_talking_doctor"></info_portion>
+	<info_portion id="third_talking_doctor">
+                <task>progress_find_klyk</task>
+        </info_portion>
+	<info_portion id="known_of_klyk"></info_portion>
+	<info_portion id="talk_to_doctor_1"></info_portion>
+	<info_portion id="bring_doctor_klyk_zapiska1"></info_portion>
+	<info_portion id="fourth_talking_doctor">
+                <article>fourth_talking_doctor_art</article>
+                <task>goto_generators</task>
+        </info_portion>
+	<info_portion id="goto_doc"></info_portion>
+	<info_portion id="fifth_talking_doctor">
+                <article>fifth_talking_doctor_art</article>
+                <task>goto_sarcofag</task>
+        </info_portion>
+	<info_portion id="goto_doc2"></info_portion>
+	<info_portion id="sixth_talking_doctor"></info_portion>
+	<info_portion id="bring_doctor_unique_arts"></info_portion>
+	<info_portion id="goto_doc3"></info_portion>
+	<info_portion id="seventh_talking_doctor">
+                <article>seventh_talking_doctor_art</article>
+                <task>end_of_find_klyk</task>
+        </info_portion>
+	<info_portion id="eighth_talking_doctor"></info_portion>
+	<info_portion id="free_klyk"></info_portion>
+
+	<info_portion id="eat_grib"></info_portion>
+	<info_portion id="eat_grib2"></info_portion>
+	<info_portion id="find_grib"></info_portion>
+	<info_portion id="no_poison"></info_portion>
+	<info_portion id="second_talking_doctor_muhomor"></info_portion>
+	<info_portion id="get_message_doctor"></info_portion>
+	<info_portion id="third_talking_doctor_muhomor"></info_portion>
+		
+</game_information_portions>

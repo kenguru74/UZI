@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="atp_brodyaga_first_talk_0">
+		<text>Заходи сталкер. Кто ты и зачем пожаловал?</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_1">
+		<text>Стрелок я, не узнал, что ли?</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_2">
+		<text>Не знаю я тебя. Зачем пришёл?</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_3">
+		<text>Ясно... \nДа вот затариться надо и хабар кое-какой сдать.</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_41">
+		<text>А-а, ну это к Сухарю, тут рядом.</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_411">
+		<text>Ага, спасибо. До встречи.</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_42">
+		<text>Зайди к Сухарю, тут рядом. \nСтрелок, у меня к тебе просьба. Есть у меня фотография сталкера, кого - не знаю. Откуда она у меня - тоже не ясно. А самое главное - я совсем ничего не помню из прошлого...</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_43">
+		<text>А-а, это к Сухарю, тут рядом.</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_431">
+		<text>Ага, спасибо. До встречи.</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_5">
+		<text>Как это?</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_6">
+		<text>Понимаешь, я с ребятами очухался в чистом поле, недалеко от базы этой. Никто ничего не соображал - как мы здесь оказались, кто мы, как зовут - ничего. Прикид у нас видишь, одинаковый - Монолит... Сплошные загадки.</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_7">
+		<text>А дальше-то что?</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_8">
+		<text>Дальше мы сюда добрались. Стали тут обживаться потихоньку, склад оружия нашли, боеприпасов и ещё там всякого разного...</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_9">
+		<text>Да-а, история... Ну а тут, видать, у "Монолита" один из схронов раньше был.</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_10">
+		<text>Просьба у меня большая... Ты, видать, всю Зону истоптал вдоль и поперек, многих знаешь... Сможешь поспрашивать, не знает ли кто человека на фотке этой? Может, хоть что-то узнаешь, а?</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_11">
+		<text>Мда... Просьба, конечно, та еще... Что ж... Ладно, давай поспрашиваю. А если я её того... потеряю?</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_12">
+		<text>Да и хрен с ней. Мне здесь она всё равно ни к чему.</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_13">
+		<text>Показывай	свою фотку, может, я его знаю. \n \nНе, не встречал... Хотя, костюмчик-то свободовский... Может, он в "Свободе" состоит, или раньше состоял?</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_14">
+		<text>Ну, я могу надеяться на твою помощь, Стрелок?</text>
+	</string>
+	<string id="atp_brodyaga_first_talk_15">
+		<text>Не вопрос, давай фотку, что разузнаю - сообщу. Надо к свободовцам наведаться, авось узнаю чего. Давай, увидимся.</text>
+	</string>
+
+	<string id="atp_brodyaga_second_talk_0">
+		<text>Здоров! Есть новости.</text>
+	</string>
+	<string id="atp_brodyaga_second_talk_1">
+		<text>О, Стрелок. Где так долго пропадал?</text>
+	</string>
+	<string id="atp_brodyaga_second_talk_2">
+		<text>Да где только не пропадал! Ну и задал ты мне задачку, да-а...</text>
+	</string>
+	<string id="atp_brodyaga_second_talk_3">
+		<text>Ты сказал, есть новости. Хорошие?</text>
+	</string>
+	<string id="atp_brodyaga_second_talk_4">
+		<text>Знаешь, я тут кое-что раскопал. Не думаю, что тебе сильно это понравится, но это всё, что я смог узнать. \n \nТвоя фотография, забирай. И ещё нашёл кое-какие документы... Полагаю, что тебе их нужно внимательно прочитать, но без посторонних глаз. Ты пока посмотри, покумекай, а я пойду, покемарю пару часов. Умаялся я что-то...</text>
+	</string>
+
+	<string id="atp_brodyaga_third_talk_0">
+		<text>Ну что, всё прочитал?</text>
+	</string>
+	<string id="atp_brodyaga_third_talk_1">
+		<text>Даже и не знаю, что сказать... Выходит, я столько в Зоне накуролесил... А знаешь, Стрелок, кое-что я начинаю и сам припоминать. Вроде мы всей нашей группой решили отколоться от монолитовцев... Ещё Лукаша вспомнил... Надеюсь, что со временем память ко мне полностью вернётся.</text>
+	</string>
+	<string id="atp_brodyaga_third_talk_2">
+		<text>Рад за тебя. Выходит, искал не напрасно.</text>
+	</string>
+	<string id="atp_brodyaga_third_talk_3">
+		<text>Спасибо, Стрелок, ты столько из-за меня по всей Зоне мотался. Даже не знаю, смогу ли я тебя достойно отблагодарить. Разве что... По окрестностям пошарились недавно, кой-какой хабарок надыбали, а сдать ещё не успели, бери весь. И вот ещё: недавно сняли координаты схронов, но проверить пока не успели, сам проверишь. Ну и к Сухарю загляни, он тебе припасов отсыпет, я ему щас сообщу. Ещё раз благодарю тебя, Стрелок.</text>
+	</string>
+	<string id="atp_brodyaga_third_talk_4">
+		<text>Да ладно тебе, брат. Рад был помочь. Бывай...</text>
+	</string>
+
+	<string id="suhar_dialog_0">
+		<text>Чего нужно, сталкер?</text>
+	</string>
+	<string id="suhar_dialog_1">
+		<text>Приветствую, я от Бродяги.</text>
+	</string>
+	<string id="suhar_dialog_2">
+		<text>А, подходи, Стрелок. Наслышан, наслышан... Погоди маленько, я сейчас... \n \nВот, бери. Уж не обессудь, чем богаты.</text>
+	</string>
+	<string id="suhar_dialog_3">
+		<text>И на том спасибо. Ну, ещё свидимся. До встречи.</text>
+	</string>
+
+	<string id="suhar_second_dialog_0">
+		<text>Поздорову. Вопросец к тебе имеется.</text>
+	</string>
+	<string id="suhar_second_dialog_1">
+		<text>Что за вопросец?</text>
+	</string>
+	<string id="suhar_second_dialog_2">
+		<text>Достал я тут пушечку одну, аномальную. Слух прошёл, что ты пушкой этой интересуешься и купить желаешь за хорошие бабки.</text>
+	</string>
+	<string id="suhar_second_dialog_3">
+		<text>Может и интересуюсь. Говори конкретно.</text>
+	</string>
+	<string id="suhar_second_dialog_4">
+		<text>Вот, смотри. Сколько дашь за неё?</text>
+	</string>
+	<string id="suhar_second_dialog_5">
+		<text>А, вот оно что... Да, имел я на неё виды. Возьму, если в цене сойдёмся. Тридцать штук, идёт?</text>
+	</string>
+	<string id="suhar_second_dialog_6">
+		<text>Восемьдесят - и она твоя.</text>
+	</string>
+	<string id="suhar_second_dialog_7">
+		<text>Ты не зарывайся, братан, больше 50000 не дам. Не хочешь - иди себе...</text>
+	</string>
+	<string id="suhar_second_dialog_8">
+		<text>Ну... Ну ладно, уговорил. 50000 - и по рукам.</text>
+	</string>
+	<string id="suhar_second_dialog_9">
+		<text>По рукам. Если ещё чего-то такое попадётся - неси, столкуемся.</text>
+	</string>
+	<string id="suhar_second_dialog_10">
+		<text>Ага. Ну ладно, до встречи.</text>
+	</string>
+
+</string_table>

@@ -1,0 +1,34 @@
+[logic]
+active = walker
+trade = misc\trade_gikler.ltx
+inv_max_weight = 10000
+
+[walker]
+path_walk = predbannik_gikler_walk
+path_look = predbannik_gikler_look
+on_actor_dist_le_nvis = 30| remark@pred_gikler
+meet = no_meet
+danger = danger_gikler
+
+[remark@pred_gikler]
+anim = wait
+on_actor_dist_le_nvis = 10| walker@pred_gikler
+meet = no_meet
+danger = danger_gikler
+
+[walker@pred_gikler]
+path_walk = predbannik_gikler_walk
+path_look = predbannik_gikler_look
+meet = meet@predbannik_gikler
+danger = danger_gikler
+
+[meet@predbannik_gikler]
+meet_state = 10| wait_trade@talk_hello
+meet_state_wpn 	= 10| wait@wait
+victim = 10| actor
+victim_wpn = 10| actor
+use = true
+use_wpn = false
+
+[danger_gikler]
+ignore_distance = 0

@@ -1,0 +1,24 @@
+<game_task id="red_forest_lesnik_k98">
+   <title>Выполнить просьбу Лесника</title>
+   <objective>
+      <text>Принести винтовку Леснику</text>
+      <icon>ui_iconsTotal_find_item</icon>
+      <infoportion_complete>red_forest_lesnik_bring_weapon</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти винтовку</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Найти предмет">find_item_location</map_location_type>
+      <object_story_id>red_forest_rukzak</object_story_id>
+      <function_complete>red_forest_dialog.mosin_have</function_complete>
+      <infoportion_set_complete>red_forest_lesnik_take_weapon</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести винтовку Леснику</text>
+      <map_location_type hint="Лесник">blue_location</map_location_type>
+      <object_story_id>red_forest_lesnik</object_story_id>
+      <infoportion_complete>red_forest_lesnik_bring_weapon</infoportion_complete>
+   </objective>
+</game_task>

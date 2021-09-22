@@ -1,0 +1,19 @@
+[logic]
+active = walker@guard_door1
+
+[walker@guard_door1]
+path_walk = bar_bar_guard_door_walk
+path_look = bar_bar_guard_door_look
+on_info = {+bar_guard_open} walker@guard_nodoor
+danger = danger_ignore
+on_actor_in_zone = bar_bar_guard_restrictor | walker@guard_nodoor
+
+[danger_ignore]
+ignore_distance = 0
+
+[walker@guard_nodoor]
+path_walk = bar_bar_guard_nodoor_walk
+path_look = bar_bar_guard_nodoor_look
+on_actor_not_in_zone = bar_bar_guard_restrictor |  {-bar_guard_open} walker@guard_door1
+on_actor_in_zone = bar_bar_guard_restrictor | %-bar_guard_open%
+danger = danger_ignore

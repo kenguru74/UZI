@@ -1,0 +1,7 @@
+--'  Квест Германа на документы в лаборатории Х-8
+function books_research_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("books_research") ~= nil
+   end
+   return false
+end

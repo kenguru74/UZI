@@ -1,0 +1,216 @@
+;;; Rewritten by Panzerdraco for L.U.R.K Mod.
+;;; A line with one or more ";"'s before it indicates a comment, and won't be read by the script.
+
+;-----H&K G36-----;
+;-----Base Setup-----;
+[wpn_g36c]:identity_immunities
+$spawn                   	= "weapons\g36"
+$npc                     	= on
+$prefetch 		         	= 8
+scheduled                	= off
+cform                    	= skeleton
+class                    	= WP_LR300
+min_radius               	= 0
+max_radius               	= 125
+
+inv_name	        		= wpn-g36c
+inv_name_short				= wpn-g36c
+description					= desc_wpn-g36c
+
+cost						= 24500
+inv_weight					= 3.6
+
+visual                   	= weapons\g36c\wpn_g36
+
+ef_main_weapon_type			= 2
+ef_weapon_type				= 6
+
+holder_range_modifier		= 1
+holder_fov_modifier			= 1
+
+hand_dependence		    	= 1
+single_handed				= 0
+
+sprint_allowed				= true
+
+slot 			         	= 2
+animation_slot			 	= 2
+
+
+inv_grid_width			= 4
+inv_grid_height			= 2
+inv_grid_x				= 25
+inv_grid_y				= 36
+
+
+
+kill_msg_x					= 0
+kill_msg_y					= 28
+kill_msg_width				= 84
+kill_msg_height				= 28
+
+ammo_limit		         	= 210
+ammo_current		     	= 90
+ammo_elapsed		     	= 30
+
+ph_mass						= 5
+
+
+;-----Ballistics, Handling & Accuracy-----;
+hit_power                	= 0.60
+hit_impulse		        	= 25
+hit_type 					= fire_wound
+
+silencer_hit_power       	= 0.56
+silencer_hit_impulse	 	= 10
+silencer_fire_distance   	= 250
+silencer_bullet_speed	 	= 727
+
+fire_distance            	= 300
+bullet_speed				= 900
+rpm                      	= 750
+
+ammo_mag_size				= 30
+ammo_class					= ammo_5.56x45_ss190, ammo_5.56x45_ap, ammo_5.56x45_ap2, ammo_5.56x45_inc
+fire_modes					= 1, -1
+	
+tri_state_reload			= off
+
+control_inertion_factor		= 1.15f
+
+fire_dispersion_base		= 0.14
+handling_factor				= 1.00
+use_aim_bullet				= true
+time_to_aim					= 0.50
+
+PDM_disp_base 				= 2.00
+PDM_disp_vel_factor 		= 0.75
+PDM_disp_accel_factor 		= 1.75
+PDM_crouch	 				= 0.50
+PDM_crouch_no_acc 			= 0.50
+
+cam_relax_speed        	 	= 0.2
+cam_relax_speed_ai      	= 360
+cam_dispersion         	 	= 0.2                  ; 0.95
+cam_step_angle_horz			= 1.50
+cam_dispersion_inc			= 0.1
+cam_dispertion_frac			= 0.95
+cam_max_angle				= 7.0
+cam_max_angle_horz			= 0.5
+
+fire_dispersion_condition_factor 	= 2.000
+misfire_probability 				= 0.002
+misfire_condition_k					= 0.003
+condition_shot_dec 					= 0.0002
+
+
+;-----Sights & Attachments-----;
+;--Scope & Sight--
+zoom_enabled				= true
+
+scope_status				= 2
+scope_name 				= wpn_addon_scope_susat
+scope_x 					= 72
+scope_y 					= -8
+
+scope_zoom_factor = 90
+max_zoom_factor				= 5
+scope_texture				= wpn\wpn_crosshair_l85
+
+;--Silencer--
+silencer_status				= 2
+
+silencer_name  				= wpn_addon_sil_556_ar
+silencer_x 					= 205
+silencer_y 					= 14
+
+;--Grenade Launcher--
+grenade_launcher_status		= 0
+grenade_vel					= 75
+grenade_class				= ammo_m209 ;, ammo_m209_hell
+launch_speed				= 75
+
+grenade_launcher_name 		= wpn_addon_grenade_launcher_m203
+grenade_launcher_x 			= 110
+grenade_launcher_y 			= 28
+
+
+;-----Sounds, Particles, Muzzleflash & Miscellaneous-----;
+
+snd_draw					= weapons\g36\draw
+snd_holster					= weapons\g36\holster
+snd_shoot					= weapons\g36\shot0
+snd_shoot1					= weapons\g36\shot1
+snd_shoot2					= weapons\g36\shot2
+snd_empty					= weapons\g36\empty
+snd_reload					= weapons\g36\reload
+snd_shoot_grenade				= weapons\g36\grenshoot
+snd_reload_grenade			        = weapons\g36\grenload
+snd_switch					= weapons\g36\switch
+snd_silncer_shot			        = weapons\g36\shot_sil, 0.5
+
+rpm_empty_click 	 		= 200
+
+light_disabled				= false
+
+light_color		 		= 0.6,0.5,0.3
+light_range		 		= 5
+light_var_color		 	= 0.05
+light_var_range		 	= 0.1
+light_time 		 		= 0.2
+
+silencer_light_color		= 1.0, 0.1, 0.0
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+flame_particles				= weapons\generic_weapon05
+smoke_particles				= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_weapon01
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+shell_point		 			= 0.0, 0.246, 0.119
+shell_dir		 			= 0.0, 1.0, 0.0
+shell_particles	 			= weapons\arsenal_shells1
+
+normal                   	= 0, 1, 0
+position         	    	= -0.026,-0.134, -0.03
+orientation              	=      0.04, -5.0 , -0.1
+
+direction                	= 0, 0, 1
+
+fire_point               	= -0.009, 0.2, 0.537  
+
+weapon_remove_time			= 1000
+
+strap_position         		= -0.16,-0.36,0.15
+strap_orientation      		= -10,-5,10
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+
+hud                      	= wpn_g36c_hud
+[wpn_g36c_hud]
+shell_point          		= 0.00, 0.00, 0.00
+shell_dir			 		= 0.0, 0.0, 0.0
+
+fire_point               	= 0, 0, -0.7
+fire_bone                	= muzzle
+orientation              	= -0.1, -0.1, 0
+position                	= 0.15,-0.03,-0.05  ;0.15,-0.03,-0.05
+visual                   	= weapons\g36c\wpn_g36_hud.ogf
+
+anim_idle					= idle
+anim_idle_aim				= idle_aim
+anim_reload					= reload
+anim_draw					= draw
+anim_holster				= holster
+anim_shoot					= shoot
+anim_idle_sprint			= idle_sprint
+
+zoom_hide_crosshair			= true
+zoom_rotate_time			= 0.30
+zoom_offset				= -0.15,-0.0152,-0.05 ; -0.15,0.03,-0.05
+zoom_rotate_x				= -0.007
+zoom_rotate_y				= -0.002

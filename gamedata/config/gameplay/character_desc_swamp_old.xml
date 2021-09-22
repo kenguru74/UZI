@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!-------------------------- DOCTOR ------------------------>
+    <specific_character id="swamp_old_doctor" team_default = "1">
+        <name>swamp_old_doctor_name</name>
+        <icon>ui_npc_u_izgoy</icon>
+        <map_icon x="6" y="0"></map_icon>
+        <bio>swamp_old_doctor_bio</bio>
+
+        <class>swamp_old_doctor</class>
+        <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+        <rank>859</rank>
+        <reputation>145</reputation>
+
+        <visual>actors\izgoy\izgoy</visual>
+        <snd_config>characters_voice\human_02\stalker\</snd_config>
+        <supplies>
+
+		
+        </supplies>
+
+		<start_dialog>swamp_old_doctor_1_dialog</start_dialog>
+		<actor_dialog>swamp_old_doctor_2_dialog</actor_dialog>
+		<actor_dialog>swamp_old_doctor_3_dialog</actor_dialog>
+		<actor_dialog>swamp_old_doctor_4_dialog</actor_dialog>
+		<actor_dialog>swamp_old_doctor_5_dialog</actor_dialog>
+		<actor_dialog>swamp_old_doctor_6_dialog</actor_dialog>
+		<actor_dialog>swamp_old_doctor_7_dialog</actor_dialog>
+		<actor_dialog>swamp_old_doctor_8_dialog</actor_dialog>
+		<actor_dialog>doctor_muhomor_first_dialog</actor_dialog>
+		<actor_dialog>doctor_muhomor_second_dialog</actor_dialog>
+		<actor_dialog>doctor_muhomor_third_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="swa_hunter_novice_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_4_novice</icon>
+		<bio>swa_hunter_novice_bio</bio>
+
+		<class>swa_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk2 = 1, scope \n
+			ammo_12x70_buck = 20 \n
+			ammo_12x76_zhekan = 20 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="swa_hunter_novice_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_3_novice</icon>
+		<bio>swa_hunter_novice_bio</bio>
+
+		<class>swa_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_toz34 \n
+			ammo_12x70_buck = 20 \n
+			ammo_12x76_zhekan = 20 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="swa_hunter_novice_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_4_novice</icon>
+		<bio>swa_hunter_novice_bio</bio>
+
+		<class>swa_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter4</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk2 = 1, scope \n
+			ammo_12x70_buck = 20 \n
+			ammo_12x76_zhekan = 20 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="swa_hunter_novice_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_5_novice</icon>
+		<bio>swa_hunter_novice_bio</bio>
+
+		<class>swa_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter5</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 20 \n
+			ammo_12x76_zhekan = 20 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="swa_hunter_novice_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_1_novice</icon>
+		<bio>swa_hunter_novice_bio</bio>
+
+		<class>swa_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter6</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+                        ammo_12x70_buck = 2 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="swa_hunter_novice_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_4_novice</icon>
+		<bio>swa_hunter_novice_bio</bio>
+
+		<class>swa_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 20 \n
+			ammo_12x76_zhekan = 20 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------hunter_novice------------------------------------------------------>
+	<specific_character id="swa_hunter_novice_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_hunter_3_novice</icon>
+		<bio>swa_hunter_novice_bio</bio>
+
+		<class>swa_hunter_novice</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\hunter3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+                        ammo_12x70_buck = 3 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+
+</xml>

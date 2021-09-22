@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+    <info_portion id="first_dialog_atp">
+          <task>atp_brodyaga_help</task>
+          <article>first_talking_brodyaga_art</article>
+    </info_portion>
+    <info_portion id="second_dialog_atp"></info_portion>
+    <info_portion id="third_dialog_atp"></info_portion>
+    <info_portion id="after_new_dream"></info_portion>
+    <info_portion id="suhar_give_habar"></info_portion>
+    <info_portion id="start_dream_atp"></info_portion>
+    <info_portion id="atp22_dream"></info_portion>
+
+</game_information_portions>

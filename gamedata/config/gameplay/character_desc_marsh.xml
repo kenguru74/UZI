@@ -1,0 +1,1862 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!-------------------------------------marsh_murza------------------------------------------------------>
+	<specific_character id="marsh_murza" team_default = "1">
+		<name>marsh_murza_name</name>
+		<icon>ui_npc_u_stalker_murza</icon>
+		<bio>marsh_murza_bio</bio>
+
+		<class>marsh_murza</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>781</rank>
+		<reputation>650</reputation>
+		<money min="1800" max="3100" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\murza_group\murza</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 = 1, launcher \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>first_dialog_murza</start_dialog>
+		<actor_dialog>second_dialog_murza</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------marsh_vorot------------------------------------------------------>
+	<specific_character id="marsh_vorot" team_default = "1">
+		<name>marsh_vorot_name</name>
+		<icon>ui_npc_u_stalker_vorot</icon>
+		<bio>marsh_vorot_bio</bio>
+
+		<class>marsh_vorot</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>103</rank>
+		<reputation>66</reputation>
+		<money min="500" max="950" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\murza_group\vorot</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------marsh_mozol------------------------------------------------------>
+	<specific_character id="marsh_mozol" team_default = "1">
+		<name>marsh_mozol_name</name>
+		<icon>ui_npc_u_stalker_mozol</icon>
+		<bio>marsh_mozol_bio</bio>
+
+		<class>marsh_mozol</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>121</rank>
+		<reputation>68</reputation>
+		<money min="550" max="1000" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\murza_group\mozol</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------marsh_shilo------------------------------------------------------>
+	<specific_character id="marsh_shilo" team_default = "1">
+		<name>marsh_shilo_name</name>
+		<icon>ui_npc_u_stalker_shilo</icon>
+		<bio>marsh_shilo_bio</bio>
+
+		<class>marsh_shilo</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>99</rank>
+		<reputation>44</reputation>
+		<money min="480" max="970" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\murza_group\shilo</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------marsh_yashka------------------------------------------------------>
+	<specific_character id="marsh_yashka" team_default = "1">
+		<name>marsh_yashka_name</name>
+		<icon>ui_npc_u_stalker_yashka</icon>
+		<bio>marsh_yashka_bio</bio>
+
+		<class>marsh_yashka</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>102</rank>
+		<reputation>53</reputation>
+		<money min="430" max="820" infinitive="0"/>
+		
+                <snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\murza_group\yashka</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------marsh_suslov------------------------------------------------------>
+	<specific_character id="marsh_suslov" no_random = "1">
+		<name>marsh_suslov_name</name>
+		<icon>ui_npc_u_nebo_1</icon>
+		<bio>marsh_suslov_bio</bio>
+
+		<class>marsh_suslov</class>
+		<community>trader</community>
+		
+		<rank>1000</rank>
+		<reputation>916</reputation>
+		<money min="1500000" max="1510000" infinitive="1"></money>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<visual>actors\nebo\stalker_nebo_1</visual>
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			wpn_ak74u \n
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------mar_stalker_ecolog------------------------------------------------------>
+	<specific_character id="mar_stalker_ecolog" no_random = "1">
+		<name>mar_stalker_ecolog_name</name>
+		<icon>ui_npc_u_nebo_2_face_2</icon>
+		<bio>mar_stalker_ecolog_bio</bio>
+
+		<class>mar_stalker_ecolog</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>500</rank>
+		<reputation>742</reputation>
+		<money min="4000" max="5000" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\nebo\stalker_nebo_2_face_2</visual>
+		<supplies>
+
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>mar_kalancha_dialog</start_dialog>
+		<actor_dialog>mar_kalancha_dialog2</actor_dialog>
+		<actor_dialog>mar_kalancha_dialog3</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------marsh_holod----------------------------------------------------->
+	<specific_character id="marsh_holod" no_random = "1">
+		<name>marsh_holod_name</name>
+		<icon>ui_npc_u_nebo_2_face_4</icon>
+		<bio>marsh_holod_bio</bio>
+
+		<class>marsh_holod</class>
+		<community>trader</community>
+		<money min="500000" max="510000" infinitive="1"></money>
+		
+		<rank>700</rank>
+		<reputation>50</reputation>
+		<visual>actors\nebo\stalker_nebo_2_face_4</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+		</supplies>
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>mar_holod_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"					
+	</specific_character>
+<!-------------------------------------marsh_novikov------------------------------------------------------>
+	<specific_character id="marsh_novikov" no_random = "1">
+		<name>marsh_novikov_name</name>
+		<icon>ui_npc_u_nebo_2_face_3</icon>
+		<bio>marsh_novikov_bio</bio>
+
+		<class>marsh_novikov</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>1000</rank>
+		<reputation>916</reputation>
+		<money min="200000" max="210000" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\nebo\stalker_nebo_2_face_3</visual>
+		<supplies>
+
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>baza_technik_repair</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------marsh_kalancha------------------------------------------------------>
+	<specific_character id="marsh_kalancha" no_random = "1">
+		<name>marsh_kalancha_name</name>
+		<icon>ui_npc_u_nebo_2_face_1</icon>
+		<bio>marsh_kalancha_bio</bio>
+
+		<class>marsh_kalancha</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>1000</rank>
+		<reputation>916</reputation>
+		<money min="8000" max="15000" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\nebo\stalker_nebo_2_face_1</visual>
+		<supplies>
+
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>mar_kurochkin_dialog</actor_dialog>
+		<actor_dialog>mar_kurochkin_job_dialog</actor_dialog>
+		<actor_dialog>mar_kurochkin_job_dialog2</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_5</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_8</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_5</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_8</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default11" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default12" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default13" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default14" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_5</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default15" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_8</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default16" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default17" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_akm_sk2 = 1, launcher \n
+                        ammo_vog-25 = 10 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default18" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sks_s \n
+                        ammo_7.62x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default19" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_5</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_akms_sk1 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default20" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_8</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default21" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default22" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default23" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default24" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_5</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default25" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_8</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default26" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default27" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="mar_stalker_experienced_default28" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>mar_stalker_experienced_bio</bio>
+
+		<class>mar_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_1</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_bizon \n
+                        ammo_9x18_pmm = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_2</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_2</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp5 \n
+			ammo_9x19_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_4</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_4</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_toz34 \n
+                        ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_5</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_5</visual>
+		<supplies>
+			[spawn] \n
+			wpn_tt33_sk1 \n
+			ammo_7.62x25_p = 1 \n
+                        wpn_toz34 \n
+                        ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_6</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_6</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_7</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_tt33_sk1 \n
+			ammo_7.62x25_p = 1 \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_8</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+                        ammo_7.62x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml"
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_8</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 10 \n
+                        ammo_9x18_pmm = 10 \n
+                        wpn_bizon \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_10</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_10</visual>
+		<supplies>
+			[spawn] \n
+			ammo_9x18_fmj = 10 \n
+                        wpn_bizon \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default11" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_11</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_11</visual>
+		<supplies>
+			[spawn] \n
+			wpn_mp5 \n
+			ammo_9x19_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default12" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_1</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default13" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_2</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default14" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3
+</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default15" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_4</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_4</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default16" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_5</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_5</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default17" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_6</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_6</visual>
+		<supplies>
+			[spawn] \n
+			wpn_bm16 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default18" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_7</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_bm16 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default19" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_8</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default20" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_8</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_bm16 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default21" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_10</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_10</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default22" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_11</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_11</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="mar_stalker_novice_default23" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_1</icon>
+		<bio>mar_stalker_novice_bio</bio>
+
+		<class>mar_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_toz34 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+
+</xml>

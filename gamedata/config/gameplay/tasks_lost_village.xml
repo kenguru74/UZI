@@ -1,0 +1,103 @@
+<game_task id="lost_village_zveroboi_help">
+   <title>Откликнуться на просьбу Зверобоя</title>
+   <objective>
+      <text>Выполнить просьбу Зверобоя</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>second_dialog_lost_village</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Добраться до места отправки сообщения о помощи</text>
+      <infoportion_complete>going_complete</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Получить сообщение от Зверя</text>
+      <infoportion_complete>take_zver_message</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Сходить за советом к Ною</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Ной">blue_location</map_location_type>
+      <object_story_id>zaton_noah</object_story_id>
+      <infoportion_complete>fourth_dialog_noah</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Обыскать вертушку</text>
+      <function_complete>zaton_dialog.heli_docs_have</function_complete>
+   </objective>
+
+   <objective>
+      <text>Отнести информацию Ною</text>
+      <map_location_type hint="Ной">blue_location</map_location_type>
+      <object_story_id>zaton_noah</object_story_id>
+      <infoportion_complete>fifth_dialog_noah</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Дождаться сообщения от Ноя</text>
+      <map_location_type hint="Ной">blue_location</map_location_type>
+      <object_story_id>zaton_noah</object_story_id>
+      <infoportion_complete>give_message_noah</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Вернуться к Ною</text>
+      <map_location_type hint="Ной">blue_location</map_location_type>
+      <object_story_id>zaton_noah</object_story_id>
+      <infoportion_complete>sixth_dialog_noah</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Войти в систему управления излучателями</text>
+      <infoportion_complete>access_system_complete</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Перейти на ручное управления системой</text>
+      <infoportion_complete>have_control_access</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отключить 1-ю группу излучателей</text>
+      <infoportion_complete>zaton_group_1_off</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отключить 2-ю группу излучателей</text>
+      <infoportion_complete>zaton_group_2_off</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отключить автономный генератор</text>
+      <infoportion_complete>spawn_new_zver</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Зверем</text>
+      <map_location_type hint="Зверь">blue_location</map_location_type>
+      <object_story_id>zaton_zver_new</object_story_id>
+      <infoportion_complete>first_dialog_zver</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Вернуться к Ною</text>
+      <map_location_type hint="Ной">blue_location</map_location_type>
+      <object_story_id>zaton_noah</object_story_id>
+      <infoportion_complete>seventh_dialog_noah</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Пообщаться с Зверем</text>
+      <infoportion_complete>second_dialog_zver</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Выполнить просьбу Зверобоя</text>
+      <map_location_type hint="Зверобой">blue_location</map_location_type>
+      <object_story_id>lost_village_zveroboi</object_story_id>
+      <infoportion_complete>second_dialog_lost_village</infoportion_complete>
+   </objective>
+</game_task>

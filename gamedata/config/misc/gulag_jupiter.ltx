@@ -1,0 +1,331 @@
+;-------------------------------------------------------------------------------------------------
+;-- Бункер
+;-------------------------------------------------------------------------------------------------
+
+;сидящие у костра
+[logic@jupiter_bunker_kamp1]
+active = kamp@jupiter_bunker
+
+[logic@jupiter_bunker_kamp2]
+active = kamp@jupiter_bunker
+
+[kamp@jupiter_bunker]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;-------------------------------------------------------------------------------------------------
+;-- Вагончик
+;-------------------------------------------------------------------------------------------------
+
+;сидящие
+[logic@jupiter_vagon_kamp1]
+active = kamp@jupiter_vagon
+
+[logic@jupiter_vagon_kamp2]
+active = kamp@jupiter_vagon
+
+[kamp@jupiter_vagon]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;часовые
+[logic@jupiter_vagon_walker1]
+active = walker1@jupiter_vagon
+
+[walker1@jupiter_vagon]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@jupiter_vagon_walker2]
+active = walker2@jupiter_vagon
+
+[walker2@jupiter_vagon]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[logic@jupiter_vagon_walker3]
+active = walker3@jupiter_vagon
+
+[walker3@jupiter_vagon]
+path_walk  = post3_walk
+path_look  = post3_look
+
+[logic@jupiter_vagon_walker4]
+active = walker4@jupiter_vagon
+
+[walker4@jupiter_vagon]
+path_walk  = post4_walk
+path_look  = post4_look
+
+[logic@jupiter_vagon_walker5]
+active = walker5@jupiter_vagon
+
+[walker5@jupiter_vagon]
+path_walk  = post5_walk
+path_look  = post5_look
+
+;-------------------------------------------------------------------------------------------------
+;-- КПП
+;-------------------------------------------------------------------------------------------------
+;часовые
+[logic@jup_kpp_walker1]
+active = walker1@jup_kpp
+on_death = death@bandit1
+
+[walker1@jup_kpp]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[death@bandit1]
+on_info = %+jupiter_kpp_bandit1_death%
+
+[logic@jup_kpp_walker2]
+active = walker2@jup_kpp
+on_death = death@bandit2
+
+[walker2@jup_kpp]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[death@bandit2]
+on_info = %+jupiter_kpp_bandit2_death%
+
+[logic@jup_kpp_walker3]
+active = walker3@jup_kpp
+on_death = death@bandit3
+
+[walker3@jup_kpp]
+path_walk  = post3_walk
+path_look  = post3_look
+
+[death@bandit3]
+on_info = %+jupiter_kpp_bandit3_death%
+
+[logic@jup_kpp_walker4]
+active = walker4@jup_kpp
+on_death = death@bandit4
+
+[walker4@jup_kpp]
+path_walk  = post4_walk
+path_look  = post4_look
+
+[death@bandit4]
+on_info = %+jupiter_kpp_bandit4_death%
+
+[logic@jup_kpp_walker5]
+active = walker5@jup_kpp
+on_death = death@bandit5
+
+[walker5@jup_kpp]
+path_walk  = post5_walk
+path_look  = post5_look
+
+[death@bandit5]
+on_info = %+jupiter_kpp_bandit5_death%
+
+[logic@jup_kpp_walker6]
+active = walker6@jup_kpp
+on_death = death@bandit6
+
+[walker6@jup_kpp]
+path_walk  = post6_walk
+path_look  = post6_look
+
+[death@bandit6]
+on_info = %+jupiter_kpp_bandit6_death%
+
+[logic@jup_kpp_walker7]
+active = walker7@jup_kpp
+on_death = death@bandit7
+
+[walker7@jup_kpp]
+path_walk  = post7_walk
+
+[death@bandit7]
+on_info = %+jupiter_kpp_bandit7_death%
+
+[logic@jup_kpp_walker8]
+active = walker8@jup_kpp
+on_death = death@kpp_lider
+
+[walker8@jup_kpp]
+path_walk  = post8_walk
+path_look  = post8_look
+
+[death@kpp_lider]
+on_info = %+jupiter_kpp_lider_death%
+
+[logic@jup_kpp_camp1]
+active = kamp@jup_kpp_kamp1
+on_death = death@bandit8
+
+[kamp@jup_kpp_kamp1]
+center_point  = camp_center
+path_walk  = camp_center_task
+
+[death@bandit8]
+on_info = %+jupiter_kpp_bandit8_death%
+
+[logic@jup_kpp_camp2]
+active = kamp@jup_kpp_kamp1
+on_death = death@bandit9
+
+[death@bandit9]
+on_info = %+jupiter_kpp_bandit9_death%
+
+;-------------------------------------------------------------------------------------------------
+;-- Склад контейнеров
+;-------------------------------------------------------------------------------------------------
+;часовые
+[logic@jup_sklad_walker1]
+active = walker1@jup_sklad
+on_death = death@sklad_bandit1
+
+[walker1@jup_sklad]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[death@sklad_bandit1]
+on_info = %+jupiter_sklad_bandit1_death%
+
+[logic@jup_sklad_walker2]
+active = walker2@jup_sklad
+on_death = death@sklad_bandit2
+
+[walker2@jup_sklad]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[death@sklad_bandit2]
+on_info = %+jupiter_sklad_bandit2_death%
+
+[logic@jup_sklad_walker3]
+active = walker3@jup_sklad
+on_death = death@sklad_bandit3
+
+[walker3@jup_sklad]
+path_walk  = post3_walk
+path_look  = post3_look
+
+[death@sklad_bandit3]
+on_info = %+jupiter_sklad_bandit3_death%
+
+[logic@jup_sklad_walker4]
+active = walker4@jup_sklad
+on_death = death@sklad_bandit4
+
+[walker4@jup_sklad]
+path_walk  = post4_walk
+path_look  = post4_look
+
+[death@sklad_bandit4]
+on_info = %+jupiter_sklad_bandit4_death%
+
+[logic@jup_sklad_walker5]
+active = walker5@jup_sklad
+on_death = death@sklad_bandit5
+
+[walker5@jup_sklad]
+path_walk  = post5_walk
+path_look  = post5_look
+
+[death@sklad_bandit5]
+on_info = %+jupiter_sklad_bandit5_death%
+
+[logic@jup_sklad_walker6]
+active = walker6@jup_sklad
+on_death = death@sklad_bandit6
+
+[walker6@jup_sklad]
+path_walk  = post6_walk
+
+[death@sklad_bandit6]
+on_info = %+jupiter_sklad_bandit6_death%
+
+[logic@jup_sklad_walker7]
+active = walker7@jup_sklad
+on_death = death@sklad_lider
+
+[walker7@jup_sklad]
+path_walk  = post7_walk
+path_look  = post7_look
+
+[death@sklad_lider]
+on_info = %+jupiter_sklad_lider_death%
+
+[logic@jup_sklad_camp1]
+active = kamp@jup_sklad_kamp1
+on_death = death@sklad_bandit7
+
+[kamp@jup_sklad_kamp1]
+center_point  = camp_center
+path_walk  = camp_center_task
+
+[death@sklad_bandit7]
+on_info = %+jupiter_sklad_bandit7_death%
+
+[logic@jup_sklad_camp2]
+active = kamp@jup_sklad_kamp1
+on_death = death@sklad_bandit8
+
+[death@sklad_bandit8]
+on_info = %+jupiter_sklad_bandit8_death%
+
+;-------------------------------------------------------------------------------------------------
+;-- Завод Юпитер
+;-------------------------------------------------------------------------------------------------
+;часовые
+[logic@jup_jup_walker1]
+active = walker1@jup_jup
+on_death = death@killer1
+
+[walker1@jup_jup]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[death@killer1]
+on_info = %+jupiter_jupiter_killer1_death%
+
+[logic@jup_jup_walker2]
+active = walker2@jup_jup
+on_death = death@killer2
+
+[walker2@jup_jup]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[death@killer2]
+on_info = %+jupiter_jupiter_killer2_death%
+
+[logic@jup_jup_walker3]
+active = walker3@jup_jup
+on_death = death@killer3
+
+[walker3@jup_jup]
+path_walk  = post3_walk
+path_look  = post3_look
+
+[death@killer3]
+on_info = %+jupiter_jupiter_killer3_death%
+
+[logic@jup_jup_walker4]
+active = walker4@jup_jup
+on_death = death@killer4
+
+[walker4@jup_jup]
+path_walk  = post4_walk
+path_look  = post4_look
+
+[death@killer4]
+on_info = %+jupiter_jupiter_killer4_death%
+
+[logic@jup_jup_walker5]
+active = walker5@jup_jup
+on_death = death@killer5
+
+[walker5@jup_jup]
+path_walk  = post5_walk
+path_look  = post5_look
+
+[death@killer5]
+on_info = %+jupiter_jupiter_killer5_death%

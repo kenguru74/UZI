@@ -1,0 +1,265 @@
+local t = {}
+
+function load_job(sj, gname, type, squad, groups)
+
+--' created by Mora
+
+--'--------------------------------------------------------------------------
+--' ZATON
+--'--------------------------------------------------------------------------
+        -- бандиты в Лесничестве
+	if type == "zat_les" then
+		-- часовые
+		t = { section = "logic@zat_les_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker5",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker6",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker7",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker8",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker9",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker10",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_bandit"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_les_walker11",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_lesnichestvo_lider"
+			end
+		}
+		table.insert(sj, t)
+	end
+        -- наёмники на Станции переработки
+	if type == "zat_st" then
+		-- часовые
+		t = { section = "logic@zat_st_walker1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer1"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer2"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker3",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer3"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker4",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer4"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker5",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer5"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker6",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer6"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker7",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer7"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker8",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer8"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker9",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer9"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker10",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer10"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker11",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_killer11"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@zat_st_walker12",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = "",
+			predicate = function(obj_info)
+            			return obj_info.profile_name == "zaton_stancia_lider"
+			end
+		}
+		table.insert(sj, t)
+	end
+end
+
+function load_states(gname, type)
+
+	if type == "zat_les" then
+		return function(gulag)
+			return 0
+		end
+	end
+
+	if type == "zat_st" then
+		return function(gulag)
+			return 0
+		end
+	end
+
+end
+--------------------------------------------------------------------------
+-- Dynamic ltx
+--------------------------------------------------------------------------
+function load_ltx(gname, type)
+	return nil
+end
+
+function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
+
+	if gulag_type == "zat_les" then
+		return npc_community == "bandit"
+	end
+
+	if gulag_type == "zat_st" then
+		return npc_community == "killer"
+	end
+
+	return false
+end
+
+function checkMonster(npc_community, gulag_type)
+
+	return false
+end

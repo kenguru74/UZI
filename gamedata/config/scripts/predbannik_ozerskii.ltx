@@ -1,0 +1,32 @@
+[logic]
+active = walker
+
+[walker]
+path_walk = predbannik_ozerskii_walk
+path_look = predbannik_ozerskii_look
+on_actor_dist_le_nvis = 20| remark@pred_ozerskii
+meet = no_meet
+danger = danger_ozerskii
+
+[remark@pred_ozerskii]
+anim = idle
+on_actor_dist_le_nvis = 5| walker@pred_ozerskii
+meet = no_meet
+danger = danger_ozerskii
+
+[walker@pred_ozerskii]
+path_walk = predbannik_ozerskii_walk
+path_look = predbannik_ozerskii_look
+meet = meet@predbannik_ozerskii
+danger = danger_ozerskii
+
+[meet@predbannik_ozerskii]
+meet_state = 5| wait_trade@talk_hello
+meet_state_wpn 	= 5| threat@threat_weap
+victim = 5| actor
+victim_wpn = 5| actor
+use = true
+use_wpn = true
+
+[danger_ozerskii]
+ignore_distance = 0

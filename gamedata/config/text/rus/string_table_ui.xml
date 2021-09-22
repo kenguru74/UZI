@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="cant_walk">
+		<text>Хорош.. Вымотался..</text>
+	</string>
+	<string id="cant_walk_weight">
+		<text>Перегруз кажись..</text>
+	</string>
+	<string id="dar_poltergeist_hold_the_door">
+		<text>Кто-то держит дверь с той стороны!</text>
+	</string>
+	<string id="Global Map">
+		<text>Глобальная карта</text>
+	</string>
+	<string id="gun_jammed">
+		<text>Осечка!</text>
+	</string>
+	<string id="inventory_box_use">
+		<text>Обыскать ящик</text>
+	</string>
+	<string id="Local Map">
+		<text>Локальная карта</text>
+	</string>
+	<string id="st_game_saved">
+		<text>Игра сохранена</text>
+	</string>
+	<string id="tip_car_locked">
+		<text>Заблокировано</text>
+	</string>
+	<string id="tip_car_use">
+		<text>Сесть в машину</text>
+	</string>
+	<string id="tip_door_close">
+		<text>Закрыть дверь</text>
+	</string>
+	<string id="tip_door_coded">
+		<text>Дверь закодирована</text>
+	</string>
+	<string id="tip_door_decode">
+		<text>Декодировать дверь</text>
+	</string>
+	<string id="tip_door_decoding">
+		<text>Идет процесс декодирования</text>
+	</string>
+	<string id="tip_door_locked">
+		<text>Заперто</text>
+	</string>
+	<string id="tip_door_open">
+		<text>Открыть дверь</text>
+	</string>
+	<string id="tip_gate_close">
+		<text>Закрыть ворота</text>
+	</string>
+	<string id="tip_gate_locked">
+		<text>Ворота заблокированы</text>
+	</string>
+	<string id="tip_gate_open">
+		<text>Открыть ворота</text>
+	</string>
+	<string id="tip_monolith">
+		<text>ЗАГАДАТЬ ЖЕЛАНИЕ</text>
+	</string>
+	<string id="tip_teleport">
+		<text>Активировать телепорт</text>
+	</string>
+</string_table>

@@ -1,0 +1,125 @@
+
+<game_task id="pred_trader_find_weapon">
+   <title>Найти винтовку FN F2000</title>
+   <objective>
+      <text>Найти винтовку FN F2000</text>
+      <icon>ui_iconsTotal_find_item</icon>
+      <infoportion_complete>bring_weapon</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти винтовку FN F2000</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Найти предмет">find_item_location</map_location_type>
+      <object_story_id>warlab_rukzak</object_story_id>
+      <function_complete>predbannik_dialog.weapon_have</function_complete>
+      <infoportion_set_complete>find_weapon</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести винтовку Скупому</text>
+      <map_location_type hint="Скупой">blue_location</map_location_type>
+      <object_story_id>predbannik_trader</object_story_id>
+      <infoportion_complete>bring_weapon</infoportion_complete>
+   </objective>
+</game_task>
+
+
+<game_task id="pred_barman_find_outfit">
+   <title>Найти костюм учёных</title>
+   <objective>
+      <text>Найти костюм учёных</text>
+      <icon>ui_iconsTotal_find_item</icon>
+      <infoportion_complete>bring_outfit</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти костюм учёных</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Найти предмет">find_item_location</map_location_type>
+      <object_story_id>swamp_old_suit</object_story_id>
+      <function_complete>predbannik_dialog.outfit_have</function_complete>
+      <infoportion_set_complete>find_outfit</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести костюм учёных Хозяину</text>
+      <map_location_type hint="Хозяин">blue_location</map_location_type>
+      <object_story_id>predbannik_barman</object_story_id>
+      <infoportion_complete>bring_outfit</infoportion_complete>
+   </objective>
+</game_task>
+
+
+<game_task id="pred_gikler_find_weapon">
+   <title>Найти СВД Дальнобойщик</title>
+   <objective>
+      <text>Найти СВД Дальнобойщик</text>
+      <icon>ui_iconsTotal_find_item</icon>
+      <infoportion_complete>gikler_bring_weapon</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти СВД Дальнобойщик</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Найти предмет">find_item_location</map_location_type>
+      <object_story_id>aver_weapon</object_story_id>
+      <function_complete>predbannik_dialog.gikler_weapon_have</function_complete>
+      <infoportion_set_complete>gikler_find_weapon</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести СВД Дальнобойщик Жиклёру</text>
+      <map_location_type hint="Жиклёр">blue_location</map_location_type>
+      <object_story_id>predbannik_gikler</object_story_id>
+      <infoportion_complete>gikler_bring_weapon</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="pred_chuchelnik_find_hand">
+   <title>Найти руку зомби-камикадзе</title>
+   <objective>
+      <text>Найти руку зомби-камикадзе</text>
+      <icon>ui_iconsTotal_find_item</icon>
+      <infoportion_complete>predbannik_chuchelnik_bring_item</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти руку зомби-камикадзе</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Найти предмет">find_item_location</map_location_type>
+      <object_story_id>jup_und_hand</object_story_id>
+      <function_complete>predbannik_dialog.chuchelnik_hand_have</function_complete>
+      <infoportion_set_complete>predbannik_chuchelnik_take_item</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести руку зомби-камикадзе Чучельнику</text>
+      <map_location_type hint="Чучельник">blue_location</map_location_type>
+      <object_story_id>predbannik_chuchelnik</object_story_id>
+      <infoportion_complete>predbannik_chuchelnik_bring_item</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="pred_bul">
+   <title>Найти аномальное оружие</title>
+   <objective>
+      <text>Найти аномальное оружие</text>
+      <icon>ui_iconsTotal_find_item</icon>
+      <infoportion_complete>bring_gpistol</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти аномальное оружие</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <function_complete>predbannik_dialog.gpistol_have</function_complete>
+      <infoportion_set_complete>find_gpistol</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Предложить оружие Сухарю</text>
+      <map_location_type hint="Сухарь">blue_location</map_location_type>
+      <object_story_id>atp_barman</object_story_id>
+      <infoportion_complete>bring_gpistol</infoportion_complete>
+   </objective>
+</game_task>

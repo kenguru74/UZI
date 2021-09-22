@@ -1,0 +1,47 @@
+;-------------------------------------------------------------------------------------------------
+;-- “оннель
+;-------------------------------------------------------------------------------------------------
+
+;часовые
+[logic@swa_tunnel_walker1]
+active = walker1@swa_tunnel
+
+[walker1@swa_tunnel]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@swa_tunnel_walker2]
+active = walker2@swa_tunnel
+
+[walker2@swa_tunnel]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[logic@swa_tunnel_walker3]
+active = walker3@swa_tunnel
+
+[walker3@swa_tunnel]
+path_walk  = post3_walk
+path_look  = post3_look
+
+;сид€щие у 1 костра
+[logic@swa_tunnel_kamp1]
+active = kamp@swa_tunnel
+
+[logic@swa_tunnel_kamp2]
+active = kamp@swa_tunnel
+
+[kamp@swa_tunnel]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;сид€щие у 2 костра
+[logic@swa_tunnel1_kamp1]
+active = kamp@swa_tunnel1
+
+[logic@swa_tunnel1_kamp2]
+active = kamp@swa_tunnel1
+
+[kamp@swa_tunnel1]
+center_point  = camp_center
+path_walk = camp_center_task

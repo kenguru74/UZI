@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+	<string id="dialog_with_darks_0">
+		<text>Опа, Стрелок, собственной персоной! Ну, говори зачем припёрся?</text>
+	</string>
+	<string id="dialog_with_darks_1">
+		<text>Хм... За Клыком "припёрся".</text>
+	</string>
+	<string id="dialog_with_darks_2">
+		<text>Ну да, да, в курсе, сам Мастер велел тебя пропустить. Давай, иди уже...</text>
+	</string>
+	<string id="dialog_with_darks_3">
+		<text>Угум. Иду. Уже.</text>
+	</string>
+
+
+	<string id="first_dialog_with_cheburek_0">
+		<text>Ну что, Стрелок, зачем пожаловал?</text>
+	</string>
+	<string id="first_dialog_with_cheburek_1">
+		<text>А то ты не знаешь, Чебурек.</text>
+	</string>
+	<string id="first_dialog_with_cheburek_2">
+		<text>О как. Моё погоняло "в миру" ты уже знаешь... Док подсказал? Впрочем, неважно. Так о чём это мы?...</text>
+	</string>
+	<string id="first_dialog_with_cheburek_3">
+		<text>О Клыке. Я знаю, что вы его забрали.</text>
+	</string>
+	<string id="first_dialog_with_cheburek_4">
+		<text>Не забрали, а подобрали. Погибал он, уже концы отдавал. Он, как и мы, попал под какое-то, мать его, хреново излучение, и вроде как стал... Ну, типа, превращаться в такого, как мы начал - в Тёмного.</text>
+	</string>
+	<string id="first_dialog_with_cheburek_5">
+		<text>Так... И что дальше?</text>
+	</string>
+	<string id="first_dialog_with_cheburek_6">
+		<text>Дальше... А дальше так: хочешь его снова человеком увидеть - придётся потрудиться, и нехило так. Согласен?</text>
+	</string>
+	<string id="first_dialog_with_cheburek_7">
+		<text>Та-а-ак... Ладно, чего делать надо?</text>
+	</string>
+	<string id="first_dialog_with_cheburek_8">
+		<text>Стоп, не так быстро, сталкер. Сначала заплати. А уж потом я скажу, как можно твоего Клыка вылечить.</text>
+	</string>
+	<string id="first_dialog_with_cheburek_9">
+		<text>И сколько ты хочешь?</text>
+	</string>
+	<string id="first_dialog_with_cheburek_10">
+		<text>Не очень много, тебе эта сумма, я думаю, вполне по карману. Да и для друга не жалко, не так ли? Короче, полтора ляма - и инфа твоя...</text>
+	</string>
+	<string id="first_dialog_with_cheburek_101">
+		<text>Мда... Ладно, говори куда перевести.</text>
+	</string>
+	<string id="first_dialog_with_cheburek_102">
+		<text>Охренел? Я их что, в кармане ношу? Как соберу - принесу. Жди.</text>
+	</string>
+	<string id="first_dialog_with_cheburek_11">
+		<text>Денежки - это хорошо, хе-хе. \nСлушай сюда: ходил в Зоне слух, что есть артефакт, "Сердце Оазиса" называется, который любого на ноги поставить может. Так вот, есть он в Зоне или нет, никто не знает. Но есть рецепт, как сварганить его здесь, в условиях Зоны. И этот рецепт почти был в моих руках, но... Один из наших братьев должен был доставить его ко мне, да не дошёл. Пропал. Шёл на виду у братьев - и исчез. Ни шума, ни пыли, ни разрядов каких - ничего. Просто мгновенно - был и нету. Если найдёшь его или то, что от него осталось... Короче, если найдешь рецепт, тащи его мне. Принесёшь, тогда и поговорим.</text>
+	</string>
+	<string id="first_dialog_with_cheburek_12">
+		<text>Пропал, говоришь... Где пропал-то хоть?</text>
+	</string>
+	<string id="first_dialog_with_cheburek_13">
+		<text>На Генераторах. Наши братья боятся ходить туда. Место гиблое.</text>
+	</string>
+	<string id="first_dialog_with_cheburek_14">
+		<text>Для вас гиблое, а для меня нет, значит?</text>
+	</string>
+	<string id="first_dialog_with_cheburek_15">
+		<text>Для НАС конкретно - точно гиблое, а для тебя - как карта ляжет. Но ты ж вроде как подписался поработать за дружка-то своего, нет? Короче, КПК нашего брата всё ещё в сети, а значит он, возможно, жив.  Найдёшь рецепт - Клыку поможешь.\n \nЗовут его Ярик, если что. \nИ вот что ещё: ты как сюда зашёл? Если через Пещеру или Волчий лес, то учти, обратной дорогой тебе на поверхность не выбраться. Выход - на верхнем этаже Лабиринта - там сообразишь, что к чему.</text>
+	</string>
+	<string id="first_dialog_with_cheburek_16">
+		<text>Ясно.</text>
+	</string>
+
+	<string id="second_dialog_with_cheburek_0">
+		<text>Ну здоров, Чебурек.</text>
+	</string>
+	<string id="second_dialog_with_cheburek_1">
+		<text>Ну что, нашёл брата нашего?</text>
+	</string>
+	<string id="second_dialog_with_cheburek_2">
+		<text>Нет больше его - снорки пожрали. Вот данные с его КПК. Закачивай...</text>
+	</string>
+	<string id="second_dialog_with_cheburek_3">
+		<text>Нету, говоришь? Ну что ж, пусть ему хорошо лежится... Ладно, давай. \nВсё, закачал. Ну что ж, ты свободен, Стрелок. Теперь - уходи.</text>
+	</string>
+	<string id="second_dialog_with_cheburek_4">
+		<text>Свободен? Ты охренел, братан? Клык где?</text>
+	</string>
+	<string id="second_dialog_with_cheburek_5">
+		<text>Ах, Клык... Да там он, в отдельной каюте. Ну, мне пора!</text>
+	</string>
+	<string id="second_dialog_with_cheburek_6">
+		<text>Блинн... Вот сука... Чёртов ублюдок...</text>
+	</string>
+
+	<string id="first_dialog_klyk_0">
+		<text>Стрелок! Нашёл-таки меня. А я уж не надеялся свидеться.</text>
+	</string>
+	<string id="first_dialog_klyk_1">
+		<text>Клык... Тебя и не узнать. Как ты?</text>
+	</string>
+	<string id="first_dialog_klyk_2">
+		<text>Да как... Как-то... \nСлушай, а где Тёмные-то? Они меня конечно спасли, но... Думал, уж копыта отброшу. Накололи какой-то гадостью, теперь я, по их словам, сам Темным стал.</text>
+	</string>
+	<string id="first_dialog_klyk_3">
+		<text>Тёмных я того, исполнил, вот только главный их как-то и куда-то смылся, не успел я его завалить. Но один хрен, не долго ему осталось - Док позаботился. \nВот, Доктор слепил супер-пупер-артефакт, который должен тебя на ноги поставить. Возьми, приложи к груди и держи.</text>
+	</string>
+	<string id="first_dialog_klyk_4">
+		<text>Хрена ж себе... Слушай, он это... Он растворился, чтоль? Печёт в груди, блин... Чёрт! Как волна какая захлестнула!</text>
+	</string>
+	<string id="first_dialog_klyk_5">
+		<text>Слушай, я хер его знает, что там у тебя чего захлестнуло, но нам надо валить отсюда! Ты как, в состоянии двигаться вообще? Давай, собирайся!</text>
+	</string>
+	<string id="first_dialog_klyk_6">
+		<text>Погоди, Стрелок... Дай оклематься-то... Тут это, барахлишко моё где-то у них лежит. Сможешь притащить, а?</text>
+	</string>
+	<string id="first_dialog_klyk_7">
+		<text>Вот же, блинский еж... Ладно, сиди уже, ща поищу.</text>
+	</string>
+
+	<string id="second_dialog_klyk_0">
+		<text>Вот, держи своё барахло.</text>
+	</string>
+	<string id="second_dialog_klyk_1">
+		<text>Спасибо, брат. С меня хабар!</text>
+	</string>
+	<string id="second_dialog_klyk_2">
+		<text>Да какой, в пень, с тебя "хабар"?! Лучше скажи, тебе полегчало, нет? Идти сможешь?</text>
+	</string>
+	<string id="second_dialog_klyk_3">
+		<text>Слушай, Стрелок, давай я пока здесь побуду ещё, оклемаюсь, сил наберусь. Не могу я идти пока. За меня не боись, выберусь теперь уже... Теперь уже точно выберусь! Только координаты Дока скинь.</text>
+	</string>
+	<string id="second_dialog_klyk_4">
+		<text>Да твою ж мать... \nЛадно, держи. Принял? \n \nВсё, давай, до встречи у Доктора.</text>
+	</string>
+
+</string_table>

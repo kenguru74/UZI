@@ -1,0 +1,18 @@
+[logic]
+active = ph_button@active
+
+[ph_button@active]
+anim = lab_primary_switcher_idle
+on_info = {+have_control_access} ph_button@activate
+
+[ph_button@activate]
+on_info = {+zaton_group_1_off} ph_button@deactivate
+anim = lab_primary_switcher_idle
+tooltip = tips_zaton_switcher_01_press
+on_press = ph_button@deactivate %+zaton_group_1_off%
+
+[ph_button@deactivate]
+anim = lab_primary_switcher_off
+on_timer = 100 | ph_idle@nil
+
+[ph_idle@nil]

@@ -1,0 +1,334 @@
+; Штурмовая винтовка (автомат) Heckler-Koch G36
+;----------------------------------------------
+;Первый раздел
+;Здесь хранится общая информация о оружии - его класс, тип, ссылки на спавн и т.д.
+[wpn_g36]:identity_immunities
+GroupControlSection			= spawn_group
+discovery_dependency		= 
+$spawn              		= "weapons\g36"		; имя и секция в левел эдиторе
+$npc						= on				; опция для левел эдитора
+$prefetch 					= 8
+scheduled					= off				; option for ALife Simulator
+cform               		= skeleton
+class               		= WP_AK74
+min_radius          		= 10
+max_radius          		= 200
+description			        = enc_weapons1_wpn-g36 ;ссылка на string_id, из которого игра подгружает описание этого оружия
+launch_speed				= 0
+ef_main_weapon_type			= 2 ;основной тип, к которому принадлежит оружие 
+ef_weapon_type				= 6 ;подтип, к которому принадлежит оружие
+
+;Второй раздел
+;Содержит модификаторы, которые даются к углу зрения/дальности обзора NPC, держащего это оружие в руках: 
+;-----------------------------------------------------------------------------------
+holder_range_modifier	= 1.5		       ; во сколько раз увеличивается дальность обзора 
+holder_fov_modifier		= 1.0              ; во сколько раз увеличивается угол обзора
+;-----------------------------------------------------------------------------------
+
+;Третий раздел
+;Содержит данные о самом оружии, его некоторых характеристиках: 
+
+cost						= 18000                               ;базовая цена (торговцы умножают её на некоторый коэффициент)
+weapon_class				= assault_rifle	                      ;класс оружия (здесь - штурмовая винтовка) 
+
+ammo_elapsed				= 30
+ammo_mag_size				= 30                                  ;размер магазина
+ammo_class					= ammo_5.56x45_ss190, ammo_5.56x45_ap ;типы используемых патронов
+grenade_class		        = ammo_m209                           ;тип используемых гранат
+fire_modes					= 1, -1                               ;режимы ведения огня
+
+hand_dependence				= 1                                   ;засивимость о рук (?) - возможно, речь идет о качании ствола 
+single_handed				= 0	                                  ;держится ли только в одной руке
+
+slot 						= 2	                                  ;слот в инвентаре
+animation_slot				= 2		                              ;вид анимации (для пистолета/для винтовки)
+
+inv_name	        		= wpn-g36                             ;ссылка на имя, отображаемое в инвентаре
+inv_name_short				= wpn-g36                             ;ссылка на имя, отображаемое в инвентаре
+inv_weight					= 3.6                                 ;вес
+
+inv_grid_width				= 5                                   ;                          
+inv_grid_height				= 2                                   ;координаты
+inv_grid_x					= 0                                   ;иконки
+inv_grid_y					= 10                                  ;
+
+kill_msg_x					= 157
+kill_msg_y					= 29
+kill_msg_width				= 78
+kill_msg_height				= 31
+
+;Четвертый раздел
+;В четвертом разделе хранится информация о износе/отдаче оружия.
+;-----------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 0.17 	;базовая дисперсия оружия (без влияния износа) 
+control_inertion_factor		= 1.09f ;(похоже, влияет на шкалу "удобство" и на инерцию ствола в руках (скорость наведения на цель)) 
+disp_rate 			= 1.9 ;предположительно нарастание рассеивания огня с каждым следующим выстрелом
+;отдача
+cam_relax_speed         	= 9	;скорость возврата в исходное положение
+cam_relax_speed_ai        	= 120.75    ;скорость возврата в исходное положение у АИ
+cam_dispersion          	= 0.15		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.3		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac			= 0.9		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle				= 5.0		;максимальный угол отдачи
+cam_max_angle_horz			= 9.0		;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 1.1;1			;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor = 5	;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 			= 0.002	;вероятность осечки при максимальном износе 
+condition_shot_dec 			= 0.0001	;увеличение износа при каждом выстреле
+misfire_condition_k			= 0.05           ;порог (в данном случае - 30%), после которого оружие может заклинивать 
+;-----------------------------------------------------------------------------------
+direction              		=  0, 0, 1		;вектор выстрела, обычно направлен по направлению взгляда
+fire_point             		=  0.0, 0.21, 0.58	;координаты партиклов огня(в режиме от третьего лица) 
+fire_point2            		=  0.0, 0.10, 0.68	;координаты партиклов огня(в режиме от третьего лица)(стрельба при прицеливании) 
+
+;flame_particles			= weapons\generic_weapon05 	;партикл эффект для выстрела
+smoke_particles				= weapons\generic_shoot_00 	;партиклы дымка от выстрела
+grenade_flame_particles			= weapons\generic_weapon01 	;партиклы огня от взрыва гранаты
+	
+shell_point		 			= 0.0, 0.21, 0.13  
+shell_dir		 			= 0.0, 0.0, 0.4		;оффсет, откуда из оружия будут вылетать гильзы 
+shell_particles	 			= weapons\arsenal_shells1	;партиклы гильз
+
+rpm_empty_click 	 		= 200		;частота спуска при пустом магазине
+
+;Пятый раздел
+;Здесь хранится множество параметров
+PDM_disp_base 				= 1.05		;множитель, на который умножается базовая дисперсия оружия, когда ГГ (Главный Герой) стоит на месте в полный рост; 
+PDM_disp_vel_factor 		= 1.3			;множитель, на который умножается базовая дисперсия оружия, когда ГГ крутит оружием или бежит; 
+PDM_disp_accel_factor 		= 1.5			;множитель, на который умножается базовая дисперсия оружия, когда ГГ бежит в спринте; 
+PDM_crouch	 		= 0.9			;множитель, на который умножается базовая дисперсия оружия, когда ГГ идет пригнувшись; 
+PDM_crouch_no_acc 		= 0.7			;множитель, на который умножается базовая дисперсия оружия, когда ГГ стоит на месте, пригнувшись; 
+
+; ttc
+hit_power                	= 0.45
+hit_impulse		        	= 10			;импульс пули (сила, которую летящая пуля передает жертве, влияет на поведение ragdoll-тела) 
+hit_type 					= fire_wound	;тип причиняемых повреждений, в данном случае - пулевые ранения (параметр в синглплеере ни на что не влияет)
+hit_rate			= 1.85				;вариативность повреждений (максимальный множитель?)     
+
+fire_distance            	= 200			;эффективная дальность, (после которой пуля исчезает)
+bullet_speed				= 920		;начальная скорость пули
+rpm                      	= 750			;скорострельность
+; end ttc
+
+use_aim_bullet			    = true		;Поддерживается ли первая суппер пуля
+time_to_aim					= 1.0	;время прицеливания для срабатывания супер-пули
+
+hud                      	= wpn_g36_hud		;внешний вид оружия
+normal                   	= 0, 1, 0
+
+;-----------------------------------------------------------------------------------
+position         	        = -0.026, -0.132, -0.010
+orientation      	        = 0, 0, 0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position         		= -0.26,-0.11,0.25			; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      		= -15,-9,130				; (3rd person view in degrees)
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+startup_ammo   		        = 300				;как нетрудно догадаться, стартовое количество патронов (в синглплеере ни на что не влияет) 
+visual         		        = weapons\g36\wpn_g36.ogf	;модель оружия, используемая NPC, а также игроком при виде от третьего лица 
+	
+light_color					= 0.6,0.5,0.3
+light_range					= 5
+light_var_color				= 0.05
+light_var_range				= 0.5
+light_time 					= 0.2
+
+;addons
+scope_status				= 1   
+silencer_status				= 2
+grenade_launcher_status		= 2
+
+zoom_enabled			= true			; есть ли зум (прицеливание) 
+scope_zoom_factor	 	= 32			; какой зум дает прицеливание (здесь - 1.8х) 
+scope_texture			= wpn\scopes\scope_g36	;текстура прицельной сетки 
+
+silencer_name  				= wpn_addon_silencer
+silencer_x 					= 213
+silencer_y 					= 12
+
+grenade_launcher_name 		= wpn_addon_grenade_launcher_m203
+grenade_launcher_x 			= 140
+grenade_launcher_y 			= 31
+
+;------------------------------ S.T.A.L.K.E.R`s sound remake ------------------------------
+;звуки
+snd_draw					= weapons\g36\g36_draw
+snd_holster					= weapons\rifle_holster
+snd_shoot					= weapons\g36\g36_shoot
+snd_shoot1					= weapons\g36\g36_shoot1
+snd_shoot2					= weapons\g36\g36_shoot2
+snd_shoot3					= weapons\g36\g36_shoot3      
+snd_empty					= weapons\g36\g36_empty, 0.8
+snd_reload					= weapons\g36\g36_reload, 0.7, 0.35
+snd_shoot_grenade			= weapons\m203\M203_grenshoot
+snd_reload_grenade			= weapons\ag36\ag36_grenload, 1.0, 0.3
+snd_switch					= weapons\m203\M203_switch, 1.0, 0.5
+snd_silncer_shot			= weapons\g36\g36_shot_sil 
+;------------------------------------------------------------------------------------------
+
+;настройки для глушителя
+silencer_hit_power       	= 0.55
+silencer_hit_impulse	 	= 25
+silencer_fire_distance   	= 400
+silencer_bullet_speed	 	= 900
+
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+;-----------------------------------------------------------------------------
+;-- HUD DESCRIPTION
+;-----------------------------------------------------------------------------
+
+[wpn_g36_hud]
+
+allow_inertion			= true
+
+shell_point			= 0.02, 0.08, -0.15
+shell_dir			= 0.0, 1.0, 0.0
+
+fire_point			= -0.00, 0.07, 0.23
+fire_point2 			= -0.00, -0.06, 0.25
+fire_bone 			= wpn_body
+
+orientation 			= 5, 0, 0
+position 			= 0, 0, -0.05
+visual 				= weapons\g36\wpn_g36_hud.ogf
+
+grenade_bone 			= grenade
+
+anim_idle			= idle
+anim_idle_aim			= idle
+anim_reload			= reload
+anim_draw			= draw
+anim_holster			= shoot
+anim_shoot			= shoot
+anim_idle_sprint		= idle_sprint
+			
+;анимации с подключенным подствольником
+;(режим стрельбы из подствольника)
+anim_idle_g			= idle_grenade
+anim_idle_g_aim			= idle_grenade
+anim_reload_g			= reload_grenade
+anim_shoot_g			= shoot_grenade
+anim_switch_grenade_on		= switch_on
+anim_switch_grenade_off		= switch_off
+anim_draw_g			= switch_on
+anim_holster_g			= switch_off
+
+;(режим обычной стрельбы)			 
+anim_idle_gl			= idle_w_gl
+anim_idle_gl_aim		= idle_w_gl
+anim_reload_gl			= reload_w_gl
+anim_draw_gl			= draw_w_gl
+anim_holster_gl			= holster_w_gl
+anim_shoot_gl			= shoot_w_gl
+
+;смещения HUD для режима приближения 
+zoom_offset	 = -0.13480, -0.00600, -0.00000 
+zoom_rotate_x	 = -0.01590 
+zoom_rotate_y	 = 0.08800 
+
+;тоже самое, но для прицепленого подствольника 
+grenade_normal_zoom_offset	 = -0.13480, -0.00600, -0.00000 
+grenade_normal_zoom_rotate_x	 = -0.01590 
+grenade_normal_zoom_rotate_y	 = 0.08800 
+
+;режим подствольника 
+grenade_zoom_offset	 = -0.13480, -0.23460, 0.00000 
+grenade_zoom_rotate_x	 = -0.27800 
+grenade_zoom_rotate_y	 = 0.08800
+
+;прячем перекрестие прицела в зуме 
+zoom_hide_crosshair = true 
+
+[wpn_g36_repair]
+tech_complication = 1000
+repair_compatibility = g36
+
+;-----------------------------------------------------------------------------------
+; Штурмовая винтовка (автомат) Heckler-Koch G36 Export
+;-----------------------------------------------------------------------------------
+;[wpn_g36e]:wpn_g36
+;$spawn                  = "weapons\g36e"
+;class                   = WP_LR300
+;min_radius              = 0
+;max_radius              = 150
+
+;description				= enc_weapons1_wpn-g36e
+
+;holder_range_modifier	= 1.0
+;holder_fov_modifier		= 0.7
+
+;cost					= 15000
+
+;inv_name				= wpn-g36e
+;inv_name_short			= wpn-g36e
+
+;inv_grid_x				= 31
+;inv_grid_y				= 24
+
+;kill_msg_x			= 72
+;kill_msg_y			= 82
+;kill_msg_width		= 56
+;kill_msg_height		= 23
+
+;shell_particles	 		= weapons\arsenal_shells1
+
+;shell_point		 		= 0.0, 0.24, 0.093
+;shell_dir		 		= 0.0, 1.0, 0.0
+
+;hud                     = wpn_g36e_hud
+;position         	    = -0.026,-0.172,0
+
+;strap_position         		= -0.16, -0.36, 0.15
+;strap_orientation      		= -10, -5, 10
+
+;visual         		        = weapons\g36\wpn_g36e_sk1.ogf
+
+;addons
+;scope_status			= 2
+;grenade_launcher_status		= 0
+
+;scope_zoom_factor	    = 75
+
+;scope_name 					= wpn_addon_g36_scope
+;scope_x                     = 64
+;scope_y                     = -3
+
+;silencer_name  				= wpn_addon_sil_556_ar
+;silencer_x                  = 210
+;silencer_y                  = 14
+
+;snd_draw			= weapons\rifle_draw
+;snd_reload			= weapons\g36\g36_reload, 1.0, 1.0
+
+;silencer_flame_particles 	= weapons\generic_weapon01
+
+;[wpn_g36e_hud]:wpn_g36_hud
+;shell_point          	= 0.00, 0.00, 0.00
+;shell_dir		 		= 0.0, 0.0, 0.0
+
+;fire_point              = 0.235, 0.0, 0.01
+;orientation             = 0, 0, 0
+;visual                  = weapons\g36\wpn_g36e_sk1_hud.ogf
+
+;anim_idle_aim		= idle_aim
+;anim_holster		= holster
+
+;zoom_offset			= -0.1261, -0.0142, -0.1300
+;zoom_rotate_x		= 0.0010
+;zoom_rotate_y		= 0.0000
+
+;[wpn_g36e_repair]
+;tech_complication = 800
+;repair_compatibility = g36

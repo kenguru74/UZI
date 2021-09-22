@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="pred_blockpost_soldiers_start">
+        <precondition>dialogs.is_not_wounded</precondition>
+        <phrase_list>
+            <phrase id="12">
+                <text>pred_blockpost_soldiers_start_12</text>
+                <next>13</next>
+            </phrase>
+            <phrase id="13">
+                <text>pred_blockpost_soldiers_start_13</text>
+                <next>14</next>
+                <next>24</next>
+            </phrase>
+            <phrase id="14">
+                <text>pred_blockpost_soldiers_start_14</text>
+                <precondition>predbannik_dialog.has_soldiers_bribe</precondition>
+                <action>predbannik_dialog.give_soldiers_bribe</action>
+                <give_info>pred_blockpost_pass_on</give_info>
+                <next>15</next>
+            </phrase>
+            <phrase id="15">
+                <text>pred_blockpost_soldiers_start_15</text>
+            </phrase>
+            <phrase id="24">
+                <text>pred_blockpost_soldiers_start_24</text>
+                <next>25</next>
+            </phrase>
+            <phrase id="25">
+                <text>pred_blockpost_soldiers_start_25</text>
+            </phrase>
+            <phrase id="2">
+                <text></text>
+                <has_info>pred_blockpost_pass_on</has_info>
+                <next>21</next>
+            </phrase>
+            <phrase id="21">
+                <text>pred_blockpost_soldiers_start_21</text>
+            </phrase>
+            <phrase id="11">
+                <text>pred_blockpost_soldiers_start_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="1">
+                <text></text>
+                <dont_has_info>pred_blockpost_pass_on</dont_has_info>
+                <next>11</next>
+            </phrase>
+            <phrase id="0">
+                <text></text>
+                <next>1</next>
+                <next>2</next>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="pred_blockpost_soldiers_dialog">
+        <has_info>osvedomitel_secret_pred</has_info>
+        <dont_has_info>ptichkin_first_dialog</dont_has_info>
+        <dont_has_info>remesov_first_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>pred_blockpost_soldiers_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>pred_blockpost_soldiers_dialog_1</text>
+                <next>11</next>
+                <next>12</next>
+            </phrase>
+            <phrase id="11">
+                <precondition>predbannik_dialog.has_10000</precondition>
+                <text>pred_blockpost_soldiers_dialog_11</text>
+                <action>predbannik_dialog.give_10000</action>
+                <next>21</next>
+            </phrase>
+            <phrase id="21">
+                <text>pred_blockpost_soldiers_dialog_21</text>
+                <next>31</next>
+            </phrase>
+            <phrase id="31">
+                <text>pred_blockpost_soldiers_dialog_31</text>
+                <give_info>remesov_first_dialog</give_info>
+            </phrase>
+            <phrase id="12">
+                <precondition>predbannik_dialog.has__10000</precondition>
+                <text>pred_blockpost_soldiers_dialog_12</text>
+                <next>22</next>
+            </phrase>
+            <phrase id="22">
+                <text>pred_blockpost_soldiers_dialog_22</text>
+                <next>31</next>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="pred_helipad_soldiers_dialog">
+        <has_info>remesov_first_dialog</has_info>
+        <dont_has_info>ptichkin_first_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>pred_helipad_soldiers_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>pred_helipad_soldiers_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>pred_helipad_soldiers_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>pred_helipad_soldiers_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>pred_helipad_soldiers_dialog_4</text>
+                <next>51</next>
+                <next>52</next>
+            </phrase>
+            <phrase id="51">
+                <precondition>predbannik_dialog.has_10000</precondition>
+                <text>pred_helipad_soldiers_dialog_51</text>
+                <action>predbannik_dialog.give_10000</action>
+                <next>61</next>
+            </phrase>
+            <phrase id="61">
+                <text>pred_helipad_soldiers_dialog_61</text>
+                <action>predbannik_dialog.start_time</action>
+                <next>71</next>
+            </phrase>
+            <phrase id="71">
+                <text>pred_helipad_soldiers_dialog_71</text>
+                <give_info>ptichkin_first_dialog</give_info>
+            </phrase>
+            <phrase id="52">
+                <precondition>predbannik_dialog.has__10000</precondition>
+                <text>pred_helipad_soldiers_dialog_52</text>
+                <next>62</next>
+            </phrase>
+            <phrase id="62">
+                <text>pred_helipad_soldiers_dialog_62</text>
+                <next>72</next>
+            </phrase>
+            <phrase id="72">
+                <text>pred_helipad_soldiers_dialog_72</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="pred_lager_guard_start_dialog">
+        <dont_has_info>pred_lager_start</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>pred_lager_guard_start_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>pred_lager_guard_start_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>pred_lager_guard_start_dialog_2</text>
+                <next>21</next>
+                <next>22</next>
+            </phrase>
+            <phrase id="21">
+                <text>pred_lager_guard_start_dialog_21</text>
+                <next>211</next>
+            </phrase>
+            <phrase id="22">
+                <text>pred_lager_guard_start_dialog_22</text>
+                <next>221</next>
+            </phrase>
+            <phrase id="211">
+                <text>pred_lager_guard_start_dialog_211</text>
+                <next>212</next>
+            </phrase>
+            <phrase id="212">
+                <text>pred_lager_guard_start_dialog_212</text>
+                <next>213</next>
+            </phrase>
+            <phrase id="213">
+                <text>pred_lager_guard_start_dialog_213</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="221">
+                <text>pred_lager_guard_start_dialog_221</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>pred_lager_guard_start_dialog_3</text>
+                <give_info>pred_lager_start</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="pred_lager_guard_start_dialog_2">
+        <has_info>pred_lager_start</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>pred_lager_guard_start_dialog_2_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>pred_lager_guard_start_dialog_2_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>pred_lager_guard_start_dialog_2_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>pred_lager_guard_start_dialog_2_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>pred_lager_guard_start_dialog_2_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>pred_lager_guard_start_dialog_2_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>pred_lager_guard_start_dialog_2_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>pred_lager_guard_start_dialog_2_7</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="predbannik_bar_barmen_start">
+        <dont_has_info>pred_barman_start</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_bar_barmen_start_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_bar_barmen_start_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_bar_barmen_start_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_bar_barmen_start_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_bar_barmen_start_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>predbannik_bar_barmen_start_5</text>
+                <give_info>pred_barman_start</give_info>
+             </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="predbannik_bar_barmen_start_2">
+        <has_info>bring_outfit</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_bar_barmen_start_2_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_bar_barmen_start_2_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_bar_barmen_start_2_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_bar_barmen_start_2_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_bar_barmen_start_2_4</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="predbannik_bar_barmen_find_suit">
+        <dont_has_info>pred_barman_bring_outfit</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_bar_barmen_find_suit_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_bar_barmen_find_suit_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_bar_barmen_find_suit_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_bar_barmen_find_suit_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_bar_barmen_find_suit_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>predbannik_bar_barmen_find_suit_5</text>
+                <next>61</next>
+                <next>62</next>
+            </phrase>
+            <phrase id="61">
+                <text>predbannik_bar_barmen_find_suit_61</text>
+                <give_info>pred_barman_bring_outfit</give_info>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>predbannik_bar_barmen_find_suit_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>predbannik_bar_barmen_find_suit_8</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="62">
+                <text>predbannik_bar_barmen_find_suit_62</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="predbannik_bar_barmen_bring_suit">
+        <dont_has_info>bring_outfit</dont_has_info>
+        <has_info>find_outfit</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_bar_barmen_bring_suit_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_bar_barmen_bring_suit_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_bar_barmen_bring_suit_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_bar_barmen_bring_suit_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_bar_barmen_bring_suit_4</text>
+                <action>predbannik_dialog.outfit_bring</action>
+                <give_info>bring_outfit</give_info>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>predbannik_bar_barmen_bring_suit_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>predbannik_bar_barmen_bring_suit_6</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="pred_bar_guard1_start">
+        <phrase_list>
+            <phrase id="0">
+                <text>pred_bar_guard1_start_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>pred_bar_guard1_start_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>pred_bar_guard1_start_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>pred_bar_guard1_start_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>pred_bar_guard1_start_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>pred_bar_guard1_start_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>pred_bar_guard1_start_6</text>
+                <next>61</next>
+                <next>62</next>
+            </phrase>
+            <phrase id="61">
+                <precondition>predbannik_dialog.has_2500_money</precondition>
+                <text>pred_bar_guard1_start_61</text>
+                <action>predbannik_dialog.give_borzii_money</action>
+                <give_info>bar_guard_nodoor</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="62">
+                <text>pred_bar_guard1_start_62</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="pred_bar_guard2_start">
+        <phrase_list>
+            <phrase id="0">
+                <text>pred_bar_guard2_start_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>pred_bar_guard2_start_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>pred_bar_guard2_start_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>pred_bar_guard2_start_3</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="predbannik_chuchelnik_start">
+        <dont_has_info>chuchelnik_first_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_chuchelnik_start_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_chuchelnik_start_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_chuchelnik_start_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_chuchelnik_start_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_chuchelnik_start_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>predbannik_chuchelnik_start_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>predbannik_chuchelnik_start_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>predbannik_chuchelnik_start_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>predbannik_chuchelnik_start_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>predbannik_chuchelnik_start_9</text>
+                <give_info>chuchelnik_first_talk</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="predbannik_chuchelnik_hand_start">
+        <dont_has_info>predbannik_chuchelnik_find_item</dont_has_info>
+        <has_info>chuchelnik_first_talk</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_chuchelnik_hand_start_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_chuchelnik_hand_start_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_chuchelnik_hand_start_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_chuchelnik_hand_start_3</text>
+                <next>31</next>
+                <next>32</next>
+            </phrase>
+            <phrase id="31">
+                <text>predbannik_chuchelnik_hand_start_31</text>
+                <give_info>map_jupiter_underground_location</give_info>
+                <give_info>predbannik_chuchelnik_find_item</give_info>
+            </phrase>
+            <phrase id="32">
+                <text>predbannik_chuchelnik_hand_start_32</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="predbannik_chuchelnik_hand_find">
+        <dont_has_info>predbannik_chuchelnik_bring_item</dont_has_info>
+        <has_info>predbannik_chuchelnik_take_item</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_chuchelnik_hand_find_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_chuchelnik_hand_find_1</text>
+                <give_info>predbannik_chuchelnik_bring_item</give_info>
+                <action>predbannik_dialog.chuchelnik_hand_bring</action>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_chuchelnik_hand_find_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_chuchelnik_hand_find_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_chuchelnik_hand_find_4</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="pred_tent_guard_start">
+        <dont_has_info>pred_tent_start</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>pred_tent_guard_start_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>pred_tent_guard_start_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>pred_tent_guard_start_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>pred_tent_guard_start_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>pred_tent_guard_start_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>pred_tent_guard_start_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>pred_tent_guard_start_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>pred_tent_guard_start_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>pred_tent_guard_start_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>pred_tent_guard_start_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>pred_tent_guard_start_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>pred_tent_guard_start_11</text>
+                <give_info>pred_tent_start</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="pred_tent_guard_start_2">
+        <has_info>pred_tent_start</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>pred_tent_guard_start_2_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>pred_tent_guard_start_2_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>pred_tent_guard_start_2_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>pred_tent_guard_start_2_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>pred_tent_guard_start_2_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>pred_tent_guard_start_2_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>pred_tent_guard_start_2_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>pred_tent_guard_start_2_7</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="predbannik_gikler_start">
+        <dont_has_info>pred_gikler_start</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_gikler_start_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_gikler_start_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_gikler_start_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_gikler_start_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_gikler_start_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>predbannik_gikler_start_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>predbannik_gikler_start_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>predbannik_gikler_start_7</text>
+                <give_info>pred_gikler_start</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="predbannik_gikler_start_2">
+        <has_info>gikler_bring_weapon</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_gikler_start_2_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_gikler_start_2_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_gikler_start_2_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_gikler_start_2_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_gikler_start_2_4</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="predbannik_gikler_quest">
+        <dont_has_info>pred_gikler_bring_weapon</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_gikler_quest_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_gikler_quest_1</text>
+                <next>11</next>
+                <next>12</next>
+            </phrase>
+            <phrase id="11">
+                <text>predbannik_gikler_quest_11</text>
+                <give_info>pred_gikler_bring_weapon</give_info>
+            </phrase>
+            <phrase id="12">
+                <text>predbannik_gikler_quest_12</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="predbannik_gikler_quest_complete">
+        <has_info>gikler_find_weapon</has_info>
+        <dont_has_info>gikler_bring_weapon</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_gikler_quest_complete_0</text>
+                <action>predbannik_dialog.gikler_weapon_bring</action>
+                <give_info>gikler_bring_weapon</give_info>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_gikler_quest_complete_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_gikler_quest_complete_2</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="predbannik_skupoi_start">
+        <dont_has_info>pred_code</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_skupoi_start_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_skupoi_start_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_skupoi_start_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_skupoi_start_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_skupoi_start_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>predbannik_skupoi_start_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>predbannik_skupoi_start_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>predbannik_skupoi_start_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>predbannik_skupoi_start_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>predbannik_skupoi_start_9</text>
+                <give_info>pred_code</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="predbannik_skupoi_find_weapon">
+        <has_info>find_weapon</has_info>
+        <dont_has_info>bring_weapon</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_skupoi_find_weapon_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_skupoi_find_weapon_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_skupoi_find_weapon_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_skupoi_find_weapon_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_skupoi_find_weapon_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>predbannik_skupoi_find_weapon_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>predbannik_skupoi_find_weapon_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>predbannik_skupoi_find_weapon_7</text>
+                <give_info>bring_weapon</give_info>
+                <action>predbannik_dialog.weapon_bring</action>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>predbannik_skupoi_find_weapon_8</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="ozerskii_first_dialog">
+        <has_info>german_fourth_talk</has_info>
+        <dont_has_info>ozerskii_first_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>ozerskii_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>ozerskii_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>ozerskii_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>ozerskii_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>ozerskii_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>ozerskii_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>ozerskii_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>ozerskii_first_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>ozerskii_first_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>ozerskii_first_dialog_9</text>
+                <give_info>ozerskii_first_talk</give_info>
+                <action>predbannik_dialog.spawn_docs_on_zaton</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="predbannik_bankir_dialog">
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_bankir_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_bankir_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_bankir_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_bankir_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_bankir_dialog_4</text>
+                <next>51</next>
+                <next>52</next>
+            </phrase>
+            <phrase id="51">
+                <precondition>predbannik_dialog.has_1100000_money</precondition>
+                <text>predbannik_bankir_dialog_51</text>
+                <action>predbannik_dialog.send_money</action>
+                <next>61</next>
+            </phrase>
+            <phrase id="61">
+                <text>predbannik_bankir_dialog_61</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>predbannik_bankir_dialog_7</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="52">
+                <text>predbannik_bankir_dialog_52</text>
+                <next>62</next>
+            </phrase>
+            <phrase id="62">
+                <text>predbannik_bankir_dialog_62</text>
+                <next>7</next>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="predbannik_bubna_dialog">
+        <dont_has_info>bubna_first_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_bubna_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_bubna_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_bubna_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_bubna_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_bubna_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>predbannik_bubna_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>predbannik_bubna_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>predbannik_bubna_dialog_7</text>
+                <action>xr_info.give_locations_info</action>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>predbannik_bubna_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>predbannik_bubna_dialog_9</text>
+                <give_info>bubna_first_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="predbannik_bul_dialog">
+        <dont_has_info>bul_first_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>predbannik_bul_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>predbannik_bul_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>predbannik_bul_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>predbannik_bul_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>predbannik_bul_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>predbannik_bul_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>predbannik_bul_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>predbannik_bul_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>predbannik_bul_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>predbannik_bul_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>predbannik_bul_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>predbannik_bul_dialog_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>predbannik_bul_dialog_12</text>
+                <next>13</next>
+            </phrase>
+            <phrase id="13">
+                <text>predbannik_bul_dialog_13</text>
+                <next>14</next>
+            </phrase>
+            <phrase id="14">
+                <text>predbannik_bul_dialog_14</text>
+                <next>141</next>
+                <next>142</next>
+            </phrase>
+            <phrase id="141">
+                <text>predbannik_bul_dialog_141</text>
+                <next>15</next>
+            </phrase>
+            <phrase id="142">
+                <text>predbannik_bul_dialog_142</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="15">
+                <text>predbannik_bul_dialog_15</text>
+                <give_info>bul_first_dialog</give_info>
+                <action>predbannik_dialog.give_2000</action>
+                <next>16</next>
+            </phrase>
+            <phrase id="16">
+                <text>predbannik_bul_dialog_16</text>
+                <next>17</next>
+            </phrase>
+            <phrase id="17">
+                <text>predbannik_bul_dialog_17</text>
+                <next>18</next>
+            </phrase>
+            <phrase id="18">
+                <text>predbannik_bul_dialog_18</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+</game_dialogs>

@@ -1,0 +1,87 @@
+;-------------------------------------------------------------------------------------------------
+;-- —талкеры в ангаре
+;-------------------------------------------------------------------------------------------------
+
+;патрулирующий
+[logic@gar_old_angar_walker1]
+active = walker1@gar_old_angar
+
+[walker1@gar_old_angar]
+path_walk  = patrol1_walk
+
+;часовые
+[logic@gar_old_angar_walker2]
+active = walker2@gar_old_angar
+
+[walker2@gar_old_angar]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[logic@gar_old_angar_walker3]
+active = walker3@gar_old_angar
+
+[walker3@gar_old_angar]
+path_walk  = post3_walk
+path_look  = post3_look
+
+[logic@gar_old_angar_walker4]
+active = walker4@gar_old_angar
+
+[walker4@gar_old_angar]
+path_walk  = post4_walk
+path_look  = post4_look
+
+[logic@gar_old_angar_walker5]
+active = walker5@gar_old_angar
+
+[walker5@gar_old_angar]
+path_walk  = post5_walk
+path_look  = post5_look
+
+;сид€щие у костра
+[logic@gar_old_angar_kamp1]
+active = kamp@gar_old_angar
+
+[logic@gar_old_angar_kamp2]
+active = kamp@gar_old_angar
+
+[kamp@gar_old_angar]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;-------------------------------------------------------------------------------------------------
+;-- —талкеры в туннеле
+;-------------------------------------------------------------------------------------------------
+
+;часовые
+[logic@gar_old_tunnel_walker1]
+active = walker1@gar_old_tunnel
+
+[walker1@gar_old_tunnel]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@gar_old_tunnel_walker2]
+active = walker2@gar_old_tunnel
+
+[walker2@gar_old_tunnel]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[logic@gar_old_tunnel_walker3]
+active = walker3@gar_old_tunnel
+
+[walker3@gar_old_tunnel]
+path_walk  = post3_walk
+path_look  = post3_look
+
+;сид€щие у костра
+[logic@gar_old_tunnel_kamp1]
+active = kamp@gar_old_tunnel
+
+[logic@gar_old_tunnel_kamp2]
+active = kamp@gar_old_tunnel
+
+[kamp@gar_old_tunnel]
+center_point  = camp_center
+path_walk = camp_center_task

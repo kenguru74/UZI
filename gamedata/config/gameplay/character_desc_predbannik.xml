@@ -1,0 +1,3144 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!-------------------------------------predbannik_bul----------------------------------------------------->
+	<specific_character id="predbannik_bul" no_random = "1">
+		<name>predbannik_bul_name</name>
+		<icon>ui_npc_u_bul</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>predbannik_bul_bio</bio>
+
+		<class>predbannik_bul</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>13</rank>
+		<reputation>-4</reputation>
+		<money min="2" max="50" infinitive="0"/>
+		<visual>actors\bul\bul</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------predbannik_bubna----------------------------------------------------->
+	<specific_character id="predbannik_bubna" no_random = "1">
+		<name>predbannik_bubna_name</name>
+		<icon>ui_npc_u_stalker_magomet</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>predbannik_bubna_bio</bio>
+
+		<class>predbannik_bubna</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>333</rank>
+		<reputation>-4</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		<visual>actors\bubna\bubna</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------- Банкир ------------------------>
+    <specific_character id="predbannik_bankir" no_random = "1">
+        <name>predbannik_bankir_name</name>
+        <icon>ui_inGame2_Sich</icon>
+        <bio>predbannik_bankir_bio</bio>
+
+        <class>predbannik_bankir</class>
+	<community>trader</community>
+
+        <rank>859</rank>
+        <reputation>145</reputation>
+	<money min="500000" max="510000" infinitive="1"/> 
+
+        <visual>actors\stalker_bandit\stalker_bandit_3_face_1</visual>
+        <snd_config>characters_voice\human_02\stalker\</snd_config>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+                        ammo_9x18_pmm \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>predbannik_bankir_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+<!-------------------------------------predbannik_skupoi----------------------------------------------------->
+	<specific_character id="predbannik_trader" no_random = "1">
+		<name>predbannik_trader_name</name>
+		<icon>ui_npc_u_trader</icon>
+		<bio>predbannik_trader_bio</bio>
+
+		<class>trader</class>
+		<community>trader</community>
+		<visual>actors\trader\trader</visual>
+				
+		<rank>330</rank>
+		<reputation>23</reputation>
+		<money min="1500000" max="1510000" infinitive="1"/> 
+		<supplies>
+			[spawn] \n
+			wpn_knife \n
+		</supplies>
+		
+		<start_dialog>predbannik_skupoi_start</start_dialog>
+		<actor_dialog>predbannik_skupoi_find_weapon</actor_dialog>
+		<actor_dialog>predbannik_trader_repair</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------predbannik_barman----------------------------------------------------->
+	<specific_character id="predbannik_barman" no_random = "1">
+		<name>predbannik_barmen_name</name>
+		<icon>ui_npc_u_bandit_3</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>predbannik_barmen_bio</bio>
+
+		<class>predbannik_barman</class>
+		<community>trader</community>
+		<money min="500000" max="510000" infinitive="1"></money>
+		
+		<rank>700</rank>
+		<reputation>50</reputation>
+		<visual>actors\stalker_bandit\stalker_bandit_3</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			
+		</supplies>
+					
+		<start_dialog>predbannik_bar_barmen_start</start_dialog>
+                <actor_dialog>predbannik_bar_barmen_find_suit</actor_dialog>
+                <actor_dialog>predbannik_bar_barmen_bring_suit</actor_dialog>
+                <actor_dialog>predbannik_bar_barmen_start_2</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------barman_guard1----------------------------------------------------->
+	<specific_character id="pred_stalker_guard1" team_default = "1">
+		<name>pred_bar_guard1_name</name>
+		<icon>ui_npc_u_stalker_bar_security</icon>
+		<map_icon x="0" y="0"></map_icon>
+		<bio>pred_bar_guard1_bio</bio>
+
+		<class>pred_stalker_guard1</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="200" max="600" infinitive="0"></money>
+
+		<rank>247</rank>
+		<reputation>0</reputation>
+ 
+		<visual>actors\neytral\stalker_bar_security</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 4 \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+
+		<start_dialog>pred_bar_guard1_start</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------barman_guard2----------------------------------------------------->
+	<specific_character id="pred_stalker_guard2" team_default = "1">
+		<name>pred_bar_guard2_name</name>
+		<icon>ui_npc_u_stalker_bar_security</icon>
+		<map_icon x="0" y="0"></map_icon>
+		<bio>pred_bar_guard2_bio</bio>
+
+		<class>pred_stalker_guard2</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="200" max="600" infinitive="0"></money>
+
+		<rank>247</rank>
+		<reputation>0</reputation>
+ 
+		<visual>actors\neytral\stalker_bar_security</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 4 \n
+		</supplies>
+
+#include "gameplay\character_criticals_4.xml"
+
+		<start_dialog>pred_bar_guard2_start</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------chuchelnik------------------------------------------------------>
+	<specific_character id="predbannik_chuchelnik" no_random = "1">
+		<name>predbannik_chuchelnik_name</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<map_icon x="1" y="4"></map_icon>
+		<bio>predbannik_chuchelnik_bio</bio>
+
+		<class>predbannik_chuchelnik</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>1000</rank>
+		<reputation>916</reputation>
+		<money min="1500000" max="1510000" infinitive="1"></money>
+		
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+			ammo_12x76_zhekan = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>predbannik_chuchelnik_start</start_dialog>
+		<actor_dialog>predbannik_chuchelnik_hand_start</actor_dialog>
+		<actor_dialog>predbannik_chuchelnik_hand_find</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------ozerskii------------------------------------------------------>
+	<specific_character id="predbannik_ozerskii" team_default = "1">
+		<name>predbannik_ozerskii_name</name>
+		<icon>ui_inGame2_Ozerskiy</icon>
+		<bio>predbannik_ozerskii_bio</bio>
+
+		<class>predbannik_ozerskii</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>1000</rank>
+		<reputation>916</reputation>
+		<money min="1000" max="1500" infinitive="0"></money>
+		
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_ucheniy\stalker_ucheniy_1_face_2</visual>
+		<supplies>
+			[spawn] \n
+
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>ozerskii_first_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------gikler------------------------------------------------------>
+	<specific_character id="predbannik_gikler" team_default = "1">
+		<name>predbannik_gikler_name</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>predbannik_gikler_bio</bio>
+
+		<class>predbannik_gikler</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>1000</rank>
+		<reputation>916</reputation>
+		<money min="1500000" max="1510000" infinitive="1"></money>
+		
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>predbannik_gikler_start</start_dialog>
+		<actor_dialog>predbannik_gikler_start_2</actor_dialog>
+		<actor_dialog>pred_gikler_repair</actor_dialog>
+		<actor_dialog>predbannik_gikler_quest</actor_dialog>
+		<actor_dialog>predbannik_gikler_quest_complete</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------soldier_commander----------------------------------------------------->		
+	<specific_character id="pred_soldier_commander" team_default = "1">
+		<name>pred_soldier_commander_name</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_commander_bio</bio>
+
+		<class>pred_soldier_commander</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>764</rank>
+		<reputation>-15</reputation>
+		
+		<snd_config>characters_voice\human_02\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_beret_3</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_ak74m \n
+                        ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_5.xml"
+										
+		<start_dialog>pred_blockpost_soldiers_start</start_dialog>
+		<start_dialog>dm_hello_dialog</start_dialog>
+		<actor_dialog>pred_blockpost_soldiers_dialog</actor_dialog>
+		<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------soldier_boss----------------------------------------------------->	
+	<specific_character id="pred_soldier_boss_default1" team_default = "1">
+		<name>pred_soldier_boss_name</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_boss</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>764</rank>
+		<reputation>-15</reputation>
+		
+		<snd_config>characters_voice\human_02\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_beret_3</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_ak74m = 1, scope \n
+                        ammo_5.45x39_ap = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_sniper----------------------------------------------------->	
+	<specific_character id="pred_soldier_sniper_default1" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_sniper</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_svd_sk4 \n
+			ammo_7.62x54_7h14 = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_sniper----------------------------------------------------->	
+	<specific_character id="pred_soldier_sniper_default2" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_sniper</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_svd_sk4 \n
+			ammo_7.62x54_7h14 = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_sniper----------------------------------------------------->	
+	<specific_character id="pred_soldier_sniper_default3" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_sniper</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_svd_sk4 \n
+			ammo_7.62x54_7h14 = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_sniper----------------------------------------------------->	
+	<specific_character id="pred_soldier_sniper_default4" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_sniper</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_svd_sk4 \n
+			ammo_7.62x54_7h14 = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_no_weapon----------------------------------------------------->	
+	<specific_character id="pred_soldier_no_weapon_default1" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_no_weapon</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_no_weapon----------------------------------------------------->	
+	<specific_character id="pred_soldier_no_weapon_default2" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_no_weapon</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_no_weapon----------------------------------------------------->	
+	<specific_character id="pred_soldier_no_weapon_default3" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_no_weapon</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_no_weapon----------------------------------------------------->	
+	<specific_character id="pred_soldier_no_weapon_default4" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_no_weapon</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default1" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->
+	<specific_character id="pred_soldier_regular_default2" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>476</rank>
+		<reputation>9</reputation>
+		
+		<snd_config>characters_voice\human_02\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->
+	<specific_character id="pred_soldier_regular_default3" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>207</rank>
+		<reputation>10</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>		
+		
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->
+	<specific_character id="pred_soldier_regular_default4" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>263</rank>
+		<reputation>-18</reputation>
+		
+		<snd_config>characters_voice\human_02\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>		
+		
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"	
+		<start_dialog>dm_hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->
+	<specific_character id="pred_soldier_regular_default5" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>481</rank>
+		<reputation>12</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>		
+		
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>dm_hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default6" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default7" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default8" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default9" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default10" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default11" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default12" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default13" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default14" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default15" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default16" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default17" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default18" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------soldier_regular----------------------------------------------------->	
+	<specific_character id="pred_soldier_regular_default19" team_default = "1">
+		<name>GENERATE_NAME_private</name>
+		<icon>ui_npc_u_soldier_obichniy</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_soldier_regular</class>
+		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
+		
+		<rank>223</rank>
+		<reputation>6</reputation>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+			
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_1</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_2</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>175</rank>
+		<reputation>8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<visual>actors\novice\green_stalker_2</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+		
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+                        ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+					
+#include "gameplay\character_criticals_3.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_4</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_4</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_bizon \n
+                        ammo_9x18_pmm = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_5</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>224</rank>
+		<reputation>18</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_5</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 4 \n
+			ammo_12x76_zhekan = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_6</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>268</rank>
+		<reputation>-10</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_6</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_7</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>268</rank>
+		<reputation>-10</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+			ammo_12x70_buck = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_8</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>316</rank>
+		<reputation>-12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sks_s \n
+                        ammo_7.62x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_8</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>225</rank>
+		<reputation>11</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_9</visual>
+		<supplies>
+			[spawn] \n
+                         wpn_bizon \n
+                        ammo_9x18_pmm = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_10</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>289</rank>
+		<reputation>44</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_10</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default11" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_11</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>289</rank>
+		<reputation>4</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_11</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default12" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_antigas</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>308</rank>
+		<reputation>-12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_antigas</visual>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 10 \n
+                        wpn_ak74u \n
+                        ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default13" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_antigas</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>456</rank>
+		<reputation>12</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_antigas</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default14" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_antigas</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>201</rank>
+		<reputation>18</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_antigas</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_bizon \n
+                        ammo_9x18_fmj = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default15" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_antigas</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>189</rank>
+		<reputation>10</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_antigas</visual>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 10 \n
+                        wpn_ak74u \n
+                        ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default16" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_11</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>333</rank>
+		<reputation>-4</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_11</visual>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 10 \n
+                        wpn_ak74u \n
+                        ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default17" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_antigas</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>765</rank>
+		<reputation>28</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_antigas</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default18" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_11</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>189</rank>
+		<reputation>6</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_11</visual>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+                        wpn_ak74u \n
+                        ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default19" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_11</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>273</rank>
+		<reputation>18</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_11</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default20" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_11</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>411</rank>
+		<reputation>36</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_11</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default21" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>226</rank>
+		<reputation>14</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default22" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>226</rank>
+		<reputation>14</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_fmj = 10 \n
+                        wpn_ak74u \n
+                        ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default23" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>226</rank>
+		<reputation>14</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_bizon \n
+                        ammo_9x18_pmm = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default24" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>226</rank>
+		<reputation>14</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default25" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>226</rank>
+		<reputation>14</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default26" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default27" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default28" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default29" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default30" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_bizon \n
+                        ammo_9x18_pmm = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default31" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_bizon \n
+                        ammo_9x18_pmm = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default32" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_fmj = 10 \n
+                        wpn_sks_s \n
+                        ammo_7.62x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default33" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default34" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                       wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_novice------------------------------------------------------>
+	<specific_character id="pred_stalker_novice_default35" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<bio>pred_stalker_novice_bio</bio>
+
+		<class>pred_stalker_novice</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+					
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced----------------------------------------------------->
+	<specific_character id="pred_stalker_experienced_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>pred_stalker_experienced_bio</bio>
+
+		<class>pred_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>800</rank>
+		<reputation>33</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="pred_stalker_experienced_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>pred_stalker_experienced_bio</bio>
+
+		<class>pred_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m = 1, launcher \n
+                        ammo_vog-25 = 10 \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="pred_stalker_experienced_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_5</icon>
+		<bio>pred_stalker_experienced_bio</bio>
+
+		<class>pred_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_7</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="pred_stalker_experienced_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_8</icon>
+		<bio>pred_stalker_experienced_bio</bio>
+
+		<class>pred_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_8</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="pred_stalker_experienced_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>pred_stalker_experienced_bio</bio>
+
+		<class>pred_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sks_cust \n
+                        ammo_7.62x39_fmj = 1 \n 
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="pred_stalker_experienced_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>pred_stalker_experienced_bio</bio>
+
+		<class>pred_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_experienced------------------------------------------------------>
+	<specific_character id="pred_stalker_experienced_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_1</icon>
+		<bio>pred_stalker_experienced_bio</bio>
+
+		<class>pred_stalker_experienced</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------bar_visitors------------------------------------------------------>
+	<specific_character id="pred_bar_visitors_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_14</icon>
+		<map_icon x="0" y="0"></map_icon>
+		<bio>Регулярно околачивается в баре, являясь постоянным посетителем. В Зону ходит редко, перебивается случайно подвернувшейся работой.</bio>
+
+		<class>pred_bar_visitors</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="200" max="600" infinitive="0"></money>
+		
+		<rank>487</rank>
+		<reputation>0</reputation>
+ 
+		<visual>actors\neytral\stalker_neytral_balon_14</visual>
+		<snd_config>characters_voice\human_01\newbie\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+			ammo_12x76_zhekan = 1 \n
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+		
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------bar_visitors------------------------------------------------------>
+	<specific_character id="pred_bar_visitors_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_11</icon>
+		<map_icon x="0" y="0"></map_icon>
+		<bio>Регулярно околачивается в баре, являясь постоянным посетителем. В Зону ходит редко, перебивается случайно подвернувшейся работой.</bio>
+
+		<class>pred_bar_visitors</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="200" max="600" infinitive="0"></money>
+		
+		<rank>358</rank>
+		<reputation>0</reputation>
+ 
+		<visual>actors\neytral\stalker_neytral_balon_11</visual>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+                        ammo_5.45x39_fmj = 1 \n
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+		
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------bar_visitors------------------------------------------------------>
+	<specific_character id="pred_bar_visitors_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<map_icon x="0" y="0"></map_icon>
+		<bio>Регулярно околачивается в баре, являясь постоянным посетителем. В Зону ходит редко, перебивается случайно подвернувшейся работой.</bio>
+
+		<class>pred_bar_visitors</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="200" max="600" infinitive="0"></money>
+		
+		<rank>75</rank>
+		<reputation>0</reputation>
+ 
+		<visual>actors\novice\green_stalker_3</visual>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+                        wpn_mp5 \n
+			ammo_9x19_fmj = 1 \n
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+		
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------bar_visitors------------------------------------------------------>
+	<specific_character id="pred_bar_visitors_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_12</icon>
+		<map_icon x="0" y="0"></map_icon>
+		<bio>Регулярно околачивается в баре, являясь постоянным посетителем. В Зону ходит редко, перебивается случайно подвернувшейся работой.</bio>
+
+		<class>pred_bar_visitors</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="200" max="600" infinitive="0"></money>
+		
+		<rank>412</rank>
+		<reputation>0</reputation>
+ 
+		<visual>actors\neytral\stalker_neytral_balon_12</visual>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+		
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------bar_visitors------------------------------------------------------>
+	<specific_character id="pred_bar_visitors_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_13</icon>
+		<map_icon x="0" y="0"></map_icon>
+		<bio>Регулярно околачивается в баре, являясь постоянным посетителем. В Зону ходит редко, перебивается случайно подвернувшейся работой.</bio>
+
+		<class>pred_bar_visitors</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="200" max="600" infinitive="0"></money>
+		
+		<rank>309</rank>
+		<reputation>0</reputation>
+ 
+		<visual>actors\neytral\stalker_neytral_balon_13</visual>
+		<crouch_type>-1</crouch_type>
+
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+                        ammo_12x70_buck = 10 \n
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+		
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_ecolog------------------------------------------------------>
+	<specific_character id="pred_stalker_ecolog_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ecolog</icon>
+		<bio>pred_stalker_ecolog_bio</bio>
+
+		<class>pred_stalker_ecolog</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\ecolog\stalker_ecolog</visual>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_fmj = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_ecolog------------------------------------------------------>
+	<specific_character id="pred_stalker_ecolog_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ecolog</icon>
+		<bio>pred_stalker_ecolog_bio</bio>
+
+		<class>pred_stalker_ecolog</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\ecolog\stalker_ecolog</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_fmj \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_ecolog------------------------------------------------------>
+	<specific_character id="pred_stalker_ecolog_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ecolog</icon>
+		<bio>pred_stalker_ecolog_bio</bio>
+
+		<class>pred_stalker_ecolog</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\ecolog\stalker_ecolog</visual>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_fmj \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_ecolog------------------------------------------------------>
+	<specific_character id="pred_stalker_ecolog_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ecolog</icon>
+		<bio>pred_stalker_ecolog_bio</bio>
+
+		<class>pred_stalker_ecolog</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\ecolog\stalker_ecolog</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_ecolog------------------------------------------------------>
+	<specific_character id="pred_stalker_ecolog_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ecolog</icon>
+		<bio>pred_stalker_ecolog_bio</bio>
+
+		<class>pred_stalker_ecolog</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\ecolog\stalker_ecolog</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 10 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_ecolog_military------------------------------------------------------>
+	<specific_character id="pred_stalker_ecolog_military_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ecolog_military</icon>
+		<bio>pred_stalker_ecolog_bio</bio>
+
+		<class>pred_stalker_ecolog_military</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\ecolog\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\ecolog\stalker_ecolog_military</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+                        ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers------------------------------------------------------>
+	<specific_character id="pred_stalker_formers_default10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_stalker_formers</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_obichniy</visual>		
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_fmj = 10 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_formers_boss------------------------------------------------------>
+	<specific_character id="pred_formers_boss_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_soldier_beret_3</icon>
+		<bio>pred_soldier_regular_bio</bio>
+
+		<class>pred_formers_boss</class>
+		<community>formers</community> <terrain_sect>stalker_formers_terrain</terrain_sect>
+		
+		<rank>127</rank>
+		<reputation>-8</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\soldier\soldier_beret_3</visual>			
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_fmj = 10 \n
+			wpn_ak74m = 1, launcher \n
+                        ammo_vog-25 = 3 \n
+			ammo_5.45x39_fmj = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+</xml>

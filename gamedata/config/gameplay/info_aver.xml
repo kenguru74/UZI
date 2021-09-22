@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+    <info_portion id="first_dialog_aver">
+          <task>aver_lesnichii_help</task>
+    </info_portion>
+    <info_portion id="second_dialog_aver"></info_portion>
+    <info_portion id="aver_controller_corpse"></info_portion>
+    <info_portion id="remove_mapspot_aver"></info_portion>
+
+</game_information_portions>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+        <info_portion id="first_dialog_kurochkin"></info_portion>
+        <info_portion id="job_dialog_kurochkin">
+                <task>marsh_komendant_quest</task>
+        </info_portion>
+        <info_portion id="find_murza"></info_portion>
+        <info_portion id="vorot_death"></info_portion>
+        <info_portion id="mozol_death"></info_portion>
+        <info_portion id="murza_death"></info_portion>
+        <info_portion id="shilo_death"></info_portion>
+        <info_portion id="yashka_death"></info_portion>
+        <info_portion id="begin_dialog_murza"></info_portion>
+        <info_portion id="first_murza_dialog"></info_portion>
+        <info_portion id="mar_bloodsucker_online"></info_portion>
+        <info_portion id="marsh_bloodsucker_death"></info_portion>
+        <info_portion id="second_murza_dialog"></info_portion>
+        <info_portion id="save_murza_group"></info_portion>
+        <info_portion id="job_dialog_kurochkin2"></info_portion>
+        <info_portion id="first_dialog_kalancha"></info_portion>
+        <info_portion id="second_dialog_kalancha">
+                <task>marsh_kalancha_quest</task>
+        </info_portion>
+        <info_portion id="third_dialog_kalancha"></info_portion>
+        <info_portion id="red_sprut_have"></info_portion>
+		
+</game_information_portions>

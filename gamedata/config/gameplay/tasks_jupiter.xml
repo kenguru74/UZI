@@ -1,0 +1,299 @@
+<game_task id="work_on_german">
+   <title>Работа на Германа</title>
+   <objective>
+      <text>Раскрыть тайну лаборатории</text>
+      <icon>ui_iconsTotal_yan_scientist_job</icon>
+      <infoportion_complete>known_secret_labs</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти документацию в секретной лаборатории</text>
+      <function_complete>yantar_old_dialog.disk_code_have</function_complete>
+      <infoportion_set_complete>german_find_disk</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести документацию Герману</text>
+      <infoportion_complete>german_bring_docs_labs</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Сходить к Азоту</text>
+      <infoportion_complete>come_to_azot</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти запчасти для Азота</text>
+      <function_complete>jupiter_dialog.radioparts_have</function_complete>
+      <infoportion_set_complete>azot_find_parts</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести запчасти Азоту</text>
+      <infoportion_complete>bring_azot_decoder</infoportion_complete>
+      <infoportion_set_complete>german_find_decoder</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Отнести дешифратор Герману</text>
+      <infoportion_complete>german_bring_decoder</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти документацию в лаборатории Х-8</text>
+      <function_complete>labx8_dialog.books_research_have</function_complete>
+      <infoportion_set_complete>german_find_docs_x8</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести документацию Герману</text>
+      <infoportion_complete>german_bring_docs_labx8</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Раскрыть тайну лаборатории</text>
+      <infoportion_complete>known_secret_labs</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="work_on_komandor">
+   <title>Тайна экспериментального цеха</title>
+   <objective>
+      <text>Узнать правду о секретном цехе</text>
+      <icon>ui_iconsTotal_yan_scientist_job</icon>
+      <infoportion_complete>known_secret_zech</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Озёрским</text>
+      <infoportion_complete>ozerskii_first_talk</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти документацию в секретном цехе</text>
+      <function_complete>zaton_dialog.blocknotes_have</function_complete>
+      <infoportion_set_complete>german_find_docs_zech</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести документацию Герману</text>
+      <infoportion_complete>german_take_docszech</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Взять документы для Командора</text>
+      <infoportion_complete>german_fifth_talk</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Командором</text>
+      <infoportion_complete>komandor_first_talk</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти прототип в Катакомбах</text>
+      <function_complete>cs_agroprom_underground_dialog.wpn_gaussu_have</function_complete>
+      <infoportion_set_complete>komandor_find_prototip</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести прототип Командору</text>
+      <infoportion_complete>known_secret_zech</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="work_on_topol">
+   <title>Узнать о судьбе Усача</title>
+   <objective>
+      <text>Сообщить о судьбе Усача</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>second_dialog_topol</infoportion_complete>
+      <infoportion_fail>usach_death</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Обследовать район падения беспилотника</text>
+      <infoportion_complete>dialog_usach</infoportion_complete>
+      <infoportion_fail>usach_death</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Включить аварийный радиомаяк</text>
+      <infoportion_complete>send_message_german</infoportion_complete>
+      <infoportion_fail>usach_death</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Получить сообщение Германа</text>
+      <infoportion_complete>take_message_german</infoportion_complete>
+      <infoportion_fail>usach_death</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Дождаться прилёта вертушки</text>
+      <infoportion_complete>heli_move</infoportion_complete>
+      <infoportion_fail>usach_death</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Усачом</text>
+      <infoportion_complete>dialog_usach2</infoportion_complete>
+      <infoportion_fail>usach_death</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Поискать информацию у учёного</text>
+      <function_complete>jupiter_dialog.flash_ecolog_have</function_complete>
+      <infoportion_set_complete>give_ecolog_info</infoportion_set_complete>
+      <infoportion_fail>usach_death</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Найти и обыскать тайники в Госпитале</text>
+      <function_complete>jupiter_dialog.artefacts_have</function_complete>
+      <infoportion_set_complete>give_german_arts</infoportion_set_complete>
+      <infoportion_fail>usach_death</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Вернуться к Герману</text>
+      <map_location_type hint="Герман">blue_location</map_location_type>
+      <object_story_id>jupiter_german</object_story_id>
+      <infoportion_complete>dialog_quest_german</infoportion_complete>
+      <infoportion_fail>usach_death</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Сообщить о судьбе Усача</text>
+      <map_location_type hint="Тополь">blue_location</map_location_type>
+      <object_story_id>jupiter_topol</object_story_id>
+      <infoportion_complete>second_dialog_topol</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="oasis_lozman">
+   <title>Откликуться на просьбу Лоцмана</title>
+   <objective>
+      <text>Поговорить с Лоцманом</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>talk_with_lozman</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Пробраться в Оазис</text>
+      <infoportion_complete>come_oasis</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти пропавшего сталкера</text>
+      <infoportion_complete>jupiter_stalker_grek_54828</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Исследовать Копачи в поисках хреновины</text>
+      <function_complete>jupiter_dialog.have_hren</function_complete>
+      <infoportion_set_complete>have_black_box</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Лоцманом</text>
+      <map_location_type hint="Лоцман">blue_location</map_location_type>
+      <object_story_id>jupiter_lozman</object_story_id>
+      <infoportion_complete>talk_with_lozman</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="secret_black_box">
+   <title>Тайна "чёрного ящика"</title>
+   <objective>
+      <text>Получить информацию у Германа</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>take_black_box_info_german</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Обратиться к Азоту</text>
+      <infoportion_complete>black_box_dialog_azot_first</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти аккумуляторы для Азота</text>
+      <function_complete>jupiter_dialog.have_accums</function_complete>
+      <infoportion_set_complete>have_accumulators</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести аккумуляторы Азоту</text>
+      <infoportion_complete>black_box_dialog_azot_second</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Получить сообщение от Азота</text>
+      <infoportion_complete>take_message_azot</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Вернуться к Азоту</text>
+      <infoportion_complete>black_box_dialog_azot_third</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Обратиться к Козлову</text>
+      <infoportion_complete>kozlov_dialog</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Дождаться сообщения от Германа</text>
+      <infoportion_complete>take_kozlov_message</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Получить информацию у Германа</text>
+      <map_location_type hint="Герман">blue_location</map_location_type>
+      <object_story_id>jupiter_german</object_story_id>
+      <infoportion_complete>take_black_box_info_german</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="secret_conteiners">
+   <title>Секретные контейнеры</title>
+   <objective>
+      <text>Вернуться к Герману</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>german_black_box_fourth_dialog</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти научные контейнеры</text>
+      <function_complete>jupiter_dialog.have_conteins</function_complete>
+      <infoportion_set_complete>have_containers</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести контейнеры Герману</text>
+      <infoportion_complete>german_black_box_second_dialog</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Обыскать вертушку</text>
+      <function_complete>jupiter_dialog.have_bumagi</function_complete>
+      <infoportion_set_complete>have_flight_map</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Отдать бумаги Герману</text>
+      <infoportion_complete>german_black_box_third_dialog</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Потолковать с Сахаровым</text>
+      <infoportion_complete>sahar_corpse</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Вернуться к Герману</text>
+      <map_location_type hint="Герман">blue_location</map_location_type>
+      <object_story_id>jupiter_german</object_story_id>
+      <infoportion_complete>german_black_box_fourth_dialog</infoportion_complete>
+   </objective>
+</game_task>

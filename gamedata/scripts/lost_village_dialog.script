@@ -1,0 +1,13 @@
+function show_zver_spot()
+ local obj = alife():object("zaton_zver_area")
+ if obj and has_alife_info("first_dialog_lost_village") then
+  level.map_add_object_spot_ser(obj.id, "eliminate_lager_location", "Место поиска Зверя")
+ end
+end
+
+function zveroboi_friend(first_speaker, second_speaker)
+  dialogs.relocate_item_section(first_speaker, "af_spiral", "in")
+  treasure_manager.get_treasure_manager():give_treasure("agr_treasure_1")
+  second_speaker:set_relation(game_object.friend, first_speaker)
+  db.actor:set_character_rank(db.actor:character_rank() + 210)
+end

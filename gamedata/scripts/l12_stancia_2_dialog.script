@@ -1,0 +1,14 @@
+function doctor_message()
+ if level.name()=="l12_stancia_2" and has_alife_info("freeplay") and (not has_alife_info("doctor_first_message")) then
+   local text = "Сообщение от Доктора:".."\\nЗдравствуй, Стрелок! Загляни, когда сможешь. Ищи меня на Болотах. Надо обсудить кое-что, подробности при встрече. Удачи, сынок!"
+   news_manager.send_tip(db.actor, text, nil, nil, 30000)
+   db.actor:give_info_portion("doctor_first_message")
+ end
+local sim = alife()
+   if sim then
+    obj = sim:story_object(54508)
+    if obj then
+    level.map_add_object_spot_ser(obj.id,"level_changer","Доктор")
+    end
+  end
+end

@@ -1,0 +1,2382 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj = 1 \n
+			wpn_m16a3_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_walther \n
+			ammo_9x19_fmj \n
+			wpn_m16a3_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_m4a1_sk1 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+                        grenade_rgd5 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_aug_a2_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_aug_a1_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_shrike \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+grenade_rgd5 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 4 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+		wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 3 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default11" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+		wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 3 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default12" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+		        wpn_m4a1_sk1 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default13" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 3 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default14" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default15" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_gsh18_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default16" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_gsh18_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 = 1, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default17" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_shrike \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default18" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default19" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default20" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default21" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_svd_sk4 \n
+			ammo_7.62x54_ap = 2 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default22" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_sr25_mk11_mod0_sk1 \n
+			ammo_7.62x51_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default23" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_svu \n
+			ammo_7.62x54_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default24" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_svu \n
+			ammo_7.62x54_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default25" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_svu \n
+			ammo_7.62x54_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default26" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default27" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default28" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_svd_sk4 \n
+			ammo_7.62x54_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default29" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_svd_sk4 \n
+			ammo_7.62x54_ap = 2 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_radiowave_monolit_regular----------------------->
+	<specific_character id="limansk_radiowave_monolit_regular_default30" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_radiowave_monolit_bio</bio>
+
+		<class>limansk_radiowave_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_svd_sk4 \n
+			ammo_7.62x54_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_svu \n
+			ammo_7.62x54_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_m249 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 4 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+                        ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+                        ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 = 1, grenade_launcher \n
+                        ammo_m209 = 5 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+                        ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+                        ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 = 1, silencer \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+                        ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 = 1, silencer \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+                        ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 = 1, silencer \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+                        ammo_9x19_pbp = 1 \n
+			wpn_pkm \n
+                         ammo_7.62x54r = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_hk416_sk1 = 1, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default11" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_hk416_sk1 = 1, silencer, grenade_launcher \n
+                        ammo_m209 = 4 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default12" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_hk416_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default13" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_pkm \n
+                         ammo_7.62x54r = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default14" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_pkm \n
+                         ammo_7.62x54r = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default15" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_pkm \n
+                         ammo_7.62x54r = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default16" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_pkm \n
+                         ammo_7.62x54r = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default17" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_m4a1_sk1 = 1, grenade_launcher \n
+                        ammo_m209 = 3 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default18" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default19" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default20" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_pkm \n
+                        ammo_7.62x54r = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default21" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_pkm \n
+                        ammo_7.62x54r = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default22" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m16a3_sk1 = 1, grenade_launcher \n
+                        ammo_m209 = 3 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default23" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m16a3_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default24" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_shrike \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default25" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m16a3_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default26" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default27" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_pkm \n
+                        ammo_7.62x54r = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default28" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_regular----------------------->
+	<specific_character id="limansk_building_monolit_regular_default29" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_bio</bio>
+
+		<class>limansk_building_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_shrike \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_building_monolit_commander----------------------->
+	<specific_character id="limansk_building_monolit_commander" team_default = "1">
+		<name>limansk_building_monolit_commander_name</name>
+		<icon>ui_npc_u_stalker_mo_exo</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>limansk_building_monolit_commander_bio</bio>
+
+		<class>limansk_building_monolit_commander</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="2000" max="5000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_exo</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+		wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_4_rozh3</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_4_rozh3</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_ak74m = 1, launcher \n
+                        ammo_vog-25 = 3 \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_4_ochki</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_4_ochki</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak103 = 1, scope \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood11</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_hood11</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_pkm \n
+                         ammo_7.62x54r = 5 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_92</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_hood_92</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_akm_sk2 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_93</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_hood_93</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_ak103 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_semecky</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\semecky</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_pkm \n
+                         ammo_7.62x54r = 5 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_red</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_red</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_pb = 1, silencer \n
+                        ammo_9x18_fmj = 10 \n
+			wpn_ak74m = 1, launcher \n
+                        ammo_vog-25 = 3 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_strasko</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_strasko</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_pb = 1, silencer \n
+                        ammo_9x18_fmj = 10 \n
+			wpn_ak104 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_iuda</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\iuda</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_akms_sk1 \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_jagger</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\jagger</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_colt1911 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_ak103 = 1, launcher \n
+                        ammo_vog-25 = 3 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default11" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_irokez</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\irokez</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default12" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_kalinin_exoskeleton</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_kalinin_exoskeleton</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_stalker----------------------->
+	<specific_character id="limansk_baza_stalker_default13" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_8</icon>
+		<bio>limansk_baza_stalker_bio</bio>
+
+		<class>limansk_baza_stalker</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_balon_8</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_colt1911 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_ak103 = 1, launcher \n
+                        ammo_vog-25 = 3 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------limansk_baza_technik----------------------->
+	<specific_character id="limansk_baza_technik" team_default = "1">
+		<name>limansk_baza_technik_name</name>
+		<icon>ui_npc_u_stalker_neytral_headmesh</icon>
+		<bio>limansk_baza_technik_bio</bio>
+
+		<class>limansk_baza_technik</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="1500000" max="1510000" infinitive="1"></money>
+
+		<visual>actors\neytral\stalker_neytral_headmesh</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak74m \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+		</supplies>
+		
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>limansk_baza_technik_repair</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+</xml>

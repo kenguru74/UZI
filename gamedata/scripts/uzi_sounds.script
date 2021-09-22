@@ -1,0 +1,43 @@
+local snd
+
+function snd_soft()
+	if not (snd and snd:playing()) then
+		snd = xr_sound.get_safe_sound_object([[item_sounds\inv_vodka]])
+		snd:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+
+function snd_sok()
+	if not (snd and snd:playing()) then
+		snd = xr_sound.get_safe_sound_object([[item_sounds\inv_sokdrink]])
+		snd:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+
+function snd_vodka()
+	if not (snd and snd:playing()) then
+		snd = xr_sound.get_safe_sound_object([[item_sounds\inv_vodka]])
+		snd:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+
+function snd_nuts()
+	if not (snd and snd:playing()) then
+		snd = xr_sound.get_safe_sound_object([[item_sounds\inv_food]])
+		snd:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+
+function snd_conserva()
+	if not (snd and snd:playing()) then
+		snd = xr_sound.get_safe_sound_object([[item_sounds\inv_food_conserva]])
+		snd:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
+
+function snd_food()
+	if not (snd and snd:playing()) then
+		snd = xr_sound.get_safe_sound_object([[item_sounds\inv_food1]])
+		snd:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end

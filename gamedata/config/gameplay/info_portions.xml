@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+  <info_portion id="storyline_actor_start">
+<!--    <task>storyline_eliminate_gunslinger</task> -->
+  </info_portion>
+
+  <info_portion id="global_dialogs">
+    <dialog>actor_break_dialog</dialog>
+<!--    <dialog>actor_help_wounded</dialog>   -->
+  </info_portion>
+
+
+  <info_portion id="terrain_test">
+  </info_portion>
+
+
+  <!-- special info portion that sends to actor when it
+    use in-game UI (PDA, Inventory, etc)-->
+    
+    <info_portion id="ui_pda">
+		<disable>ui_pda_hide</disable>
+    </info_portion>
+    <info_portion id="ui_pda_hide">
+		<disable>ui_pda</disable>
+    </info_portion>
+          
+   <info_portion id="ui_pda_contacts"></info_portion>
+   <info_portion id="ui_pda_contacts_hide"></info_portion>
+   
+   <info_portion id="ui_pda_map_local"></info_portion>
+   <info_portion id="ui_pda_map_global"></info_portion>
+   
+   <info_portion id="ui_pda_news"></info_portion>
+   <info_portion id="ui_pda_news_hide"></info_portion>
+   
+   <info_portion id="ui_pda_jobs_failed"></info_portion>
+   <info_portion id="ui_pda_jobs_accomplished"></info_portion>
+   <info_portion id="ui_pda_jobs_current"></info_portion>
+   
+    <info_portion id="ui_pda_jobs">
+		<disable>ui_pda_jobs_hide</disable>
+    </info_portion>
+    <info_portion id="ui_pda_jobs_hide">
+		<disable>ui_pda_jobs</disable>
+    </info_portion>
+
+   
+   <info_portion id="ui_pda_contracts"></info_portion>
+   
+   <info_portion id="ui_pda_diary"></info_portion>
+   <info_portion id="ui_pda_diary_hide"></info_portion>
+      
+   
+   <info_portion id="ui_pda_encyclopedia"></info_portion>
+   <info_portion id="ui_pda_encyclopedia_hide"></info_portion>
+   
+   <info_portion id="ui_pda_actor_info"></info_portion>
+   <info_portion id="ui_pda_ranking"></info_portion>
+   <info_portion id="ui_pda_events"></info_portion>
+   
+   <info_portion id="ui_inventory">
+		<disable>ui_inventory_hide</disable>
+   </info_portion>
+   <info_portion id="ui_inventory_hide">
+		<disable>ui_inventory</disable>
+   </info_portion>
+
+    <info_portion id="ui_talk">
+		<disable>ui_talk_hide</disable>
+    </info_portion>
+    <info_portion id="ui_talk_hide">
+		<disable>ui_talk</disable>
+    </info_portion>
+
+    <info_portion id="ui_trade">
+		<disable>ui_trade_hide</disable>
+    </info_portion>
+    <info_portion id="ui_trade_hide">
+		<disable>ui_trade</disable>
+    </info_portion>
+
+    <info_portion id="ui_car_body">
+		<disable>ui_car_body_hide</disable>
+    </info_portion>
+    <info_portion id="ui_car_body_hide">
+		<disable>ui_car_body</disable>
+    </info_portion>
+
+
+   <info_portion id="tutorial_part_15_hide_weapon"></info_portion>
+
+
+	<info_portion id="autojump_enabled"></info_portion>
+
+	<!--  infoportions_by_Kostya + teleports_by_Mora_&_kenguru74  -->
+	<info_portion id="controler_spawn"></info_portion>
+	<info_portion id="polter_spawn"></info_portion>
+	<info_portion id="polter2_spawn"></info_portion>
+	<info_portion id="peshera_code_door_unlocked"></info_portion>
+	<info_portion id="peshera_code_door_unlocked2"></info_portion>
+	<info_portion id="peshera_code_door_unlocked3"></info_portion>
+	<info_portion id="peshera_code_door_unlocked4"></info_portion>
+	<info_portion id="spawn_teleport_marsh"></info_portion>
+	<info_portion id="spawn_teleport_baza"></info_portion>
+	<info_portion id="krovosos_spawn"></info_portion>
+	<info_portion id="krovosos_spawn2"></info_portion>
+	<info_portion id="generators_code_door_unlocked"></info_portion>
+	<info_portion id="red_forest_open"></info_portion>
+	<info_portion id="red_forest_open2"></info_portion>
+	<info_portion id="red_polter_spawn"></info_portion>
+	<info_portion id="red_krovosos_spawn"></info_portion>
+
+	<info_portion id="new_game"></info_portion>
+
+	<info_portion id="spawn_teleport_pripyat_to_river"></info_portion>
+	<info_portion id="spawn_teleport_river_to_pripyat"></info_portion>
+
+        <info_portion id="pripyat_stories">
+                <article>pripyat_stories_art</article>
+        </info_portion>
+        <info_portion id="pripyat_stories2">
+                <article>pripyat_stories2_art</article>
+        </info_portion>
+
+	<info_portion id="have_money"></info_portion>
+
+	<info_portion id="find_deagle"></info_portion>
+
+	<info_portion id="desertir_out"></info_portion>
+
+	<info_portion id="escape"></info_portion>
+	<info_portion id="garbage"></info_portion>
+	<info_portion id="agroprom"></info_portion>
+	<info_portion id="agroprom_u"></info_portion>
+	<info_portion id="darkvalley"></info_portion>
+	<info_portion id="labx18"></info_portion>
+	<info_portion id="bar"></info_portion>
+	<info_portion id="rostok"></info_portion>
+	<info_portion id="yantar"></info_portion>
+	<info_portion id="labx16"></info_portion>
+	<info_portion id="military"></info_portion>
+	<info_portion id="radar"></info_portion>
+	<info_portion id="pripyat"></info_portion>
+	<info_portion id="stancia"></info_portion>
+	<info_portion id="sarcofag"></info_portion>
+	<info_portion id="control"></info_portion>
+	<info_portion id="stancia2"></info_portion>
+	<info_portion id="labx10"></info_portion>
+	<info_portion id="atp"></info_portion>
+	<info_portion id="peshera"></info_portion>
+	<info_portion id="puzir"></info_portion>
+	<info_portion id="aver"></info_portion>
+	<info_portion id="labirint"></info_portion>
+	<info_portion id="limansk"></info_portion>
+	<info_portion id="hospital"></info_portion>
+	<info_portion id="generators"></info_portion>
+	<info_portion id="warlab"></info_portion>
+	<info_portion id="redforest"></info_portion>
+	<info_portion id="lostvillage"></info_portion>
+	<info_portion id="marsh"></info_portion>
+	<info_portion id="deadcity"></info_portion>
+	<info_portion id="zaton"></info_portion>
+	<info_portion id="jupiter"></info_portion>
+	<info_portion id="pripyat_w"></info_portion>
+	<info_portion id="jupiter_u"></info_portion>
+	<info_portion id="labx8"></info_portion>
+	<info_portion id="katacombs"></info_portion>
+	<info_portion id="predbannik"></info_portion>
+	<info_portion id="garbage_o"></info_portion>
+	<info_portion id="yantar_o"></info_portion>
+	<info_portion id="swamp"></info_portion>
+
+	<info_portion id="pum_generator_1"></info_portion>
+	<info_portion id="pum_generator_2"></info_portion>
+	<info_portion id="pum_generator_3"></info_portion>
+	<info_portion id="pum_generator_4"></info_portion>
+	<info_portion id="pum_generator_5"></info_portion>
+	<info_portion id="pum_generator_6"></info_portion>
+
+	<info_portion id="start_water_1"></info_portion>
+	<info_portion id="start_water_2"></info_portion>
+	<info_portion id="start_water_3"></info_portion>
+
+</game_information_portions>

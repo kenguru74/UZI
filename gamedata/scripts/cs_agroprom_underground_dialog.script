@@ -1,0 +1,7 @@
+--'  Квест Командора на прототип в Катакомбах
+function wpn_gaussu_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("wpn_gaussu") ~= nil
+   end
+   return false
+end

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="actor">
+		<text>Вольные</text>
+	</string>
+	<string id="actor_dolg">
+		<text>Долг</text>
+	</string>
+	<string id="actor_freedom">
+		<text>Свобода</text>
+	</string>
+	<string id="arena_enemy">
+		<text>Наёмники</text>
+	</string>
+	<string id="bad">
+		<text>плохая</text>
+	</string>
+	<string id="bandit">
+		<text>Бандиты</text>
+	</string>
+	<string id="dolg">
+		<text>Долг</text>
+	</string>
+	<string id="ecolog">
+		<text>Экологи</text>
+	</string>
+	<string id="enemy">
+		<text>враждебное</text>
+	</string>
+	<string id="excellent">
+		<text>отличная</text>
+	</string>
+	<string id="exo_outfit_name_m1">
+		<text>Экзоскелет ПНБ-4УЗ</text>
+	</string>
+	<string id="experienced">
+		<text>Опытный</text>
+	</string>
+	<string id="Found_PDA">
+		<text>Найденные КПК</text>
+	</string>
+	<string id="freedom">
+		<text>Свобода</text>
+	</string>
+	<string id="friendly">
+		<text>дружеское</text>
+	</string>
+	<string id="good">
+		<text>хорошая</text>
+	</string>
+	<string id="indifferent">
+		<text>безличное</text>
+	</string>
+	<string id="killer">
+		<text>Наёмники</text>
+	</string>
+	<string id="l01_escape">
+		<text>Кордон</text>
+	</string>
+	<string id="l02_garbage">
+		<text>Свалка</text>
+	</string>
+	<string id="l03_agroprom">
+		<text>Агропром</text>
+	</string>
+	<string id="l04_darkvalley">
+		<text>Тёмная долина</text>
+	</string>
+	<string id="l05_bar">
+		<text>Бар</text>
+	</string>
+	<string id="l06_rostok">
+		<text>Дикая территория</text>
+	</string>
+	<string id="l07_military">
+		<text>Армейские склады</text>
+	</string>
+	<string id="l08_yantar">
+		<text>Янтарь</text>
+	</string>
+	<string id="l10_radar">
+		<text>Радар</text>
+	</string>
+	<string id="l11_pripyat">
+		<text>Припять</text>
+	</string>
+	<string id="l12_stancia">
+		<text>ЧАЭС-1</text>
+	</string>
+	<string id="l12_stancia_2">
+		<text>ЧАЭС-2</text>
+	</string>
+	<string id="master">
+		<text>Мастер</text>
+	</string>
+	<string id="military">
+		<text>ЧВК</text>
+	</string>
+	<string id="monolith">
+		<text>Монолит</text>
+	</string>
+	<string id="neutral">
+		<text>обычная</text>
+	</string>
+	<string id="novice">
+		<text>Отмычка</text>
+	</string>
+	<string id="st_no_active_task">
+		<text>Нет активного задания</text>
+	</string>
+	<string id="st_time_till_surge">
+		<text>Время до выброса</text>
+	</string>
+	<string id="stalker">
+		<text>Вольные</text>
+	</string>
+	<string id="terrible">
+		<text>ужасное</text>
+	</string>
+	<string id="trader">
+		<text>Торговцы</text>
+	</string>
+	<string id="ui_st_community">
+		<text>Группировка</text>
+	</string>
+	<string id="ui_st_price">
+		<text>Цена</text>
+	</string>
+	<string id="ui_st_rank">
+		<text>Ранг</text>
+	</string>
+	<string id="ui_st_relation">
+		<text>Отношение</text>
+	</string>
+	<string id="ui_st_reputation">
+		<text>Репутация</text>
+	</string>
+	<string id="very_bad">
+		<text>хреновая</text>
+	</string>
+	<string id="very_good">
+		<text>хорошая</text>
+	</string>
+	<string id="veteran">
+		<text>Ветеран</text>
+	</string>
+	<string id="zombied">
+		<text>Зомби</text>
+	</string>
+	<string id="Btn_Cancel">
+		<text>Отменить</text>
+	</string>
+	<string id="Btn_No">
+		<text>Нет</text>
+	</string>
+	<string id="Btn_OK">
+		<text>OK</text>
+	</string>
+	<string id="Btn_Yes">
+		<text>Да</text>
+	</string>
+	<string id="global_map">
+		<text>Карта Зоны</text>
+	</string>
+	<string id="st_autosave">
+		<text>Автосохранение...</text>
+	</string>
+	<string id="st_game_over">
+		<text>Игра окончена</text>
+	</string>
+	<string id="st_item_used">
+		<text>Использовано</text>
+	</string>
+	<string id="st_not_enough_money">
+		<text>Не хватает денег</text>
+	</string>
+	<string id="st_not_enough_money_npc">
+		<text>У него не хватит денег</text>
+	</string>
+	<string id="ui_st_opponent_items">
+		<text>Купить</text>
+	</string>
+	<string id="st_search_treasure">
+		<text>Обыскать тайник</text>
+	</string>
+	<string id="inventory_item_use">
+		<text>Поднять предмет</text>
+	</string>
+	<string id="ui_mm_check_updates">
+		<text>Обновления</text>
+	</string>
+	<string id="ui_mm_alternative">
+		<text>Альтернатива</text>
+	</string>
+	<string id="ui_inv_health">
+		<text>Здоровье</text>
+	</string>
+	<string id="ui_inv_radiation">
+		<text>Радиация</text>
+	</string>
+	<string id="ui_inv_satiety">
+		<text>Сытость</text>
+	</string>
+	<string id="ui_inv_power">
+		<text>Выносливость</text>
+	</string>
+	<string id="ui_inv_bleeding">
+		<text>Кровотечение</text>
+	</string>
+	<string id="st_mp_say_to_all">
+		<text>Всем</text>
+	</string>
+	<string id="st_mp_say_to_team">
+		<text>Команде</text>
+	</string>
+	<string id="st_knife">
+		<text>Нож</text>
+	</string>
+	<string id="st_mp_disabled_voting">
+		<text>Голосование недоступно на этом сервере.</text>
+	</string>
+	<string id="st_mp_no_current_voting">
+		<text>Сейчас нет активных голосований.</text>
+	</string>
+	<string id="st_mp_ready">
+		<text>Готов</text>
+	</string>
+	<string id="st_mp_voting_succeed">
+		<text>Голосование прошло успешно!</text>
+	</string>
+	<string id="st_mp_voting_failed">
+		<text>Голосование провалено!</text>
+	</string>
+	<string id="l03u_agr_underground">
+		<text>Подземелье Агропрома</text>
+	</string>
+	<string id="l04u_labx18">
+		<text>Лаборатория X-18</text>
+	</string>
+	<string id="l08u_brainlab">
+		<text>Лаборатория X-16</text>
+	</string>
+	<string id="l10u_bunker">
+		<text>Лаборатория X-10</text>
+	</string>
+	<string id="l12u_sarcofag">
+		<text>Саркофаг</text>
+	</string>
+	<string id="l12u_control_monolith">
+		<text>Управление Монолитом</text>
+	</string>
+	; Новые локации
+	<string id="atp_for_test22">
+		<text>Совхоз</text>
+	</string>
+	<string id="peshera">
+		<text>Пещера</text>
+	</string>
+	<string id="puzir">
+		<text>Пузырь</text>
+	</string>
+	<string id="aver">
+		<text>Волчий лес</text>
+	</string>
+	<string id="av_peshera">
+		<text>Лабиринт</text>
+	</string>
+	<string id="limansk">
+		<text>Лиманск</text>
+	</string>
+	<string id="hospital">
+		<text>Госпиталь</text>
+	</string>
+	<string id="generators">
+		<text>Генераторы</text>
+	</string>
+	<string id="warlab">
+		<text>Военная лаборатория</text>
+	</string>
+	<string id="red_forest">
+		<text>Рыжий лес</text>
+	</string>
+	<string id="lost_village">
+		<text>Забытая деревня</text>
+	</string>
+	<string id="marsh">
+		<text>Болота</text>
+	</string>
+	<string id="dead_city">
+		<text>Мёртвый город</text>
+	</string>
+	<string id="zaton">
+		<text>Затон</text>
+	</string>
+	<string id="jupiter">
+		<text>Юпитер</text>
+	</string>
+	<string id="pripyat">
+		<text>Восток Припяти</text>
+	</string>
+	<string id="jupiter_underground">
+		<text>Путепровод</text>
+	</string>
+	<string id="labx8">
+		<text>Лаборатория X-8</text>
+	</string>
+	<string id="cs_agroprom_underground">
+		<text>Катакомбы</text>
+	</string>
+	<string id="predbannik">
+		<text>Предбанник</text>
+	</string>
+	<string id="garbage_old">
+		<text>Старая свалка</text>
+	</string>
+	<string id="yantar_old">
+		<text>Научная станция</text>
+	</string>
+	<string id="swamp_old">
+		<text>Болото Доктора</text>
+	</string>
+	<string id="formers">
+		<text>ЧВК</text>
+	</string>
+	<string id="hunters">
+		<text>Охотники</text>
+	</string>
+	<string id="monolits">
+		<text>Монолит</text>
+	</string>
+	<string id="dark">
+		<text>Тёмные</text>
+	</string>
+	<string id="st_heli_seif">
+		<text>Взломать и обыскать сейф</text>
+	</string>
+	<string id="st_jup_heli_seif">
+		<text>Обыскать кабину пилотов</text>
+	</string>	
+	
+</string_table>

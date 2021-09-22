@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+	<string id="komandor_first_dialog_0">
+		<text>А, Стрелок, проходи, рассказывай. Герман мне о тебе сообщил.</text>
+	</string>
+	<string id="komandor_first_dialog_1">
+		<text>Командор, вот документы, которые я нашёл в экспериментальном цехе, вы ведь в курсе, не так ли?</text>
+	</string>
+	<string id="komandor_first_dialog_2">
+		<text>Разумеется. Мы всех допросили, кто участвовал в подготовке и проведении эвакуации, но никто толком ничего сообщить не может. Не видели, не знают... А прототип, тем не менее, пропал.</text>
+	</string>
+	<string id="komandor_first_dialog_3">
+		<text>Что, он и вправду настолько ценный?</text>
+	</string>
+	<string id="komandor_first_dialog_4">
+		<text>Ценный? Да не то слово. Он бесценен. Поэтому никак нельзя допустить, чтобы попал в руки... Не в те руки, короче.</text>
+	</string>
+	<string id="komandor_first_dialog_5">
+		<text>Ясно.</text>
+	</string>
+	<string id="komandor_first_dialog_6">
+		<text>Стрелок, я вот что думаю... Протототип, конечно, кто-то увёл. Причём увёл спланированно. Но нигде ничего про него не слышно. Вывод: он где-то в Зоне. В противном случае, информация о нём уже давно бы всплыла... Эвакуация проводилась скрытно, так что незаметно можно было уйти только через подземные коммуникации. А поскольку подземка кишит всякой нечистью, то, скорее всего, тот мудак, что увёл чёртов прототип, там же и склеил ласты. Если возьмёшься всё это разузнать, отблагодарю по-царски.</text>
+	</string>
+	<string id="komandor_first_dialog_7">
+		<text>И куда идти надо?</text>
+	</string>
+	<string id="komandor_first_dialog_8">
+		<text>Экспериментальный цех имеет сообщение с подземными коммуникациями. На сталкерских картах они носят название "Катакомбы", я тебе информацию на ПМК скину. Так как, пойдёшь?</text>
+	</string>
+	<string id="komandor_first_dialog_81">
+		<text>Пойду... Хотя и неохота по вонючим подземкам снова лазить. Не прощаюсь...</text>
+	</string>
+	<string id="komandor_first_dialog_82">
+		<text>Нет, Командор, у меня с подземками связаны не самые лучшие воспоминания. Во всяком случае, не сейчас... Будь!</text>
+	</string>
+
+
+	<string id="komandor_second_dialog_0">
+		<text>Здрав будь, Командор. Всё вышло так, как ты и говорил.</text>
+	</string>
+	<string id="komandor_second_dialog_1">
+		<text>Например?</text>
+	</string>
+	<string id="komandor_second_dialog_2">
+		<text>Например, нашёл того, кого ты искал. Труп. Учёного, между прочим. Как же его фамилия... А, вспомнил, Трупиков. Знаком тебе такой хмырь?</text>
+	</string>
+	<string id="komandor_second_dialog_3">
+		<text>Вот же с-сука... Конечно, знаком. Был... Ладно. Ну а что насчёт прототипа? Нашёл?</text>
+	</string>
+	<string id="komandor_second_dialog_4">
+		<text>Ну, если вот это... эту... Короче, если вот эту хренотень можно назвать прототипом, то нашёл. Держи.</text>
+	</string>
+	<string id="komandor_second_dialog_5">
+		<text>Ну да, это оно самое. Отчаянный ты, брат. Если не сказать больше... Ну что ж, как я обещал... Вот, держи. Арт уникальный и полезный. Хочешь на пояс, ну а хочешь продай - учёные его у тебя с руками оторвут.</text>
+	</string>
+	<string id="komandor_second_dialog_6">
+		<text>Хм... Интересная цацка. \n \nНу ладно, "общественно полезное" дело сделано, пойду теперь по своим делам.</text>
+	</string>
+	<string id="komandor_second_dialog_7">
+		<text>До встречи, Стрелок. Заглядывай, ежели что...</text>
+	</string>
+	<string id="komandor_second_dialog_8">
+		<text>Бывай, Командор. Удачи!</text>
+	</string>
+
+	<string id="komandor_third_dialog_0">
+		<text>Командор, приветствую.</text>
+	</string>
+	<string id="komandor_third_dialog_1">
+		<text>Здрав будь, сталкер.</text>
+	</string>
+	<string id="komandor_third_dialog_2">
+		<text>Не поможешь?</text>
+	</string>
+	<string id="komandor_third_dialog_3">
+		<text>Это смотря в чём. Излагай, послушаю...</text>
+	</string>
+	<string id="komandor_third_dialog_4">
+		<text>Мне нужно отправить сообщение учёным, а мой смарт не вытягивает. Сможешь помочь?</text>
+	</string>
+	<string id="komandor_third_dialog_5">
+		<text>Без проблем. Подойди к нашему технарю.</text>
+	</string>
+	<string id="komandor_third_dialog_6">
+		<text>Спасибо. Потребуется помощь - не откажу.</text>
+	</string>
+
+	<string id="pripyat_prachka_technik_dialog_0">
+		<text>Поздорову, Кулибин. Командор сказал, что ты сможешь мне помочь.</text>
+	</string>
+	<string id="pripyat_prachka_technik_dialog_1">
+		<text>Что надо сделать?</text>
+	</string>
+	<string id="pripyat_prachka_technik_dialog_2">
+		<text>Нужно передать сообщение. Это можно устроить?</text>
+	</string>
+	<string id="pripyat_prachka_technik_dialog_3">
+		<text>Давай свой ПМК. И далеко не уходи, у нас техника путёвая...</text>
+	</string>
+	<string id="pripyat_prachka_technik_dialog_4">
+		<text>Вот КПК.</text>
+	</string>
+	<string id="pripyat_prachka_technik_dialog_5">
+		<text>Ну что ж, Стрелок, твоя мессага ушла.</text>
+	</string>
+	<string id="pripyat_prachka_technik_dialog_6">
+		<text>Спасибо, ты меня очень выручил. Удачи, брат.</text>
+	</string>
+
+	<string id="haron_dialog_0">
+		<text>Стрелок... И что ты здесь делаешь?</text>
+	</string>
+	<string id="haron_dialog_1">
+		<text>Тебя ищу. А чего не стрелял?</text>
+	</string>
+	<string id="haron_dialog_2">
+		<text>Почему не стрелял? Да хз... Наверное, из уважения...</text>
+	</string>
+	<string id="haron_dialog_3">
+		<text>Во как... Ладно, допустим.</text>
+	</string>
+	<string id="haron_dialog_4">
+		<text>Как меня нашёл? У меня КПК с секретом...</text>
+	</string>
+	<string id="haron_dialog_5">
+		<text>Как нашёл - не важно... А искал я тебя вот зачем: глянь на это фото. Знаешь его?</text>
+	</string>
+	<string id="haron_dialog_6">
+		<text>Ну, положим, знаю...</text>
+	</string>
+	<string id="haron_dialog_7">
+		<text>Он память потерял, не помнит ничего. Просил хоть что-то разузнать из своего прошлого.</text>
+	</string>
+	<string id="haron_dialog_8">
+		<text>Не, Стрелок, ничего я тебе не скажу. Лучше уходи по-хорошему...</text>
+	</string>
+	<string id="haron_dialog_9">
+		<text>Зато я тебе кое-что скажу. Ты ведь из Речного порта сбежал, бросил своих? Они тебя ищут, чтоб на кол посадить. Не расскажешь - скину им твои координаты.</text>
+	</string>
+	<string id="haron_dialog_10">
+		<text>Ну и гад же ты, Стрелок... Чего ты от меня хочешь?</text>
+	</string>
+	<string id="haron_dialog_11">
+		<text>Гад я, говоришь? А ты сам-то кто? Что за херню вообще несешь: то не стрелял из-за "уважения", то - "знаю, но тебе ничего не скажу" и "уходи по-хорошему"? Что за бред вообще нах? Если тебе настолько херово и из-за этого пургу несешь, то давай подлечу и поговорим нормально.</text>
+	</string>
+	<string id="haron_dialog_12">
+		<text>Ладно, ладно, красноречивый... \nНу был такой сталкер в наших рядах, имени я не помню.</text>
+	</string>
+	<string id="haron_dialog_13">
+		<text>И это всё?</text>
+	</string>
+	<string id="haron_dialog_14">
+		<text>А ты чего хотел?</text>
+	</string>
+	<string id="haron_dialog_15">
+		<text>Говорят, существуют списки всех членов группировки "Монолит". Расскажи, где они хранятся.</text>
+	</string>
+	<string id="haron_dialog_16">
+		<text>И смысл? Ты меня всё равно сдашь...</text>
+	</string>
+	<string id="haron_dialog_17">
+		<text>Да бли-и-ин!... Не собирался я тебя сдавать, это ответ был на твой словесный понос. \nТак почему ты ушёл от своих?</text>
+	</string>
+	<string id="haron_dialog_18">
+		<text>Хрен с ним, расскажу. \nДело в том, что наша группировка ослабла, численно уменьшилась, кстати, и благодаря тебе тоже. Вера в Монолит пошатнулась, да и, по правде говоря, сам я в этом булыжнике разочаровался. Прозрел, так сказать. Вот и хотел свалить втихаря... Да, видать, не судьба. Ты ведь меня не отпустишь просто так?</text>
+	</string>
+	<string id="haron_dialog_19">
+		<text>Может и отпустил бы просто так, но уж извини, у меня тоже интерес свой. Поэтому - баш на баш. Ты мне списки или хотя бы инфу, где эти списки искать. А я помогу тебе выбраться подальше отсюда.</text>
+	</string>
+	<string id="haron_dialog_20">
+		<text>Хм, ты что, меня на себе нести собрался?</text>
+	</string>
+	<string id="haron_dialog_21">
+		<text>С какого это перепугу? Ранен ты не смертельно, аварийный режим в экзе включи - сама дотащит.</text>
+	</string>
+	<string id="haron_dialog_22">
+		<text>Экзе кранты - не дотащит.</text>
+	</string>
+	<string id="haron_dialog_23">
+		<text>Ах вон он что... А внешне как новая. \nБлин, что придумать-то? \nКороче так, я сейчас попробую договориться с учёными о вертушке.</text>
+	</string>
+	<string id="haron_dialog_24">
+		<text>Вертушка? Хренасе у тебя связи...</text>
+	</string>
+	<string id="haron_dialog_25">
+		<text>Нормальные связи.</text>
+	</string>
+	<string id="haron_dialog_26">
+		<text>Ладно, слушай. \nСписки эти реально существуют, но здесь их никогда не было. А находиться они могут только в одном месте - в бункере управления Монолитом. Это всё, что я могу тебе рассказать.</text>
+	</string>
+	<string id="haron_dialog_27">
+		<text>Ну что ж, хоть так... \nЖди, пойду отправлю сообщение и вернусь.</text>
+	</string>
+	<string id="haron_dialog_28">
+		<text>Нет, Стрелок, так не пойдёт. Отправляй с моего ПМК, он помощнее. Диктуй свою писульку.</text>
+	</string>
+	<string id="haron_dialog_29">
+		<text>Ладно. \n \nВот текст, отправляй. И подождём ответа.</text>
+	</string>
+
+</string_table>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+        <info_portion id="known_secret_zech"></info_portion>
+        <info_portion id="komandor_talk"></info_portion>
+        <info_portion id="komandor_third_talk"></info_portion>
+        <info_portion id="technik_talk">
+                <article>east_pripyat_message_german_art</article>
+                <action>east_pripyat_dialog.sending_message_german</action>
+        </info_portion>
+        <info_portion id="take_message2_german">
+                <article>take_message2_german_art</article>
+        </info_portion>
+        <info_portion id="find_haron">
+                <article>find_haron_art</article>
+                <action>east_pripyat_dialog.haron_message_german</action>
+        </info_portion>
+        <info_portion id="take_haron_message">
+                <article>take_haron_message_art</article>
+                <action>east_pripyat_dialog.haron_start_heli</action>
+        </info_portion>
+        <info_portion id="prip_heli_start"></info_portion>
+        <info_portion id="prip_heli_move"></info_portion>
+        <info_portion id="flying_haron">
+                <action>east_pripyat_dialog.spawn_docs_monolit</action>
+        </info_portion>
+        <info_portion id="info_docs_monolit">
+                <article>info_docs_monolit_art</article>
+        </info_portion>
+        <info_portion id="prip_neutral_corpse2">
+                <article>prip_neutral_corpse2_art</article>
+        </info_portion>
+        <info_portion id="on_teleport"></info_portion>
+        <info_portion id="spawn_raport_mon"></info_portion>
+		
+</game_information_portions>

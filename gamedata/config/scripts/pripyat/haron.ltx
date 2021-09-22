@@ -1,0 +1,25 @@
+[logic]
+active = walker
+combat_ignore = combat_ignore
+
+[walker]
+path_walk = pripyat_haron_walk
+path_look = pripyat_haron_look
+combat_ignore_cond = {=fighting_actor}
+meet = meet@haron
+on_info = {+prip_heli_move} walker@haron_fly
+
+[walker@haron_fly]
+path_walk = pripyat_haron_fly_walk
+combat_ignore_cond = {=fighting_actor}
+
+[combat_ignore]
+combat_ignore_cond = {=fighting_actor}
+
+[meet@haron]
+meet_state 		= 5| wait
+meet_state_wpn 	= 5| wait
+victim 			= 5| actor
+victim_wpn 		= 5| actor
+use			= true
+use_wpn		= false

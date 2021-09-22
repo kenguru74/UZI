@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+	<info_portion id="start_peleng"></info_portion>
+	<info_portion id="end_peleng"></info_portion>
+	<info_portion id="generators_message_doctor_1"></info_portion>
+	<info_portion id="message_doctor_2"></info_portion>
+	<info_portion id="generators_message_doctor_2">
+		<article>generators_message_doctor_2_art</article>
+        </info_portion>
+	<info_portion id="generators_yarik_corpse">
+		<article>generators_yarik_corpse_art</article>
+	</info_portion>
+	<info_portion id="find_generators"></info_portion>
+	<info_portion id="find_warlab"></info_portion>
+	<info_portion id="remove_mapspot"></info_portion>
+	<info_portion id="osvedomitel_secret_gen"></info_portion>
+	<info_portion id="osvedomitel_secret_aver"></info_portion>
+	<info_portion id="osvedomitel_secret_lim"></info_portion>
+	<info_portion id="osvedomitel_secret_pred"></info_portion>
+	<info_portion id="osvedomitel_secret_puz"></info_portion>
+	<info_portion id="osvedomitel_secret_atp"></info_portion>
+	<info_portion id="osvedomitel_secret_jup"></info_portion>
+	<info_portion id="osvedomitel_secret_put"></info_portion>
+	<info_portion id="osvedomitel_secret_zat"></info_portion>
+	<info_portion id="osvedomitel_secret_lost"></info_portion>
+	<info_portion id="osvedomitel_secret_kat"></info_portion>
+
+	<info_portion id="barmen_pay_money"></info_portion>
+		
+</game_information_portions>

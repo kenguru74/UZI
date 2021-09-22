@@ -1,0 +1,145 @@
+local t = {}
+
+function load_job(sj, gname, type, squad, groups)
+
+--' created by Mora
+
+--'--------------------------------------------------------------------------
+--' LOST_VILLAGE
+--'--------------------------------------------------------------------------
+
+        -- охотники
+	if type == "lost_village_hunter3" then
+		-- у костров
+		t = { section = "logic@lost_village_hunter3_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@lost_village_hunter3_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	if type == "lost_village_hunter2" then
+		-- у костра
+		t = { section = "logic@lost_village_hunter2_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@lost_village_hunter2_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	if type == "lost_village_hunter1" then
+		-- у костра
+		t = { section = "logic@lost_village_hunter1_kamp1",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@lost_village_hunter1_kamp2",
+			idle = 0,
+			prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		-- часовые
+		t = { section = "logic@lost_village_hunter1_walker1",
+         		idle = 0,
+        		prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@lost_village_hunter1_walker2",
+         		idle = 0,
+        		prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@lost_village_hunter1_walker3",
+         		idle = 0,
+        		prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@lost_village_hunter1_walker4",
+         		idle = 0,
+        		prior = 6, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+end
+
+function load_states(gname, type)
+
+	if type == "lost_village_hunter3" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "lost_village_hunter2" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "lost_village_hunter1" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+end
+
+--------------------------------------------------------------------------
+-- Dynamic ltx
+--------------------------------------------------------------------------
+function load_ltx(gname, type)
+	return nil
+end
+
+function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
+
+	if gulag_type == "lost_village_hunter3" then
+		return npc_community == "hunters"
+	end
+
+	if gulag_type == "lost_village_hunter2" then
+		return npc_community == "hunters"
+	end
+
+	if gulag_type == "lost_village_hunter1" then
+		return npc_community == "hunters"
+	end
+
+	return false
+end
+
+function checkMonster(npc_community, gulag_type)
+
+	return false
+end

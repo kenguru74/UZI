@@ -1,0 +1,125 @@
+<game_task id="atp_brodyaga_help">
+   <title>Откликнуться на просьбу Бродяги</title>
+   <objective>
+      <text>Зайти к Сухарю</text>
+      <icon>ui_iconsTotal_kill_stalker</icon>
+      <infoportion_complete>suhar_give_habar</infoportion_complete>
+      <infoportion_fail>lukash_dead</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Лукашем</text>
+      <map_location_type hint="Лукаш">blue_location</map_location_type>
+      <object_story_id>Mil_Lukash</object_story_id>
+      <infoportion_complete>dialog_military</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Узнать у Зулуса о бывшем свободовце</text>
+      <map_location_type hint="Зулус">blue_location</map_location_type>
+      <object_story_id>jupiter_zulus</object_story_id>
+      <infoportion_complete>zulus_dialog</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Расспросить сталкеров на Янове</text>
+      <infoportion_complete>loki_dialog</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Посоветоваться с Германом</text>
+      <map_location_type hint="Герман">blue_location</map_location_type>
+      <object_story_id>jupiter_german</object_story_id>
+      <infoportion_complete>dialog_quest2_german</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти постановщик радиопомех</text>
+      <function_complete>jupiter_dialog.jammer_have</function_complete>
+      <infoportion_set_complete>dialog_quest3_german</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести постановщик радиопомех Герману</text>
+      <map_location_type hint="Герман">blue_location</map_location_type>
+      <object_story_id>jupiter_german</object_story_id>
+      <infoportion_complete>give_jammer_german</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Дождаться сообщения Германа</text>
+      <infoportion_complete>take_message_strelok</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти документы монолитовцев</text>
+      <function_complete>east_pripyat_dialog.spravka_have</function_complete>
+      <infoportion_set_complete>komandor_talk</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Обратиться за помощью к сталкерам в Прачечной</text>
+      <map_location_type hint="Командор">blue_location</map_location_type>
+      <object_story_id>pripyat_prachka_commander</object_story_id>
+      <infoportion_complete>komandor_third_talk</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с техником</text>
+      <map_location_type hint="Дядька Яр">blue_location</map_location_type>
+      <object_story_id>pripyat_prachka_technik</object_story_id>
+      <infoportion_complete>technik_talk</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Получить сообщение от Германа</text>
+      <infoportion_complete>take_message2_german</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти Харона и поговорить с ним</text>
+      <infoportion_complete>find_haron</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Получить ответ от учёных</text>
+      <infoportion_complete>take_haron_message</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Дождаться прилёта вертушки</text>
+      <infoportion_complete>prip_heli_move</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Занять позицию около вертушки</text>
+      <infoportion_complete>flying_haron</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти бумаги в пункте управления Монолитом</text>
+      <function_complete>east_pripyat_dialog.docs_have</function_complete>
+      <infoportion_set_complete>info_docs_monolit</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Отдать Бродяге документы и фотографию</text>
+      <map_location_type hint="Бродяга">blue_location</map_location_type>
+      <object_story_id>atp_brodyaga</object_story_id>
+      <infoportion_complete>after_new_dream</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Бродягой</text>
+      <map_location_type hint="Бродяга">blue_location</map_location_type>
+      <object_story_id>atp_brodyaga</object_story_id>
+      <infoportion_complete>third_dialog_atp</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Зайти к Сухарю</text>
+      <map_location_type hint="Сухарь">blue_location</map_location_type>
+      <object_story_id>atp_barman</object_story_id>
+      <infoportion_complete>suhar_give_habar</infoportion_complete>
+   </objective>
+</game_task>

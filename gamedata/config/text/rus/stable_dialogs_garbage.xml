@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+    <string id="gar_dolg_blokpost_11">
+        <text>Стой, сталкер. Дальше тебе нельзя!</text>
+    </string>
+    <string id="gar_dolg_blokpost_111">
+        <text>В чём дело?</text>
+    </string>
+    <string id="gar_dolg_blokpost_1111">
+        <text>Дальше - наша территория. И мы не всех к нам пускаем. Если у тебя нет особо важных дел к нашему руководству, то бесплатно мы тебя не пропустим.</text>
+    </string>
+    <string id="gar_dolg_blokpost_11111">
+        <text>Сколько?</text>
+    </string>
+    <string id="gar_dolg_blokpost_111111">
+        <text>Стандартная плата - 5 штук.</text>
+    </string>
+    <string id="gar_dolg_blokpost_11112">
+        <text>Мне надо пройти, у меня дело к Бармену.</text>
+    </string>
+    <string id="gar_dolg_blokpost_111121">
+        <text>Да, командир сообщил, чтоб тебя пропустили. Проходи.</text>
+    </string>
+    <string id="gar_dolg_blokpost_1111211">
+        <text>Я плачу. Вот держи.</text>
+    </string>
+    <string id="gar_dolg_blokpost_11112111">
+        <text>Отлично, теперь проходи. Да, ты там осторожнее, по дороге много аномалий.</text>
+    </string>
+    <string id="gar_dolg_blokpost_11112111x1">
+        <text>Отлично, проходи. Осторожнее, по дороге много аномалий.</text>
+    </string>
+    <string id="gar_dolg_blokpost_1111212">
+        <text>Что за услуга?</text>
+    </string>
+    <string id="gar_dolg_blokpost_11112121">
+        <text>В общем, мелочи. Тут неподалёку стая кабанов бродит - надо их перебить.</text>
+    </string>
+    <string id="gar_dolg_blokpost_111121211">
+        <text>Договорились.</text>
+    </string>
+    <string id="gar_dolg_blokpost_1111212111">
+        <text>Удачи, сталкер!</text>
+    </string>
+    <string id="gar_dolg_blokpost_111121212">
+        <text>У меня нет денег.</text>
+    </string>
+    <string id="gar_dolg_blokpost_1111212121">
+        <text>Тогда денег и накопишь.</text>
+    </string>
+    <string id="gar_dolg_blokpost_111122">
+        <text>У меня нет денег.</text>
+    </string>
+    <string id="gar_dolg_blokpost_111123">
+        <text>Тогда в Бар тебе прохода нет.</text>
+    </string>
+    <string id="gar_dolg_blokpost_1231">
+        <text>Спасибо, что помог нам отбиться от кабанов. Вот, держи за услугу!</text>
+    </string>
+    <string id="gar_dolg_blokpost_123">
+        <text>Спасибо!</text>
+    </string>
+    <string id="gar_dolg_blokpost_124">
+        <text>Спасибо!</text>
+    </string>
+    <string id="gar_dolg_blokpost_12311">
+        <text>Спасибо!</text>
+    </string>
+    <string id="gar_dolg_blokpost_22">
+        <text>Ну что, перебил стаю кабанов?</text>
+    </string>
+    <string id="gar_dolg_blokpost_221">
+        <text>Ещё нет.</text>
+    </string>
+    <string id="gar_dolg_blokpost_2211">
+        <text>Когда будешь из них окорочка делать, мне один принеси.</text>
+    </string>
+    <string id="gar_dolg_blokpost_222">
+        <text>Перебил.</text>
+    </string>
+    <string id="gar_dolg_blokpost_2221">
+        <text>Ладно, проходи, передавай привет Бармену.</text>
+    </string>
+    <string id="gar_dolg_blokpost_33">
+        <text>Будешь у Бармена, передай привет от меня. Да, не забудь, в проходе много аномалий.</text>
+    </string>
+    <string id="gar_dramm_novice_start_0">
+        <text>Спасибо, друг, ты мне очень помог! Я это не забуду.</text>
+    </string>
+    <string id="gar_dramm_novice_start_1">
+        <text>Что здесь происходит?</text>
+    </string>
+    <string id="gar_dramm_novice_start_11">
+        <text>Хорошо.</text>
+    </string>
+    <string id="gar_dramm_novice_start_2">
+        <text>Мы пытались очистить Свалку от бандитов. Если эти уроды станут контролировать ее, то ни для кого не будет прохода. Ты поговори с Бесом. Я сейчас тоже к нему иду.</text>
+    </string>
+    <string id="gar_dramm_novice_start_21">
+        <text>Бес? Всё воюет, чертяка... Ладно, пошли.</text>
+    </string>
+    <string id="gar_dramm_novice_start_3">
+        <text>Что тут новенького-то, на Свалке?</text>
+    </string>
+    <string id="gar_dramm_novice_start_31">
+        <text>Да ничего вроде и нету. Всё, как всегда -  бандиты, мудаки, никак не уймутся. И откуда их столько...</text>
+    </string>
+    <string id="gar_dramm_novice_start_311">
+        <text>Продолжай.</text>
+    </string>
+    <string id="gar_dramm_novice_start_3111">
+        <text>Да вроде и нечего больше сказать... Вот, воюем тут помаленьку... Выживаем, как можем. Да, слушай... Справа, где болотце, есть мой тайничок. Увидишь металлическую конструкцию, которая нависает прямо над одной из луж. Так вот, прямо под ней есть заначка. Не знаю, нужно ли тебе это... Ну, мож пригодится.</text>
+    </string>
+    <string id="gar_dramm_novice_start_31111">
+        <text>Ладно, спасибо, старик, мож и пригодится.</text>
+    </string>
+    <string id="gar_dramm_novice_start_312">
+        <text>Ясно, спасибо.</text>
+    </string>
+    <string id="gar_hellcar_start_11">
+        <text>Здоров, Стрелок, ты как раз вовремя. Слушай, выродки опять пытаются отбить у нас Свалку. Здесь полчаса назад буза была. Троих мы положили. Остальные братки отступили, но явно вот-вот вернутся с подмогой. Нас мало, и твоя помощь очень пригодилась бы.</text>
+    </string>
+    <string id="gar_hellcar_start_111">
+        <text>Ясно, я помогу.</text>
+    </string>
+    <string id="gar_hellcar_start_1111">
+        <text>Спасибо, что не отказал, Стрелок!</text>
+    </string>
+    <string id="gar_hellcar_start_11111">
+        <text>Ну что ж, ща потанцуем!</text>
+    </string>
+    <string id="gar_hellcar_start_111111">
+        <text>Отлично.</text>
+    </string>
+    <string id="gar_hellcar_start_11112">
+        <text>Это не моё дело и вмешиваться я не буду.</text>
+    </string>
+    <string id="gar_hellcar_start_111121">
+        <text>Как хочешь, потом сам будешь локти кусать, когда будешь платить пошлину отморозкам.</text>
+    </string>
+    <string id="gar_hellcar_start_11113">
+        <text>Я их уже пострелял.</text>
+    </string>
+    <string id="gar_hellcar_start_111131">
+        <text>Да, ты крут. Но я всё же подстрахуюсь. Мало ли что.</text>
+    </string>
+    <string id="gar_hellcar_start_21">
+        <text>Мне не о чем с тобой говорить.</text>
+    </string>
+        <string id="gar_hellcar_start_3111">
+        <text>Спасибо, дружбан, ты очень помог. Вот, держи.</text>
+    </string>
+    <string id="gar_hellcar_start_31111">
+        <text>Нормально, братка.</text>
+    </string>
+    <string id="gar_hellcar_start_311111">
+        <text>Держи, на поправку здоровья.</text>
+    </string>
+    <string id="gar_hellcar_start_3111111">
+        <text>Спасибо.</text>
+    </string>
+    <string id="gar_hellcar_start_31113">
+        <text>Ну, как житуха?</text>
+    </string>
+    <string id="gar_hellcar_start_311131">
+        <text>Бьёт ключом... И не только по голове. Вишь как развлекаемся?</text>
+    </string>
+    <string id="gar_hellcar_start_3111311">
+        <text>Ну да, вижу. Всё с отморозками воюешь...</text>
+    </string>
+    <string id="gar_hellcar_start_31113111">
+        <text>Ну, мож я и дурак, но хоть здесь отрываюсь на них по полной.</text>
+    </string>
+    <string id="gar_hellcar_start_311131111">
+        <text>Ну да, тоже нужное дело. Ладно, брат, удачи тебе.</text>
+    </string>
+    <string id="gar_hellcar_start_31114">
+        <text>Что нового?</text>
+    </string>
+    <string id="gar_hellcar_start_311141">
+        <text>Да, собсно, нихера нового. Со старым бы разобраться... Ты ж с Кордона, да? Как там Лис, как Волчара? А то уж, считай, месяц не видались.</text>
+    </string>
+    <string id="gar_hellcar_start_3111411">
+        <text>Да по-всякому. Волк всё со своим детсадом мается. А Лис... Что-то я и не поговорил толком, не расспросил, что да как.</text>
+    </string>
+    <string id="gar_hellcar_start_31114111">
+        <text>Понятно... Ща здесь мальца порядок наведём, мож к Сидору наведаюсь, да к Волку.</text>
+    </string>
+    <string id="gar_hellcar_start_311141112">
+        <text>Ну давай, удачи. Пойду к Серому...</text>
+    </string>
+    <string id="gar_hellcar_start_31114111211">
+        <text>Спасибо.</text>
+    </string>
+    <string id="gar_hellcar_start_31115">
+        <text>Ладно, пойду по своим делам.</text>
+    </string>
+    <string id="gar_hellcar_start_3112">
+        <text>Я достаточно много знаю, могу поделиться информацией.</text>
+    </string>
+    <string id="gar_hellcar_start_41">
+        <text>Дело ещё не сделано, болтать будем потом.</text>
+    </string>
+    <string id="gar_hellcar_start_51">
+        <text>Привет, Стрелок.</text>
+    </string>
+    <string id="gar_seriy_start_11">
+        <text>Блин, Стрелок, давай попозже. Тут сейчас буза, сам видишь...</text>
+    </string>
+    <string id="gar_seriy_start_22">
+        <text>Всё, отбой, брат.</text>
+    </string>
+    <string id="gar_seriy_start_221">
+        <text>Слушай, я давеча с Лисом говорил. А до него с Сидоровичем. А у тебя есть что для меня?</text>
+    </string>
+    <string id="gar_seriy_start_2211">
+        <text>Спасибо, Стрелок, помог сволочь бандитскую покрошить. Что же до твоего дела... Стрелок, тебе надо топать на Агро и встретиться там с Кротом. А дальше он тебе что-то там передаст. Ну, как-то так, своими словами.</text>
+    </string>
+    <string id="gar_seriy_start_2212">
+        <text>Ладно, я понял. Ещё увидимся, будь.</text>
+    </string>
+    <string id="gar_seriy_start_222">
+        <text>Слушай, я давеча с Лисом говорил. А до него с Сидоровичем. А у тебя есть что для меня?</text>
+    </string>
+    <string id="gar_seriy_start_2221">
+        <text>Спасибо, Стрелок, помог сволочь бандитскую покрошить. Что же до твоего дела... Стрелок, тебе надо топать на Агро и встретиться там с Кротом. А дальше он тебе что-то там передаст. Ну, как-то так, своими словами.</text>
+    </string>
+    <string id="gar_seriy_start_2222">
+        <text>Ладно, я понял. Ещё увидимся, будь.</text>
+    </string>
+    <string id="gar_seriy_start_33">
+        <text>О! Здоров, Стрелок! Откуда и куда, брат?</text>
+    </string>
+    <string id="gar_seriy_start_44">
+        <text>Прямой дороги тебе, сталкер, мимо аномалий через артефакты.</text>
+    </string>
+    <string id="gar_seriy_start_441">
+        <text>Что у вас тут интересного?</text>
+    </string>
+    <string id="gar_seriy_start_4411">
+        <text>Да так, понемножку. Про Хемуля слышал, как он всех отмычек положил? Нет? Там история длинная, а если коротко, как выяснилось, они его самого прикопать хотели. Что ещё... Фазу помнишь? На Большой земле щас - лечится. На сосыча нарвались матёрого. Гвинпин с ним был, тот отделался легко, а Фазу сосыч маленько поломал... Больше ничего особенного, так, мелкие обычные дела.</text>
+    </string>
+    <string id="gar_seriy_start_44112">
+        <text>Ясно... Ну что ж, попрусь дальше. Хабара и удачи!</text>
+    </string>
+    <string id="gar_seryi_about_garbage_0">
+        <text>Что у вас тут интересного?</text>
+    </string>
+    <string id="gar_seryi_about_garbage_1">
+        <text>Да так, понемножку. Про Хемуля слышал, как он всех отмычек положил? Нет? Там история длинная, а если коротко, как выяснилось, они его самого прикопать хотели. Что ещё... Фазу помнишь? На Большой земле щас - лечится. На сосыча нарвались матёрого. Гвинпин с ним был, тот отделался легко, а Фазу сосыч маленько поломал... Больше ничего особенного, так, мелкие обычные дела.</text>
+    </string>
+    <string id="gar_seryi_about_garbage_11">
+        <text>Ясно... Ну что ж, попрусь дальше. Хабара и удачи!</text>
+    </string>
+    <string id="gar_stalker_about_level_0">
+        <text>Что нового здесь? А то я недавно вернулся.</text>
+    </string>
+    <string id="gar_stalker_about_level_1">
+        <text>Нового? Ну, коты вот расплодились, мало того что когти что твой штык-нож, так еще и по мозгам шибают. А так в остальном все по старому.</text>
+    </string>
+    <string id="gar_hellcar_start_3111411121">
+        <text>Иди в Ангар, там хоть переночевать можно, если что. Правда бандиты с Агро то и дело прут... Ну, поможешь братишкам там заодно...</text>
+    </string>
+</string_table>

@@ -1,0 +1,32 @@
+function murza_place()
+   local obj = alife():object("marsh_murza_place")
+   if obj then
+     level.map_add_object_spot_ser(obj.id, "ogsm_hide_spot_max", "Место пропажи Мурзы")
+   end
+end
+
+function murza_help_fail(task, objective)
+   if has_alife_info("vorot_death") or has_alife_info("mozol_death") or has_alife_info("murza_death") or has_alife_info("shilo_death") or has_alife_info("yashka_death") then
+      return true
+   end
+   return false
+end
+
+function quest_complete(first_speaker, second_speaker)
+   dialogs.relocate_money(first_speaker, 5000, "in")
+   db.actor:set_character_rank(db.actor:character_rank() + 20)
+end
+
+function sprut_item_have(task, objective)
+   if db.actor ~= nil then
+      return db.actor:object("mutant_krovosos_red_jaw") ~= nil
+   end
+   return false
+end
+
+function give_red_jaw(first_speaker, second_speaker)
+   dialogs.relocate_item_section(first_speaker, "mutant_krovosos_red_jaw", "out")
+   dialogs.relocate_item_section(first_speaker, "af_mercury", "in")
+   dialogs.relocate_item_section(first_speaker, "af_dummy_glassbeads", "in")
+   db.actor:set_character_rank(db.actor:character_rank() + 10)
+end

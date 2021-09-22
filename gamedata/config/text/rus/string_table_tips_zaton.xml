@@ -1,0 +1,15 @@
+	<string id="tips_steel_forest_lab_press">
+		<text>Чтобы отключить силовую установку, нажмите ($$ACTION_USE$$).</text>
+	</string>
+	<string id="tips_zaton_button_press">
+		<text>Чтобы перейти на ручное управление, нажмите ($$ACTION_USE$$).</text>
+	</string>
+	<string id="tips_zaton_switcher_01_press">
+		<text>Чтобы отключить 1-ю группу излучателей, нажмите ($$ACTION_USE$$).</text>
+	</string>
+	<string id="tips_zaton_switcher_02_press">
+		<text>Чтобы отключить 2-ю группу излучателей, нажмите ($$ACTION_USE$$).</text>
+	</string>
+	<string id="tips_zaton_generator_press">
+		<text>Чтобы отключить автономный генератор, нажмите ($$ACTION_USE$$).</text>
+	</string>

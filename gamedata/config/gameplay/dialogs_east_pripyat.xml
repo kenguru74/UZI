@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="komandor_first_dialog">
+        <has_info>german_fifth_talk</has_info>
+        <dont_has_info>komandor_first_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>komandor_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>komandor_first_dialog_1</text>
+                <action>east_pripyat_dialog.komandor_take_docs_zech</action>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>komandor_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>komandor_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>komandor_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>komandor_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>komandor_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>komandor_first_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>komandor_first_dialog_8</text>
+                <next>81</next>
+                <next>82</next>
+            </phrase>
+            <phrase id="81">
+                <text>komandor_first_dialog_81</text>
+                <give_info>komandor_first_talk</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="82">
+                <text>komandor_first_dialog_82</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+
+    <dialog id="komandor_second_dialog">
+        <has_info>komandor_find_prototip</has_info>
+        <dont_has_info>komandor_second_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>komandor_second_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>komandor_second_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>komandor_second_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>komandor_second_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>komandor_second_dialog_4</text>
+                <give_info>known_secret_zech</give_info>
+                <action>east_pripyat_dialog.komandor_take_prototip</action>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>komandor_second_dialog_5</text>
+                <give_info>komandor_second_talk</give_info>
+                <action>east_pripyat_dialog.komandor_give_reward</action>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>komandor_second_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>komandor_second_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>komandor_second_dialog_8</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="komandor_third_dialog">
+        <has_info>komandor_talk</has_info>
+        <dont_has_info>komandor_third_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>komandor_third_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>komandor_third_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>komandor_third_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>komandor_third_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>komandor_third_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>komandor_third_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>komandor_third_dialog_6</text>
+                <give_info>komandor_third_talk</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="pripyat_prachka_technik_dialog">
+        <has_info>komandor_third_talk</has_info>
+        <dont_has_info>technik_talk</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>pripyat_prachka_technik_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>pripyat_prachka_technik_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>pripyat_prachka_technik_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>pripyat_prachka_technik_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>pripyat_prachka_technik_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>pripyat_prachka_technik_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>pripyat_prachka_technik_dialog_6</text>
+                <give_info>technik_talk</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="haron_dialog">
+        <has_info>take_message2_german</has_info>
+        <dont_has_info>find_haron</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>haron_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>haron_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>haron_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>haron_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>haron_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>haron_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>haron_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>haron_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>haron_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>haron_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>haron_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>haron_dialog_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>haron_dialog_12</text>
+                <next>13</next>
+            </phrase>
+            <phrase id="13">
+                <text>haron_dialog_13</text>
+                <next>14</next>
+            </phrase>
+            <phrase id="14">
+                <text>haron_dialog_14</text>
+                <next>15</next>
+            </phrase>
+            <phrase id="15">
+                <text>haron_dialog_15</text>
+                <next>16</next>
+            </phrase>
+            <phrase id="16">
+                <text>haron_dialog_16</text>
+                <next>17</next>
+            </phrase>
+            <phrase id="17">
+                <text>haron_dialog_17</text>
+                <next>18</next>
+            </phrase>
+            <phrase id="18">
+                <text>haron_dialog_18</text>
+                <next>19</next>
+            </phrase>
+            <phrase id="19">
+                <text>haron_dialog_19</text>
+                <next>20</next>
+            </phrase>
+            <phrase id="20">
+                <text>haron_dialog_20</text>
+                <next>21</next>
+            </phrase>
+            <phrase id="21">
+                <text>haron_dialog_21</text>
+                <next>22</next>
+            </phrase>
+            <phrase id="22">
+                <text>haron_dialog_22</text>
+                <next>23</next>
+            </phrase>
+            <phrase id="23">
+                <text>haron_dialog_23</text>
+                <next>24</next>
+            </phrase>
+            <phrase id="24">
+                <text>haron_dialog_24</text>
+                <next>25</next>
+            </phrase>
+            <phrase id="25">
+                <text>haron_dialog_25</text>
+                <next>26</next>
+            </phrase>
+            <phrase id="26">
+                <text>haron_dialog_26</text>
+                <next>27</next>
+            </phrase>
+            <phrase id="27">
+                <text>haron_dialog_27</text>
+                <next>28</next>
+            </phrase>
+            <phrase id="28">
+                <text>haron_dialog_28</text>
+                <next>29</next>
+            </phrase>
+            <phrase id="29">
+                <text>haron_dialog_29</text>
+                <give_info>find_haron</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+</game_dialogs>

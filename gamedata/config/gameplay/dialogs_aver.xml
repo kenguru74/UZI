@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="first_lesnichii_dialog">
+    <dont_has_info>first_dialog_aver</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>first_lesnichii_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>first_lesnichii_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>first_lesnichii_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>first_lesnichii_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>first_lesnichii_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>first_lesnichii_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>first_lesnichii_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>first_lesnichii_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>first_lesnichii_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>first_lesnichii_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>first_lesnichii_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>first_lesnichii_dialog_11</text>
+                <give_info>first_dialog_aver</give_info>
+                <action>aver_dialog.aver_mapspot_controller</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="second_lesnichii_dialog">
+    <dont_has_info>second_dialog_aver</dont_has_info>
+    <has_info>aver_controller_corpse</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>second_lesnichii_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>second_lesnichii_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>second_lesnichii_dialog_2</text>
+                <give_info>second_dialog_aver</give_info>
+                <action>aver_dialog.remove_label</action>
+                <action>aver_dialog.lesnichii_shron</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+</game_dialogs>

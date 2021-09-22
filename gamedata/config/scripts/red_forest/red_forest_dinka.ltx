@@ -1,0 +1,15 @@
+[logic]
+active = walker
+on_death = death
+
+[walker]
+path_walk = red_forest_dinka_walk
+path_look = red_forest_dinka_look
+on_info = {+dinka_escort} walker@dinka_escort
+
+[walker@dinka_escort]
+path_walk = red_forest_dinka1_walk
+on_signal = dinka_stop | %+dinka_to_place%
+
+[death]
+on_info = %+red_forest_npc_dead%

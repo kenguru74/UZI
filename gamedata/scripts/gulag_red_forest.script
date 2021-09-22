@@ -1,0 +1,185 @@
+local t = {}
+
+function load_job(sj, gname, type, squad, groups)
+
+--' created by Mora
+
+--'--------------------------------------------------------------------------
+--' RED_FOREST
+--'--------------------------------------------------------------------------
+
+	-- сталкеры у капера
+	if type == "red_forest_kaper" then
+		t = { section = "logic@red_forest_kaper_kamp1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_kaper_kamp2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_kaper_kamp3",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_kaper_walker1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_kaper_walker2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	-- сталкеры у перехода на Юпитер
+	if type == "red_forest_jup" then
+		t = { section = "logic@red_forest_jup_kamp1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_jup_kamp2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_jup_walker1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_jup_walker2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_jup_walker3",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_jup_walker4",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+	-- сталкеры у моста
+	if type == "red_forest_bridge" then
+		t = { section = "logic@red_forest_bridge_walker1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_bridge_walker2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_bridge_walker3",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_bridge_walker4",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_bridge_walker5",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		t = { section = "logic@red_forest_bridge_walker6",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
+end
+
+function load_states(gname, type)
+
+	if type == "red_forest_kaper" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "red_forest_jup" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+
+	if type == "red_forest_bridge" then
+		return function(gulag)
+			if db.actor ~= nil then
+					return 0  -- день
+			else
+				return gulag.state
+			end
+		end
+	end
+end
+
+--------------------------------------------------------------------------
+-- Dynamic ltx
+--------------------------------------------------------------------------
+function load_ltx(gname, type)
+	return nil
+end
+
+function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
+
+
+	if gulag_type == "red_forest_kaper" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "red_forest_jup" then
+		return npc_community == "stalker"
+	end
+
+	if gulag_type == "red_forest_bridge" then
+		return npc_community == "stalker"
+	end
+
+	return false
+end
+
+function checkMonster(npc_community, gulag_type)
+
+	return false
+end

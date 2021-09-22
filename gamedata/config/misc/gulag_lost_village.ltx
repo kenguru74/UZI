@@ -1,0 +1,65 @@
+;-------------------------------------------------------------------------------------------------
+;-- охотники
+;-------------------------------------------------------------------------------------------------
+
+;сидящие у 3 костра
+[logic@lost_village_hunter3_kamp1]
+active = kamp@lost_village_hunter3
+
+[logic@lost_village_hunter3_kamp2]
+active = kamp@lost_village_hunter3
+
+[kamp@lost_village_hunter3]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;сидящие у 2 костра
+[logic@lost_village_hunter2_kamp1]
+active = kamp@lost_village_hunter2
+
+[logic@lost_village_hunter2_kamp2]
+active = kamp@lost_village_hunter2
+
+[kamp@lost_village_hunter2]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;сидящие у 1 костра
+[logic@lost_village_hunter1_kamp1]
+active = kamp@lost_village_hunter1
+
+[logic@lost_village_hunter1_kamp2]
+active = kamp@lost_village_hunter1
+
+[kamp@lost_village_hunter1]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;часовые
+[logic@lost_village_hunter1_walker1]
+active = walker1@lost_village_hunter1
+
+[walker1@lost_village_hunter1]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@lost_village_hunter1_walker2]
+active = walker2@lost_village_hunter1
+
+[walker2@lost_village_hunter1]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[logic@lost_village_hunter1_walker3]
+active = walker3@lost_village_hunter1
+
+[walker3@lost_village_hunter1]
+path_walk  = post3_walk
+path_look  = post3_look
+
+;патрулирующий
+[logic@lost_village_hunter1_walker4]
+active = walker4@lost_village_hunter1
+
+[walker4@lost_village_hunter1]
+path_walk  = patrol1_walk

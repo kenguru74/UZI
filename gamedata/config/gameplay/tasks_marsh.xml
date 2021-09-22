@@ -1,0 +1,63 @@
+<game_task id="marsh_komendant_quest">
+   <title>Выполнить просьбу Коменданта</title>
+   <objective>
+      <text>Отчитаться Коменданту</text>
+      <icon>ui_iconsTotal_mutant</icon>
+      <infoportion_complete>job_dialog_kurochkin2</infoportion_complete>
+      <function_fail>marsh_dialog.murza_help_fail</function_fail>
+   </objective>
+
+   <objective>
+      <text>Отыскать группу Мурзы</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <infoportion_complete>find_murza</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Мурзой</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <infoportion_complete>first_murza_dialog</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Защитить группу Мурзы</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <infoportion_complete>marsh_bloodsucker_death</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Мурзой</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <infoportion_complete>second_murza_dialog</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Отчитаться Коменданту</text>
+      <map_location_type hint="Комендант">blue_location</map_location_type>
+      <object_story_id>marsh_kalancha</object_story_id>
+      <infoportion_complete>job_dialog_kurochkin2</infoportion_complete>
+   </objective>
+</game_task>
+
+<game_task id="marsh_kalancha_quest">
+   <title>Работа на науку</title>
+   <objective>
+      <text>Принести щупальце Каланче</text>
+      <icon>ui_iconsTotal_mutant</icon>
+      <infoportion_complete>third_dialog_kalancha</infoportion_complete>
+   </objective>
+
+   <objective>
+      <text>Найти щупальце болотного кровососа</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <function_complete>marsh_dialog.sprut_item_have</function_complete>
+      <infoportion_set_complete>red_sprut_have</infoportion_set_complete>
+   </objective>
+
+   <objective>
+      <text>Принести щупальце Каланче</text>
+      <map_location_type hint="Каланча">blue_location</map_location_type>
+      <object_story_id>marsh_ecolog</object_story_id>
+      <infoportion_complete>third_dialog_kalancha</infoportion_complete>
+   </objective>
+</game_task>

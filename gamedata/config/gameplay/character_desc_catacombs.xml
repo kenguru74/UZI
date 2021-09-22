@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+<!---------------------------CATACOMBS_ECOLOG_CORPSE------------------------>
+	<specific_character id="catacombs_ecolog_corpse" no_random = "1">
+		<name>catacombs_ecolog_corpse_name</name>
+		<icon>ui_npc_u_stalker_ecolog</icon>
+		<map_icon x="0" y="6"></map_icon>
+		<bio>catacombs_ecolog_corpse_bio</bio>
+
+		<class>catacombs_ecolog_corpse</class>
+		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
+		<money min="2000" max="5000" infinitive="0"></money>
+		
+		<rank>870</rank>
+		<reputation>50</reputation>
+
+		<visual>actors\ecolog\stalker_ecolog</visual>
+		<snd_config>characters_voice\human_03\ecolog\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_gaussu \n
+		</supplies>
+			
+#include "gameplay\character_criticals_3.xml"
+#include "gameplay\character_dialogs.xml"
+		
+	</specific_character>
+
+</xml>

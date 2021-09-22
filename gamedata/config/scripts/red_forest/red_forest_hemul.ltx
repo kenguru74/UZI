@@ -1,0 +1,15 @@
+[logic]
+active = walker
+on_death = death
+
+[walker]
+path_walk = red_forest_hemul_walk
+path_look = red_forest_hemul_look
+on_info = {+hemul_fourth_dialog_end} walker@hemul_escort
+
+[walker@hemul_escort]
+path_walk = red_forest_hemul1_walk
+on_signal = hemul_stop | %+hemul_to_place%
+
+[death]
+on_info = %+red_forest_npc_dead%

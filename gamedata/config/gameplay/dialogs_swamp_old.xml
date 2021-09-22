@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="swamp_old_doctor_1_dialog">
+        <dont_has_info>first_talking_doctor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>swamp_old_doctor_1_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>swamp_old_doctor_1_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>swamp_old_doctor_1_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>swamp_old_doctor_1_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>swamp_old_doctor_1_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>swamp_old_doctor_1_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>swamp_old_doctor_1_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>swamp_old_doctor_1_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>swamp_old_doctor_1_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>swamp_old_doctor_1_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>swamp_old_doctor_1_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>swamp_old_doctor_1_dialog_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>swamp_old_doctor_1_dialog_12</text>
+                <next>13</next>
+            </phrase>
+            <phrase id="13">
+                <text>swamp_old_doctor_1_dialog_13</text>
+                <next>14</next>
+            </phrase>
+            <phrase id="14">
+                <text>swamp_old_doctor_1_dialog_14</text>
+                <next>15</next>
+            </phrase>
+            <phrase id="15">
+                <text>swamp_old_doctor_1_dialog_15</text>
+                <next>16</next>
+            </phrase>
+            <phrase id="16">
+                <text>swamp_old_doctor_1_dialog_16</text>
+                <next>17</next>
+            </phrase>
+            <phrase id="17">
+                <text>swamp_old_doctor_1_dialog_17</text>
+                <next>18</next>
+            </phrase>
+            <phrase id="18">
+                <text>swamp_old_doctor_1_dialog_18</text>
+                <next>19</next>
+            </phrase>
+            <phrase id="19">
+                <text>swamp_old_doctor_1_dialog_19</text>
+                <next>20</next>
+            </phrase>
+            <phrase id="20">
+                <text>swamp_old_doctor_1_dialog_20</text>
+                <next>21</next>
+            </phrase>
+            <phrase id="21">
+                <text>swamp_old_doctor_1_dialog_21</text>
+                <next>22</next>
+            </phrase>
+            <phrase id="22">
+                <text>swamp_old_doctor_1_dialog_22</text>
+                <next>23</next>
+            </phrase>
+            <phrase id="23">
+                <text>swamp_old_doctor_1_dialog_23</text>
+                <next>24</next>
+            </phrase>
+            <phrase id="24">
+                <text>swamp_old_doctor_1_dialog_24</text>
+                <next>25</next>
+            </phrase>
+            <phrase id="25">
+                <text>swamp_old_doctor_1_dialog_25</text>
+                <action>swamp_old_dialog.spawn_zap_klyk1_on_l03underground</action>
+                <give_info>first_talking_doctor</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="swamp_old_doctor_2_dialog">
+        <has_info>talk_to_doctor_1</has_info>
+        <dont_has_info>second_talking_doctor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>swamp_old_doctor_2_dialog_0</text>
+                <action>swamp_old_dialog.send_klyk_zapiska1</action>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>swamp_old_doctor_2_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>swamp_old_doctor_2_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>swamp_old_doctor_2_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>swamp_old_doctor_2_dialog_4</text>
+                <give_info>second_talking_doctor</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="swamp_old_doctor_3_dialog">
+        <has_info>klyk_zapiska3</has_info>
+        <dont_has_info>third_talking_doctor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>swamp_old_doctor_3_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>swamp_old_doctor_3_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>swamp_old_doctor_3_dialog_2</text>
+                <action>swamp_old_dialog.send_klyk_zapiska3</action>
+                <give_info>known_of_klyk</give_info>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>swamp_old_doctor_3_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>swamp_old_doctor_3_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>swamp_old_doctor_3_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>swamp_old_doctor_3_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>swamp_old_doctor_3_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>swamp_old_doctor_3_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>swamp_old_doctor_3_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>swamp_old_doctor_3_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>swamp_old_doctor_3_dialog_11</text>
+<!--                <action>swamp_old_dialog.mapspot_labirint</action> -->
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>swamp_old_doctor_3_dialog_12</text>
+                <give_info>third_talking_doctor</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="swamp_old_doctor_4_dialog">
+        <has_info>first_talking_cheburek</has_info>
+        <dont_has_info>fourth_talking_doctor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>swamp_old_doctor_4_dialog_0</text>
+                <give_info>goto_doc</give_info>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>swamp_old_doctor_4_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>swamp_old_doctor_4_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>swamp_old_doctor_4_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>swamp_old_doctor_4_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>swamp_old_doctor_4_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>swamp_old_doctor_4_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>swamp_old_doctor_4_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>swamp_old_doctor_4_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>swamp_old_doctor_4_dialog_9</text>
+                <action>swamp_old_dialog.take_pelengator</action>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>swamp_old_doctor_4_dialog_10</text>
+                <give_info>fourth_talking_doctor</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="swamp_old_doctor_5_dialog">
+        <has_info>generators_message_doctor_2</has_info>
+        <dont_has_info>fifth_talking_doctor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>swamp_old_doctor_5_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>swamp_old_doctor_5_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>swamp_old_doctor_5_dialog_2</text>
+                <action>swamp_old_dialog.give_pelengator</action>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>swamp_old_doctor_5_dialog_3</text>
+                <give_info>goto_doc2</give_info>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>swamp_old_doctor_5_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>swamp_old_doctor_5_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>swamp_old_doctor_5_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>swamp_old_doctor_5_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>swamp_old_doctor_5_dialog_8</text>
+                <give_info>fifth_talking_doctor</give_info>
+                <action>swamp_old_dialog.spawn_arts_on_sarcofag</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+         </phrase_list>
+    </dialog>
+
+    <dialog id="swamp_old_doctor_6_dialog">
+        <has_info>find_unique_arts</has_info>
+        <dont_has_info>sixth_talking_doctor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>swamp_old_doctor_6_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>swamp_old_doctor_6_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>swamp_old_doctor_6_dialog_2</text>
+                <action>swamp_old_dialog.give_unique_arts</action>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>swamp_old_doctor_6_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>swamp_old_doctor_6_dialog_4</text>
+                <give_info>sixth_talking_doctor</give_info>
+                <action>swamp_old_dialog.actor_walk</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+         </phrase_list>
+    </dialog>
+
+    <dialog id="swamp_old_doctor_7_dialog">
+        <has_info>goto_doc3</has_info>
+        <dont_has_info>seventh_talking_doctor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>swamp_old_doctor_7_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>swamp_old_doctor_7_dialog_1</text>
+                <action>swamp_old_dialog.take_so</action>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>swamp_old_doctor_7_dialog_2</text>
+                <give_info>seventh_talking_doctor</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+         </phrase_list>
+    </dialog>
+
+    <dialog id="swamp_old_doctor_8_dialog">
+        <has_info>second_talking_klyk</has_info>
+        <dont_has_info>eighth_talking_doctor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>swamp_old_doctor_8_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>swamp_old_doctor_8_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>swamp_old_doctor_8_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>swamp_old_doctor_8_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>swamp_old_doctor_8_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>swamp_old_doctor_8_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>swamp_old_doctor_8_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>swamp_old_doctor_8_dialog_7</text>
+                <action>swamp_old_dialog.give_izomorf</action>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>swamp_old_doctor_8_dialog_8</text>
+                <give_info>eighth_talking_doctor</give_info>
+                <action>swamp_old_dialog.doctor_friend</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+         </phrase_list>
+    </dialog>
+
+    <dialog id="doctor_muhomor_first_dialog">
+        <has_info>first_talking_muhomor</has_info>
+        <dont_has_info>first_talking_doctor_muhomor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>doctor_muhomor_first_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>doctor_muhomor_first_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>doctor_muhomor_first_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>doctor_muhomor_first_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>doctor_muhomor_first_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>doctor_muhomor_first_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>doctor_muhomor_first_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>doctor_muhomor_first_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>doctor_muhomor_first_dialog_8</text>
+                <give_info>first_talking_doctor_muhomor</give_info>
+                <action>swamp_old_dialog.spawn_mushrooms</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="doctor_muhomor_second_dialog">
+        <has_info>eat_grib2</has_info>
+        <dont_has_info>second_talking_doctor_muhomor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>doctor_muhomor_second_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>doctor_muhomor_second_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>doctor_muhomor_second_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>doctor_muhomor_second_dialog_3</text>
+                <action>swamp_old_dialog.give_health_grib</action>
+                <action>swamp_old_dialog.clear_swamp_mapspots</action>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>doctor_muhomor_second_dialog_4</text>
+                <give_info>second_talking_doctor_muhomor</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="doctor_muhomor_third_dialog">
+        <has_info>get_message_doctor</has_info>
+        <dont_has_info>third_talking_doctor_muhomor</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>doctor_muhomor_third_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>doctor_muhomor_third_dialog_1</text>
+                <action>swamp_old_dialog.give_mixtura</action>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>doctor_muhomor_third_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>doctor_muhomor_third_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>doctor_muhomor_third_dialog_4</text>
+                <give_info>third_talking_doctor_muhomor</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+</game_dialogs>

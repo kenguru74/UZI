@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="mar_guard_dialog">
+        <phrase_list>
+            <phrase id="0">
+                <text>mar_guard_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>mar_guard_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>mar_guard_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>mar_guard_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>mar_guard_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>mar_guard_dialog_5</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="mar_kurochkin_dialog">
+    <dont_has_info>first_dialog_kurochkin</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mar_kurochkin_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>mar_kurochkin_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>mar_kurochkin_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>mar_kurochkin_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>mar_kurochkin_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>mar_kurochkin_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>mar_kurochkin_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>mar_kurochkin_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>mar_kurochkin_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>mar_kurochkin_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>mar_kurochkin_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>mar_kurochkin_dialog_11</text>
+                <next>12</next>
+            </phrase>
+            <phrase id="12">
+                <text>mar_kurochkin_dialog_12</text>
+                <next>13</next>
+            </phrase>
+            <phrase id="13">
+                <text>mar_kurochkin_dialog_13</text>
+                <next>14</next>
+            </phrase>
+            <phrase id="14">
+                <text>mar_kurochkin_dialog_14</text>
+                <next>15</next>
+            </phrase>
+            <phrase id="15">
+                <text>mar_kurochkin_dialog_15</text>
+                <next>16</next>
+            </phrase>
+            <phrase id="16">
+                <text>mar_kurochkin_dialog_16</text>
+                <next>17</next>
+            </phrase>
+            <phrase id="17">
+                <text>mar_kurochkin_dialog_17</text>
+                <next>18</next>
+            </phrase>
+            <phrase id="18">
+                <text>mar_kurochkin_dialog_18</text>
+                <next>19</next>
+            </phrase>
+            <phrase id="19">
+                <text>mar_kurochkin_dialog_19</text>
+                <next>20</next>
+            </phrase>
+            <phrase id="20">
+                <text>mar_kurochkin_dialog_20</text>
+                <next>21</next>
+            </phrase>
+            <phrase id="21">
+                <text>mar_kurochkin_dialog_21</text>
+                <next>22</next>
+            </phrase>
+            <phrase id="22">
+                <text>mar_kurochkin_dialog_22</text>
+                <next>23</next>
+            </phrase>
+            <phrase id="23">
+                <text>mar_kurochkin_dialog_23</text>
+                <next>24</next>
+            </phrase>
+            <phrase id="24">
+                <text>mar_kurochkin_dialog_24</text>
+                <next>25</next>
+            </phrase>
+            <phrase id="25">
+                <text>mar_kurochkin_dialog_25</text>
+                <next>26</next>
+            </phrase>
+            <phrase id="26">
+                <text>mar_kurochkin_dialog_26</text>
+                <give_info>first_dialog_kurochkin</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="mar_kurochkin_job_dialog">
+    <has_info>first_dialog_kurochkin</has_info>
+    <dont_has_info>job_dialog_kurochkin</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mar_kurochkin_job_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>mar_kurochkin_job_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>mar_kurochkin_job_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>mar_kurochkin_job_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>mar_kurochkin_job_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>mar_kurochkin_job_dialog_5</text>
+                <next>61</next>
+                <next>62</next>
+            </phrase>
+            <phrase id="61">
+                <text>mar_kurochkin_job_dialog_61</text>
+                <next>71</next>
+            </phrase>
+            <phrase id="71">
+                <text>mar_kurochkin_job_dialog_71</text>
+                <next>81</next>
+            </phrase>
+            <phrase id="81">
+                <text>mar_kurochkin_job_dialog_81</text>
+                <give_info>job_dialog_kurochkin</give_info>
+                <action>marsh_dialog.murza_place</action>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="62">
+                <text>mar_kurochkin_job_dialog_62</text>
+                <next>72</next>
+            </phrase>
+            <phrase id="72">
+                <text>mar_kurochkin_job_dialog_72</text>
+                <next>82</next>
+            </phrase>
+            <phrase id="82">
+                <text>mar_kurochkin_job_dialog_82</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="mar_kurochkin_job_dialog2">
+    <has_info>second_murza_dialog</has_info>
+    <dont_has_info>job_dialog_kurochkin2</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mar_kurochkin_job_dialog2_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>mar_kurochkin_job_dialog2_1</text>
+                <action>marsh_dialog.quest_complete</action>
+                <give_info>job_dialog_kurochkin2</give_info>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>mar_kurochkin_job_dialog2_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>mar_kurochkin_job_dialog2_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>mar_kurochkin_job_dialog2_4</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="mar_holod_dialog">
+        <phrase_list>
+            <phrase id="0">
+                <text>mar_holod_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>mar_holod_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>mar_holod_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>mar_holod_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>mar_holod_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>mar_holod_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>mar_holod_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>mar_holod_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>mar_holod_dialog_8</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="mar_kalancha_dialog">
+    <dont_has_info>first_dialog_kalancha</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mar_kalancha_dialog_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>mar_kalancha_dialog_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>mar_kalancha_dialog_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>mar_kalancha_dialog_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>mar_kalancha_dialog_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>mar_kalancha_dialog_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>mar_kalancha_dialog_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>mar_kalancha_dialog_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>mar_kalancha_dialog_8</text>
+                <next>9</next>
+            </phrase>
+            <phrase id="9">
+                <text>mar_kalancha_dialog_9</text>
+                <next>10</next>
+            </phrase>
+            <phrase id="10">
+                <text>mar_kalancha_dialog_10</text>
+                <next>11</next>
+            </phrase>
+            <phrase id="11">
+                <text>mar_kalancha_dialog_11</text>
+                <give_info>first_dialog_kalancha</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="mar_kalancha_dialog2">
+    <has_info>job_dialog_kurochkin2</has_info>
+    <dont_has_info>second_dialog_kalancha</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mar_kalancha_dialog2_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>mar_kalancha_dialog2_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>mar_kalancha_dialog2_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>mar_kalancha_dialog2_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>mar_kalancha_dialog2_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>mar_kalancha_dialog2_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>mar_kalancha_dialog2_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>mar_kalancha_dialog2_7</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>mar_kalancha_dialog2_8</text>
+                <give_info>second_dialog_kalancha</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="mar_kalancha_dialog3">
+    <has_info>red_sprut_have</has_info>
+    <dont_has_info>third_dialog_kalancha</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mar_kalancha_dialog3_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>mar_kalancha_dialog3_1</text>
+                <give_info>third_dialog_kalancha</give_info>
+                <action>marsh_dialog.give_red_jaw</action>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>mar_kalancha_dialog3_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>mar_kalancha_dialog3_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>mar_kalancha_dialog3_4</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="first_dialog_murza">
+        <has_info>begin_dialog_murza</has_info>
+        <dont_has_info>first_murza_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>first_dialog_murza_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>first_dialog_murza_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>first_dialog_murza_2</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>first_dialog_murza_3</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>first_dialog_murza_4</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>first_dialog_murza_5</text>
+                <next>6</next>
+            </phrase>
+            <phrase id="6">
+                <text>first_dialog_murza_6</text>
+                <next>7</next>
+            </phrase>
+            <phrase id="7">
+                <text>first_dialog_murza_7</text>
+                <give_info>first_murza_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+    <dialog id="second_dialog_murza">
+        <has_info>save_murza_group</has_info>
+        <dont_has_info>second_murza_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>second_dialog_murza_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>second_dialog_murza_1</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>second_dialog_murza_2</text>
+                <give_info>second_murza_dialog</give_info>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+</game_dialogs>

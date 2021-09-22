@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+        <info_portion id="jupiter_bunker_outer_door_open"></info_portion>
+        <info_portion id="jupiter_bunker_inner_door_open"></info_portion>
+
+        <info_portion id="jupiter_volhov_door_open"></info_portion>
+
+        <info_portion id="jupiter_tunnel_door_open"></info_portion>
+
+        <info_portion id="jupiter_yanov_door1_open"></info_portion>
+        <info_portion id="jupiter_yanov_door2_open"></info_portion>
+        <info_portion id="jupiter_yanov_door3_open"></info_portion>
+        <info_portion id="jupiter_yanov_door4_open"></info_portion>
+
+        <info_portion id="jupiter_zulus_door_open"></info_portion>
+
+        <info_portion id="actor_door_outer"></info_portion>
+        <info_portion id="npc_54538_outer"></info_portion>
+        <info_portion id="npc_54539_outer"></info_portion>
+        <info_portion id="npc_54540_outer"></info_portion>
+
+        <info_portion id="actor_door_inner"></info_portion>
+        <info_portion id="npc_54538_inner"></info_portion>
+        <info_portion id="npc_54539_inner"></info_portion>
+        <info_portion id="npc_54540_inner"></info_portion>
+
+        <info_portion id="german_first_talk">
+                <task>work_on_german</task>
+                <article>german_first_talk_art</article>
+        </info_portion>
+        <info_portion id="german_second_talk">
+                <article>german_second_talk_art</article>
+        </info_portion>
+        <info_portion id="german_third_talk">
+                <article>german_third_talk_art</article>
+        </info_portion>
+        <info_portion id="german_fourth_talk">
+                <task>work_on_komandor</task>
+                <article>german_fourth_talk_art</article>
+        </info_portion>
+        <info_portion id="german_fifth_talk">
+                <article>german_fifth_talk_art</article>
+        </info_portion>
+
+        <info_portion id="german_find_decoder"></info_portion>
+        <info_portion id="azot_find_parts"></info_portion>
+
+        <info_portion id="azot_first_talk">
+                <article>azot_first_talk_art</article>
+        </info_portion>
+        <info_portion id="azot_second_talk">
+                <article>azot_second_talk_art</article>
+        </info_portion>
+        <info_portion id="known_secret_labs"></info_portion>
+        <info_portion id="german_bring_docs_labs"></info_portion>
+        <info_portion id="come_to_azot"></info_portion>
+        <info_portion id="german_bring_decoder"></info_portion>
+        <info_portion id="german_bring_docs_labx8"></info_portion>
+        <info_portion id="bring_azot_decoder"></info_portion>
+        <info_portion id="german_take_docszech"></info_portion>
+
+        <info_portion id="first_dialog_topol">
+                <task>work_on_topol</task>
+        </info_portion>
+        <info_portion id="second_dialog_topol"></info_portion>
+        <info_portion id="dialog_usach">
+                <action>jupiter_dialog.flash_mapspot_no</action>
+        </info_portion>
+        <info_portion id="dialog_usach2"></info_portion>
+        <info_portion id="dialog_quest_german"></info_portion>
+        <info_portion id="usach_death"></info_portion>
+        <info_portion id="give_ecolog_info">
+                <article>hospital_secret_art</article>
+                <action>jupiter_dialog.give_info_secret</action>
+        </info_portion>
+        <info_portion id="give_german_arts"></info_portion>
+        <info_portion id="spawn_flash_ecolog"></info_portion>
+        <info_portion id="send_message_german">
+                <action>jupiter_dialog.sending_message_german</action>
+        </info_portion>
+        <info_portion id="take_message_german">
+                <article>jupiter_message_german_art</article>
+        </info_portion>
+        <info_portion id="heli_start"></info_portion>
+        <info_portion id="heli_move"></info_portion>
+        <info_portion id="zulus_dialog">
+                <article>zulus_dialog_art</article>
+        </info_portion>
+        <info_portion id="vano_dialog"></info_portion>
+        <info_portion id="garik_dialog"></info_portion>
+        <info_portion id="lozman_dialog"></info_portion>
+        <info_portion id="loki_dialog">
+                <article>loki_dialog_art</article>
+        </info_portion>
+        <info_portion id="dialog_quest2_german">
+                <article>quest2_german_art</article>
+        </info_portion>
+        <info_portion id="dialog_quest3_german"></info_portion>
+        <info_portion id="give_jammer_german"></info_portion>
+        <info_portion id="take_message_strelok">
+                <article>take_message_strelok_art</article>
+        </info_portion>
+
+        <info_portion id="oasis_active"></info_portion>
+        <info_portion id="oasis_fail"></info_portion>
+
+        <info_portion id="second_dialog_lozman">
+                <task>oasis_lozman</task>
+                <action>jupiter_dialog.spot_oasis</action>
+        </info_portion>
+        <info_portion id="jupiter_spider_death"></info_portion>
+        <info_portion id="have_black_box">
+                <article>have_black_box_art</article>
+        </info_portion>
+        <info_portion id="third_dialog_lozman">
+                <task>secret_black_box</task>
+        </info_portion>
+        <info_portion id="talk_with_lozman">
+                <action>jupiter_dialog.lozman_remove_spots</action>
+        </info_portion>
+        <info_portion id="black_box_dialog_azot_first">
+                <action>jupiter_dialog.spawn_batteryes</action>
+        </info_portion>
+        <info_portion id="have_accumulators"></info_portion>
+        <info_portion id="black_box_dialog_azot_second"></info_portion>
+        <info_portion id="take_message_azot">
+                <article>have_message_azot_art</article>
+        </info_portion>
+        <info_portion id="black_box_dialog_azot_third"></info_portion>
+        <info_portion id="kozlov_dialog">
+                <action>jupiter_dialog.give_message_kozlov</action>
+        </info_portion>
+        <info_portion id="take_kozlov_message">
+                <article>have_kozlov_message_art</article>
+        </info_portion>
+        <info_portion id="german_black_box_first_dialog">
+                <task>secret_conteiners</task>
+                <article>jupiter_helicopter_art</article>
+                <action>jupiter_dialog.spawn_containers</action>
+        </info_portion>
+        <info_portion id="have_containers"></info_portion>
+        <info_portion id="german_black_box_second_dialog">
+                <action>jupiter_dialog.spawn_jup_heli_karta</action>
+        </info_portion>
+        <info_portion id="have_flight_map"></info_portion>
+        <info_portion id="german_black_box_third_dialog">
+                <article>saharov_art</article>
+        </info_portion>
+        <info_portion id="saharov_black_box_first_dialog"></info_portion>
+        <info_portion id="german_black_box_fourth_dialog"></info_portion>
+        <info_portion id="come_oasis"></info_portion>
+        <info_portion id="take_black_box_info_german"></info_portion>
+        <info_portion id="test_black_box"></info_portion>
+
+        <info_portion id="have_gausspistol"></info_portion>
+        <info_portion id="bul_first_dialog_jup"></info_portion>
+		
+</game_information_portions>

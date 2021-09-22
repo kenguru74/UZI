@@ -1,0 +1,6 @@
+--'  Квест Шухова на Хемуля и Динку
+function hemul_help(first_speaker, second_speaker)
+   dialogs.relocate_item_section(first_speaker, "af_dummy_battery_u", "in")
+   first_speaker:set_relation(game_object.friend, second_speaker)
+   db.actor:set_character_rank(db.actor:character_rank() + 60)
+end

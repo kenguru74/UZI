@@ -1,0 +1,1309 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_sr25_mk11_mod0_sk1 \n
+			ammo_7.62x51_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_sr25_mk11_mod0_sk1 \n
+			ammo_7.62x51_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m249 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_pkm \n
+                        ammo_7.62x54r = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_m4a1_sk1 = 1, silencer \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_m4a1_sk1 = 1, silencer \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_m4a1_sk1 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_pb = 1, silencer \n
+			ammo_9x18_fmj \n
+			wpn_m4a1_sk1 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_m4a1_sk1 = 1, grenade_launcher \n
+                        ammo_m209 = 10 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_m249 \n
+                        ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default11" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_hk416_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default12" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default13" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_hk416_sk1 = 1, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default14" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_pkm \n
+			ammo_7.62x54_ap = 5 \n
+			grenade_f1 = 4 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default15" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_pkm \n
+			ammo_7.62x54_ap = 5 \n
+			grenade_f1 = 4 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default16" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_pkm \n
+			ammo_7.62x54_ap = 5 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default17" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_m4a1_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 3 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default18" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_hydro = 10 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 4 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default19" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_hydro = 10 \n
+		wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 4 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default20" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_hydro = 10 \n
+			wpn_m249 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default21" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_hydro = 10 \n
+		wpn_hk416_sk1 = 1, grenade_launcher \n
+                        ammo_m209 = 4 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default22" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+		wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default23" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default24" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------MONOLIT REGULAR----------------------->
+	<specific_character id="pripyat_monolit_regular_default25" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_mo_head_1</icon>
+		<map_icon x="3" y="0"></map_icon>
+		<bio>pripyat_monolith_bio</bio>
+
+		<class>pripyat_monolit_regular</class>
+		<community>monolith</community>
+
+		<rank>418</rank>
+		<reputation>-385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\monolit\stalker_mo_head_1</visual>
+		<snd_config>characters_voice\human_02\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp444_sk2 \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 1 \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_MASTER----------------------->
+	<specific_character id="pripyat_stalker_master_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_2</icon>
+		<bio>pripyat_stalker_master</bio>
+
+		<class>pripyat_stalker_master</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_rukzak_2</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_sayga12k_sk2 = 1, scope \n
+			ammo_12x76_dart = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_MASTER----------------------->
+	<specific_character id="pripyat_stalker_master_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_2</icon>
+		<bio>pripyat_stalker_master</bio>
+
+		<class>pripyat_stalker_master</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_rukzak_2</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_rpk74_sk1 \n
+                        ammo_5.45x39_ap = 3 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_MASTER----------------------->
+	<specific_character id="pripyat_stalker_master_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_2</icon>
+		<bio>pripyat_stalker_master</bio>
+
+		<class>pripyat_stalker_master</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_rukzak_2</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_colt1911 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_ak103 = 1, scope \n
+			ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_MASTER----------------------->
+	<specific_character id="pripyat_stalker_master_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_2</icon>
+		<bio>pripyat_stalker_master</bio>
+
+		<class>pripyat_stalker_master</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_rukzak_2</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 10 \n
+			wpn_akm_sk2 = 1, launcher \n
+                        ammo_7.62x39_ap = 1 \n
+			ammo_vog-25 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_EXOSKELETON----------------------->
+	<specific_character id="pripyat_stalker_exoskeleton_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_exoskeleton</icon>
+		<bio>pripyat_stalker_exoskeleton</bio>
+
+		<class>pripyat_stalker_exoskeleton</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_pkm \n
+                        ammo_7.62x54_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_EXOSKELETON----------------------->
+	<specific_character id="pripyat_stalker_exoskeleton_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_exoskeleton</icon>
+		<bio>pripyat_stalker_exoskeleton</bio>
+
+		<class>pripyat_stalker_exoskeleton</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_rpk74_sk1 \n
+                        ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_EXOSKELETON----------------------->
+	<specific_character id="pripyat_stalker_exoskeleton_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_exoskeleton</icon>
+		<bio>pripyat_stalker_exoskeleton</bio>
+
+		<class>pripyat_stalker_exoskeleton</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_sig220 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_pkm \n
+			ammo_7.62x54r = 4 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_EXOSKELETON----------------------->
+	<specific_character id="pripyat_stalker_exoskeleton_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_exoskeleton</icon>
+		<bio>pripyat_stalker_exoskeleton</bio>
+
+		<class>pripyat_stalker_exoskeleton</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_rpk74_sk1 = 1, scope \n
+                        ammo_5.45x39_ap = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_EXOSKELETON----------------------->
+	<specific_character id="pripyat_stalker_exoskeleton_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_exoskeleton</icon>
+		<bio>pripyat_stalker_exoskeleton</bio>
+
+		<class>pripyat_stalker_exoskeleton</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_colt1911 \n
+                        ammo_11.43x23_hydro = 10 \n
+			wpn_rpk74_sk1 = 1, scope \n
+                        ammo_5.45x39_ap = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------STALKER_EXOSKELETON----------------------->
+	<specific_character id="pripyat_stalker_exoskeleton_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_exoskeleton</icon>
+		<bio>pripyat_stalker_exoskeleton</bio>
+
+		<class>pripyat_stalker_exoskeleton</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+
+		<rank>903</rank>
+		<reputation>385</reputation>
+		<money min="600" max="2000" infinitive="0"/>
+
+		<visual>actors\neytral\stalker_neytral_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+  		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+                        ammo_9x19_pbp = 1 \n
+			wpn_pkm \n
+                        ammo_7.62x54_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml"
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------pripyat_prachka_technik----------------------------------------------------->
+	<specific_character id="pripyat_prachka_technik" no_random = "1">
+		<name>pripyat_prachka_technik_name</name>
+		<icon>ui_inGame2_Dyadka_Yar</icon>
+        	<bio>pripyat_prachka_technik_bio</bio>
+
+		<class>pripyat_prachka_technik</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="1500000" max="1510000" infinitive="1"></money>
+		
+		<rank>1800</rank>
+		<reputation>500</reputation>
+		<visual>actors\stalker_freedom\stalker_freedom_2_face_2</visual>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			
+		</supplies>
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>pripyat_prachka_technik_repair</actor_dialog>
+		<actor_dialog>pripyat_prachka_technik_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------pripyat_prachka_medik----------------------------------------------------->
+	<specific_character id="pripyat_prachka_medik" no_random = "1">
+		<name>pripyat_prachka_medik_name</name>
+		<icon>ui_inGame2_Rogovets</icon>
+        	<bio>pripyat_prachka_medik_bio</bio>
+
+		<class>pripyat_prachka_medik</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="100000" max="110000" infinitive="1"></money>
+		
+		<rank>1800</rank>
+		<reputation>500</reputation>
+		<visual>actors\stalker_soldier\stalker_soldier_2_face_1</visual>
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			
+		</supplies>
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------pripyat_prachka_commander----------------------------------------------------->
+	<specific_character id="pripyat_prachka_commander" no_random = "1">
+		<name>pripyat_prachka_commander_name</name>
+		<icon>ui_inGame2_Kovalskiy</icon>
+        	<bio>pripyat_prachka_commander_bio</bio>
+
+		<class>pripyat_prachka_commander</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="3000" max="5000" infinitive="0"/>
+		
+		<rank>1800</rank>
+		<reputation>500</reputation>
+		<visual>actors\stalker_soldier\stalker_soldier_3_face_1</visual>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+                        ammo_9x19_pbp = 1 \n
+                        wpn_vintorez \n
+			ammo_9x39_ap = 10 \n
+			device_torch \n
+			stalker_outfit \n
+			
+		</supplies>
+		<start_dialog>komandor_first_dialog</start_dialog>
+		<actor_dialog>komandor_second_dialog</actor_dialog>
+		<actor_dialog>komandor_third_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------- Haron ------------------------>
+    <specific_character id="pripyat_haron" team_default = "1">
+        <name>pripyat_haron_name</name>
+        <icon>ui_npc_u_stalker_mo_exo</icon>
+        <map_icon x="3" y="0"></map_icon>
+        <bio>pripyat_haron_bio</bio>
+
+        <class>pripyat_haron</class>
+        <community>monolith</community>
+
+
+        <rank>989</rank>
+        <reputation>-998</reputation>
+
+        <visual>actors\monolit\stalker_mo_exo</visual>
+        <snd_config>characters_voice\human_03\monolith\</snd_config>
+  		<crouch_type>-1</crouch_type>
+        <supplies>
+            [spawn] \n
+	    wpn_usp \n
+	    ammo_9x19_pbp = 1 \n
+            wpn_hk416_sk1 \n
+			ammo_5.56x45_ap = 1 \n
+			grenade_f1 = 2 \n
+#include "gameplay\character_drugs.xml"
+        </supplies>
+        
+#include "gameplay\character_criticals_1.xml"
+					
+		<start_dialog>haron_dialog</start_dialog>
+    </specific_character>
+<!-------------------------------------pripyat_stalker_corpse------------------------------------------------------>
+	<specific_character id="pripyat_stalker_corpse" team_default = "1">
+		<name>pripyat_stalker_corpse_name</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_1</icon>
+		<bio>pripyat_stalker_corpse_bio</bio>
+
+		<class>pripyat_stalker_corpse</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>896</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_1</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1 \n
+			wpn_ak105 \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------pripyat_stalker_corpse2------------------------------------------------------>
+	<specific_character id="pripyat_stalker_corpse2" team_default = "1">
+		<name>pripyat_stalker_corpse2_name</name>
+		<icon>ui_npc_u_stalker_neytral_rukzak_1</icon>
+		<bio>pripyat_stalker_corpse2_bio</bio>
+
+		<class>pripyat_stalker_corpse2</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>896</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_rukzak_1</visual>
+		<supplies>
+			[spawn] \n
+                       wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+</xml>

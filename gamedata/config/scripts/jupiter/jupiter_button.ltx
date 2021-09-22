@@ -1,0 +1,17 @@
+[logic]
+active = ph_button@locked
+
+[ph_button@locked]
+anim_blend = false
+anim = button_false
+on_info = {+dialog_usach} ph_button@unlocked
+
+[ph_button@unlocked]
+anim_blend = false
+anim = button_true
+tooltip = tips_jupiterbutton_press
+on_press = ph_button@unlocked2 %+send_message_german%
+
+[ph_button@unlocked2]
+anim_blend = false
+anim = button_false

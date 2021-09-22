@@ -1,0 +1,43 @@
+[wpn_zf4]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn			= "weapons\addons\zf4" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = arsenal_mod\zf4.ogf
+description		= enc_weapons1_wpn-zf4
+
+;$prefetch 		= 64
+
+cost			= 8000
+
+holder_range_modifier	= 1.3
+holder_fov_modifier		= 0.3
+
+inv_name		= zf4
+inv_name_short	= zf4
+inv_weight = 0.1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 29
+scope_texture		= arsenal_mod\Crosshairs\wpn_scope_zf4
+scope_zoom_factor	= 15		;ZF-4 2.3X
+
+[wpn_zf4_m1]:wpn_zf4	;Снайперский прицел ZF-4
+$spawn			= "weapons\unqie\addons\zf4" ; option for Level Editor
+description		= enc_weapons1_wpn-zf4_m1
+
+cost			= 8500
+
+inv_name		= zf4_m1
+inv_name_short	= zf4_m1
+inv_weight = 0.1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 30s
+scope_texture		= arsenal_mod\crosshair_zf4
+scope_zoom_factor	= 12		;ZF-4 1.4X

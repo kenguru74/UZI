@@ -1,0 +1,80 @@
+<game_task id="red_forest_hemul_help">
+   <title>Помочь Хемулю найти Динку</title>
+   <objective>
+      <text>Привести Хемуля к Динке</text>
+      <icon>ui_iconsTotal_found_thing</icon>
+      <infoportion_complete>shuhov_hemul_complete</infoportion_complete>
+      <infoportion_fail>red_forest_npc_dead</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Разыскать Хемуля</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Хемуль">blue_location</map_location_type>
+      <object_story_id>red_forest_hemul</object_story_id>
+      <infoportion_complete>find_dinka</infoportion_complete>
+      <infoportion_fail>red_forest_npc_dead</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Добраться до Динки</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Динка">blue_location</map_location_type>
+      <object_story_id>red_forest_dinka</object_story_id>
+      <infoportion_complete>dinka_first_talk</infoportion_complete>
+      <infoportion_fail>red_forest_npc_dead</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Освободить Динку</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Динка">blue_location</map_location_type>
+      <object_story_id>red_forest_dinka</object_story_id>
+      <infoportion_complete>dinka_escort</infoportion_complete>
+      <infoportion_fail>red_forest_npc_dead</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Вывести Динку</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Динка">blue_location</map_location_type>
+      <object_story_id>red_forest_dinka</object_story_id>
+      <infoportion_complete>dinka_to_place</infoportion_complete>
+      <infoportion_fail>red_forest_npc_dead</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Хемулем</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Хемуль">blue_location</map_location_type>
+      <object_story_id>red_forest_hemul</object_story_id>
+      <infoportion_complete>hemul_fourth_dialog_end</infoportion_complete>
+      <infoportion_fail>red_forest_npc_dead</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Сопроводить Хемуля к Динке</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Хемуль">blue_location</map_location_type>
+      <object_story_id>red_forest_hemul</object_story_id>
+      <infoportion_complete>hemul_to_place</infoportion_complete>
+      <infoportion_fail>red_forest_npc_dead</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Попрощаться с Хемулем</text>
+      <icon height="50" width="50" x="100" y="50">ui\ui_icons_task</icon>
+      <map_location_type hint="Хемуль">blue_location</map_location_type>
+      <object_story_id>red_forest_hemul</object_story_id>
+      <infoportion_complete>all_right</infoportion_complete>
+      <infoportion_fail>red_forest_npc_dead</infoportion_fail>
+   </objective>
+
+   <objective>
+      <text>Поговорить с Шуховым</text>
+      <map_location_type hint="Шухов">blue_location</map_location_type>
+      <object_story_id>garbage_old_shuhov</object_story_id>
+      <infoportion_complete>shuhov_hemul_complete</infoportion_complete>
+      <infoportion_fail>red_forest_npc_dead</infoportion_fail>
+   </objective>
+</game_task>

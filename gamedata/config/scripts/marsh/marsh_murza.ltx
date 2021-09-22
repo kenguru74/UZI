@@ -1,0 +1,49 @@
+[logic]
+active = walker
+combat_ignore = combat_ignore
+on_death = death
+
+[walker]
+path_walk = mar_murza_walk
+path_look = mar_murza_look
+on_actor_dist_le_nvis = 25 | {+find_murza -first_murza_dialog} remark@wait1
+
+[remark@wait1]
+snd_anim_sync = true
+anim = hello_wpn
+snd = esc_wolf_say_thanks
+;snd = mar_stop
+;anim = wait
+target = actor
+on_signal = sound_end | walker2 %+begin_dialog_murza%
+
+[walker2]
+path_walk = mar_murza_walk
+path_look = mar_murza_look
+target = actor
+on_info = {+first_murza_dialog} remark@wait2
+
+[remark@wait2]
+snd = mar_ahtung
+on_signal = sound_end | walker3 %+mar_bloodsucker_online%
+
+[walker3]
+path_walk = mar_murza_walk1
+path_look = mar_murza_look1
+on_timer = 3000 | walker4
+
+[walker4]
+path_walk = mar_murza_walk2
+path_look = mar_murza_look2
+combat_ignore_cond = {+marsh_bloodsucker_death}
+on_info = {+marsh_bloodsucker_death} kamp
+
+[kamp]
+center_point  = marsh_camp_center
+path_walk = marsh_camp_center_task
+combat_ignore_cond = {+marsh_bloodsucker_death}
+
+[combat_ignore]
+
+[death]
+on_info = %+murza_death%

@@ -1,0 +1,122 @@
+;-------------------------------------------------------------------------------------------------
+;-- сталкеры у капера
+;-------------------------------------------------------------------------------------------------
+
+;сидящие у костра
+[logic@red_forest_kaper_kamp1]
+active = kamp@red_forest_kaper
+
+[logic@red_forest_kaper_kamp2]
+active = kamp@red_forest_kaper
+
+[logic@red_forest_kaper_kamp3]
+active = kamp@red_forest_kaper
+
+[kamp@red_forest_kaper]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;часовые
+[logic@red_forest_kaper_walker1]
+active = walker1@red_forest_kaper
+
+[walker1@red_forest_kaper]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@red_forest_kaper_walker2]
+active = walker2@red_forest_kaper
+
+[walker2@red_forest_kaper]
+path_walk  = post2_walk
+path_look  = post2_look
+
+;-------------------------------------------------------------------------------------------------
+;-- сталкеры у перехода на Юпитер
+;-------------------------------------------------------------------------------------------------
+
+;сидящие у костра
+[logic@red_forest_jup_kamp1]
+active = kamp@red_forest_jup
+
+[logic@red_forest_jup_kamp2]
+active = kamp@red_forest_jup
+
+[kamp@red_forest_jup]
+center_point  = camp_center
+path_walk = camp_center_task
+
+;часовые
+[logic@red_forest_jup_walker1]
+active = walker1@red_forest_jup
+
+[walker1@red_forest_jup]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@red_forest_jup_walker2]
+active = walker2@red_forest_jup
+
+[walker2@red_forest_jup]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[logic@red_forest_jup_walker3]
+active = walker3@red_forest_jup
+
+[walker3@red_forest_jup]
+path_walk  = post3_walk
+path_look  = post3_look
+
+[logic@red_forest_jup_walker4]
+active = walker4@red_forest_jup
+
+[walker4@red_forest_jup]
+path_walk  = post4_walk
+path_look  = post4_look
+
+;-------------------------------------------------------------------------------------------------
+;-- сталкеры у моста
+;-------------------------------------------------------------------------------------------------
+
+;часовые
+[logic@red_forest_bridge_walker1]
+active = walker1@red_forest_bridge
+
+[walker1@red_forest_bridge]
+path_walk  = post1_walk
+path_look  = post1_look
+
+[logic@red_forest_bridge_walker2]
+active = walker2@red_forest_bridge
+
+[walker2@red_forest_bridge]
+path_walk  = post2_walk
+path_look  = post2_look
+
+[logic@red_forest_bridge_walker3]
+active = walker3@red_forest_bridge
+
+[walker3@red_forest_bridge]
+path_walk  = post3_walk
+path_look  = post3_look
+
+[logic@red_forest_bridge_walker4]
+active = walker4@red_forest_bridge
+
+[walker4@red_forest_bridge]
+path_walk  = post4_walk
+path_look  = post4_look
+
+[logic@red_forest_bridge_walker5]
+active = walker5@red_forest_bridge
+
+[walker5@red_forest_bridge]
+path_walk  = post5_walk
+path_look  = post5_look
+
+[logic@red_forest_bridge_walker6]
+active = walker6@red_forest_bridge
+
+[walker6@red_forest_bridge]
+path_walk  = patrol1_walk

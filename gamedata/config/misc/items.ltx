@@ -1,0 +1,3707 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Обрывки карты
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[heli_karta]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\equipments\karta"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\karta.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_karta_desc
+
+inv_name = item_karta_name
+inv_name_short = item_karta_name
+inv_weight = 1
+
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 22
+inv_grid_y = 16
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Контейнер
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[container]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\equipments\container"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\container.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_container_desc
+
+inv_name = item_container_name
+inv_name_short = item_container_name
+inv_weight = 1
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 8
+inv_grid_y = 43
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Аккумулятор
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[akkum]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\equipments\akkum"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\akkumulator.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_akkumulator_desc
+
+inv_name = item_akkumulator_name
+inv_name_short = item_akkumulator_name
+inv_weight = 8.5
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 8
+inv_grid_y = 42
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Чёрный ящик
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[black_box]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\black_box"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = dynamics\equipments\box_black.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_black_box_desc
+
+inv_name = item_black_box_name
+inv_name_short = item_black_box_name
+inv_weight = 4
+
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 6
+inv_grid_y = 42
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; КПК Ноя
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[pda_noah]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency=
+$spawn = "devices\pda"
+$prefetch = 16
+class = D_PDA
+cform = skeleton
+visual = equipments\item_pda.ogf
+description = enc_equipment_noah-pda1
+radius = 50;0 ;75
+slot = 7
+
+quest_item = false
+
+inv_name = noah-pda
+inv_name_short = noah-pda
+inv_weight = 0.28
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 7
+inv_grid_y = 13
+cost = 0
+attach_angle_offset = 3.080506,-1.493053,-1.202040 ;устанавливается в радианах Angle*PI/180
+attach_position_offset = 0.080000,0.021273,0.100000
+attach_bone_name = bip01_r_hand
+auto_attach = false
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Прибор Призрака
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[pribor_ghost]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\pribor_ghost"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_merger.ogf
+radius = 1
+;script_binding = stalker.object_init
+description = enc_pribor_ghost
+quest_item = true
+
+inv_name = pribor_ghost_name
+inv_name_short = pribor_ghost_name
+inv_weight = 0.15
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 4
+inv_grid_y = 41
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Прибор Васильева
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[pribor_vasiliev]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\pribor_vasiliev"
+$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_merger.ogf
+description = enc_pribor_vasiliev
+quest_item = true
+
+inv_name = pribor_vasiliev_name
+inv_name_short = pribor_vasiliev_name
+inv_weight = 0.15
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 3
+inv_grid_y = 41
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Лечебная настойка
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[mixtura]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\mixtura"
+$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_merger.ogf
+description = enc_mixtura
+quest_item = true
+
+inv_name = mixtura_name
+inv_name_short = mixtura_name
+inv_weight = 0.15
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 24
+inv_grid_y = 9
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Грибы
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[grib_1]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_1"
+$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\mushrooms\two_grib_white
+description = grib_desc
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.01
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 0
+inv_grid_y = 41
+cost = 15
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0.0
+eat_alcohol = 0.9
+wounds_heal_perc = 0.0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[grib_2]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_2"
+$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\mushrooms\two_grib_green
+description = grib_desc
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.01
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 0
+inv_grid_y = 43
+cost = 15
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0.0
+eat_alcohol = 0.9
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[grib_3]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_3"
+$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\mushrooms\two_grib_brown
+description = grib_desc
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.01
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 0
+inv_grid_y = 42
+cost = 15
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0.0
+eat_radiation = 0.0
+eat_alcohol = 0.9
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[grib_4]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_4"
+$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\mushrooms\poganka_white
+description = grib_desc
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.02
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 1
+inv_grid_y = 41
+cost = 20
+
+; eatable item
+eat_health = -2
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0.0
+eat_alcohol = 0.0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[grib_5]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_5"
+$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\mushrooms\poganka_green
+description = grib_desc
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.02
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 1
+inv_grid_y = 43
+cost = 20
+
+; eatable item
+eat_health = -2
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0.0
+eat_alcohol = 0.0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[grib_6]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_6"
+$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\mushrooms\poganka_brown
+description = grib_desc
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.02
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 1
+inv_grid_y = 42
+cost = 20
+
+; eatable item
+eat_health = -2
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0.0
+eat_alcohol = 0.0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[grib_7]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_7"
+$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\mushrooms\one_grib_white
+description = grib_desc
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.03
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 2
+inv_grid_y = 41
+cost = 30
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.0
+eat_power = 0
+eat_radiation = 0.0
+eat_alcohol = -0.6
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[grib_8]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_8"
+$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\mushrooms\one_grib_green
+description = grib_desc
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.03
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 2
+inv_grid_y = 43
+cost = 30
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0.0
+eat_radiation = 0.0
+eat_alcohol = -0.6
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[grib_9]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_9"
+$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\mushrooms\one_grib_brown
+description = grib_desc
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.03
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 2
+inv_grid_y = 42
+cost = 30
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0.0
+eat_radiation = 0.0
+eat_alcohol = -0.6
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[grib_10]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\grib_10"
+$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = new_item\mushrooms\two_grib_selflight
+description = grib_desc
+
+quest_item = true
+
+inv_name = grib_name
+inv_name_short = grib_name
+inv_weight = 0.01
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 0
+inv_grid_y = 43
+cost = 10
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Журнал дежурной смены
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[journal]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\journal"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\notes_writing_book_1.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = journal_desc
+
+inv_name = journal_name
+inv_name_short = journal_name
+inv_weight = 0.15
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 0
+inv_grid_y = 16
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Магнитная ключ-карта
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[access_card]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\access_card"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = physics\objects\access_card.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = access_card_desc
+
+inv_name = access_card_name
+inv_name_short = access_card_name
+inv_weight = 0.02
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 10
+inv_grid_y = 32
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; КПК неизвестного сталкера
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[unknown_pda]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\unknown_pda"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_pda.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = false
+
+description = unknown_pda_desc
+
+inv_name = unknown_pda_name
+inv_name_short = unknown_pda_name
+inv_weight = 0.2
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 20
+inv_grid_y = 10
+cost = 10000
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Пачка денег
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[pack_money]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\pack_money"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_merger.ogf
+description = enc_pack_money
+quest_item = true
+
+inv_name = pack_money_name
+inv_name_short = pack_money_name
+inv_weight = 0.0
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 9
+inv_grid_y = 27
+cost = 100
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Документы в КМ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[spisok]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\spisok"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\notes_paper_2.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_spisok_desc
+
+inv_name = item_spisok_name
+inv_name_short = item_spisok_name
+inv_weight = 0.15
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 18
+inv_grid_y = 21
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Рапорт Монолита
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[raport]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\raport"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\notes_paper_2.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_raport_desc
+
+inv_name = item_raport_name
+inv_name_short = item_raport_name
+inv_weight = 0.1
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 18
+inv_grid_y = 21
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Глушилка
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[jammer]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\jammer"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\radiophone.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_jammer_desc
+
+inv_name = item_jammer_name
+inv_name_short = item_jammer_name
+inv_weight = 0.3
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 22
+inv_grid_y = 10
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Фотография Бродяги
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[fotka_1]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\fotka_1"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_foto3.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_fotka_1_desc
+
+inv_name = item_fotka_1_name
+inv_name_short = item_fotka_1_name
+inv_weight = 0.0
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 20
+inv_grid_y = 9
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ремкомплект
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[repair_kit]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\repair_kit"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_merger.ogf
+description = enc_repair_kit
+quest_item = false
+
+inv_name = repair_kit_name
+inv_name_short = repair_kit_name
+inv_weight = 0.1
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 22
+inv_grid_y = 9
+cost = 200
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; GPS-маячок
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[gps]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\antirad"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_amk_gps.ogf
+description = enc_gps
+
+inv_name = gps_name
+inv_name_short = gps_name_s
+inv_weight = 0.05
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 2
+inv_grid_y = 16
+cost = 500
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Пеленгатор
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[pelengator]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\pelengator"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\pelengator.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_pelengator_desc
+
+inv_name = item_pelengator_name
+inv_name_short = item_pelengator_name
+inv_weight = 5
+
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 23
+inv_grid_y = 6
+cost = 1500
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Записка Клыка 3
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[zapiska_klyk3]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\zapiska_klyk3"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\notes_writing_book_1.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_zapiska_klyk3_desc
+
+inv_name = item_zapiska_klyk3_name
+inv_name_short = item_zapiska_klyk3_name
+inv_weight = 0.0
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 0
+inv_grid_y = 16
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Записка Клыка 2
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[zapiska_klyk2]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\zapiska_klyk2"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\notes_letter_1.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_zapiska_klyk2_desc
+
+inv_name = item_zapiska_klyk2_name
+inv_name_short = item_zapiska_klyk2_name
+inv_weight = 0.0
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 18
+inv_grid_y = 22
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Радиомаяк
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[radiophone]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\radiophone"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\radiophone.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_radiophone_desc
+
+inv_name = item_radiophone_name
+inv_name_short = item_radiophone_name
+inv_weight = 0.15
+inv_grid_width = 1
+inv_grid_height = 2
+inv_grid_x = 23
+inv_grid_y = 4
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Записка Клыка 1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[zapiska_klyk1]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\zapiska_klyk1"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\notes_paper_2.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_zapiska_klyk1_desc
+
+inv_name = item_zapiska_klyk1_name
+inv_name_short = item_zapiska_klyk1_name
+inv_weight = 0.0
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 18
+inv_grid_y = 21
+cost = 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; FOOD ПРОДУКТЫ
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Вода
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[flaska]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\flaska"
+;$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = new_item\flaska
+description = flaska_desc
+
+ef_weapon_type = 0
+
+inv_name = flaska_name
+inv_name_short = flaska_name
+
+inv_grid_width = 1
+inv_grid_height = 2
+inv_grid_x = 20
+inv_grid_y = 27
+inv_weight = 0.5
+
+cost = 150
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0.05
+eat_radiation = 0
+eat_alcohol = -0.075
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = 0.000000, 0.000000, 0.000000
+attach_position_offset = 0.087266, -0.078540, 0.052360
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+slot = 4
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[flaska_half]:flaska
+inv_weight = 0.25
+cost = 15
+
+inv_grid_x = 42
+inv_grid_y = 29
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Сок
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sok]:identity_immunities
+$spawn = "food and drugs\sok"
+visual = new_item\sok.ogf
+description = enc_equipment_food_sok
+GroupControlSection = spawn_group
+discovery_dependency =
+;$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+
+inv_name = sok
+inv_name_short = sok
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 23
+inv_grid_y = 9
+
+cost = 300
+inv_weight = 0.2
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.01
+eat_power = 0.025
+eat_radiation = 0
+eat_alcohol = -0.05
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Водка палёная
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[vodka_a]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\vodka_a"
+cform = skeleton
+class = II_ATTCH
+visual = weapons\vodka\vodka
+description = enc_equipment_food_vodka2
+
+cost = 150
+
+inv_name = vodka_a
+inv_name_short = vodka_a
+inv_weight = 0.5
+inv_grid_width = 1
+inv_grid_height = 2
+inv_grid_x = 5
+inv_grid_y = 2
+
+attach_angle_offset = 0.000000, 0.000000, 0.000000
+attach_position_offset = 0.087266, -0.078540, 0.052360
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Водка
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[vodka]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\vodka"
+;$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = weapons\vodka\vodka
+description = enc_equipment_food_vodka1
+
+ef_weapon_type = 0
+
+inv_name = Vodka
+inv_name_short = Vodka
+
+inv_grid_width = 1
+inv_grid_height = 2
+inv_grid_x = 5
+inv_grid_y = 2
+inv_weight = 0.5
+cost = 500
+
+; eatable item
+eat_health = 0.00
+eat_satiety = -0.05
+eat_power = -0.3
+eat_radiation = -0.3
+eat_alcohol = 0.1
+wounds_heal_perc = 0
+eat_portions_num = 1
+eat_max_power = 0.4
+
+attach_angle_offset = 0.000000, 0.000000, 0.000000
+attach_position_offset = 0.087266, -0.078540, 0.052360
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+break_particles = explosions\explosion_bottle
+break_sound = material\bottle\collide\bottle_break_1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Водки полбутылки
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[vodka_half]:vodka
+inv_weight = 0.25
+
+inv_grid_x = 41
+inv_grid_y = 29
+cost = 250
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Пиво
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[beer]:vodka
+$spawn = "food and drugs\beer"
+inv_name = pivo
+inv_name_short = pivo
+visual = new_item\drink_beer.ogf
+description = enc_equipment_food_pivo
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 10
+inv_grid_y = 46
+cost = 300
+
+inv_weight = 0.33
+
+; eatable item
+eat_health = 0
+eat_satiety = -0.03
+eat_power = -0.15
+eat_alcohol = 0.1
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+eat_max_power = 0.2
+
+attach_angle_offset = 0.000000, 0.000000, 0.000000
+attach_position_offset = 0.087266, -0.078540, 0.052360
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Энергетик
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[energy_drink]:vodka
+$spawn = "food and drugs\energy_drink"
+inv_name = energy_drink_name
+inv_name_short = energy_drink_short_name
+visual = equipments\drink_nonstop.ogf
+description = enc_equipment_energydrink
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 19 ;19 ;11
+inv_grid_y = 7 ;7 ;0
+
+inv_weight = 0.25
+
+cost = 500
+
+; eatable item
+eat_health = 0.05
+eat_satiety = 0
+eat_power = 0.15
+eat_alcohol = -0.1
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+eat_max_power = 0.15
+
+attach_angle_offset = 0.000000, 0.000000, 0.000000
+attach_position_offset = 0.087266, -0.078540, 0.052360
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Молоко ВЫРЕЗАТЬ!!!
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[milk]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\milk"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = new_item\sandwich.ogf
+
+inv_name = milk
+inv_name_short = milk
+description = enc_equipment_food_milk
+inv_weight = 0.08
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 23
+inv_grid_y = 9
+
+cost = 800
+
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.1
+eat_power = 0.05
+eat_radiation = -0.1
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Чай
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[chaek]:identity_immunities
+$spawn = "food and drugs\chaek"
+visual = new_item\sok.ogf
+description = enc_equipment_food_chaek
+GroupControlSection = spawn_group
+discovery_dependency =
+;$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+
+inv_name = chaek
+inv_name_short = chaek
+inv_weight = 0.2
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 11
+inv_grid_y = 46
+
+cost = 900
+
+; food item
+slot = 4
+animation_slot = 4
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.05
+eat_power = 0.3
+eat_radiation = 0
+eat_alcohol = -0.05
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Хлеб испорченный
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bread_a]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\bread_a"
+cform = skeleton
+class = II_ATTCH
+visual = weapons\bred\bred.ogf
+description = enc_equipment_food_bread2
+cost = 100
+inv_name = bread_a
+inv_name_short = bread_a
+inv_weight = 0.15
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 11
+inv_grid_y = 9
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Хлеб
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bread]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\bread"
+;$prefetch = 32
+class = II_FOOD
+cform = skeleton
+visual = weapons\bred\bred.ogf
+description = enc_equipment_food_bread1
+
+inv_name = Bread
+inv_name_short = Bread
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 11
+inv_grid_y = 9
+inv_weight = 0.2
+
+cost = 400
+
+; eatable item
+eat_health = 0.01
+eat_satiety = 0.1
+eat_power = -0.01
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Колбаса
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[kolbasa]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\kolbasa"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = weapons\kolbasa\kolbasa.ogf
+description = enc_equipment_food_kolbasa1
+
+inv_name = Kolbasa
+inv_name_short = Kolbasa
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 19
+inv_grid_y = 12
+inv_weight = 0.25
+
+cost = 500
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.2
+eat_power = -0.025
+eat_alcohol = 0
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = 0.440521, 1.378287, -0.644026
+attach_position_offset = 0.104196, -0.010821, 0.076969
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Колбаса испорченная
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[kolbasa_a]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\kolbasa_a"
+cform = skeleton
+class = II_ATTCH
+visual = weapons\kolbasa\kolbasa.ogf
+description = enc_equipment_food_kolbasa2
+
+cost = 50
+inv_name = kolbasa_a
+inv_name_short = kolbasa_a
+inv_weight = 0.25
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 19
+inv_grid_y = 12
+
+attach_angle_offset = 0.440521, 1.378287, -0.644026
+attach_position_offset = 0.104196, -0.010821, 0.076969
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Консерва
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[conserva]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\conserva"
+;$prefetch = 32
+class = II_FOOD
+cform = skeleton
+visual = food\conserv1.ogf
+description = enc_equipment_food_conserva1
+
+inv_name = Conserva
+inv_name_short = Conserva
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 9
+inv_grid_y = 13
+inv_weight = 0.45
+
+cost = 400
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.3
+eat_power = -0.02
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+attach_angle_offset = 0.440521, 1.378287, -0.644026
+attach_position_offset = 0.104196, -0.010821, 0.076969
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Фисташки
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[nuts]:identity_immunities
+$spawn = "food and drugs\nuts"
+visual = new_item\oreshki.ogf
+description = enc_equipment_food_nuts
+GroupControlSection = spawn_group
+discovery_dependency =
+;$prefetch = 32
+class = II_FOOD
+cform = skeleton
+
+inv_name = nuts
+inv_name_short = nuts
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 22
+inv_grid_y = 7
+cost = 200
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+inv_weight = 0.1
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.15
+eat_power = -0.01
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Какой-то БП ВЫРЕЗАТЬ!!!
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bp]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\bp"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = new_item\sandwich.ogf
+
+inv_name = bp
+inv_name_short = bp
+description = enc_equipment_food_bp
+inv_weight = 0.08
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 24
+inv_grid_y = 9
+
+cost = 100
+
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.15
+eat_power = -0.025
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Фруктовый какой-то очередной ВЫРЕЗАТЬ!!!
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[frutto]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\frutto"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = new_item\sandwich.ogf
+
+inv_name = frutto
+inv_name_short = frutto
+description = enc_equipment_food_frutto
+inv_weight = 0.08
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 22
+inv_grid_y = 7
+
+cost = 100
+
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.05
+eat_power = -0.01
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Мясо ВЫРЕЗАТЬ!!!
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[myaso]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\myaso"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = new_item\sandwich.ogf
+
+inv_name = myaso
+inv_name_short = myaso
+description = enc_equipment_food_myaso
+inv_weight = 0.08
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 38
+inv_grid_y = 46
+
+cost = 600
+
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.3
+eat_power = -0.03
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Сардины
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sardina]:identity_immunities
+$spawn = "food and drugs\sardina"
+visual = food\konserva_sardina.ogf
+description = enc_equipment_food_sardina
+GroupControlSection = spawn_group
+discovery_dependency =
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+
+inv_name = sardina
+inv_name_short = sardina
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 21
+inv_grid_y = 8
+inv_weight = 0.2
+
+cost = 500
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.1
+eat_power = -0.015
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Маслины
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[olives]:identity_immunities
+$spawn = "food and drugs\olives"
+visual = food\konserva_olives.ogf
+description = enc_equipment_food_olives
+GroupControlSection = spawn_group
+discovery_dependency =
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+
+inv_name = olives
+inv_name_short = olives
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 22
+inv_grid_y = 6
+inv_weight = 0.2
+
+cost = 300
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.05
+eat_power = -0.075
+eat_radiation = 0
+eat_alcohol = -0.1
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Суп
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sup]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\sup"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = new_item\sandwich.ogf
+
+inv_name = sup
+inv_name_short = sup
+description = enc_equipment_food_sup
+inv_weight = 0.5
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 13
+inv_grid_y = 41
+
+cost = 250
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.2
+eat_power = -0.02
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Яйца
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[egg]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\egg"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = new_item\sandwich.ogf
+
+inv_name = egg
+inv_name_short = egg
+description = enc_equipment_food_egg
+inv_weight = 0.08
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 15
+inv_grid_y = 41
+
+cost = 200
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.075
+eat_power = -0.01
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Шматок сала
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[salo]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+$spawn = "food and drugs\salo"
+visual = new_item\salo1.ogf
+description = enc_equipment_food_salo
+
+inv_name = salo
+inv_name_short = salo
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 3
+inv_grid_y = 43
+inv_weight = 0.15
+
+cost = 1000
+
+; eatable item
+eat_health = 0
+eat_satiety = 0.4
+eat_power = -0.05
+eat_radiation = 0.015
+eat_alcohol = -0.1
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Плавленый сырок
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[syrok]:identity_immunities
+$spawn = "food and drugs\syrok"
+visual = food\konserva_yantar.ogf
+description = enc_equipment_food_syrok
+GroupControlSection = spawn_group
+discovery_dependency =
+;$prefetch = 32
+class = II_FOOD
+cform = skeleton
+
+inv_name = syrok
+inv_name_short = syrok
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 20
+inv_grid_y = 5
+inv_weight = 0.05
+
+cost = 150
+
+; eatable item
+eat_health = 0
+eat_satiety = 0.075
+eat_power = -0.005
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Рацион питания ИРП
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[irp]:identity_immunities
+$spawn = "food and drugs\irp-b"
+visual = new_item\food_irp-b.ogf
+description = enc_equipment_irp-b
+GroupControlSection = spawn_group
+discovery_dependency =
+;$prefetch = 32
+class = II_FOOD
+cform = skeleton
+
+inv_name = enc_equipment_irp-b_name
+inv_name_short = enc_equipment_irp-b_name
+
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 21
+inv_grid_y = 4
+inv_weight = 1.5
+
+cost = 1000
+
+; eatable item
+eat_health = 0.015
+eat_satiety = 0.35
+eat_power = -0.015
+eat_radiation = 0.0
+eat_alcohol = 0.01
+wounds_heal_perc = 0.0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[irp_two]:irp
+inv_weight = 1
+
+inv_grid_x = 41
+inv_grid_y = 27
+cost = 500
+
+[irp_one]:irp
+inv_weight = 0.5
+
+inv_grid_x = 43
+inv_grid_y = 27
+cost = 250
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Паек выживания аварийный
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[mre]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+;$prefetch = 32
+class = II_FOOD
+cform = skeleton
+$spawn = "food and drugs\mre"
+visual = new_item\food_mre.ogf
+description = enc_equipment_mre
+
+inv_name = enc_equipment_mre_name
+inv_name_short = enc_equipment_mre_name
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 12
+inv_grid_y = 26
+inv_weight = 0.15
+
+cost = 500
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.125
+eat_power = -0.015
+eat_radiation = 0.0
+eat_alcohol = 0
+wounds_heal_perc = 0.0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Бутерброд
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sandwich]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\sandwich"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = new_item\sandwich.ogf
+
+inv_name = sandwich
+inv_name_short = sandwich
+description = enc_equipment_food_sandwich
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 38
+inv_grid_y = 46
+inv_weight = 0.05
+
+cost = 100
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.05
+eat_power = -0.005
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Сигареты
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sigaret]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\sigaret"
+cform = skeleton
+class = II_ANTIR
+visual = weapons\sigaret\sigaret.ogf
+description = enc_sigaret
+inv_name = sigaret
+inv_name_short = sigaret_s
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 13
+inv_grid_y = 25
+inv_weight = 0.01
+
+cost = 200
+
+; eatable item
+eat_health = -0.05
+eat_satiety = -0.05
+eat_power = 0.1
+eat_radiation = 0
+eat_alcohol = 0.02
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = 9.0, 0.0, 0.0
+attach_position_offset = 0.025, -0.02, 0.0
+attach_bone_name = bip01_r_finger11
+auto_attach = false
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_sigaret_hud
+
+[wpn_sigaret_hud]:identity_immunities
+fire_point = 0.0, 0.0, 0.06
+fire_bone = bip01_head
+orientation = 0, 0, 0
+position = 0, 0, 0
+visual = weapons\sigaret\sigaret_hud.ogf
+
+anim_idle = kurit_2
+anim_show = kurit_1
+anim_hide = kurit_4
+anim_play = kurit_5
+anim_prepare = kurit_5
+anim_eat = kurit_3
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Сладкий батончик
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sweetness]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\sweetness"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = new_item\sweetness.ogf
+description = enc_sweetness
+
+inv_name = sweetness
+inv_name_short = sweetness_s
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 12
+inv_grid_y = 25
+inv_weight = 0.075
+
+cost = 400
+
+; eatable item
+eat_health = 0
+eat_satiety = 0.1
+eat_power = -0.015
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = 0.440521, 1.378287, -0.644026
+attach_position_offset = 0.104196, -0.010821, 0.076969
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Картошка
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[batat]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\batat"
+$prefetch = 8
+class = II_FOOD
+cform = skeleton
+visual = new_item\sandwich.ogf
+
+inv_name = batat
+inv_name_short = batat
+description = enc_equipment_food_batat
+inv_weight = 0.08
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 14
+inv_grid_y = 41
+
+cost = 500
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.25
+eat_power = -0.015
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+attach_angle_offset = -0.287979, 1.560923, 1.544060
+attach_position_offset = 0.096910, -0.013594, 0.107925
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; food item
+slot = 4
+animation_slot = 4
+
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Галеты
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[galet]:identity_immunities
+$spawn = "food and drugs\galet"
+visual = food\konserva_olives.ogf
+description = enc_equipment_food_galet
+GroupControlSection = spawn_group
+discovery_dependency =
+;$prefetch = 32
+class = II_FOOD
+cform = skeleton
+
+inv_name = galet
+inv_name_short = galet
+inv_weight = 0.05
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 12
+inv_grid_y = 46
+
+cost = 400
+
+; food item
+slot = 4
+animation_slot = 4
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.05
+eat_power = -0.01
+eat_radiation = 0
+eat_alcohol = 0.0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Сгущенка
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sgus]:identity_immunities
+$spawn = "food and drugs\sgus"
+visual = food\konserva_olives.ogf
+description = enc_equipment_food_sgus
+GroupControlSection = spawn_group
+discovery_dependency =
+;$prefetch = 32
+class = II_FOOD
+cform = skeleton
+
+inv_name = sgus
+inv_name_short = sgus
+inv_weight = 0.1
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 9
+inv_grid_y = 46
+
+cost = 1000
+
+; food item
+slot = 4
+animation_slot = 4
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.3
+eat_power = -0.05
+eat_radiation = 0
+eat_alcohol = -0.08
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+;hud item
+hud = wpn_vodka_hud
+
+;; ХАВЧИК КОНЧИЛСЯ!
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Рюкзак-схрон
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[rukzak_shron]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\antirad"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_rukzak.ogf
+description = enc_amk_ruksak
+
+inv_name = amk_ruksak
+inv_name_short = amk_ruksak_s
+inv_weight = 1
+
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 37
+inv_grid_y = 34
+cost = 2000
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Бумаги с записями
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[blocknotes]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\blocknotes"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\notes_writing_book_2.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_blocknotes_desc
+
+inv_name = item_blocknotes
+inv_name_short = item_blocknotes
+inv_weight = 0.05
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 20
+inv_grid_y = 7
+cost = 6000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Документы об исследованиях
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[books_research]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\books_research"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\notes_document_case_3.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_books_research_desc
+
+inv_name = item_books_research
+inv_name_short = item_books_research
+inv_weight = 0.1
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 20
+inv_grid_y = 6
+cost = 1000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Дешифратор Азота
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[azot_decoder]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\azot_decoder"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\memory_module.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_azot_decoder_desc
+
+inv_name = item_azot_decoder
+inv_name_short = item_azot_decoder
+inv_weight = 0.09
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 10
+inv_grid_y = 39
+cost = 900
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Упаковка конденсаторов
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[box_condensers]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\box_condensers"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\box_condensers.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_box_condensers_desc
+
+inv_name = item_box_condensers
+inv_name_short = item_box_condensers
+inv_weight = 0.05
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 29
+inv_grid_y = 27
+cost = 400
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Текстолитовая основа
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[materials_textolite]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\materials_textolite"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\materials_textolite.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_materials_textolite_desc
+
+inv_name = item_materials_textolite
+inv_name_short = item_materials_textolite
+inv_weight = 0.03
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 21
+inv_grid_y = 26
+cost = 500
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Моток медной проволоки
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[materials_wire]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\materials_wire"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\materials_wire.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_materials_wire_desc
+
+inv_name = item_materials_wire
+inv_name_short = item_materials_wire
+inv_weight = 0.2
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 22
+inv_grid_y = 26
+cost = 100
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Коробка транзисторов
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[box_transistors]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\box_transistors"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\box_transistors.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_box_transistors_desc
+
+inv_name = item_box_transistors
+inv_name_short = item_box_transistors
+inv_weight = 0.05
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 23
+inv_grid_y = 26
+cost = 600
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Банка канифоли
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[kanifol]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\kanifol"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\box_kanifol.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_kanifol_desc
+
+inv_name = item_kanifol
+inv_name_short = item_kanifol
+inv_weight = 0.08
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 24
+inv_grid_y = 26
+cost = 200
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Компьютерный диск
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[disk_code]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\disk_code"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_disket.ogf
+radius = 1
+;script_binding = stalker.object_init
+quest_item = true
+
+description = item_disket_desc
+
+inv_name = item_disket
+inv_name_short = item_disket
+inv_weight = 0.01
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 25
+inv_grid_y = 26
+cost = 6000
+
+[guitar_a]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\guitar_a"
+cform = skeleton
+class = II_ATTCH
+visual = Equipments\item_guitar.ogf
+description = enc_equipment_food_guitar1
+cost = 2000
+inv_name = guitar
+inv_name_short = guitar
+inv_weight = 1.5
+inv_grid_width = 4
+inv_grid_height = 2
+inv_grid_x = 10
+inv_grid_y = 19
+attach_angle_offset = -1.651084, -1.341824, 1.200789
+attach_position_offset = 0.077492, -0.030020, 0.090059
+attach_bone_name = bip01_l_hand
+auto_attach = false
+
+[harmonica_a]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\harmonica_a"
+cform = skeleton
+class = II_ATTCH
+visual = Equipments\item_harmonica.ogf
+description = enc_equipment_food_harmonica1
+cost = 1000
+inv_name = harmonica
+inv_name_short = harmonica
+inv_weight = 0.3
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 11
+inv_grid_y = 2
+attach_angle_offset = 0.000000, -1.204452, -1.262921
+attach_position_offset = 0.081856, -0.035081, 0.011694
+attach_bone_name = bip01_l_hand
+auto_attach = false
+
+[harmonica_f]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\antirad"
+cform = skeleton
+class = II_ANTIR
+visual = equipments\item_harmonica.ogf
+description = enc_equipment_food_harmonica1
+cost = 1000
+inv_name = harmonica
+inv_name_short = harmonica
+inv_weight = 0.3
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 11
+inv_grid_y = 2
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+; food item
+animation_slot = 4
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Медицина
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[antirad]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\antirad"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_antirad.ogf
+description = enc_equipment_medi_antirad1
+
+inv_name = Antirad
+inv_name_short = Antirad
+inv_weight = 0.02
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 18
+inv_grid_y = 12
+cost = 1000
+
+; eatable item
+eat_health = 0
+eat_satiety = -0.02
+eat_power = -0.01
+eat_radiation = -0.5
+eat_alcohol = 0.02
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+break_particles = explosions\explosion_bottle
+
+[medkit]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\medkit"
+$prefetch = 8
+class = II_MEDKI
+cform = skeleton
+visual = equipments\item_aptechka.ogf
+description = enc_equipment_medi_medkit1
+inv_name = Medkit
+inv_name_short = Medkit
+inv_weight = 0.08
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 20
+inv_grid_y = 44
+cost = 500
+
+; eatable item
+eat_health = 0.2
+eat_satiety = -0.01
+eat_power = 0.001
+eat_radiation = -0.05
+wounds_heal_perc = 0.1
+eat_portions_num = 1
+eat_max_power = 0.0
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+eat_alcohol = 0.1
+break_particles = explosions\explosion_bottle
+
+[medkit_army]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\medkit_army"
+$prefetch = 8
+class = II_MEDKI
+cform = skeleton
+visual = equipments\item_aptechka3.ogf
+description = enc_equipment_medi_medkit2
+inv_name = Medkit_army
+inv_name_short = Medkit_army
+inv_weight = 0.09
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 19
+inv_grid_y = 44
+cost = 800
+
+; eatable item
+eat_health = 0.5
+eat_satiety = -0.01
+eat_power = 0.001
+eat_radiation = -0.1
+wounds_heal_perc = 0.5
+eat_portions_num = 1
+eat_max_power = 0.1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+eat_alcohol = 0.1
+break_particles = explosions\explosion_bottle
+
+[medkit_scientic]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\medkit_scientic"
+$prefetch = 8
+class = II_MEDKI
+cform = skeleton
+visual = equipments\item_aptechka2.ogf
+description = enc_equipment_medi_medkit3
+inv_name = Medkit_scientific
+inv_name_short = Medkit_scientific
+inv_weight = 0.06
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 18
+inv_grid_y = 44
+cost = 1000
+
+; eatable item
+eat_health = 0.7
+eat_satiety = -0.05
+eat_power = 0.005
+eat_radiation = -0.4
+wounds_heal_perc = 0.5
+eat_portions_num = 1
+eat_max_power = 0.1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+eat_alcohol = 0.1
+break_particles = explosions\explosion_bottle
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Бинт
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bandage]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\bandage"
+$prefetch = 8
+class = II_BANDG
+cform = skeleton
+visual = equipments\item_bandage.ogf
+description = enc_equipment_medi_bandage1
+
+inv_name = bandage
+inv_name_short = bandage
+inv_weight = 0.06
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 3
+inv_grid_y = 18
+cost = 150
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0
+eat_power = 0.0
+eat_radiation = 0.0
+wounds_heal_perc = 0.5
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Девайсы
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Бинокль
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[binocular_a]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\binocular_a"
+cform = skeleton
+class = II_ATTCH
+visual = weapons\binoculars\wpn_binoculars.ogf
+cost = 500
+
+quest_item = false
+
+description = enc_equipment_devic_binocular_a
+
+inv_name = binocular_a
+inv_name_short = binocular_a
+inv_weight = 0.5
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 16
+inv_grid_y = 8
+attach_angle_offset = 3.080506,-1.493053,-1.202040 ;устанавливается в радианах Angle*PI/180
+attach_position_offset = 0.080000,0.021273,0.100000
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+[hand_radio]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "equipment\hand_radio"
+cform = skeleton
+class = II_ATTCH
+visual = equipments\item_fmradio.ogf
+description = enc_equipment_devic_hand_radio1
+cost = 600
+inv_name = hand_radio1
+inv_name_short = hand_radio1
+inv_weight = 0.2
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 5
+inv_grid_y = 26
+attach_angle_offset = -1.5708,0.1919,3.1416 ;устанавливается в радианах Angle*PI/180
+attach_position_offset = 0.075, 0.066, 0.023
+attach_bone_name = bip01_l_hand
+auto_attach = false
+
+[hand_radio_f]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\antirad"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_fmradio.ogf
+description = enc_equipment_devic_hand_radio
+
+inv_name = hand_radio
+inv_name_short = hand_radio
+inv_weight = 0.2
+
+inv_grid_width = 1
+inv_grid_height = 2
+inv_grid_x = 13
+inv_grid_y = 42
+
+cost = 600
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+[device_pda]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency=
+$spawn = "devices\pda"
+$prefetch = 16
+class = D_PDA
+cform = skeleton
+visual = equipments\item_pda.ogf
+description = enc_equipment_devic_device-pda1
+radius = 50;0 ;75
+slot = 7
+
+quest_item = false
+
+inv_name = device-pda
+inv_name_short = device-pda
+inv_weight = 0.2
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 6
+inv_grid_y = 13
+cost = 1500
+attach_angle_offset = 3.080506,-1.493053,-1.202040 ;устанавливается в радианах Angle*PI/180
+attach_position_offset = 0.080000,0.021273,0.100000
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+
+[device_torch]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\torch"
+$prefetch = 32
+class = TORCH_S
+cform = skeleton
+visual = equipments\light_night.ogf
+description = enc_equipment_devic_device-torch1
+cost = 2500
+inv_name = device-torch
+inv_name_short = device-torch
+inv_weight = 0.2
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 16
+inv_grid_y = 12
+
+;вещью нельзя торговать
+can_trade = true
+
+position = 0.35,0.25,0.0
+light_trace_bone = cone_bone
+attach_angle_offset = 0, -3.14, 1.6
+attach_position_offset = 0.115, 0.00, 0.07
+attach_bone_name = bip01_head
+auto_attach = false
+
+night_vision = on
+night_vision_texture = wpn\wpn_night
+night_vision_effector = postprocess_night
+
+snd_night_vision_on = weapons\nv_start
+snd_night_vision_off = weapons\nv_off
+snd_night_vision_idle = weapons\nv_loop
+snd_night_vision_broken = weapons\nv_off
+
+night_vision_recharge_time = 6 ;(c) время зарядки аккамулятора
+night_vision_recharge_time_min = 2 ;(c) мин. время зарядки аккамулятора, после которого уст-во уже может работать
+night_vision_discharge_time = 20 ;(c) время разрядки (работы) устройства после полной зарядки
+slot = 9
+disabled_maps = ai_test,ai_test2, andy_test_
+
+[detector_simple]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\detector_simple"
+$prefetch = 32
+class = D_SIMDET
+cform = skeleton
+visual = equipments\item_datchik1.ogf
+description = enc_equipment_devic_detect1
+radius = 10 ;15
+buzzer_radius = 1.5
+noise = zone_mosquito_bald ;detectors\geiger_noise_loop
+buzzer = zone_mosquito_bald ;detectors\DA-2_alarm_loop
+slot = 12
+ef_detector_type = 1
+
+inv_name = detect
+inv_name_short = detect
+inv_weight = 0.4
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 9
+inv_grid_y = 14
+cost = 2000
+belt = true
+default_to_ruck = true
+
+
+;описание распознаваемых детектором зон
+zone_class_1 = zone_mosquito_bald
+zone_sound_1_ = $no_sound
+zone_min_freq_1 = 0.1 ;0.5
+zone_max_freq_1 = 40
+
+zone_class_2 = zone_mincer
+zone_sound_2_ = $no_sound
+zone_min_freq_2 = 0.1
+zone_max_freq_2 = 20
+
+zone_class_3 = zone_radioactive
+;zone_sound_3_ = detectors\DA-2_beep1
+zone_sound_3_ = detectors\geiger_1
+zone_sound_3_1 = detectors\geiger_2
+zone_sound_3_2 = detectors\geiger_3
+zone_sound_3_3 = detectors\geiger_4
+zone_sound_3_4 = detectors\geiger_5
+zone_sound_3_5 = detectors\geiger_6
+zone_sound_3_6 = detectors\geiger_1
+zone_sound_3_7 = detectors\geiger_1
+zone_sound_3_8 = detectors\geiger_1
+zone_min_freq_3 = 1
+zone_max_freq_3 = 20
+
+zone_class_4 = zone_gravi
+zone_sound_4_ = $no_sound
+zone_min_freq_4 = 0.5
+zone_max_freq_4 = 30
+
+zone_class_5 = zone_zharka_static
+zone_sound_5_ = $no_sound
+zone_min_freq_5 = 0.5
+zone_max_freq_5 = 30
+
+zone_class_6 = zone_buzz
+zone_sound_6_ = $no_sound
+zone_min_freq_6 = 0.5
+zone_max_freq_6 = 30
+
+zone_class_7 = zone_burning_fuzz
+zone_sound_7_ = $no_sound
+zone_min_freq_7 = 0.5
+zone_max_freq_7 = 30
+
+[detector_advances]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\detector_advanced"
+$prefetch = 32
+class = D_SIMDET
+cform = skeleton
+visual = equipments\item_datchik2.ogf
+description = enc_equipment_devic_st_detector1
+radius = 10 ;15
+buzzer_radius = 1.5
+noise = zone_mosquito_bald ;detectors\geiger_noise_loop
+buzzer = zone_mosquito_bald ;detectors\DA-2_alarm_loop
+
+ef_detector_type = 1
+
+;описание распознаваемых детектором зон
+zone_class_1 = zone_mosquito_bald
+zone_sound_1_ = detectors\DA-2_beep1
+zone_min_freq_1 = 0.1
+zone_max_freq_1 = 40
+
+zone_class_2 = zone_mincer
+zone_sound_2_ = detectors\DA-2_beep1
+zone_min_freq_2 = 0.1
+zone_max_freq_2 = 20
+
+zone_class_3 = zone_radioactive
+zone_sound_3_ = detectors\geiger_1
+zone_sound_3_1 = detectors\geiger_2
+zone_sound_3_2 = detectors\geiger_3
+zone_sound_3_3 = detectors\geiger_4
+zone_sound_3_4 = detectors\geiger_5
+zone_sound_3_5 = detectors\geiger_6
+zone_sound_3_6 = detectors\geiger_1
+zone_sound_3_7 = detectors\geiger_1
+zone_sound_3_8 = detectors\geiger_1
+zone_min_freq_3 = 1
+zone_max_freq_3 = 20
+
+zone_class_4 = zone_gravi
+zone_sound_4_ = detectors\DA-2_beep1
+zone_min_freq_4 = 0.5
+zone_max_freq_4 = 30
+
+inv_name = st_detector
+inv_name_short = st_detector
+inv_weight = 0.25
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 15
+inv_grid_y = 7
+cost = 1000
+belt = true
+default_to_ruck = true
+slot = 12
+
+
+[detector_elite]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\detector_elite"
+$prefetch = 32
+class = D_SIMDET
+cform = skeleton
+visual = equipments\item_datchik3.ogf
+description = enc_equipment_devic_detector1
+radius = 10 ;15
+buzzer_radius = 1.5
+noise = zone_mosquito_bald ;detectors\geiger_noise_loop
+buzzer = zone_mosquito_bald ;detectors\DA-2_alarm_loop
+
+ef_detector_type = 1
+
+
+;описание распознаваемых детектором зон
+zone_class_1 = zone_mosquito_bald
+zone_sound_1_ = detectors\DA-2_beep1
+zone_min_freq_1 = 1
+zone_max_freq_1 = 2
+zone_map_location_1 = anomaly_bald_location
+
+zone_class_2 = zone_mincer
+zone_sound_2_ = detectors\DA-2_beep1
+zone_min_freq_2 = 1
+zone_max_freq_2 = 2
+zone_map_location_2 = anomaly_minc_location
+
+zone_class_3 = zone_radioactive
+zone_sound_3_ = detectors\geiger_1
+zone_sound_3_1 = detectors\geiger_2
+zone_sound_3_2 = detectors\geiger_3
+zone_sound_3_3 = detectors\geiger_4
+zone_sound_3_4 = detectors\geiger_5
+zone_sound_3_5 = detectors\geiger_6
+zone_sound_3_6 = detectors\geiger_1
+zone_sound_3_7 = detectors\geiger_1
+zone_sound_3_8 = detectors\geiger_1
+zone_min_freq_3 = 1
+zone_max_freq_3 = 20
+zone_map_location_3 = radio_zone_location
+
+zone_class_4 = zone_gravi
+zone_sound_4_ = detectors\DA-2_beep1
+zone_min_freq_4 = 1
+zone_max_freq_4 = 2
+zone_map_location_4 = anomaly_grav_location
+
+zone_class_5 = zone_zharka_static
+zone_sound_5_ = detectors\DA-2_beep1
+zone_min_freq_5 = 1
+zone_max_freq_5 = 2
+zone_map_location_5 = anomaly_burn_location
+
+zone_class_6 = zone_burning_fuzz
+zone_sound_6_ = detectors\DA-2_beep1
+zone_min_freq_6 = 1
+zone_max_freq_6 = 2
+zone_map_location_6 = anomaly_puh_location
+
+zone_class_7 = zone_teleport
+zone_sound_7_ = $no_sound
+zone_min_freq_7 = 1
+zone_max_freq_7 = 2
+zone_map_location_7 = anomaly_zone_location
+
+zone_class_8 = zone_mine_field
+zone_sound_8_ = detectors\DA-2_beep1
+zone_min_freq_8 = 1
+zone_max_freq_8 = 2
+zone_map_location_8 = anomaly_mine_location
+
+zone_class_9 = zone_buzz
+zone_sound_9_ = detectors\DA-2_beep1
+zone_min_freq_9 = 1
+zone_max_freq_9 = 2
+zone_map_location_9 = anomaly_buzz_location
+
+zone_class_10 = zone_witches_galantine
+zone_sound_10_ = detectors\DA-2_beep1
+zone_min_freq_10 = 1
+zone_max_freq_10 = 2
+zone_map_location_10 = anomaly_elec_location
+
+zone_class_11 = zone_sphere
+zone_sound_11_ = detectors\DA-2_beep1
+zone_min_freq_11 = 1
+zone_max_freq_11 = 2
+zone_map_location_11 = anomaly_zone_location
+
+inv_name = detector
+inv_name_short = detector
+inv_weight = 0.15
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 5
+inv_grid_y = 14
+cost = 4000
+belt = true
+slot = 12
+
+attach_angle_offset = -0.160570,-1.425061,-0.361283
+attach_position_offset = 0.160570,-0.060214,0.020071
+attach_bone_name = bip01_l_hand
+auto_attach = false
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Прочее
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[wpn_vodka_hud]:identity_immunities
+fire_point = 0.0, 0.0, 0.06
+fire_bone = bip01_head
+orientation = 0, 0, 0
+position = 0, 0, 0
+visual = weapons\vodka\vodka_hud.ogf
+
+anim_idle = vodka_2
+anim_show = vodka_1
+anim_hide = vodka_4
+anim_play = vodka_5
+anim_prepare = vodka_5
+anim_eat = vodka_3
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Спальник
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[matras]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\antirad"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_rukzak.ogf
+description = enc_amk_matras
+
+quest_item = false
+
+inv_name = amk_matras
+inv_name_short = amk_matras_s
+inv_weight = 1.0
+
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 37
+inv_grid_y = 47
+
+cost = 1000
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Препарат от пси-воздействия
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[vodka_u]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\vodka_u"
+;$prefetch = 32
+class = II_BOTTL
+cform = skeleton
+visual = weapons\vodka\vodka
+description = enc_equipment_vodka_u
+
+ef_weapon_type = 0
+
+inv_name = vodka_u
+inv_name_short = vodka_u
+inv_weight = 0.01
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 8
+inv_grid_y = 46
+
+cost = 300
+
+attach_angle_offset = 0.000000, 0.000000, 0.000000
+attach_position_offset = 0.087266, -0.078540, 0.052360
+attach_bone_name = bip01_r_hand
+auto_attach = false
+
+// should be deleted after update
+bone_name = bip01_r_hand
+position_offset = 0.0,0.0,0.0
+angle_offset = 1.570790,1.570790,3.92699
+
+; eatable item
+eat_health = 0.00
+eat_satiety = 0.0
+eat_power = -0.1
+eat_radiation = -0.3
+eat_alcohol = 0.1
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+slot = 4
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+break_particles = explosions\explosion_bottle
+;break_sound = material\bottle\collide\bottle_break_1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Тесак
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[tesak]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\equipments\tesak"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\akkumulator.ogf
+
+;script_binding = stalker.object_init
+quest_item = true
+
+description = enc_equipment_tesak
+
+;вещью нельзя торговать
+can_trade = true
+
+inv_name = tesak
+inv_name_short = tesak
+inv_weight = 0.35
+
+inv_grid_width = 3
+inv_grid_height = 2
+inv_grid_x = 41
+inv_grid_y = 11
+cost = 250
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Рюкзак
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[m_rukzak]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\equipments\m_rukzak"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\akkumulator.ogf
+
+;script_binding = stalker.object_init
+quest_item = false
+
+description = enc_equipment_m_rukzak
+
+;вещью нельзя торговать
+can_trade = true
+
+inv_name = m_rukzak
+inv_name_short = m_rukzak
+
+inv_weight = 1.5
+
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 39
+inv_grid_y = 43
+
+cost = 1000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Магазины АК
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[magazak]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\equipments\magazak"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_aptechka2.ogf
+
+;script_binding = stalker.object_init
+quest_item = true
+
+;вещью нельзя торговать
+can_trade = true
+
+description = enc_equipment_magazak
+
+inv_name = magazak
+inv_name_short = magazak
+
+inv_weight = 2.0
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 7
+inv_grid_y = 46
+
+cost = 900
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Магазины АПС
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[magazaps]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\equipments\magazaps"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_aptechka2.ogf
+
+;script_binding = stalker.object_init
+quest_item = true
+
+;вещью нельзя торговать
+can_trade = true
+
+description = enc_equipment_magazaps
+
+inv_name = magazaps
+inv_name_short = magazaps
+
+inv_weight = 0.5
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 6
+inv_grid_y = 46
+
+cost = 500
+
+;;;;;;;;;;;
+;; КПК Стрелка
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[strelok_pda]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\strelok_pda"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_pda.ogf
+radius = 1
+;script_binding = stalker.object_init
+
+quest_item = false
+
+description = enc_equipment_strelok-pda
+
+inv_name = strelok-pda
+inv_name_short = strelok-pda
+
+inv_weight = 0.3
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 3
+inv_grid_y = 47
+
+cost = 1000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Разгрузка
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[razgruzka_u]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\equipments\razgruzka_u"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_aptechka2.ogf
+
+;script_binding = stalker.object_init
+quest_item = false
+
+;вещью нельзя торговать
+can_trade = true
+
+description = enc_equipment_razgruzka_u
+
+inv_name = razgruzka_u
+inv_name_short = razgruzka_u
+
+inv_weight = 3
+
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 41
+inv_grid_y = 45
+
+cost = 2000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Набор сталкера
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[komplekt]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\equipments\komplekt"
+;$prefetch = 32
+class = II_ATTCH
+cform = skeleton
+visual = equipments\item_aptechka2.ogf
+
+;script_binding = stalker.object_init
+
+quest_item = false
+can_trade = true
+
+description = enc_equipment_komplekt
+
+inv_name = komplekt
+inv_name_short = komplekt
+
+inv_weight = 12
+
+inv_grid_width = 6
+inv_grid_height = 4
+inv_grid_x = 39
+inv_grid_y = 45
+
+cost = 1000
+

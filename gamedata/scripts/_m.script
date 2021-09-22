@@ -1,0 +1,812 @@
+--[[ ----------------------------------------------------------------------------------------------
+ File       : _m.script
+ Description: "Main master-functions" for multiMod
+ Copyright  : 2007-2010 © SIMBION mod
+ Author     : Artos (сборка по материалам Stalker:STCS|SCOP, AMK-team, xStream & Red75)
+ Last edit  : 03.08.2010 (by Artos)
+--]] ----------------------------------------------------------------------------------------------
+local sModule = "_m" --/ строковое имя файла-модуля
+--/ -----------------------------------------------------------------
+--/ Print-Log (вывод отладочной информации)
+--/ -----------------------------------------------------------------
+local function printf(fmt, ...) --/ глобальный вывод в лог
+	db.log(string.format("%s:%s",sModule,fmt),...)
+end
+--/ -----------------------------------------------------------------
+--/ VARIABLEs
+--/ -----------------------------------------------------------------
+local tScripts     = nil  --/ список имен файлов (from m_debug)
+local tModules     = {}   --/ список имен модулей (for debug)
+local iTimeOut1gs  = 0    --/ таймер периода обновления 1 раз в сек (игрового времени)
+local iTimeOutUse  = 0    --/ триггер паузы использования предмета
+local iTimeOutDrop = 0    --/ триггер паузы потери предмета
+local bNotTake     = true --/ флаг запрета проверки на взятие предмета
+local i,o,k,v --/ итераторы
+--/ -------------------------
+local tCallbacks = {
+	update             = {}, --/ апдейт ГГ
+	npc_update         = {}, --/ апдейт НПС
+	mob_update         = {}, --/ апдейт MOB (монстра)
+	game_load          = {}, --/ загрузка ГГ в игру (actor_binder:net_spawn)
+	game_reload        = {}, --/ загрузка сэйва не выходя из игры
+	death              = {}, --/ смерть (НПС|MOB)
+	npc_death          = {}, --/ смерть (НПС)
+	mob_death          = {}, --/ смерть (MOB)
+	offline_death      = {}, --/ смерть НПС или монстра в оффлайне
+	net_spawn          = {}, --/ переход в онлайн (НПС|MOB)
+	npc_net_spawn      = {}, --/ переход в онлайн (НПС)
+	mob_net_spawn      = {}, --/ переход в онлайн (MOB) (резерв)
+	net_destroy        = {}, --/ переход в оффлайн (НПС|MOB)
+	npc_net_destroy    = {}, --/ переход в оффлайн (НПС)
+	mob_net_destroy    = {}, --/ переход в оффлайн (MOB)
+	info               = {}, --/ получение инфопоршена (ГГ)
+	task               = {}, --/ выполнение/провал задания (ГГ)
+	use                = {}, --/ использование объекта (ГГ)
+	item_use           = {}, --/ использование предмета (ГГ)
+	item_drop          = {}, --/ потеря предмета из инвентаря (ГГ)
+	item_take          = {}, --/ взятие предмета в инвентарь (ГГ)
+	item_take_from_box = {}, --/ взятие предмета из ящика в инвентарь (ГГ)
+	hear               = {}, --/ слышит звук
+	npc_hear           = {}, --/ слышит звук (НПС)
+	mob_hear           = {}, --/ слышит звук (MOB)
+	hit                = {}, --/ получение повреждения
+	npc_hit            = {}, --/ получение повреждения (НПС)
+	mob_hit            = {}, --/ получение повреждения (MOB)
+	enemy_see_actor    = {}, --/ видимость НПС -> ГГ
+	actor_see_enemy    = {}, --/ видимость ГГ -> НПС
+	npc_shot_actor     = {}, --/ НПС стрелял в ГГ
+	respawn            = {}, --/ респавн (НПС|MOB)
+	trade              = {}, --/ торговля (ГГ)
+	actor_init         = {}, --/ инициализация актора в игре
+	actor_load         = {}, --/ загрузка игровых пакетов
+	actor_save         = {}, --/ запись игровых пакетов
+	actor_destroy      = {}, --/ переход в оффлайн ГГ
+	main_menu_on       = {}, --/ вход в Гл.Меню
+	main_menu_off      = {}, --/ выход из Гл.Меню
+	disconnect         = {}, --/ отключение от сервера
+	quit               = {}, --/ выход из игры
+	option_init        = {}, --/ (пере)инициализация опций
+	timer              = {}  --/ срабатывание установленного таймера
+}
+--/ -----------------------------------------------------------------------------------------------
+--/ Process
+--/ -----------------------------------------------------------------------------------------------
+--/ Проверка наличие скрипта с именем 'module' и вызов 'module'.init()
+--/ (вспомогательная функция проверки/инициализации отдельного модуля)
+local function Initialize_Module(sModuleName)
+	if _G[sModuleName] then
+		if _G[sModuleName].init then
+			_G[sModuleName].init()
+			return true
+		end
+	else
+		if tScripts and tScripts[sModuleName] ~= nil then
+			db[sModuleName] = false
+			db.bErrModule = true --/ флаг для сообщение об ошибке (в кодах модуля)
+			db.iErrIdx = 0 --/ ошибка в кодах файлов модулей
+		else
+			db[sModuleName] = nil
+		end
+	end
+end
+--/ Проверка отдельной секции модулей (получение списка модулей секции)
+--/ (вспомогательная функция инициализации секции модулей)
+local function Initialize_Section(ini,sSection)
+	if ini and ini:section_exist(sSection) and sSection ~= sModule then
+		local iCnt = ini:line_count(sSection)
+		log(string.format(":Подключение_модулей_секции=[%s](%s):", sSection, iCnt))
+		for i=0, iCnt-1 do
+			local sModuleName, bEnabled
+			local result,idx,value = ini:r_line(sSection, i, "", "")
+			if idx and type(tonumber(idx)) == "number" and value and Clear_String(value) and Clear_String(value) ~= "" then
+				local tS = Parse_String(value, ",")
+				sModuleName, bEnabled = tS[1], tS[2]
+				table.insert(tModules,sModuleName) --/ for debug
+			else
+				abort("%s:Initialize_Section:Read_section=[%s],line=[%s]:<Error!>", sModule, sSection, tostring(i+1) )
+			end
+			local sText = string.format(":Модуль(%02d/%02d)=[%s]%s", i+1, idx, sModuleName, string.rep(".",14-string.len(sModuleName)))
+			if bEnabled == "true" then
+				if getFS():exist("$game_scripts$", sModuleName..".script") then
+					local bInit = Initialize_Module(sModuleName)
+					if db[sModuleName] == nil then
+						log(sText.."<~WARNING!_МОДУЛЬ_ОТСУТСТВУЕТ:<x-x>")
+					elseif db[sModuleName] == false then
+						log(sText.."<~WARNING!_ОШИБКА_МОДУЛЯ_!:<x?x>")
+					elseif db.is_dbg1 then
+						if bInit then
+							log(sText.."<~инициализирован:[+]")
+						else
+							log(sText.."<~проверен:[+]")
+						end
+					end
+				else
+					log(sText.."<~WARNING!_ФАЙЛ_НЕ_НАЙДЕН:<xxx>")
+				end
+			else
+				db[sModuleName] = false
+				log(sText.."<~отключен:<-x->")
+			end
+		end
+	else
+		log(":Initialize_Section=[%s]:<Error!>", sSection)
+	end
+end
+--/ Функция вызывается 1-ой (при старте игры)
+--/ (модули регистрируют свои коллбэки)
+function Init()
+	if not tScripts and (m_debug) then
+		tScripts = m_debug.Check_Scripts() --/ проверка корректности скрипт-файлов игры
+	end
+--	log( string.format(":Initialize_Modules:%s:", Get_sMemUsage())) --/#~#
+	log( string.rep("~",52) ) --/#~#
+	local ini = ini_file("mods\\_modules.ltx")
+	Initialize_Section(ini,"basic_modules")
+	Initialize_Section(ini,"main_modules")
+	if (m_ai_mgr) then
+		Initialize_Section(ini,"ai_modules")
+	else
+		log("Mодули_секции=[ai_modules]_НЕ_ПОДКЛЮЧЕНЫ!:<--->")
+	end
+	Initialize_Section(ini,"user_modules")
+	--Initialize_Module("name_Module") --/ регистрация отдельного модуля (reserve)
+	log( string.rep("~",52) ) --/#~#
+end
+
+--/ -----------------------------------------------------------------------------------------------
+--/ Framework initialization (по материалам Stalker:STCS|SCOP - xr_s.script)
+--/ -----------------------------------------------------------------------------------------------
+function Register_Callback(sName,Func,UserObj)
+	if not (sName and tCallbacks[sName]) then
+		abort("%s:Register_Callback:[%s]<~is unknown", sModule, sName )
+	elseif not Func then
+		abort("%s:Register_Callback:[%s],[function]<~is unknown", sModule, sName )
+	end
+--	printf("Register_Callback:name=[%s]:[%s]", sName, "++") --/#~#
+	UnRegister_Callback(sName,Func,UserObj) --/ исключение дублирования
+	table.insert(tCallbacks[sName], { func = Func, uo = UserObj })
+end
+function UnRegister_Callback(sName,Func,UserObj)
+	if not (sName and tCallbacks[sName]) then
+		abort("%s:UnRegister_Callback:callback_name=[%s]<~is unknown", sModule, sName )
+	end
+--	printf("UnRegister_Callback:name=[%s]:[%s]", sName, "--") --/#~#
+	for i,o in ipairs(tCallbacks[sName]) do
+		if o.func == Func and not (sName == "timer" and UserObj and UserObj == o.uo) then
+			table.remove(tCallbacks[sName],i)
+		end
+	end
+end
+function Check_Callback(sName,Func,UserObj)
+	if sName and tCallbacks[sName] then
+		for i,o in ipairs(tCallbacks[sName]) do
+			if o.func == Func and not (UserObj and UserObj == o.uo) then
+				return true
+			end
+		end
+	end
+	return false
+end
+
+--/ -----------------------------------------------------------------------------------------------
+--/ Initialize. Функция вызывается самой 1-ой. Онлайновые объекты & db.actor НЕдоступны!
+--/ -----------------------------------------------------------------------------------------------
+function on_game_init()
+--	log(":Game_Init:") --/#~#
+	db.sTxtVerMod = _f.Get_VerMod("str").._f.Get_DbgMode()
+	db.sTxtVerAdd = _f.Get_VerAdd()
+	db.bInit = true
+	if (m_debug) then
+		m_debug.InitDebug()
+		tScripts = m_debug.Check_Scripts()
+	else
+		db.is_debug = false
+		log(":on_game_init:Warning![m_debug]~Disabled")
+	end
+end
+--/------------------------------------------------------------------
+function on_game_start()
+	log( string.format(":Game_Start:%s:", Get_sMemUsage())) --/#~#
+	Set_Game_StartTime()
+	math.randomseed(device():time_global())
+	Init() --/ инициализация модулей мода
+	if db.m_ai_mgr then m_ai_mgr.load_schemes() end --/All_AI_Pack
+	
+	
+end
+--/ -----------------------------------------------------------------------------------------------
+--/ CallBacks Section
+--/ -----------------------------------------------------------------------------------------------
+function on_actor_load(reader,obj)
+	log( string.rep("~",96) ) --/#~#
+	log( string.format(":Load_SavedGame:[%s]:%s", Get_sTime(), Get_sMemUsage()) ) --/#~#
+	for i,o in ipairs(tCallbacks.actor_load) do
+		o.func(o.uo,reader,obj)
+	end
+end
+--/------------------------------------------------------------------
+function on_actor_init()
+	log( string.rep("~",96) ) --/#~#
+	log( string.format(":Game_Init:[%s]:%s", Get_sTime(), Get_sMemUsage()) ) --/#~#
+	idActor = db.actor:id()
+	if not db.storage[idActor].pstor then
+		db.storage[idActor].pstor = {}
+	end
+	--/ запуск мода
+	if db.m_fixed and m_fixed.process then
+		m_fixed.process() --/ for make fix
+	end
+	Initialize_Timers() --/ загрузка таймеров
+	_s.Game_Init()
+	for i,o in ipairs(tCallbacks.actor_init) do
+		o.func(o.uo)
+	end
+end
+--/------------------------------------------------------------------
+--/ установка/загрузка переменных окружения
+function on_game_load()
+	log( string.rep("~",96) ) --/#~#
+	log( string.format(":Load_Variables:Run:[%s]:%s:", Get_sTime(), Get_sMemUsage()) ) --/#~#
+	local pt = profile_timer()
+	pt:start()
+	--/ стартовые коллбэки модулей
+	for i,o in ipairs(tCallbacks.game_load) do
+		o.func(o.uo)
+	end
+	_s.Continue_Game_Load()
+	db.bGameLoaded = true --/ флаг запуска игры
+	pt:stop()
+	log( string.format(":Load_Variables:Done:Time=[%s]ms,%s,PreCacheFrame=[%s]", string.format("%.2f",pt:time()*0.001), Get_sMemUsage(), device().precache_frame) ) --/#~#
+	log( string.rep("~",96) ) --/#~#
+end
+--/------------------------------------------------------------------
+--/ коллбэк на апдейт ГГ (не перегружать, будут лаги)
+function on_actor_update(delta)
+--	printf("on_actor_update:delta=[%s],pf=[%s]:[%s]", delta, device().precache_frame, Get_sTime() ) --/#~#
+	db.iOau = 99
+	db.sOau = "m:update:run"
+	if iTimeOut1gs <= game.time() then
+		iTimeOut1gs = game.time() + 1000 --/ обновления 1 раз в игровую секунду (game-second)
+		if bNotTake then --/ or device().precache_frame <= 1 <~ разрешаем 'брать'
+			bNotTake = nil
+			if db.is_dbg1 then
+				log( string.rep("~",96) ) --/#~#
+				log( string.format(":Update:Run:[%s]:%s:TimeFactor=[%s],PreCacheFrame=[%s],Delta=[%s]", Get_sTime(), Get_sMemUsage(), level.get_time_factor(), device().precache_frame, delta) ) --/#~#
+			end
+		end
+		db.iOau = 98
+		Check_Timers() --/ 1 раз в сек (игрового времени)
+	end
+	db.iOau = 97
+	_s.update(delta) --/ update slave-functions
+	db.iOau = 96
+	for i,o in ipairs(tCallbacks.update) do
+		o.func(o.uo,delta)
+		db.iOau = db.iOau - i
+	end
+	db.iOau = 0
+end
+--/------------------------------------------------------------------
+function on_npc_update(oObj,delta)
+--	printf("on_npc_update:delta=[%s],obj=[%s]:[%s]", delta, oObj:name(),">") --/#~#
+	for i,o in ipairs(tCallbacks.npc_update) do
+		o.func(o.uo,oObj,delta)
+	end
+end
+function on_mob_update(oObj,delta)
+--	printf("on_mob_update:delta=[%s],obj=[%s]:[%s]", delta, oObj:name(), ">") --/#~#
+	for i,o in ipairs(tCallbacks.mob_update) do
+		o.func(o.uo,oObj,delta)
+	end
+end
+---/------------------------------------------------------------------
+function on_net_spawn(obj)
+--	printf("on_net_spawn:obj=[%s]:[%s]", obj and obj:name(), ">") --/#~#
+	for i,o in ipairs(tCallbacks.net_spawn) do
+		o.func(o.uo,obj)
+	end
+end
+function on_mob_net_spawn(oNPC)
+--	printf("on_mob_net_spawn:npc=[%s]:[%s]", oNPC and oNPC:name(), ">") --/#~#
+	for i,o in ipairs(tCallbacks.mob_net_spawn) do
+		o.func(o.uo,oNPC)
+	end
+	on_net_spawn(oNPC)
+end
+function on_npc_net_spawn(oNPC, sobject)
+--	printf("on_npc_net_spawn:npc=[%s]:[%s]", oNPC and oNPC:name(), ">") --/#~#
+	for i,o in ipairs(tCallbacks.npc_net_spawn) do
+		o.func(o.uo,oNPC,sobject)
+	end
+	on_net_spawn(oNPC)
+end
+--/------------------------------------------------------------------
+function on_respawn(obj,respawner)
+--	printf("on_respawn:obj=[%s]:[%s]", obj and obj:name(), ">") --/#~#
+	for i,o in ipairs(tCallbacks.respawn) do
+		o.func(o.uo,obj,respawner)
+	end
+end
+--/------------------------------------------------------------------
+function on_net_destroy(obj)
+--	printf("on_net_destroy:obj=[%s]:[%s]", obj and obj:name(), ">") --/#~#
+	for i,o in ipairs(tCallbacks.net_destroy) do
+		o.func(o.uo,obj)
+	end
+end
+function on_npc_net_destroy(oNPC)
+	for i,o in ipairs(tCallbacks.npc_net_destroy) do
+		o.func(o.uo,oNPC)
+	end
+	on_net_destroy(oNPC)
+end
+function on_mob_net_destroy(oNPC)
+	for i,o in ipairs(tCallbacks.mob_net_destroy) do
+		o.func(o.uo,oNPC)
+	end
+	on_net_destroy(oNPC)
+end
+--/------------------------------------------------------------------
+function on_death(oVictim, oWho)
+--	printf("on_death:victim=[%s],who=[%s]:[%s]", oVictim and oVictim:name(), oWho and oWho:name(), ">") --/#~#
+	for i,o in ipairs(tCallbacks.death) do
+		o.func(o.uo,oVictim,oWho)
+	end
+end
+function on_npc_death(oVictim, oWho)
+	for i,o in ipairs(tCallbacks.npc_death) do
+		o.func(o.uo,oVictim,oWho)
+	end
+	on_death(oVictim,oWho)
+end
+function on_mob_death(oVictim, oWho)
+	for i,o in ipairs(tCallbacks.mob_death) do
+		o.func(o.uo,oVictim,oWho)
+	end
+	on_death(oVictim,oWho)
+end
+--/------------------------------------------------------------------
+function on_offline_death(soObj, who) --/#?# TODO: уточнить
+	for i,o in ipairs(tCallbacks.offline_death) do
+		o.func(o.uo,soObj, who)
+	end
+end
+--/------------------------------------------------------------------
+function on_hear(obj,idWho,tSoundType,sound_position,sound_power)
+	for i,o in ipairs(tCallbacks.hear) do
+		o.func(o.uo,obj,idWho,tSoundType,sound_position,sound_power)
+	end
+end
+function on_npc_hear(obj,idWho,tSoundType,sound_position,sound_power)
+	for i,o in ipairs(tCallbacks.npc_hear) do
+		o.func(o.uo,obj,idWho,tSoundType,sound_position,sound_power)
+	end
+	on_hear(obj,idWho,tSoundType,sound_position,sound_power)
+end
+function on_mob_hear(obj,idWho,tSoundType,sound_position,sound_power)
+	for i,o in ipairs(tCallbacks.mob_hear) do
+		o.func(o.uo,obj,idWho,tSoundType,sound_position,sound_power)
+	end
+	on_hear(obj,idWho,tSoundType,sound_position,sound_power)
+end
+--/------------------------------------------------------------------
+function on_hit(obj, iAmount, local_direction, who, iBoneIndex)
+	for i,o in ipairs(tCallbacks.hit) do
+		o.func(o.uo,obj,iAmount,local_direction,who,iBoneIndex)
+	end
+end
+function on_npc_hit(oNPC, iAmount, local_direction, oWho, iBoneIndex)
+	for i,o in ipairs(tCallbacks.npc_hit) do
+		o.func(o.uo,oNPC,iAmount,local_direction,oWho,iBoneIndex)
+	end
+	on_hit(oNPC,iAmount,local_direction,oWho,iBoneIndex)
+end
+function on_mob_hit(oNPC, iAmount, local_direction, oWho, iBoneIndex)
+	for i,o in ipairs(tCallbacks.mob_hit) do
+		o.func(o.uo,oNPC,iAmount,local_direction,oWho,iBoneIndex)
+	end
+	on_hit(oNPC,iAmount,local_direction,oWho,iBoneIndex)
+end
+--/------------------------------------------------------------------
+function on_enemy_see_actor(oNPC,sType)
+	for i,o in ipairs(tCallbacks.enemy_see_actor) do
+		o.func(o.uo,oNPC,sType)
+	end
+end
+function on_actor_see_enemy(oNPC,sType)
+	for i,o in ipairs(tCallbacks.actor_see_enemy) do
+		o.func(o.uo,oNPC,sType)
+	end
+end
+--/------------------------------------------------------------------
+function on_npc_shot_actor(oNPC)
+	for i,o in ipairs(tCallbacks.npc_shot_actor) do
+		o.func(o.uo,oNPC)
+	end
+end
+--/------------------------------------------------------------------
+function on_info(oNPC,sInfoId)
+--	printf("on_info:npc=[%s],info_id=[%s]:[%s]", oNPC and oNPC:name(), sInfoId, ">") --/#~#
+	for i,o in ipairs(tCallbacks.info) do
+		o.func(o.uo,oNPC,sInfoId)
+	end
+end
+--/------------------------------------------------------------------
+function on_task(task,iObjectiveIdx,sState)
+--	printf(" on_task:task_id=[%s],sub=[%s],status=[%s]:[%s]", task:get_id(), iObjectiveIdx, sState, ">") --/#~#
+	for i,o in ipairs(tCallbacks.task) do
+		o.func(o.uo,task,iObjectiveIdx,sState)
+	end
+end
+--/------------------------------------------------------------------
+function on_trade(item,bSellBye,iMoney)
+	for i,o in ipairs(tCallbacks.info) do
+		o.func(o.uo,item,bSellBye,iMoney)
+	end
+end
+--/------------------------------------------------------------------
+function on_item_take(oObj)
+	if bNotTake then return end --/>
+	local idObj, sSection = oObj:id(), oObj:section()
+	if idObj and sSection and sSection ~= "zero" then
+		for i,o in ipairs(tCallbacks.item_take) do
+			o.func(o.uo,oObj,idObj,sSection)
+		end
+	end
+end
+--/------------------------------------------------------------------
+function on_item_take_from_box(oBox,oItem)
+	for i,o in ipairs(tCallbacks.item_take_from_box) do
+		o.func(o.uo,oBox,oItem)
+	end
+end
+--/------------------------------------------------------------------
+function on_use(oObj,oWho)
+--	printf("on_use:obj=[%s],who=[%s]:[%s]", oObj and oObj:name(), oWho and oWho:name(), ">") --/#~#
+	for i,o in ipairs(tCallbacks.use) do
+		o.func(o.uo,oObj,oWho)
+	end
+end
+--/------------------------------------------------------------------
+function on_item_use(oObj)
+--	printf("on_item_use:obj=[%s]:[%s]", oObj and oObj:name(), ">") --/#~#
+	if not db.bGameLoaded and time_global() <= iTimeOutUse then return end --/>
+	if not (oObj and db.actor) then return end --/>
+	local idObj, sSection = oObj:id(), oObj:section()
+	if idObj and sSection and sSection ~= "zero" then
+		for i,o in ipairs(tCallbacks.item_use) do
+			o.func(o.uo,oObj,idObj,sSection)
+		end
+		iTimeOutUse = time_global() + 50 --/ фильтр 0.05s
+	end
+end
+--/------------------------------------------------------------------
+function on_item_drop(oObj)
+	if not (oObj and db.bGameLoaded and db.actor and time_global() >= iTimeOutDrop) then return end --/>
+	local idObj, sSection = oObj:id(), oObj:section()
+	if idObj and sSection and sSection ~= "zero" then
+		for i,o in ipairs(tCallbacks.item_drop) do
+--			printf("on_item_drop:uo=[%s],obj=[%s]:[%s]", o.uo, oObj and oObj:name(), ">") --/#~#
+			o.func(o.uo,oObj,idObj,sSection)
+		end
+		iTimeOutDrop = time_global() + 50 --/ фильтр 0.05s
+	end
+end
+--/------------------------------------------------------------------
+function on_actor_save(packet)
+	log( string.rep("~",96) ) --/#~#
+	local bLevelChange = utils.level_changing()
+	log( string.format(":Game_Save:[%s]:%s:TimeFactor=[%s],LevelChange=[%s]", Get_sTime(), Get_sMemUsage(), level.get_time_factor(), tostring(bLevelChange)) ) --/#~#
+	Save_Timers() --/ запись таймеров в actor-storage
+	iTimeOutDrop = time_global() + 250 --/ фильтр 0.25s
+	for i,o in ipairs(tCallbacks.actor_save) do
+		o.func(o.uo,packet)
+	end
+	iTimeOutDrop = time_global() + 250 --/ фильтр 0.25s
+end
+--/------------------------------------------------------------------
+function on_actor_destroy()
+	log( string.format(":Game_Exit:[%s]:%s", Get_sTime(), Get_sMemUsage() ) ) --/#~#
+	for i,o in ipairs(tCallbacks.actor_destroy) do
+		o.func(o.uo)
+	end
+	log( string.rep("~",96) ) --/#~#
+end
+--/------------------------------------------------------------------
+function on_main_menu_on()
+--	log(":MainMenuOn:]") --/#~#
+	for i,o in ipairs(tCallbacks.main_menu_on) do
+		o.func(o.uo)
+	end
+end
+function on_main_menu_off()
+	for i,o in ipairs(tCallbacks.main_menu_off) do
+		o.func(o.uo)
+	end
+end
+--/------------------------------------------------------------------
+function on_game_reload()
+	log( string.format(":Game_ReLoad:[%s]",  Get_sTime()) ) --/#~#
+	for i,o in ipairs(tCallbacks.game_reload) do
+		o.func(o.uo)
+	end
+	db.bGameLoaded = nil --/ флаг запуска игры
+end
+function on_disconnect()
+	log( string.format(":Disconnect:[%s]",Get_sTime()) ) --/#~#
+	for i,o in ipairs(tCallbacks.disconnect) do
+		o.func(o.uo)
+	end
+end
+function on_quit()
+	log( string.rep("~",96) ) --/#~#
+	log( string.format(":Game_Quit:[%s]:%s", Get_sTime(), Get_sMemUsage() ) ) --/#~#
+	for i,o in ipairs(tCallbacks.quit) do
+		o.func(o.uo)
+	end
+	db.bGameLoaded = nil --/ сброс флага запуска игры
+end
+--/------------------------------------------------------------------
+function on_option_init() --/#+#
+	for i,o in ipairs(tCallbacks.option_init) do
+		o.func(o.uo)
+	end
+end
+--/------------------------------------------------------------------
+function on_timer(sTimerName,params) --/#+#
+	for i,o in ipairs(tCallbacks.timer) do
+--		printf("on_timer:uo=[%s],TimerName[%s]:[%s]", o.uo, sTimerName, Get_sTime() ) --/#~#
+		if true == o.func(o.uo,sTimerName,params) then
+			return true --/> прерываем, сработал один из коллбэков
+		end
+	end
+end
+
+--/ -----------------------------------------------------------------------------------------------
+--/ Game-Time Section
+--/ -----------------------------------------------------------------------------------------------
+--/ Установка игрового времени на дату из 'alife.ltx'
+function Set_Game_StartTime()
+	local t = Parse_String(system_ini():r_string("alife", "start_time"), ":")
+	local d = Parse_String(system_ini():r_string("alife", "start_date"), ".")
+	db.game_start_time = game.CTime()
+	--/ формат установки времени = (Y,M,D, h,m,s, ms)
+	db.game_start_time:set(tonumber(d[3]),tonumber(d[2]),tonumber(d[1]), tonumber(t[3]),tonumber(t[2]),tonumber(t[1]), 0)
+	utils.Set_CTime()
+	smart_terrain.Set_CTime()
+end
+--/ время в игровых минутах
+function Get_Game_Seconds()
+	--local gt = game.get_game_time() --/ game-time (ms)
+	return game.get_game_time():diffSec(db.game_start_time) --/ game-time (sec)
+end
+--/ время в игровых минутах
+function Get_Game_Minutes()
+	return math.floor(Get_Game_Seconds()/60) --/> game-time (minutes)
+end
+--/ время в игровых часах
+function Get_Game_Hours()
+	return math.floor(Get_Game_Seconds()/3600) --/> game-time (hour)
+end
+--/ строка времени (00:00:00) - в игровых сеундах
+function Get_sTime()
+	return game.get_game_time():timeToString(game.CTime.TimeToSeconds)
+end
+--/------------------------------------------------------------------
+--/ Real&Game Timers Section. Функции таймеров.
+--/------------------------------------------------------------------
+local TIME_FACTOR  = system_ini():r_float("alife","time_factor") --/ коэф-нт времени
+local TM_COUNT_MAX = 100
+local tTimers      = {} --/ массив работающих таймеров
+--/------------------------------------------------------------------
+--/ Загрузвка таймеров (from actor-storage)
+--/------------------------------------------------------------------
+function Initialize_Timers()
+	local tTimersTmp = {} --/ временный массив загруженных таймеров
+	--
+	local function Load_Timer(sIdx)
+		local tS,tTbl = _f.load_table(sIdx),{}
+		if type(tS[1]) == "string" then
+			if type(tS[2]) == "number" then
+				tTbl = { n=tS[1], t=tS[2], p=tS[3] }
+			else --/ для совместимости со старым форматом
+				tTbl = { n=tS[1], t=_f.load_variable(sIdx.."d",0), p=nil }
+				local p = _f.load_variable(sIdx.."p","")
+				if p ~= "" then tTbl.p = p end
+				_f.del_variable(sIdx.."d")
+				_f.del_variable(sIdx.."p")
+				printf("Load_Timer:OLD_format~>idx=[%s],name=[%s],t=[%s],p=[%s]:[%s]", sIdx, tTbl.n, tTbl.t,  tTbl.p , "Info!") --/#~#
+			end
+			if string.find(sIdx,"rt") then
+				tTbl.m = true --/ flag 'mode' for real-timer
+			else
+				tTbl.m = false --/ flag 'mode' for game-timer
+			end
+		else
+			return --/>
+		end
+		--/<
+		if not tTbl.t then return end --/>
+		local tTmp = tTimersTmp[tTbl.n]
+		if not (tTmp and tTmp.p == tTbl.p) then
+--			printf("Load_Timer:idx=[%s],name=[%s],time=[%s],params=[%s]:[%s]", sIdx, tTbl.n, tTbl.t, tTbl.p, "+") --/#~#
+			tTimers[sIdx] = tTbl --/ регистрируем
+			tTimersTmp[tTbl.n] = {i=sIdx, t=tTbl.t, p=tTbl.p} --/ запоминаем: 'n' - new
+		else --/ обнаружен дубль (с одинаковыми или нулевыми 'params')
+			printf("Load_Timer:name=[%s]<~duble!Select:idx=[%s<~>%s],t_new-t_old=[%s],p=[%s]:[%s]", tTbl.n, sIdx, tTmp.i, tTbl.t - tTmp.t, tTbl.p, "Info!") --/#~#
+			if tTbl.t > tTmp.t then --/ выбираем c наибольшим временем
+				tTimers[sIdx] = tTbl --/ регистрируем
+				tTimers[tTmp.i] = nil --/ чистим (разрегистрируем)
+				tTimersTmp[tTbl.n] = {i=sIdx, t=tTbl.t, p=tTbl.p} --/ запоминаем: 'n' - new
+				printf("Initialize_Timers:selected~>idx=[%s],name=[%s]:[%s]", sIdx, tTbl.n, "+") --/#~#
+			end
+		end
+		_f.del_table(sIdx) --/ чистим storage
+	end
+	--/<
+	local i,sIdx
+	for i=1,TM_COUNT_MAX do
+		--/ проверка real-timer'а
+		sIdx = string.format("rt%d",i)
+		Load_Timer(sIdx)
+		--/ проверка game-timer'а
+		sIdx = string.format("gt%d",i)
+		Load_Timer(sIdx)
+	end
+--	printf("Initialize_Timers:count=[%s],diff_time=[%s]:[%s]", _f.get_n_table(tTimers), Get_Game_Minutes() - level.get_time_minutes(), "i") --/#~#
+end
+--/------------------------------------------------------------------
+--/ Сохранение таймеров (in actor-storage)
+--/------------------------------------------------------------------
+function Save_Timers()
+	local sIdx,tTbl
+	for sIdx,tTbl in pairs(tTimers) do
+		local tS = {tTbl.n,tTbl.t,tTbl.p}
+		_f.save_table(sIdx,tS)
+	end
+--	printf("Save_Timers:count=[%s]:[%s]", _f.get_n_table(tTimers), "i") --/#~#
+end
+--/------------------------------------------------------------------
+--/ Старт/запись таймера
+--/------------------------------------------------------------------
+--/ real-time: 1-name, 2-time_seconds, [3]-params
+--/ game-time: 1-name, 2-time_days, 3-time_hours, 4-time_minutes, [5]-params
+function Start_Timer(sMode,...)
+	local tArg = {...}
+	local sName = tArg[1]
+	if sMode and (sMode == "rt" or sMode == "gt") and sName and sName ~= "" then
+		local tTbl = {n=sName}
+		--/ game.time() - игровое время (ms) с начала прохождения игры), time_global() - real-time (ms) since 1970
+		if sMode == "rt" then --/ or  tArg[4] == nil
+			tTbl.t = tArg[2]*1000*TIME_FACTOR + game.time() --/ ms (игровое время с начала прохождения игры)
+			tTbl.p = tArg[3]
+			tTbl.m = true --/ flag for real-timer
+		elseif tArg[4] and type(tArg[4]) == "number" then
+			tTbl.t = math.floor(tArg[2]*1440 + tArg[3]*60 + tArg[4]) + Get_Game_Minutes() --/ game minutes (or level.get_time_minutes())
+			tTbl.p = tArg[5]
+			tTbl.m = false --/ flag for game-timer
+		end
+		if not tTbl.t then
+			printf("Start_Timer:mode=[%s],a1=[%s],a2=[%s],a3=[%s],a4=[%s],a5=[%s]~time=NIL:<%s>", sMode, tArg[1], tArg[2], tArg[3], tArg[4], tArg[5], "Warning!")
+			return false --/>
+		end
+		local i = 1
+		local sIdx = string.format("%s%d",sMode,i)
+		while tTimers[sIdx] ~= nil do
+			if sName == tTimers[sIdx].n and tTbl.p == tTimers[sIdx].p then
+--				printf("Start_Timer:idx=[%s],name=[%s],t-t=[%s],p=[%s]<~already_is_available!:[%s]", sIdx, sName, tTbl.t - tTimers[sIdx].t, tTbl.p, "Info!") --/#~#
+				if tTbl.t > tTimers[sIdx].t then
+					tTimers[sIdx] = tTbl --/ заменяем таймер на новый с большим временем
+--					printf("Start_Timer:idx=[%s],name=[%s],t=[%s],p=[%s]~>ReStart!:[%s]", sIdx, sName, tTbl.t, tTbl.p, "Info!") --/#~#
+					return true --/>
+				else
+					printf("Start_Timer:idx=[%s],name=[%s]~NOT_starting:<%s>", sIdx, sName, "Warning!")
+					return false --/>
+				end
+			end
+			i = i +1
+			if i > TM_COUNT_MAX then
+				printf("Start_Timer:mode=[%s],name=[%s],i=[%s]>[%s]=max:<%s>", sMode, sName, i, TM_COUNT_MAX, "Warning!")
+				return false --/>
+			end
+			sIdx = string.format("%s%d",sMode,i)
+		end
+		tTimers[sIdx] = tTbl
+--		printf("Start_Timer:idx=[%s],name=[%s],time=[%s],params=[%s]:[%s]", sIdx, tTbl.n, tTbl.t, tTbl.p, "T+") --/#~#
+		return true --/>
+	end
+	printf("Start_Timer:mode=[%s],a1=[%s],a2=[%s],a3=[%s],a4=[%s],a5=[%s]:<%s>", sMode, tArg[1], tArg[2], tArg[3], tArg[4], tArg[5], "Warning!")
+	return false
+end
+--/------------------------------------------------------------------
+--/ Проверка таймеров
+--/------------------------------------------------------------------
+function Check_Timers()
+--	printf("Check_Timers:[%s]", ">") --/#~#
+	local tTimerStop = {} --/ временный массив отработавших таймеров
+	local sIdx,tTbl
+	--/ проверяем отработавшие таймеры
+	for sIdx,tTbl in pairs(tTimers) do
+		if tTbl.m and tTbl.t <= game.time() then --/ проверка real-timer'ов
+			tTimerStop[sIdx] = {n=tTbl.n,p=tTbl.p}
+		elseif tTbl.t <= Get_Game_Minutes() then --/ проверка game-timer'ов
+			tTimerStop[sIdx] = {n=tTbl.n,p=tTbl.p}
+		end
+	end
+	--/ отрабатываем коллбэки таймеров
+	for sIdx,tTbl in pairs(tTimerStop) do
+		db.sOau = string.format("m:Check_Timers:%s=[%s]", sIdx, tTbl.n) --/#~#
+--		printf("Check_Timers:idx=[%s],name=[%s],params=[%s]~>completed:[%s]", sIdx, tTbl.n, tTbl.p, Get_sTime() ) --/#~#
+		tTimers[sIdx] = nil --/ чистим отработавшиq таймер (в первом цикле нелься удалять!)
+		if true ~= on_timer(tTbl.n,tTbl.p) then --/ НЕ'штатное' завершение (не сработал ни один из коллбэков внешних модулей)
+			printf("Check_Timers:idx=[%s],timer_name=[%s],params=[%s]<~NOT_use:time=[%s]:<%s>", sIdx, tTbl.n, tTbl.p, Get_sTime(), "Warning!")
+			for i,o in ipairs(tCallbacks.timer) do
+				if o.uo and o.uo == tTbl.n then
+					printf("Check_Timers:UnRegister:idx=[%s],timer_name=[%s],params=[%s]:<%s>", sIdx, tTbl.n, tTbl.p, "Warning")
+					UnRegister_Callback("timer", o.func) --/ чистим коллбэк (подстраховка)
+				end
+			end
+		end
+		db.sOau = db.sOau..":done" --/#~#
+	end
+end
+--/------------------------------------------------------------------
+--/ Проверка наличия (и значения) таймера по имени (и параметру)
+--/------------------------------------------------------------------
+function Check_Works_Timer(sName,sParam)
+	if sName and sName ~= "" then
+		local sIdx,tTbl
+		for sIdx,tTbl in pairs(tTimers) do
+			if tTbl.n == sName then
+				if sParam and sParam ~= "" and tTbl.p and tTbl.p == sParam then --/TODO: доработать!
+					local iTime = tTbl.t or 0
+					if tTbl.m then
+						iTime = (iTime - game.time())/1000 --/ текущее значение таймера (real-seconds)
+					else
+						iTime = iTime - Get_Game_Minutes() --/ текущее значение таймера (game-minutes)
+					end
+					if iTime <= 0 then
+						printf("Check_Works_Timer:name=[%s],idx=[%s],time=[%s]:<%s>", sName, sIdx, iTime, "Warning!")
+						iTime = 0
+					end --printf("Check_Works_Timer:name=[%s],idx=[%s],time=[%s]:[%s]", sName, sIdx, iTime, Get_sTime() ) --/#~#
+					return true, iTime --/>
+				end --printf("Check_Works_Timer:name=[%s],idx=[%s]:[%s]", sName, sIdx, Get_sTime() ) --/#~#
+				return true --/>
+			end
+		end
+	end
+--	printf("Check_Works_Timer:name=[%s]~NOT_found:[%s]", sName, Get_sTime() ) --/#~#
+	return false
+end
+
+--/ -----------------------------------------------------------------------------------------------
+--/ HELPERs (cтроковые функции)
+--/ -----------------------------------------------------------------------------------------------
+function Clear_String(sStr)
+	return (string.gsub(sStr, "^%s*(.-)%s*$", "%1"))
+end
+
+function Parse_String(sStr,sDiv)
+	local tRet = {}
+	if not (sDiv and sStr) then
+		printf("Parse_String:string=[%s],divider=[%s]~?:<%s>", sStr, sDiv, "Warning!")
+		return tRet --/>
+	end
+	local p = string.find(sStr, sDiv, 1, true)
+	if p then
+		repeat
+			table.insert( tRet, Clear_String( string.sub(sStr, 1, p-1) ) )
+			sStr = string.sub(sStr, string.len(sDiv) + p)
+			p = string.find(sStr, sDiv, 1, true)
+		until p == nil
+	end
+	table.insert(tRet, Clear_String(sStr))
+	return tRet
+end
+--/ ---------------------------------------------
+function Get_sMemUsage()
+	collectgarbage("collect")
+	collectgarbage("collect")
+	return string.format( "MemUsage=[%s]kB", collectgarbage("count") )
+end
+--/------------------------------------------------------------------------------------------------

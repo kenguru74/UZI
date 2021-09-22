@@ -1,0 +1,51 @@
+[logic]
+active = walker
+
+[walker]
+path_walk = predbannik_bubna1_walk
+path_look = predbannik_bubna1_look
+meet = no_meet
+on_actor_dist_le_nvis = 30| {-bubna_first_dialog} remark@pred_bubna1
+on_info = {+bubna_first_dialog} walker@pred_bubna3
+danger = danger_condition@bubna
+
+[remark@pred_bubna1]
+anim = hello
+snd = pred_bubna_hello
+target = actor
+meet = no_meet
+on_signal = sound_end| walker@pred_bubna2
+
+[walker@pred_bubna2]
+path_walk = predbannik_bubna1_walk
+path_look = predbannik_bubna1_look
+meet = meet@bubna
+on_info = {+bubna_first_dialog} walker@pred_bubna3
+danger = danger_condition@bubna
+
+[walker@pred_bubna3]
+path_walk = predbannik_bubna2_walk
+path_look = predbannik_bubna2_look
+meet = meet@bubna2
+danger = danger_condition@bubna
+
+[meet@bubna]
+meet_state		= 15|guard@wait
+meet_state_wpn	= 15|backoff@threat_weap
+victim		= 15|actor
+victim_wpn		= 15|actor
+use			= true
+use_wpn		= false
+syndata		= backoff@threat_weap
+meet_dialog = predbannik_bubna_dialog
+
+[meet@bubna2]
+meet_state		= 15|guard@wait
+meet_state_wpn	= 15|backoff@threat_weap
+victim		= 15|actor
+victim_wpn		= 15|actor
+use			= true
+use_wpn		= false
+
+[danger_condition@bubna]
+ignore_distance = 0

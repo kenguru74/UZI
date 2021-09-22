@@ -1,0 +1,1032 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+
+
+<!-------------------------------------created by Mora------------------------------------------------------->
+
+<!-------------------------------------zaton_skadovsk_barman----------------------------------------------------->
+	<specific_character id="zaton_skadovsk_barman" no_random = "1">
+		<name>zaton_skadovsk_barman_name</name>
+		<icon>ui_inGame2_Gluhar</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>zaton_skadovsk_barman_bio</bio>
+
+		<class>zaton_skadovsk_barman</class>
+		<community>trader</community>
+		<money min="500000" max="510000" infinitive="1"></money>
+		
+		<rank>700</rank>
+		<reputation>50</reputation>
+		<visual>actors\stalker_neutral\stalker_neutral_2_face_2</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj = 1 \n
+		</supplies>
+		<start_dialog>zaton_jo_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+
+	</specific_character>
+<!-------------------------------------zaton_skadovsk_medik----------------------------------------------------->
+	<specific_character id="zaton_skadovsk_medik" no_random = "1">
+		<name>zaton_skadovsk_medik_name</name>
+		<icon>ui_inGame2_Tremor</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>zaton_skadovsk_medik_bio</bio>
+
+		<class>zaton_skadovsk_medik</class>
+		<community>trader</community>
+		<money min="100000" max="110000" infinitive="1"></money>
+		
+		<rank>700</rank>
+		<reputation>50</reputation>
+		<visual>actors\stalker_neutral\stalker_neutral_1_face_3</visual>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj = 1 \n
+		</supplies>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------zaton_skadovsk_trader----------------------------------------------------->
+	<specific_character id="zaton_skadovsk_trader" no_random = "1">
+		<name>zaton_skadovsk_trader_name</name>
+		<icon>ui_inGame2_Sultan</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>zaton_skadovsk_trader_bio</bio>
+
+		<class>zaton_skadovsk_trader</class>
+		<community>trader</community>
+		<money min="1500000" max="1510000" infinitive="1"></money>
+		
+		<rank>700</rank>
+		<reputation>50</reputation>
+		<visual>actors\stalker_bandit\stalker_bandit_3_face_3</visual>
+		<snd_config>characters_voice\bandit_03\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj = 1 \n
+		</supplies>
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>tm_juk_dialog</actor_dialog>
+		<actor_dialog>tm_juk_reward</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------zaton_skadovsk_technik----------------------------------------------------->
+	<specific_character id="zaton_skadovsk_technik" no_random = "1">
+		<name>zaton_skadovsk_technik_name</name>
+		<icon>ui_inGame2_Kardan</icon>
+		<map_icon x="1" y="4"></map_icon>
+        	<bio>zaton_skadovsk_technik_bio</bio>
+
+		<class>zaton_skadovsk_technik</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<money min="1000" max="4900" infinitive="0"/>
+		
+		<rank>1800</rank>
+		<reputation>500</reputation>
+		<visual>actors\stalker_neutral\stalker_neutral_2_face_1</visual>
+		<snd_config>characters_voice\stalker_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		
+		<supplies>
+			[spawn] \n
+			stalker_outfit \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj = 1 \n
+		</supplies>
+		<start_dialog>hello_dialog</start_dialog>
+		<actor_dialog>zaton_skadovsk_technik_repair</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="zaton_stalker_veteran_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_2</icon>
+		<bio>zaton_stalker_veteran_bio</bio>
+
+		<class>zaton_stalker_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_2</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pmm = 10 \n
+			wpn_ak74m \n
+			ammo_5.45x39_fmj = 1 \n
+                        grenade_f1 = 2 \n
+                        grenade_rgd5 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="zaton_stalker_veteran_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_balon_8</icon>
+		<bio>zaton_stalker_veteran_bio</bio>
+
+		<class>zaton_stalker_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_balon_8</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_sks_s \n
+                        ammo_7.62x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="zaton_stalker_veteran_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_8</icon>
+		<bio>zaton_stalker_veteran_bio</bio>
+
+		<class>zaton_stalker_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_8</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_mp444_sk1 \n
+			ammo_9x18_pbp = 1 \n
+			wpn_ak104 \n
+			ammo_7.62x39_ap = 1 \n
+                        grenade_rgd5 = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_veteran------------------------------------------------------>
+	<specific_character id="zaton_stalker_veteran_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>zaton_stalker_veteran_bio</bio>
+
+		<class>zaton_stalker_veteran</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\newbie\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------angar_lider------------------------------------------------------>
+	<specific_character id="zaton_angar_lider" no_random = "1">
+		<name>zaton_angar_lider_name</name>
+		<icon>ui_spartak</icon>
+		<bio>zaton_angar_lider_bio</bio>
+
+		<class>zaton_angar_lider</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="3000" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\spartak\spartak</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk2 = 1, scope \n
+                        ammo_12x76_dart = 10 \n
+                        grenade_f1 = 2 \n
+                        grenade_rgd5 = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>spartak_first_dialog</start_dialog>
+		<actor_dialog>spartak_second_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_head_1</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer1_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer1</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_head_1</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer2_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer2</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_head_1</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer3_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer3</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_head_2</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer4_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer4</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_head_2</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+		wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 10 \n
+                        grenade_rgd5 = 3 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer5_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_5</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer5</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_head_5</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer6_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_5</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer6</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_head_5</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+		        wpn_ak103 = 1, scope silencer \n
+			ammo_7.62x39_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer7_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_mask</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer7</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_mask</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+			ammo_11.43x23_hydro = 10 \n
+		        wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer8_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_mask</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer8</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_mask</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+			ammo_11.43x23_hydro = 10 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer9_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer9</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+			ammo_11.43x23_hydro = 10 \n
+			wpn_ak104 = 1, scope silencer \n
+			ammo_7.62x39_ap = 1 \n
+                        grenade_f1 = 1 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer10_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer10</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+			ammo_11.43x23_hydro = 10 \n
+			wpn_ak103 = 1, scope silencer \n
+			ammo_7.62x39_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer------------------------------------------------------>
+	<specific_character id="zaton_killer11_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
+		<bio>zaton_killer_bio</bio>
+
+		<class>zaton_killer11</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\killer\stalker_ki_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer_lider------------------------------------------------------>
+	<specific_character id="zaton_shevchenko_lider" no_random = "1">
+		<name>zaton_shevchenko_lider_name</name>
+		<icon>ui_glaz</icon>
+		<bio>zaton_shevchenko_lider_bio</bio>
+
+		<class>zaton_shevchenko_lider</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>1901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="6000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\glaz\glaz</visual>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+                        wpn_usp \n
+			ammo_9x19_pbp = 1 \n
+                        wpn_ak104 = 1, silencer \n
+			ammo_7.62x39_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+			pda_noah \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------bandit------------------------------------------------------>
+	<specific_character id="zaton_bandit_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_bandit_veteran</icon>
+		<bio>zaton_bandit_bio</bio>
+
+		<class>zaton_bandit</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>583</rank>
+		<reputation>45</reputation>
+		<money min="400" max="800" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\bandit\stalker_bandit_veteran</visual>
+		<snd_config>characters_voice\human_03\bandit\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk1 \n
+                        ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------bandit_lider------------------------------------------------------>
+	<specific_character id="zaton_lesnichestvo_lider" no_random = "1">
+		<name>zaton_lesnichestvo_lider_name</name>
+		<icon>ui_inGame2_bandit_3_mask</icon>
+		<bio>zaton_lesnichestvo_lider_bio</bio>
+
+		<class>zaton_lesnichestvo_lider</class>
+		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
+		
+		<rank>908</rank>
+		<reputation>412</reputation>
+		<money min="2500" max="4000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_bandit\stalker_bandit_3_mask</visual>
+		<snd_config>characters_voice\human_03\bandit\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_sayga12k_sk2 = 1, scope \n
+                        ammo_12x76_dart = 10 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------killer2_lider------------------------------------------------------>
+	<specific_character id="zaton_stancia_lider" no_random = "1">
+		<name>zaton_stancia_lider_name</name>
+		<icon>ui_inGame2_merc_4</icon>
+		<bio>zaton_stancia_lider_bio</bio>
+
+		<class>zaton_stancia_lider</class>
+		<community>killer</community> <terrain_sect>stalker_killer_terrain</terrain_sect>
+		
+		<rank>2901</rank>
+		<reputation>459</reputation>
+		<money min="4000" max="8000" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_merc\stalker_merc_4</visual>
+		<snd_config>characters_voice\human_02\killer\</snd_config>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_hydro = 10 \n
+			wpn_akmsn = 1, scope launcher silencer \n
+			ammo_7.62x39_ap = 1 \n
+                        ammo_vog-25 = 5 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_helicopter------------------------------------------------------>
+	<specific_character id="zaton_stalker_helicopter_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>zaton_stalker_helicopter_bio</bio>
+
+		<class>zaton_stalker_helicopter</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\newbie\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74m \n
+                        ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>zaton_helicopter_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------stalker_helicopter------------------------------------------------------>
+	<specific_character id="zaton_stalker_helicopter_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
+		<bio>zaton_stalker_helicopter_bio</bio>
+
+		<class>zaton_stalker_helicopter</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="200" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_01\newbie\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\stalker_neytral_hood_9</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>zaton_helicopter_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------noah------------------------------------------------------>
+	<specific_character id="zaton_noah" no_random = "1">
+		<name>zaton_noah_name</name>
+		<icon>ui_inGame2_Noy</icon>
+		<bio>zaton_noah_bio</bio>
+
+		<class>zaton_noah</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>901</rank>
+		<reputation>45</reputation>
+		<money min="2000" max="3000" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\stalker_bandit\stalker_bandit_3_face_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_wincheaster1300 \n
+                        ammo_12x70_buck	= 4 \n
+                        ammo_12x76_zhekan = 1 \n
+                        ammo_12x76_dart = 2 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>noah_first_dialog</start_dialog>
+		<actor_dialog>noah_second_dialog</actor_dialog>
+		<actor_dialog>noah_third_dialog</actor_dialog>
+		<actor_dialog>noah_fourth_dialog</actor_dialog>
+		<actor_dialog>noah_fifth_dialog</actor_dialog>
+		<actor_dialog>noah_sixth_dialog</actor_dialog>
+		<actor_dialog>noah_seventh_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------zver------------------------------------------------------>
+	<specific_character id="zaton_zver" team_default = "1">
+		<name>zaton_zver_name</name>
+		<icon>ui_npc_u_hunter_5_novice</icon>
+		<bio>zaton_zver_bio</bio>
+
+		<class>zaton_zver</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>724</rank>
+		<reputation>98</reputation>
+		<money min="300" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\zver</visual>
+		<supplies>
+			[spawn] \n
+			wpn_m1891_30_scope \n
+			ammo_7.62x54_ap = 20 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------zver_new------------------------------------------------------>
+	<specific_character id="zaton_zver_new" team_default = "1">
+		<name>zaton_zver_name</name>
+		<icon>ui_npc_u_hunter_5_novice</icon>
+		<bio>zaton_zver_bio</bio>
+
+		<class>zaton_zver_new</class>
+		<community>hunters</community> <terrain_sect>stalker_hunters_terrain</terrain_sect>
+		
+		<rank>724</rank>
+		<reputation>98</reputation>
+		<money min="300" max="600" infinitive="0"/>
+		
+		<snd_config>characters_voice\human_03\freedom\</snd_config>
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\hunters\zver</visual>
+		<supplies>
+			[spawn] \n
+			wpn_m1891_30_scope \n
+			ammo_7.62x54_ap = 20 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>zver_first_dialog</start_dialog>
+		<actor_dialog>zver_second_dialog</actor_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------dal------------------------------------------------------>
+	<specific_character id="zaton_dal" no_random = "1">
+		<name>zaton_dal_name</name>
+		<icon>ui_npc_u_dal</icon>
+		<bio>zaton_dal_bio</bio>
+
+		<class>zaton_dal</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>396</rank>
+		<reputation>73</reputation>
+		<money min="300" max="700" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\dal</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_wincheaster1300 \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!-------------------------------------shah------------------------------------------------------>
+	<specific_character id="zaton_shah" no_random = "1">
+		<name>zaton_shah_name</name>
+		<icon>ui_npc_u_shah</icon>
+		<bio>zaton_shah_bio</bio>
+
+		<class>zaton_shah</class>
+		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		
+		<rank>402</rank>
+		<reputation>102</reputation>
+		<money min="300" max="700" infinitive="0"/>
+		
+		<crouch_type>0</crouch_type>
+		
+		<visual>actors\neytral\shah</visual>
+		<supplies>
+			[spawn] \n
+                        wpn_sayga12k_sk1 = 1, scope \n
+			ammo_12x76_zhekan = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+		
+		</supplies>
+		
+#include "gameplay\character_criticals_3.xml"
+			
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+</xml>

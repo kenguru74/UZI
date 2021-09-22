@@ -1,0 +1,16 @@
+[logic]
+active = walker
+combat_ignore = combat_ignore
+trade = misc\trade_antikvar.ltx
+inv_max_weight = 100000
+
+[walker]
+path_walk = gar_old_antikvar_walk
+path_look = gar_old_antikvar_look
+danger = danger_condition@trader
+
+[danger_condition@trader]
+ignore_distance       = 0
+
+[combat_ignore]
+combat_ignore_cond = always

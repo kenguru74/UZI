@@ -1,0 +1,5 @@
+function find_warlab()
+ if level.name()=="warlab" and has_alife_info("generators_message_doctor_2") and (not has_alife_info("find_warlab")) then
+   db.actor:give_info_portion("find_warlab")
+ end
+end
