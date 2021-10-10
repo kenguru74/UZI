@@ -74,7 +74,7 @@ function CRandomTask:__init()
 
 		self.task_info[tostring(id)]			= {}
 		local curr_task_info					= self.task_info[tostring(id)]
-
+		
 		if not self.task_ini:line_exist(id, "type") then
 			abort("Task manager error: no type in section [%s]", id)
 		end
@@ -209,10 +209,10 @@ end
 function CRandomTask:load(p)
 	printf("^^^ LOAD")
 	--' Считаем количество записей
-
+	
 	local i = p:r_u8()
 	for k = 1,i do
-		local id = p:r_stringZ() 
+		local id = p:r_stringZ()
 		self.task_info[id].enabled = p:r_bool()
 		self.task_info[id].enabled_props = p:r_bool()
 		self.task_info[id].status = p:r_stringZ()
@@ -222,18 +222,19 @@ function CRandomTask:load(p)
 			self.task_info[id].selected_target = selected_target
 		end
 		self.task_info[id].last_task_time = utils.r_CTime(p)
+		
+		if self.task_info[id].type == "defend_lager" then                                                           
 
-		if self.task_info[id].type == "defend_lager" then
-
-			local defend_object = alife():object(self.task_info[id].selected_target)
-			local sm_ini = defend_object:spawn_ini()
-
+			local defend_object = alife():object(self.task_info[id].selected_target)     
+			if not defend_object then
+				defend_object = alife():actor()
+			end
+			local sm_ini = defend_object:spawn_ini()                                                                  
 			self.task_info[id].defend_target = utils.cfg_get_number(sm_ini, "random_task", "defend_target", nil, true)
-		end
-
+		end                                                                                                         
 
 	end
-
+	
 	
 	
 	
@@ -707,28 +708,6 @@ function CRandomTask:actor_update()
 		end
 	end
 end
-
---' Функция для аварийной зачистки - убирает у неактивных квестов дату последнего обращения, список объектов и текущий объект,
---' в результате чего позволяет освободить довольно приличное количество места в хранилище ГГ
-function CRandomTask:cleanup_actor()
-	for k,v in pairs(self.task_info) do
-		if v.status == "normal" then
-			if (v.type == "eliminate_lager" or 
-				v.type == "defend_lager" or 
-				v.type == "kill_stalker" or 
-				v.type == "artefact" or 
-				v.type == "find_item" or 
-				v.type == "monster_part" or 
-				v.type == "storyline")
-			then
-				v.last_task_time = nil
-				v.selected_target = nil
-				v.target_objects = nil
-			end
-		end
-	end
-end
-
 --' Проверяется является ли текущий таск выданным игроку
 function CRandomTask:active_task(actor, npc, p1, p2, p3)
 	return self.task_info[self.task_id_by_init_phrase_id[p3]].status == "selected"
@@ -805,7 +784,7 @@ function CRandomTask:task_reward(npc, actor, p1, p2)
 				end
 
 				if task_desc.reward_reputation ~= nil then
-					db.actor:change_character_reputation(task_desc.reward_reputation)
+					db.actor:change_character_reputation(db.actor:character_reputation() + task_desc.reward_reputation)
 				end
 
 				if task_desc.reward_relation ~= nil then
@@ -830,7 +809,7 @@ function CRandomTask:task_reward_storyline(task)
 	end
 
 	if task_desc.reward_reputation ~= nil then
-		db.actor:change_character_reputation(task_desc.reward_reputation)
+		db.actor:change_character_reputation(db.actor:character_reputation() + task_desc.reward_reputation)
 	end
 
 	if task_desc.reward_relation ~= nil then
@@ -1116,7 +1095,7 @@ function reward_by_task(task)
 end
 
 function task_complete(p1, p2)
-        return get_random_task():task_complete(p1, p2)
+	return get_random_task():task_complete(p1, p2)
 end
 function task_fail(p1, p2)
 	return get_random_task():task_fail(p1, p2)
@@ -1129,9 +1108,6 @@ function actor_update()
 	get_random_task():actor_update()
 end
 
-function cleanup_actor()
-	get_random_task():cleanup_actor()
-end
 
 function save(p)
 	get_random_task():save(p)
