@@ -20,12 +20,12 @@ terrain = actor_terrain
 
 max_item_mass = 30
 jump_speed = 10 ;высота прыжка
-crouch_coef = 1.0 ;в присяде
+crouch_coef = 0.8 ;в присяде
 climb_coef = 0.5 ;по лестнице
 run_coef = 1.5 ;бег (это обычная скорость движения)
-sprint_koef = 2.2 ;спринт
-run_back_coef = 1.7 ;бег назад
-walk_back_coef = 1.2 ;ходьба назад
+sprint_koef = 1.8 ;спринт
+run_back_coef = 0.9 ;бег назад
+walk_back_coef = 0.8 ;ходьба назад
 walk_accel = 16 ;общая скорость (если увеличить ее, то увеличатся и остальные скорости)
 air_control_param = 0.1
 ; радиус в котором над предметами выводятся их названия
@@ -213,7 +213,7 @@ stand_power = -0.0003
 walk_power = 0.0001 ; уменьшение силы за секунду во время ходьбы без учета веса ноши
 walk_weight_power = 0.0001 ; уменьшение силы за секунду во время ходьбы с учетом веса ноши, для максимального допустимого веса
 overweight_walk_k = 1.5; коэффициент влияния перегрузки ноши (умножается на walk_weight_power)
-accel_k = 1.07 ; коэффициент на бег (умножается walk_power, walk_weight_power), до 3.08.21 было 5
+accel_k = 1.1 ; коэффициент на бег (умножается walk_power, walk_weight_power), до 3.08.21 было 5
 sprint_k = 1.1 ; коэффициент на "sprint" бег (умножается walk_power, walk_weight_power), до 3.08.21 было 150
 up_speed_k = 1.1
 
