@@ -353,7 +353,7 @@ end
 function check_use_dry_foodsOrDrugs(p_obj)
 	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
 	else
-		if p_obj and ((p_obj:section() == "vodka") or (p_obj:section() == "vodka_half") or (p_obj:section() == "nuts") or (p_obj:section() == "sigaret") or (p_obj:section() == "kolbasa") or (p_obj:section() == "salo") or (p_obj:section() == "mre") or (p_obj:section() == "sandwich") or (p_obj:section() == "sweetness") or (p_obj:section() == "batat") or (p_obj:section() == "galet") or (p_obj:section() == "sgus") or (p_obj:section() == "bread") or (p_obj:section() == "bread_a") or (p_obj:section() == "antirad") or (p_obj:section() == "medkit") or (p_obj:section() == "medkit_army") or (p_obj:section() == "medkit_scientic")) then
+		if p_obj and ((p_obj:section() == "vodka") or (p_obj:section() == "vodka_half") or (p_obj:section() == "nuts") or (p_obj:section() == "sigaret") or (p_obj:section() == "kolbasa") or (p_obj:section() == "salo") or (p_obj:section() == "mre") or (p_obj:section() == "sandwich") or (p_obj:section() == "sweetness") or (p_obj:section() == "batat") or (p_obj:section() == "sgus") or (p_obj:section() == "bread") or (p_obj:section() == "bread_a") or (p_obj:section() == "antirad") or (p_obj:section() == "medkit") or (p_obj:section() == "medkit_army") or (p_obj:section() == "medkit_scientic")) then
 			zhazhda()
 		end
 	end
