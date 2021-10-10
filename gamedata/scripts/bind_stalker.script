@@ -13,7 +13,7 @@ local game_difficulty_by_num = {
 	[3] = "gd_master"
 	}
 
-lasthealth  = 0
+lasthealth	= 0
 lasttime	= 0
 post_process = 0
 local weapon_hide = false
@@ -27,9 +27,10 @@ function actor_binder:__init (obj) super(obj)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:net_spawn(data)
-	--printf("actor net spawn")
+	cmd("r2_dof_control", "off")
 	
 	level.show_indicators()
+	level.set_snd_volume( 1 )
 	
 	self.bCheckStart = true
 	self.weapon_hide = false -- спрятано или нет оружие при разговоре.
@@ -46,11 +47,23 @@ function actor_binder:net_spawn(data)
 	end
 	
 	self.weather_manager:reset()
---	game_stats.initialize ()
 	
 	if(actor_stats.add_to_ranking~=nil)then
 		actor_stats.add_to_ranking(self.object:id())
 	end
+	
+	cmd("r2_ls_bloom_threshold 1.") --Избавляемся от пересветов
+	cmd("r2_gloss_factor 1.") --Избавляемся от пересветов
+	cmd("r2_rain_drops_control on") --капли на стекле
+	--cmd("r2_lens_dirt_control on") --грязь на линзе
+	cmd("cam_inert 0") --сбрасываем инерцию камеры в 0
+	cmd("g_cop_death_anim 0") --Отключаем Death Anims, с ними куча багов.
+	cmd("r3_minmax_sm off") --От этого фпс дропается у некоторых при долгой игре.
+	if get_console():get_integer("r3_dynamic_wet_surfaces_sm_res") < 1024 then
+		cmd("r3_dynamic_wet_surfaces_sm_res 1024") --Чтобы полос на стенах не было во время дождя.
+	end
+	cmd("g_3d_scopes on") --Чтобы кто-нибудь особо умный не выключил 3д прицелы через консоль.
+	cmd("r2_exp_donttest_shad off") --С вкл окклюдером хоть тени на худе и мерцают, но он экономит фпс. В будущих релизах движка он будет переписан, и там это будет доправлено. Поэтому отключать его всё таки не надо.
 	
 	--' Загружаем настройки дропа
 	death_manager.init_drop_settings()
@@ -124,7 +137,7 @@ function actor_binder:net_destroy()
 --	game_stats.shutdown ()
 	db.del_actor(self.object)
 
-    sr_light.clean_up ()
+	sr_light.clean_up ()
 
 	self.object:set_callback(callback.inventory_info, nil)
 	self.object:set_callback(callback.article_info, nil)
@@ -135,7 +148,7 @@ function actor_binder:net_destroy()
 	self.object:set_callback(callback.level_border_enter, nil)
 	self.object:set_callback(callback.level_border_exit, nil)
 	self.object:set_callback(callback.take_item_from_box, nil)
-        self.object:set_callback(callback.use_object, nil)
+	self.object:set_callback(callback.use_object, nil)
 
 	if sr_psy_antenna.psy_antenna then
 		sr_psy_antenna.psy_antenna:destroy()
@@ -171,7 +184,7 @@ function actor_binder:reinit()
 	self.object:set_callback(callback.level_border_enter, self.level_border_enter, self)
 	self.object:set_callback(callback.level_border_exit, self.level_border_exit, self)
 	self.object:set_callback(callback.take_item_from_box, self.take_item_from_box, self)
-        self.object:set_callback(callback.use_object, self.use_inventory_item, self)
+	self.object:set_callback(callback.use_object, self.use_inventory_item, self)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:take_item_from_box(box, item)
@@ -196,14 +209,14 @@ function actor_binder:take_item_from_box(box, item)
 	end
 
 	local npc = smart_terrain.gulag:get_nearest_online_obj(db.actor:position())
-    if npc ~= nil then
-	    xr_sound.set_sound_play(npc, "reac_box")
-	    xr_gulag.setGulagEnemy(smart_terrain:name() , db.actor)		
-    end
+	if npc ~= nil then
+		xr_sound.set_sound_play(npc, "reac_box")
+		xr_gulag.setGulagEnemy(smart_terrain:name() , db.actor)		
+	end
 ]]
-    if item:section() == "pack_money" then
-      db.actor:give_info_portion("have_money")
-    end
+	if item:section() == "pack_money" then
+		db.actor:give_info_portion("have_money")
+	end
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:use_inventory_item(obj)
@@ -267,7 +280,6 @@ function actor_binder:use_inventory_item(obj)
 		uzi_sounds.snd_conserva()
 	end
 	if string.find(obj:section(), "galet") then
-		ogsm_quests.check_use_dry_foodsOrDrugs(obj)
 		uzi_sounds.snd_nuts()
 	end
 	if string.find(obj:section(), "sgus") then
@@ -368,11 +380,11 @@ function actor_binder:info_callback(npc, info_id)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_trade (item, sell_bye, money)
-    if sell_bye == true then
-       game_stats.money_trade_update (money)
-    else       
-       game_stats.money_trade_update (-money) 
-    end   
+	if sell_bye == true then
+	   game_stats.money_trade_update (money)
+	else	   
+	   game_stats.money_trade_update (-money) 
+	end	  
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:article_callback(npc, group, name, article_type)
@@ -416,26 +428,22 @@ function actor_binder:article_callback(npc, group, name, article_type)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_item_take (obj)
-    level_tasks.proceed(self.object)
-    --game_stats.update_take_item (obj, self.object)
-    if xrs_ai then xrs_ai.actor_item_take(obj) end
-    if obj:clsid() == clsid.wpn_ammo then
-        dunin_ammo.on_take(obj)
-    end
-    if obj:section() == "unknown_pda" then
-      if not has_alife_info("have_yanold_secrets") then
-         treasure_manager.get_treasure_manager():give_treasure("yanold_treasure_1")
-         treasure_manager.get_treasure_manager():give_treasure("yanold_treasure_2")
-         treasure_manager.get_treasure_manager():give_treasure("yanold_treasure_3")
-         db.actor:give_info_portion("have_yanold_secrets")
-      end
-    end
+	level_tasks.proceed(self.object)
+	--game_stats.update_take_item (obj, self.object)
+	if xrs_ai then xrs_ai.actor_item_take(obj) end
+	if obj:section() == "unknown_pda" then
+	  if not has_alife_info("have_yanold_secrets") then
+		 treasure_manager.get_treasure_manager():give_treasure("yanold_treasure_1")
+		 treasure_manager.get_treasure_manager():give_treasure("yanold_treasure_2")
+		 treasure_manager.get_treasure_manager():give_treasure("yanold_treasure_3")
+		 db.actor:give_info_portion("have_yanold_secrets")
+	  end
+	end
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_item_drop (obj)
-    level_tasks.proceed(self.object)
-    --game_stats.update_drop_item (obj, self.object)
-    amk.on_item_drop(obj)
+	level_tasks.proceed(self.object)
+	amk.on_item_drop(obj)
 end
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -583,22 +591,20 @@ function actor_binder:update(delta)
 			hud:RemoveCustomStatic("cs_radiation_danger")
 		end
 	end
-
+	
 	-- Обновление шкалы радиации
 	if (ui_rad and self.object) then
 		ui_rad.update(self.object)
 	end
-
+	
 	-- проверка лечения броней
 	uzi_armor.update(time)
-
+	
 	-- Запускаем затычку от возможной потери содержимого тайников
 	treasure_manager.get_treasure_manager():loss_workaround()
-
-
- 	if self.bCheckStart then
+	
+	if self.bCheckStart then
 		--printf("SET DEFAULT INFOS")		
-
 		if not has_alife_info("storyline_actor_start") and
 		   (level.name() == "predbannik")
 		then
@@ -606,167 +612,154 @@ function actor_binder:update(delta)
 			_G.g_start_avi = true
 			--printf("*AVI* RUN START AVI")			
 		end
-
 --		if not has_alife_info("encyclopedy") then
 --			self.object:give_info_portion("encyclopedy")
 --		end
-
 		if not has_alife_info("global_dialogs") then
 			self.object:give_info_portion("global_dialogs")
 		end
-
 		if not has_alife_info("level_changer_icons") then
 			self.object:give_info_portion("level_changer_icons")
 		end
-
 		level_tasks.add_lchanger_location()
-
 		self.bCheckStart = false
-	end		
-
+	end
+	
 	-- Обновление актора
 	amk.on_actor_update()
-
+	
 	-- Обновление АИ-пака
 	if xrs_ai then xrs_ai.actor_update(delta) end
-
+	
 	--added by xmk
 	-- Новости
-        news_main_data.show_news_main()
-
-	-- Обновление упаковщика патронов
-	if not self.object:is_talking() then
-		dunin_ammo.on_update()
+	news_main_data.show_news_main()
+	
+	
+	-- Взятие денег из схрона
+	if has_alife_info("have_money") and has_alife_info("ui_car_body_hide") then
+		local cond = math.ceil(math.random(25,55)*100)
+		local col = 0
+		local count = db.actor:object_count() - 1
+		for i=0, count do
+			local item = db.actor:object(i)
+			
+			 if item:section() == "pack_money" then
+				local sobj = alife():object(item:id())
+				
+				if sobj then
+					col = col + 1
+					alife():release(sobj,true)
+				end
+			 end
+			 
+			 if i == count then
+				cond = cond * col
+				db.actor:give_money(cond)
+				local text = "Найдено денег - "..cond.."\\nВсего денег - "..db.actor:money()
+				news_manager.send_tip(db.actor, text, nil, nil, 30000)
+				db.actor:disable_info_portion("have_money")
+			end
+		end
+	end
+	
+	--Запуск телепорта на другой берег Припяти
+	if has_alife_info("on_teleport") then
+		spawn_teleport.spawn_teleport_pripyat_to_river()
+	end
+	
+	generators_dialog.remove_label()
+	
+	--Переспавн Мухомора
+	if (has_alife_info("third_talking_muhomor")) and (not has_alife_info("respawn_muhomor")) and (level.name() ~= "l03u_agr_underground") then
+		db.actor:give_info_portion("respawn_muhomor")
 	end
 
-        -- Взятие денег из схрона
-        if has_alife_info("have_money") and has_alife_info("ui_car_body_hide") then
-           local cond = math.ceil(math.random(25,55)*100)
-           local col = 0
-           local count = db.actor:object_count() - 1
-           for i=0, count do
-            local item = db.actor:object(i)
-             if item:section() == "pack_money" then
-               local sobj = alife():object(item:id())
-                if sobj then
-                  col = col + 1
-                  alife():release(sobj,true)
-                end
-             end
-             if i == count then
-              cond = cond * col
-              db.actor:give_money(cond)
-              local text = "Найдено денег - "..cond.."\\nВсего денег - "..db.actor:money()
-              news_manager.send_tip(db.actor, text, nil, nil, 30000)
-              db.actor:disable_info_portion("have_money")
-             end
-          end
-        end
+	--Отследим смерть Лукаша до разговора с ним по квесту Бродяги
+	if (has_alife_info("mil_lukash_dead")) and (has_alife_info("first_dialog_atp")) and (not has_alife_info("lukash_dead")) and (not has_alife_info("dialog_military")) then
+		db.actor:give_info_portion("lukash_dead")
+	end
 
-        --Запуск телепорта на другой берег Припяти
-        if has_alife_info("on_teleport") then
-           spawn_teleport.spawn_teleport_pripyat_to_river()
-        end
+	--Защита группы Мурзы
+	if (not has_alife_info("mozol_death")) and (not has_alife_info("murza_death")) and (not has_alife_info("shilo_death")) and (not has_alife_info("vorot_death")) and (not has_alife_info("yashka_death")) and (not has_alife_info("save_murza_group")) and (has_alife_info("marsh_bloodsucker_death")) then
+		db.actor:give_info_portion("save_murza_group")
+	end
 
-        generators_dialog.remove_label()
+	--Сдача Лукашу лечебного Берилла
+	if not has_alife_info("lukash_have_berill") then
+		local t = task_manager.get_random_task().task_info
+		
+		if t and t["freedom_find_item_3"].status == "rewarded" then
+			db.actor:give_info_portion("lukash_have_berill")
+		end
+	end
 
-        --Переспавн Мухомора
-        if (has_alife_info("third_talking_muhomor")) and (not has_alife_info("respawn_muhomor")) and (level.name() ~= "l03u_agr_underground") then
-              db.actor:give_info_portion("respawn_muhomor")
-        end
+	--Запуск квеста на Портовых кранах
+	if has_alife_info("zaton_dialog_road") and (not has_alife_info("start_quest_kranes")) then
+		local t = task_manager.get_random_task().task_info
+		
+		if t and t["juk_eliminate_camp_1"].status == "completed" then
+			amk.g_start_timer("kran1",0,0,1)
+			db.actor:give_info_portion("start_quest_kranes")
+		end
+	end
 
-        --Отследим смерть Лукаша до разговора с ним по квесту Бродяги
-        if (has_alife_info("mil_lukash_dead")) and (has_alife_info("first_dialog_atp")) and (not has_alife_info("lukash_dead")) and (not has_alife_info("dialog_military")) then
-              db.actor:give_info_portion("lukash_dead")
-        end
-
-        --Защита группы Мурзы
-        if (not has_alife_info("mozol_death")) and (not has_alife_info("murza_death")) and (not has_alife_info("shilo_death")) and (not has_alife_info("vorot_death")) and (not has_alife_info("yashka_death")) and (not has_alife_info("save_murza_group")) and (has_alife_info("marsh_bloodsucker_death")) then
-              db.actor:give_info_portion("save_murza_group")
-        end
-
-        --Сдача Лукашу лечебного Берилла
-        if not has_alife_info("lukash_have_berill") then
-        	local t = task_manager.get_random_task().task_info
-        	if t and t["freedom_find_item_3"].status == "rewarded" then
-                    db.actor:give_info_portion("lukash_have_berill")
-        	end
-        end
-
-        --Запуск квеста на Портовых кранах
-        if has_alife_info("zaton_dialog_road") and (not has_alife_info("start_quest_kranes")) then
-        	local t = task_manager.get_random_task().task_info
-	        if t and t["juk_eliminate_camp_1"].status == "completed" then
-                   amk.g_start_timer("kran1",0,0,1)
-                   db.actor:give_info_portion("start_quest_kranes")
-	        end
-        end
-
-if has_alife_info("ui_pda") then
- level_tasks.remove_location(50401, "level_changer")
- level_tasks.remove_location(50402, "level_changer")
- level_tasks.remove_location(50601, "level_changer")
- level_tasks.remove_location(50602, "level_changer")
- level_tasks.remove_location(51001, "level_changer")
- level_tasks.remove_location(51002, "level_changer")
- level_tasks.remove_location(51601, "level_changer")
- level_tasks.remove_location(51602, "level_changer")
- level_tasks.remove_location(51701, "level_changer")
- level_tasks.remove_location(51702, "level_changer")
- level_tasks.remove_location(52001, "level_changer")
- level_tasks.remove_location(52002, "level_changer")
- level_tasks.remove_location(52003, "level_changer")
- level_tasks.remove_location(52301, "level_changer")
- level_tasks.remove_location(52302, "level_changer")
- level_tasks.remove_location(52303, "level_changer")
- level_tasks.remove_location(52601, "level_changer")
- level_tasks.remove_location(53001, "level_changer")
- level_tasks.remove_location(53801, "level_changer")
- level_tasks.remove_location(53802, "level_changer")
- level_tasks.remove_location(53803, "level_changer")
- level_tasks.remove_location(53804, "level_changer")
- level_tasks.remove_location(53805, "level_changer")
- level_tasks.remove_location(53806, "level_changer")
- level_tasks.remove_location(53807, "level_changer")
- level_tasks.remove_location(53808, "level_changer")
- level_tasks.remove_location(53809, "level_changer")
- level_tasks.remove_location(53810, "level_changer")
- level_tasks.remove_location(53811, "level_changer")
- level_tasks.remove_location(53901, "level_changer")
- level_tasks.remove_location(54001, "level_changer")
- level_tasks.remove_location(54002, "level_changer")
- level_tasks.remove_location(54105, "level_changer")
- level_tasks.remove_location(54404, "level_changer")
- level_tasks.remove_location(54405, "level_changer")
- level_tasks.remove_location(54406, "level_changer")
- level_tasks.remove_location(54409, "level_changer")
- level_tasks.remove_location(54412, "level_changer")
- level_tasks.remove_location(54413, "level_changer")
- level_tasks.remove_location(54414, "level_changer")
- level_tasks.remove_location(54415, "level_changer")
- level_tasks.remove_location(54416, "level_changer")
- level_tasks.remove_location(54418, "level_changer")
- level_tasks.remove_location(54419, "level_changer")
- level_tasks.remove_location(54420, "level_changer")
- level_tasks.remove_location(54421, "level_changer")
- level_tasks.remove_location(54422, "level_changer")
- else
-	level_tasks.add_lchanger_underlocation()
-end
-
+	if has_alife_info("ui_pda") then
+		level_tasks.remove_location(50401, "level_changer")
+		level_tasks.remove_location(50402, "level_changer")
+		level_tasks.remove_location(50601, "level_changer")
+		level_tasks.remove_location(50602, "level_changer")
+		level_tasks.remove_location(51001, "level_changer")
+		level_tasks.remove_location(51002, "level_changer")
+		level_tasks.remove_location(51601, "level_changer")
+		level_tasks.remove_location(51602, "level_changer")
+		level_tasks.remove_location(51701, "level_changer")
+		level_tasks.remove_location(51702, "level_changer")
+		level_tasks.remove_location(52001, "level_changer")
+		level_tasks.remove_location(52002, "level_changer")
+		level_tasks.remove_location(52003, "level_changer")
+		level_tasks.remove_location(52301, "level_changer")
+		level_tasks.remove_location(52302, "level_changer")
+		level_tasks.remove_location(52303, "level_changer")
+		level_tasks.remove_location(52601, "level_changer")
+		level_tasks.remove_location(53001, "level_changer")
+		level_tasks.remove_location(53801, "level_changer")
+		level_tasks.remove_location(53802, "level_changer")
+		level_tasks.remove_location(53803, "level_changer")
+		level_tasks.remove_location(53804, "level_changer")
+		level_tasks.remove_location(53805, "level_changer")
+		level_tasks.remove_location(53806, "level_changer")
+		level_tasks.remove_location(53807, "level_changer")
+		level_tasks.remove_location(53808, "level_changer")
+		level_tasks.remove_location(53809, "level_changer")
+		level_tasks.remove_location(53810, "level_changer")
+		level_tasks.remove_location(53811, "level_changer")
+		level_tasks.remove_location(53901, "level_changer")
+		level_tasks.remove_location(54001, "level_changer")
+		level_tasks.remove_location(54002, "level_changer")
+		level_tasks.remove_location(54105, "level_changer")
+		level_tasks.remove_location(54404, "level_changer")
+		level_tasks.remove_location(54405, "level_changer")
+		level_tasks.remove_location(54406, "level_changer")
+		level_tasks.remove_location(54409, "level_changer")
+		level_tasks.remove_location(54412, "level_changer")
+		level_tasks.remove_location(54413, "level_changer")
+		level_tasks.remove_location(54414, "level_changer")
+		level_tasks.remove_location(54415, "level_changer")
+		level_tasks.remove_location(54416, "level_changer")
+		level_tasks.remove_location(54418, "level_changer")
+		level_tasks.remove_location(54419, "level_changer")
+		level_tasks.remove_location(54420, "level_changer")
+		level_tasks.remove_location(54421, "level_changer")
+		level_tasks.remove_location(54422, "level_changer")
+	else
+		level_tasks.add_lchanger_underlocation()
+	end
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:save(packet)
 	local pk1 = fake_net_packet.fake_net_packet()
 	self:save_old(pk1)
-        get_console():execute("Packet_size_is_"..pk1:w_tell())
-	if pk1:w_tell() > 7000 then
-		task_manager.cleanup_actor()
-	end
-	if pk1:w_tell()>7500 then
-		ogsm_debug.clean_pstor()
-        	get_console():execute("Actor_storage_has_been_successfully_cleaned!")
-	end
 	self:save_old(packet)
 end
 
@@ -813,10 +806,10 @@ function actor_binder:load(reader)
 	--' Загружаем уровень сложности
 	local game_difficulty = reader:r_u8()
 
-	local load_treasure_manager = false      
-	if game_difficulty >= 128 then           
+	local load_treasure_manager = false		 
+	if game_difficulty >= 128 then			 
 		game_difficulty = game_difficulty - 128
-		load_treasure_manager = true           
+		load_treasure_manager = true		   
 	end
 
 
@@ -863,12 +856,12 @@ end
 // this is test for section iteration
 /**
 local function test_section_iteration(file_name, section_name)
-	--printf			("file    : %s",file_name)
+	--printf			("file	  : %s",file_name)
 	--printf			("section : %s",section_name)
 	
 	local			file = ini_file(file_name)
 	local			n = file:line_count(section_name)
-	--printf			("lines   : %d",n)
+	--printf			("lines	  : %d",n)
 	
 	local			id, value = "", "", result
 	for i=0,n-1 do
