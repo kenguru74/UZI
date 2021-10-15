@@ -175,15 +175,13 @@ function main_menu:OnKeyboard(dik, keyboard_action)
 			self:OnButton_cheat()
 		elseif dik == DIK_keys.DIK_F2 then
 			self:show_position_informer_window()
-		elseif dik == DIK_keys.DIK_1 then
-			console:execute("main_menu off")
-			self:PDA()
 		elseif dik == DIK_keys.DIK_3 then
-			console:execute("main_menu off")
-			self:PP()
+			if level.present() and db.actor_proxy.online and db.actor:alive() then
+				self:close_and_delete_menu()
+				self:PP()
+			end
 		end
 	end
-
 	return true
 end
 
@@ -201,7 +199,7 @@ end
 
 -- спавн итема в рюкзак (вместо "bandage" - секция нужного итема)
 function main_menu:PP()
-	alife():create("chaek",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	alife():create("detector_advances",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
 end
 
 function main_menu:position_info()
@@ -215,9 +213,6 @@ function main_menu:position_info()
 	local gvid = db.actor:game_vertex_id()
 	local text = "GPS:\\nX= "..a.x.."\\nY= "..a.y.."\\nZ= "..a.z.."\\nlevel_vertex= "..vid.."\\ngame_vertex_id= "..gvid
 	news_manager.send_tip(db.actor, text, nil, nil, 30000)
-end
-
-function main_menu:PDA()
 end
 
 function main_menu:show_position_informer_window()
