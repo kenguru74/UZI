@@ -5,23 +5,22 @@ $spawn              		= "weapons\knife"
 $npc                		= off
 $prefetch 		    		= 8
 scheduled           		= off
-cform					= skeleton
-description				= enc_weapons1_wpn-knife
+cform						= skeleton
+description					= enc_weapons1_wpn-knife
 
 ef_weapon_type				= 1
 
-class					= WP_KNIFE
+class						= WP_KNIFE
 
-visual					= weapons\machete\wpn_machete.ogf
+visual						= weapons\knife\wpn_knife.ogf
+inv_name					= st_knife
 
-inv_name				= wpn-knife
-inv_name_short				= wpn-knife
-
-inv_weight					= 1
-inv_grid_width				= 2
-inv_grid_height				= 1
-inv_grid_x					= 18
-inv_grid_y					= 8
+inv_name_short				= st_knife
+inv_weight					= 0
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 18
+inv_grid_y         = 8
 
 kill_msg_x					= 197
 kill_msg_y					= 177
@@ -36,7 +35,7 @@ single_handed				= 1
 
 hud							= wpn_knife_hud
 	
-cost						= 17000
+cost						= 7000
 
 hand_dependence		     	= 1
 
@@ -56,10 +55,10 @@ disp_crouch_factor	     	= 0.75
 disp_jump_factor	     	= 7
 fire_dispersion_condition_factor = 0.0
 misfire_probability 		= 0.0
-condition_shot_dec 		= 0.0001
+condition_shot_dec 			= 0.0
 
 direction                	= 0, 0, 1
-shell_point		        = 0.0, 0.0, 0.0
+shell_point		         	= 0.0, 0.0, 0.0
 fire_point               	= 0.0, 0.1, 0.4
 
 flame_particles			 	= 
@@ -67,17 +66,17 @@ flame_particles			 	=
 rpm_empty_click 	     	= 200
 
 ; ttc	
-hit_power                	= 0.9
-hit_impulse		        = 5
-hit_type			= wound
+hit_power                	= 1.5
+hit_impulse		         	= 10
+hit_type				 	= wound
 
-hit_power_2                	= 0.95
-hit_impulse_2	         	= 5
-hit_type_2			= wound_2
+hit_power_2                	= 1.8
+hit_impulse_2	         	= 10
+hit_type_2				 	= wound_2
 
-fire_distance            	= 2.0
-bullet_speed			= 1000;500			;начальная скорость пули
-rpm                      	= 800;600
+fire_distance            	= 2
+bullet_speed			 	= 1000;500			;начальная скорость пули
+rpm                      	= 1000;600
 ; end ttc
 
 normal                   	= 0, 1, 0
@@ -105,22 +104,20 @@ silencer_status				= 0
 grenade_launcher_status		= 0
 zoom_enabled				= false
 ;------------------------------ S.T.A.L.K.E.R`s sound remake ------------------------------
-snd_shoot					= weapons\knife_1, 6.0
+snd_shoot					= weapons\knife_1
 snd_shoot1					= weapons\knife_2
 snd_shoot2					= weapons\knife_3
-snd_draw			= weapons\generic_draw, 0.5
-snd_holster			= weapons\generic_holster, 0.5
 ;------------------------------------------------------------------------------------------
 weapon_remove_time			= 5000	;время уничтожения оружия (с учетом TimeFactor) для мультиплеера
 
 [wpn_knife_hud]
 shell_point					= 0.0, 0.0, 0.0
 fire_point          		= 0.05, 0.0, 0.1
-fire_bone           		= wpn_machete
+fire_bone           		= wpn_knife_0
 
 orientation         		= 0,0,0
-position            		= 0.03,-0.07,0.1
-visual              		= weapons\machete\wpn_machete_hud.ogf
+position            		= 0,0,0
+visual              		= weapons\knife\wpn_knife_hud.ogf
 
 anim_idle					= idle
 anim_draw					= draw
