@@ -96,8 +96,7 @@ end
 function cheat:OnKeyboard(dik, keyboard_action)
 	CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
 	if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
- 
-		if     dik == DIK_keys.DIK_ESCAPE then self:on_quit()
+		if dik == DIK_keys.DIK_ESCAPE then self:on_quit()
 		elseif dik == DIK_keys.DIK_NUMPAD1 then	self:cheat1()
 		elseif dik == DIK_keys.DIK_NUMPAD2 then	self:cheat2()
 		elseif dik == DIK_keys.DIK_NUMPAD3 then	self:cheat3()
