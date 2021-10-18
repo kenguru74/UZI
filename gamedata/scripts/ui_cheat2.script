@@ -76,7 +76,7 @@ function cheat:on_quit()
 	local console = get_console()
 	self:GetHolder():start_stop_menu (self.owner, true)
 	self:GetHolder():start_stop_menu (self,true)
-	self.owner:Show	(true)
+	self.owner:Show (true)
 	if self:check_game() then
 		console:execute("main_menu off")
 	end
@@ -112,7 +112,9 @@ function cheat:OnKeyboard(dik, keyboard_action)
 end
  
 function cheat:cheat1()
-	self:spawn_item("vehicle_niva2", 5)
+	-- self:spawn_item("vehicle_niva2", 5)
+	self:spawn_item ("koster", 1.5)
+	-- self:spawn_item ("light_koster", 1.5)
 end
 function cheat:cheat2()
 	self:spawn_item("vehicle_uaz2", 5)

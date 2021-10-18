@@ -1,0 +1,7 @@
+<ui_texture>
+    <file_name>ui\ui_iconsTotal1</file_name>
+	<texture id="ui_npc_dark_1" x="859" y="432" width="165" height="108"/>
+	<texture id="ui_npc_dark_2" x="859" y="540" width="165" height="108"/>
+	<texture id="ui_npc_dark_3" x="859" y="648" width="165" height="108"/>
+	<texture id="ui_npc_dark_falcon" x="859" y="756" width="165" height="108"/>
+</ui_texture>
