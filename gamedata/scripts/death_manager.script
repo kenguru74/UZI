@@ -319,7 +319,7 @@ function drop_manager:create_release_item()
 	end
 
 	if sect ~= nil and (
-		self.npc:story_id() == 4294967296 and 
+		self.npc:story_id() == 4294967295 and 
 		not string.find(npc_sec,"arena") and 
 		not string.find(npc_sec,"aem") and 
 		npc_comm ~= "arena_enemy")
