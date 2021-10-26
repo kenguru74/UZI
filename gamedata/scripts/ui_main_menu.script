@@ -197,9 +197,9 @@ function main_menu:OnButton_cheat()
 	self:Show(true)
 end
 
--- спавн итема в рюкзак (вместо "bandage" - секция нужного итема)
+-- спавн итема в рюкзак (вместо "spichki" - секция нужного итема)
 function main_menu:PP()
-	alife():create("spichki",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	alife():create("wpn_hk416_sk1",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
 end
 
 function main_menu:position_info()
