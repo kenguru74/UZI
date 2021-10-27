@@ -812,7 +812,7 @@ function check_quest_npcs(npc,iSid) --/Is_QuestNPC
 			iStoryId = npc.m_story_id
 		end
 	end
-	if iStoryId and iStoryId ~= 4294967296 then
+	if iStoryId and iStoryId ~= 4294967295 then
 		local sNameNPC = npc:name()
 		for k,v in pairs(tQuestNPCs) do
 			if k == iStoryId or v.name == sNameNPC then --/ проверка по sid или по имени
@@ -837,7 +837,7 @@ end
 
 function Set_Visual_NPC(iStoryId,sVisual)
 --	printf("Set_Visual_NPC:StoryId=[%s],visual=[%s]:[%s]", iStoryId, sVisual, ">") --/#~#
-	if not (iStoryId and iStoryId ~= 4294967296 and sVisual and db.wrpk) then return end --/>
+	if not (iStoryId and iStoryId ~= 4294967295 and sVisual and db.wrpk) then return end --/>
 	local soNPC = alife():story_object(iStoryId)
 	if soNPC and IsStalker(soNPC) and soNPC:alive() then
 		local tT = m_net_utils.Get_Data_NPC(soNPC)
@@ -865,7 +865,7 @@ end
 
 function ReSet_Visual_NPC(iStoryId) --/ снимаем броню (reserve)
 --	printf("ReSet_Visual_NPC:StoryId=[%s]:[%s]", iStoryId, ">") --/#~#
-	if not (iStoryId and iStoryId ~= 4294967296 and db.wrpk) then return end --/>
+	if not (iStoryId and iStoryId ~= 4294967295 and db.wrpk) then return end --/>
 	local soNPC = alife():story_object(iStoryId)
 	if soNPC and IsStalker(soNPC) and soNPC:alive() then
 		local tT = m_net_utils.Get_Data_NPC(soNPC)
@@ -938,7 +938,7 @@ function Reanimation_NPCs() --/ reserve
 end
 
 function Reanimation_NPC(iStoryId) --/ reserve
-	if not (iStoryId and iStoryId ~= 4294967296) then return end --/>
+	if not (iStoryId and iStoryId ~= 4294967295) then return end --/>
 	local soNPC = alife():story_object(iStoryId)
 	if soNPC and IsStalker(soNPC) and soNPC.alive and not soNPC:alive() then
 		Set_Health_NPC(soNPC, 1)

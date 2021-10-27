@@ -1202,9 +1202,9 @@ function is_sobject_object(Obj)
 	local bRet = false
 	if Obj then
 		if type(Obj.id) == "number" then
-			bRet = get_object_story_id(Obj.id) ~= nil or (Obj.m_story_id and Obj.m_story_id ~= 4294967296)
+			bRet = get_object_story_id(Obj.id) ~= nil or (Obj.m_story_id and Obj.m_story_id ~= 4294967295)
 		else
-			bRet = get_object_story_id(Obj:id()) ~= nil or (Obj.story_id and Obj:story_id() ~= 4294967296)
+			bRet = get_object_story_id(Obj:id()) ~= nil or (Obj.story_id and Obj:story_id() ~= 4294967295)
 		end
 	end
 	return bRet

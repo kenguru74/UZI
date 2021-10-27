@@ -28,7 +28,7 @@ function action_door:reset_scheme(loading)
 	self.joint = ph_shell:get_joint_by_bone_name("door")
 
 	self.low_limits, self.hi_limits = 0, 0
-	self.joint:get_limits(self.low_limits, self.hi_limits, 0)
+	self.low_limits, self.hi_limits = self.joint:get_limits(self.low_limits, self.hi_limits, 0)
 
 	self.block = false
 	self.soundless_block = false
@@ -163,7 +163,7 @@ function action_door:close_door(disable_snd)
 	else
 		self.joint:set_max_force_and_velocity(200, 3, 0)
 	end
-	self.block = true -- Закрываем и блокируем	
+	self.block = true -- Закрываем и блокируем
 	self.soundless_block = disable_snd
 
 	if self.show_tips then

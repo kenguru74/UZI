@@ -235,16 +235,20 @@
 	<string id="kb_cam_3">
 		<text>Свободный вид от третьего лица</text>
 	</string>
-
+	
 	<string id="inventory_item_use_or_drag">
 		<text>Поднять $$ACTION_USE$$ \n Перетащить SHIFT+$$ACTION_USE$$</text>
 	</string>
 	<string id="game_object_drag">
-		<text>Перетащить предмет SHIFT+$$ACTION_USE$$</text>
+		<text>Перетащить SHIFT+$$ACTION_USE$$</text>
 	</string>
-
+	
 	<string id="st_press_any_key">
 		<text>Нажми любую клавишу для входа в Зону</text>
+	</string>
+	
+	<string id="st_fail">
+		<text>Разжечь костер не удалось</text>
 	</string>
 
 </string_table>
