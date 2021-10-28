@@ -647,7 +647,7 @@ function remove_item_from_inventory(oDelItem,oNPC)
 						alife():release(soItem, true)
 						bRemoved = true
 					else
-						printf("remove_item_from_inventory:Item=[%s]~Not_soItem:<%s>", oItem:name(), "Error!")
+						-- printf("remove_item_from_inventory:Item=[%s]~Not_soItem:<%s>", oItem:name(), "Error!")
 					end
 				end
 			end
@@ -1831,20 +1831,20 @@ end
 --/-------------------------------------------------------------------
 --/ Functions for Print-Log
 --/-------------------------------------------------------------------
-function format_to_string(fmt,...)
-	if fmt == nil then return "" end
-	local sStr = to_str(fmt)
-	local arg = {...}
-	local iCnt = arg and #arg
-	if iCnt and iCnt ~= 0 then
-		for i=1, iCnt do
-			arg[i] = to_str(arg[i])
-			sStr = string.gsub(sStr,"%\%s",arg[i],1)
-		end
-		sStr = string.gsub(sStr,"%\%s","<~NOT_arg!<Warning!>") --/заглушка от вылета
-	end
-	return string.gsub(sStr,"%s","_")
-end
+-- function format_to_string(fmt,...)
+	-- if fmt == nil then return "" end
+	-- local sStr = to_str(fmt)
+	-- local arg = {...}
+	-- local iCnt = arg and #arg
+	-- if iCnt and iCnt ~= 0 then
+		-- for i=1, iCnt do
+			-- arg[i] = to_str(arg[i])
+			-- sStr = string.gsub(sStr,"%\%s",arg[i],1)
+		-- end
+		-- sStr = string.gsub(sStr,"%\%s","<~NOT_arg!<Warning!>") --/заглушка от вылета
+	-- end
+	-- return string.gsub(sStr,"%s","_")
+-- end
 
 function to_str(v)
 	local sTypeV = type(v)
