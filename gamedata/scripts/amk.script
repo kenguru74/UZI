@@ -780,6 +780,28 @@ function __do_timer_action(select_string,params_string)
 			g_start_timer("water5",0, 0.6, 0)
 		end
 	end
+-- Если костёр прогорел
+	if select_string=="koster" then
+		local id, obj
+		
+		del_variable("koster")
+		
+		for id=0, 65535 do
+			obj = level.object_by_id(id)
+			
+			if obj ~= nil and obj:section() == "koster" then
+				if obj:position():distance_to(db.actor:position()) > 50 then
+					alife():release(alife():object(id), true)
+				else
+					g_start_timer("koster",0, 1, 0)
+				end
+			end
+			
+			if obj ~= nil and obj:section() == "light_koster" then
+				alife():release(alife():object(id), true)
+			end
+		end
+	end
 end
 
 
@@ -895,13 +917,16 @@ end
 function remove_item_from_inventory_by_name(remove_item_name,npc)
 	return remove_item_from_inventory(npc:object(remove_item_name),npc)
 end
+
 function remove_item_from_inventory(remove_item,npc)
 	if npc==nil then npc=db.actor end
+	
 	if remove_item~=nil then
 		npc:mark_item_dropped(remove_item)
 		alife():release(alife():object(remove_item:id()), true)
 		return true
 	end
+	
 	return false
 end
 
@@ -916,12 +941,14 @@ end
 function clear_npc_inventory(npc)
 	npc:iterate_inventory(__del_item, npc)
 end
+
 function __del_item(npc, item)
 	local section = item:section()
-
+	
 	if section == "bolt" or section == "device_torch" then
-	return
+		return
 	end
+	
 	npc:mark_item_dropped(item)
 	alife():release(alife():object(item:id()), true)
 end

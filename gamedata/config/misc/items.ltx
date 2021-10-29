@@ -1078,6 +1078,36 @@ animation_slot = 4
 hud = wpn_vodka_hud
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Пачка чая
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[chay]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\chay"
+class = II_ANTIR
+cform = skeleton
+visual = new_item\chay.ogf
+description = equip_chay
+
+inv_name = chay
+inv_name_short = chay
+
+inv_weight = 0.05
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 43
+inv_grid_y = 42
+
+cost = 1500
+
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+wounds_heal_perc = 0
+eat_portions_num = 1000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Водка палёная
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [vodka_a]:identity_immunities
@@ -1206,6 +1236,80 @@ attach_angle_offset = 0.000000, 0.000000, 0.000000
 attach_position_offset = 0.087266, -0.078540, 0.052360
 attach_bone_name = bip01_r_hand
 auto_attach = false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Термос пустой
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[termos_e]:identity_immunities
+GroupControlSection = spawn_group
+$spawn = "food and drugs\beer"
+class = II_ATTCH
+cform = skeleton
+visual = new_item\termos.ogf
+
+inv_name = termos_e
+inv_name_short = termos_e
+description = equip_termos_e
+
+inv_grid_width = 1
+inv_grid_height = 2
+inv_grid_x = 39
+inv_grid_y = 43
+
+cost = 3000
+inv_weight = 0.1
+
+; food item
+slot = 4
+animation_slot = 4
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Термос чая
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[termos_f]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+class = II_BOTTL
+cform = skeleton
+$spawn = "food and drugs\beer"
+visual = new_item\termos.ogf
+
+inv_name = termos_f
+inv_name_short = termos_f
+description = equip_termos_f
+
+inv_grid_width = 1
+inv_grid_height = 2
+inv_grid_x = 39
+inv_grid_y = 43
+
+cost = 4000
+inv_weight = 0.6
+
+; food item
+slot = 4
+animation_slot = 4
+
+; eatable item
+eat_health = 0.0
+eat_satiety = 0.1
+eat_power = 0.4
+eat_radiation = 0
+eat_alcohol = -0.05
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Полтермоса чая
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[termos_h]:termos_f
+
+inv_name = termos_h
+inv_name_short = termos_h
+description = equip_termos_h
+
+cost = 3500
+inv_weight = 0.35
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Энергетик
@@ -3508,20 +3612,52 @@ cost = 1000
 [spichki]:antirad
 visual = equipments\item_spichki.ogf
 description = spichki_desc
+
 inv_name = spichki
 inv_name_short = spichki
+
 inv_weight = 0.05
 inv_grid_width = 1
 inv_grid_height = 1
-inv_grid_x = 7
-inv_grid_y = 46
+inv_grid_x = 44
+inv_grid_y = 42
+
 cost = 500
+
 eat_health = 0
 eat_satiety = 0
 eat_power = 0
 eat_radiation = 0
 wounds_heal_perc = 0
-eat_portions_num = 10
+eat_portions_num = 1
 
-; script_binding = ui_cheat2.cheat(cheat1)
+[spichki9]:spichki
+description = spichki_desc9
+
+[spichki8]:spichki
+description = spichki_desc8
+
+[spichki7]:spichki
+description = spichki_desc7
+
+[spichki6]:spichki
+description = spichki_desc6
+
+[spichki5]:spichki
+description = spichki_desc5
+
+[spichki4]:spichki
+description = spichki_desc4
+
+[spichki3]:spichki
+description = spichki_desc3
+
+[spichki2]:spichki
+description = spichki_desc2
+
+[spichki1]:spichki
+description = spichki_desc1
+
+
+
 

@@ -3,9 +3,17 @@
 ------------------------- Copyright 2007-2008 DEXXX ---------------------------
 
 local vdk_cnt = 0
+local flaska_cnt = 0
+local termos_e_cnt = 0
 local blood = 0
 local bl_sound = sound_object([[heart\2]])
 
+local flaska_esty = false
+local termos_esty = false
+
+local flaska_delete = false
+local termos_delete = false
+local chay_delete = false
 
 -- ГГ вступает в "Свободу"
 function set_freedom()
@@ -49,51 +57,55 @@ end
 
 -- Проверка, пьян ли актор, если да, то даем защиту от пси
 function check_drunk()
-if db.actor.psy_health < 0.99 then
-	local time = level.get_time_days()*60*24+level.get_time_hours()*60+level.get_time_minutes()
-	local end_time = amk.load_variable("drnk", 0)
-	if time < end_time then
-		db.actor.psy_health = 0.0015
-	else
-		amk.del_variable("drnk")
+	if db.actor.psy_health < 0.99 then
+		local time = level.get_time_days()*60*24+level.get_time_hours()*60+level.get_time_minutes()
+		local end_time = amk.load_variable("drnk", 0)
+		
+		if time < end_time then
+			db.actor.psy_health = 0.0015
+		else
+			amk.del_variable("drnk")
+		end
 	end
-end
 end
 
 -- Проверка наличия 10 бутылок для повара
 function has_ten_vodkas()
-if has_alife_info("povar_vodka_asked") then 
-	vdk_cnt = 0
-	db.actor:iterate_inventory(count_vodka, db.actor)
-	if vdk_cnt >= 10 then
-		return true 
-	else
-		return false
+	if has_alife_info("povar_vodka_asked") then 
+		vdk_cnt = 0
+		db.actor:iterate_inventory(count_vodka, db.actor)
+		
+		if vdk_cnt >= 10 then
+			return true 
+		else
+			return false
+		end
+	else 
+		return false 
 	end
-else 
-	return false 
-end
 end
 
 -- Подсчет водки
 function count_vodka(npc, item)
-local section = item:section()
-if section == "vodka" then
-	vdk_cnt = vdk_cnt+1
-end
+	local section = item:section()
+	
+	if section == "vodka" then
+		vdk_cnt = vdk_cnt + 1
+	end
 end
 
 -- Удаление водки
 function del_vodka(npc, item)
-local section = item:section()
-if vdk_cnt > 0 then
-	if section == "vodka" then
-		alife():release(alife():object(item:id()), true)
-		vdk_cnt = vdk_cnt-1
+	local section = item:section()
+
+	if vdk_cnt > 0 then
+		if section == "vodka" then
+			alife():release(alife():object(item:id()), true)
+			vdk_cnt = vdk_cnt-1
+		end
+	else
+		return
 	end
-else
-	return
-end
 end
 
 -- Обмен с поваром
@@ -271,21 +283,21 @@ function check_use_radio(p_obj)
 end
 
 function check_use_rukzak(p_obj)
- if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
-  else
- if p_obj and p_obj:section() == "rukzak_shron" then
-	amk.start_timer("ruk", 0.1, p_obj:id())
- end
- end
+	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
+	else
+		if p_obj and p_obj:section() == "rukzak_shron" then
+			amk.start_timer("ruk", 0.1, p_obj:id())
+		end
+	end
 end
 
 function check_use_irp(p_obj)
- if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
-  else
- if p_obj and p_obj:section() == "irp" then
-        alife():create("irp_two",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
- end
- end
+	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
+	else
+		if p_obj and p_obj:section() == "irp" then
+			alife():create("irp_two",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		end
+	end
 end
 
 function check_use_irp_two(p_obj)
@@ -300,20 +312,30 @@ end
 function givePower()
 	-- db.actor.power = 0.5
 	db.actor.health = 0.5
+	db.actor.psy_health = 0.2
 end
 
 
 -- Функция сушняка, довёл до ума kenguru
 
--- Употребление чистой воды, дважды снимающей жажду, с возвратом полупустой тары
+-- Употребление чистой воды и чая, дважды снимающих жажду, с возвратом полупустой тары
 function check_use_water(p_obj)
 	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
 	else
 		if p_obj and p_obj:section() == "flaska" then
 			alife():create("flaska_half",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-			napilsya()
-			napilsya()
 		end
+		
+		if p_obj and p_obj:section() == "termos_f" then
+			alife():create("termos_h",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		end
+		
+		if p_obj and p_obj:section() == "termos_h" then
+			alife():create("termos_e",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		end
+		
+		napilsya()
+		napilsya()
 	end
 end
 
@@ -334,6 +356,123 @@ function check_use_wet_foods(p_obj)
 	else
 		if p_obj and ((p_obj:section() == "beer") or (p_obj:section() == "sok") or (p_obj:section() == "energy_drink") or (p_obj:section() == "milk") or (p_obj:section() == "chaek") or (p_obj:section() == "olives") or (p_obj:section() == "sup") or (p_obj:section() == "irp") or (p_obj:section() == "irp_two") or (p_obj:section() == "irp_one")) then
 			napilsya()
+		end
+	end
+end
+
+-- Употребление продуктов, вызывающих супержажду
+function check_use_Superdrugs(p_obj)
+	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
+	else
+		if p_obj and ((p_obj:section() == "vodka_a") or (p_obj:section() == "vodka_u")) then
+			zhazhda()
+			zhazhda()
+		end
+	end
+end
+
+-- Упрощённый розжиг костра от kenguru
+function check_use_Spichki(p_obj)
+	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
+	else
+		if p_obj and ((p_obj:section() == "spichki") or (p_obj:section() == "spichki9") or (p_obj:section() == "spichki8") or (p_obj:section() == "spichki7") or (p_obj:section() == "spichki6") or (p_obj:section() == "spichki5") or (p_obj:section() == "spichki4") or (p_obj:section() == "spichki3") or (p_obj:section() == "spichki2") or (p_obj:section() == "spichki1")) then
+			local	pos = db.actor:position()
+			local	dir = db.actor:direction()
+			local id, obj
+			local koster_esty = false
+			
+			pos = pos:add(dir:mul(2))
+			
+			for id=0, 65535 do
+				obj = level.object_by_id(id)
+				if obj ~= nil and obj:section() == "koster" then
+					local	objPos = obj:position()
+					local	objLvid = obj:level_vertex_id()
+					local	objGvid = obj:game_vertex_id()
+					
+					if obj:position():distance_to(db.actor:position()) < 3 then
+						alife():create("light_koster", objPos, objLvid, objGvid)
+						koster_esty = true
+					end
+				end
+			end
+			
+			if koster_esty == false then
+				alife():create("koster", pos, 3, db.actor:game_vertex_id())
+				alife():create("light_koster", pos, 3, db.actor:game_vertex_id())
+			end
+			
+			amk.g_start_timer("koster",0, 1, 0)
+		end
+		
+		if p_obj and (p_obj:section() == "spichki") then
+			alife():create("spichki9",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif p_obj and (p_obj:section() == "spichki9") then
+			alife():create("spichki8",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif p_obj and (p_obj:section() == "spichki8") then
+			alife():create("spichki7",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif p_obj and (p_obj:section() == "spichki7") then
+			alife():create("spichki6",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif p_obj and (p_obj:section() == "spichki6") then
+			alife():create("spichki5",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif p_obj and (p_obj:section() == "spichki5") then
+			alife():create("spichki4",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif p_obj and (p_obj:section() == "spichki4") then
+			alife():create("spichki3",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif p_obj and (p_obj:section() == "spichki3") then
+			alife():create("spichki2",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif p_obj and (p_obj:section() == "spichki2") then
+			alife():create("spichki1",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		end
+	end
+end
+
+-- Заваривание чая у костра от kenguru
+function check_use_Chay(p_obj)
+	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
+	else
+		if p_obj and (p_obj:section() == "chay") then
+			flaska_esty = _f.have_item("flaska")
+			termos_esty = _f.have_item("termos_e")
+			
+			if (flaska_esty and termos_esty) then
+				local light_koster_esty = false
+				local id, obj
+				
+				for id=0, 65535 do
+					obj = level.object_by_id(id)
+					
+					if obj ~= nil and ((obj:section() == "light_koster") or (string.find(obj:section(), "_fire_") or (string.find(obj:section(), "_flame_")))) then
+						local	objPos = obj:position()
+						
+						if objPos:distance_to(db.actor:position()) < 1.6 then
+							light_koster_esty = true
+						end
+					end
+				end
+				
+				if light_koster_esty then
+					flaska_delete = amk.remove_item_from_inventory_by_name("flaska",db.actor)
+					termos_delete = amk.remove_item_from_inventory_by_name("termos_e", db.actor)
+					chay_delete = amk.remove_item_from_inventory_by_name("chay", db.actor )
+					
+					if flaska_delete and termos_delete and chay_delete then
+						alife():create("termos_f",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+					end
+				else
+					local text = "Нет костра поблизости!"
+					db.actor:give_game_news(text, "", Frect():set(498,47,83,47), 0, 13000)
+				end
+			elseif flaska_esty then
+				local text = "Нужен пустой термос.."
+				db.actor:give_game_news(text, "", Frect():set(498,47,83,47), 0, 13000)
+			elseif termos_esty then
+				local text = "Нужна полная бутылка воды.."
+				db.actor:give_game_news(text, "", Frect():set(498,47,83,47), 0, 13000)
+			else
+				local text = "Нужна полная бутылка воды и пустой термос.."
+				db.actor:give_game_news(text, "", Frect():set(498,47,83,47), 0, 13000)
+			end
 		end
 	end
 end
