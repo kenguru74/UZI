@@ -209,7 +209,7 @@ function actor_binder:take_item_from_box(box, item)
 	local npc = smart_terrain.gulag:get_nearest_online_obj(db.actor:position())
 	if npc ~= nil then
 		xr_sound.set_sound_play(npc, "reac_box")
-		xr_gulag.setGulagEnemy(smart_terrain:name() , db.actor)		
+		xr_gulag.setGulagEnemy(smart_terrain:name() , db.actor)
 	end
 ]]
 	if item:section() == "pack_money" then
@@ -218,6 +218,13 @@ function actor_binder:take_item_from_box(box, item)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:use_inventory_item(obj)
+	if string.find(obj:section(), "spichki") then
+		uzi_sounds.snd_Spichki()
+		ogsm_quests.check_use_Spichki(obj)
+	end
+	if string.find(obj:section(), "chay") then
+		ogsm_quests.check_use_Chay(obj)
+	end
 	if string.find(obj:section(), "repair_kit") then
 		repair.check_use_kit(obj)
 	end
@@ -357,6 +364,16 @@ function actor_binder:use_inventory_item(obj)
 	end
 	if string.find(obj:section(), "egg") then
 		uzi_sounds.snd_conserva()
+	end
+	if string.find(obj:section(), "termos_f") then
+		ogsm_quests.check_use_water(obj)
+		ogsm_quests.givePower()
+		uzi_sounds.snd_sok()
+	end
+	if string.find(obj:section(), "termos_h") then
+		ogsm_quests.check_use_water(obj)
+		ogsm_quests.givePower()
+		uzi_sounds.snd_sok()
 	end
 end
 ----------------------------------------------------------------------------------------------------------------------
