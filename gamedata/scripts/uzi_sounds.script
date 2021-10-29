@@ -41,3 +41,10 @@ function snd_food()
 		snd:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
 	end
 end
+
+function snd_Spichki()
+	if not (snd and snd:playing()) then
+		snd = xr_sound.get_safe_sound_object([[item_sounds\inv_spichki]])
+		snd:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	end
+end
