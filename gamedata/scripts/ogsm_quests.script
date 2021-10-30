@@ -402,6 +402,8 @@ function check_use_Spichki(p_obj)
 				alife():create("light_koster", pos, 3, db.actor:game_vertex_id())
 			end
 			
+			amk.del_variable("koster")
+			
 			amk.g_start_timer("koster",0, 0, 30)
 		end
 		
