@@ -31,7 +31,7 @@ function main_menu:InitControls()
 	local ver = xml:InitStatic("static_version", self)
 	local ogsm_ver = xml:InitStatic ("ogsm_version",self)
 	ver:SetText("S.T.A.L.K.E.R v." .. _G.main_menu.get_main_menu():GetGSVer())
-	ogsm_ver:SetText ("UZI v.2.1.0")
+	ogsm_ver:SetText ("UZI v.2.2.0")
 end
 
 function main_menu:Show(...)
