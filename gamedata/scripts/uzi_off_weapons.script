@@ -51,47 +51,54 @@ local loc = level.name()
 local level_name = level_by_name[level.name()]
 
 function off_weapons()
-
- if (not has_alife_info("new_game")) and (xr_logic.pstor_retrieve(db.actor, "lvl", "predbannik") == loc) then
-	db.actor:give_info_portion("new_game")
-	amk.g_start_timer("water1",0, 4, 0)
--- local text = "Старт новой игры. Локация - "..level_name
--- news_manager.send_tip(db.actor, text, nil, nil, 30000)
-	xr_logic.pstor_store(db.actor, "lvl", loc)
-end
- 
- if has_alife_info("new_game") and not (xr_logic.pstor_retrieve(db.actor, "lvl", "predbannik") == loc) then
---            local text = "Переход на другую локацию - "..level_name
---            news_manager.send_tip(db.actor, text, nil, nil, 30000)
-            xr_logic.pstor_store(db.actor, "lvl", loc)
-
-	for a=1,65535,1 do
-	local obj = alife():object(a)
-		if isWeapon(obj) then
-			local wpn_name = obj:name()
-			if(obj.parent_id and obj.parent_id == 65535 and not string.find(wpn_name,"wpn_ak74m_m1",1,true) and not string.find(wpn_name,"wpn_ak74_m2",1,true) and not string.find(wpn_name,"wpn_abakan_m1",1,true) and not string.find(wpn_name,"wpn_fort_m1",1,true) and not string.find(wpn_name,"wpn_ak74u_m1",1,true) and not string.find(wpn_name,"wpn_mp5_m1",1,true) and not string.find(wpn_name,"wpn_groza_m1",1,true) and not string.find(wpn_name,"wpn_spas12_m1",1,true) and not string.find(wpn_name,"wpn_winchester_m1",1,true) and not string.find(wpn_name,"wpn_l85_m1",1,true) and not string.find(wpn_name,"wpn_lr300_m1",1,true) and not string.find(wpn_name,"wpn_svd_m1",1,true) and not string.find(wpn_name,"wpn_svd_m1u",1,true) and not string.find(wpn_name,"wpn_sig_m1",1,true) and not string.find(wpn_name,"wpn_eagle_m1",1,true) and not string.find(wpn_name,"wpn_colt_m1",1,true) and not string.find(wpn_name,"wpn_val_m1",1,true) and not string.find(wpn_name,"wpn_mp5_m2",1,true) and not string.find(wpn_name,"wpn_abakan_m2",1,true) and not string.find(wpn_name,"wpn_l85_m2",1,true) and not string.find(wpn_name,"wpn_sig_m2",1,true) and not string.find(wpn_name,"wpn_rg6_m1",1,true) and not string.find(wpn_name,"wpn_walther_m1",1,true) and not string.find(wpn_name,"hunters_toz",1,true) and not string.find(wpn_name,"wpn_winchester",1,true) and not string.find(wpn_name,"wpn_akmsn",1,true) and not string.find(wpn_name,"wpn_knife",1,true) and not string.find(wpn_name,"wpn_binoc",1,true) and not string.find(wpn_name,"wpn_flame",1,true) and not string.find(wpn_name,"wpn_sg550sr_sk1",1,true) and not string.find(wpn_name,"wpn_fn2000u",1,true) and not string.find(wpn_name,"wpn_gaussu",1,true) and not string.find(wpn_name,"wpn_m1891_lesnik",1,true) and not string.find(wpn_name,"wpn_bm16_muh",1,true) and wpn_name~="esc_wpn_ak74u" and wpn_name~="esc_wpn_pm" and wpn_name~="esc_wpn_bm16" and wpn_name~="esc_wpn_walther" and wpn_name~="aes_wpn_abakan" and wpn_name~="aes_grenade_f_0001" and wpn_name~="aes_grenade_f_0000" and wpn_name~="aes_grenade_f_0002" and wpn_name~="aes_grenade_f_0003" and wpn_name~="aes_wpn_rpg7" and wpn_name~="aes_wpn_binoc" and wpn_name~="dar_wpn_ak74" and wpn_name~="dar_wpn_rpg7" and wpn_name~="gar_grenade_f_0000" and wpn_name~="gar_grenade_f_0001" and wpn_name~="val_wpn_ak74u" and wpn_name~="val_wpn_ak74u_0000" and wpn_name~="val_wpn_ak74u_0001" and wpn_name~="val_wpn_mp5" and wpn_name~="val_wpn_mp5_0000" and wpn_name~="val_wpn_rpg_0000" and wpn_name~="val_wpn_abakan" and wpn_name~="yan_grenade_rgd5" and wpn_name~="mil_grenade_f_0016" and wpn_name~="mil_grenade_f_0017" and wpn_name~="mil_grenade_f_0018" and wpn_name~="mil_grenade_f_0019" and wpn_name~="mil_grenade_rgd5" and wpn_name~="mil_grenade_rgd_0000" and wpn_name~="mil_wpn_rg-6" and wpn_name~="mil_wpn_lr_0000" and wpn_name~="mil_wpn_pm_0000" and wpn_name~="mil_wpn_ak74u" and wpn_name~="mil_wpn_ak0001" and wpn_name~="mil_wpn_ak0002" and wpn_name~="mil_wpn_bm16" and wpn_name~="mil_wpn_pm" and wpn_name~="mil_wpn_abakan" and wpn_name~="mil_wpn_lr_0002" and wpn_name~="mil_wpn_lr_0003" and wpn_name~="mil_wpn_lr_0004" and wpn_name~="mil_wpn_vintorez" and wpn_name~="mil_wpn_lr300_m1" and wpn_name~="kat_wpn_ak74u" and wpn_name~="kat_wpn_ak74_m2" and wpn_name~="level_prefix_wpn_groza" and wpn_name~="bun_grenade_f1_0001" and wpn_name~="bun_grenade_f1_0005" and wpn_name~="bun_grenade_f1_0006" and wpn_name~="bun_grenade_f1_0007" and wpn_name~="bun_grenade_f1_0008" and wpn_name~="aver_wpn_desert_eagle" and wpn_name~="aver_wpn_g36" and wpn_name~="lim_wpn_rg-6" and wpn_name~="lost_village_wpn_pb" and wpn_name~="lost_village_wpn_vintorez" and wpn_name~="mar_wpn_addon_scope" and wpn_name~="mar_wpn_addon_scope_0000" and wpn_name~="mar_wpn_ak74" and wpn_name~="mar_wpn_ak74u" and wpn_name~="mar_wpn_ak74u_0000" and wpn_name~="mar_wpn_ak74u_0001" and wpn_name~="mar_wpn_mp5" and wpn_name~="predbannik_wpn_bm16_0002" and wpn_name~="predbannik_wpn_desert_eagle" and wpn_name~="predbannik_wpn_svd_m1" and wpn_name~="red_wpn_rg-6" and wpn_name~="red_wpn_val") then
-				if string.find(obj:name(),"wpn_",1,true) or string.find(obj:name(),"grenade_",1,true) then 
-					table.insert(tabl_weapons, obj)
+	if (not has_alife_info("new_game")) and (xr_logic.pstor_retrieve(db.actor, "lvl", "predbannik") == loc) then
+		db.actor:give_info_portion("new_game")
+		amk.g_start_timer("water1",0, 4, 0)
+	--	local text = "Старт новой игры. Локация - "..level_name
+	--	news_manager.send_tip(db.actor, text, nil, nil, 30000)
+		xr_logic.pstor_store(db.actor, "lvl", loc)
+	end
+	
+	if has_alife_info("new_game") and not (xr_logic.pstor_retrieve(db.actor, "lvl", "predbannik") == loc) then
+--		local text = "Переход на другую локацию - "..level_name
+--		news_manager.send_tip(db.actor, text, nil, nil, 30000)
+		xr_logic.pstor_store(db.actor, "lvl", loc)
+		
+		for a=1,65535,1 do
+			local obj = alife():object(a)
+			
+			if isWeapon(obj) then
+				local wpn_name = obj:name()
+				
+				if (obj.parent_id and obj.parent_id == 65535 and not string.find(wpn_name,"wpn_ak74m_m1",1,true) and not string.find(wpn_name,"wpn_ak74_m2",1,true) and not string.find(wpn_name,"wpn_abakan_m1",1,true) and not string.find(wpn_name,"wpn_fort_m1",1,true) and not string.find(wpn_name,"wpn_ak74u_m1",1,true) and not string.find(wpn_name,"wpn_mp5_m1",1,true) and not string.find(wpn_name,"wpn_groza_m1",1,true) and not string.find(wpn_name,"wpn_spas12_m1",1,true) and not string.find(wpn_name,"wpn_winchester_m1",1,true) and not string.find(wpn_name,"wpn_l85_m1",1,true) and not string.find(wpn_name,"wpn_lr300_m1",1,true) and not string.find(wpn_name,"wpn_svd_m1",1,true) and not string.find(wpn_name,"wpn_svd_m1u",1,true) and not string.find(wpn_name,"wpn_sig_m1",1,true) and not string.find(wpn_name,"wpn_eagle_m1",1,true) and not string.find(wpn_name,"wpn_colt_m1",1,true) and not string.find(wpn_name,"wpn_val_m1",1,true) and not string.find(wpn_name,"wpn_mp5_m2",1,true) and not string.find(wpn_name,"wpn_abakan_m2",1,true) and not string.find(wpn_name,"wpn_l85_m2",1,true) and not string.find(wpn_name,"wpn_sig_m2",1,true) and not string.find(wpn_name,"wpn_rg6_m1",1,true) and not string.find(wpn_name,"wpn_walther_m1",1,true) and not string.find(wpn_name,"hunters_toz",1,true) and not string.find(wpn_name,"wpn_winchester",1,true) and not string.find(wpn_name,"wpn_akmsn",1,true) and not string.find(wpn_name,"wpn_knife",1,true) and not string.find(wpn_name,"wpn_binoc",1,true) and not string.find(wpn_name,"wpn_flame",1,true) and not string.find(wpn_name,"wpn_sg550sr_sk1",1,true) and not string.find(wpn_name,"wpn_fn2000u",1,true) and not string.find(wpn_name,"wpn_gaussu",1,true) and not string.find(wpn_name,"wpn_m1891_lesnik",1,true) and not string.find(wpn_name,"wpn_bm16_muh",1,true) and wpn_name~="esc_wpn_ak74u" and wpn_name~="esc_wpn_pm" and wpn_name~="esc_wpn_bm16" and wpn_name~="esc_wpn_walther" and wpn_name~="aes_wpn_abakan" and wpn_name~="aes_grenade_f_0001" and wpn_name~="aes_grenade_f_0000" and wpn_name~="aes_grenade_f_0002" and wpn_name~="aes_grenade_f_0003" and wpn_name~="aes_wpn_rpg7" and wpn_name~="aes_wpn_binoc" and wpn_name~="dar_wpn_ak74" and wpn_name~="dar_wpn_rpg7" and wpn_name~="gar_grenade_f_0000" and wpn_name~="gar_grenade_f_0001" and wpn_name~="val_wpn_ak74u" and wpn_name~="val_wpn_ak74u_0000" and wpn_name~="val_wpn_ak74u_0001" and wpn_name~="val_wpn_mp5" and wpn_name~="val_wpn_mp5_0000" and wpn_name~="val_wpn_rpg_0000" and wpn_name~="val_wpn_abakan" and wpn_name~="yan_grenade_rgd5" and wpn_name~="mil_grenade_f_0016" and wpn_name~="mil_grenade_f_0017" and wpn_name~="mil_grenade_f_0018" and wpn_name~="mil_grenade_f_0019" and wpn_name~="mil_grenade_rgd5" and wpn_name~="mil_grenade_rgd_0000" and wpn_name~="mil_wpn_rg-6" and wpn_name~="mil_wpn_lr_0000" and wpn_name~="mil_wpn_pm_0000" and wpn_name~="mil_wpn_ak74u" and wpn_name~="mil_wpn_ak0001" and wpn_name~="mil_wpn_ak0002" and wpn_name~="mil_wpn_bm16" and wpn_name~="mil_wpn_pm" and wpn_name~="mil_wpn_abakan" and wpn_name~="mil_wpn_lr_0002" and wpn_name~="mil_wpn_lr_0003" and wpn_name~="mil_wpn_lr_0004" and wpn_name~="mil_wpn_vintorez" and wpn_name~="mil_wpn_lr300_m1" and wpn_name~="kat_wpn_ak74u" and wpn_name~="kat_wpn_ak74_m2" and wpn_name~="level_prefix_wpn_groza" and wpn_name~="bun_grenade_f1_0001" and wpn_name~="bun_grenade_f1_0005" and wpn_name~="bun_grenade_f1_0006" and wpn_name~="bun_grenade_f1_0007" and wpn_name~="bun_grenade_f1_0008" and wpn_name~="aver_wpn_desert_eagle" and wpn_name~="aver_wpn_g36" and wpn_name~="lim_wpn_rg-6" and wpn_name~="lost_village_wpn_pb" and wpn_name~="lost_village_wpn_vintorez" and wpn_name~="mar_wpn_addon_scope" and wpn_name~="mar_wpn_addon_scope_0000" and wpn_name~="mar_wpn_ak74" and wpn_name~="mar_wpn_ak74u" and wpn_name~="mar_wpn_ak74u_0000" and wpn_name~="mar_wpn_ak74u_0001" and wpn_name~="mar_wpn_mp5" and wpn_name~="predbannik_wpn_bm16_0002" and wpn_name~="predbannik_wpn_desert_eagle" and wpn_name~="predbannik_wpn_svd_m1" and wpn_name~="red_wpn_rg-6" and wpn_name~="red_wpn_val") then
+					if string.find(obj:name(),"wpn_",1,true) or string.find(obj:name(),"grenade_",1,true) then 
+						table.insert(tabl_weapons, obj)
+					end
 				end
 			end
 		end
-	end
-	if table.getn(tabl_weapons) > 0 then
-		local twa = table.getn(tabl_weapons)
-		while twa > 0 do
-			local wpn = tabl_weapons[twa]
-			local wpn_name = wpn:name()
-			if not string.find(wpn_name,"wpn_gauss",1,true) then
-				local weapon = tabl_weapons[twa]
-				alife():release(weapon,true)
-				table.remove(tabl_weapons,twa)
+		
+		if table.getn(tabl_weapons) > 0 then
+			local twa = table.getn(tabl_weapons)
+			
+			while twa > 0 do
+				local wpn = tabl_weapons[twa]
+				local wpn_name = wpn:name()
+				
+				if not string.find(wpn_name,"wpn_gauss",1,true) then
+					local weapon = tabl_weapons[twa]
+					
+					alife():release(weapon,true)
+					table.remove(tabl_weapons,twa)
+				end
+				
+				twa=twa-1
 			end
-			twa=twa-1
 		end
+		
+		uzi_off_corpses.off_npc_corpses()
+	else
+--		local text = "Загрузка на текущей локации - "..level_name
+--		news_manager.send_tip(db.actor, text, nil, nil, 30000)
 	end
-     uzi_off_corpses.off_npc_corpses()
- else
---            local text = "Загрузка на текущей локации - "..level_name
---            news_manager.send_tip(db.actor, text, nil, nil, 30000)
- end
 end

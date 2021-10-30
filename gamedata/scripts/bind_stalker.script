@@ -77,7 +77,7 @@ function actor_binder:net_spawn(data)
 	-- Новости(фильтр левелов)
 	news_main.filter()
 	
-	-- teleports_by_Mora_&_kenguru74 --
+	-- teleports_by_Mora_&_kenguru --
 	spawn_teleport.spawn_teleport_baza()
 	spawn_teleport.spawn_teleport_marsh()
 	spawn_teleport.spawn_teleport_river_to_pripyat()
@@ -810,7 +810,7 @@ function actor_binder:save_old(packet)
 	end
 
 	task_manager.save(packet)
-	self.actor_detector:save(packet)	
+	self.actor_detector:save(packet)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:load(reader)
@@ -864,28 +864,8 @@ end
 function hide_weapon()
 	weapon_hide = true
 end
+
 function restore_weapon()
 	weapon_hide = false
 end
-
-// this is test for section iteration
-/**
-local function test_section_iteration(file_name, section_name)
-	--printf			("file	  : %s",file_name)
-	--printf			("section : %s",section_name)
-	
-	local			file = ini_file(file_name)
-	local			n = file:line_count(section_name)
-	--printf			("lines	  : %d",n)
-	
-	local			id, value = "", "", result
-	for i=0,n-1 do
-		result, id, value	= file:r_line(section_name,i,"","")
-		--printf		("line %d : %s = %s",i,id,value)
-	end
-end
-
-test_section_iteration("system.ltx","space_restrictor")
-/**/
-
 

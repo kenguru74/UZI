@@ -1,707 +1,726 @@
 function off_npc_corpses()
- for a = 1,65535,1 do
-  local obj = alife():object(a)
-  if obj then
-    if level.name() == "l01_escape" then 
-      if obj.m_story_id == 54572 and has_alife_info("escape_stalker_about_vagonchik_54572") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_stalker_about_vagonchik_54572")
-      end
-      if obj.m_story_id == 54573 and has_alife_info("escape_stlaker_on_ferma_54573") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_stlaker_on_ferma_54573")
-      end
-      if obj.m_story_id == 54574 and has_alife_info("escape_stalker_before_blockpost_on_garbage_54574") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_stalker_before_blockpost_on_garbage_54574")
-      end
-      if obj.m_story_id == 54575 and has_alife_info("escape_stalker_left_from_fox_54575") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_stalker_left_from_fox_54575")
-      end
-      if obj.m_story_id == 54576 and has_alife_info("escape_stalker_forward_from_fox_54576") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_stalker_forward_from_fox_54576")
-      end
-      if obj.m_story_id == 54577 and has_alife_info("escape_bandit_on_elevator_54577") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_bandit_on_elevator_54577")
-      end
-      if obj.m_story_id == 54578 and has_alife_info("escape_bandit_about_boars_54578") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_bandit_about_boars_54578")
-      end
-      if obj.m_story_id == 54579 and has_alife_info("escape_stalker_about_viaduk_54579") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_stalker_about_viaduk_54579")
-      end
-      if obj.m_story_id == 33 and has_alife_info("escape_stalker_about_tunnel_33") and has_alife_info("esc_find_railroad_passage_find_stalker") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_stalker_about_tunnel_33")
-      end
-      if obj.m_story_id == 32 and has_alife_info("escape_kuznezov_32") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_kuznezov_32")
-      end
-      if obj.m_story_id == 24 and has_alife_info("escape_bandit_on_atp_24") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_bandit_on_atp_24")
-      end
-      if obj.m_story_id == 21 and has_alife_info("escape_killer_21") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_killer_21")
-      end
-      if obj.m_story_id == 9 and has_alife_info("escape_petruha_9") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_petruha_9")
-      end
-      if obj.m_story_id == 92 and has_alife_info("escape_provodnik_92") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_provodnik_92")
-      end
-      if obj.m_story_id == 4 and has_alife_info("escape_shustryi_4") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_shustryi_4")
-      end
-      if obj.m_story_id == 22 and has_alife_info("escape_fanat_22") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_fanat_22")
-      end
-      if obj.m_story_id == 7 and has_alife_info("escape_tolik_7") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("escape_tolik_7")
-      end
-    end
-    if level.name() == "l02_garbage" then 
-      if obj.m_story_id == 124 and has_alife_info("garbage_stalker_in_tunnel_124") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_stalker_in_tunnel_124")
-      end
-      if obj.m_story_id == 54583 and has_alife_info("garbage_bandit_on_techocemetery_1_54583") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_bandit_on_techocemetery_1_54583")
-      end
-      if obj.m_story_id == 54584 and has_alife_info("garbage_bandit_on_techocemetery_2_54584") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_bandit_on_techocemetery_2_54584")
-      end
-      if obj.m_story_id == 54585 and has_alife_info("garbage_bandit_on_techocemetery_3_54585") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_bandit_on_techocemetery_3_54585")
-      end
-      if obj.m_story_id == 54586 and has_alife_info("garbage_stalker_in_forest_54586") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_stalker_in_forest_54586")
-      end
-      if obj.m_story_id == 54587 and has_alife_info("garbage_stalker_on_techocemetery_54587") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_stalker_on_techocemetery_54587")
-      end
-      if obj.m_story_id == 54588 and has_alife_info("garbage_stalker_in_nizina_54588") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_stalker_in_nizina_54588")
-      end
-      if obj.m_story_id == 101 and has_alife_info("garbage_kamaz_bandit_1_101") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_kamaz_bandit_1_101")
-      end
-      if obj.m_story_id == 102 and has_alife_info("garbage_kamaz_bandit_2_102") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_kamaz_bandit_2_102")
-      end
-      if obj.m_story_id == 103 and has_alife_info("garbage_kamaz_bandit_3_103") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_kamaz_bandit_3_103")
-      end
-      if obj.m_story_id == 104 and has_alife_info("garbage_stalker_jurik_104") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_stalker_jurik_104")
-      end
-      if obj.m_story_id == 106 and has_alife_info("garbage_vasya_kaban_106") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_vasya_kaban_106")
-      end
-      if obj.m_story_id == 115 and has_alife_info("garbage_prapor_115") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_prapor_115")
-      end
-      if obj.m_story_id == 123 and has_alife_info("garbage_drug_serogo_123") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_drug_serogo_123")
-      end
-      if obj.m_story_id == 109 and has_alife_info("garbage_bandit_wounded_109") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("garbage_bandit_wounded_109")
-      end
-    end
-    if level.name() == "l03_agroprom" then 
-      if obj.m_story_id == 54589 and has_alife_info("agroprom_stalker_in_kapterka_54589") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("agroprom_stalker_in_kapterka_54589")
-      end
-      if obj.m_story_id == 54590 and has_alife_info("agroprom_stalker_on_place_54590") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("agroprom_stalker_on_place_54590")
-      end
-      if obj.m_story_id == 54591 and has_alife_info("agroprom_stalker_in_dvor_54591") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("agroprom_stalker_in_dvor_54591")
-      end
-      if obj.m_story_id == 54592 and has_alife_info("agroprom_stalker_about_shlagbaum_54592") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("agroprom_stalker_about_shlagbaum_54592")
-      end
-      if obj.m_story_id == 54593 and has_alife_info("agroprom_military_in_dvor_54593") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("agroprom_military_in_dvor_54593")
-      end
-      if obj.m_story_id == 54594 and has_alife_info("agroprom_stalker_about_bochka_54594") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("agroprom_stalker_about_bochka_54594")
-      end
-    end
-    if level.name() == "l03u_agr_underground" then 
-      if obj.m_story_id == 54595 and has_alife_info("agroprom_und_stalker_about_hatch_54595") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("agroprom_und_stalker_about_hatch_54595")
-      end
-      if obj.m_story_id == 350 and has_alife_info("agroprom_und_doctor_350") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("agroprom_und_doctor_350")
-      end
-    end
-    if level.name() == "l04_darkvalley" then 
-      if obj.m_story_id == 437 and has_alife_info("darkvalley_bandit_with_rpg_437") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_with_rpg_437")
-      end
-      if obj.m_story_id == 54596 and has_alife_info("darkvalley_bandit_about_bullet_1_54596") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_about_bullet_1_54596")
-      end
-      if obj.m_story_id == 54597 and has_alife_info("darkvalley_bandit_about_bullet_2_54597") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_about_bullet_2_54597")
-      end
-      if obj.m_story_id == 54598 and has_alife_info("darkvalley_bandit_in_podval_on_stroika_54598") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_in_podval_on_stroika_54598")
-      end
-      if obj.m_story_id == 54599 and has_alife_info("darkvalley_stalker_on_azs_54599") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_stalker_on_azs_54599")
-      end
-      if obj.m_story_id == 54800 and has_alife_info("darkvalley_bandit_on_azs_54800") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_on_azs_54800")
-      end
-      if obj.m_story_id == 424 and has_alife_info("darkvalley_bandit_wounded_424") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_wounded_424")
-      end
-      if obj.m_story_id == 400 and has_alife_info("darkvalley_dolg_plennyi_400") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_dolg_plennyi_400")
-      end
-      if obj.m_story_id == 407 and has_alife_info("darkvalley_bandit_escort_1_407") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_escort_1_407")
-      end
-      if obj.m_story_id == 408 and has_alife_info("darkvalley_bandit_escort_2_408") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_escort_2_408")
-      end
-      if obj.m_story_id == 406 and has_alife_info("darkvalley_pulya_406") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_pulya_406")
-      end
-      if obj.m_story_id == 425 and has_alife_info("darkvalley_buryi_425") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_buryi_425")
-      end
-      if obj.m_story_id == 402 and has_alife_info("darkvalley_sergei_lohmatyi_402") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_sergei_lohmatyi_402")
-      end
-      if obj.m_story_id == 404 and has_alife_info("darkvalley_bandit_about_yama_1_404") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_about_yama_1_404")
-      end
-      if obj.m_story_id == 405 and has_alife_info("darkvalley_bandit_about_yama_2_405") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_about_yama_2_405")
-      end
-      if obj.m_story_id == 409 and has_alife_info("darkvalley_bandit_about_tunnel_409") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_bandit_about_tunnel_409")
-      end
-      if obj.m_story_id == 401 and has_alife_info("darkvalley_dolg_in_yama_401") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_dolg_in_yama_401")
-      end
-      if obj.m_story_id == 422 and has_alife_info("darkvalley_stalker_on_azs_422") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("darkvalley_stalker_on_azs_422")
-      end
-    end
-    if level.name() == "l04u_labx18" then
-      if obj.m_story_id == 54801 and has_alife_info("x_18_stalker_about_lift_54801") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("x_18_stalker_about_lift_54801")
-      end
-      if obj.m_story_id == 450 and has_alife_info("x_18_ecolog_1_450") and has_alife_info("dar_door1_closed") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("x_18_ecolog_1_450")
-      end
-      if obj.m_story_id == 451 and has_alife_info("x_18_ecolog_2_451") and has_alife_info("dar_door2_closed") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("x_18_ecolog_2_451")
-      end
-      if obj.m_story_id == 54802 and has_alife_info("x_18_stalker_about_anomaly_54802") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("x_18_stalker_about_anomaly_54802")
-      end
-    end
-    if level.name() == "l05_bar" then
-      if obj.m_story_id == 54803 and has_alife_info("bar_stalker_about_kamaz_54803") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_stalker_about_kamaz_54803")
-      end
-      if obj.m_story_id == 571 and has_alife_info("bar_arni_571") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_arni_571")
-      end
-      if obj.m_story_id == 510 and has_alife_info("bar_brom_510") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_brom_510")
-      end
-      if obj.m_story_id == 607 and has_alife_info("bar_lyisyii_607") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_lyisyii_607")
-      end
-      if obj.m_story_id == 515 and has_alife_info("bar_osvedomitel_515") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_osvedomitel_515")
-      end
-      if obj.m_story_id == 504 and has_alife_info("bar_ohotnik_504") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_ohotnik_504")
-      end
-      if obj.m_story_id == 505 and has_alife_info("bar_ivanzov_505") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_ivanzov_505")
-      end
-      if obj.m_story_id == 516 and has_alife_info("bar_plichko_516") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_plichko_516")
-      end
-      if obj.m_story_id == 518 and has_alife_info("bar_kizenko_518") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_kizenko_518")
-      end
-      if obj.m_story_id == 507 and has_alife_info("bar_voronin_507") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_voronin_507")
-      end
-      if obj.m_story_id == 506 and has_alife_info("bar_petrenko_506") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("bar_petrenko_506")
-      end
-    end
-    if level.name() == "l06_rostok" then
-      if obj.m_story_id == 54804 and has_alife_info("rostok_ecolog_south_helicopter_1_54804") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_ecolog_south_helicopter_1_54804")
-      end
-      if obj.m_story_id == 54805 and has_alife_info("rostok_ecolog_south_helicopter_2_54805") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_ecolog_south_helicopter_2_54805")
-      end
-      if obj.m_story_id == 54806 and has_alife_info("rostok_ecolog_nord_helicopter_54806") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_ecolog_nord_helicopter_54806")
-      end
-      if obj.m_story_id == 54807 and has_alife_info("rostok_ecolog_in_tunnel_54807") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_ecolog_in_tunnel_54807")
-      end
-      if obj.m_story_id == 54808 and has_alife_info("rostok_ecolog_about_locomotiv_54808") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_ecolog_about_locomotiv_54808")
-      end
-      if obj.m_story_id == 54809 and has_alife_info("rostok_stalker_in_west_angar_54809") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_stalker_in_west_angar_54809")
-      end
-      if obj.m_story_id == 54810 and has_alife_info("rostok_stalker_in_ost_angar_1_54810") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_stalker_in_ost_angar_1_54810")
-      end
-      if obj.m_story_id == 54811 and has_alife_info("rostok_duty_in_ost_angar_54811") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_duty_in_ost_angar_54811")
-      end
-      if obj.m_story_id == 54812 and has_alife_info("rostok_stalker_in_ost_angar_2_54812") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_stalker_in_ost_angar_2_54812")
-      end
-      if obj.m_story_id == 54813 and has_alife_info("rostok_stalker_freeman_54813") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_stalker_freeman_54813")
-      end
-      if obj.m_story_id == 503 and has_alife_info("rostok_kruglov_503") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_kruglov_503")
-      end
-      if obj.m_story_id == 601 and has_alife_info("rostok_killer_1_601") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_killer_1_601")
-      end
-      if obj.m_story_id == 603 and has_alife_info("rostok_killer_2_603") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_killer_2_603")
-      end
-      if obj.m_story_id == 604 and has_alife_info("rostok_killer_3_604") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_killer_3_604")
-      end
-      if obj.m_story_id == 602 and has_alife_info("rostok_killer_4_602") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_killer_4_602")
-      end
-      if obj.m_story_id == 509 and has_alife_info("rostok_volkodav_509") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_volkodav_509")
-      end
-      if obj.m_story_id == 595 and has_alife_info("rostok_killer_5_595") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("rostok_killer_5_595")
-      end
-    end
-    if level.name() == "l07_military" then
-      if obj.m_story_id == 54814 and has_alife_info("military_freedom_about_tower_1_54814") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_freedom_about_tower_1_54814")
-      end
-      if obj.m_story_id == 54815 and has_alife_info("military_freedom_about_tower_2_54815") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_freedom_about_tower_2_54815")
-      end
-      if obj.m_story_id == 54816 and has_alife_info("military_stalker_on_cemetery_nord_from_helicopter_54816") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_stalker_on_cemetery_nord_from_helicopter_54816")
-      end
-      if obj.m_story_id == 54817 and has_alife_info("military_duty_about_wall_54817") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_duty_about_wall_54817")
-      end
-      if obj.m_story_id == 54818 and has_alife_info("military_stalker_on_ost_from_pavlik_54818") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_stalker_on_ost_from_pavlik_54818")
-      end
-      if obj.m_story_id == 719 and has_alife_info("military_ara_719") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_ara_719")
-      end
-      if obj.m_story_id == 714 and has_alife_info("military_killer_1_714") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_killer_1_714")
-      end
-      if obj.m_story_id == 713 and has_alife_info("military_killer_2_713") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_killer_2_713")
-      end
-      if obj.m_story_id == 712 and has_alife_info("military_killer_3_712") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_killer_3_712")
-      end
-      if obj.m_story_id == 724 and has_alife_info("military_kep_724") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_kep_724")
-      end
-      if obj.m_story_id == 708 and has_alife_info("military_cherep_708") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_cherep_708")
-      end
-      if obj.m_story_id == 740 and has_alife_info("military_dolg_1_740") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_dolg_1_740")
-      end
-      if obj.m_story_id == 736 and has_alife_info("military_dolg_2_736") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_dolg_2_736")
-      end
-      if obj.m_story_id == 738 and has_alife_info("military_dolg_3_738") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_dolg_3_738")
-      end
-      if obj.m_story_id == 711 and has_alife_info("military_dolg_4_711") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_dolg_4_711")
-      end
-      if obj.m_story_id == 737 and has_alife_info("military_dolg_5_737") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_dolg_5_737")
-      end
-      if obj.m_story_id == 710 and has_alife_info("military_pavlik_710") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_pavlik_710")
-      end
-      if obj.m_story_id == 702 and has_alife_info("military_max_702") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_max_702")
-      end
-      if obj.m_story_id == 731 and has_alife_info("military_svoboda_1_731") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_svoboda_1_731")
-      end
-      if obj.m_story_id == 730 and has_alife_info("military_svoboda_2_730") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("svoboda_2_730")
-      end
-      if obj.m_story_id == 704 and has_alife_info("military_svoboda_3_704") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_svoboda_3_704")
-      end
-      if obj.m_story_id == 732 and has_alife_info("military_svoboda_4_732") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_svoboda_4_732")
-      end
-      if obj.m_story_id == 728 and has_alife_info("military_povar_728") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_povar_728")
-      end
-      if obj.m_story_id == 721 and has_alife_info("military_svoboda_patrol_1_721") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_svoboda_patrol_1_721")
-      end
-      if obj.m_story_id == 720 and has_alife_info("military_svoboda_patrol_2_720") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_svoboda_patrol_2_720")
-      end
-      if obj.m_story_id == 722 and has_alife_info("military_svoboda_patrol_3_722") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_svoboda_patrol_3_722")
-      end
-      if obj.m_story_id == 703 and has_alife_info("military_psih_703") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_psih_703")
-      end
-      if obj.m_story_id == 725 and has_alife_info("military_ugryumyi_725") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_ugryumyi_725")
-      end
-      if obj.m_story_id == 726 and has_alife_info("military_svoboda_krovososka_1_726") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_svoboda_krovososka_1_726")
-      end
-      if obj.m_story_id == 727 and has_alife_info("military_svoboda_krovososka_2_727") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_svoboda_krovososka_2_727")
-      end
-      if obj.m_story_id == 707 and has_alife_info("military_lukash_707") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_lukash_707")
-      end
-      if obj.m_story_id == 734 and has_alife_info("military_skryaga_734") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("military_skryaga_734")
-      end
-    end
-    if level.name() == "l08_yantar" then
-      if obj.m_story_id == 922 and has_alife_info("yantar_military_on_factory_922") and has_alife_info("lukash_have_berill") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("yantar_military_on_factory_922")
-      end
-      if obj.m_story_id == 54819 and has_alife_info("yantar_stalker_in_tunnel_54819") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("yantar_stalker_in_tunnel_54819")
-      end
-      if obj.m_story_id == 903 and has_alife_info("yantar_ecolog_vasiliev_903") and has_alife_info("yan_find_laboratory_end") and has_alife_info("yan_kill_brain_done") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("yantar_ecolog_vasiliev_903")
-      end
-      if obj.m_story_id == 900 and has_alife_info("yantar_ecolog_kruglov_900") and has_alife_info("yan_find_laboratory_end") and has_alife_info("yan_kill_brain_done") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("yantar_ecolog_kruglov_900")
-      end
-      if obj.m_story_id == 905 and has_alife_info("yantar_ecolog_semenov_905") and has_alife_info("yan_find_laboratory_end") and has_alife_info("yan_kill_brain_done") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("yantar_ecolog_semenov_905")
-      end
-    end
-    if level.name() == "l08u_brainlab" then
-      if obj.m_story_id == 918 and has_alife_info("x16_stalker_ghost_918") and has_alife_info("yan_x16_documents_gain") and has_alife_info("yan_kill_brain_done") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("x16_stalker_ghost_918")
-      end
-    end
-    if level.name() == "l10_radar" then
-      if obj.m_story_id == 54820 and has_alife_info("radar_stalker_turn_on_pripyat_54820") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_stalker_turn_on_pripyat_54820")
-      end
-      if obj.m_story_id == 54821 and has_alife_info("radar_ecolog_out_grid_1_54821") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_ecolog_out_grid_1_54821")
-      end
-      if obj.m_story_id == 54822 and has_alife_info("radar_ecolog_in_grid_54822") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_ecolog_in_grid_54822")
-      end
-      if obj.m_story_id == 54823 and has_alife_info("radar_ecolog_out_grid_2_54823") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_ecolog_out_grid_2_54823")
-      end
-      if obj.m_story_id == 54824 and has_alife_info("radar_stalker_about_stones_54824") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_stalker_about_stones_54824")
-      end
-      if obj.m_story_id == 1075 and has_alife_info("radar_monolit_1_1075") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_monolit_1_1075")
-      end
-      if obj.m_story_id == 1074 and has_alife_info("radar_monolit_2_1074") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_monolit_2_1074")
-      end
-      if obj.m_story_id == 1071 and has_alife_info("radar_monolit_3_1071") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_monolit_3_1071")
-      end
-      if obj.m_story_id == 1072 and has_alife_info("radar_monolit_4_1072") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_monolit_4_1072")
-      end
-      if obj.m_story_id == 1073 and has_alife_info("radar_monolit_5_1073") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("radar_monolit_5_1073")
-      end
-    end
-    if level.name() == "l11_pripyat" then
-      if obj.m_story_id == 806 and has_alife_info("pripyat_stalker_806") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("pripyat_stalker_806")
-      end
-      if obj.m_story_id == 809 and has_alife_info("pripyat_monolit_1_809") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("pripyat_monolit_1_809")
-      end
-      if obj.m_story_id == 828 and has_alife_info("pripyat_haron_828") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("pripyat_haron_828")
-      end
-      if obj.m_story_id == 808 and has_alife_info("pripyat_monolit_2_808") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("pripyat_monolit_2_808")
-      end
-      if obj.m_story_id == 821 and has_alife_info("pripyat_monolit_3_821") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("pripyat_monolit_3_821")
-      end
-    end
-    if level.name() == "l12_stancia" then
-      if obj.m_story_id == 54825 and has_alife_info("stancia_military_forward_stela_54825") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_forward_stela_54825")
-      end
-      if obj.m_story_id == 54826 and has_alife_info("stancia_military_about_btr_54826") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_about_btr_54826")
-      end
-      if obj.m_story_id == 1104 and has_alife_info("stancia_military_1_1104") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_1_1104")
-      end
-      if obj.m_story_id == 1105 and has_alife_info("stancia_military_2_1105") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_2_1105")
-      end
-      if obj.m_story_id == 1106 and has_alife_info("stancia_military_3_1106") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_3_1106")
-      end
-      if obj.m_story_id == 1107 and has_alife_info("stancia_military_4_1107") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_4_1107")
-      end
-      if obj.m_story_id == 1103 and has_alife_info("stancia_military_5_1103") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_5_1103")
-      end
-      if obj.m_story_id == 1108 and has_alife_info("stancia_military_6_1108") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_6_1108")
-      end
-      if obj.m_story_id == 1110 and has_alife_info("stancia_military_7_1110") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_7_1110")
-      end
-      if obj.m_story_id == 1109 and has_alife_info("stancia_military_8_1109") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("stancia_military_8_1109")
-      end
-    end
-    if level.name() == "jupiter" then
-      if obj.m_story_id == 54569 and has_alife_info("jupiter_stalker_dron_54569") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("jupiter_stalker_dron_54569")
-      end
-      if obj.m_story_id == 54570 and has_alife_info("jupiter_ecolog_dron_54570") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("jupiter_ecolog_dron_54570")
-      end
-      if obj.m_story_id == 54555 and has_alife_info("usach_death") then
-        alife():release(obj, true)
-      end
-      if obj.m_story_id == 54828 and has_alife_info("jupiter_stalker_grek_54828") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("jupiter_stalker_grek_54828")
-      end
-    end
-    if level.name() == "red_forest" then
-      if obj.m_story_id == 54580 and has_alife_info("red_forest_stalker_corpse_1_54580") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("red_forest_stalker_corpse_1_54580")
-      end
-      if obj.m_story_id == 54581 and has_alife_info("red_forest_stalker_corpse_2_54581") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("red_forest_stalker_corpse_2_54581")
-      end
-      if obj.m_story_id == 54582 and has_alife_info("red_forest_stalker_corpse_3_54582") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("red_forest_stalker_corpse_3_54582")
-      end
-    end
-    if level.name() == "cs_agroprom_underground" then
-      if obj.m_story_id == 54568 and has_alife_info("catacombs_ecolog_54568") and has_alife_info("komandor_second_talk") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("catacombs_ecolog_54568")
-      end
-    end
-    if level.name() == "peshera" then
-      if obj.m_story_id == 54548 and has_alife_info("kolobok_death") then
-        alife():release(obj, true)
-      end
-      if obj.m_story_id == 54827 and has_alife_info("peshera_stalker_54827") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("peshera_stalker_54827")
-      end
-    end
-    if level.name() == "zaton" then
-      if obj.m_story_id == 54532 and has_alife_info("zaton_glaz_54532") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("zaton_glaz_54532")
-      end
-      if obj.m_story_id == 54563 and has_alife_info("zaton_dal_54563") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("zaton_dal_54563")
-      end
-      if obj.m_story_id == 54564 and has_alife_info("zaton_shah_54564") then
-        alife():release(obj, true)
-        db.actor:disable_info_portion("zaton_shah_54564")
-      end
-    end
-  end
- end
+	for a = 1,65535,1 do
+		local obj = alife():object(a)
+		
+		if obj then
+			if level.name() == "l01_escape" then
+				if obj.m_story_id == 54572 and has_alife_info("escape_stalker_about_vagonchik_54572") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_stalker_about_vagonchik_54572")
+				end
+				if obj.m_story_id == 54573 and has_alife_info("escape_stlaker_on_ferma_54573") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_stlaker_on_ferma_54573")
+				end
+				if obj.m_story_id == 54574 and has_alife_info("escape_stalker_before_blockpost_on_garbage_54574") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_stalker_before_blockpost_on_garbage_54574")
+				end
+				if obj.m_story_id == 54575 and has_alife_info("escape_stalker_left_from_fox_54575") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_stalker_left_from_fox_54575")
+				end
+				if obj.m_story_id == 54576 and has_alife_info("escape_stalker_forward_from_fox_54576") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_stalker_forward_from_fox_54576")
+				end
+				if obj.m_story_id == 54577 and has_alife_info("escape_bandit_on_elevator_54577") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_bandit_on_elevator_54577")
+				end
+				if obj.m_story_id == 54578 and has_alife_info("escape_bandit_about_boars_54578") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_bandit_about_boars_54578")
+				end
+				if obj.m_story_id == 54579 and has_alife_info("escape_stalker_about_viaduk_54579") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_stalker_about_viaduk_54579")
+				end
+				if obj.m_story_id == 33 and has_alife_info("escape_stalker_about_tunnel_33") and has_alife_info("esc_find_railroad_passage_find_stalker") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_stalker_about_tunnel_33")
+				end
+				if obj.m_story_id == 32 and has_alife_info("escape_kuznezov_32") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_kuznezov_32")
+				end
+				if obj.m_story_id == 24 and has_alife_info("escape_bandit_on_atp_24") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_bandit_on_atp_24")
+				end
+				if obj.m_story_id == 21 and has_alife_info("escape_killer_21") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_killer_21")
+				end
+				if obj.m_story_id == 9 and has_alife_info("escape_petruha_9") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_petruha_9")
+				end
+				if obj.m_story_id == 92 and has_alife_info("escape_provodnik_92") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_provodnik_92")
+				end
+				if obj.m_story_id == 4 and has_alife_info("escape_shustryi_4") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_shustryi_4")
+				end
+				if obj.m_story_id == 22 and has_alife_info("escape_fanat_22") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_fanat_22")
+				end
+				if obj.m_story_id == 7 and has_alife_info("escape_tolik_7") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("escape_tolik_7")
+				end
+			end
+			
+			if level.name() == "l02_garbage" then 
+				if obj.m_story_id == 124 and has_alife_info("garbage_stalker_in_tunnel_124") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_stalker_in_tunnel_124")
+				end
+				if obj.m_story_id == 54583 and has_alife_info("garbage_bandit_on_techocemetery_1_54583") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_bandit_on_techocemetery_1_54583")
+				end
+				if obj.m_story_id == 54584 and has_alife_info("garbage_bandit_on_techocemetery_2_54584") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_bandit_on_techocemetery_2_54584")
+				end
+				if obj.m_story_id == 54585 and has_alife_info("garbage_bandit_on_techocemetery_3_54585") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_bandit_on_techocemetery_3_54585")
+				end
+				if obj.m_story_id == 54586 and has_alife_info("garbage_stalker_in_forest_54586") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_stalker_in_forest_54586")
+				end
+				if obj.m_story_id == 54587 and has_alife_info("garbage_stalker_on_techocemetery_54587") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_stalker_on_techocemetery_54587")
+				end
+				if obj.m_story_id == 54588 and has_alife_info("garbage_stalker_in_nizina_54588") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_stalker_in_nizina_54588")
+				end
+				if obj.m_story_id == 101 and has_alife_info("garbage_kamaz_bandit_1_101") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_kamaz_bandit_1_101")
+				end
+				if obj.m_story_id == 102 and has_alife_info("garbage_kamaz_bandit_2_102") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_kamaz_bandit_2_102")
+				end
+				if obj.m_story_id == 103 and has_alife_info("garbage_kamaz_bandit_3_103") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_kamaz_bandit_3_103")
+				end
+				if obj.m_story_id == 104 and has_alife_info("garbage_stalker_jurik_104") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_stalker_jurik_104")
+				end
+				if obj.m_story_id == 106 and has_alife_info("garbage_vasya_kaban_106") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_vasya_kaban_106")
+				end
+				if obj.m_story_id == 115 and has_alife_info("garbage_prapor_115") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_prapor_115")
+				end
+				if obj.m_story_id == 123 and has_alife_info("garbage_drug_serogo_123") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_drug_serogo_123")
+				end
+				if obj.m_story_id == 109 and has_alife_info("garbage_bandit_wounded_109") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("garbage_bandit_wounded_109")
+				end
+			end
+			
+			if level.name() == "l03_agroprom" then 
+				if obj.m_story_id == 54589 and has_alife_info("agroprom_stalker_in_kapterka_54589") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("agroprom_stalker_in_kapterka_54589")
+				end
+				if obj.m_story_id == 54590 and has_alife_info("agroprom_stalker_on_place_54590") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("agroprom_stalker_on_place_54590")
+				end
+				if obj.m_story_id == 54591 and has_alife_info("agroprom_stalker_in_dvor_54591") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("agroprom_stalker_in_dvor_54591")
+				end
+				if obj.m_story_id == 54592 and has_alife_info("agroprom_stalker_about_shlagbaum_54592") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("agroprom_stalker_about_shlagbaum_54592")
+				end
+				if obj.m_story_id == 54593 and has_alife_info("agroprom_military_in_dvor_54593") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("agroprom_military_in_dvor_54593")
+				end
+				if obj.m_story_id == 54594 and has_alife_info("agroprom_stalker_about_bochka_54594") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("agroprom_stalker_about_bochka_54594")
+				end
+			end
+			
+			if level.name() == "l03u_agr_underground" then 
+				if obj.m_story_id == 54595 and has_alife_info("agroprom_und_stalker_about_hatch_54595") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("agroprom_und_stalker_about_hatch_54595")
+				end
+				if obj.m_story_id == 350 and has_alife_info("agroprom_und_doctor_350") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("agroprom_und_doctor_350")
+				end
+			end
+			
+			if level.name() == "l04_darkvalley" then 
+				if obj.m_story_id == 437 and has_alife_info("darkvalley_bandit_with_rpg_437") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_with_rpg_437")
+				end
+				if obj.m_story_id == 54596 and has_alife_info("darkvalley_bandit_about_bullet_1_54596") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_about_bullet_1_54596")
+				end
+				if obj.m_story_id == 54597 and has_alife_info("darkvalley_bandit_about_bullet_2_54597") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_about_bullet_2_54597")
+				end
+				if obj.m_story_id == 54598 and has_alife_info("darkvalley_bandit_in_podval_on_stroika_54598") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_in_podval_on_stroika_54598")
+				end
+				if obj.m_story_id == 54599 and has_alife_info("darkvalley_stalker_on_azs_54599") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_stalker_on_azs_54599")
+				end
+				if obj.m_story_id == 54800 and has_alife_info("darkvalley_bandit_on_azs_54800") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_on_azs_54800")
+				end
+				if obj.m_story_id == 424 and has_alife_info("darkvalley_bandit_wounded_424") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_wounded_424")
+				end
+				if obj.m_story_id == 400 and has_alife_info("darkvalley_dolg_plennyi_400") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_dolg_plennyi_400")
+				end
+				if obj.m_story_id == 407 and has_alife_info("darkvalley_bandit_escort_1_407") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_escort_1_407")
+				end
+				if obj.m_story_id == 408 and has_alife_info("darkvalley_bandit_escort_2_408") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_escort_2_408")
+				end
+				if obj.m_story_id == 406 and has_alife_info("darkvalley_pulya_406") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_pulya_406")
+				end
+				if obj.m_story_id == 425 and has_alife_info("darkvalley_buryi_425") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_buryi_425")
+				end
+				if obj.m_story_id == 402 and has_alife_info("darkvalley_sergei_lohmatyi_402") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_sergei_lohmatyi_402")
+				end
+				if obj.m_story_id == 404 and has_alife_info("darkvalley_bandit_about_yama_1_404") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_about_yama_1_404")
+				end
+				if obj.m_story_id == 405 and has_alife_info("darkvalley_bandit_about_yama_2_405") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_about_yama_2_405")
+				end
+				if obj.m_story_id == 409 and has_alife_info("darkvalley_bandit_about_tunnel_409") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_bandit_about_tunnel_409")
+				end
+				if obj.m_story_id == 401 and has_alife_info("darkvalley_dolg_in_yama_401") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_dolg_in_yama_401")
+				end
+				if obj.m_story_id == 422 and has_alife_info("darkvalley_stalker_on_azs_422") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("darkvalley_stalker_on_azs_422")
+				end
+			end
+			
+			if level.name() == "l04u_labx18" then
+				if obj.m_story_id == 54801 and has_alife_info("x_18_stalker_about_lift_54801") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("x_18_stalker_about_lift_54801")
+				end
+				if obj.m_story_id == 450 and has_alife_info("x_18_ecolog_1_450") and has_alife_info("dar_door1_closed") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("x_18_ecolog_1_450")
+				end
+				if obj.m_story_id == 451 and has_alife_info("x_18_ecolog_2_451") and has_alife_info("dar_door2_closed") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("x_18_ecolog_2_451")
+				end
+				if obj.m_story_id == 54802 and has_alife_info("x_18_stalker_about_anomaly_54802") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("x_18_stalker_about_anomaly_54802")
+				end
+			end
+			
+			if level.name() == "l05_bar" then
+				if obj.m_story_id == 54803 and has_alife_info("bar_stalker_about_kamaz_54803") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_stalker_about_kamaz_54803")
+				end
+				if obj.m_story_id == 571 and has_alife_info("bar_arni_571") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_arni_571")
+				end
+				if obj.m_story_id == 510 and has_alife_info("bar_brom_510") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_brom_510")
+				end
+				if obj.m_story_id == 607 and has_alife_info("bar_lyisyii_607") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_lyisyii_607")
+				end
+				if obj.m_story_id == 515 and has_alife_info("bar_osvedomitel_515") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_osvedomitel_515")
+				end
+				if obj.m_story_id == 504 and has_alife_info("bar_ohotnik_504") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_ohotnik_504")
+				end
+				if obj.m_story_id == 505 and has_alife_info("bar_ivanzov_505") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_ivanzov_505")
+				end
+				if obj.m_story_id == 516 and has_alife_info("bar_plichko_516") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_plichko_516")
+				end
+				if obj.m_story_id == 518 and has_alife_info("bar_kizenko_518") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_kizenko_518")
+				end
+				if obj.m_story_id == 507 and has_alife_info("bar_voronin_507") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_voronin_507")
+				end
+				if obj.m_story_id == 506 and has_alife_info("bar_petrenko_506") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("bar_petrenko_506")
+				end
+			end
+			
+			if level.name() == "l06_rostok" then
+				if obj.m_story_id == 54804 and has_alife_info("rostok_ecolog_south_helicopter_1_54804") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_ecolog_south_helicopter_1_54804")
+				end
+				if obj.m_story_id == 54805 and has_alife_info("rostok_ecolog_south_helicopter_2_54805") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_ecolog_south_helicopter_2_54805")
+				end
+				if obj.m_story_id == 54806 and has_alife_info("rostok_ecolog_nord_helicopter_54806") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_ecolog_nord_helicopter_54806")
+				end
+				if obj.m_story_id == 54807 and has_alife_info("rostok_ecolog_in_tunnel_54807") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_ecolog_in_tunnel_54807")
+				end
+				if obj.m_story_id == 54808 and has_alife_info("rostok_ecolog_about_locomotiv_54808") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_ecolog_about_locomotiv_54808")
+				end
+				if obj.m_story_id == 54809 and has_alife_info("rostok_stalker_in_west_angar_54809") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_stalker_in_west_angar_54809")
+				end
+				if obj.m_story_id == 54810 and has_alife_info("rostok_stalker_in_ost_angar_1_54810") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_stalker_in_ost_angar_1_54810")
+				end
+				if obj.m_story_id == 54811 and has_alife_info("rostok_duty_in_ost_angar_54811") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_duty_in_ost_angar_54811")
+				end
+				if obj.m_story_id == 54812 and has_alife_info("rostok_stalker_in_ost_angar_2_54812") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_stalker_in_ost_angar_2_54812")
+				end
+				if obj.m_story_id == 54813 and has_alife_info("rostok_stalker_freeman_54813") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_stalker_freeman_54813")
+				end
+				if obj.m_story_id == 503 and has_alife_info("rostok_kruglov_503") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_kruglov_503")
+				end
+				if obj.m_story_id == 601 and has_alife_info("rostok_killer_1_601") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_killer_1_601")
+				end
+				if obj.m_story_id == 603 and has_alife_info("rostok_killer_2_603") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_killer_2_603")
+				end
+				if obj.m_story_id == 604 and has_alife_info("rostok_killer_3_604") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_killer_3_604")
+				end
+				if obj.m_story_id == 602 and has_alife_info("rostok_killer_4_602") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_killer_4_602")
+				end
+				if obj.m_story_id == 509 and has_alife_info("rostok_volkodav_509") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_volkodav_509")
+				end
+				if obj.m_story_id == 595 and has_alife_info("rostok_killer_5_595") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("rostok_killer_5_595")
+				end
+			end
+			
+			if level.name() == "l07_military" then
+				if obj.m_story_id == 54814 and has_alife_info("military_freedom_about_tower_1_54814") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_freedom_about_tower_1_54814")
+				end
+				if obj.m_story_id == 54815 and has_alife_info("military_freedom_about_tower_2_54815") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_freedom_about_tower_2_54815")
+				end
+				if obj.m_story_id == 54816 and has_alife_info("military_stalker_on_cemetery_nord_from_helicopter_54816") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_stalker_on_cemetery_nord_from_helicopter_54816")
+				end
+				if obj.m_story_id == 54817 and has_alife_info("military_duty_about_wall_54817") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_duty_about_wall_54817")
+				end
+				if obj.m_story_id == 54818 and has_alife_info("military_stalker_on_ost_from_pavlik_54818") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_stalker_on_ost_from_pavlik_54818")
+				end
+				if obj.m_story_id == 719 and has_alife_info("military_ara_719") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_ara_719")
+				end
+				if obj.m_story_id == 714 and has_alife_info("military_killer_1_714") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_killer_1_714")
+				end
+				if obj.m_story_id == 713 and has_alife_info("military_killer_2_713") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_killer_2_713")
+				end
+				if obj.m_story_id == 712 and has_alife_info("military_killer_3_712") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_killer_3_712")
+				end
+				if obj.m_story_id == 724 and has_alife_info("military_kep_724") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_kep_724")
+				end
+				if obj.m_story_id == 708 and has_alife_info("military_cherep_708") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_cherep_708")
+				end
+				if obj.m_story_id == 740 and has_alife_info("military_dolg_1_740") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_dolg_1_740")
+				end
+				if obj.m_story_id == 736 and has_alife_info("military_dolg_2_736") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_dolg_2_736")
+				end
+				if obj.m_story_id == 738 and has_alife_info("military_dolg_3_738") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_dolg_3_738")
+				end
+				if obj.m_story_id == 711 and has_alife_info("military_dolg_4_711") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_dolg_4_711")
+				end
+				if obj.m_story_id == 737 and has_alife_info("military_dolg_5_737") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_dolg_5_737")
+				end
+				if obj.m_story_id == 710 and has_alife_info("military_pavlik_710") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_pavlik_710")
+				end
+				if obj.m_story_id == 702 and has_alife_info("military_max_702") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_max_702")
+				end
+				if obj.m_story_id == 731 and has_alife_info("military_svoboda_1_731") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_svoboda_1_731")
+				end
+				if obj.m_story_id == 730 and has_alife_info("military_svoboda_2_730") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("svoboda_2_730")
+				end
+				if obj.m_story_id == 704 and has_alife_info("military_svoboda_3_704") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_svoboda_3_704")
+				end
+				if obj.m_story_id == 732 and has_alife_info("military_svoboda_4_732") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_svoboda_4_732")
+				end
+				if obj.m_story_id == 728 and has_alife_info("military_povar_728") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_povar_728")
+				end
+				if obj.m_story_id == 721 and has_alife_info("military_svoboda_patrol_1_721") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_svoboda_patrol_1_721")
+				end
+				if obj.m_story_id == 720 and has_alife_info("military_svoboda_patrol_2_720") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_svoboda_patrol_2_720")
+				end
+				if obj.m_story_id == 722 and has_alife_info("military_svoboda_patrol_3_722") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_svoboda_patrol_3_722")
+				end
+				if obj.m_story_id == 703 and has_alife_info("military_psih_703") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_psih_703")
+				end
+				if obj.m_story_id == 725 and has_alife_info("military_ugryumyi_725") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_ugryumyi_725")
+				end
+				if obj.m_story_id == 726 and has_alife_info("military_svoboda_krovososka_1_726") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_svoboda_krovososka_1_726")
+				end
+				if obj.m_story_id == 727 and has_alife_info("military_svoboda_krovososka_2_727") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_svoboda_krovososka_2_727")
+				end
+				if obj.m_story_id == 707 and has_alife_info("military_lukash_707") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_lukash_707")
+				end
+				if obj.m_story_id == 734 and has_alife_info("military_skryaga_734") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("military_skryaga_734")
+				end
+			end
+			
+			if level.name() == "l08_yantar" then
+				if obj.m_story_id == 922 and has_alife_info("yantar_military_on_factory_922") and has_alife_info("lukash_have_berill") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("yantar_military_on_factory_922")
+				end
+				if obj.m_story_id == 54819 and has_alife_info("yantar_stalker_in_tunnel_54819") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("yantar_stalker_in_tunnel_54819")
+				end
+				if obj.m_story_id == 903 and has_alife_info("yantar_ecolog_vasiliev_903") and has_alife_info("yan_find_laboratory_end") and has_alife_info("yan_kill_brain_done") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("yantar_ecolog_vasiliev_903")
+				end
+				if obj.m_story_id == 900 and has_alife_info("yantar_ecolog_kruglov_900") and has_alife_info("yan_find_laboratory_end") and has_alife_info("yan_kill_brain_done") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("yantar_ecolog_kruglov_900")
+				end
+				if obj.m_story_id == 905 and has_alife_info("yantar_ecolog_semenov_905") and has_alife_info("yan_find_laboratory_end") and has_alife_info("yan_kill_brain_done") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("yantar_ecolog_semenov_905")
+				end
+			end
+			
+			if level.name() == "l08u_brainlab" then
+				if obj.m_story_id == 918 and has_alife_info("x16_stalker_ghost_918") and has_alife_info("yan_x16_documents_gain") and has_alife_info("yan_kill_brain_done") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("x16_stalker_ghost_918")
+				end
+			end
+			
+			if level.name() == "l10_radar" then
+				if obj.m_story_id == 54820 and has_alife_info("radar_stalker_turn_on_pripyat_54820") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_stalker_turn_on_pripyat_54820")
+				end
+				if obj.m_story_id == 54821 and has_alife_info("radar_ecolog_out_grid_1_54821") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_ecolog_out_grid_1_54821")
+				end
+				if obj.m_story_id == 54822 and has_alife_info("radar_ecolog_in_grid_54822") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_ecolog_in_grid_54822")
+				end
+				if obj.m_story_id == 54823 and has_alife_info("radar_ecolog_out_grid_2_54823") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_ecolog_out_grid_2_54823")
+				end
+				if obj.m_story_id == 54824 and has_alife_info("radar_stalker_about_stones_54824") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_stalker_about_stones_54824")
+				end
+				if obj.m_story_id == 1075 and has_alife_info("radar_monolit_1_1075") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_monolit_1_1075")
+				end
+				if obj.m_story_id == 1074 and has_alife_info("radar_monolit_2_1074") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_monolit_2_1074")
+				end
+				if obj.m_story_id == 1071 and has_alife_info("radar_monolit_3_1071") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_monolit_3_1071")
+				end
+				if obj.m_story_id == 1072 and has_alife_info("radar_monolit_4_1072") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_monolit_4_1072")
+				end
+				if obj.m_story_id == 1073 and has_alife_info("radar_monolit_5_1073") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("radar_monolit_5_1073")
+				end
+			end
+			
+			if level.name() == "l11_pripyat" then
+				if obj.m_story_id == 806 and has_alife_info("pripyat_stalker_806") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("pripyat_stalker_806")
+				end
+				if obj.m_story_id == 809 and has_alife_info("pripyat_monolit_1_809") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("pripyat_monolit_1_809")
+				end
+				if obj.m_story_id == 828 and has_alife_info("pripyat_haron_828") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("pripyat_haron_828")
+				end
+				if obj.m_story_id == 808 and has_alife_info("pripyat_monolit_2_808") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("pripyat_monolit_2_808")
+				end
+				if obj.m_story_id == 821 and has_alife_info("pripyat_monolit_3_821") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("pripyat_monolit_3_821")
+				end
+			end
+			
+			if level.name() == "l12_stancia" then
+				if obj.m_story_id == 54825 and has_alife_info("stancia_military_forward_stela_54825") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_forward_stela_54825")
+				end
+				if obj.m_story_id == 54826 and has_alife_info("stancia_military_about_btr_54826") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_about_btr_54826")
+				end
+				if obj.m_story_id == 1104 and has_alife_info("stancia_military_1_1104") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_1_1104")
+				end
+				if obj.m_story_id == 1105 and has_alife_info("stancia_military_2_1105") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_2_1105")
+				end
+				if obj.m_story_id == 1106 and has_alife_info("stancia_military_3_1106") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_3_1106")
+				end
+				if obj.m_story_id == 1107 and has_alife_info("stancia_military_4_1107") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_4_1107")
+				end
+				if obj.m_story_id == 1103 and has_alife_info("stancia_military_5_1103") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_5_1103")
+				end
+				if obj.m_story_id == 1108 and has_alife_info("stancia_military_6_1108") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_6_1108")
+				end
+				if obj.m_story_id == 1110 and has_alife_info("stancia_military_7_1110") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_7_1110")
+				end
+				if obj.m_story_id == 1109 and has_alife_info("stancia_military_8_1109") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("stancia_military_8_1109")
+				end
+			end
+			
+			if level.name() == "jupiter" then
+				if obj.m_story_id == 54569 and has_alife_info("jupiter_stalker_dron_54569") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("jupiter_stalker_dron_54569")
+				end
+				if obj.m_story_id == 54570 and has_alife_info("jupiter_ecolog_dron_54570") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("jupiter_ecolog_dron_54570")
+				end
+				if obj.m_story_id == 54555 and has_alife_info("usach_death") then
+					alife():release(obj, true)
+				end
+				if obj.m_story_id == 54828 and has_alife_info("jupiter_stalker_grek_54828") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("jupiter_stalker_grek_54828")
+				end
+			end
+			
+			if level.name() == "red_forest" then
+				if obj.m_story_id == 54580 and has_alife_info("red_forest_stalker_corpse_1_54580") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("red_forest_stalker_corpse_1_54580")
+				end
+				if obj.m_story_id == 54581 and has_alife_info("red_forest_stalker_corpse_2_54581") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("red_forest_stalker_corpse_2_54581")
+				end
+				if obj.m_story_id == 54582 and has_alife_info("red_forest_stalker_corpse_3_54582") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("red_forest_stalker_corpse_3_54582")
+				end
+			end
+			
+			if level.name() == "cs_agroprom_underground" then
+				if obj.m_story_id == 54568 and has_alife_info("catacombs_ecolog_54568") and has_alife_info("komandor_second_talk") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("catacombs_ecolog_54568")
+				end
+			end
+			
+			if level.name() == "peshera" then
+				if obj.m_story_id == 54548 and has_alife_info("kolobok_death") then
+					alife():release(obj, true)
+				end
+				if obj.m_story_id == 54827 and has_alife_info("peshera_stalker_54827") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("peshera_stalker_54827")
+				end
+			end
+			
+			if level.name() == "zaton" then
+				if obj.m_story_id == 54532 and has_alife_info("zaton_glaz_54532") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("zaton_glaz_54532")
+				end
+				if obj.m_story_id == 54563 and has_alife_info("zaton_dal_54563") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("zaton_dal_54563")
+				end
+				if obj.m_story_id == 54564 and has_alife_info("zaton_shah_54564") then
+					alife():release(obj, true)
+					db.actor:disable_info_portion("zaton_shah_54564")
+				end
+			end
+		end
+	end
 end

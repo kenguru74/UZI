@@ -386,9 +386,9 @@ function check_use_Spichki(p_obj)
 			for id=0, 65535 do
 				obj = level.object_by_id(id)
 				if obj ~= nil and obj:section() == "koster" then
-					local	objPos = obj:position()
-					local	objLvid = obj:level_vertex_id()
-					local	objGvid = obj:game_vertex_id()
+					local objPos = obj:position()
+					local objLvid = obj:level_vertex_id()
+					local objGvid = obj:game_vertex_id()
 					
 					if obj:position():distance_to(db.actor:position()) < 3 then
 						alife():create("light_koster", objPos, objLvid, objGvid)
@@ -402,7 +402,7 @@ function check_use_Spichki(p_obj)
 				alife():create("light_koster", pos, 3, db.actor:game_vertex_id())
 			end
 			
-			amk.g_start_timer("koster",0, 1, 0)
+			amk.g_start_timer("koster",0, 0, 30)
 		end
 		
 		if p_obj and (p_obj:section() == "spichki") then

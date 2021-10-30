@@ -780,11 +780,10 @@ function __do_timer_action(select_string,params_string)
 			g_start_timer("water5",0, 0.6, 0)
 		end
 	end
+	
 -- Если костёр прогорел
 	if select_string=="koster" then
 		local id, obj
-		
-		del_variable("koster")
 		
 		for id=0, 65535 do
 			obj = level.object_by_id(id)
@@ -792,8 +791,6 @@ function __do_timer_action(select_string,params_string)
 			if obj ~= nil and obj:section() == "koster" then
 				if obj:position():distance_to(db.actor:position()) > 50 then
 					alife():release(alife():object(id), true)
-				else
-					g_start_timer("koster",0, 1, 0)
 				end
 			end
 			
@@ -801,6 +798,10 @@ function __do_timer_action(select_string,params_string)
 				alife():release(alife():object(id), true)
 			end
 		end
+		
+		del_variable("koster")
+		
+		g_start_timer("koster",0, 0, 30)
 	end
 end
 
