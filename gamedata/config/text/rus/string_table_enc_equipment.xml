@@ -370,30 +370,6 @@
 	<string id="sandwich">
 		<text>Бутерброд</text>
 	</string>
-	<string id="milk">
-		<text>Молоко</text>
-	</string>
-	<string id="enc_equipment_food_milk">
-		<text>Молоко - оно и в Африке молоко.</text>
-	</string>
-	<string id="bp">
-		<text>БП</text>
-	</string>
-	<string id="enc_equipment_food_bp">
-		<text>Это БП.</text>
-	</string>
-	<string id="frutto">
-		<text>Фрутто</text>
-	</string>
-	<string id="enc_equipment_food_frutto">
-		<text>Фрутто</text>
-	</string>
-	<string id="myaso">
-		<text>Мясо</text>
-	</string>
-	<string id="enc_equipment_food_myaso">
-		<text>Мясо</text>
-	</string>
 	
 	<string id="item_zapiska_klyk1_name">
 		<text>1-я записка Стрелку</text>
@@ -414,10 +390,13 @@
 		<text>Записка на обратной стороне старого документа: "Стрелок, у меня хреновые новости. Если ты здесь - значит, ищешь меня. Если поспеешь, найдёшь меня в указанном месте, карту прилагаю. Маячок возьми обязательно. Клык".</text>
 	</string>
 	<string id="flaska_name">
-		<text>Вода</text>
+		<text>Бутылка воды</text>
+	</string>
+	<string id="flaska_half">
+		<text>Полбутылки воды</text>
 	</string>
 	<string id="flaska_desc">
-		<text>Чистая питьевая вода. В Зоне нет её источников - поэтому сталкерам приходится покупать привозную. Очень удобно, что она в бутылках по 0.5, которые можно распределить в рюкзаке, подсумках и разгрузке, не боясь потерять драгоценный запас разом. Помимо утоления жажды она придаёт около 5% энергии и немного снимает похмелье.</text>
+		<text>Пластиковая бутылка чистой питьевой воды. В Зоне нет её источников - поэтому сталкерам приходится покупать привозную. Очень удобно, что она в бутылках по 0.5, которые можно распределить в рюкзаке, подсумках и разгрузке, не боясь потерять драгоценный запас разом. Помимо утоления жажды она придаёт около 5% энергии и немного снимает похмелье.</text>
 	</string>
 	<string id="item_zapiska_klyk3_name">
 		<text>Информация Клыка</text>
