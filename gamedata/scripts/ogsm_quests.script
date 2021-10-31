@@ -318,7 +318,7 @@ end
 
 -- Функция сушняка, довёл до ума kenguru
 
--- Употребление чистой воды и чая, дважды снимающих жажду, с возвратом полупустой тары
+-- Употребление чистой воды и чая, дважды снимающих жажду, с возвратом тары
 function check_use_water(p_obj)
 	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
 	else
@@ -354,7 +354,7 @@ end
 function check_use_wet_foods(p_obj)
 	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
 	else
-		if p_obj and ((p_obj:section() == "beer") or (p_obj:section() == "sok") or (p_obj:section() == "energy_drink") or (p_obj:section() == "milk") or (p_obj:section() == "chaek") or (p_obj:section() == "olives") or (p_obj:section() == "sup") or (p_obj:section() == "irp") or (p_obj:section() == "irp_two") or (p_obj:section() == "irp_one")) then
+		if p_obj and ((p_obj:section() == "beer") or (p_obj:section() == "sok") or (p_obj:section() == "energy_drink") or (p_obj:section() == "chaek") or (p_obj:section() == "olives") or (p_obj:section() == "sup") or (p_obj:section() == "irp") or (p_obj:section() == "irp_two") or (p_obj:section() == "irp_one")) then
 			napilsya()
 		end
 	end
@@ -447,13 +447,17 @@ function check_use_Chay(p_obj)
 					if obj ~= nil and ((obj:section() == "light_koster") or (string.find(obj:section(), "_fire_") or (string.find(obj:section(), "_flame_")))) then
 						local	objPos = obj:position()
 						
-						if objPos:distance_to(db.actor:position()) < 1.6 then
+						if objPos:distance_to(db.actor:position()) < 2 then
 							light_koster_esty = true
 						end
 					end
 				end
 				
 				if light_koster_esty then
+					local flaska_delete = false
+					local termos_delete = false
+					local chay_delete = false
+					
 					flaska_delete = amk.remove_item_from_inventory_by_name("flaska",db.actor)
 					termos_delete = amk.remove_item_from_inventory_by_name("termos_e", db.actor)
 					chay_delete = amk.remove_item_from_inventory_by_name("chay", db.actor )
@@ -462,7 +466,7 @@ function check_use_Chay(p_obj)
 						alife():create("termos_f",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
 					end
 				else
-					local text = "Нет костра поблизости!"
+					local text = "Нет костра поблизости, либо огонь слабоват!"
 					db.actor:give_game_news(text, "", Frect():set(498,47,83,47), 0, 13000)
 				end
 			elseif flaska_esty then
