@@ -2,16 +2,16 @@ function lootmoney(npc)
 	local sec = npc:section()
 	if not string.find(sec, "arena") and not string.find(sec, "aem") and npc:character_community() ~= "arena_enemy" then
 		local npc_rank, money, deadmoney = ranks.get_obj_rank_name(npc), npc:money(), 0
-		if npc_rank == "novice" and money >= 400 then
-			deadmoney = deadmoney + math.random(25, 400)
-		elseif npc_rank == "experienced" and money >= 500 then
-			deadmoney = deadmoney + math.random(50, 500)
-		elseif npc_rank == "veteran" and money >= 600 then
-			deadmoney = deadmoney + math.random(100, 600)
-		elseif npc_rank == "master" and money >= 700 then
-			deadmoney = deadmoney + math.random(200, 700)
+		if npc_rank == "novice" and money >= 40 then
+			deadmoney = deadmoney + math.random(5, 20)
+		elseif npc_rank == "experienced" and money >= 60 then
+			deadmoney = deadmoney + math.random(10, 40)
+		elseif npc_rank == "veteran" and money >= 80 then
+			deadmoney = deadmoney + math.random(15, 60)
+		elseif npc_rank == "master" and money >= 100 then
+			deadmoney = deadmoney + math.random(20, 80)
 		elseif npc_rank == "legend" and money >= 1000 then
-			deadmoney = deadmoney + math.random(500, 1000)
+			deadmoney = deadmoney + math.random(200, 100)
 		end
 		if deadmoney > 0 then
 			db.actor:give_money(deadmoney)
