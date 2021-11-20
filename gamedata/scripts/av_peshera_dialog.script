@@ -1,9 +1,9 @@
 function have_strelok_money(actor, npc)
-	return actor:money() >= 1500000
+	return actor:money() >= 5000
 end
 
 function give_cheburek_money(actor, npc)
-	dialogs.relocate_money(actor, 1500000, "out")
+	dialogs.relocate_money(actor, 5000, "out")
 end
 
 function find_av_peshera()

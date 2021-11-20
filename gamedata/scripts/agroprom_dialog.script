@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------------------
 function sell_krot_flash(first_speaker, second_speaker)
 	first_speaker:transfer_item(first_speaker:object("krot_flash"), second_speaker)
-    second_speaker:transfer_money(2000, first_speaker)
+    second_speaker:transfer_money(1000, first_speaker)
 end
 
 function sell_krot_flash_to_friend(first_speaker, second_speaker)
@@ -16,7 +16,7 @@ function krot_give_flash(first_speaker, second_speaker)
 end
 
 function give_krot_reward (first_speaker, second_speaker)
-		dialogs.relocate_money(second_speaker, 3000, "in")
+		dialogs.relocate_money(second_speaker, 1000, "in")
 end
 
 -- Крот
@@ -32,8 +32,8 @@ function has_30_money(first_speaker, second_speaker)
 	return first_speaker:money() >= 30
 end
 
-function has_25000_money(first_speaker, second_speaker)
-	return first_speaker:money() >= 25000
+function has_2000_money(first_speaker, second_speaker)
+	return first_speaker:money() >= 2000
 end
 
 function not_has_30_money(first_speaker, second_speaker)
@@ -46,11 +46,11 @@ function give_30_money_to_stalker_for_info_about_ratcatcher(first_speaker, secon
 end
 
 function give_ratcatcher_money(actor, npc)	
-	dialogs.relocate_money(npc, 25000, "out")
+	dialogs.relocate_money(npc, 2000, "out")
 end
 
 function take_agroprom_documents(first_speaker, second_speaker)
-        second_speaker:transfer_money(25000, first_speaker)
+        second_speaker:transfer_money(2000, first_speaker)
 	dialogs.relocate_item_section(second_speaker, "quest_case_02", "in")
 end
 

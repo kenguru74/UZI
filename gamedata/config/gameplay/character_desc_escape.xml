@@ -48,7 +48,8 @@
 		<supplies>
 			[spawn] \n
 			wpn_aps_sk2 \n
-			wpn_ak74m_m1 = 1, scope \n
+                        ammo_9x18_pmm \n
+			wpn_ak74m = 1, scope \n
 			ammo_5.45x39_ap = 1 \n
 			device_torch \n
 			hand_radio \n
@@ -85,7 +86,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_aps_sk2 \n
-			ammo_9x18_pbp = 1 \n
+			ammo_9x18_pmm = 1 \n
 			wpn_ak74m = 1, launcher \n
 			ammo_5.45x39_ap = 1 \n
                         ammo_vog-25 = 2 \n
@@ -287,8 +288,8 @@
 		<visual>actors\bandit\stalker_bandit_4</visual>
 		<supplies>
 			[spawn] \n
-                        wpn_ak74u \n
-                        ammo_5.45x39_fmj = 1 \n
+                        wpn_bizon \n
+                        ammo_9x18_pmm = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -380,8 +381,9 @@
 		<visual>actors\novice\green_stalker_2</visual>
 		<supplies>
 			[spawn] \n
-                        wpn_spas12 \n
+                        wpn_wincheaster1300 \n
                         ammo_12x76_zhekan = 1 \n
+                        ammo_12x70_buck = 1 \n
                         grenade_rgd5 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -443,7 +445,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_toz34 \n
-                        ammo_12x76_zhekan = 1 \n
+                        ammo_12x70_buck = 1 \n
 #include "gameplay\character_items.xml" \n
 		
 		</supplies>
@@ -1042,7 +1044,9 @@
 		<supplies>
 			[spawn] \n
 			wpn_mp444_sk1 \n
+                        ammo_9x18_pbp = 1\n
 			wpn_ak74m = 1, launcher, scope, silencer \n
+                        ammo_5.45x39_ap = 1 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml" \n
 						

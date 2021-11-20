@@ -13,7 +13,7 @@ function give_agroprom_documents(first_speaker, second_speaker)
 end
 
 function give_agroprom_reward(first_speaker, second_speaker)
-	dialogs.relocate_money(second_speaker, 50000, "in")
+	dialogs.relocate_money(second_speaker, 500, "in")
 end
 
 function give_extra_task(actor, npc)
@@ -97,7 +97,7 @@ function give_darklab_documents(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "dar_document4", "out")
 end
 function give_darklab_reward(first_speaker, second_speaker)
-	dialogs.relocate_money(second_speaker, 10000, "in")
+	dialogs.relocate_money(second_speaker, 800, "in")
 end
 
 -- Документы с Янтаря
@@ -118,7 +118,7 @@ function give_x16_documents(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "lab_x16_documents", "out")
 end
 function give_x16_reward(first_speaker, second_speaker)
-	dialogs.relocate_money(second_speaker, 15000, "in")
+	dialogs.relocate_money(second_speaker, 1000, "in")
 end
 
 -- Выдача задания на отключение радара
@@ -147,7 +147,7 @@ end
 function actor_transfer_research(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "bar_ecolog_flash", "out")
 	if has_alife_info("bar_rescue_research_reward") then
-        dialogs.relocate_money(second_speaker, 5000, "in")
+        dialogs.relocate_money(second_speaker, 500, "in")
     end
 end
 
@@ -181,33 +181,33 @@ function give_hunters_toz(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "hunters_toz", "out")
 end
 function have_hunter_reward(first_speaker, second_speaker)
-	dialogs.relocate_money(second_speaker, 4000, "in")
+	dialogs.relocate_money(second_speaker, 400, "in")
 end
 
 
 -- Оплата информации осведомителю.
 function has_money_for_informer_1(actor, npc)
-	return actor:money() >= 4000
+	return actor:money() >= 400
 end
 
 function give_money_for_informer_1(actor, npc)
-	dialogs.relocate_money(npc, 4000, "out")
+	dialogs.relocate_money(npc, 400, "out")
 end
 
 function has_money_for_informer_2(actor, npc)
-	return actor:money() >= 2000
+	return actor:money() >= 200
 end
 
 function give_money_for_informer_2(actor, npc)	
-	dialogs.relocate_money(npc, 2000, "out")
+	dialogs.relocate_money(npc, 200, "out")
 end
 
 function has_money_for_informer_3(actor, npc)
-	return actor:money() >= 3500
+	return actor:money() >= 350
 end
 
 function give_money_for_informer_3(actor, npc)	
-	dialogs.relocate_money(npc, 3500, "out")
+	dialogs.relocate_money(npc, 350, "out")
 end
 
 function barman_give_outfit(first_speaker, second_speaker)
@@ -333,24 +333,24 @@ end
 
 -- Гарик
 function has_2500_money(first_speaker, second_speaker)
-	return first_speaker:money() >= 2500
+	return first_speaker:money() >= 500
 end
 
 function give_garik_money(actor, npc)	
-	dialogs.relocate_money(npc, 2500, "out")
+	dialogs.relocate_money(npc, 500, "out")
 end
 
 -- Осведомитель
-function has_osvedomitel_30000(actor, npc)
-	return actor:money() >= 30000
+function has_osvedomitel_300(actor, npc)
+	return actor:money() >= 300
 end
 
-function has_osvedomitel__30000(actor, npc)
-	return actor:money() < 30000
+function has_osvedomitel__300(actor, npc)
+	return actor:money() < 300
 end
 
-function pay_30000(actor, npc)
-	dialogs.relocate_money(npc, 30000, "out")	
+function pay_300(actor, npc)
+	dialogs.relocate_money(npc, 300, "out")	
 end
 
 function take_gen_secrets()
@@ -359,20 +359,20 @@ function take_gen_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("gen_treasure_3")
 end
 
-function has_osvedomitel_90000(actor, npc)
-	return actor:money() >= 90000
+function has_osvedomitel_900(actor, npc)
+	return actor:money() >= 600
 end
 
-function pay_90000(actor, npc)
-	dialogs.relocate_money(npc, 90000, "out")	
+function pay_900(actor, npc)
+	dialogs.relocate_money(npc, 900, "out")	
 end
 
-function has_osvedomitel__90000(actor, npc)
-	return actor:money() < 90000
+function has_osvedomitel__900(actor, npc)
+	return actor:money() < 900
 end
 
-function has_osvedomitel_90000(actor, npc)
-	return actor:money() >= 90000
+function has_osvedomitel_900(actor, npc)
+	return actor:money() >= 900
 end
 
 function take_aver_secrets()
@@ -387,12 +387,12 @@ function take_aver_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_9")
 end
 
-function has_osvedomitel_130000(actor, npc)
-	return actor:money() >= 130000
+function has_osvedomitel_1300(actor, npc)
+	return actor:money() >= 1300
 end
 
-function pay_130000(actor, npc)
-	dialogs.relocate_money(npc, 130000, "out")
+function pay_1300(actor, npc)
+	dialogs.relocate_money(npc, 1300, "out")
 end
 
 function take_lim_secrets()
@@ -411,16 +411,16 @@ function take_lim_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_13")
 end
 
-function has_osvedomitel__130000(actor, npc)
-	return actor:money() < 130000
+function has_osvedomitel__500(actor, npc)
+	return actor:money() < 500
 end
 
-function has_osvedomitel_50000(actor, npc)
-	return actor:money() >= 50000
+function has_osvedomitel_500(actor, npc)
+	return actor:money() >= 500
 end
 
-function pay_50000(actor, npc)
-	dialogs.relocate_money(npc, 50000, "out")
+function pay_500(actor, npc)
+	dialogs.relocate_money(npc, 500, "out")
 end
 
 function take_pred_secrets()
@@ -431,8 +431,8 @@ function take_pred_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_5")
 end
 
-function has_osvedomitel__50000(actor, npc)
-	return actor:money() < 50000
+function has_osvedomitel__300(actor, npc)
+	return actor:money() < 300
 end
 
 function take_puz_secrets()
@@ -459,12 +459,12 @@ function take_put_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("put_treasure_3")
 end
 
-function has_osvedomitel_60000(actor, npc)
-	return actor:money() >= 60000
+function has_osvedomitel_600(actor, npc)
+	return actor:money() >= 600
 end
 
-function pay_60000(actor, npc)
-	dialogs.relocate_money(npc, 60000, "out")
+function pay_600(actor, npc)
+	dialogs.relocate_money(npc, 600, "out")
 end
 
 function take_zat_secrets()
@@ -476,8 +476,8 @@ function take_zat_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("zat_treasure_6")
 end
 
-function has_osvedomitel__60000(actor, npc)
-	return actor:money() < 60000
+function has_osvedomitel__500(actor, npc)
+	return actor:money() < 500
 end
 
 function take_lost_secrets()
@@ -501,5 +501,5 @@ function take_kat_secrets()
 end
 
 function pay_for_o_sosnanie(actor, npc)
-	dialogs.relocate_money(actor, 1500000, "in")
+	dialogs.relocate_money(actor, 5000, "in")
 end

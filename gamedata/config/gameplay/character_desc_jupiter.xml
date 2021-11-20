@@ -86,7 +86,7 @@
 		<visual>actors\stalker_neutral\stalker_neutral_2_face_8</visual>
 		<supplies>
 			[spawn] \n
-			wpn_ak103 \n
+			wpn_ak104 \n
 			ammo_7.62x39_ap = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -418,7 +418,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_sayga12k_sk2 = 1, scope \n
-			ammo_12x76_dart = 3 \n
+			ammo_12x76_dart = 1 \n
                         ammo_12x76_zhekan = 1 \n
                         ammo_12x70_buck = 1 \n
 			device_torch \n
@@ -885,8 +885,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_ak74m = 1, launcher \n
-                        ammo_vog-25 = 4 \n
-			ammo_5.45x39_ap = 1 \n
+			ammo_5.45x39_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 		
@@ -917,7 +916,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_ak103 = 1, scope \n
-			ammo_7.62x39_ap = 1 \n
+			ammo_7.62x39_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 		
@@ -1136,8 +1135,9 @@
 			[spawn] \n
 			wpn_mp444_sk1 \n
 			ammo_9x18_fmj = 10 \n
-			wpn_ak105 \n
+			wpn_ak74u \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -1233,6 +1233,7 @@
 			ammo_9x18_pmm = 10 \n
 			wpn_ak74u \n
                         ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -1384,7 +1385,8 @@
 			wpn_mp5 \n
                         ammo_9x19_fmj = 20 \n
 			device_torch \n
-		
+		         grenade_rgd5 = 2 \n
+
 #include "gameplay\character_drugs.xml"
 		</supplies>
 		
@@ -1445,6 +1447,7 @@
 			[spawn] \n
                         wpn_wincheaster1300 \n
                         ammo_12x76_zhekan = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -1508,6 +1511,7 @@
 			ammo_9x18_fmj = 10 \n
 			wpn_ak74u \n
                         ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -1538,6 +1542,7 @@
 			[spawn] \n
 			wpn_sayga12k_sk1 \n
 			ammo_12x76_zhekan = 1 \n
+                          grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -1599,6 +1604,7 @@
 			[spawn] \n
 			wpn_sayga12k_sk1 \n
 			ammo_12x76_zhekan = 1 \n
+                         grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
