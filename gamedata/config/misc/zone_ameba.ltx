@@ -1,10 +1,11 @@
+;----------- Аномалия Амеба -----------------------
 [zone_ameba]
 GroupControlSection = spawn_group_zone
 $spawn = "zones\ameba"
 class = Z_AMEBA
 visual = physics\anomaly\anomaly_hvatalka
 
-hit_impulse_scale = 0.
+hit_impulse_scale = 0.0
 effective_radius = 0.75 ;размер радиуса в процентах от оригинального, где действует зона
 max_velocity_in_zone= 0.5
 sound = zone_mosquito_bald
@@ -13,18 +14,18 @@ postprocess = postprocess_new
 ef_anomaly_type = 1
 ef_weapon_type = 13
 
-artefacts =
-BirthProbability = 0.0
+artefacts = af_rusty_thorn, 0.6, af_rusty_kristall, 0.4, af_rusty_sea-urchin,0.05
+BirthProbability = 0.1
 
 ;----------- Anomaly settings -----------------------
-min_start_power = 90
-max_start_power = 100
+min_start_power = 0.9
+max_start_power = 1
 attenuation = 1
 period = 1
-min_artefact_count = 0
-max_artefact_count = 0
-artefact_spawn_idle = 24
-artefact_spawn_rnd = 0
+min_artefact_count = 1
+max_artefact_count = 2
+artefact_spawn_idle = 48
+artefact_spawn_rnd = 15
 
 hit_type = explosion
 
@@ -75,4 +76,4 @@ spawn_blowout_artefacts = off
 artefact_spawn_probability = 0.0
 
 throw_out_power = 50
-artefact_spawn_height = 3
+artefact_spawn_height = 1 ;(м) высота на центром зоны где будет рожден артефакт

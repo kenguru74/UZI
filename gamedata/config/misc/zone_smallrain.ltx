@@ -1,7 +1,7 @@
 ; очаговый туман. За основу взята работа мастеров из ОГСЕ
 [zone_smallrain]
 GroupControlSection = spawn_group_zone
-$spawn = "zones\zone smallrain"
+$spawn = "zones\zone_smallrain"
 $prefetch = 16
 class = ZS_ICE
 
@@ -85,7 +85,7 @@ blowout_wind_power = 0.9
 spawn_blowout_artefacts = off
 
 [zone_smallrain_weak]:zone_smallrain
-$spawn = "zones\smallrain weak"
+$spawn = "zones\zone_smallrain_weak"
 artefacts =
 BirthProbability = 0.0
 
@@ -97,11 +97,9 @@ period = 1
 min_artefact_count = 0
 max_artefact_count = 0
 
-
-
 ; двигающаяся дымка
 [zone_smallrain_average]:zone_smallrain
-$spawn = "zones\smallrain average"
+$spawn = "zones\zone_smallrain_average"
 artefacts =
 BirthProbability = 0.0
 
@@ -124,7 +122,6 @@ period = 1
 min_artefact_count = 0
 max_artefact_count = 0
 
-;idle_particles = a_ufp_particles\fog_move
 blowout_particles = a_ufp_particles\fog_move
 
 idle_sound = ambient\random\rt_sickened1
@@ -179,7 +176,7 @@ blowout_wind_power = 0.9
 
 ; Очаговый дым
 [zone_smallrain_strong]:zone_smallrain
-$spawn = "zones\zone smallrain strong"
+$spawn = "zones\zone_smallrain_strong"
 artefacts =
 BirthProbability = 0.0
 
@@ -196,7 +193,6 @@ sound = zone_mosquito_bald
 
 hit_type = chemical_burn
 
-;idle_particles = a_ufp_particles\smoke_anomalie_idle
 blowout_particles = a_ufp_particles\smoke_anomalie_blow
 
 hit_small_particles = a_ufp_particles\smoke_anomalie_hit
@@ -239,3 +235,31 @@ idle_light_range = 2
 idle_light_range_delta = 0.2
 idle_light_anim = koster_01
 idle_light_height = 1.5
+
+[noartf_smallrain_weak]:zone_smallrain_weak
+$spawn = "zones\smallrain_weak_noartf"
+idle_particles = a_ufp_particles\fog_ground
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+[noartf_smallrain_average]:zone_smallrain_average
+$spawn = "zones\zone_smallrain_average_noartf"
+idle_particles = a_ufp_particles\fog_move
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+[noartf_smallrain_strong]:zone_smallrain_strong
+$spawn = "zones\zone_smallrain_strong_noartf"
+idle_particles = a_ufp_particles\smoke_anomalie_idle
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+

@@ -1,3 +1,4 @@
+;----------- Аномалия Тополиный пух -----------------------
 [zone_burning_fuzz]
 GroupControlSection = spawn_group_zone
 $spawn = "zones\burning fuzz"
@@ -18,19 +19,19 @@ artefacts = af_rusty_thorn,0.2, af_rusty_kristall, 0.6, af_rusty_sea-urchin, 0.2
 BirthProbability = 0.1
 
 ;----------- Anomaly settings -----------------------
-min_start_power = 1 ;0.99 ;0.14
-max_start_power = 5 ;1.0 ;0.15
+min_start_power = 0.2
+max_start_power = 0.4
 attenuation = 1
 period = 1
 min_artefact_count = 0
 max_artefact_count = 1
-artefact_spawn_idle = 24
+artefact_spawn_idle = 48
 artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
 
 
 hit_type = chemical_burn
 
-;idle_particles = anomaly2\pux_idle
+idle_particles = anomaly2\pux_idle
 blowout_particles = anomaly2\pux_blast
 
 idle_small_particles = anomaly2\pux_damage_smoke_01
@@ -64,18 +65,19 @@ visible_by_detector = on
 blowout_wind = off
 
 throw_out_power = 50
-artefact_spawn_height = 3
+artefact_spawn_height = 1 ;(м) высота на центром зоны где будет рожден артефакт
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;рождение артефактов во время срабатывания
-spawn_blowout_artefacts = on
+spawn_blowout_artefacts = off
 artefact_spawn_probability = 0.15
 
 
 [zone_burning_fuzz_strong]:zone_burning_fuzz
 $spawn = "zones\burning fuzz strong"
 
-min_speed_to_react = 1.00 ; 1.00 < 2.00
+min_speed_to_react = 1.00
+
 ;----------- Anomaly settings -----------------------
-min_start_power = 2 ;1.99
-max_start_power = 6 ;2.00
+min_start_power = 0.99
+max_start_power = 1.0
