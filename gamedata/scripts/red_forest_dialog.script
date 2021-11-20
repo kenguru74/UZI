@@ -8,7 +8,7 @@ end
 
 function mosin_bring(first_speaker, second_speaker)
    dialogs.relocate_item_section(first_speaker, "wpn_m1891_lesnik", "out")
-   dialogs.relocate_money(first_speaker, 300000, "in")
+   dialogs.relocate_money(first_speaker, 1000, "in")
    first_speaker:set_relation(game_object.friend, second_speaker)
    db.actor:set_character_rank(db.actor:character_rank() + 25)
 end

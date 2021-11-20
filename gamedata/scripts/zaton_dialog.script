@@ -124,6 +124,6 @@ function jo_give_things3(first_speaker, second_speaker)
 end
 
 function jo_give_things4(actor, npc)
-   dialogs.relocate_money(actor, 10000, "in")
+   dialogs.relocate_money(actor, 500, "in")
    db.actor:set_character_rank(db.actor:character_rank() + 15)
 end

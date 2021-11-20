@@ -1,22 +1,22 @@
 --' Солдаты на блокпосте
 function has_soldiers_bribe(actor, npc)
-	return actor:money() >= 5000
+	return actor:money() >= 500
 end
 
 function give_soldiers_bribe(actor, npc)
-	dialogs.relocate_money(npc, 5000, "out")	
+	dialogs.relocate_money(npc, 1000, "out")	
 end
 
-function has_10000(actor, npc)
-	return actor:money() >= 10000
+function has_1000(actor, npc)
+	return actor:money() >= 1000
 end
 
-function has__10000(actor, npc)
-	return actor:money() < 10000
+function has__1000(actor, npc)
+	return actor:money() < 1000
 end
 
-function give_10000(actor, npc)
-	dialogs.relocate_money(npc, 10000, "out")	
+function give_1000(actor, npc)
+	dialogs.relocate_money(npc, 1000, "out")	
 end
 
 function start_time()
@@ -85,12 +85,12 @@ function chuchelnik_hand_bring(first_speaker, second_speaker)
    db.actor:set_character_rank(db.actor:character_rank() + 40)
 end
 
-function has_2500_money(first_speaker, second_speaker)
-	return first_speaker:money() >= 2500
+function has_200_money(first_speaker, second_speaker)
+	return first_speaker:money() >= 200
 end
 
 function give_borzii_money(actor, npc)	
-	dialogs.relocate_money(npc, 2500, "out")
+	dialogs.relocate_money(npc, 200, "out")
 end
 
 --'  Спавн документов в экспериментальном цехе
@@ -107,8 +107,8 @@ function send_money(actor, npc)
         db.actor:set_character_rank(db.actor:character_rank() + 100)
 end
 
-function give_2000(actor, npc)
-   dialogs.relocate_money(actor, 2000, "out")
+function give_200(actor, npc)
+   dialogs.relocate_money(actor, 200, "out")
    local robj = alife():object("jupiter_bet_vanna")
    if robj then
      level.map_add_object_spot_ser(robj.id, "uzi_spot_max", "Примерное место поиска аномальной пушки")
