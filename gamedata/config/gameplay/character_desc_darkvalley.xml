@@ -109,8 +109,8 @@
 		<supplies>
 			[spawn] \n
 			device_torch \n
-                        wpn_ak74u \n
-			ammo_5.45x39_fmj = 1 \n
+                        wpn_bizon \n
+			ammo_9x18_pmm = 1 \n
 #include "gameplay\character_items.xml"
 		
 #include "gameplay\character_drugs.xml"
@@ -167,8 +167,8 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_ak74u \n
-			ammo_5.45x39_fmj = 1 \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 1 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -220,8 +220,9 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_ak105 \n
-			ammo_5.45x39_fmj = 1 \n
+			wpn_sayga12k_sk1 \n
+			ammo_12x70_buck = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
 		
@@ -252,6 +253,7 @@
 			[spawn] \n
 			wpn_ak74u = 1, 0, 1, 0 \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -281,6 +283,7 @@
 			[spawn] \n
 			wpn_ak74u = 1, 0, 1, 0 \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -308,10 +311,9 @@
 		<crouch_type>1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_mp444_sk2 \n
-			ammo_9x19_fmj \n
-			wpn_ak105 \n
-			ammo_5.45x39_fmj = 1 \n
+			wpn_wincheaster1300 \n
+			ammo_12x70_buck = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -344,6 +346,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_ak105 \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
 		
@@ -376,6 +379,7 @@
 			ammo_9x18_pmm \n
 			wpn_ak105 \n
 			ammo_5.45x39_ap = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -407,6 +411,7 @@
 			ammo_9x18_fmj \n
 			wpn_ak105 \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -437,6 +442,7 @@
 			[spawn] \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n
+                         grenade_rgd5 = 2 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -1063,10 +1069,9 @@
 		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
-			wpn_mp444_sk1 \n
-			ammo_9x18_pmm \n
                         wpn_ak74u \n
                         ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
 		
@@ -1099,6 +1104,7 @@
                         wpn_wincheaster1300 \n
                         ammo_12x70_buck	= 4 \n
                         ammo_12x76_zhekan = 1 \n
+                        grenade_rgd5 = 2 \n
 			device_torch \n		
 		
 #include "gameplay\character_drugs.xml"
@@ -1129,8 +1135,8 @@
 			[spawn] \n
 			wpn_mp444_sk1 \n
 			ammo_9x18_pmm \n
-                        wpn_ak74u \n
-                        ammo_5.45x39_ap = 1 \n
+                        wpn_bizon \n
+                        ammo_9x18_pmm = 1 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -1164,7 +1170,8 @@
 			device_torch \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n
-		
+		        grenade_rgd5 = 2 \n
+
 #include "gameplay\character_drugs.xml"
 		</supplies>
 		

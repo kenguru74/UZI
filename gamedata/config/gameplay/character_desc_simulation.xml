@@ -235,7 +235,7 @@
 		<visual>actors\bandit\stalker_bandit_5</visual>
 		<supplies>
 			[spawn] \n
-			wpn_mp444_sk1 \n
+			wpn_bizon \n
 			ammo_9x18_pmm = 1 \n
                         grenade_f1 = 1 \n
                         grenade_rgd5 = 1 \n
@@ -270,7 +270,7 @@
 			[spawn] \n
 			wpn_mp444_sk1 \n
 			ammo_9x18_pmm = 1 \n
-			wpn_ak74u \n
+			wpn_ak105 \n
 			ammo_5.45x39_ap = 1 \n
                         grenade_f1 = 2 \n
                         grenade_rgd5 = 2 \n
@@ -366,7 +366,7 @@
 			wpn_mp444_sk2 \n
 			ammo_9x19_fmj \n
 			wpn_ak105 \n
-			ammo_5.45x39_ap = 1 \n
+			ammo_5.45x39_fmj = 1 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -397,7 +397,7 @@
 			wpn_mp444_sk1 \n
 			ammo_9x18_pbp = 1 \n
 			wpn_ak74m \n
-			ammo_5.45x39_ap = 1 \n
+			ammo_5.45x39_fmj = 1 \n
 			device_torch \n
                         grenade_f1 = 2 \n
                         grenade_rgd5 = 2 \n
@@ -679,8 +679,8 @@
 		<visual>actors\novice\green_stalker_3</visual>
 		<supplies>
 			[spawn] \n
-                        wpn_bizon \n
-                        ammo_9x18_fmj = 40 \n
+                        wpn_wincheaster1300 \n
+			ammo_12x70_buck = 1 \n
 #include "gameplay\character_items.xml" \n
 		
 		</supplies>
@@ -791,8 +791,8 @@
 		<visual>actors\novice\green_stalker_5</visual>
 		<supplies>
 			[spawn] \n
-                        wpn_bizon \n
-                        ammo_9x18_pmm = 10 \n
+                        wpn_wincheaster1300 \n
+			ammo_12x70_buck = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -857,7 +857,7 @@
 			wpn_mp444_sk1 \n
 			ammo_9x18_pmm \n
 			wpn_ak74m \n
-			ammo_5.45x39_ap = 1 \n
+			ammo_5.45x39_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 		
@@ -888,7 +888,9 @@
 			wpn_pb = 1, silencer \n
 			ammo_9x18_fmj = 1 \n
 			wpn_ak105 \n
-			ammo_5.45x39_ap = 1 \n
+			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 		
@@ -952,6 +954,8 @@
 			ammo_9x18_pmm \n
 			wpn_ak105 \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 		
@@ -1017,6 +1021,8 @@
 			ammo_9x19_fmj \n
 			wpn_ak104 \n
 			ammo_7.62x39_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 		
@@ -1079,6 +1085,8 @@
 			ammo_9x19_pbp \n
 			wpn_m4a1_sk1 = 1, silencer \n
 			ammo_5.56x45_ap = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 		
@@ -1177,6 +1185,9 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_ak74m = 1, scope \n
 			ammo_5.45x39_fmj = 1 \n
+                         grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+
 #include "gameplay\character_items.xml"\n
 		
 #include "gameplay\character_drugs.xml"
@@ -1279,6 +1290,8 @@
 			ammo_9x19_pbp \n
 			wpn_ak74m = 1, scope \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
 			device_torch \n			
 #include "gameplay\character_items.xml"\n
 		
@@ -1310,6 +1323,8 @@
 			ammo_9x19_pbp \n
 			wpn_ak74m = 1, scope \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 		
@@ -1373,6 +1388,9 @@
 			ammo_9x19_pbp \n
 			wpn_rpk74_sk1 = 1, scope \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+
 #include "gameplay\character_items.xml"	\n
 		
 #include "gameplay\character_drugs.xml"
@@ -1403,6 +1421,9 @@
 			ammo_9x19_pbp \n
 			wpn_rpk74_sk1 = 1, scope \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+
 #include "gameplay\character_items.xml"	\n
 		
 #include "gameplay\character_drugs.xml"
@@ -1433,6 +1454,9 @@
 			ammo_9x19_pbp \n
 			wpn_rpk74_sk1 = 1, scope \n
 			ammo_5.45x39_fmj = 1 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
+
 #include "gameplay\character_items.xml"	\n
 		
 #include "gameplay\character_drugs.xml"
@@ -1495,6 +1519,8 @@
 			ammo_9x19_pbp \n	
 			wpn_pkm \n
                         ammo_7.62x54r = 10 \n
+                        grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
 #include "gameplay\character_items.xml" \n
 		
 #include "gameplay\character_drugs.xml"
@@ -1525,6 +1551,8 @@
 			ammo_9x19_pbp \n	
 			wpn_rpk74_sk1 = 1, scope \n
 			ammo_5.45x39_ap = 1 \n
+                       grenade_rgd5 = 2 \n
+                        grenade_f1 = 2 \n
 #include "gameplay\character_items.xml"	\n
 		
 #include "gameplay\character_drugs.xml"
@@ -1724,8 +1752,8 @@
 			[spawn] \n
 			wpn_usp  \n
 			ammo_9x19_pbp = 1 \n
-			wpn_g36c_sk1 \n
-			ammo_5.56x45_ap = 1 \n
+			wpn_mg36_sk1 \n
+			ammo_5.56x45_ap = 2 \n
 #include "gameplay\character_items.xml"	\n
 		
 #include "gameplay\character_drugs.xml"			
@@ -1853,8 +1881,8 @@
 			[spawn] \n
 			wpn_usp \n
 			ammo_9x19_pbp \n
-			wpn_ak103 = 1, scope \n
-			ammo_7.62x39_ap = 1 \n
+			wpn_hk416_sk1 \n
+			ammo_5.56x45_ap = 1 \n
 #include "gameplay\character_items.xml"
 		
 #include "gameplay\character_drugs.xml"
@@ -1942,9 +1970,9 @@
 		<supplies>
 			[spawn] \n
 			wpn_glock18c_sk1 \n
-			ammo_9x19_pbp \n
-			wpn_ak103 = 1, scope \n
-			ammo_7.62x39_ap = 1 \n
+			ammo_9x19_fmj \n
+			wpn_hk416_sk1 = 1, scope, silencer \n
+			ammo_5.56x45_ap = 1 \n
 			device_torch \n
 		
 #include "gameplay\character_drugs.xml"
@@ -1973,6 +2001,8 @@
 		<visual>actors\killer\stalker_ki_mask</visual>
 		<supplies>
 			[spawn] \n
+                        wpn_glock18c_sk1 \n
+			ammo_9x19_fmj \n
 			wpn_sr25_mk11_mod0_sk1 \n
 			ammo_7.62x51_ap = 1 \n
 		
@@ -2282,7 +2312,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_sayga12k_sk1 \n
-                        ammo_12x76_zhekan = 1 \n
+                        ammo_12x70_buck = 1 \n
 		
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -3210,7 +3240,7 @@
 			ammo_9x18_pbp = 1 \n	
 			wpn_ak74m = 1, scope launcher silencer \n
 			ammo_5.45x39_ap = 1 \n
-                        ammo_vog-25 = 5 \n
+                        ammo_vog-25 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 		
@@ -3344,8 +3374,8 @@
 		<supplies>
 			[spawn] \n
 			wpn_sayga12k_sk2 = 1, scope \n
-			ammo_12x76_zhekan = 20 \n
-                        ammo_12x70_buck = 20 \n
+			ammo_12x76_zhekan = 1 \n
+                        ammo_12x70_buck = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 		
@@ -3408,7 +3438,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_toz34 \n
-                        ammo_12x70_buck = 40 \n
+                        ammo_12x70_buck = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 		
@@ -3441,7 +3471,7 @@
 			[spawn] \n		
 			wpn_spas12_m1 \n
 			ammo_12x76_zhekan = 1 \n
-			ammo_12x70_buck = 10 \n
+			ammo_12x70_buck = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"			
 		</supplies>
@@ -3535,7 +3565,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_hpsa \n
-			ammo_9x19_pbp \n
+			ammo_9x19_fmj \n
 			wpn_galil_ar_sk1 \n
 			ammo_5.56x45_ap = 1 \n
 			device_torch \n
@@ -4104,7 +4134,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_mp5_arena \n
-			ammo_9x19_pbp = 1 \n
+			ammo_9x19_fmj = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
 		

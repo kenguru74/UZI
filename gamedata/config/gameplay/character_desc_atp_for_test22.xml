@@ -26,8 +26,8 @@
 			[spawn] \n
 			wpn_aps_sk2 \n
 			ammo_9x18_pbp = 1 \n
-			wpn_ak103 = 1, scope \n
-			ammo_7.62x39_ap = 1 \n
+			wpn_ak74m = 1, scope \n
+			ammo_5.45x39_ap = 1 \n
 			grenade_f1 = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -60,8 +60,8 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_pbp = 1 \n
-			wpn_ak104 \n
-			ammo_7.62x39_ap = 1 \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
 			grenade_f1 = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -93,8 +93,8 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_pbp = 1 \n
-			wpn_ak104 \n
-			ammo_7.62x39_ap = 1 \n
+			wpn_ak105 \n
+			ammo_5.45x39_ap = 1 \n
 			grenade_f1 = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -126,8 +126,8 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_pbp = 1 \n
-			wpn_rpk74_sk2 \n
-			ammo_7.62x39_ap = 1 \n
+			wpn_rpk74_sk1 \n
+			ammo_5.45x39_ap = 1 \n
 			grenade_f1 = 4 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
