@@ -91,23 +91,30 @@ blowout_wind_power = 0.5
 
 
 [zone_zavesa_weak]:zone_zavesa
-$spawn = "zones\zone zavesa weak"
-
-;----------- Anomaly settings -----------------------
+$spawn = "zones\zone_zavesa_weak"
 min_start_power = 0.14
 max_start_power = 0.15
 
 
 [zone_zavesa_average]:zone_zavesa
-$spawn = "zones\zone zavesa average"
-
-;----------- Anomaly settings -----------------------
+$spawn = "zones\zone_zavesa_average"
 min_start_power = 0.49
 max_start_power = 0.50
 
 [zone_zavesa_strong]:zone_zavesa
-$spawn = "zones\zone zavesa strong"
-
-;----------- Anomaly settings -----------------------
+$spawn = "zones\zone_zavesa_strong"
 min_start_power = 0.99
 max_start_power = 1.00
+
+[noartf_zavesa_weak]:zone_zavesa_weak
+$spawn = "zones\zone_zavesa_weak_noartf"
+idle_particles = a_ufp_particles\mini_tornado_idle
+
+[noartf_zavesa_average]:zone_zavesa_average
+$spawn = "zones\zone_zavesa_average_noartf"
+idle_particles = a_ufp_particles\mini_tornado_idle
+
+[noartf_zavesa_strong]:zone_zavesa_strong
+$spawn = "zones\zone_zavesa_strong_noartf"
+idle_particles = a_ufp_particles\mini_tornado_idle
+

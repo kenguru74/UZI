@@ -132,7 +132,7 @@ min_artefact_count = 0
 max_artefact_count = 0
 
 
-idle_particles = amk\snow
+;idle_particles = amk\snow
 blowout_particles = amk\snow_blow
 tearing_particles = anomaly2\gravi_anomaly_shield_00
 torn_particles = amk\blow_body
@@ -623,3 +623,48 @@ poz_z = -20.203485488892
 rotate = -3.14
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[zone_teleport_weak]:zone_teleport_1
+$spawn = "zones\teleport_horiz_weak"
+teleport = standart
+script_binding = bind_mteleport.bind
+
+;Параметры телепорта
+;ширина
+radius = 2
+;высота
+z_radius = 2
+
+[zone_teleport_average]:zone_teleport_1
+$spawn = "zones\teleport_horiz_average"
+teleport = standart
+script_binding = bind_mteleport.bind
+
+;Параметры телепорта
+;ширина
+radius = 2
+;высота
+z_radius = 2
+
+[zone_teleport_strong]:zone_teleport_1
+$spawn = "zones\teleport_horiz_strong"
+teleport = standart
+script_binding = bind_mteleport.bind
+
+;Параметры телепорта
+;ширина
+radius = 2
+;высота
+z_radius = 2
+
+[noartf_teleport_weak]:zone_teleport_weak
+$spawn = "zones\mincer_weak_noartf"
+idle_particles = amk\snow
+
+[noartf_teleport_average]:zone_teleport_average
+$spawn = "zones\mincer_average_noartf"
+idle_particles = amk\snow
+
+[noartf_teleport_strong]:zone_teleport_strong
+$spawn = "zones\mincer_strong_noartf"
+idle_particles = amk\snow

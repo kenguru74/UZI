@@ -1,3 +1,4 @@
+;----------- Аномалия Комариная плешь -----------------------
 [zone_mosquito_bald]
 GroupControlSection = spawn_group_zone
 $spawn = "zones\mosquito bald"
@@ -25,6 +26,8 @@ attenuation = 1
 period = 1
 min_artefact_count = 0
 max_artefact_count = 1
+artefact_spawn_idle = 48 ;насколько часто спавнить артефакты в офлайне, в часах
+artefact_spawn_rnd = 25 ;вероятность заспавнить артефакт в процентах.
 
 ;idle_particles = anomaly2\bold_idle
 blowout_particles = anomaly2\gravity_blast_01
@@ -42,16 +45,16 @@ hit_sound = anomaly\anomaly_gravy_hit1 ;на персонаже, когда тот получает хит
 entrance_sound = anomaly\anomaly_gravy_hit1 ;при попадании объекта в аномалию
 
 
-awaking_time = 50;100
+awaking_time = 50
 blowout_time = 500
-accamulate_time = 1000 ;10;200
+accamulate_time = 1000
 
 blowout_light_time = 200
 blowout_explosion_time = 200
 blowout_particles_time = 200
 blowout_sound_time = 100
 
-disable_time = 5000 ;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time = 3000 ;время игнорирования неживого объекта в зоне (-1 если не нужно)
 disable_time_small = 5000 ;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
 disable_idle_time = 100 ;время отключения idle партиклов
 
@@ -74,14 +77,14 @@ visible_by_detector = on
 ;рождение артефактов
 
 ;во время срабатывания в online
-spawn_blowout_artefacts = on
+spawn_blowout_artefacts = off
 
 artefact_spawn_probability = 0.15 ;вероятность, что во время срабатывания аномалии будет рожден артефакт
 artefact_spawn_particles = anomaly2\pux_blast ;партиклы, которые отыграются на месте рождения артефакта (опционально)
 artefact_born_sound = anomaly\pux_blast ;звук, который отыграются на месте рождения артефакта (опционально)
 
 throw_out_power = 50 ;импульс с которым артефакт будет выброшен из зоны в произвольном направлении
-artefact_spawn_height = 3 ;(м) высота на центром зоны где будет рожден артефакт
+artefact_spawn_height = 1 ;(м) высота на центром зоны где будет рожден артефакт
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;ветер
@@ -92,6 +95,7 @@ blowout_wind_time_peak = 300
 blowout_wind_time_end = 501; 899
 blowout_wind_power = 0.5 ;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak
 
+;----------- Аномалия Комариная плешь слабая -----------------------
 [zone_mosquito_bald_weak]:zone_mosquito_bald
 $spawn = "zones\mosquito bald_weak"
 awaking_time = 80;100
@@ -103,7 +107,7 @@ actor_blowout_radius_percent= 0.6
 
 artefacts = af_medusa,0.8, af_cristall_flower, 0.2,af_night_star, 0.0
 BirthProbability = 0.1
-spawn_blowout_artefacts = on
+spawn_blowout_artefacts = off
 
 ;----------- Anomaly settings -----------------------
 min_start_power = 0.49
@@ -112,16 +116,17 @@ attenuation = 1
 period = 1
 min_artefact_count = 0
 max_artefact_count = 1
-artefact_spawn_idle = 24 ;насколько часто спавнить артефакты в офлайне, в часах
-artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_idle = 48 ;насколько часто спавнить артефакты в офлайне, в часах
+artefact_spawn_rnd = 20 ;вероятность заспавнить артефакт в процентах.
 
-accamulate_time = 1000 ;10;200
+accamulate_time = 1000
 ignore_nonalive = false
 ignore_small = false
 ignore_artefacts = true
 
 blowout_wind_power = 0.2
 
+;----------- Аномалия Комариная плешь средняя -----------------------
 [zone_mosquito_bald_average]:zone_mosquito_bald
 $spawn = "zones\mosquito bald_average"
 awaking_time = 50
@@ -131,7 +136,7 @@ hit_impulse_scale = 0.2
 effective_radius = 0.75
 actor_blowout_radius_percent= 0.8
 
-artefacts = af_dummy_spring,0.4, af_dummy_dummy, 0.4, af_dummy_battery, 0.2
+artefacts = af_medusa,0.2, af_cristall_flower, 0.6,af_night_star, 0.2
 BirthProbability = 0.1
 spawn_blowout_artefacts = on
 
@@ -143,8 +148,8 @@ period = 1
 min_artefact_count = 1
 max_artefact_count = 1
 
-artefact_spawn_idle = 24 ;насколько часто спавнить артефакты в офлайне, в часах
-artefact_spawn_rnd = 70 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_idle = 48 ;насколько часто спавнить артефакты в офлайне, в часах
+artefact_spawn_rnd = 25 ;вероятность заспавнить артефакт в процентах.
 
 ;idle_particles = anomaly2\bold_idle_sarkofag
 blowout_particles = anomaly2\bold_sarkofag_blast
@@ -174,7 +179,7 @@ blowout_explosion_time = 200
 blowout_particles_time = 200
 blowout_sound_time = 100
 
-disable_time = 5000 ;время игнорирования неживого объекта в зоне (-1 если не нужно)
+disable_time = 3000 ;время игнорирования неживого объекта в зоне (-1 если не нужно)
 disable_time_small = 5000 ;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
 disable_idle_time = 100 ;время отключения idle партиклов
 
@@ -212,6 +217,7 @@ blowout_wind_power = 0.5 ;сила поднимаего ветра (от 0 до 1), в момент blowout_wi
 
 
 
+;----------- Аномалия Комариная плешь сильная -----------------------
 [zone_mosquito_bald_strong]:zone_mosquito_bald
 $spawn = "zones\mosquito bald_strong"
 awaking_time = 30
@@ -222,7 +228,7 @@ hit_impulse_scale = 0.2
 effective_radius = 0.8
 actor_blowout_radius_percent= 0.85
 
-artefacts = af_medusa,0.2, af_cristall_flower, 0.6,af_night_star, 0.2
+artefacts = af_dummy_spring,0.4, af_dummy_dummy, 0.4, af_dummy_battery, 0.2
 BirthProbability = 0.1
 spawn_blowout_artefacts = on
 
@@ -233,9 +239,40 @@ attenuation = 1
 period = 1
 min_artefact_count = 1
 max_artefact_count = 2
-artefact_spawn_idle = 24 ;насколько часто спавнить артефакты в офлайне, в часах
-artefact_spawn_rnd = 90 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_idle = 48 ;насколько часто спавнить артефакты в офлайне, в часах
+artefact_spawn_rnd = 10 ;вероятность заспавнить артефакт в процентах.
 
 accamulate_time = 1000 ;10;200
 
 blowout_wind_power = 1
+
+;----------- Аномалия Комариная плешь слабая без артов -----------------------
+[noartf_mosquito_bald_weak]:zone_mosquito_bald_weak
+$spawn = "zones\mosquito_bald_weak_noartf"
+idle_particles = anomaly2\bold_idle_sarkofag
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+;----------- Аномалия Комариная плешь средняя без артов -----------------------
+[noartf_mosquito_bald_average]:zone_mosquito_bald_average
+$spawn = "zones\mosquito_bald_average_noartf"
+idle_particles = anomaly2\bold_idle_sarkofag
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+;----------- Аномалия Комариная плешь сильная без артов -----------------------
+[noartf_mosquito_bald_strong]:zone_mosquito_bald_strong
+$spawn = "zones\mosquito_bald_strong_noartf"
+idle_particles = anomaly2\bold_idle_sarkofag
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+

@@ -21,12 +21,12 @@ attenuation = 0.1
 period = 1
 min_artefact_count = 0
 max_artefact_count = 1
-artefact_spawn_idle = 24
-artefact_spawn_rnd = 50
+artefact_spawn_idle = 58
+artefact_spawn_rnd = 20
 
 hit_type = telepatic
 
-idle_particles = anomaly2\monolith
+;idle_particles = anomaly2\monolith
 blowout_particles = anomaly2\monolith_active
 
 disable_time = -1 ;время игнорирования неживого объекта в зоне (-1 если не нужно)
@@ -53,11 +53,11 @@ blowout_wind = off
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;рождение артефактов во время срабатывания
-spawn_blowout_artefacts = on
+spawn_blowout_artefacts = off
 artefact_spawn_probability = 0.15
 
-throw_out_power = 50
-artefact_spawn_height = 3
+throw_out_power = 5
+artefact_spawn_height = 1
 
 [zone_monolith1]
 GroupControlSection = spawn_group_zone
@@ -82,8 +82,8 @@ attenuation = 0.1
 period = 1
 min_artefact_count = 0
 max_artefact_count = 1
-artefact_spawn_idle = 24
-artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_idle = 48
+artefact_spawn_rnd = 20 ;вероятность заспавнить артефакт в процентах.
 
 hit_type = telepatic
 
@@ -114,8 +114,54 @@ blowout_wind = off
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;рождение артефактов во время срабатывания
-spawn_blowout_artefacts = on
+spawn_blowout_artefacts = off
 artefact_spawn_probability = 0.15
 
-throw_out_power = 50
-artefact_spawn_height = 3
+throw_out_power = 5
+artefact_spawn_height = 1
+
+[zone_monolith_weak]:zone_monolith
+$spawn = "zones\monolith_weak"
+min_start_power = 0.09
+max_start_power = 0.2
+BirthProbability = 0.05
+
+[zone_monolith_average]:zone_monolith
+$spawn = "zones\monolith_average"
+min_start_power = 0.4
+max_start_power = 0.6
+BirthProbability = 0.1
+
+[zone_monolith_strong]:zone_monolith
+$spawn = "zones\monolith_strong"
+min_start_power = 0.7
+max_start_power = 1.0
+BirthProbability = 0.15
+
+[noartf_monolith_weak]:zone_monolith_weak
+$spawn = "zones\monolith_weak_noartf"
+idle_particles = anomaly2\monolith
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+[noartf_monolith_average]:zone_monolith_average
+$spawn = "zones\monolith_average_noartf"
+idle_particles = anomaly2\monolith
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+[noartf_monolith_strong]:zone_monolith_strong
+$spawn = "zones\monolith_strong_noartf"
+idle_particles = anomaly2\monolith
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+

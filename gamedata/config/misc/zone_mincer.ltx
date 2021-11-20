@@ -1,3 +1,4 @@
+;----------- Аномалия Мясорубка (Карусель)-----------------------
 [zone_mincer]
 GroupControlSection = spawn_group_zone
 $spawn = "zones\mincer zone"
@@ -11,8 +12,8 @@ sound = zone_mosquito_bald
 postprocess = postprocess_gravi
 hit_effect = explosions\expl_02_sparks
 
-artefacts = af_blood,0.7, af_mincer_meat, 0.25,af_soul, 0.05
-BirthProbability = 0.1
+artefacts = af_blood, 0.8, af_mincer_meat, 0.25,af_soul, 0.05
+BirthProbability = 0.15
 
 ;----------- Anomaly settings -----------------------
 min_start_power = 0.99
@@ -21,8 +22,8 @@ attenuation = 1
 period = 1
 min_artefact_count = 0
 max_artefact_count = 1
-artefact_spawn_idle = 24
-artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_idle = 48
+artefact_spawn_rnd = 25 ;вероятность заспавнить артефакт в процентах.
 
 tearing_particles =anomaly2\body_tear_00
 torn_particles =anomaly2\gravi_anomaly_shield_00
@@ -85,7 +86,7 @@ throw_in_atten = 1.5; 1.2 ;3 ;коэфф. затягивания (чем меньше, тем плавнее затяги
 blowout_radius_percent = 0.3;0 ;радиус (в процентах от всего радиуса) непосредственно выброса
 actor_blowout_radius_percent = 0.3;0.5
 tele_height = 10 ;1.5 ;высота подъема телекинеза
-time_to_tele = 7000 ;время деражания объекта в воздухе
+time_to_tele = 7000 ;время держания объекта в воздухе
 tele_pause = 4000 ;пауза перед тем как снова поднять упавший объект
 
 visible_by_detector = on
@@ -100,7 +101,7 @@ blowout_wind_power = 0.5 ;сила поднимаего ветра (от 0 до 1), в момент blowout_wi
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;рождение артефактов во время срабатывания
-spawn_blowout_artefacts = on
+spawn_blowout_artefacts = off
 
 artefact_spawn_probability = 0.15 ;вероятность, что во время срабатывания аномалии будет рожден артефакт
 artefact_spawn_particles = anomaly2\gravi_anomaly_shield_00 ;партиклы, которые отыграются на месте рождения артефакта (опционально)
@@ -108,6 +109,7 @@ artefact_born_sound = anomaly\pux_blast ;звук, который отыграются на месте рожде
 throw_out_power = 15 ;импульс с которым артефакт будет выброшен из зоны в произвольном направлении
 artefact_spawn_height = 10 ;(м) высота на центром зоны где будет рожден артефакт
 
+;----------- Мясорубка слабая -----------------------
 [zone_mincer_weak]:zone_mincer
 $spawn = "zones\mincer_zone_weak"
 
@@ -132,7 +134,9 @@ period = 1
 min_artefact_count = 0
 max_artefact_count = 1
 artefact_spawn_idle = 24 ;насколько часто спавнить артефакты в офлайне, в часах
-artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_rnd = 20 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_probability = 0.1
+
 
 artefacts = af_blood,0.8, af_mincer_meat, 0.2,af_soul, 0.0
 BirthProbability = 0.1
@@ -141,8 +145,9 @@ awaking_time = 50
 blowout_time = 10000
 accamulate_time = 4000
 
+;----------- Мясорубка средняя -----------------------
 [zone_mincer_average]:zone_mincer
-$spawn = "zones\mincer zone_average"
+$spawn = "zones\mincer_zone_average"
 hit_impulse_scale = 0.1
 effective_radius = 0.8
 
@@ -169,18 +174,20 @@ attenuation = 1
 period = 1
 min_artefact_count = 1
 max_artefact_count = 1
-artefact_spawn_idle = 24 ;насколько часто спавнить артефакты в офлайне, в часах
-artefact_spawn_rnd = 70 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_idle = 48 ;насколько часто спавнить артефакты в офлайне, в часах
+artefact_spawn_rnd = 30 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_probability = 0.15
 
+;----------- Мясорубка сильная -----------------------
 [zone_mincer_strong]:zone_mincer
-$spawn = "zones\mincer zone_strong"
+$spawn = "zones\mincer_zone_strong"
 hit_impulse_scale = 1
 effective_radius = 1
 
 throw_in_impulse = 4000 ;сила втягивания для единичной массы на расстоянии один метр
 throw_out_impulse = 1500 ;сила выбрасывания взрывом
 throw_in_impulse_alive = 600 ;сила импульса втягивания для живых
-throw_in_atten = 1.2 ;3;коэфф. затягивания (чем меньше, тем плавнее затягивает)
+throw_in_atten = 2.5 ;3;коэфф. затягивания (чем меньше, тем плавнее затягивает)
 blowout_radius_percent = 0.6 ;радиус (в процентах от всего радиуса) непосредственно выброса
 actor_blowout_radius_percent = 0.6
 
@@ -200,5 +207,37 @@ attenuation = 1
 period = 1
 min_artefact_count = 1
 max_artefact_count = 2
-artefact_spawn_idle = 24 ;насколько часто спавнить артефакты в офлайне, в часах
-artefact_spawn_rnd = 90 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_idle = 48 ;насколько часто спавнить артефакты в офлайне, в часах
+artefact_spawn_rnd = 40 ;вероятность заспавнить артефакт в процентах.
+artefact_spawn_probability = 0.2
+
+;----------- Мясорубка слабая без артов -----------------------
+[noartf_mincer_weak]:zone_mincer_weak
+$spawn = "zones\mincer_weak_noartf"
+idle_particles = anomaly2\mincer_idle
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+;----------- Мясорубка средняя без артов -----------------------
+[noartf_mincer_average]:zone_mincer_average
+$spawn = "zones\mincer_average_noartf"
+idle_particles = anomaly2\mincer_idle
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+;----------- Мясорубка сильная без артов -----------------------
+[noartf_mincer_strong]:zone_mincer_strong
+$spawn = "zones\mincer_strong_noartf"
+idle_particles = anomaly2\mincer_idle
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
