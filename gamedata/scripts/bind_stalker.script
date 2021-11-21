@@ -91,9 +91,6 @@ function actor_binder:net_spawn(data)
 	swamp_old_dialog.respawn_klyk()
 	predbannik_dialog.spawn_gpistol()
 	
-	-- Вызов респавна артефактов
-	uzi_artefacts.check_spawn_arts()
-	
 	-- Гашение костров возле вертушки
 	if level.name() == "l06_rostok" and has_alife_info("yantar_tunnel_finish") and (not has_alife_info("heli_campfire_off")) then
 		for a=10,65535,1 do
@@ -620,22 +617,24 @@ function actor_binder:update(delta)
 	
 	if self.bCheckStart then
 		--printf("SET DEFAULT INFOS")		
-		if not has_alife_info("storyline_actor_start") and
-		   (level.name() == "predbannik")
-		then
+		if not has_alife_info("storyline_actor_start") and (level.name() == "predbannik") then
 			self.object:give_info_portion("storyline_actor_start")
 			_G.g_start_avi = true
 			--printf("*AVI* RUN START AVI")			
 		end
+		
 --		if not has_alife_info("encyclopedy") then
 --			self.object:give_info_portion("encyclopedy")
 --		end
+
 		if not has_alife_info("global_dialogs") then
 			self.object:give_info_portion("global_dialogs")
 		end
+		
 		if not has_alife_info("level_changer_icons") then
 			self.object:give_info_portion("level_changer_icons")
 		end
+		
 		level_tasks.add_lchanger_location()
 		self.bCheckStart = false
 	end
@@ -656,6 +655,7 @@ function actor_binder:update(delta)
 		local cond = math.ceil(math.random(25,55)*100)
 		local col = 0
 		local count = db.actor:object_count() - 1
+		
 		for i=0, count do
 			local item = db.actor:object(i)
 			
@@ -667,11 +667,11 @@ function actor_binder:update(delta)
 					alife():release(sobj,true)
 				end
 			 end
-			 
+			
 			 if i == count then
 				cond = cond * col
 				db.actor:give_money(cond)
-				local text = "Найдено денег - "..cond.."\\nВсего денег - "..db.actor:money()
+				local text = "Найдено "..cond.." руб.\\nИтого теперь "..db.actor:money().." руб."
 				news_manager.send_tip(db.actor, text, nil, nil, 30000)
 				db.actor:disable_info_portion("have_money")
 			end
