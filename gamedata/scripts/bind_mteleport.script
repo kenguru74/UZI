@@ -35,39 +35,42 @@ end
 
 function actor_update(delta)
 	local i,v,acter_poz,s
-
+	
 	-- Получим позицию актера (что-бы каждый раз не запрашивать)
 	acter_poz = db.actor:position()
-
+	
 	-- Проверяем наши телепорты
 	for i, v in pairs(teleport_binders) do
 		s = v.parametrs
-
-		local obj = level.object_by_id( i )
+		
+		local obj = level.object_by_id(i)
+		
 		if obj ~= nil then
 		-- Наш телепорт в онлайне проверяем дальше
 			if s.teleporte ~= nil and s.teleporte ~= false then
 				-- Телепорт запущен
-				if ( time_global() <= s.time ) then
-					-- Если время отведенное на показ спецэфектов
-					-- прошло, производим телепортацию
+				if (time_global() <= s.time) then
+					-- Если время отведенное на показ спецэфектов прошло, производим телепортацию
 					teleportate(s.poz_x,s.poz_y,s.poz_z)
+					
 					if s.rotate ~= nil then
 						db.actor:set_actor_direction(s.rotate)
 					end
+					
 					s.teleporte = false
 				end
+				
 				return
 			end
-
+			
 			-- Пороверим не забрел-ли актер в наш телепорт
 			if (abs_comp(s.x, acter_poz.x)< v.parametrs.radius  and
-			    abs_comp(s.z, acter_poz.z)< v.parametrs.radius  and
-			    abs_comp(s.y, acter_poz.y)< v.parametrs.z_radius) then
+				abs_comp(s.z, acter_poz.z)< v.parametrs.radius  and
+				abs_comp(s.y, acter_poz.y)< v.parametrs.z_radius) then
 				-- Актер в зоне действия телепорта, запустим телепорт
 				s["teleporte"] = true
 				s["time"] = time_global() + 500
-
+				
 				-- Запускаем спецэфекты телепортации
 				level.add_pp_effector ("teleport.ppe", 2006, false)
 			end
@@ -87,35 +90,50 @@ end
 
 function restrictor_teleport:net_spawn(data)
 	local char_ini = system_ini()
-
+	
 	-- Если это телепорт то занесем его в специальный список телепортов
 	if self.teleport == true then
 		teleport_binders[self.object:id()] = self
-
+		
 		-- Заполним таблицу параметров
 		self["parametrs"] = {}
+		
 		if char_ini:line_exist(self.section, "radius") then
 			self.parametrs["radius"] = tonumber(char_ini:r_string(self.section, "radius"))
 		else
 			self.parametrs["radius"] = 2 -- Дефолтный радиус по xy
 		end
+		
 		if char_ini:line_exist(self.section, "z_radius") then
 			self.parametrs["z_radius"] = tonumber(char_ini:r_string(self.section, "z_radius"))
 		else
 			self.parametrs["z_radius"] = self.parametrs["radius"] -- если радиус высоты не задан то задаем равным радиусу xy
 		end
-
+		
 		-- Запомним позицию что-бы каждый раз не считать
 		local s_obj = alife():object(self.object:id())
+		
 		self.parametrs["x"] = tonumber(s_obj.position.x);
 		self.parametrs["y"] = tonumber(s_obj.position.y);
 		self.parametrs["z"] = tonumber(s_obj.position.z);
-
-		-- Запомним координаты куда телепортимся
-		self.parametrs["poz_x"] = tonumber(char_ini:r_string(self.section, "poz_x"))
-		self.parametrs["poz_y"] = tonumber(char_ini:r_string(self.section, "poz_y"))
-		self.parametrs["poz_z"] = tonumber(char_ini:r_string(self.section, "poz_z"))
-
+		
+		if char_ini:line_exist(self.section, "poz_x") then
+			-- Запомним координаты куда телепортимся
+			self.parametrs["poz_x"] = tonumber(char_ini:r_string(self.section, "poz_x"))
+			self.parametrs["poz_y"] = tonumber(char_ini:r_string(self.section, "poz_y"))
+			self.parametrs["poz_z"] = tonumber(char_ini:r_string(self.section, "poz_z"))
+		else
+			local lvx = level.vertex_count() - 1
+			local new_lv, pos
+			
+			new_lv = math.random(lvx)
+			pos = level.vertex_position(new_lv)
+			
+			self.parametrs["poz_x"] =pos.x
+			self.parametrs["poz_y"] =pos.y
+			self.parametrs["poz_z"] =pos.z
+		end
+		
 		if char_ini:line_exist(self.section, "rotate") then
 			self.parametrs["rotate"] = tonumber(char_ini:r_string(self.section, "rotate"))
 		end
