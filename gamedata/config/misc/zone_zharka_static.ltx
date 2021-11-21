@@ -1,3 +1,4 @@
+;----------- Аномалия Жарка -----------------------
 [zone_zharka_static]
 GroupControlSection = spawn_group_zone
 $spawn = "zones\zharka_statik"
@@ -21,8 +22,8 @@ attenuation = 1
 period = 1
 min_artefact_count = 0
 max_artefact_count = 1
-artefact_spawn_idle = 24
-artefact_spawn_rnd = 50
+artefact_spawn_idle = 48
+artefact_spawn_rnd = 20
 ;idle_particles = static\buble_distort00
 blowout_particles = static\zharka_static
 
@@ -70,14 +71,15 @@ visible_by_detector = on
 blowout_wind = off
 
 throw_out_power = 50
-artefact_spawn_height = 3
+artefact_spawn_height = 1
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-spawn_blowout_artefacts = on
+spawn_blowout_artefacts = off
 artefact_spawn_probability = 0.15
 
 
+;----------- Жарка слабая -----------------------
 [zone_zharka_static_weak]:zone_zharka_static
 $spawn = "zones\zharka_statik_weak"
 
@@ -90,11 +92,12 @@ max_start_power = 0.50
 attenuation = 1
 period = 1
 min_artefact_count = 0
-max_artefact_count = 0
-artefact_spawn_idle = 24 ;насколько часто спонить артефакты в офлайне, в часах
-artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
+max_artefact_count = 1
+artefact_spawn_idle = 48 ;насколько часто спонить артефакты в офлайне, в часах
+artefact_spawn_rnd = 30 ;вероятность заспавнить артефакт в процентах.
 
 
+;----------- Жарка средняя -----------------------
 [zone_zharka_static_average]:zone_zharka_static
 $spawn = "zones\zharka_statik_average"
 
@@ -106,12 +109,13 @@ min_start_power = 1.19
 max_start_power = 1.20
 attenuation = 1
 period = 1
-min_artefact_count = 0
-max_artefact_count = 0
-artefact_spawn_idle = 24 ;насколько часто спонить артефакты в офлайне, в часах
-artefact_spawn_rnd = 70 ;вероятность заспавнить артефакт в процентах.
+min_artefact_count = 1
+max_artefact_count = 1
+artefact_spawn_idle = 48 ;насколько часто спонить артефакты в офлайне, в часах
+artefact_spawn_rnd = 30 ;вероятность заспавнить артефакт в процентах.
 
 
+;----------- Жарка сильная -------------------
 [zone_zharka_static_strong]:zone_zharka_static
 $spawn = "zones\zharka_statik_strong"
 
@@ -127,4 +131,34 @@ min_artefact_count = 0
 max_artefact_count = 0
 artefact_spawn_idle = 24 ;насколько часто спонить артефакты в офлайне, в часах
 artefact_spawn_rnd = 90 ;вероятность заспавнить артефакт в процентах.
+
+;----------- Жарка слабая без артов -------------------
+[noartf_zharka_static_weak]:zone_zharka_static_weak
+$spawn = "zones\zharka_static_weak_noartf"
+idle_particles = static\buble_distort00
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+;----------- Жарка средняя без артов -------------------
+[noartf_zharka_static_average]:zone_zharka_static_average
+$spawn = "zones\zharka_static_average_noartf"
+idle_particles = static\buble_distort00
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+;----------- Жарка сильная без артов -------------------
+[noartf_zharka_static_strong]:zone_zharka_static_strong
+$spawn = "zones\zharka_static_strong_noartf"
+idle_particles = static\buble_distort00
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
 
