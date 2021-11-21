@@ -1,61 +1,63 @@
+
+
 -- Телепорт с базы ЧН на Рыбацкий хутор
 function spawn_teleport_baza()
-   if level.name()=="marsh" and not has_alife_info("spawn_teleport_baza") then
-      local se_obj = alife():create("teleport_baza",vector():set(-117.315292358398,4.74100732803345, -262.926879882813),85102,3381)
-      db.actor:give_info_portion("spawn_teleport_baza")
-   end
+	if level.name()=="marsh" and not has_alife_info("spawn_teleport_baza") then
+		local se_obj = alife():create("teleport_baza",vector():set(-117.315292358398,4.74100732803345, -262.926879882813),85102,3381)
+		db.actor:give_info_portion("spawn_teleport_baza")
+	end
 end
 
 --Телепорт с Болот на базу ЧН
 function spawn_teleport_marsh()
-   if level.name()=="marsh" and not has_alife_info("spawn_teleport_marsh") then
-      local se_obj = alife():create("teleport_marsh",vector():set(-285.58377075195,1.30053297281265,-202.94274902344),148015,3423)
-      db.actor:give_info_portion("spawn_teleport_marsh")
-   end
+	if level.name()=="marsh" and not has_alife_info("spawn_teleport_marsh") then
+		local se_obj = alife():create("teleport_marsh",vector():set(-285.58377075195,1.30053297281265,-202.94274902344),148015,3423)
+		db.actor:give_info_portion("spawn_teleport_marsh")
+	end
 end
 
 --Телепорт из В. Припяти на другой берег Припяти
 function spawn_teleport_pripyat_to_river()
-   if level.name()=="pripyat" and not has_alife_info("spawn_teleport_pripyat_to_river") then
-      local se_obj = alife():create("teleport_pripyat_to_river",vector():set(145.06192016602,32.456394195557,203.62014770508),374639,3769)
-      db.actor:give_info_portion("spawn_teleport_pripyat_to_river")
-      local sobj = alife():object("east_pripyat_yashik_01")
-      if sobj then
-        local obj = level.object_by_id(sobj.id)
-        if obj then
-          spawn_item_in_inv_heli("af_repei", obj)
-        end
-      end
-   end
+	if level.name()=="pripyat" and not has_alife_info("spawn_teleport_pripyat_to_river") then
+		local se_obj = alife():create("teleport_pripyat_to_river",vector():set(145.06192016602,32.456394195557,203.62014770508),374639,3769)
+		db.actor:give_info_portion("spawn_teleport_pripyat_to_river")
+		local sobj = alife():object("east_pripyat_yashik_01")
+		
+		if sobj then
+			local obj = level.object_by_id(sobj.id)
+			
+			if obj then
+				spawn_item_in_inv_heli("af_repei", obj)
+			end
+		end
+	end
 end
 
 function spawn_item_in_inv_heli(spawn_item,npc)
 	if not npc then 
 		npc = db.actor 
 	end
-	local item = alife():create(spawn_item, 
-		npc:position(),
-		npc:level_vertex_id(),  
-		npc:game_vertex_id(),
-		npc:id())
+	
+	local item = alife():create(spawn_item, npc:position(), npc:level_vertex_id(), npc:game_vertex_id(), npc:id())
 	
 	if npc:id() ~= db.actor:id() then
-		-- Фикс пропадания доспавненного предмета при сейв/лоаде
-		level.client_spawn_manager():add(item.id, -1, fix_spawn_item_in_inv_heli, npc)  -- Калбек на выход item в онлайн
+		-- Калбек на выход item в онлайн
+		level.client_spawn_manager():add(item.id, -1, fix_spawn_item_in_inv_heli, npc)
 	end
-
+	
 	return item
 end
 
+-- Фикс пропадания доспавненного предмета при сейв/лоаде
 function fix_spawn_item_in_inv_heli(npc, id, item)
-    npc:transfer_item(item, npc)
+	npc:transfer_item(item, npc)
 end
 
 --Телепорт с другого берега Припяти в В. Припять
 function spawn_teleport_river_to_pripyat()
-   if level.name()=="pripyat" and not has_alife_info("spawn_teleport_river_to_pripyat") then
-      local se_obj = alife():create("teleport_river_to_pripyat",vector():set(529.17578125,-6.735297203064,202.32588195801),457025,3769)
---      xr_logic.pstor_store(db.actor, "teleport_river_to_pripyat", se_obj.id)
-      db.actor:give_info_portion("spawn_teleport_river_to_pripyat")
-   end
+	if level.name()=="pripyat" and not has_alife_info("spawn_teleport_river_to_pripyat") then
+		local se_obj = alife():create("teleport_river_to_pripyat",vector():set(529.17578125,-6.735297203064,202.32588195801),457025,3769)
+		db.actor:give_info_portion("spawn_teleport_river_to_pripyat")
+	end
 end
+
