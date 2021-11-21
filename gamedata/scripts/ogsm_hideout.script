@@ -177,9 +177,11 @@ end
 
 -- Создаем эвалуатор - проверяем, начался ли выброс
 class "evaluator_blowout" (property_evaluator)
+
 function evaluator_blowout:__init(name, storage) super (nil, name)
 	self.st = storage
 end
+
 function evaluator_blowout:evaluate()
 	if not self.object:best_enemy() and 
 	   db.Flag2==1 and db.Dead2==0 and 
@@ -194,48 +196,59 @@ end
 
 -- Создаем эвалуатор - проверяем, потерял ли непись укрытие
 class "evaluator_hideout" (property_evaluator)
+
 function evaluator_hideout:__init(name, storage) super (nil, name)
 	self.st = storage
 end
+
 function evaluator_hideout:evaluate()
 	if db.Dead2==1 and not is_in_hide(self.object) and not is_in_specific_zone(self.object) then
 		self.st.hideout_lost = true
 	else
 		self.st.hideout_lost = false
 	end
+	
 	return self.st.hideout_lost == true
 end
 
 -- Создаем эвалуатор - проверяем, сидит ли уже непись в укрытии
 class "evaluator_inhide" (property_evaluator)
+
 function evaluator_inhide:__init(name, storage) super (nil, name)
 	self.st = storage
 end
+
 function evaluator_inhide:evaluate()
 	if db.Flag2==1 and is_in_hide(self.object) then
 		self.st.inhide = true
 	else
 		self.st.inhide = false
 	end
+	
 	return self.st.inhide == true
 end 
 
 
 -- Создаем оператор - направляем НПС в укрытие
 class "action_hideout" (action_base)
+
 function action_hideout:__init(name, storage) super (nil, name)
 	self.st = storage
 end
+
 function action_hideout:initialize()
 	local npc = self.object
+	
 	npc:set_desired_position()
 	npc:set_desired_direction()
 	npc:clear_animations()
 	npc:set_detail_path_type(move.line)
 	npc:set_path_type(game_object.level_path)
 	npc:remove_all_restrictions()
+	
 	if npc_run[npc:id()] ~= 1 then
 		self.hide = ogsm_respawn.get_nearest_hide(npc)
+		
 		if self.hide then
 			npc:add_restrictions(self.hide.obj:name(), "")
 			state_mgr.set_state(npc, "assault")
@@ -243,13 +256,16 @@ function action_hideout:initialize()
 			npc:remove_all_restrictions()
 			state_mgr.set_state(npc, "hide")
 		end
+		
 		npc_run[npc:id()] = 1
 	end
 end
+
 function action_hideout:execute()
 	local npc = self.object
 	npc:disable_talk()
 end
+
 function action_hideout:finalize()
 	action_base.finalize(self)
 	local npc = self.object
@@ -258,16 +274,20 @@ end
 
 -- Создаем оператор - колбасим НПС, если он не нашел укрытие
 class "action_raskolbas" (action_base)
+
 function action_raskolbas:__init(name, storage) super (nil, name)
 	self.st = storage
 end
+
 function action_raskolbas:initialize()
 	local npc = self.object
+	
 	npc:set_desired_position()
 	npc:set_desired_direction()
 	npc:clear_animations()
 	npc:remove_all_restrictions()
 	local ran = math.random(1,2)
+	
 	if npc_psy[npc:id()] ~= 1 then
 		if npc:character_community() == "monolith" then
 			state_mgr.set_state(npc, "trans_1")
@@ -278,24 +298,32 @@ function action_raskolbas:initialize()
 				state_mgr.set_state(npc, "psy_pain")
 			end
 		end
+		
 		npc_psy[npc:id()] = 1
 	end
 end
+
 function action_raskolbas:execute()
 	local npc=self.object
 	npc:disable_talk()
 end
+
 function action_raskolbas:finalize()
 	action_base.finalize(self)
 	local npc = self.object
+	
 	npc_psy[npc:id()] = 0
+	
+	amk.make_suicide(npc)
 end
 
 -- Создаем оператор - усаживаем НПС, если он нашел укрытие
 class "action_inhide" (action_base)
+
 function action_inhide:__init(name, storage) super (nil, name)
 	self.st = storage
 end
+
 function action_inhide:initialize()
 	local npc = self.object
 	npc:set_desired_position()
@@ -305,6 +333,7 @@ function action_inhide:initialize()
 	npc:set_path_type(game_object.level_path)
 	npc:remove_all_restrictions()
 	self.hide = ogsm_respawn.get_nearest_hide(npc)
+	
 	if self.hide then
 		self.vertex = self.hide.obj:level_vertex_id()
 		self.offset = vector():set(math.random()*3-1, 0, math.random()*3-1)
@@ -321,9 +350,12 @@ function action_inhide:initialize()
 		state_mgr.set_state(npc,"hide")
 	end
 end
+
 function action_inhide:execute()
 	local npc = self.object
+	
 	npc:disable_talk()
+	
 	if npc:level_vertex_id()~=self.lvid then
 		if npc_go[npc:id()]~=1 then
 			state_mgr.set_state(npc,"raid")
@@ -343,8 +375,10 @@ function action_inhide:execute()
 		end
 	end
 end
+
 function action_inhide:finalize()
 	action_base.finalize(self)
+	
 	local npc = self.object
 	npc_sit[npc:id()] = 0
 	npc_go[npc:id()] = 0
@@ -373,9 +407,11 @@ function add_to_binder(object, char_ini, scheme, section, st)
 	action:add_precondition(world_property(stalker_ids.property_danger, false))
 	action:add_precondition(world_property(property_hideout_lost, false))
 	action:add_precondition(world_property(property_inhide, false))
+	
 	if anomaly_evader then
 		action:add_precondition(world_property(1099, false))
 	end
+	
 	action:add_precondition(world_property(property_blowout, true))
 	action:add_effect(world_property(property_blowout, false))
 	manager:add_action(act_hideout, action)
@@ -416,10 +452,13 @@ end
 -- Функции включения/выключения схемы
 function enable_scheme(npc, ini)
 	local st = xr_logic.assign_storage_and_bind(npc, ini, "ogsm_hideout")
+	
 	st.enabled=true
 end
+
 function disable_scheme(npc, scheme)
 	local st = db.storage[npc:id()][scheme]
+	
 	if st then
 		st.enabled = false
 	end
@@ -429,19 +468,3 @@ end
 ---------------- Схема поведения НПС при выбросе для OGSM 2.x -----------------
 
 ------------------------- Copyright 2007-2008 DEXXX ---------------------------
-
---[[
-
-If you're going to use the whole of this script or its parts in your own creative 
-developments for the S.T.A.L.K.E.R. game, please don't become such a goddamn 
-motherfucker like the notorious author of the ABC Mod - Carbrobro. Leave the 
-copyrights, note the real author(s) and don't claim others' ideas and their 
-realization to be your own ones. It's just simple Modmakers' Ethics. Thank you!
-
-Если вы собираетесь использовать данный скрипт целиком или частично в своих 
-разработках по игре S.T.A.L.K.E.R., пожалуйста не опускайтесь до уровня печально 
-известного автора ABC мода - Carbrobro. Не удаляйте копирайты, указывайте настоящего 
-автора(ов) и не выдавайте чужие идеи и их реализацию за свои. Ведь это элементарная 
-этика модостроителей! Спасибо за понимание.
-
-]]--
