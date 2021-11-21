@@ -505,7 +505,6 @@ function __do_timer_action(select_string,params_string)
 -- 4. Спустя 5 минут затишья начинаем выброс
 	if select_string=="bl4" then
 		del_variable("bl3")
-		uzi_artefacts.del_arts()
 		xr_sound.set_actor_sound("")
 		level.set_weather("stancia")
 		local snd_obj = xr_sound.get_safe_sound_object([[ambient\earthquake]])
@@ -581,7 +580,6 @@ function __do_timer_action(select_string,params_string)
 		if not has_alife_info("first_blowout") then db.actor:give_info_portion("first_blowout") end
 		
 		uzi_monsters_respawn.resp_monsters()
-		uzi_artefacts.spawn_arts()
 	elseif db.Flag2 == 0 then
 		del_variable("bl7")
 	end
