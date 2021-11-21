@@ -526,12 +526,14 @@ function __do_timer_action(select_string,params_string)
 		save_variable("blt", 2)
 		level.remove_cam_effector(1974)
 		db.Dead2 = 1
+		
 		if db.FlagEsc == 0 then
 			local snd_obj = xr_sound.get_safe_sound_object([[actor\pain_3]])
 			snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
 			level.add_cam_effector("camera_effects\\head_shot.anm", 1975, false, "")
 			ogsm_surge.g_R_Vibros:Run()
 		end
+		
 		g_start_timer("bl6",0,0,5)
 	end
 
@@ -546,32 +548,41 @@ function __do_timer_action(select_string,params_string)
 -- 7. Завершаем выброс, устанавливаем время следующего
 	if select_string=="bl7" then
 		del_variable("bl6")
+		
 		ogsm_surge.g_R_Vibros:Stop()
+		
 		if db.FlagEsc == 0 then
 			level.add_cam_effector("camera_effects\\shell_shock.anm", 1974, false, "")
 			local snd_obj = xr_sound.get_safe_sound_object([[actor\breath_1]])
 			snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
 		end
+		
 		level.add_pp_effector ("teleport.ppe", 2009, false)
 		local snd_obj2 = xr_sound.get_safe_sound_object([[ambient\earthquake]])
 		snd_obj2:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
+		
 		if has_alife_info("freeplay") and (level.name()=="l11_pripyat" or level.name()=="l10_radar") then
 			level.set_weather("default")
 		else
 			level.set_weather(wthr)
 		end
+		
 		del_variable("blt")
+		
 		g_start_timer("bl1",0, vars.t_surge+math.random(-4,4), 0)
-		--ogsm_anomaly.add_anom()
---		ogsm_surge.spawn_arts()
+		ogsm_anomaly.add_anom()
 		ogsm_respawn.level_spawn()
+		
 		if ogsm_psyzones then ogsm_psyzones.spawn_psy() end
+		
 		db.Dead2 = 0
 		db.Flag2 = 0
+		
 		if not has_alife_info("first_blowout") then db.actor:give_info_portion("first_blowout") end
+		
 		uzi_monsters_respawn.resp_monsters()
 		uzi_artefacts.spawn_arts()
-		elseif db.Flag2 == 0 then
+	elseif db.Flag2 == 0 then
 		del_variable("bl7")
 	end
 
@@ -1052,7 +1063,7 @@ function on_actor_update(obj)
 	-- Обновление менеджера выброса и аномалий
 	if ogsm_surge then
 		ogsm_surge.update_surge()
-		--ogsm_anomaly.anom_update()
+		ogsm_anomaly.anom_update()
 	end
 	
 	-- Проверка, пьян ли актор
@@ -1099,7 +1110,6 @@ function on_game_load()
 		spawn_item_in_inv("matras")
 		ogsm_respawn.first_run()
 		save_variable("frn",false)
-		
 	end
 	
 	-- Проверяем сонность
@@ -1122,6 +1132,7 @@ end
 -- Парсинг ини-файла в массив
 function parse_ini_section_to_array(ini,section)
 	local tmp={}
+	
 	if ini:section_exist(section) then
 		local result, id, value = nil, nil, nil
 		for a=0,ini:line_count(section)-1 do
@@ -1131,12 +1142,13 @@ function parse_ini_section_to_array(ini,section)
 			end
 		end
 	end
+	
 	return tmp
 end
+
 function trim (s)
 	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
 end
-
 
 -- Туториал на пси-воздействие
 function on_my_psy()
@@ -1149,22 +1161,20 @@ end
 
 -- Восстановление солнца и погоды, вызывается из туториала
 function restore_sun()
-
-if load_variable("blt",0) == 1 then
-	level.set_weather("stancia")
-	db.Flag2 = 1
-elseif load_variable("blt",0) == 2 then
-	level.set_weather("stancia")
-	db.Flag2 = 1
-	db.Dead2 = 1
-else
-	if has_alife_info("freeplay") and (level.name()=="l12_stancia" or level.name()=="l12_stancia_2" or level.name()=="l11_pripyat" or level.name()=="l10_radar") then
-		level.set_weather("default")
+	if load_variable("blt",0) == 1 then
+		level.set_weather("stancia")
+		db.Flag2 = 1
+	elseif load_variable("blt",0) == 2 then
+		level.set_weather("stancia")
+		db.Flag2 = 1
+		db.Dead2 = 1
 	else
-		level.set_weather(wthr)
+		if has_alife_info("freeplay") and (level.name()=="l12_stancia" or level.name()=="l12_stancia_2" or level.name()=="l11_pripyat" or level.name()=="l10_radar") then
+			level.set_weather("default")
+		else
+			level.set_weather(wthr)
+		end
 	end
-end
-
 end
 
 function get_invbox_data(sobj)
@@ -1179,6 +1189,7 @@ function get_invbox_data(sobj)
 	local t={}
 	amk.parse_object_packet(t,stpk,uppk,size)
 	amk.parse_visual_packet(t,stpk,uppk,size)
+	
 	return t
 end
 
@@ -1206,6 +1217,7 @@ function parse_object_packet(ret,stpk,updpk)
 	ret.custom=stpk:r_stringZ()
 	ret.sid=stpk:r_s32()
 	ret.obs32u3=stpk:r_s32()
+	
 	return ret
 end
 
@@ -1267,20 +1279,25 @@ function parse_se_monster_packet(ret,stpk,updpk,size)
 	parse_skeleton_packet(ret,stpk,updpk,size)
 	ret.spec_obj_id=stpk:r_u16()
 	ret.job_online=stpk:r_u8()
+	
 	if ret.job_online>3 then
 		ret.state=true
 		ret.job_online=ret.job_online-4
 	else
 		ret.state=false
 	end
+	
 	if ret.job_online==3 then
 	ret.job_online_condlist=stpk:r_stringZ()
 	end
+	
 	ret.was_in_smtr=stpk:r_u8()
 	ret.stunk1={}
+	
 	for i=stpk:r_tell(),size-1,1 do
-	table.insert(ret.stunk1,stpk:r_u8())
+		table.insert(ret.stunk1,stpk:r_u8())
 	end
+	
 	return ret
 end
 
@@ -1288,15 +1305,21 @@ function fill_se_monster_packet(ret,stpk,updpk)
 	fill_monster_packet(ret,stpk,updpk)
 	fill_skeleton_packet(ret,stpk,updpk)
 	stpk:w_u16(ret.spec_obj_id)
+	
 	local st=0
+	
 	if ret.state then
 		st=4
 	end
+	
 	stpk:w_u8(ret.job_online+st)
+	
 	if ret.job_online==3 then
 	stpk:w_stringZ(ret.job_online_condlist)
 	end
+	
 	stpk:w_u8(ret.was_in_smtr)
+	
 	for i,v in ipairs(ret.stunk1) do
 	stpk:w_u8(v)
 	end
@@ -1308,11 +1331,12 @@ function parse_monster_packet(ret,stpk,updpk)
 	ret.baseinr=stpk:r_stringZ()
 	ret.smtrid=stpk:r_u16()
 	ret.smtrtaskactive=stpk:r_u8()
-
+	
 	ret.updu16u1=updpk:r_u16()
 	ret.updu16u2=updpk:r_u16()
 	ret.upds32u3=updpk:r_s32()
 	ret.upds32u4=updpk:r_s32()
+	
 	return ret
 end
 
@@ -1322,7 +1346,7 @@ function fill_monster_packet(ret,stpk,updpk)
 	stpk:w_stringZ(ret.baseinr)
 	stpk:w_u16(ret.smtrid)
 	stpk:w_u8(ret.smtrtaskactive)
-
+	
 	updpk:w_u16(ret.updu16u1)
 	updpk:w_u16(ret.updu16u2)
 	updpk:w_s32(ret.upds32u3)
@@ -1333,8 +1357,9 @@ function parse_skeleton_packet(ret,stpk,updpk)
 	ret.skeleton=stpk:r_stringZ()
 	ret.skeleton_flags=stpk:r_u8()
 	ret.source_id=stpk:r_u16()
-
+	
 -- ret.updsku8u1=updpk:r_u8()
+
 	return ret
 end
 
@@ -1342,7 +1367,6 @@ function fill_skeleton_packet(ret,stpk,updpk)
 	stpk:w_stringZ(ret.skeleton)
 	stpk:w_u8(ret.skeleton_flags)
 	stpk:w_u16(ret.source_id)
-
 -- updpk:w_u8(ret.updsku8u1)
 end
 
@@ -1356,7 +1380,7 @@ function parse_creature_packet(ret,stpk,updpk)
 	ret.crvu32u16u2=readvu32u16(stpk)
 	ret.killerid=stpk:r_u16()
 	ret.game_death_time=readvu8u8(stpk)
-
+	
 	ret.updhealth=updpk:r_float()
 	ret.upds32u1=updpk:r_s32()
 	ret.updu8u2=updpk:r_u8()
@@ -1372,6 +1396,7 @@ function parse_creature_packet(ret,stpk,updpk)
 	ret.updteam=updpk:r_u8()
 	ret.updsquad=updpk:r_u8()
 	ret.updgroup=updpk:r_u8()
+	
 	return ret
 end
 
@@ -1385,7 +1410,7 @@ function fill_creature_packet(ret,stpk,updpk)
 	writevu32u16(stpk,ret.crvu32u16u2)
 	stpk:w_u16(ret.killerid)
 	writevu8u8(stpk,ret.game_death_time)
-
+	
 	updpk:w_float(ret.updhealth)
 	updpk:w_s32(ret.upds32u1)
 	updpk:w_u8(ret.updu8u2)
@@ -1404,6 +1429,7 @@ end
 function parse_dynamic_object_visual(ret,stpk,updpk)
 	parse_object_packet(ret,stpk,updpk)
 	parse_visual_packet(ret,stpk,updpk)
+	
 	return ret
 end
 
@@ -1415,34 +1441,41 @@ end
 function readvu32u16(packet)
 	local v={}
 	local len=packet:r_s32()
+	
 	for i=1,len,1 do
-	table.insert(v,packet:r_u16())
+		table.insert(v,packet:r_u16())
 	end
+	
 	return v
 end
 
 function readvu8u8(packet)
 	local v={}
 	local len=8
+	
 	for i=1,len,1 do
-	table.insert(v,packet:r_u8())
+		table.insert(v,packet:r_u8())
 	end
+	
 	return v
 end
 
 function writevu32u16(pk,v)
 	local len=#v
+	
 	pk:w_s32(len)
+	
 	for i=1,len,1 do
-	pk:w_u16(v[i])
+		pk:w_u16(v[i])
 	end
 end
 
 function writevu8u8(pk,v)
 	local len=8 --table.getn(v)
+	
 	--pk:w_u8(len)
 	for i=1,len,1 do
-	pk:w_u8(v[i])
+		pk:w_u8(v[i])
 	end
 end
 
@@ -1450,17 +1483,14 @@ function spawn_item_in_inven(spawn_item,npc)
 	if not npc then
 		npc = db.actor
 	end
-	local item = alife():create(spawn_item,
-		npc:position(),
-		npc:level_vertex_id(),
-		npc:game_vertex_id(),
-		npc:id())
+	
+	local item = alife():create(spawn_item, npc:position(), npc:level_vertex_id(), npc:game_vertex_id(), npc:id())
 	
 	if npc:id() ~= db.actor:id() then
 		-- Фикс пропадания доспавненного предмета при сейв/лоаде
 		level.client_spawn_manager():add(item.id, -1, fix_spawn_item_in_inven, npc) -- Калбек на выход item в онлайн
 	end
-
+	
 	return item
 end
 
@@ -1491,6 +1521,7 @@ function fix_spawn_item_in_invenn(npc, id, item)
 end
 
 local last_armor_id, last_condition = 0, 0
+
 function is_repaired(armor, condition)
 	last_armor_id = armor:id()
 	last_condition = condition
@@ -1498,14 +1529,17 @@ end
 
 function check_armor()
 	local armor = db.actor:item_in_slot(6)
+	
 	if not armor then
 		last_armor_id = 0
+		
 		return
 	end
 
 	if armor:id() ~= last_armor_id then
 		last_armor_id = armor:id()
 		last_condition = armor:condition()
+		
 		return
 	end
 
@@ -1519,19 +1553,3 @@ end
 ------------------- Библиотека служебных скриптов для OGSM 2.x ----------------
 
 ---------------------- Copyright 2007-2008 xStream & DEXXX --------------------
-
---[[
-
-If you're going to use the whole of this script or its parts in your own creative
-developments for the S.T.A.L.K.E.R. game, please don't become such a goddamn
-motherfucker like the notorious author of the ABC Mod - Carbrobro. Leave the
-copyrights, note the real author(s) and don't claim others' ideas and their
-realization to be your own ones. It's just simple Modmakers' Ethics. Thank you!
-
-Если вы собираетесь использовать данный скрипт целиком или частично в своих
-разработках по игре S.T.A.L.K.E.R., пожалуйста не опускайтесь до уровня печально
-известного автора ABC мода - Carbrobro. Не удаляйте копирайты, указывайте настоящего
-автора(ов) и не выдавайте чужие идеи и их реализацию за свои. Ведь это элементарная
-этика модостроителей! Спасибо за понимание.
-
-]]--
