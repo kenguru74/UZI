@@ -638,7 +638,9 @@ function send_to_nearest_accessible_vertex( npc, v_id )
 --		printf("vertex_position")
 		v_id, vtemp = npc:accessible_nearest( level.vertex_position( v_id ), vtemp )
 	end
-	npc:set_dest_level_vertex_id( v_id )
+	
+	npc:set_dest_level_vertex_id(v_id)
+	
 	return v_id
 end
 
