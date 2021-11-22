@@ -1712,3 +1712,220 @@ quest_section["hunters_toz"] = true
 quest_section["bar_ecolog_flash"] = true
 quest_section["bar_tiran_pda"] = true
 quest_section["bar_lucky_pda"] = true
+
+-------------------------------------------------------------------------------
+--                            Добавлено в OGSE                               --
+-------------------------------------------------------------------------------
+function ASSERT(cond, ...)
+	if not cond then
+		abort(...)
+	end
+end
+
+sys_ini = system_ini() --Из скриптов вызывать только sys_ini!!!!
+
+-- служебные функции для чтения параметров из секций объектов
+
+function get_string(section, param, def_val, ini_file)
+	local ini = ini_file or sys_ini
+	ASSERT(ini:section_exist(section), "get_string: section '"..section.."' doesn't exist")
+	if ini:line_exist(section, param) then
+		return ini:r_string(section, param)
+	else
+		return def_val
+	end
+end
+
+function get_string_wq(section, param, def_val, ini_file)
+	local ini = ini_file or sys_ini
+	ASSERT(ini:section_exist(section), "get_string: section '"..section.."' doesn't exist")
+	if ini:line_exist(section, param) then
+		return ini:r_string_wq(section, param)
+	else
+		return def_val
+	end
+end
+
+function get_u32(section, param, def_val, ini_file)
+	local ini = ini_file or sys_ini
+	ASSERT(ini:section_exist(section), "get_u32: section '"..section.."' doesn't exist")
+	if ini:line_exist(section, param) then
+		return ini:r_u32(section, param)
+	else
+		return def_val
+	end
+end
+
+function get_bool(section, param, def_val, ini_file)
+	local ini = ini_file or sys_ini
+	ASSERT(ini:section_exist(section), "get_bool: section '"..section.."' doesn't exist")
+	if ini:line_exist(section, param) then
+		return ini:r_bool(section, param)
+	else
+		return not (not def_val)
+	end
+end
+
+function get_float(section, param, def_val, ini_file)
+	local ini = ini_file or sys_ini
+	ASSERT(ini:section_exist(section), "get_float: section '"..section.."' doesn't exist")
+	if ini:line_exist(section, param) then
+		return ini:r_float(section, param)
+	else
+		return def_val
+	end
+end
+
+-- получить класс из секции, полезно в том случае, если нет объекта (и недоступен метод clsid), а есть только имя секции
+function get_class(section)
+	ASSERT(sys_ini:section_exist(section), "get_class: section '"..section.."' doesn't exist")
+	ASSERT(sys_ini:line_exist(section, "class"), "get_class: there is no 'class' parameter in the section '"..section.."'")
+	return sys_ini:r_clsid(section, "class")
+end
+
+-- делит строку в виде "aaa,bbb,ccc" на строки "aaa", "bbb", "ccc" и возвращает их в виде массива
+function split_comma_separated_list(s)
+	return string.explode(",", s)
+end
+
+-- читает время, сохранённое в виде строки со значениями, разделёнными запятой, и конвертирует в значение класса CTime
+function unpack_time_from_string(str_time)
+	local time_values = {}
+	for i,s in ipairs(split_comma_separated_list(str_time)) do
+		local value = tonumber(s)
+		ASSERT(value, "unpack_time_from_string: problem with unpacking saved time '%s', value #%d (%s)", str_time, i, s)
+		table.insert(time_values, value)
+	end
+	ASSERT(#time_values == 7, "unpack_time_from_string: packed time '%s' has wrong number of components. Must be equal to seven.")
+	local res = game.CTime()
+	res:set(unpack(time_values))
+	return res
+end
+
+-- упаковать время в виде объекта CTime в строку значений, разделённых запятой
+function pack_time_to_string(t)
+	ASSERT(t, "pack_time_to_string: t is a nil reference")
+	return table.concat({t:get()}, ',')
+end
+
+-- читает строку вида "s1,s2,s3" и парсит на строковые значения, разделённые запятой, в таблицу вида {s1, s2, s3}
+function get_names(section, param, ini_file)
+	local ini = ini_file or sys_ini
+	ASSERT(ini:section_exist(section), "get_names: section '"..section.."' doesn't exist")
+	local s = ini:r_string(section, param)
+	return split_comma_separated_list(s)
+end
+
+-- читает строку вида "s1,s2,s3" и парсит на численные значения, разделённые запятой, в таблицу вида {n1, n2, n3}
+function get_numbers(section, param, ini_file)
+	local t = {}
+	for i,sv in ipairs(get_names(section, param, ini_file)) do
+		local v = tonumber(sv)
+		ASSERT(v, "get_numbers: can not convert to number item ["..i.."]: "..sv)
+		table.insert(t, v)
+	end
+	return t
+end
+
+function get_section_keys(section, ini_file)
+	local ini = ini_file or sys_ini
+	ASSERT(ini:section_exist(section), "get_section_keys: section '"..section.."' doesn't exist")
+	local t = {}
+	for i=0,ini:line_count(section)-1 do
+		local _, key, v = ini:r_line(section, i)
+		t[i+1] = key
+	end
+	return t
+end
+
+function get_section_keys_and_values( section, ini_file )
+	local ini = ini_file or sys_ini
+	ASSERT( ini:section_exist( section ), "get_section_keys: section '" .. section .. "' doesn't exist" )
+	local t = {}
+	for i = 0, ini:line_count( section ) - 1 do
+		local _, key, v = ini:r_line( section, i )
+		t[ key ] = v
+	end
+	
+	return t
+end
+
+function get_vector(section, param, def_val, ini_file)
+	local ini = ini_file or sys_ini
+	ASSERT(ini:section_exist(section), "get_vector: section '"..section.."' doesn't exist")
+	if ini:line_exist(section, param) then
+		local pos = get_names(section, param, ini)
+		return vector():set(tonumber(pos[1]), tonumber(pos[2]), tonumber(pos[3]))
+	else 
+		if def_val then
+			return def_val
+		else
+			return vector():set(0,0,0)
+		end
+	end
+end
+
+-- значение по умолчанию должно задаваться таблицей {num1, num2}
+function get_vector2(section, param, def_val, ini_file)
+	local ini = ini_file or sys_ini
+	ASSERT(ini:section_exist(section), "get_vector2: section '"..section.."' doesn't exist")
+	if ini:line_exist(section, param) then
+		local pos = get_names(section, param, ini)
+		return vector2():set(tonumber(pos[1]), tonumber(pos[2]))
+	else
+		if def_val then
+			return def_val
+		else
+			return vector2():set(0,0)
+		end
+	end
+end
+
+-- Берём параметры иконки из конфигов
+function get_inventory_icon_rect(sect)
+	return 50*sys_ini:r_u32(sect, "inv_grid_x"), 50*sys_ini:r_u32(sect, "inv_grid_y"), 50*sys_ini:r_u32(sect, "inv_grid_width"), 50*sys_ini:r_u32(sect, "inv_grid_height")
+end
+
+-- получить номер локации по номеру глобального вертекса
+function location_id_by_gvid(gvid)
+	if gvid and game_graph():valid_vertex_id( gvid ) then
+		return game_graph():vertex( gvid ):level_id()
+	end
+end
+
+-- получить номер локации для клиентского объекта
+function object_location_id(obj)
+	local gvid = obj.game_vertex_id and obj:game_vertex_id() or obj.m_game_vertex_id
+	return location_id_by_gvid(gvid)
+	--return obj.level_id --Тут может вылетать, если у объекта невалидный gvid, походу.
+end
+
+function object_level_name(obj)
+	local lid = object_location_id( obj )
+	if lid then
+		return level_system_name_by_lid( lid )
+	end
+	--return obj.level_name --Тут может вылетать, если у объекта невалидный gvid, походу.
+end
+
+function level_system_name_by_lid(lid)
+	if lid then
+		return alife():level_name( lid )
+	end
+end
+
+function level_name_by_level_system_name(lname)
+	return game.translate_string(lname)
+end
+
+--системное имя уровня
+function level_system_name_by_gvid(gvid)
+	return level_system_name_by_lid(location_id_by_gvid(gvid))
+end
+
+--Внятное имя уровня (не системное, а то, которое изображается на карте):
+function level_name_by_gvid(gvid)
+	return level_name_by_level_system_name(level_system_name_by_gvid(gvid))
+end
+
+
