@@ -676,15 +676,15 @@ function kill_dolg_precondition()
 end
 
 function kill_arny_reward(first_speaker, second_speaker)
-	dialogs.relocate_money(second_speaker, 10000, "in")
+	dialogs.relocate_money(second_speaker, 1000, "in")
 end
 
 function kill_freedom_reward(first_speaker, second_speaker)
-	dialogs.relocate_money(second_speaker, 30000, "in")
+	dialogs.relocate_money(second_speaker, 3000, "in")
 end
 
 function kill_dolg_reward(first_speaker, second_speaker)
-	dialogs.relocate_money(second_speaker, 50000, "in")
+	dialogs.relocate_money(second_speaker, 5000, "in")
 end
 
 function final_precondition()
