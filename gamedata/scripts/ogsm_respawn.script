@@ -439,8 +439,10 @@ function first_run()
 	-- Подвал справа от тоннеля
 	spawn_restrictor("predbannik", vector():set(18.1,9.7,29.8), 971533, 4000, "stalker", 3)
 	-- Бар
-	spawn_restrictor("predbannik", vector():set(69.6,-0.9,89.0), 1053187, 4005, "fake_stalker_ecolog", 70)
-	spawn_restrictor("predbannik", vector():set(83.8,-1.4,76.6), 1075486, 4005, "fake_stalker_ecolog", 50)
+	spawn_restrictor("predbannik", vector():set(73.2,-0.9,89.4), 1058728, 4005, "stalker", 30)
+	spawn_restrictor("predbannik", vector():set(76.5,-0.9,97.0), 1063285, 4005, "stalker", 8)
+	-- Подсобка Бара
+	spawn_restrictor("predbannik", vector():set(83.8,-1.4,76.6), 1075486, 4005, "trader_ecolog", 5)
 	-- Подвал слева от тоннеля
 	spawn_restrictor("predbannik", vector():set(29.5,-3.1,-2.5), 989266, 4002, "stalker", 6)
 	-- Пещера Чучельника
