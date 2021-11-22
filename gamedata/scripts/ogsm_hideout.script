@@ -18,69 +18,69 @@ local npc_go = {}
 
 function is_in_specific_zone(npc)
 	if ogsm_surge and
-	 ( ogsm_surge.npc_in_zone(npc,"predbannik",58,79,-0.99,2.51,79,100) or		        -- Бар 
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-237,-227,16.90,18.90,235,243) or		-- Пещера Чучельника 1
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-260,-254,20.02,22.02,257,263) or		-- Пещера Чучельника 2
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-25,-21,-4.34,-2.34,327,330) or		-- Подвал Скупого
-	   ogsm_surge.npc_in_zone(npc,"predbannik",81,85,-1.47,0.53,74,78) or		        -- Озёрский
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-454,-436,-5.74,-3.74,-156,-139) or		-- Оружейка в городке
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-435,-433,-5.74,-3.74,-150,-138) or		-- Жиклер
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-283,-254,27.17,29.17,-184,-173) or	        -- База
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-237,-235,23.39,25.39,-208,-206) or	        -- Блокпост у базы
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-38,-16,-3.08,-1.08,-243,-229) or	        -- Завод
-	   ogsm_surge.npc_in_zone(npc,"marsh",-182,-172,1.8,3.8,-276,-271) or	                -- Комната Коменданта
-	   ogsm_surge.npc_in_zone(npc,"marsh",-164,-160,1.8,3.8,-274,-270) or	                -- Эколог
-	   ogsm_surge.npc_in_zone(npc,"swamp_old",-328,-320,2.2,4.2,66,75) or	                -- Тоннель
-	   ogsm_surge.npc_in_zone(npc,"swamp_old",187,195,2.8,4.8,-43,-35) or	                -- Дом Доктора
-	   ogsm_surge.npc_in_zone(npc,"garbage_old",-49,-43,3.5,5.5,259,265) or	                -- Ангар
-	   ogsm_surge.npc_in_zone(npc,"garbage_old",-132,-126,6.0,8.0,263,269) or	        -- Ангар 2
-	   ogsm_surge.npc_in_zone(npc,"garbage_old",44,48,21.9,23.9,-150,-146) or	        -- Хутор
-	   ogsm_surge.npc_in_zone(npc,"aver",146,148,-2.6,-0.6,-312,-310) or	                -- Вагончик
-	   ogsm_surge.npc_in_zone(npc,"aver",-406,-402,0.7,2.7,62,66) or	                -- Пещера
-	   ogsm_surge.npc_in_zone(npc,"aver",-349,-345,-9.3,-7.3,-8,-4) or	                -- Дом Лесничего
-	   ogsm_surge.npc_in_zone(npc,"lost_village",27,31,-3.1,-1.1,-2,1) or	                -- Подземка
-	   ogsm_surge.npc_in_zone(npc,"lost_village",75,79,4.5,6.5,-60,-56) or	                -- Дом 1
-	   ogsm_surge.npc_in_zone(npc,"lost_village",3,7,9.1,11.1,-67,-63) or	                -- Дом 2
-	   ogsm_surge.npc_in_zone(npc,"lost_village",47,51,3.9,5.9,90,94) or	                -- Тоннель
-	   ogsm_surge.npc_in_zone(npc,"atp_for_test22",119,125,-6.5,-4.5,-34,-28) or	        -- Здание 1 на АТП
-	   ogsm_surge.npc_in_zone(npc,"atp_for_test22",142,148,-7.0,-5.0,-70,-64) or	        -- Здание 2 на АТП
-	   ogsm_surge.npc_in_zone(npc,"atp_for_test22",170,178,-7.0,-5.0,-32,-24) or	        -- Здание 3 на АТП
-	   ogsm_surge.npc_in_zone(npc,"red_forest",24,30,4.0,6.0,22,28) or	                -- Лесник 2 этаж
-	   ogsm_surge.npc_in_zone(npc,"red_forest",11,15,0.1,2.1,-42,-38) or	                -- Вагончик у капера
-	   ogsm_surge.npc_in_zone(npc,"red_forest",-106,-100,-0.8,1.2,-203,-197) or	        -- Тоннель Стрелка
-	   ogsm_surge.npc_in_zone(npc,"red_forest",-185,-179,0.1,2.1,-291,-285) or	        -- Тоннель в Лиманск
-	   ogsm_surge.npc_in_zone(npc,"zaton",99,136,-7.5,0,175,190) or	                        -- Скадовск
-	   ogsm_surge.npc_in_zone(npc,"zaton",1,7,-0.5,1.5,33,39) or	                        -- Шевченко
-	   ogsm_surge.npc_in_zone(npc,"zaton",425,431,36.2,38.2,-15,-11) or	                -- Лесничество
-	   ogsm_surge.npc_in_zone(npc,"zaton",303,313,33.2,39.2,-404,-394) or	                -- Станция переработки
-	   ogsm_surge.npc_in_zone(npc,"zaton",-147,-143,23.5,25.5,-431,-427) or	                -- Ангар
-	   ogsm_surge.npc_in_zone(npc,"zaton",157,161,-6.9,-4.9,-143,-139) or	                -- Ной
-	   ogsm_surge.npc_in_zone(npc,"zaton",232,238,8.0,10.0,-7,-1) or	                -- Хибара на Портовых кранах
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-61,-57,3.4,5.4,215,219) or      	        -- Костоправ
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-58,-54,3.4,5.4,202,206) or      	        -- Гаваец
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-12,-8,23.1,25.1,244,248) or      	        -- Башня Зулуса
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-52,-46,3.4,5.4,194,200) or      	        -- Янов
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-220,-218,-3.5,-1.5,73,75) or      	        -- Герман в Бункере
-	   ogsm_surge.npc_in_zone(npc,"jupiter",69,73,-0.7,1.3,330,332) or      	        -- Полустанок
-	   ogsm_surge.npc_in_zone(npc,"jupiter",169,173,-8.6,-6.6,209,213) or      	        -- Вагончик 1
-	   ogsm_surge.npc_in_zone(npc,"jupiter",158,162,1.2,3.2,215,219) or      	        -- Вагончик 2
-	   ogsm_surge.npc_in_zone(npc,"pripyat",283,291,0.6,2.6,238,246) or      	        -- Речной порт
-	   ogsm_surge.npc_in_zone(npc,"pripyat",142,150,-0.0,2.0,-192,-184) or      	        -- Прачечная
-	   ogsm_surge.npc_in_zone(npc,"limansk",-45,-33,-4.4,-2.4,-261,-249) or      	        -- Дом с техником
-	   ogsm_surge.npc_in_zone(npc,"l01_escape",-256,-246,-137,-132,-25,-20) or		-- Бункер Сидора
-	   ogsm_surge.npc_in_zone(npc,"l01_escape",28,34,16.5,18.5,673,679) or 	                -- Северный КПП
-	   ogsm_surge.npc_in_zone(npc,"l03_agroprom",-198.31,-195.66,85.4,96.54,2,5.3) or	-- Вагон дезертира
-	   ogsm_surge.npc_in_zone(npc,"l04_darkvalley",30,50,-60,-25,-4,0) or			-- Тюрьма в Темной долине
-	   ogsm_surge.npc_in_zone(npc,"l05_bar",123,140,18,30,-6,0) or 				-- Бар
-	   ogsm_surge.npc_in_zone(npc,"l05_bar",118,121,34,41,-4,1) or 				-- Охранник Бара
-	   ogsm_surge.npc_in_zone(npc,"l05_bar",149,158,67,74,0,4) or 				-- Приемная Арни
-	   ogsm_surge.npc_in_zone(npc,"l05_bar",136,168,73,134,-22,-10) or			-- Арена
-	   ogsm_surge.npc_in_zone(npc,"l05_bar",208,234,120,139,-6,2) or			-- База Долга
-	   ogsm_surge.npc_in_zone(npc,"l06_rostok",-90,-87,125,151,0,6) or 			-- Блокпост наемников
-	   ogsm_surge.npc_in_zone(npc,"l07_military",-27,-16,-33,-14,-9,0) or 			-- База Свободы
-	   ogsm_surge.npc_in_zone(npc,"l08_yantar",23,40,-282,-269,-16,0) or			-- Бункер ученых
-	   ogsm_surge.npc_in_zone(npc,"l08_yantar",-265,-22,-218,-6,-20,-11) or			-- Кишка
-	   ogsm_surge.npc_in_zone(npc,"l11_pripyat",-16,-2,188,204,-5,0) ) then			-- Подвал ДК
+	(ogsm_surge.npc_in_zone(npc,"predbannik",58,79,-0.99,2.51,79,100) or		     -- Бар 
+	ogsm_surge.npc_in_zone(npc,"predbannik",-237,-227,16.90,18.90,235,243) or		-- Пещера Чучельника 1
+	ogsm_surge.npc_in_zone(npc,"predbannik",-260,-254,20.02,22.02,257,263) or		-- Пещера Чучельника 2
+	ogsm_surge.npc_in_zone(npc,"predbannik",-25,-21,-4.34,-2.34,327,330) or		-- Подвал Скупого
+	ogsm_surge.npc_in_zone(npc,"predbannik",81,85,-1.47,0.53,74,78) or		  -- Озёрский
+	ogsm_surge.npc_in_zone(npc,"predbannik",-454,-436,-5.74,-3.74,-156,-139) or		-- Оружейка в городке
+	ogsm_surge.npc_in_zone(npc,"predbannik",-435,-433,-5.74,-3.74,-150,-138) or		-- Жиклер
+	ogsm_surge.npc_in_zone(npc,"predbannik",-283,-254,27.17,29.17,-184,-173) or	  -- База
+	ogsm_surge.npc_in_zone(npc,"predbannik",-237,-235,23.39,25.39,-208,-206) or	  -- Блокпост у базы
+	ogsm_surge.npc_in_zone(npc,"predbannik",-38,-16,-3.08,-1.08,-243,-229) or	  -- Завод
+	ogsm_surge.npc_in_zone(npc,"marsh",-182,-172,1.8,3.8,-276,-271) or	          -- Комната Коменданта
+	ogsm_surge.npc_in_zone(npc,"marsh",-164,-160,1.8,3.8,-274,-270) or	          -- Эколог
+	ogsm_surge.npc_in_zone(npc,"swamp_old",-328,-320,2.2,4.2,66,75) or	          -- Тоннель
+	ogsm_surge.npc_in_zone(npc,"swamp_old",187,195,2.8,4.8,-43,-35) or	          -- Дом Доктора
+	ogsm_surge.npc_in_zone(npc,"garbage_old",-49,-43,3.5,5.5,259,265) or	          -- Ангар
+	ogsm_surge.npc_in_zone(npc,"garbage_old",-132,-126,6.0,8.0,263,269) or	  -- Ангар 2
+	ogsm_surge.npc_in_zone(npc,"garbage_old",44,48,21.9,23.9,-150,-146) or	  -- Хутор
+	ogsm_surge.npc_in_zone(npc,"aver",146,148,-2.6,-0.6,-312,-310) or	          -- Вагончик
+	ogsm_surge.npc_in_zone(npc,"aver",-406,-402,0.7,2.7,62,66) or	          -- Пещера
+	ogsm_surge.npc_in_zone(npc,"aver",-349,-345,-9.3,-7.3,-8,-4) or	          -- Дом Лесничего
+	ogsm_surge.npc_in_zone(npc,"lost_village",27,31,-3.1,-1.1,-2,1) or	          -- Подземка
+	ogsm_surge.npc_in_zone(npc,"lost_village",75,79,4.5,6.5,-60,-56) or	          -- Дом 1
+	ogsm_surge.npc_in_zone(npc,"lost_village",3,7,9.1,11.1,-67,-63) or	          -- Дом 2
+	ogsm_surge.npc_in_zone(npc,"lost_village",47,51,3.9,5.9,90,94) or	          -- Тоннель
+	ogsm_surge.npc_in_zone(npc,"atp_for_test22",119,125,-6.5,-4.5,-34,-28) or	  -- Здание 1 на АТП
+	ogsm_surge.npc_in_zone(npc,"atp_for_test22",142,148,-7.0,-5.0,-70,-64) or	  -- Здание 2 на АТП
+	ogsm_surge.npc_in_zone(npc,"atp_for_test22",170,178,-7.0,-5.0,-32,-24) or	  -- Здание 3 на АТП
+	ogsm_surge.npc_in_zone(npc,"red_forest",24,30,4.0,6.0,22,28) or	          -- Лесник 2 этаж
+	ogsm_surge.npc_in_zone(npc,"red_forest",11,15,0.1,2.1,-42,-38) or	          -- Вагончик у капера
+	ogsm_surge.npc_in_zone(npc,"red_forest",-106,-100,-0.8,1.2,-203,-197) or	  -- Тоннель Стрелка
+	ogsm_surge.npc_in_zone(npc,"red_forest",-185,-179,0.1,2.1,-291,-285) or	  -- Тоннель в Лиманск
+	ogsm_surge.npc_in_zone(npc,"zaton",99,136,-7.5,0,175,190) or	                  -- Скадовск
+	ogsm_surge.npc_in_zone(npc,"zaton",1,7,-0.5,1.5,33,39) or	                  -- Шевченко
+	ogsm_surge.npc_in_zone(npc,"zaton",425,431,36.2,38.2,-15,-11) or	          -- Лесничество
+	ogsm_surge.npc_in_zone(npc,"zaton",303,313,33.2,39.2,-404,-394) or	          -- Станция переработки
+	ogsm_surge.npc_in_zone(npc,"zaton",-147,-143,23.5,25.5,-431,-427) or	          -- Ангар
+	ogsm_surge.npc_in_zone(npc,"zaton",157,161,-6.9,-4.9,-143,-139) or	          -- Ной
+	ogsm_surge.npc_in_zone(npc,"zaton",232,238,8.0,10.0,-7,-1) or	          -- Хибара на Портовых кранах
+	ogsm_surge.npc_in_zone(npc,"jupiter",-61,-57,3.4,5.4,215,219) or      	  -- Костоправ
+	ogsm_surge.npc_in_zone(npc,"jupiter",-58,-54,3.4,5.4,202,206) or      	  -- Гаваец
+	ogsm_surge.npc_in_zone(npc,"jupiter",-12,-8,23.1,25.1,244,248) or      	  -- Башня Зулуса
+	ogsm_surge.npc_in_zone(npc,"jupiter",-52,-46,3.4,5.4,194,200) or      	  -- Янов
+	ogsm_surge.npc_in_zone(npc,"jupiter",-220,-218,-3.5,-1.5,73,75) or      	  -- Герман в Бункере
+	ogsm_surge.npc_in_zone(npc,"jupiter",69,73,-0.7,1.3,330,332) or      	  -- Полустанок
+	ogsm_surge.npc_in_zone(npc,"jupiter",169,173,-8.6,-6.6,209,213) or      	  -- Вагончик 1
+	ogsm_surge.npc_in_zone(npc,"jupiter",158,162,1.2,3.2,215,219) or      	  -- Вагончик 2
+	ogsm_surge.npc_in_zone(npc,"pripyat",283,291,0.6,2.6,238,246) or      	  -- Речной порт
+	ogsm_surge.npc_in_zone(npc,"pripyat",142,150,-0.0,2.0,-192,-184) or      	  -- Прачечная
+	ogsm_surge.npc_in_zone(npc,"limansk",-45,-33,-4.4,-2.4,-261,-249) or      	  -- Дом с техником
+	ogsm_surge.npc_in_zone(npc,"l01_escape",-256,-246,-137,-132,-25,-20) or		-- Бункер Сидора
+	ogsm_surge.npc_in_zone(npc,"l01_escape",28,34,16.5,18.5,673,679) or 	          -- Северный КПП
+	ogsm_surge.npc_in_zone(npc,"l03_agroprom",-198.31,-195.66,85.4,96.54,2,5.3) or	-- Вагон дезертира
+	ogsm_surge.npc_in_zone(npc,"l04_darkvalley",30,50,-60,-25,-4,0) or			-- Тюрьма в Темной долине
+	ogsm_surge.npc_in_zone(npc,"l05_bar",123,140,18,30,-6,0) or 				-- Бар
+	ogsm_surge.npc_in_zone(npc,"l05_bar",118,121,34,41,-4,1) or 				-- Охранник Бара
+	ogsm_surge.npc_in_zone(npc,"l05_bar",149,158,67,74,0,4) or 				-- Приемная Арни
+	ogsm_surge.npc_in_zone(npc,"l05_bar",136,168,73,134,-22,-10) or			-- Арена
+	ogsm_surge.npc_in_zone(npc,"l05_bar",208,234,120,139,-6,2) or			-- База Долга
+	ogsm_surge.npc_in_zone(npc,"l06_rostok",-90,-87,125,151,0,6) or 			-- Блокпост наемников
+	ogsm_surge.npc_in_zone(npc,"l07_military",-27,-16,-33,-14,-9,0) or 			-- База Свободы
+	ogsm_surge.npc_in_zone(npc,"l08_yantar",23,40,-282,-269,-16,0) or			-- Бункер ученых
+	ogsm_surge.npc_in_zone(npc,"l08_yantar",-265,-22,-218,-6,-20,-11) or			-- Кишка
+	ogsm_surge.npc_in_zone(npc,"l11_pripyat",-16,-2,188,204,-5,0) ) then			-- Подвал ДК
 		return true
 	end
 	return false
@@ -88,81 +88,81 @@ end
 
 function is_in_hide(npc)
 	if ogsm_surge and
-	 ( ogsm_surge.npc_in_zone(npc,"predbannik",15,20,9.7,11.7,27,32) or             -- Подвал справа от тоннеля
-	   ogsm_surge.npc_in_zone(npc,"predbannik",25,33,-3.16,-1.16,-7,2) or 	        -- Подвал слева от тоннеля
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-237,-227,16.90,18.90,235,243) or    -- Пещера Чучельника 1
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-260,-254,20.02,22.02,257,263) or    -- Пещера Чучельника 2
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-40,-37,-1.19,1.19,331,334) or	-- Подвал в лагере Скупого
-	   ogsm_surge.npc_in_zone(npc,"predbannik",81,85,-1.47,0.53,74,78) or		-- Озёрский
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-454,-436,-5.74,-3.74,-156,-139) or	-- Оружейка в городке
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-435,-433,-5.74,-3.74,-150,-138) or	-- Жиклер
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-565,-562,15.65,13.65,265,268) or	-- Блокпост 1
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-564,-561,14.98,12.98,288,294) or	-- Блокпост 2
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-283,-254,27.17,29.17,-184,-173) or	-- База
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-237,-235,23.39,25.39,-208,-206) or	-- Блокпост у базы
-	   ogsm_surge.npc_in_zone(npc,"predbannik",-38,-16,-3.08,-1.08,-243,-229) or	-- Завод
-	   ogsm_surge.npc_in_zone(npc,"marsh",-126,-123,-1.2,1.2,-274,-271) or	        -- Подвал на Базе
-	   ogsm_surge.npc_in_zone(npc,"marsh",-158,-155,1.8,3.8,-278,-273) or	        -- Барак на Базе
-	   ogsm_surge.npc_in_zone(npc,"marsh",44,48,2.9,4.9,-239,-236) or	        -- Рыбацкий хутор
-	   ogsm_surge.npc_in_zone(npc,"marsh",-6,-2,3.3,5.3,10,13) or	                -- Насосная станция
-	   ogsm_surge.npc_in_zone(npc,"marsh",-284,-281,0.9,2.9,32,34) or	        -- Вагончик у вышки
-	   ogsm_surge.npc_in_zone(npc,"marsh",-43,-40,-0.9,2.9,265,269) or	        -- Хутор с водонапоркой
-	   ogsm_surge.npc_in_zone(npc,"marsh",-180,-175,2.4,4.4,415,420) or	        -- Западный хутор
-	   ogsm_surge.npc_in_zone(npc,"marsh",-185,-180,2.2,4.2,530,537) or	        -- Пещерка возле моста
-	   ogsm_surge.npc_in_zone(npc,"marsh",404,416,3.6,5.6,233,243) or	        -- Мехдвор
-	   ogsm_surge.npc_in_zone(npc,"marsh",578,581,3.6,5.6,418,424) or	        -- Северный хутор
-	   ogsm_surge.npc_in_zone(npc,"marsh",259,264,0.5,2.5,-183,-180) or	        -- Церковь
-	   ogsm_surge.npc_in_zone(npc,"marsh",487,492,2.8,4.8,-192,-189) or	        -- Южный хутор
-	   ogsm_surge.npc_in_zone(npc,"swamp_old",-328,-320,2.2,4.2,66,75) or	        -- Тоннель
-	   ogsm_surge.npc_in_zone(npc,"swamp_old",187,195,2.8,4.8,-43,-35) or	        -- Дом Доктора
-	   ogsm_surge.npc_in_zone(npc,"garbage_old",-49,-43,3.5,5.5,259,265) or	        -- Ангар
-	   ogsm_surge.npc_in_zone(npc,"garbage_old",-132,-126,6.0,8.0,263,269) or	-- Ангар 2
-	   ogsm_surge.npc_in_zone(npc,"garbage_old",44,48,21.9,23.9,-150,-146) or	-- Хутор
-	   ogsm_surge.npc_in_zone(npc,"aver",146,148,-2.6,-0.6,-312,-310) or	        -- Вагончик
-	   ogsm_surge.npc_in_zone(npc,"aver",-406,-402,0.7,2.7,62,66) or	        -- Пещера
-	   ogsm_surge.npc_in_zone(npc,"aver",-349,-345,-9.3,-7.3,-8,-4) or	        -- Дом Лесничего
-	   ogsm_surge.npc_in_zone(npc,"lost_village",75,79,4.5,6.5,-60,-56) or	        -- Дом 1
-	   ogsm_surge.npc_in_zone(npc,"lost_village",3,7,9.1,11.1,-67,-63) or	        -- Дом 2
-	   ogsm_surge.npc_in_zone(npc,"lost_village",47,51,3.9,5.9,90,94) or	        -- Тоннель
-	   ogsm_surge.npc_in_zone(npc,"atp_for_test22",119,125,-6.5,-4.5,-34,-28) or	-- Здание 1 на АТП
-	   ogsm_surge.npc_in_zone(npc,"atp_for_test22",142,148,-7.0,-5.0,-70,-64) or	-- Здание 2 на АТП
-	   ogsm_surge.npc_in_zone(npc,"atp_for_test22",170,178,-7.0,-5.0,-32,-24) or	-- Здание 3 на АТП
-	   ogsm_surge.npc_in_zone(npc,"red_forest",24,30,4.0,6.0,22,28) or	        -- Лесник 2 этаж
-	   ogsm_surge.npc_in_zone(npc,"red_forest",11,15,0.1,2.1,-42,-38) or	        -- Вагончик у капера
-	   ogsm_surge.npc_in_zone(npc,"red_forest",-106,-100,-0.8,1.2,-203,-197) or	-- Тоннель Стрелка
-	   ogsm_surge.npc_in_zone(npc,"red_forest",-185,-179,0.1,2.1,-291,-285) or	-- Тоннель в Лиманск
-	   ogsm_surge.npc_in_zone(npc,"zaton",99,136,-7.5,0,175,190) or	                -- Скадовск
-	   ogsm_surge.npc_in_zone(npc,"zaton",1,7,-0.5,1.5,33,39) or	                -- Шевченко
-	   ogsm_surge.npc_in_zone(npc,"zaton",425,431,36.2,38.2,-15,-11) or	        -- Лесничество
-	   ogsm_surge.npc_in_zone(npc,"zaton",303,313,33.2,39.2,-404,-394) or	        -- Станция переработки
-	   ogsm_surge.npc_in_zone(npc,"zaton",-147,-143,23.5,25.5,-431,-427) or	        -- Ангар
-	   ogsm_surge.npc_in_zone(npc,"zaton",157,161,-6.9,-4.9,-143,-139) or	        -- Ной
-	   ogsm_surge.npc_in_zone(npc,"zaton",232,238,8.0,10.0,-7,-1) or	        -- Хибара на Портовых кранах
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-12,-8,23.1,25.1,244,248) or      	-- Башня Зулуса
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-52,-46,3.4,5.4,194,200) or      	-- Янов
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-227,-219,-3.5,-1.5,74,82) or      	-- Бункер
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-220,-218,-3.5,-1.5,73,75) or      	-- Герман в Бункере
-	   ogsm_surge.npc_in_zone(npc,"jupiter",5,13,24.6,26.6,-190,-182) or      	-- КПП
-	   ogsm_surge.npc_in_zone(npc,"jupiter",208,216,35.6,37.6,-446,-438) or      	-- Возле Юпитера
-	   ogsm_surge.npc_in_zone(npc,"jupiter",-452,-444,0.1,2.1,-385,-377) or      	-- Склад конетейнеров
-	   ogsm_surge.npc_in_zone(npc,"jupiter",69,73,-0.7,1.3,330,332) or      	-- Полустанок
-	   ogsm_surge.npc_in_zone(npc,"jupiter",169,173,-8.6,-6.6,209,213) or      	-- Вагончик 1
-	   ogsm_surge.npc_in_zone(npc,"jupiter",158,162,1.2,3.2,215,219) or      	-- Вагончик 2
-	   ogsm_surge.npc_in_zone(npc,"pripyat",283,291,0.6,2.6,238,246) or      	-- Речной порт
-	   ogsm_surge.npc_in_zone(npc,"pripyat",142,150,-0.0,2.0,-192,-184) or      	-- Прачечная
-	   ogsm_surge.npc_in_zone(npc,"limansk",-45,-33,-4.4,-2.4,-261,-249) or      	-- Дом с техником
-	   ogsm_surge.npc_in_zone(npc,"l01_escape",-211,-198,-132,-125,-23,-20) or 	-- Подвал 1 в лагере новичков
-	   ogsm_surge.npc_in_zone(npc,"l01_escape",-216,-209,-133,-120,-24,-20) or 	-- Подвал 2 в лагере новичков
-	   ogsm_surge.npc_in_zone(npc,"l01_escape",28,34,16.5,18.5,673,679) or 	        -- Северный КПП
-	   ogsm_surge.npc_in_zone(npc,"l02_garbage",-112,-57,-6,25,-9,90) or		-- Ангар на Свалке
-	   ogsm_surge.npc_in_zone(npc,"l05_bar",206,213,50,68,0,4) or			-- Магазин Петренко
-	   ogsm_surge.npc_in_zone(npc,"l06_rostok",-285,-235,78,112,-7,0) or 		-- Тоннель Фримена
-	   ogsm_surge.npc_in_zone(npc,"l10_radar",639,664,167,189,-45,-37) or 		-- Секретная база Монолита
-	   ogsm_surge.npc_in_zone(npc,"l10_radar",86.73,153,-27,-21.70,-10,-4.6) or 	-- Вход в бункер
-	   ogsm_surge.npc_in_zone(npc,"l10_radar",611,615,-51,-49,-311,-315) or 	-- Блокпост
-	   ogsm_surge.npc_in_zone(npc,"l11_pripyat",-18,-12,58,83,-6,-3) or		-- Подземный переход
-	   ogsm_surge.npc_in_zone(npc,"l11_pripyat",167,173,58,83,-6,-3) or		-- Подземный переход
-	   ogsm_surge.npc_in_zone(npc,"l11_pripyat",-24,55,116,122,-4,0) ) then		-- Канализация
+	( ogsm_surge.npc_in_zone(npc,"predbannik",15,20,9.7,11.7,27,32) or             -- Подвал справа от тоннеля
+	ogsm_surge.npc_in_zone(npc,"predbannik",25,33,-3.16,-1.16,-7,2) or 	  -- Подвал слева от тоннеля
+	ogsm_surge.npc_in_zone(npc,"predbannik",-237,-227,16.90,18.90,235,243) or    -- Пещера Чучельника 1
+	ogsm_surge.npc_in_zone(npc,"predbannik",-260,-254,20.02,22.02,257,263) or    -- Пещера Чучельника 2
+	ogsm_surge.npc_in_zone(npc,"predbannik",-40,-37,-1.19,1.19,331,334) or	-- Подвал в лагере Скупого
+	ogsm_surge.npc_in_zone(npc,"predbannik",81,85,-1.47,0.53,74,78) or		-- Озёрский
+	ogsm_surge.npc_in_zone(npc,"predbannik",-454,-436,-5.74,-3.74,-156,-139) or	-- Оружейка в городке
+	ogsm_surge.npc_in_zone(npc,"predbannik",-435,-433,-5.74,-3.74,-150,-138) or	-- Жиклер
+	ogsm_surge.npc_in_zone(npc,"predbannik",-565,-562,15.65,13.65,265,268) or	-- Блокпост 1
+	ogsm_surge.npc_in_zone(npc,"predbannik",-564,-561,14.98,12.98,288,294) or	-- Блокпост 2
+	ogsm_surge.npc_in_zone(npc,"predbannik",-283,-254,27.17,29.17,-184,-173) or	-- База
+	ogsm_surge.npc_in_zone(npc,"predbannik",-237,-235,23.39,25.39,-208,-206) or	-- Блокпост у базы
+	ogsm_surge.npc_in_zone(npc,"predbannik",-38,-16,-3.08,-1.08,-243,-229) or	-- Завод
+	ogsm_surge.npc_in_zone(npc,"marsh",-126,-123,-1.2,1.2,-274,-271) or	  -- Подвал на Базе
+	ogsm_surge.npc_in_zone(npc,"marsh",-158,-155,1.8,3.8,-278,-273) or	  -- Барак на Базе
+	ogsm_surge.npc_in_zone(npc,"marsh",44,48,2.9,4.9,-239,-236) or	  -- Рыбацкий хутор
+	ogsm_surge.npc_in_zone(npc,"marsh",-6,-2,3.3,5.3,10,13) or	          -- Насосная станция
+	ogsm_surge.npc_in_zone(npc,"marsh",-284,-281,0.9,2.9,32,34) or	  -- Вагончик у вышки
+	ogsm_surge.npc_in_zone(npc,"marsh",-43,-40,-0.9,2.9,265,269) or	  -- Хутор с водонапоркой
+	ogsm_surge.npc_in_zone(npc,"marsh",-180,-175,2.4,4.4,415,420) or	  -- Западный хутор
+	ogsm_surge.npc_in_zone(npc,"marsh",-185,-180,2.2,4.2,530,537) or	  -- Пещерка возле моста
+	ogsm_surge.npc_in_zone(npc,"marsh",404,416,3.6,5.6,233,243) or	  -- Мехдвор
+	ogsm_surge.npc_in_zone(npc,"marsh",578,581,3.6,5.6,418,424) or	  -- Северный хутор
+	ogsm_surge.npc_in_zone(npc,"marsh",259,264,0.5,2.5,-183,-180) or	  -- Церковь
+	ogsm_surge.npc_in_zone(npc,"marsh",487,492,2.8,4.8,-192,-189) or	  -- Южный хутор
+	ogsm_surge.npc_in_zone(npc,"swamp_old",-328,-320,2.2,4.2,66,75) or	  -- Тоннель
+	ogsm_surge.npc_in_zone(npc,"swamp_old",187,195,2.8,4.8,-43,-35) or	  -- Дом Доктора
+	ogsm_surge.npc_in_zone(npc,"garbage_old",-49,-43,3.5,5.5,259,265) or	  -- Ангар
+	ogsm_surge.npc_in_zone(npc,"garbage_old",-132,-126,6.0,8.0,263,269) or	-- Ангар 2
+	ogsm_surge.npc_in_zone(npc,"garbage_old",44,48,21.9,23.9,-150,-146) or	-- Хутор
+	ogsm_surge.npc_in_zone(npc,"aver",146,148,-2.6,-0.6,-312,-310) or	  -- Вагончик
+	ogsm_surge.npc_in_zone(npc,"aver",-406,-402,0.7,2.7,62,66) or	  -- Пещера
+	ogsm_surge.npc_in_zone(npc,"aver",-349,-345,-9.3,-7.3,-8,-4) or	  -- Дом Лесничего
+	ogsm_surge.npc_in_zone(npc,"lost_village",75,79,4.5,6.5,-60,-56) or	  -- Дом 1
+	ogsm_surge.npc_in_zone(npc,"lost_village",3,7,9.1,11.1,-67,-63) or	  -- Дом 2
+	ogsm_surge.npc_in_zone(npc,"lost_village",47,51,3.9,5.9,90,94) or	  -- Тоннель
+	ogsm_surge.npc_in_zone(npc,"atp_for_test22",119,125,-6.5,-4.5,-34,-28) or	-- Здание 1 на АТП
+	ogsm_surge.npc_in_zone(npc,"atp_for_test22",142,148,-7.0,-5.0,-70,-64) or	-- Здание 2 на АТП
+	ogsm_surge.npc_in_zone(npc,"atp_for_test22",170,178,-7.0,-5.0,-32,-24) or	-- Здание 3 на АТП
+	ogsm_surge.npc_in_zone(npc,"red_forest",24,30,4.0,6.0,22,28) or	  -- Лесник 2 этаж
+	ogsm_surge.npc_in_zone(npc,"red_forest",11,15,0.1,2.1,-42,-38) or	  -- Вагончик у капера
+	ogsm_surge.npc_in_zone(npc,"red_forest",-106,-100,-0.8,1.2,-203,-197) or	-- Тоннель Стрелка
+	ogsm_surge.npc_in_zone(npc,"red_forest",-185,-179,0.1,2.1,-291,-285) or	-- Тоннель в Лиманск
+	ogsm_surge.npc_in_zone(npc,"zaton",99,136,-7.5,0,175,190) or	          -- Скадовск
+	ogsm_surge.npc_in_zone(npc,"zaton",1,7,-0.5,1.5,33,39) or	          -- Шевченко
+	ogsm_surge.npc_in_zone(npc,"zaton",425,431,36.2,38.2,-15,-11) or	  -- Лесничество
+	ogsm_surge.npc_in_zone(npc,"zaton",303,313,33.2,39.2,-404,-394) or	  -- Станция переработки
+	ogsm_surge.npc_in_zone(npc,"zaton",-147,-143,23.5,25.5,-431,-427) or	  -- Ангар
+	ogsm_surge.npc_in_zone(npc,"zaton",157,161,-6.9,-4.9,-143,-139) or	     -- Ной
+	ogsm_surge.npc_in_zone(npc,"zaton",232,238,8.0,10.0,-7,-1) or	     -- Хибара на Портовых кранах
+	ogsm_surge.npc_in_zone(npc,"jupiter",-12,-8,23.1,25.1,244,248) or      	-- Башня Зулуса
+	ogsm_surge.npc_in_zone(npc,"jupiter",-52,-46,3.4,5.4,194,200) or      	-- Янов
+	ogsm_surge.npc_in_zone(npc,"jupiter",-227,-219,-3.5,-1.5,74,82) or      	-- Бункер
+	ogsm_surge.npc_in_zone(npc,"jupiter",-220,-218,-3.5,-1.5,73,75) or      	-- Герман в Бункере
+	ogsm_surge.npc_in_zone(npc,"jupiter",5,13,24.6,26.6,-190,-182) or      	-- КПП
+	ogsm_surge.npc_in_zone(npc,"jupiter",208,216,35.6,37.6,-446,-438) or      	-- Возле Юпитера
+	ogsm_surge.npc_in_zone(npc,"jupiter",-452,-444,0.1,2.1,-385,-377) or      	-- Склад конетейнеров
+	ogsm_surge.npc_in_zone(npc,"jupiter",69,73,-0.7,1.3,330,332) or      	-- Полустанок
+	ogsm_surge.npc_in_zone(npc,"jupiter",169,173,-8.6,-6.6,209,213) or      	-- Вагончик 1
+	ogsm_surge.npc_in_zone(npc,"jupiter",158,162,1.2,3.2,215,219) or      	-- Вагончик 2
+	ogsm_surge.npc_in_zone(npc,"pripyat",283,291,0.6,2.6,238,246) or      	-- Речной порт
+	ogsm_surge.npc_in_zone(npc,"pripyat",142,150,-0.0,2.0,-192,-184) or      	-- Прачечная
+	ogsm_surge.npc_in_zone(npc,"limansk",-45,-33,-4.4,-2.4,-261,-249) or      	-- Дом с техником
+	ogsm_surge.npc_in_zone(npc,"l01_escape",-211,-198,-132,-125,-23,-20) or 	-- Подвал 1 в лагере новичков
+	ogsm_surge.npc_in_zone(npc,"l01_escape",-216,-209,-133,-120,-24,-20) or 	-- Подвал 2 в лагере новичков
+	ogsm_surge.npc_in_zone(npc,"l01_escape",28,34,16.5,18.5,673,679) or 	     -- Северный КПП
+	ogsm_surge.npc_in_zone(npc,"l02_garbage",-112,-57,-6,25,-9,90) or		-- Ангар на Свалке
+	ogsm_surge.npc_in_zone(npc,"l05_bar",206,213,50,68,0,4) or			-- Магазин Петренко
+	ogsm_surge.npc_in_zone(npc,"l06_rostok",-285,-235,78,112,-7,0) or 		-- Тоннель Фримена
+	ogsm_surge.npc_in_zone(npc,"l10_radar",639,664,167,189,-45,-37) or 		-- Секретная база Монолита
+	ogsm_surge.npc_in_zone(npc,"l10_radar",86.73,153,-27,-21.70,-10,-4.6) or 	-- Вход в бункер
+	ogsm_surge.npc_in_zone(npc,"l10_radar",611,615,-51,-49,-311,-315) or 	-- Блокпост
+	ogsm_surge.npc_in_zone(npc,"l11_pripyat",-18,-12,58,83,-6,-3) or		-- Подземный переход
+	ogsm_surge.npc_in_zone(npc,"l11_pripyat",167,173,58,83,-6,-3) or		-- Подземный переход
+	ogsm_surge.npc_in_zone(npc,"l11_pripyat",-24,55,116,122,-4,0) ) then		-- Канализация
 		return true
 	else
 		local hide = ogsm_respawn.get_nearest_hide(npc)
@@ -183,14 +183,15 @@ function evaluator_blowout:__init(name, storage) super (nil, name)
 end
 
 function evaluator_blowout:evaluate()
-	if not self.object:best_enemy() and 
-	   db.Flag2==1 and db.Dead2==0 and 
-	   not (level.name()=="l11_pripyat" and self.object:character_community() == "monolith") and
-	   not is_in_hide(self.object) and not is_in_specific_zone(self.object) then
+	if not self.object:best_enemy() and
+	db.Flag2==1 and db.Dead2==0 and
+	not (level.name()=="l11_pripyat" and self.object:character_community() == "monolith") and
+	not is_in_hide(self.object) and not is_in_specific_zone(self.object) then
 		self.st.blowout = true
 	else
 		self.st.blowout = false
 	end
+	
 	return self.st.blowout == true
 end
 
@@ -340,6 +341,7 @@ function action_inhide:initialize()
 		self.offset:normalize()
 		self.radius = math.random(1, self.hide.rad-1)
 		self.lvid = npc:vertex_in_direction(self.vertex, self.offset, self.radius)
+		
 		if npc:level_vertex_id()~=self.lvid then
 			state_mgr.set_state(npc,"raid")
 			utils.send_to_nearest_accessible_vertex(npc, self.lvid) 
