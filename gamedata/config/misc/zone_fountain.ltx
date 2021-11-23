@@ -1,7 +1,7 @@
 [zone_fountain]
 GroupControlSection = spawn_group_zone
-$spawn = "zones\mincer zone"
-$prefetch = 16
+$spawn = "zones\fountain"
+; $prefetch = 16
 class = ZS_ZHARK
 ;script_binding = amk_anoms.bind
 
@@ -87,7 +87,7 @@ artefact_spawn_height = 1 ;(м) высота на центром зоны где будет рожден артефакт
 
 
 [zone_fountain_weak]:zone_fountain
-$spawn = "zones\fountain weak"
+$spawn = "zones\fountain_weak"
 
 artefacts = af_ameba_slime, 0.7, af_ameba_slug, 0.3, af_ameba_mica, 0.0
 BirthProbability = 0.1
@@ -113,7 +113,7 @@ idle_big_particles = anomaly2\artefact\fontan_aya
 
 
 [zone_fountain_average]:zone_fountain
-$spawn = "zones\fountain average"
+$spawn = "zones\fountain_average"
 
 artefacts = af_ameba_slime, 0.7, af_ameba_slug, 0.2, af_ameba_mica, 0.1
 BirthProbability = 0.1
@@ -138,7 +138,7 @@ idle_big_particles = anomaly2\artefact\fontan_aya
 
 
 [zone_fountain_strong]:zone_fountain
-$spawn = "zones\fountain strong"
+$spawn = "zones\fountain_strong"
 
 artefacts = af_ameba_slime, 0.5, af_ameba_slug, 0.3, af_ameba_mica, 0.2
 BirthProbability = 0.1
@@ -162,7 +162,7 @@ idle_small_particles = anomaly2\artefact\fontan_aya
 idle_big_particles = anomaly2\artefact\fontan_aya
 
 [noartf_fountain_weak]:zone_fountain_weak
-$spawn = "zones\mincer_weak_noartf"
+$spawn = "zones\fountain_weak_noartf"
 idle_particles = static\buble_distort001
 BirthProbability = 0
 spawn_blowout_artefacts = off
@@ -171,7 +171,7 @@ max_artefact_count = 0
 artefact_spawn_rnd = 0
 
 [noartf_fountain_average]:zone_fountain_average
-$spawn = "zones\mincer_average_noartf"
+$spawn = "zones\fountain_average_noartf"
 idle_particles = static\buble_distort001
 BirthProbability = 0
 spawn_blowout_artefacts = off
@@ -180,7 +180,7 @@ max_artefact_count = 0
 artefact_spawn_rnd = 0
 
 [noartf_fountain_strong]:zone_fountain_strong
-$spawn = "zones\mincer_strong_noartf"
+$spawn = "zones\fountain_strong_noartf"
 idle_particles = static\buble_distort001
 BirthProbability = 0
 spawn_blowout_artefacts = off
