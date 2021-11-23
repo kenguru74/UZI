@@ -202,7 +202,7 @@ function main(scale)
 	ar_sleep.set_scheme(db.actor, sleep_ltx, "ar_sleep", logic)
 	db.actor:stop_talk()
 	db.actor:hide_weapon()
-	-- level.disable_input()
+	level.disable_input()
 	sleep_manager.hp_corrector(scale)
 	sleep_manager.starter (scale)
 	
@@ -243,13 +243,13 @@ function stopper()
 		level.add_cam_effector("camera_effects\\prison_1.anm", 25, false, "")
 		level.add_pp_effector("yantar_underground_psi.ppe", 2007, false)
 		level.add_pp_effector("total_recall.ppe", 2008, false)
-		-- db.actor:restore_weapon()
+		db.actor:restore_weapon()
 		local snd_obj = xr_sound.get_safe_sound_object([[characters_voice\human_01\stalker\states\breath\breath_2]])
 		snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 15.0)
 		level.add_cam_effector("camera_effects\\hit_back_left.anm", 26, false, "")
 	end
 	
-	-- level.enable_input()
+	level.enable_input()
 end
 
 function hp_corrector(fr)
