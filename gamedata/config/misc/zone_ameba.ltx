@@ -18,7 +18,7 @@ artefacts = af_rusty_thorn, 0.6, af_rusty_kristall, 0.4, af_rusty_sea-urchin,0.0
 BirthProbability = 0.1
 
 ;----------- Anomaly settings -----------------------
-min_start_power = 0.9
+min_start_power = 0.09
 max_start_power = 1
 attenuation = 1
 period = 1
@@ -73,7 +73,50 @@ blowout_wind_power = 0.5 ;сила поднимаего ветра (от 0 до 1), в момент blowout_wi
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;рождение артефактов во время срабатывания
 spawn_blowout_artefacts = off
-artefact_spawn_probability = 0.0
+artefact_spawn_probability = 0.15
 
 throw_out_power = 50
 artefact_spawn_height = 1 ;(м) высота на центром зоны где будет рожден артефакт
+
+[zone_ameba_weak]:zone_ameba
+$spawn = "zones\ameba_zone_weak"
+min_start_power = 0.09
+max_start_power = 0.2
+BirthProbability = 0.05
+
+[zone_ameba_average]:zone_ameba
+$spawn = "zones\ameba_zone_average"
+min_start_power = 0.4
+max_start_power = 0.6
+BirthProbability = 0.1
+
+[zone_ameba_strong]:zone_ameba
+$spawn = "zones\ameba_zone_strong"
+min_start_power = 0.7
+max_start_power = 1.0
+BirthProbability = 0.15
+
+[noartf_ameba_weak]:zone_ameba_weak
+$spawn = "zones\ameba_weak_noartf"
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+[noartf_ameba_average]:zone_ameba_average
+$spawn = "zones\ameba_average_noartf"
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
+[noartf_ameba_strong]:zone_ameba_strong
+$spawn = "zones\ameba_strong_noartf"
+BirthProbability = 0
+spawn_blowout_artefacts = off
+min_artefact_count = 0
+max_artefact_count = 0
+artefact_spawn_rnd = 0
+
