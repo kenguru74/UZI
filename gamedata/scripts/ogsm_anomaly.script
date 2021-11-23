@@ -11,51 +11,53 @@
 
 local list_obj_id = {}
 local check_game = 0
-local anti_spawn_zones = {}
+local table_bad_areas = {}
+local table_bad_pos = {}
+
 local off_anoms_deleted = false
 
 loc={
 	l01_escape = {35, 100},
 	l02_garbage = {80, 145},
-	l03_agroprom = {100, 240},
-	l04_darkvalley = {40, 145},
+	l03_agroprom = {100, 150},
+	l04_darkvalley = {80, 145},
 	l05_bar = {3, 48},
-	l06_rostok = {25, 230},
-	l07_military = {140, 245},
-	l08_yantar = {130, 240},
-	l10_radar = {250, 355},
-	l11_pripyat = {135, 340},
+	l06_rostok = {25, 150},
+	l07_military = {100, 150},
+	l08_yantar = {100, 150},
+	l10_radar = {100, 150},
+	l11_pripyat = {135, 150},
 	l12_stancia = {35, 40},
 	l12u_sarcofag = {5, 20},
 	l12u_control_monolith = {5, 20},
-	l12_stancia_2 = {35, 140},
+	l12_stancia_2 = {100, 140},
 	l03u_agr_underground = {5, 20},
 	l04u_labx18 = {5, 20},
-	l08u_brainlab = {15, 20},
+	l08u_brainlab = {5, 20},
 	l10u_bunker = {5, 20},
-	atp_for_test22 = {145, 250},
+	atp_for_test22 = {50, 100},
 	peshera = {45, 150},
-	puzir = {150, 200},
-	aver = {145, 250},
+	puzir = {80, 100},
+	aver = {80, 100},
 	av_peshera = {25, 50},
-	limansk = {145, 250},
+	limansk = {100, 150},
 	hospital = {45, 150},
-	generators = {245, 350},
+	generators = {100, 150},
 	warlab = {5, 20},
-	red_forest = {245, 350},
+	red_forest = {100, 150},
 	lost_village = {45, 150},
-	marsh = {5, 15},
+	marsh = {25, 45},
 	dead_city = {1, 2},
-	zaton = {245, 350},
-	jupiter = {245, 350},
-	pripyat = {145, 250},
+	zaton = {100, 150},
+	jupiter = {100, 150},
+	pripyat = {100, 150},
 	jupiter_underground = {15, 50},
 	labx8 = {5, 20},
 	cs_agroprom_underground = {5, 20},
-	predbannik = {10, 20},
-	garbage_old = {145, 200},
-	yantar_old = {145, 250},
-	swamp_old = {155, 260}
+	predbannik = {15, 20},
+	garbage_old = {60, 100},
+	yantar_old = {100, 150},
+	swamp_old = {100, 130}
 }
 
 -- Ber188 добавлены локации в список
@@ -67,7 +69,7 @@ loc={
 
 --Все остальные зоны надо вносить в эту таблицу.
 
-local bad_circle_table = {
+local bad_area_table = {
 	["l01_escape"] = {
 		{313.16, 3.70, 116.90, 15}, -- лагерь "в поле"
 		{-156.70, -29.60,-369.30, 200}, -- армейский кордон
@@ -195,8 +197,7 @@ local bad_circle_table = {
 	},
 	
 	["aver"] = {
-		{0,0,1,1}, -- Сюда надо центр и край круглой области исключения из спавна
-		{0,0,1,1} -- Сюда надо центр и край круглой области исключения из спавна
+		{-414.98, 62.09} -- приход с Пещеры
 	},
 	
 	["av_peshera"] = {
@@ -292,6 +293,302 @@ local bad_circle_table = {
 	["swamp_old"] = {
 		{0,0,1,1}, -- Дом Доктора
 		{0,0,1,1} -- Хуторок ДО взятия пиджака
+	}
+}
+
+local bad_pos_table = {
+	["l01_escape"] = {
+		{377, 281}, -- приход со Старой Свалки
+		{148, 348}, -- приход с Путепровода
+		{29, 680}, -- приход со Свалки
+		{-113, 123}, -- приход с Болот
+		{358, -35}, -- приход с Пещеры
+		{-125, -467} -- приход с Предбанника
+	},
+	
+	["l02_garbage"] = {
+		{257, -125}, -- приход с Волчьего Леса
+		{39, -298}, -- приход с Кордона
+		{-279, -21}, -- приход с Агропрома
+		{-6, 284} -- приход с Бара
+	},
+	
+	["l03_agroprom"] = {
+		{-82, -110}, -- приход с Катакомб
+		{254, 71}, -- приход с Путепровода
+		{14, -139}, -- приход с Кордона
+		{281, 2}, -- приход со Свалки
+		{-75, 11}, -- приход с подземки Агропрома
+		{-124, -136}, -- приход с подземки Агропрома
+		{8, 209}, -- приход с ДТ
+		{-244, 134}, -- приход с Янтаря
+		{180, -226} -- приход с Болот
+	},
+	
+	["l04_darkvalley"] = {
+		{-160, -537}, -- приход с Волчьего Леса
+		{-188, -193}, -- приход с Волчьего Леса
+		{-45, -541}, -- приход со Старой Свалки
+		{-2, -56}, -- приход с Путепровода
+		{123, -261} -- приход с Х-18
+	},
+	
+	["l05_bar"] = {
+		{390, -361}, -- приход со Свалки
+		{52, 140}, -- приход с ДТ
+		{-14, 361} -- приход со Складов
+	},
+	
+	["l06_rostok"] = {
+		{-82, -267}, -- приход с Агропрома
+		{31, 140}, -- приход с Бара
+		{-144, -256} -- приход с Янтаря
+	},
+	
+	["l07_military"] = {
+		{-368, 397}, -- приход с АТП
+		{-108, -25}, -- приход с Путепровода
+		{-388, 0}, -- приход с Бара
+		{167, 432} -- приход с Радара
+	},
+	
+	["l08_yantar"] = {
+		{192, -260}, -- приход с Агропрома
+		{227, -256}, -- приход с ДТ
+		{-240, -43}, -- приход с Х-16
+		{4, -13}, -- приход с Х-16
+		{-64, -344}, -- приход с Болот
+		{-12, 9} -- приход с БД
+	},
+	
+	["l10_radar"] = {
+		{660, 175}, -- приход с Путепровода
+		{568, -408}, -- приход со Складов
+		{305, -22}, -- приход с Х-10
+		{147, -32}, -- приход с Х-10
+		{375, 154} -- приход с Припяти
+	},
+	
+	-- kenguru оставил тут для будущего заполнения
+	
+	["l11_pripyat"] = {
+		{-111, -69}, -- приход с Юпитера
+		{44, -290}, -- приход с Радара
+		{34, 447}, -- приход со Станции ЧАЭС-1
+		{153, -57} -- приход с Восточной Припяти
+	},
+	
+	["l12_stancia"] = {
+		{919, -368}, -- приход с Припяти
+		{376, 31}, -- приход с Саркофага
+		{1066, -20}, -- приход со Станции ЧАЭС-2
+		{983, -317}, -- приход с Восточной Припяти
+		{379, -230} -- приход с Научной Станции
+	},
+	
+	["l12u_sarcofag"] = {
+		{59, 27}, -- приход с Контроля Монолита
+		{-28, 46} -- приход со Станции ЧАЭС-1
+	},
+	
+	["l12u_control_monolith"] = {
+		{-11, -8}, -- приход с Саркофага
+		{36, 21} -- приход со Станции ЧАЭС-2
+	},
+	
+	["l12_stancia_2"] = {
+		{163, 316}, -- приход со Генераторов
+		{1, 67}, -- приход с Контроля Монолита
+		{1000, 124} -- приход со Станции ЧАЭС-1
+	},
+	
+	["l03u_agr_underground"] = {
+		{-38, 31}, -- приход с Агропрома
+		{-122, -141} -- приход с Агропрома
+	},
+	
+	["l04u_labx18"] = {
+		{37, -29}, -- приход с Путепровода
+		{-3, -7} -- приход с ТД
+	},
+	
+	["l08u_brainlab"] = {
+		{149, -16} -- приход с Янтаря
+	},
+	
+	["l10u_bunker"] = {
+		{20, 30}, -- приход с Путепровода
+		{14, 17}, -- приход с Радара
+		{0, -75} -- приход с Радара
+	},
+	
+	["atp_for_test22"] = {
+		{358, -23}, -- приход со Складов
+		{-146, 294}, -- приход с Пузыря
+		{-223, -14}, -- приход с Рыжего Леса
+		{-131, -357} -- приход с БД
+	},
+	
+	["peshera"] = {
+		{-99, -112}, -- приход с Лабиринта
+		{-10, 0}, -- приход со Старой Свалки
+		{-99, -118}, -- приход с Путепровода
+		{-197, 15}, -- приход с Кордона
+		{-98, -117} -- приход с Предбанника
+	},
+	
+	["puzir"] = {
+		{208, -192}, -- приход с АТП
+		{192, 214}, -- приход с Юпитера
+		{-169, -203} -- приход с Рыжего Леса
+	},
+	
+	["aver"] = {
+		{-414, 62}, -- приход с Лабиринта
+		{-338, -395}, -- приход со Свалки
+		{436, -319}, -- приход с ТД
+		{306, 409} -- приход с ТД
+	},
+	
+	["av_peshera"] = {
+		{140, 394}, -- приход с Волчьего Леса
+		{93, 388}, -- приход с Пещеры
+		{-398, 187} -- приход с Затона
+	},
+	
+	["limansk"] = {
+		{59, 342}, -- приход с Госпиталя
+		{5, -365} -- приход с Рыжего Леса
+	},
+	
+	["hospital"] = {
+		{-76, 843}, -- приход с МГ
+		{-75, 567} -- приход с Лиманска
+	},
+	
+	["generators"] = {
+		{81, -56}, -- приход с МГ
+		{219, -99}, -- приход со Станции ЧАЭС-2
+		{172, -489}, -- приход с Варлаба
+		{-63, -536} -- приход с Научной Станции
+	},
+	
+	["warlab"] = {
+		{5, 15}, -- приход со Генераторов
+		{-3, -16} -- приход с Х-8
+	},
+	
+	["red_forest"] = {
+		{255, -310}, -- приход с АТП
+		{-52, 100}, -- приход с Юпитера
+		{-140, -62}, -- приход с Путепровода
+		{-186, -291}, -- приход с Лиманска
+		{-15, -441}, -- приход с ЗД
+		{238, 104} -- приход с Пузыря
+	},
+	
+	["lost_village"] = {
+		{117, 83}, -- приход с Рыжего Леса
+		{118, -16} -- приход с БД
+	},
+	
+	["marsh"] = {
+		{648, 423}, -- приход с Кордона
+		{643, 464}, -- приход с Агропрома
+		{169, 576}, -- приход с Янтаря
+		{555, -179}, -- приход с Предбанника
+		{-208, 513} -- приход с БД
+	},
+	
+	["dead_city"] = {
+		{-229, 290}, -- приход со Генераторов
+		{-249, -129}, -- приход с Госпиталя
+		{137, -129} -- приход с Научной Станции
+	},
+	
+	["zaton"] = {
+		{51, -112}, -- приход с Лабиринта
+		{-414, -377}, -- приход с Катакомб
+		{430, -418}, -- приход с Юпитера
+		{-416, 61}, -- приход с Путепровода
+		{-320, 608} -- приход с Научной Станции
+	},
+	
+	["jupiter"] = {
+		{344, -329}, -- приход с Путепровода
+		{436, -163}, -- приход с Припяти
+		{-434, 426}, -- приход с Пузыря
+		{-442, -346}, -- приход с Рыжего Леса
+		{427, 472} -- приход с Затона
+	},
+	
+	["pripyat"] = {
+		{185, -257}, -- приход с Путепровода
+		{-250, -237}, -- приход с Припяти
+		{176, 404}, -- приход со Станции ЧАЭС-1
+		{-80, 93} -- приход с Х-8
+	},
+	
+	["jupiter_underground"] = {
+		{61, 13}, -- приход с Катакомб
+		{78, -222}, -- приход со Старой Свалки
+		{-47, 438}, -- приход с Юпитера
+		{14, -139}, -- приход с Кордона
+		{-10, -70}, -- приход с Агропрома
+		{61, 0}, -- приход с Х-18
+		{51, 26}, -- приход с ТД
+		{-51, 0}, -- приход с Бара
+		{-5, 65}, -- приход со Складов
+		{13, 376}, -- приход с Х-8
+		{49, 247}, -- приход с Радара
+		{37, -174}, -- приход с Пещеры
+		{75, 112}, -- приход с Восточной Припяти
+		{-11, -28}, -- приход с Рыжего Леса
+		{48, -147}, -- приход с БД
+		{-2, 201} -- приход с Затона
+	},
+	
+	["labx8"] = {
+		{-78, 88}, -- приход с Восточной Припяти
+		{-95, 68} -- приход с Варлаба
+	},
+	
+	["cs_agroprom_underground"] = {
+		{58, -1}, -- приход с Путепровода
+		{32, 29}, -- приход с Агропрома
+		{71, 98}, -- приход с Научной Станции
+		{61, -172} -- приход с Затона
+	},
+	
+	["predbannik"] = {
+		{191.95, 507.61}, -- приход со Старой Свалки
+		{-567, 401}, -- приход с Кордона
+		{-575, 64}, -- приход с Болот
+		{-273, 223} -- приход с Пещеры
+	},
+	
+	["garbage_old"] = {
+		{-88, 498}, -- приход с Путепровода
+		{-113, -80}, -- приход с Кордона
+		{90, 608}, -- приход с ТД
+		{28, -382}, -- приход с Пещеры
+		{22, -633} -- приход с Предбанника
+	},
+	
+	["yantar_old"] = {
+		{83, -37}, -- приход с Катакомб
+		{-268, 25}, -- приход с МГ
+		{-169, 271}, -- приход со Генераторов
+		{274, -263}, -- приход со Станции ЧАЭС-1
+		{53, -273} -- приход с Затона
+	},
+	
+	["swamp_old"] = {
+		{271, 286}, -- приход с АТП
+		{196, -12}, -- приход с Путепровода
+		{279, 67}, -- приход с Янтаря
+		{-321, 69}, -- приход с ЗД
+		{278, -270} -- приход с Болот
 	}
 }
 
@@ -578,6 +875,7 @@ local bad_sector_table = {-- Скорее всего, это координаты, за пределами которых 
 	}
 }
 
+
 -- Проверяем, попадает ли аномалия в "bad-сектор"
 function bad_sector(p_vector, lname)
 --Видимо, нужно для того, чтобы аномалии за пределами локаций не спавнились.
@@ -612,9 +910,21 @@ function bad_zone(p_vector)
 	return false
 end
 
-function bad_circle(pos)
-	for k, v in ipairs(anti_spawn_zones) do
+	-- пример {313.16, 3.70, 116.90, 15}, -- лагерь "в поле"
+	-- table.insert(table_bad_areas, {vector():set(pos[1], pos[2], pos[3]), pos[4]})
+function bad_area(pos)
+	for k, v in ipairs(table_bad_areas) do
 		if pos:distance_to(v[1]) <= v[2] then
+			return true
+		end
+	end
+	
+	return false
+end
+
+function bad_pos(pos)
+	for k, v in ipairs(table_bad_pos) do
+		if pos:distance_to(v[1]) <= 5 then
 			return true
 		end
 	end
@@ -624,6 +934,11 @@ end
 
 function exclusion_name_obj(obj)
 	if (string.find(obj:name(),"gar_zone_mincer") and level.name()=="l11_pripyat") or
+	string.find(obj:name(),"torrid_zone") or
+	string.find(obj:name(),"fireball_zone") or
+	string.find(obj:name(),"fireball_electric_zone") or
+	string.find(obj:name(),"fireball_acidic_zone") or
+	string.find(obj:name(),"fireball_1_zone") or
 	string.find(obj:name(),"zone_burning_fuzz") or
 	string.find(obj:name(),"zone_campfire_grill") or
 	string.find(obj:name(),"zone_flame") or
@@ -649,6 +964,8 @@ function exclusion_name_obj(obj)
 	string.find(obj:name(),"rostok_zone_witches_galantine_average") or
 	string.find(obj:name(),"tutorial") or
 	string.find(obj:name(),"esc_zone_mincer_strong") or
+	string.find(obj:name(),"lestnica_zone_witches_galantine") or
+	string.find(obj:name(),"zaton_zone_witches_galantine") or
 	string.find(obj:name(),"esc_zone_witches")
 	then
 		return true
@@ -799,11 +1116,21 @@ end
 -- Обновляем аномалии
 function anom_update()
 	local lname = level.name()
-	local bad_pos_tbl = bad_circle_table[lname]
+	local bad_area_tbl = bad_area_table[lname]
+	
+	-- пример {313.16, 3.70, 116.90, 15}, -- лагерь "в поле"
+	-- table.insert(table_bad_areas, {vector():set(pos[1], pos[2], pos[3]), pos[4]})
+	if bad_area_tbl then
+		for _, pos in pairs(bad_area_tbl) do
+			table.insert(table_bad_areas, {vector():set(pos[1], pos[2], pos[3]), pos[4]})
+		end
+	end
+	
+	local bad_pos_tbl = bad_pos_table[lname]
 	
 	if bad_pos_tbl then
 		for _, pos in pairs(bad_pos_tbl) do
-			table.insert(anti_spawn_zones, {vector():set(pos[1], pos[2], pos[3]), pos[4]})
+			table.insert(table_bad_pos, {vector():set(pos[1], 0, pos[2])})
 		end
 	end
 	
@@ -989,7 +1316,8 @@ function anomaly_position_choice(lname)
 	until not (
 		bad_sector(pos, lname) --Скорее всего, места за пределами локаций
 		or bad_zone(pos, lname) --Укрытия
-		or bad_circle(pos, lname) --Места, в которых по каким-то причинам нельзя спавнить аномалии (лагеря, квестовые сцены и тд.). Настраиваются вручную.
+		or bad_area(pos, lname) --Места, в которых по каким-то причинам нельзя спавнить аномалии (лагеря, квестовые сцены и тд.). Настраиваются вручную.
+		or bad_pos(pos) --Запрещённые точки
 	)
 	
 	local new_gv = cross_table():vertex(new_lv):game_vertex_id()
@@ -999,7 +1327,7 @@ end
 
 local anom_types = {
 	l01_escape = {
-		fountain = 0.05,
+		ameba = 0.03,
 		field_thermal = 0.05,
 		ice = 0.05,
 		monolith = 0.05,
@@ -1009,37 +1337,38 @@ local anom_types = {
 		sphere = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		torrid = 0.05,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		mosquito_bald = 0.05,
 		gravi = 0.05,
 		mincer = 0.05,
 		witches_galantine = 0.05,
-		zharka_static = 0.05,
+		zharka_static = 0.02,
 		buzz = 0.05
 	},
 	
 	predbannik = {
-		mosquito_bald = 0.3,
-		gravi = 0.25,
-		mincer = 0.25,
-		witches_galantine = 0.1,
-		zharka_static = 0.1
+		fountain = 0.25,
+		field_thermal = 0.25,
+		ice = 0.25,
+		monolith = 0.25
 	},
 	
 	marsh = {
-		mosquito_bald = 0.3,
-		gravi = 0.25,
-		mincer = 0.25,
-		witches_galantine = 0.1,
-		zharka_static = 0.1
+		ogon = 0.25,
+		sakbuzz = 0.25,
+		smallrain = 0.25,
+		sphere = 0.25
 	},
 	
+	-- marsh = {
+		-- mosquito_bald = 0.3,
+		-- gravi = 0.25,
+		-- mincer = 0.25,
+		-- witches_galantine = 0.1,
+		-- zharka_static = 0.1
+	-- },
+	
 	-- predbannik = {
-		-- fountain = 0.05,
 		-- field_thermal = 0.05,
 		-- ice = 0.05,
 		-- monolith = 0.05,
@@ -1049,10 +1378,6 @@ local anom_types = {
 		-- sphere = 0.05,
 		-- teleport = 0.02,
 		-- radioactive = 0.03,
-		-- torrid = 0.05,
-		-- fireball = 0.05,
-		-- fireball_electric = 0.05,
-		-- fireball_acidic = 0.05,
 		-- zavesa = 0.05,
 		-- mosquito_bald = 0.05,
 		-- gravi = 0.05,
@@ -1063,7 +1388,6 @@ local anom_types = {
 	-- },
 	
 	l12u_sarcofag = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1071,9 +1395,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1081,7 +1402,6 @@ local anom_types = {
 	},
 	
 	l12u_control_monolith = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1089,9 +1409,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1099,7 +1416,6 @@ local anom_types = {
 	},
 	
 	l03u_agr_underground = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1107,9 +1423,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1117,7 +1430,6 @@ local anom_types = {
 	},
 	
 	l04u_labx18 = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1125,9 +1437,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1135,7 +1444,6 @@ local anom_types = {
 	},
 	
 	l08u_brainlab = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1143,9 +1451,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1153,7 +1458,6 @@ local anom_types = {
 	},
 	
 	l10u_bunker = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1161,9 +1465,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1171,7 +1472,6 @@ local anom_types = {
 	},
 	
 	peshera = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1179,9 +1479,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1189,7 +1486,6 @@ local anom_types = {
 	},
 	
 	av_peshera = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1197,9 +1493,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1207,7 +1500,6 @@ local anom_types = {
 	},
 	
 	warlab = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1215,9 +1507,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1225,7 +1514,6 @@ local anom_types = {
 	},
 	
 	jupiter_underground = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1233,9 +1521,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1243,7 +1528,6 @@ local anom_types = {
 	},
 	
 	labx8 = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1251,9 +1535,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1261,7 +1542,6 @@ local anom_types = {
 	},
 	
 	cs_agroprom_underground = {
-		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
 		ogon = 0.05,
@@ -1269,9 +1549,6 @@ local anom_types = {
 		smallrain = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		witches_galantine = 0.05,
 		zharka_static = 0.05,
@@ -1279,6 +1556,7 @@ local anom_types = {
 	},
 	
 	other = {
+		ameba = 0.03,
 		fountain = 0.05,
 		field_thermal = 0.05,
 		ice = 0.05,
@@ -1289,16 +1567,12 @@ local anom_types = {
 		sphere = 0.05,
 		teleport = 0.02,
 		radioactive = 0.03,
-		torrid = 0.05,
-		fireball = 0.05,
-		fireball_electric = 0.05,
-		fireball_acidic = 0.05,
 		zavesa = 0.05,
 		mosquito_bald = 0.05,
 		gravi = 0.05,
 		mincer = 0.05,
 		witches_galantine = 0.05,
-		zharka_static = 0.05,
+		zharka_static = 0.02,
 		buzz = 0.05
 	}
 }
