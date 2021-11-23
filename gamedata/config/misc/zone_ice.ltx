@@ -1,6 +1,6 @@
 [zone_ice]
 GroupControlSection = spawn_group_zone
-$spawn = "zones\mincer zone"
+$spawn = "zones\ice_zone"
 $prefetch = 16
 class = ZS_ICE
 ;script_binding = amk_anoms.bind
@@ -110,25 +110,25 @@ throw_out_power = 15 ;импульс с которым артефакт будет выброшен из зоны в произв
 artefact_spawn_height = 1 ;(м) высота на центром зоны где будет рожден артефакт
 
 [zone_ice_weak]:zone_ice
-$spawn = "zones\mincer_zone_weak"
+$spawn = "zones\ice_zone_weak"
 min_start_power = 0.09
 max_start_power = 0.2
 BirthProbability = 0.05
 
 [zone_ice_average]:zone_ice
-$spawn = "zones\mincer_zone_average"
+$spawn = "zones\ice_zone_average"
 min_start_power = 0.4
 max_start_power = 0.6
 BirthProbability = 0.1
 
 [zone_ice_strong]:zone_ice
-$spawn = "zones\mincer_zone_strong"
+$spawn = "zones\ice_zone_strong"
 min_start_power = 0.7
 max_start_power = 1.0
 BirthProbability = 0.15
 
 [noartf_ice_weak]:zone_ice_weak
-$spawn = "zones\mincer_weak_noartf"
+$spawn = "zones\ice_weak_noartf"
 idle_particles = amk\snow
 BirthProbability = 0
 spawn_blowout_artefacts = off
@@ -137,7 +137,7 @@ max_artefact_count = 0
 artefact_spawn_rnd = 0
 
 [noartf_ice_average]:zone_ice_average
-$spawn = "zones\mincer_average_noartf"
+$spawn = "zones\ice_average_noartf"
 idle_particles = amk\snow
 BirthProbability = 0
 spawn_blowout_artefacts = off
@@ -146,7 +146,7 @@ max_artefact_count = 0
 artefact_spawn_rnd = 0
 
 [noartf_ice_strong]:zone_ice_strong
-$spawn = "zones\mincer_strong_noartf"
+$spawn = "zones\ice_strong_noartf"
 idle_particles = amk\snow
 BirthProbability = 0
 spawn_blowout_artefacts = off
