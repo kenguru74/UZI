@@ -46,10 +46,7 @@ local simMaxCount = {
         spider = 5
 }
 
-local tms = 1
-if vars.t_common > tms then
-	tms = vars.t_common
-end
+local tms = 48
 
 local idle_spawn_preset = {
 	seldom = 60*60*tms*1.25,
