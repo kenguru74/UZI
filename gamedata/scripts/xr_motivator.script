@@ -164,7 +164,7 @@ function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_i
 end
 
 function motivator_binder:death_callback(victim, who)
-        message_npc_death.kill_npc(victim, who)
+	-- message_npc_death.kill_npc(victim, who)
 	if xrs_ai then xrs_ai.npc_death_callback(self.object) end
 
 	if who:id() == db.actor:id() then
