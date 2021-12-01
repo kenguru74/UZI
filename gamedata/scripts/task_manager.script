@@ -96,7 +96,7 @@ function CRandomTask:__init()
 			curr_task_info.text			= self.task_ini:r_string(id, "text")
 		end
 		if self.task_ini:line_exist(id, "description") then
-			curr_task_info.description	= self.task_ini:r_string(id, "description")				
+			curr_task_info.description	= self.task_ini:r_string(id, "description")
 		end
 		curr_task_info.time				= utils.cfg_get_number(self.task_ini, id, "time", nil, false)
 
