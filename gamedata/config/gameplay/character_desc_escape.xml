@@ -48,7 +48,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_aps_sk2 \n
-                        ammo_9x18_pmm \n
+                        ammo_9x18_pbp \n
 			wpn_ak74m = 1, scope \n
 			ammo_5.45x39_ap = 1 \n
 			device_torch \n
@@ -86,10 +86,10 @@
 		<supplies>
 			[spawn] \n
 			wpn_aps_sk2 \n
-			ammo_9x18_pmm = 1 \n
+			ammo_9x18_pbp = 1 \n
 			wpn_ak74m = 1, launcher \n
 			ammo_5.45x39_ap = 1 \n
-                        ammo_vog-25 = 2 \n
+                        ammo_vog-25p = 2 \n
 		</supplies>
 				
 #include "gameplay\character_criticals_4.xml"
@@ -153,7 +153,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_bizon \n
-                        ammo_9x18_pmm = 10 \n
+                        ammo_9x18_fmj = 10 \n
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
@@ -184,7 +184,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_mp444_sk1 \n
-			ammo_9x18_pmm \n
+			ammo_9x18_pbp \n
                         grenade_rgd5 = 2 \n
 			esc_wounded_flash \n
 		</supplies>
@@ -289,7 +289,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_bizon \n
-                        ammo_9x18_pmm = 1 \n
+                        ammo_9x18_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -352,7 +352,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_bizon \n
-                        ammo_9x18_pmm = 10 \n
+                        ammo_9x18_fmj = 10 \n
 #include "gameplay\character_items.xml" \n
 		
 		</supplies>
@@ -382,7 +382,6 @@
 		<supplies>
 			[spawn] \n
                         wpn_wincheaster1300 \n
-                        ammo_12x76_zhekan = 1 \n
                         ammo_12x70_buck = 1 \n
                         grenade_rgd5 = 2 \n
 			device_torch \n
@@ -415,7 +414,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_wincheaster1300 \n
-                        ammo_12x76_zhekan = 1 \n
+                        ammo_12x76_dart = 1 \n
 #include "gameplay\character_items.xml" \n
 		
 		</supplies>
@@ -569,7 +568,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_bizon \n
-                        ammo_9x18_pmm = 10 \n
+                        ammo_9x18_fmj = 10 \n
                         grenade_rgd5 = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
@@ -603,8 +602,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_sayga12k_sk1 \n
-			ammo_12x70_buck = 10 \n	
-                        ammo_12x76_zhekan = 1 \n
+			ammo_12x70_buck = 10 \n
 			hand_radio \n
 #include "gameplay\character_drugs.xml" \n
 			

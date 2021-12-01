@@ -669,7 +669,7 @@ grenade_rgd5 = 2 \n
 			wpn_sig220 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_svd_sk4 \n
-			ammo_7.62x54_ap = 2 \n
+			ammo_7.62x54_7h14 = 2 \n
 			grenade_f1 = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -733,7 +733,7 @@ grenade_rgd5 = 2 \n
 			wpn_sig220 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_svu \n
-			ammo_7.62x54_ap = 1 \n
+			ammo_7.62x54_7h14 = 1 \n
 			grenade_f1 = 2 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -765,7 +765,7 @@ grenade_rgd5 = 2 \n
 			wpn_sig220 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_svu \n
-			ammo_7.62x54_ap = 1 \n
+			ammo_7.62x54_7h14 = 1 \n
 			grenade_f1 = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -797,7 +797,7 @@ grenade_rgd5 = 2 \n
 			wpn_sig220 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_svu \n
-			ammo_7.62x54_ap = 1 \n
+			ammo_7.62x54_7h14 = 1 \n
 			grenade_f1 = 2 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -893,7 +893,7 @@ grenade_rgd5 = 2 \n
 			wpn_colt1911 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_svd_sk4 \n
-			ammo_7.62x54_ap = 1 \n
+			ammo_7.62x54_7h14 = 1 \n
 			grenade_f1 = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -925,7 +925,7 @@ grenade_rgd5 = 2 \n
 			wpn_colt1911 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_svd_sk4 \n
-			ammo_7.62x54_ap = 2 \n
+			ammo_7.62x54_7h14 = 2 \n
 			grenade_f1 = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -957,7 +957,7 @@ grenade_rgd5 = 2 \n
 			wpn_colt1911 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_svd_sk4 \n
-			ammo_7.62x54_ap = 1 \n
+			ammo_7.62x54_7h14 = 1 \n
 			grenade_f1 = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -989,7 +989,7 @@ grenade_rgd5 = 2 \n
 			wpn_colt1911 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_svu \n
-			ammo_7.62x54_ap = 1 \n
+			ammo_7.62x54_7h14 = 1 \n
 			grenade_f1 = 1 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -1952,7 +1952,7 @@ grenade_rgd5 = 2 \n
                         wpn_mp444_sk1 \n
                         ammo_9x18_pbp = 1 \n
 			wpn_ak74m = 1, launcher \n
-                        ammo_vog-25 = 3 \n
+                        ammo_vog-25p = 3 \n
 			ammo_5.45x39_fmj = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
@@ -2145,7 +2145,7 @@ grenade_rgd5 = 2 \n
                         wpn_pb = 1, silencer \n
                         ammo_9x18_fmj = 10 \n
 			wpn_ak74m = 1, launcher \n
-                        ammo_vog-25 = 3 \n
+                        ammo_vog-25p = 3 \n
 			ammo_5.45x39_ap = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
@@ -2242,7 +2242,7 @@ grenade_rgd5 = 2 \n
                         wpn_colt1911 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_ak103 = 1, launcher \n
-                        ammo_vog-25 = 3 \n
+                        ammo_vog-25p = 3 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
 		
@@ -2338,7 +2338,7 @@ grenade_rgd5 = 2 \n
                         wpn_colt1911 \n
                         ammo_11.43x23_hydro = 10 \n
 			wpn_ak103 = 1, launcher \n
-                        ammo_vog-25 = 3 \n
+                        ammo_vog-25p = 3 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
 		

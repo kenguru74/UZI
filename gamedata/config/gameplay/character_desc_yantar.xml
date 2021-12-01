@@ -26,7 +26,7 @@
 			ecolog_outfit \n
 			af_cristall_flower \n
 			wpn_mp444_sk1 \n
-			ammo_9x18_pmm = 10 \n
+			ammo_9x18_pbp = 10 \n
 		</supplies>
 		<start_dialog>yantar_general_ucheniy_talk_start</start_dialog>
 		<actor_dialog>tm_lisizin_dialog</actor_dialog>
@@ -59,7 +59,7 @@
 			ecolog_outfit \n
 			af_cristall_flower \n
 			wpn_mp444_sk1 \n
-			ammo_9x18_pmm = 10 \n
+			ammo_9x18_pbp = 10 \n
 		</supplies>
 		<start_dialog>yantar_general_ucheniy_talk_start</start_dialog>
 		<actor_dialog>tm_ecolog_dialog</actor_dialog>
@@ -532,7 +532,7 @@
 			device_torch \n
 			grenade_rgd5 = 1 \n
 			wpn_mp444_sk1 \n
-			ammo_9x18_pmm = 10 \n
+			ammo_9x18_pbp = 10 \n
 		</supplies>
 
 #include "gameplay\character_criticals_1.xml"
@@ -652,7 +652,7 @@
 			ammo_7.62x39_ap = 1 \n
 			grenade_f1 = 2 \n
 			wpn_mp444_sk1 \n
-			ammo_9x18_pmm = 10 \n
+			ammo_9x18_pbp = 10 \n
 			device_torch \n
 		</supplies>
 
@@ -681,7 +681,7 @@
 			wpn_ak103 \n
 			ammo_7.62x39_ap \n
 			wpn_mp444_sk1 \n
-			ammo_9x18_pmm \n
+			ammo_9x18_pbp \n
 			device_torch \n
 		</supplies>
 
@@ -710,7 +710,7 @@
 			wpn_toz34 \n
 			ammo_12x70_buck = 1 \n
 			wpn_mp444_sk1 \n
-			ammo_9x18_pmm = 10 \n
+			ammo_9x18_pbp = 10 \n
 			device_torch \n
 		</supplies>
 
@@ -739,7 +739,7 @@
 			wpn_ak74m \n
 			ammo_5.45x39_fmj = 1 \n
 			wpn_mp444_sk1 \n
-			ammo_9x18_pmm = 10 \n
+			ammo_9x18_pbp = 10 \n
 			device_torch \n
 		</supplies>
 
@@ -769,7 +769,7 @@
 			wpn_ak105 \n
 			ammo_5.45x39_ap \n
 			wpn_mp444_sk1 \n
-			ammo_9x18_pmm = 10 \n
+			ammo_9x18_pbp = 10 \n
 			device_torch \n
 		</supplies>
 

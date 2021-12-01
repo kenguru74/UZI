@@ -131,7 +131,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_mp444_sk1 \n
-			ammo_9x18_pmm = 10 \n
+			ammo_9x18_pbp = 10 \n
 			wpn_ak74m \n
 			ammo_5.45x39_fmj = 1 \n
                         grenade_f1 = 2 \n
@@ -727,7 +727,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_sayga12k_sk1 \n
-                        ammo_12x76_zhekan = 1 \n
+                        ammo_12x76_dart = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 		
@@ -792,7 +792,7 @@
 			ammo_11.43x23_hydro = 10 \n
 			wpn_akmsn = 1, scope launcher silencer \n
 			ammo_7.62x39_ap = 1 \n
-                        ammo_vog-25 = 5 \n
+                        ammo_vog-25p = 5 \n
                         grenade_rgd5 = 2 \n
                         grenade_f1 = 2 \n
 #include "gameplay\character_items.xml" \n
@@ -886,9 +886,8 @@
 		<supplies>
 			[spawn] \n
 			wpn_wincheaster1300 \n
-                        ammo_12x70_buck	= 4 \n
-                        ammo_12x76_zhekan = 1 \n
-                        ammo_12x76_dart = 2 \n
+                        ammo_12x70_buck	\n
+                        ammo_12x76_dart \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 		
@@ -925,7 +924,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_m1891_30_scope \n
-			ammo_7.62x54_ap = 20 \n
+			ammo_7.62x54_7h14 = 20 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 		
@@ -956,7 +955,7 @@
 		<supplies>
 			[spawn] \n
 			wpn_m1891_30_scope \n
-			ammo_7.62x54_ap = 20 \n
+			ammo_7.62x54_7h14 = 20 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 		
@@ -987,7 +986,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_wincheaster1300 \n
-			ammo_12x76_zhekan = 1 \n
+			ammo_12x76_dart \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 		
@@ -1017,7 +1016,7 @@
 		<supplies>
 			[spawn] \n
                         wpn_sayga12k_sk1 = 1, scope \n
-			ammo_12x76_zhekan = 1 \n
+			ammo_12x76_dart = 1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 		
