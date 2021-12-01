@@ -762,7 +762,7 @@ inv_grid_x = 20
 inv_grid_y = 9
 cost = 0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Ремкомплект
+;; Ремкомплект оружия
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [repair_kit]:identity_immunities
 GroupControlSection = spawn_group
@@ -784,6 +784,45 @@ inv_grid_height = 1
 inv_grid_x = 22
 inv_grid_y = 9
 cost = 90
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ремкомплект брони
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[repair_kit_armor]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\repair_kit"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_merger.ogf
+description = enc_repair_kit_armor
+quest_item = false
+
+inv_name = repair_kit_armor_name
+inv_name_short = repair_kit_armor_name
+inv_weight = 0.25
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 43
+inv_grid_y = 48
+
+cost = 100
 
 ; eatable item
 eat_health = 0
@@ -1456,7 +1495,7 @@ inv_weight = 0.2
 cost = 30
 
 ; eatable item
-eat_health = 0.01
+eat_health = 0.0
 eat_satiety = 0.1
 eat_power = -0.01
 eat_radiation = 0
@@ -1832,7 +1871,7 @@ cost = 140
 
 ; eatable item
 eat_health = 0.0
-eat_satiety = 0.1
+eat_satiety = 0.15
 eat_power = -0.01
 eat_radiation = 0
 wounds_heal_perc = 0
@@ -1932,7 +1971,7 @@ cost = 55
 
 ; eatable item
 eat_health = 0
-eat_satiety = 0.1
+eat_satiety = 0.15
 eat_power = -0.005
 eat_radiation = 0
 eat_alcohol = 0
@@ -2005,11 +2044,11 @@ animation_slot = 4
 hud = wpn_vodka_hud
 
 [irp_two]:irp
-inv_weight = 1
+inv_weight = 1.2
 
 inv_grid_x = 41
 inv_grid_y = 27
-cost = 150
+cost = 100
 
 [irp_one]:irp
 inv_weight = 0.5
@@ -2038,9 +2077,9 @@ inv_grid_width = 2
 inv_grid_height = 1
 inv_grid_x = 12
 inv_grid_y = 26
-inv_weight = 0.15
+inv_weight = 0.04
 
-cost = 90
+cost = 60
 
 ; eatable item
 eat_health = 0.0
@@ -2093,8 +2132,8 @@ cost = 16
 
 ; eatable item
 eat_health = 0.0
-eat_satiety = 0.08
-eat_power = -0.005
+eat_satiety = 0.1
+eat_power = -0.002
 eat_radiation = 0
 wounds_heal_perc = 0
 eat_portions_num = 1
@@ -2139,7 +2178,7 @@ inv_weight = 0.001
 cost = 5
 
 ; eatable item
-eat_health = -0.0005
+eat_health = 0.0
 eat_satiety = -0.05
 eat_power = 0.1
 eat_radiation = 0
@@ -2200,7 +2239,7 @@ cost = 14
 ; eatable item
 eat_health = 0
 eat_satiety = 0.15
-eat_power = -0.015
+eat_power = 0.0
 eat_radiation = 0
 wounds_heal_perc = 0
 eat_portions_num = 1
@@ -2287,7 +2326,7 @@ cform = skeleton
 
 inv_name = galet
 inv_name_short = galet
-inv_weight = 0.04
+inv_weight = 0.02
 
 inv_grid_width = 1
 inv_grid_height = 1
@@ -2302,8 +2341,8 @@ animation_slot = 4
 
 ; eatable item
 eat_health = 0.0
-eat_satiety = 0.05
-eat_power = -0.01
+eat_satiety = 0.07
+eat_power = 0.0
 eat_radiation = 0
 eat_alcohol = 0.0
 wounds_heal_perc = 0
@@ -2463,7 +2502,7 @@ description = item_azot_decoder_desc
 
 inv_name = item_azot_decoder
 inv_name_short = item_azot_decoder
-inv_weight = 0.09
+inv_weight = 0.1
 inv_grid_width = 2
 inv_grid_height = 1
 inv_grid_x = 10
@@ -2489,7 +2528,7 @@ description = item_box_condensers_desc
 
 inv_name = item_box_condensers
 inv_name_short = item_box_condensers
-inv_weight = 0.05
+inv_weight = 0.08
 inv_grid_width = 1
 inv_grid_height = 1
 inv_grid_x = 29
@@ -2541,7 +2580,7 @@ description = item_materials_wire_desc
 
 inv_name = item_materials_wire
 inv_name_short = item_materials_wire
-inv_weight = 0.2
+inv_weight = 0.3
 inv_grid_width = 1
 inv_grid_height = 1
 inv_grid_x = 22
@@ -2860,7 +2899,7 @@ description = enc_equipment_medi_bandage1
 
 inv_name = bandage
 inv_name_short = bandage
-inv_weight = 0.06
+inv_weight = 0.04
 
 inv_grid_width = 1
 inv_grid_height = 1
@@ -3331,7 +3370,7 @@ inv_grid_height = 2
 inv_grid_x = 37
 inv_grid_y = 47
 
-cost = 330
+cost = 300
 
 ; eatable item
 eat_health = 0
@@ -3340,7 +3379,7 @@ eat_power = 0
 eat_radiation = 0
 eat_alcohol = 0
 wounds_heal_perc = 0
-eat_portions_num = 1
+eat_portions_num = 10000
 
 ; food item
 animation_slot = 4
@@ -3550,7 +3589,7 @@ description = enc_equipment_strelok-pda
 inv_name = strelok-pda
 inv_name_short = strelok-pda
 
-inv_weight = 0.3
+inv_weight = 0.2
 
 inv_grid_width = 1
 inv_grid_height = 1
@@ -3632,7 +3671,7 @@ description = spichki_desc
 inv_name = spichki
 inv_name_short = spichki
 
-inv_weight = 0.05
+inv_weight = 0.02
 inv_grid_width = 1
 inv_grid_height = 1
 inv_grid_x = 44
