@@ -4,19 +4,19 @@ function has_soldiers_bribe(actor, npc)
 end
 
 function give_soldiers_bribe(actor, npc)
-	dialogs.relocate_money(npc, 1000, "out")	
+	dialogs.relocate_money(npc, 500, "out")	
 end
 
-function has_1000(actor, npc)
-	return actor:money() >= 1000
+function has_500(actor, npc)
+	return actor:money() >= 500
 end
 
-function has__1000(actor, npc)
-	return actor:money() < 1000
+function has__500(actor, npc)
+	return actor:money() < 500
 end
 
-function give_1000(actor, npc)
-	dialogs.relocate_money(npc, 1000, "out")	
+function give_500(actor, npc)
+	dialogs.relocate_money(npc, 500, "out")	
 end
 
 function start_time()
@@ -63,9 +63,7 @@ end
 
 function gikler_weapon_bring(first_speaker, second_speaker)
    dialogs.relocate_item_section(second_speaker, "wpn_svd_m1u", "out")
-   dialogs.relocate_item_section(first_speaker, "af_dummy_spring", "in")
-   dialogs.relocate_item_section(first_speaker, "af_dummy_dummy", "in")
-   dialogs.relocate_item_section(first_speaker, "af_dummy_pellicle", "in")
+   dialogs.relocate_item_section(first_speaker, "af_dummy_glassbeads_u", "in")
    first_speaker:set_relation(game_object.friend, second_speaker)
    db.actor:set_character_rank(db.actor:character_rank() + 35)
 end

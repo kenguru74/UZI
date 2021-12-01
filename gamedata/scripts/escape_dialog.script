@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------------------------------------------
----------- 	   						 Dialog & InfoPortions Function									-----------
+---------- 								 Dialog & InfoPortions Function									-----------
 ---------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------
 -- 							Trader Factions - из мода ABC Mod by Speed aka LW.								 --
@@ -42,21 +42,21 @@ end
 
 function factions_repair_checkstalker_r(trader, actor)
 	local whatami = db.actor:character_community()
-    local gulag = xr_gulag.get_gulag_by_name ("esc_lager")
+	local gulag = xr_gulag.get_gulag_by_name ("esc_lager")
 	-- logf("testing stalker " .. whatami)
 	if (gulag) then
 		if (gulag:npc_is_enemy_to_anybody(db.actor)) and (db.actor:money() >= 5000) and (whatami ~= "monolith") and (whatami ~= "bandit") and (whatami ~= "military") and (whatami ~= "killer") then
-	       return true
+			return true
 		end
 	end
-    return false
+	return false
 end
 
 function factions_repair_checkstalker(first_speaker, second_speaker)
 	local task_texture, task_rect = get_texture_info("ui_iconsTotal_lost_money")
 	local item_name_and_price = ""
 	local howmuch = 5000
-    local gulag = xr_gulag.get_gulag_by_name ("esc_lager")
+	local gulag = xr_gulag.get_gulag_by_name ("esc_lager")
 	if (gulag) then
 		if gulag:npc_is_enemy_to_anybody(db.actor) and db.actor:money() >= 5000 then
 			item_name_and_price = game.translate_string("list_factions_repair_4").." %c[255,238,155,23]"..howmuch.."Ru%c[default]"
@@ -67,7 +67,7 @@ end
 
 function factions_repair_setstalker_r(trader, actor)
 	local howmuch = 5000
-    local gulag = xr_gulag.get_gulag_by_name ("esc_lager")
+	local gulag = xr_gulag.get_gulag_by_name ("esc_lager")
 	if (gulag) then
 		if gulag:npc_is_enemy_to_anybody(db.actor) and db.actor:money() >= 5000 then
 			local chkgoodwill = relation_registry.community_goodwill("stalker",  db.actor:id())
@@ -95,7 +95,7 @@ function factions_repair_checkduty(first_speaker, second_speaker)
 		item_name_and_price = game.translate_string("list_factions_repair_1").." %c[255,238,155,23]"..howmuch.."Ru%c[default]"
 		db.actor:give_talk_message(item_name_and_price, task_texture, task_rect, "iconed_trade_info")
 	  end
-    end
+	end
 end
 
 function factions_repair_checkfree(first_speaker, second_speaker)
@@ -333,7 +333,7 @@ end
 function factions_repair_quit_j(trader, actor)
    local whatami = db.actor:character_community()
    if (whatami == "actor_dolg") or (whatami == "actor_freedom") or (whatami == "monolith") or (whatami == "bandit") or (whatami == "military") or (whatami == "killer") or (whatami == "ecolog") then
-	   if (db.actor:money() >= 10000) then return true end
+		if (db.actor:money() >= 10000) then return true end
    end
    return false
 end
@@ -359,9 +359,9 @@ end
 --------------------------------------------------------------------------------------------------------
 function trader_alredy_give_job(trader, actor)
 	if (has_alife_info("agroprom_military_case") and not has_alife_info("agroprom_military_case_done")) or
-	   (has_alife_info("escape_blockpost_case") and not has_alife_info("escape_blockpost_case_done")) or
-	   (has_alife_info("tutorial_artefact_start") and not has_alife_info("tutorial_artefact_done")) or
-	   (has_alife_info("tutorial_wounded_start") and not has_alife_info("esc_serious_talk"))
+		(has_alife_info("escape_blockpost_case") and not has_alife_info("escape_blockpost_case_done")) or
+		(has_alife_info("tutorial_artefact_start") and not has_alife_info("tutorial_artefact_done")) or
+		(has_alife_info("tutorial_wounded_start") and not has_alife_info("esc_serious_talk"))
 	then
 		return true
 	end
@@ -388,7 +388,7 @@ end
 
 function trader_need_extra_job(trader, actor)
 	if not has_alife_info("escape_blockpost_case") and 
-	    has_alife_info("esc_return")
+		has_alife_info("esc_return")
 	then
 		return true
 	end
@@ -431,7 +431,7 @@ end
 
 function finalize_quests(first_speaker, second_speaker)
 	if tutorial_artefact_end(first_speaker, second_speaker) == true or
-	   tutorial_wounded_end(first_speaker, second_speaker) == true
+		tutorial_wounded_end(first_speaker, second_speaker) == true
 	then
 		return true
 	end
@@ -446,8 +446,8 @@ function tutorial_artefact_end(first_speaker, second_speaker)
 	local actor = db.actor
 	local tutorial_artefact = first_speaker:object("af_blood_tutorial")
 	if has_alife_info("tutorial_artefact_start") and 
-	   not has_alife_info("tutorial_artefact_done") and
-	   tutorial_artefact ~= nil
+		not has_alife_info("tutorial_artefact_done") and
+		tutorial_artefact ~= nil
 	then
 		return true
 	end
@@ -458,8 +458,8 @@ function tutorial_artefact_have_not(first_speaker, second_speaker)
 	local actor = db.actor
 	local tutorial_artefact = first_speaker:object("af_blood_tutorial")
 	if has_alife_info("tutorial_artefact_start") and 
-	   not has_alife_info("tutorial_artefact_done") and
-	   tutorial_artefact == nil
+		not has_alife_info("tutorial_artefact_done") and
+		tutorial_artefact == nil
 	then
 		return true
 	end
@@ -471,7 +471,7 @@ function tutorial_wounded_end(first_speaker, second_speaker)
 	-- local wounded_flash = first_speaker:object("esc_wounded_flash")
 	if has_alife_info("tutorial_wounded_start")	and 
 		has_alife_info("tutorial_wounded_give_info")	and 	
-	   not has_alife_info("esc_serious_talk")
+		not has_alife_info("esc_serious_talk")
  -- and   wounded_flash ~= nil
 	then
 		return true
@@ -480,8 +480,8 @@ function tutorial_wounded_end(first_speaker, second_speaker)
 end
 
 function trader_dont_has_job(first_speaker, second_speaker)
-    if trader_need_military_case(first_speaker, second_speaker) == false and
-	   trader_need_blockpost_box(first_speaker, second_speaker) == false
+	if trader_need_military_case(first_speaker, second_speaker) == false and
+		trader_need_blockpost_box(first_speaker, second_speaker) == false
 	then
 		return true
 	end
@@ -491,11 +491,13 @@ end
 
 --' Escape tutorial artefact
 function have_tutorial_artefact(first_speaker, second_speaker)
-  	return first_speaker:object("af_blood_tutorial") ~= nil
+	return first_speaker:object("af_blood_tutorial") ~= nil
 end
+
 function give_medkit(first_speaker, second_speaker)
 	dialogs.relocate_item_section(first_speaker, "medkit", "in")
 end
+
 function give_tutorial_artefact(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "af_blood_tutorial", "out")
 end
@@ -503,23 +505,22 @@ end
 
 --' Meet fox
 function have_fox_info(first_speaker, second_speaker)
-  	return first_speaker:object("fox_flash") ~= nil
+	return first_speaker:object("fox_flash") ~= nil
 end
 
 --' fox help
-
 function transfer_medikit_to_fox (player, wounded)
 	wounded:set_relation(game_object.friend, player)
 	db.actor:give_info_portion("escape_fox_heal")
 end
 
 function give_weapon_to_actor (trader, actor)
-    dialogs.relocate_item_section(trader, "hand_radio_f", "in")
+	-- dialogs.relocate_item_section(trader, "hand_radio_f", "in")
 end
 
 --' Escape blockpost box
 function have_blockpost_case(first_speaker, second_speaker)
-  	return first_speaker:object("quest_case_01") ~= nil
+	return first_speaker:object("quest_case_01") ~= nil
 end
 
 
@@ -528,13 +529,13 @@ function give_blockpost_case(first_speaker, second_speaker)
 end
 
 function give_blockpost_case_reward(first_speaker, second_speaker)
-	dialogs.relocate_money(first_speaker, 25000, "in")
+	dialogs.relocate_money(first_speaker, 100, "in")
 end
 
 --' Agroprom military case
 function trader_need_military_case(first_speaker, second_speaker)
-    if has_alife_info("esc_serious_talk") and
-	   not has_alife_info("agroprom_military_case")
+	if has_alife_info("esc_serious_talk") and
+		not has_alife_info("agroprom_military_case")
 	then
 		return true
 	end
@@ -545,21 +546,21 @@ end
 function have_artefact_from_fleshes(first_speaker, second_speaker)
 	local actor = db.actor
 	if actor ~= nil and
-	   (actor:object("af_vyvert") ~= nil or
-	   actor:object("af_gravi") ~= nil or
-	   actor:object("af_gold_fish") ~= nil)
+		(actor:object("af_vyvert") ~= nil or
+		actor:object("af_gravi") ~= nil or
+		actor:object("af_gold_fish") ~= nil)
 	then
 		return true
 	end
-  	return false
+	return false
 end
 
 
 --' ящик с блокпоста
 function trader_need_blockpost_box(first_speaker, second_speaker)
-    if has_alife_info("tutorial_end") and
-	   has_alife_info("esc_trader_speak") and
-	   not has_alife_info("escape_blockpost_case")
+	if has_alife_info("tutorial_end") and
+		has_alife_info("esc_trader_speak") and
+		not has_alife_info("escape_blockpost_case")
 	then
 		return true
 	end
@@ -574,8 +575,8 @@ end
 
 --' trader needs military documents
 function trader_need_military_document(first_speaker, second_speaker)
-    if has_alife_info("escape_blockpost_case_done") and
-	   not has_alife_info("agroprom_military_case")
+	if has_alife_info("escape_blockpost_case_done") and
+		not has_alife_info("agroprom_military_case")
 	then
 		return true
 	end
@@ -597,7 +598,7 @@ function transfer_wolf_reward(first_speaker, second_speaker)
 end
 
 function wolf_additional_reward(first_speaker, second_speaker)
-    dialogs.relocate_item_section(first_speaker, "af_dummy_dummy", "in")
+	dialogs.relocate_item_section(first_speaker, "af_dummy_dummy", "in")
 end
 
 
@@ -607,10 +608,10 @@ function wounded_give_flash(first_speaker, second_speaker)
 end
 
 function have_wounded_flash(first_speaker, second_speaker)
-  	return first_speaker:object("esc_wounded_flash") ~= nil
+	return first_speaker:object("esc_wounded_flash") ~= nil
 end
 function dont_have_wounded_flash(first_speaker, second_speaker)
-  	return not have_wounded_flash(first_speaker, second_speaker)
+	return not have_wounded_flash(first_speaker, second_speaker)
 end
 
 function give_wounded_flash(first_speaker, second_speaker)
@@ -624,13 +625,13 @@ end
 
 --' Escape bandits factory
 function give_factory_reward_trader(first_speaker, second_speaker)
-	dialogs.relocate_money(first_speaker, 500, "in")
+	dialogs.relocate_money(first_speaker, 150, "in")
 end
 
 --' Give X-18 documents read
 
 function give_documents_reward (first_speaker, second_speaker)
-	dialogs.relocate_money(first_speaker, 10000, "in")
+	dialogs.relocate_money(first_speaker, 500, "in")
 end
 
 
@@ -642,22 +643,22 @@ end
 
 --' Soldiers on bridge
 function has_soldiers_bribe(actor, npc)
-	return actor:money() >= 25000
+	return actor:money() >= 25
 end
 
 function give_soldiers_bribe(actor, npc)
-	dialogs.relocate_money(npc, 25000, "out")	
+	dialogs.relocate_money(npc, 25, "out")
 end
 
 function fox_pay_money(actor, npc)
-	dialogs.relocate_money(npc, 1500, "in")	
+	dialogs.relocate_money(npc, 150, "in")
 	treasure_manager.get_treasure_manager():give_treasure("esc_secret_truck_goods")
 end
 
 function run_tutorial_pda(first_speaker, second_speaker)
 	printf("!-!-!")
 	first_speaker:stop_talk()
-    second_speaker:stop_talk()
+	second_speaker:stop_talk()
 	game.start_tutorial("part_1_pda")
 end
 
