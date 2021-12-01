@@ -67,7 +67,7 @@
 		<text>Показать записи игрока</text>
 	</string>
 	<string id="pda_btn_map">
-		<text>План</text>
+		<text>Карта</text>
 	</string>
 	<string id="pda_btn_map_hint">
 		<text>Показать карту Зоны</text>
