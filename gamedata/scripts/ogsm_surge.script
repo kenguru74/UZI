@@ -5,6 +5,20 @@
 local sound_obj_right = xr_sound.get_safe_sound_object([[ambient\random\rnd_the_horror]])
 local sound_obj_left = xr_sound.get_safe_sound_object([[ambient\random\rnd_the_horror]])
 
+local indoor_levels = {
+	jupiter_underground = true,
+	l03u_agr_underground = true,
+	l04u_labx18 = true,
+	l08u_brainlab = true,
+	l12u_sarcofag = true,
+	l12u_control_monolith = true,
+	warlab = true,
+	labx8 = true,
+	cs_agroprom_underground = true,
+	l10u_bunker = true,
+	av_peshera = true,
+	peshera = true
+}
 
 -- Проверка нахождения актора в особой зоне
 function actor_in_zone(pos_psy_x,pos_psy_y,size_psy_x,size_psy_y,z1,z2)
@@ -90,182 +104,315 @@ end
 -- Нанесение хита актору в смертельной стадии выброса
 function hit_actor()
 	local psy_hit = hit()
+	local low_pos = false
 	
 	psy_hit.direction = vector():set(0,0,0)
 	psy_hit.impulse = 0
 	psy_hit.draftsman = db.actor
-
+	
+	local pos = db.actor:position()
+	
+	if pos.y < 0 then
+		low_pos = true
+	end
+	
 	if level.name() == "predbannik" then
 		psy_hit.power = 0.0002
 		psy_hit.type = hit.radiation
+		
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "marsh" then
 		psy_hit.power = 0.0002
 		psy_hit.type = hit.radiation
+		
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "swamp_old" then
 		psy_hit.power = 0.0005
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "garbage_old" then
 		psy_hit.power = 0.0008
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "aver" then
 		psy_hit.power = 0.0012
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "lost_village" then
 		psy_hit.power = 0.0005
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "atp_for_test22" then
 		psy_hit.power = 0.005
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "red_forest" then
 		psy_hit.power = 0.005
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "zaton" then
 		psy_hit.power = 0.009
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "jupiter" then
 		psy_hit.power = 0.01
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "yantar_old" then
 		psy_hit.power = 0.012
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "generators" then
 		psy_hit.power = 0.012
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "pripyat" then
 		psy_hit.power = 0.012
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "hospital" then
 		psy_hit.power = 0.008
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "limansk" then
 		psy_hit.power = 0.009
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "puzir" then
 		psy_hit.power = 0.011
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "dead_city" then
 		psy_hit.power = 0.012
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l01_escape" then
 		psy_hit.power = 0.0005
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l02_garbage" then
 		psy_hit.power = 0.0008
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l03_agroprom" then
 		psy_hit.power = 0.001
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l04_darkvalley" then
 		psy_hit.power = 0.0012
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l05_bar" then
 		psy_hit.power = 0.0015
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l06_rostok" then
 		psy_hit.power = 0.002
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l08_yantar" then
 		psy_hit.power = 0.003
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 		psy_hit.power = 0.0001
 		psy_hit.type = hit.shock
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l07_military" then
 		psy_hit.power = 0.005
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 		psy_hit.power = 0.0002
 		psy_hit.type = hit.shock
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l10_radar" then
 		psy_hit.power = 0.008
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 		psy_hit.power = 0.0004
 		psy_hit.type = hit.shock
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 
 	if level.name() == "l11_pripyat" then
 		psy_hit.power = 0.01
 		psy_hit.type = hit.radiation
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 		psy_hit.power = 0.0007
 		psy_hit.type = hit.shock
+		if low_pos then
+			psy_hit.power = (psy_hit.power / 2)
+		end
+		
 		db.actor:hit(psy_hit)
 	end
 end
@@ -274,286 +421,288 @@ end
 function update_surge()
 	local level_name = level.name()
 	
-	if (level_name ~= "l03u_agr_underground") and (level_name ~= "l08u_brainlab") and (level_name ~= "l10u_bunker") and (level_name ~= "l04u_labx18") and (level_name ~= "l12u_sarcofag") and (level_name ~= "l12u_control_monolith") and (level_name ~= "l12_stancia") and (level_name ~= "l12_stancia_2") and (level_name ~= "peshera") and (level_name ~= "av_peshera") and (level_name ~= "warlab") and (level_name ~= "jupiter_underground") and (level_name ~= "labx8") and (level_name ~= "cs_agroprom_underground") then
-		db.FlagEsc = 0
+	db.FlagEsc = 0
+	
+	if level_name == "predbannik" then
+		if actor_in_zone(15,20,9.7,11.7,27,32) == 1 or -- Подвал справа от тоннеля
+			actor_in_zone(58,79,-0.99,2.51,79,100) == 1 or -- Бар
+			actor_in_zone(25,33,-3.16,-1.16,-7,2) == 1 or -- Подвал слева от тоннеля
+			actor_in_zone(-237,-227,16.90,18.90,235,243) == 1 or -- Пещера Чучельника 1
+			actor_in_zone(-260,-254,20.02,22.02,257,263) == 1 or -- Пещера Чучельника 2
+			actor_in_zone(-25,-21,-4.34,-2.34,327,330) == 1 or -- Подвал Скупого
+			actor_in_zone(-40,-37,-1.19,1.19,331,334) == 1 or -- Подвал в лагере Скупого
+			actor_in_zone(-454,-436,-5.74,-3.74,-156,-139) == 1 or -- Оружейка в городке
+		actor_in_zone(81,85,-1.47,0.53,74,78) == 1 or -- Озёрский
+		actor_in_zone(-38,-16,-3.08,-1.08,-243,-229) == 1 -- Завод
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "marsh" then
+		if actor_in_zone(-126,-123,-1.2,1.2,-274,-271) == 1 or -- Подвал на Базе
+		actor_in_zone(-182,-172,1.8,3.8,-276,-271) == 1 or -- Комната Коменданта
+		actor_in_zone(-164,-160,1.8,3.8,-274,-270) == 1 or -- Эколог
+		actor_in_zone(-158,-155,1.8,3.8,-278,-273) == 1 or -- Барак на Базе
+		actor_in_zone(44,48,2.9,4.9,-239,-236) == 1 or -- Рыбацкий хутор
+		actor_in_zone(-6,-2,3.3,5.3,10,13) == 1 or -- Насосная станция
+		actor_in_zone(-284,-281,0.9,2.9,32,34) == 1 or -- Вагончик у вышки
+		actor_in_zone(-43,-40,-0.9,2.9,265,269) == 1 or -- Хутор с водонапоркой
+		actor_in_zone(-180,-175,2.4,4.4,415,420) == 1 or -- Западный хутор
+		actor_in_zone(-185,-180,2.2,4.2,530,537) == 1 or -- Пещерка возле моста
+		actor_in_zone(404,416,3.6,5.6,233,243) == 1 or -- Мехдвор
+		actor_in_zone(578,581,3.6,5.6,418,424) == 1 or -- Северный хутор
+		actor_in_zone(259,264,0.5,2.5,-183,-180) == 1 or -- Церковь
+		actor_in_zone(487,492,2.8,4.8,-192,-189) == 1
+		then -- Южный хутор
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "swamp_old" then
+		if actor_in_zone(-328,-320,2.2,4.2,66,75) == 1 or -- Тоннель
+		actor_in_zone(187,195,2.8,4.8,-43,-35) == 1 -- Дом Доктора
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "garbage_old" then
+		if actor_in_zone(239,245,11.6,13.6,-109,-103) == 1 or -- Тоннель 1
+		actor_in_zone(-105,-99,21.6,23.6,-87,-81) == 1 or -- Тоннель 2
+		actor_in_zone(-49,-43,3.5,5.5,259,265) == 1 or -- Ангар 1
+		actor_in_zone(-132,-126,6.0,8.0,263,269) == 1 or -- Ангар 2
+		actor_in_zone(44,48,21.9,23.9,-150,-146) == 1 -- Хутор
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "aver" then
+		if actor_in_zone(146,148,-2.6,-0.6,-312,-310) == 1 or -- Вагончик
+		actor_in_zone(-406,-402,0.7,2.7,62,66) == 1 or -- Пещера
+		actor_in_zone(-349,-345,-9.3,-7.3,-8,-4) == 1 -- Дом Лесничего
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "lost_village" then
+		if actor_in_zone(27,31,-3.1,-1.1,-2,1) == 1 or -- Подземка
+		actor_in_zone(75,79,4.5,6.5,-60,-56) == 1 or -- Дом 1
+		actor_in_zone(3,7,9.1,11.1,-67,-63) == 1 or -- Дом 2
+		actor_in_zone(47,51,3.9,5.9,90,94) == 1 -- Тоннель
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "atp_for_test22" then
+		if actor_in_zone(119,125,-6.5,-4.5,-34,-28) == 1 or -- Здание 1 на АТП
+		actor_in_zone(142,148,-7.0,-5.0,-70,-64) == 1 or -- Здание 2 на АТП
+		actor_in_zone(170,178,-7.0,-5.0,-32,-24) == 1 -- Здание 3 на АТП
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "red_forest" then
+		if actor_in_zone(24,30,4.0,6.0,22,28) == 1 or -- Лесник 2 этаж
+		actor_in_zone(11,15,0.1,2.1,-42,-38) == 1 or -- Вагончик у капера
+		actor_in_zone(-106,-100,-0.8,1.2,-203,-197) == 1 or -- Тоннель Стрелка
+		actor_in_zone(-185,-179,0.1,2.1,-291,-285) == 1 -- Тоннель в Лиманск
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "zaton" then
+		if actor_in_zone(99,136,-7.5,0,175,190) == 1 or -- Скадовск
+		actor_in_zone(1,7,-0.5,1.5,33,39) == 1 or -- Шевченко
+		actor_in_zone(303,313,33.2,39.2,-404,-394) == 1 or -- Станция переработки
+		actor_in_zone(-147,-143,23.5,25.5,-431,-427) == 1 or -- Ангар
+		actor_in_zone(157,161,-6.9,-4.9,-143,-139) == 1 or -- Ной
+		actor_in_zone(-434,-432,2.6,4.6,6,8) == 1 or -- Труба у ВНЗ
+		actor_in_zone(-395,-391,6.8,8.8,-14,-10) == 1 or -- Подвал ВНЗ
+		actor_in_zone(232,238,8.0,10.0,-7,-1) == 1 or -- Хибара на Портовых кранах
+		actor_in_zone(425,431,36.2,38.2,-15,-11) == 1 -- лесничество
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "jupiter" then
+		if actor_in_zone(-54,-50,-0.6,1.4,197,201) == 1 or -- Подвал на Янове
+		actor_in_zone(-52,-46,3.4,5.4,194,200) == 1 or -- Янов
+		actor_in_zone(-227,-219,-3.5,-1.5,74,82) == 1 or -- Бункер
+		actor_in_zone(5,13,24.6,26.6,-190,-182) == 1 or -- КПП
+		actor_in_zone(208,216,35.6,37.6,-446,-438) == 1 or -- Возле Юпитера
+		actor_in_zone(-452,-444,0.1,2.1,-385,-377) == 1 or -- Склад контейнеров
+		actor_in_zone(69,73,-0.7,1.3,330,332) == 1 or -- Полустанок
+		actor_in_zone(169,173,-8.6,-6.6,209,213) == 1 or -- Вагончик 1
+		actor_in_zone(158,162,1.2,3.2,215,219) == 1 or -- Вагончик 2
+		actor_in_zone(-12,-8,23.1,25.1,244,248) == 1 -- Башня Зулуса
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "yantar_old" then
+		if actor_in_zone(246,250,5.7,7.7,-122,-118) == 1 or -- Погреб 1
+		actor_in_zone(101,105,1.4,3.4,-151,-147) == 1 or -- Погреб 2
+		actor_in_zone(184,192,9.6,11.6,200,208) == 1 -- Хранилище
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "generators" then
+		if actor_in_zone(-126,-122,34.7,36.7,-481,-477) == 1 or -- Погреб
+		actor_in_zone(115,119,27.2,29.2,-507,-503) == 1 -- Труба
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "pripyat" then
+		if actor_in_zone(283,291,0.6,2.6,238,246) == 1 or -- Речной порт
+		actor_in_zone(-143,-137,-11.1,-9.1,-218,-212) == 1 or -- Подвал под Универмагом
+		actor_in_zone(142,150,-0.0,2.0,-192,-184) == 1 or -- Прачечная
+		actor_in_zone(152,158,-0.0,2.0,-193,-187) == 1 -- Прачечная 2
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "hospital" then
+		if actor_in_zone(-79,-73,19.8,21.8,563,569) == 1 or -- Вход в южный зал
+		actor_in_zone(-95,-89,24.2,26.2,760,766) == 1 -- Выход из северного зала
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "limansk" then
+		if actor_in_zone(23,27,-2.4,-0.4,45,49) == 1 or -- Дом за рекой
+		actor_in_zone(-13,-5,-7.1,-5.1,-154,-146) == 1 or -- Подвал
+		actor_in_zone(-37,-33,-4.4,-2.4,-259,-255) == 1 or -- Дом с техником
+		actor_in_zone(-45,-33,-4.4,-2.4,-261,-249) == 1 -- Дом с техником
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "puzir" then
+		if actor_in_zone(-4.5,1.5,8.9,10.9,-30.5,-24,5) == 1 then -- Вагончик
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l01_escape" then
+		if actor_in_zone(-211,-198,-132,-125,-23,-20) == 1 or -- Подвал 1 в лагере новичков
+		actor_in_zone(-256,-246,-137,-132,-25,-20) == 1 or -- Бункер Сидора
+		actor_in_zone(28,34,16.5,18.5,673,679) == 1 or -- Северный КПП
+		actor_in_zone(-216,-209,-133,-120,-24,-20) == 1 -- Подвал 2 в лагере новичков
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l02_garbage" then
+		if actor_in_zone(-112,-57,-6,25,-9,90) == 1 or -- Ангар на Свалке
+		actor_in_zone(42,46,0.9,2.9,240,244) == 1 -- Вагончик
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l03_agroprom" then
+		if actor_in_zone(-198.31,-195.66,85.4,96.54,2,5.3) == 1 then -- Вагон дезертира
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l04_darkvalley" then
+		if actor_in_zone(30,50,-60,-25,-4,0) == 1 then -- Тюрьма в Темной долине
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l05_bar" then
+		if actor_in_zone(123,140,18,30,-6,0) == 1 or -- Бар
+		actor_in_zone(206,213,50,68,0,4) == 1 or -- Магазин Петренко
+		actor_in_zone(149,158,67,74,0,4) == 1 or -- Приемная Арни
+		actor_in_zone(136,168,73,134,-22,-10) == 1 or -- Арена
+		actor_in_zone(208,234,120,139,-6,2) == 1 -- База Долга
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l06_rostok" then
+		if actor_in_zone(-90,-87,125,151,0,6) == 1 or -- Блокпост наемников
+		actor_in_zone(-285,-235,78,112,-7,0) == 1 -- Тоннель Фримена
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l07_military" then
+		if actor_in_zone(-27,-16,-33,-14,-9,0) == 1 then -- База Свободы
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l08_yantar" then
+		if actor_in_zone(23,40,-282,-269,-16,0) == 1 or -- Бункер ученых
+		actor_in_zone(-265,-22,-218,-6,-20,-11) == 1 -- Кишка
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l10_radar" then
+		if actor_in_zone(639,664,167,189,-45,-37) == 1 or -- Секретная база Монолита
+		actor_in_zone(303,305,-39,-37,-23,-20) == 1 or -- Комната за кодовой дверью
+		actor_in_zone(611,615,-51,-49,-311,-315) == 1 or -- Блокпост
+		actor_in_zone(86.73,153,-27,-21.70,-10,-4.6) == 1 -- Вход в бункер
+		then
+		db.FlagEsc = 1
+		end
+	end
+
+	if level_name == "l11_pripyat" then
+		if actor_in_zone(-18,-12,58,82,-6,-3) == 1 or -- Подземный переход
+		actor_in_zone(167,173,58,83,-6,-3) == 1 or -- Подземный переход
+		actor_in_zone(-16,-2,188,204,-5,0) == 1 or -- Подвал ДК
+		actor_in_zone(-24,55,116,122,-4,0) == 1 -- Канализация
+		then
+		db.FlagEsc = 1
+		end
+	end
+	
+	for k,v in pairs(ogsm_respawn.restrictor_list) do
+		local obj = level.object_by_id(v.id)
 		
-		if level_name == "predbannik" then
-			if actor_in_zone(15,20,9.7,11.7,27,32) == 1 or -- Подвал справа от тоннеля
-				actor_in_zone(58,79,-0.99,2.51,79,100) == 1 or -- Бар
-				actor_in_zone(25,33,-3.16,-1.16,-7,2) == 1 or -- Подвал слева от тоннеля
-				actor_in_zone(-237,-227,16.90,18.90,235,243) == 1 or -- Пещера Чучельника 1
-				actor_in_zone(-260,-254,20.02,22.02,257,263) == 1 or -- Пещера Чучельника 2
-				actor_in_zone(-25,-21,-4.34,-2.34,327,330) == 1 or -- Подвал Скупого
-				actor_in_zone(-40,-37,-1.19,1.19,331,334) == 1 or -- Подвал в лагере Скупого
-				actor_in_zone(-454,-436,-5.74,-3.74,-156,-139) == 1 or -- Оружейка в городке
-				actor_in_zone(81,85,-1.47,0.53,74,78) == 1 or -- Озёрский
-				actor_in_zone(-38,-16,-3.08,-1.08,-243,-229) == 1 -- Завод
-			then
-				db.FlagEsc = 1
-			end
+		if obj and utils.npc_in_zone(db.actor, obj) then
+		db.FlagEsc = 1
 		end
-
-		if level_name == "marsh" then
-			if actor_in_zone(-126,-123,-1.2,1.2,-274,-271) == 1 or -- Подвал на Базе
-				actor_in_zone(-182,-172,1.8,3.8,-276,-271) == 1 or -- Комната Коменданта
-				actor_in_zone(-164,-160,1.8,3.8,-274,-270) == 1 or -- Эколог
-				actor_in_zone(-158,-155,1.8,3.8,-278,-273) == 1 or -- Барак на Базе
-				actor_in_zone(44,48,2.9,4.9,-239,-236) == 1 or -- Рыбацкий хутор
-				actor_in_zone(-6,-2,3.3,5.3,10,13) == 1 or -- Насосная станция
-				actor_in_zone(-284,-281,0.9,2.9,32,34) == 1 or -- Вагончик у вышки
-				actor_in_zone(-43,-40,-0.9,2.9,265,269) == 1 or -- Хутор с водонапоркой
-				actor_in_zone(-180,-175,2.4,4.4,415,420) == 1 or -- Западный хутор
-				actor_in_zone(-185,-180,2.2,4.2,530,537) == 1 or -- Пещерка возле моста
-				actor_in_zone(404,416,3.6,5.6,233,243) == 1 or -- Мехдвор
-				actor_in_zone(578,581,3.6,5.6,418,424) == 1 or -- Северный хутор
-				actor_in_zone(259,264,0.5,2.5,-183,-180) == 1 or -- Церковь
-				actor_in_zone(487,492,2.8,4.8,-192,-189) == 1
-			then -- Южный хутор
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "swamp_old" then
-			if actor_in_zone(-328,-320,2.2,4.2,66,75) == 1 or -- Тоннель
-				actor_in_zone(187,195,2.8,4.8,-43,-35) == 1 -- Дом Доктора
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "garbage_old" then
-			if actor_in_zone(239,245,11.6,13.6,-109,-103) == 1 or -- Тоннель 1
-				actor_in_zone(-105,-99,21.6,23.6,-87,-81) == 1 or -- Тоннель 2
-				actor_in_zone(-49,-43,3.5,5.5,259,265) == 1 or -- Ангар 1
-				actor_in_zone(-132,-126,6.0,8.0,263,269) == 1 or -- Ангар 2
-				actor_in_zone(44,48,21.9,23.9,-150,-146) == 1 -- Хутор
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "aver" then
-			if actor_in_zone(146,148,-2.6,-0.6,-312,-310) == 1 or -- Вагончик
-				actor_in_zone(-406,-402,0.7,2.7,62,66) == 1 or -- Пещера
-				actor_in_zone(-349,-345,-9.3,-7.3,-8,-4) == 1 -- Дом Лесничего
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "lost_village" then
-			if actor_in_zone(27,31,-3.1,-1.1,-2,1) == 1 or -- Подземка
-				actor_in_zone(75,79,4.5,6.5,-60,-56) == 1 or -- Дом 1
-				actor_in_zone(3,7,9.1,11.1,-67,-63) == 1 or -- Дом 2
-				actor_in_zone(47,51,3.9,5.9,90,94) == 1 -- Тоннель
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "atp_for_test22" then
-			if actor_in_zone(119,125,-6.5,-4.5,-34,-28) == 1 or -- Здание 1 на АТП
-				actor_in_zone(142,148,-7.0,-5.0,-70,-64) == 1 or -- Здание 2 на АТП
-				actor_in_zone(170,178,-7.0,-5.0,-32,-24) == 1 -- Здание 3 на АТП
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "red_forest" then
-			if actor_in_zone(24,30,4.0,6.0,22,28) == 1 or -- Лесник 2 этаж
-				actor_in_zone(11,15,0.1,2.1,-42,-38) == 1 or -- Вагончик у капера
-				actor_in_zone(-106,-100,-0.8,1.2,-203,-197) == 1 or -- Тоннель Стрелка
-				actor_in_zone(-185,-179,0.1,2.1,-291,-285) == 1 -- Тоннель в Лиманск
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "zaton" then
-			if actor_in_zone(99,136,-7.5,0,175,190) == 1 or -- Скадовск
-				actor_in_zone(1,7,-0.5,1.5,33,39) == 1 or -- Шевченко
-				actor_in_zone(303,313,33.2,39.2,-404,-394) == 1 or -- Станция переработки
-				actor_in_zone(-147,-143,23.5,25.5,-431,-427) == 1 or -- Ангар
-				actor_in_zone(157,161,-6.9,-4.9,-143,-139) == 1 or -- Ной
-				actor_in_zone(-434,-432,2.6,4.6,6,8) == 1 or -- Труба у ВНЗ
-				actor_in_zone(-395,-391,6.8,8.8,-14,-10) == 1 or -- Подвал ВНЗ
-				actor_in_zone(232,238,8.0,10.0,-7,-1) == 1 or -- Хибара на Портовых кранах
-				actor_in_zone(425,431,36.2,38.2,-15,-11) == 1 -- лесничество
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "jupiter" then
-			if actor_in_zone(-54,-50,-0.6,1.4,197,201) == 1 or -- Подвал на Янове
-				actor_in_zone(-52,-46,3.4,5.4,194,200) == 1 or -- Янов
-				actor_in_zone(-227,-219,-3.5,-1.5,74,82) == 1 or -- Бункер
-				actor_in_zone(5,13,24.6,26.6,-190,-182) == 1 or -- КПП
-				actor_in_zone(208,216,35.6,37.6,-446,-438) == 1 or -- Возле Юпитера
-				actor_in_zone(-452,-444,0.1,2.1,-385,-377) == 1 or -- Склад контейнеров
-				actor_in_zone(69,73,-0.7,1.3,330,332) == 1 or -- Полустанок
-				actor_in_zone(169,173,-8.6,-6.6,209,213) == 1 or -- Вагончик 1
-				actor_in_zone(158,162,1.2,3.2,215,219) == 1 or -- Вагончик 2
-				actor_in_zone(-12,-8,23.1,25.1,244,248) == 1 -- Башня Зулуса
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "yantar_old" then
-			if actor_in_zone(246,250,5.7,7.7,-122,-118) == 1 or -- Погреб 1
-				actor_in_zone(101,105,1.4,3.4,-151,-147) == 1 or -- Погреб 2
-				actor_in_zone(184,192,9.6,11.6,200,208) == 1 -- Хранилище
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "generators" then
-			if actor_in_zone(-126,-122,34.7,36.7,-481,-477) == 1 or -- Погреб
-				actor_in_zone(115,119,27.2,29.2,-507,-503) == 1 -- Труба
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "pripyat" then
-			if actor_in_zone(283,291,0.6,2.6,238,246) == 1 or -- Речной порт
-				actor_in_zone(-143,-137,-11.1,-9.1,-218,-212) == 1 or -- Подвал под Универмагом
-				actor_in_zone(142,150,-0.0,2.0,-192,-184) == 1 or -- Прачечная
-				actor_in_zone(152,158,-0.0,2.0,-193,-187) == 1 -- Прачечная 2
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "hospital" then
-			if actor_in_zone(-79,-73,19.8,21.8,563,569) == 1 or -- Вход в южный зал
-				actor_in_zone(-95,-89,24.2,26.2,760,766) == 1 -- Выход из северного зала
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "limansk" then
-			if actor_in_zone(23,27,-2.4,-0.4,45,49) == 1 or -- Дом за рекой
-				actor_in_zone(-13,-5,-7.1,-5.1,-154,-146) == 1 or -- Подвал
-				actor_in_zone(-37,-33,-4.4,-2.4,-259,-255) == 1 or -- Дом с техником
-				actor_in_zone(-45,-33,-4.4,-2.4,-261,-249) == 1 -- Дом с техником
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "puzir" then
-			if actor_in_zone(-4.5,1.5,8.9,10.9,-30.5,-24,5) == 1 then -- Вагончик
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l01_escape" then
-			if actor_in_zone(-211,-198,-132,-125,-23,-20) == 1 or -- Подвал 1 в лагере новичков
-				actor_in_zone(-256,-246,-137,-132,-25,-20) == 1 or -- Бункер Сидора
-				actor_in_zone(28,34,16.5,18.5,673,679) == 1 or -- Северный КПП
-				actor_in_zone(-216,-209,-133,-120,-24,-20) == 1 -- Подвал 2 в лагере новичков
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l02_garbage" then
-			if actor_in_zone(-112,-57,-6,25,-9,90) == 1 or -- Ангар на Свалке
-				actor_in_zone(42,46,0.9,2.9,240,244) == 1 -- Вагончик
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l03_agroprom" then
-			if actor_in_zone(-198.31,-195.66,85.4,96.54,2,5.3) == 1 then -- Вагон дезертира
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l04_darkvalley" then
-			if actor_in_zone(30,50,-60,-25,-4,0) == 1 then -- Тюрьма в Темной долине
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l05_bar" then
-			if actor_in_zone(123,140,18,30,-6,0) == 1 or -- Бар
-				actor_in_zone(206,213,50,68,0,4) == 1 or -- Магазин Петренко
-				actor_in_zone(149,158,67,74,0,4) == 1 or -- Приемная Арни
-				actor_in_zone(136,168,73,134,-22,-10) == 1 or -- Арена
-				actor_in_zone(208,234,120,139,-6,2) == 1 -- База Долга
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l06_rostok" then
-			if actor_in_zone(-90,-87,125,151,0,6) == 1 or -- Блокпост наемников
-				actor_in_zone(-285,-235,78,112,-7,0) == 1 -- Тоннель Фримена
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l07_military" then
-			if actor_in_zone(-27,-16,-33,-14,-9,0) == 1 then -- База Свободы
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l08_yantar" then
-			if actor_in_zone(23,40,-282,-269,-16,0) == 1 or -- Бункер ученых
-				actor_in_zone(-265,-22,-218,-6,-20,-11) == 1 -- Кишка
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l10_radar" then
-			if actor_in_zone(639,664,167,189,-45,-37) == 1 or -- Секретная база Монолита
-				actor_in_zone(303,305,-39,-37,-23,-20) == 1 or -- Комната за кодовой дверью
-				actor_in_zone(611,615,-51,-49,-311,-315) == 1 or -- Блокпост
-				actor_in_zone(86.73,153,-27,-21.70,-10,-4.6) == 1 -- Вход в бункер
-			then
-				db.FlagEsc = 1
-			end
-		end
-
-		if level_name == "l11_pripyat" then
-			if actor_in_zone(-18,-12,58,82,-6,-3) == 1 or -- Подземный переход
-				actor_in_zone(167,173,58,83,-6,-3) == 1 or -- Подземный переход
-				actor_in_zone(-16,-2,188,204,-5,0) == 1 or -- Подвал ДК
-				actor_in_zone(-24,55,116,122,-4,0) == 1 -- Канализация
-			then
-				db.FlagEsc = 1
-			end
-		end
+	end
+	
+	if db.Dead2 == 1 and db.FlagEsc == 0 then
+		g_R_Vibros:Run()
 		
-		for k,v in pairs(ogsm_respawn.restrictor_list) do
-			local obj = level.object_by_id(v.id)
-			
-			if obj and utils.npc_in_zone(db.actor, obj) then
-				db.FlagEsc = 1
-			end
-		end
-		
-		if db.Dead2 == 1 and db.FlagEsc == 0 then
-			g_R_Vibros:Run()
+		if not indoor_levels[level.name()] then
 			hit_actor()
-			play_sounds()
-			level.add_pp_effector("dead_zone.ppe", 1003, true)
-			level.set_pp_effector_factor(1003, 0.5)
 		end
 		
-		if db.FlagEsc == 1 then
-			g_R_Vibros:Stop()
-		end
+		play_sounds()
+		level.add_pp_effector("dead_zone.ppe", 1003, true)
+		level.set_pp_effector_factor(1003, 0.5)
+	end
+	
+	if db.FlagEsc == 1 then
+		g_R_Vibros:Stop()
 	end
 end
 
