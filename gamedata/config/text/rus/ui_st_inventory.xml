@@ -4,19 +4,19 @@
 		<text>Активировать артефакт</text>
 	</string>
 	<string id="st_attach_gl_to_rifle">
-		<text>Установить подствольник на второй ствол</text>
+		<text>Установить подствольник на оружие на плече</text>
 	</string>
 	<string id="st_attach_scope_to_pistol">
-		<text>Установить оптику на первый ствол</text>
+		<text>Установить оптику на оружие на груди</text>
 	</string>
 	<string id="st_attach_scope_to_rifle">
-		<text>Установить оптику на второй ствол</text>
+		<text>Установить оптику на на оружие на плече</text>
 	</string>
 	<string id="st_attach_silencer_to_pistol">
-		<text>Установить глушитель на первый ствол</text>
+		<text>Установить глушитель на оружие на груди</text>
 	</string>
 	<string id="st_attach_silencer_to_rifle">
-		<text>Установить глушитель на второй ствол</text>
+		<text>Установить глушитель на оружие на плече</text>
 	</string>
 	<string id="st_base_cost">
 		<text>Цена</text>
