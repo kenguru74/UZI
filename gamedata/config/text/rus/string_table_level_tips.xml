@@ -104,106 +104,106 @@
 	</string>
 
 	<string id="message_exit_to_predbannik">
-		<text>Переход в Предбанник</text>
+		<text>Выход на поверхность</text>
 	</string>
 	<string id="message_exit_to_av_peshera">
-		<text>Переход в Лабиринт</text>
+		<text>В Лабиринт</text>
 	</string>
 	<string id="message_exit_to_jupiter_underground">
-		<text>Переход в Путепровод</text>
+		<text>Вход</text>
 	</string>
 	<string id="message_exit_to_escape">
-		<text>Переход на Кордон</text>
+		<text>Выход на поверхность</text>
 	</string>
 	<string id="message_exit_to_garbage_old">
-		<text>Переход на Старую свалку</text>
+		<text>Выход на поверхность</text>
 	</string>
 	<string id="message_exit_to_agroprom_nord">
-		<text>Переход в северный комплекс НИИ Агропром</text>
+		<text>Выход на поверхность</text>
 	</string>
 	<string id="message_exit_to_agroprom_west">
-		<text>Переход в западный комплекс НИИ Агропром</text>
+		<text>Выход на поверхность</text>
 	</string>
 	<string id="message_exit_to_darkvalley">
-		<text>Переход в Тёмную долину</text>
+		<text>В Тёмную долину</text>
 	</string>
 	<string id="message_exit_to_yantar_tunnel">
-		<text>Переход на Янтарь, в туннель</text>
+		<text>Выход на поверхность</text>
 	</string>
 	<string id="message_exit_to_yantar_zavod">
-		<text>Переход на Янтарь</text>
+		<text>На Янтарь</text>
 	</string>
 	<string id="message_exit_to_control_monolith">
-		<text>Переход в Контроль Монолита</text>
+		<text>В Контроль Монолита</text>
 	</string>
 	<string id="message_exit_to_stancia">
-		<text>Переход на ЧАЭС-1</text>
+		<text>На ЧАЭС-1</text>
 	</string>
 	<string id="message_exit_to_sarcofag">
-		<text>Переход в Саркофаг</text>
+		<text>В Саркофаг</text>
 	</string>
 	<string id="message_exit_to_stancia_2">
-		<text>Переход на ЧАЭС-2</text>
+		<text>На ЧАЭС-2</text>
 	</string>
 	<string id="message_exit_to_radar_evac">
-		<text>Переход на Радар, в бункер рядом со снайпером</text>
+		<text>В галерею</text>
 	</string>
 	<string id="message_exit_to_radar">
-		<text>Переход на Радар, в вагон</text>
+		<text>Выход на поверхность</text>
 	</string>
 	<string id="message_exit_to_aver">
-		<text>Переход в Волчий лес</text>
+		<text>В Волчий лес</text>
 	</string>
 	<string id="message_exit_to_peshera">
-		<text>Переход в Пещеру</text>
+		<text>В Пещеру</text>
 	</string>
 	<string id="message_exit_to_zaton">
-		<text>Переход на Затон</text>
+		<text>На Затон</text>
 	</string>
 	<string id="message_exit_to_generators">
-		<text>Переход на Генераторы</text>
+		<text>На Генераторы</text>
 	</string>
 	<string id="message_exit_to_labx8">
-		<text>Переход в Лабораторию Х-8</text>
+		<text>В Лабораторию Х-8</text>
 	</string>
 	<string id="message_exit_to_pripyat">
-		<text>Переход в Восточную Припять</text>
+		<text>В Восточную Припять</text>
 	</string>
 	<string id="message_exit_to_warlab">
-		<text>Переход в Варлаб</text>
+		<text>В Варлаб</text>
 	</string>
 	<string id="message_exit_to_yantar_old">
-		<text>Переход на Научную станцию</text>
+		<text>На Научную станцию</text>
 	</string>
 	<string id="message_exit_to_agroprom">
-		<text>Переход на Агропром</text>
+		<text>На Агропром</text>
 	</string>
 	<string id="message_exit_to_bar">
-		<text>Переход в Бар</text>
+		<text>В Бар</text>
 	</string>
 	<string id="message_exit_to_bunker">
-		<text>Переход в Лабораторию Х-10</text>
+		<text>В Лабораторию Х-10</text>
 	</string>
 	<string id="message_exit_to_jupiter">
-		<text>Переход на Юпитер</text>
+		<text>На Юпитер</text>
 	</string>
 	<string id="message_exit_to_labx18">
-		<text>Переход в лабораторию Х-18</text>
+		<text>В Х-18</text>
 	</string>
 	<string id="message_exit_to_military">
-		<text>Переход на Армейские склады</text>
+		<text>На Армейские склады</text>
 	</string>
 	<string id="message_exit_to_radar_mon">
-		<text>Переход на Радар</text>
+		<text>На Радар</text>
 	</string>
 	<string id="message_exit_to_swamp_old">
-		<text>Переход на Болото Доктора</text>
+		<text>На Болото Доктора</text>
 	</string>
 	<string id="message_exit_to_katakombs">
-		<text>Переход в Катакомбы</text>
+		<text>В Катакомбы</text>
 	</string>
 	<string id="message_exit_to_red_forest">
-		<text>Переход в казармы Рыжего леса</text>
+		<text>Выход на поверхность</text>
 	</string>
 	<string id="message_poison_gas_on">
 		<text>Чтобы не погибнуть от ядовитых испарений, необходимо не позднее чем через 15 минут съесть нужный гриб</text>
