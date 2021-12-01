@@ -66,7 +66,7 @@ local community = {
 local dead_news = ""
 local snd_obj = xr_sound.get_safe_sound_object([[device\pda\pda_tip]]) -- путь до звукового файла
 
-function kill_npc(victim, who)
+/* function kill_npc(victim, who)
 	local lname, comm, sec = level.name(), victim:character_community(), victim:section()
 	
 	if level_name[lname] and community[comm] and not string.find(sec,"aem") and not string.find(sec,"specnaz") then
@@ -75,3 +75,4 @@ function kill_npc(victim, who)
 		db.actor:give_game_news(dead_news, "ui\\ui_iconsTotal", Frect():set(0,658,83,47), math.random(3000, 5000), 5000)
 	end
 end
+ */
