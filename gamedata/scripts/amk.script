@@ -121,16 +121,18 @@ function start_timer(name,delay,action)
 	if not action then
 		action = ""
 	end
-
+	
 	local time = game.time() --time in seconds since 1970
 	local a=1
+	
 	while db.storage[db.actor:id()].pstor["rt"..a] do
-		a=a+1
-		if a>100 then
+		a = a + 1
+		
+		if a > 100 then
 			return false
 		end
 	end
-
+	
 	save_variable("rt"..a, name)
 	save_variable("rt"..a.."d", time+delay*10000)
 	save_variable("rt"..a.."p", action)
@@ -159,12 +161,11 @@ function g_start_timer(name,delay_d,delay_h,delay_m,action)
 			return false
 		end
 	end
-
+	
 	save_variable("gt"..a, name)
 	save_variable("gt"..a.."d", time+delay_d*24*60*60*1000+delay_h*60*60*1000+delay_m*60*1000)
-
 	save_variable("gt"..a.."p", action)
-
+	
 	return true
 end
 
@@ -267,7 +268,7 @@ function __do_timer_action(select_string,params_string)
 	
 	if select_string=="rsp" then
 		ogsm_respawn.level_spawn()
-		g_start_timer("rsp",0, vars.t_spawn+math.random(-1,1), 0)
+		g_start_timer("rsp",0, 48 + math.random(-24,0) + math.random(0,24), 0)
 	end
 	
 	if select_string=="pel" then
@@ -446,43 +447,42 @@ function __do_timer_action(select_string,params_string)
 	
 -- 1. Настало время выброса.
 	if select_string=="bl1" then
-		if ogsm_surge then
-			if not indoor_levels[level.name()] then
-				if sleep_manager.is_sleep_active() then sleep_manager.stopper() end
-				start_timer("bl2",1)
-			else
-				g_start_timer("bl1",0,1,0)
-			end
+		if ((level.name() == "l12_stancia" or level.name() == "l12_stancia_2") and not has_alife_info("freeplay")) then
+			g_start_timer("bl1",0,1,0)
 		else
-			g_start_timer("bl1",0,10,0)
+			if sleep_manager.is_sleep_active() then sleep_manager.stopper() end
+			start_timer("bl2",1)
 		end
 	end
-
--- 11. 1 Сообщение о приближении выброса
-
+	
+	-- 11. 1 Сообщение о приближении выброса
 	if select_string=="bl2" then
 		db.Flag2 = 2
-		local text = "Приближение выброса"
-		news_manager.send_tip(db.actor, text, nil, nil, 30000)
-		local snd_obj = xr_sound.get_safe_sound_object([[blowout\blowout_message_1]])
-		snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
+		
+		pda_tips:play(db.actor, 0, sound_object.s2d)
+		
+		local news_text = "%c[255,0,255,0]Че:\\n%c[default]Внимание! Зафиксирован всплеск аномальных возмущений в районе ЧАЭС!"
+		db.actor:give_game_news(news_text, "ui\\ui_iconsTotal", Frect():set(498,141,83,47), 0, 13000)
+		
 		g_start_timer("bl21",0,0,15)
 	end
-
--- 12. 2 Сообщение о приближении выброса
-
+	
+	-- 12. 2 Сообщение о приближении выброса
 	if select_string=="bl21" then
 		del_variable("bl2")
-		local text = "Приближение выброса"
-		news_manager.send_tip(db.actor, text, nil, nil, 30000)
-		local snd_obj = xr_sound.get_safe_sound_object([[blowout\blowout_message_2]])
-		snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
-		g_start_timer("bl22",0,0,3)
+		
+		pda_tips:play(db.actor, 0, sound_object.s2d)
+		
+		local news_text = "%c[255,0,255,0]Че:\\n%c[default]Приготовиться к Выбросу! Осталось пару минут.."
+		db.actor:give_game_news(news_text, "ui\\ui_iconsTotal", Frect():set(498,141,83,47), 0, 13000)
+		
+		g_start_timer("bl22",0,0,2) -- 5
 	end
-
+	
 -- 2. Сирена, первые визуальные признаки выброса
 	if select_string=="bl22" then
 		del_variable("bl21")
+		
 		db.Flag2 = 1
 		save_variable("blt", 1)
 		level.set_weather("stancia")
@@ -491,17 +491,18 @@ function __do_timer_action(select_string,params_string)
 		level.add_pp_effector("vibros_p.ppe", 1974, false)
 		local snd_obj = xr_sound.get_safe_sound_object([[anomaly\dezodor]])
 		snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
-		g_start_timer("bl3",0,0,8)
+		
+		g_start_timer("bl3",0,0,4) -- 8
 	end
-
+	
 -- 3. Проигрываем промежуточные эффекты
 	if select_string=="bl3" then
 		del_variable("bl22")
 		level.set_weather("stancia")
 		level.set_weather_fx(wfx1)
-		g_start_timer("bl4",0,0,5)
+		g_start_timer("bl4",0,0,2) -- 5
 	end
-
+	
 -- 4. Спустя 5 минут затишья начинаем выброс
 	if select_string=="bl4" then
 		del_variable("bl3")
@@ -516,9 +517,9 @@ function __do_timer_action(select_string,params_string)
 		local snd_obj = xr_sound.get_safe_sound_object([[anomaly\blowout]])
 		snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
 		ogsm_surge.play_sounds()
-		g_start_timer("bl5",0,0,4)
+		g_start_timer("bl5",0,0,2) -- 4
 	end
-
+	
 -- 5. Начинаем расколбас
 	if select_string=="bl5" then
 		del_variable("bl4")
@@ -533,17 +534,16 @@ function __do_timer_action(select_string,params_string)
 			ogsm_surge.g_R_Vibros:Run()
 		end
 		
-		g_start_timer("bl6",0,0,5)
+		g_start_timer("bl6",0,0,2) -- 5
 	end
-
-
+	
 -- 6. Выброс близится к концу
 	if select_string=="bl6" then
 		del_variable("bl5")
 		level.set_weather_fx(wfx1)
-		g_start_timer("bl7",0,0,5)
+		g_start_timer("bl7",0,0,2)-- 5
 	end
-
+	
 -- 7. Завершаем выброс, устанавливаем время следующего
 	if select_string=="bl7" then
 		del_variable("bl6")
@@ -568,7 +568,8 @@ function __do_timer_action(select_string,params_string)
 		
 		del_variable("blt")
 		
-		g_start_timer("bl1",0, vars.t_surge+math.random(-4,4), 0)
+		g_start_timer("bl1",0, 48 + math.random(-12,0) + math.random(0,12), 0)
+		
 		ogsm_anomaly.add_anom()
 		ogsm_respawn.level_spawn()
 		
@@ -578,59 +579,67 @@ function __do_timer_action(select_string,params_string)
 		db.Flag2 = 0
 		
 		if not has_alife_info("first_blowout") then db.actor:give_info_portion("first_blowout") end
-		
-		uzi_monsters_respawn.resp_monsters()
 	elseif db.Flag2 == 0 then
 		del_variable("bl7")
 	end
-
-
--- Конец алгоритма выброса --
-
-
+	
+	-- Конец алгоритма выброса --
+	
+	-- новый респ мутов от kenguru
+	if select_string=="mut" then
+		del_variable("mut")
+		
+		uzi_monsters_respawn.resp_monsters()
+		g_start_timer("mut",0, 48 + math.random(-24,0) + math.random(0,24), 0)
+	end
+	
 	if select_string=="vdk" then
 		ogsm_quests.use_vodka(params_string)
 	end
-
+	
 	if select_string=="hrm" then
 		ogsm_quests.use_harmonica(params_string)
 	end
-
+	
 	if select_string=="rad" then
 		ogsm_quests.use_radio(params_string)
 	end
-
+	
 	if select_string=="ruk" then
 		ogsm_quests.use_rukzak(params_string)
 	end
-
+	
 	if select_string=="gss" then
 		ogsm_quests.use_gps(params_string)
 	end
-
+	
 	if select_string=="grb" then
 		ogsm_quests.use_grib(params_string)
 	end
-
+	
 	if select_string=="kit" then
 		repair.use_kit(params_string)
 	end
-
+	
+	if select_string=="kit_armor" then
+		repair.use_kit_armor(params_string)
+	end
+	
 	if select_string=="spw" then
 		if params_string == "rad" then spawn_item_in_inv("hand_radio_f")
 		elseif params_string == "hrm" then spawn_item_in_inv("harmonica_f") end
 	end
-
+	
 	if select_string=="scr" then
 		ogsm_quests.spawn_fn2000()
 		db.actor:give_info_portion("secret_talk")
 	end
-
+	
 	if select_string=="fpl" then
 		level_tasks.set_task_state(task.completed, "sar_warlab", 0)
 		level_tasks.set_task_state(task.completed, "sar_warlab", 1)
 	end
-
+	
 	if select_string=="oso" then
 		level.add_pp_effector("deadcity_wake.ppe", 2008, false)
 		local point = patrol("mon_jump_aes2_walk")
@@ -639,7 +648,7 @@ function __do_timer_action(select_string,params_string)
 		local dir = look:point(0):sub(point:point(0))
 		db.actor:set_actor_direction(-dir:getH())
 	end
-
+	
 	if select_string=="vd1" then
 		local p = particles_object("anomaly2\\teleport_out_00")
 		p:play_at_pos(params_string)
@@ -647,7 +656,7 @@ function __do_timer_action(select_string,params_string)
 		s:play_no_feedback(db.actor,sound_object.s2d, 0, vector():set(0, 0, 0), 1.0)
 		start_timer("vd2", 2)
 	end
-
+	
 	if select_string=="vd2" then
 		level.add_pp_effector("teleport.ppe", 2009, false)
 		local s = sound_object("anomaly\\teleport_work_2")
@@ -655,17 +664,17 @@ function __do_timer_action(select_string,params_string)
 		db.actor:give_info_portion("pri_trader_vanish")
 		start_timer("vd3", 2)
 	end
-
+	
 	if select_string=="vd3" then
 		local s = sound_object("x18_laugh")
 		s:play_no_feedback(db.actor,sound_object.s2d, 0, vector():set(0, 0, 0), 1.0)
 		level.enable_input()
 		db.actor:restore_weapon()
 	end
-
---  Обработка наказаний при увеличении жажды, довёл до ума kenguru
-
--- Если отработал мгновенный нулевой счётчик - выдаётся следующий порог, и начинается отсчёт следующего таймера жажды
+	
+	-- Обработка наказаний при увеличении жажды, довёл до ума kenguru
+	
+	-- Если отработал мгновенный нулевой счётчик - выдаётся следующий порог, и начинается отсчёт следующего таймера жажды
 	if select_string=="water0" then
 		if (not has_alife_info("start_water_1")) and (not has_alife_info("start_water_2")) and (not has_alife_info("start_water_3")) then
 			del_variable("water5")
@@ -714,7 +723,8 @@ function __do_timer_action(select_string,params_string)
 			g_start_timer("water5",0, 0.6, 0)
 		end
 	end
--- Если отработал первый счётчик и нет выданных порогов жажды - выдаётся первый порог, и начинается отсчёт таймера второй жажды
+	
+	-- Если отработал первый счётчик и нет выданных порогов жажды - выдаётся первый порог, и начинается отсчёт таймера второй жажды
 	if select_string=="water1" then
 		if (not has_alife_info("start_water_1")) and (not has_alife_info("start_water_2")) and (not has_alife_info("start_water_3")) then
 			del_variable("water5")
@@ -729,7 +739,8 @@ function __do_timer_action(select_string,params_string)
 			g_start_timer("water2",0, 1, 0)
 		end
 	end
--- Если есть первый порог и отработал второй счётчик - выдаётся второй порог, и начинается отсчёт таймера третьей жажды
+	
+	-- Если есть первый зелёный порог и отработал второй счётчик - выдаётся второй жёлтый порог, и начинается отсчёт таймера третьей жажды
 	if select_string=="water2" then
 		if has_alife_info("start_water_1") and (not has_alife_info("start_water_2")) and (not has_alife_info("start_water_3")) then
 			del_variable("water5")
@@ -745,9 +756,11 @@ function __do_timer_action(select_string,params_string)
 			g_start_timer("water3",0, 1, 0)
 		end
 	end
--- Если есть второй порог и отработал третий счётчик - выдаётся третий порог, и начинается отсчёт таймера четвёртой жажды
+	
+	-- Если есть второй жёлтый порог и отработал третий счётчик , смотрим - спит ли сталкер
 	if select_string=="water3" then
-		if has_alife_info("start_water_1") and has_alife_info("start_water_2") and (not has_alife_info("start_water_3")) then
+		-- Если есть второй жёлтый порог и отработал третий счётчик, а сталкер спит - просто перезапускаем таймер третьей жажды
+		if sleep_manager.is_sleep_active() then
 			del_variable("water5")
 			del_variable("water4")
 			del_variable("water3")
@@ -755,29 +768,59 @@ function __do_timer_action(select_string,params_string)
 			del_variable("water1")
 			del_variable("water0")
 			
-			get_hud():RemoveCustomStatic("water_yellow")
-			get_hud():AddCustomStatic("water_red", true)
+			db.actor:give_info_portion("start_water_2")
+			g_start_timer("water3",0, 1, 0)
+		else
+		-- Если не спит - выдаётся третий красный порог, и начинается отсчёт таймера четвёртой жажды
+			if has_alife_info("start_water_1") and has_alife_info("start_water_2") and (not has_alife_info("start_water_3")) then
+				del_variable("water5")
+				del_variable("water4")
+				del_variable("water3")
+				del_variable("water2")
+				del_variable("water1")
+				del_variable("water0")
+				
+				get_hud():RemoveCustomStatic("water_yellow")
+				get_hud():AddCustomStatic("water_red", true)
+				db.actor:give_info_portion("start_water_3")
+				g_start_timer("water4",0, 1, 0)
+			end
+		end
+	end
+	
+	-- Если есть третий красный порог и отработал четвёртый счётчик, смотрим - спит ли сталкер
+	if select_string=="water4" then
+		-- Если есть третий красный порог и отработал четвёртый счётчик, а сталкер спит - просто перезапускаем таймер четвёртой жажды
+		if sleep_manager.is_sleep_active() then
+			del_variable("water5")
+			del_variable("water4")
+			del_variable("water3")
+			del_variable("water2")
+			del_variable("water1")
+			del_variable("water0")
+			
 			db.actor:give_info_portion("start_water_3")
 			g_start_timer("water4",0, 1, 0)
+		else
+		-- Если не спит - здоровье ГГ минус 5%
+			if has_alife_info("start_water_1") and has_alife_info("start_water_2") and has_alife_info("start_water_3") then
+				del_variable("water5")
+				del_variable("water4")
+				del_variable("water3")
+				del_variable("water2")
+				del_variable("water1")
+				del_variable("water0")
+				
+				db.actor.health = -0.05
+				g_start_timer("water5",0, 0.6, 0)
+			end
 		end
 	end
--- Если есть третий порог и отработал четвёртый счётчик - здоровье ГГ минус 5%
-	if select_string=="water4" then
-		if has_alife_info("start_water_1") and has_alife_info("start_water_2") and has_alife_info("start_water_3") then
-			del_variable("water5")
-			del_variable("water4")
-			del_variable("water3")
-			del_variable("water2")
-			del_variable("water1")
-			del_variable("water0")
-			
-			db.actor.health = -0.05
-			g_start_timer("water5",0, 0.6, 0)
-		end
-	end
--- Если отработал и пятый счётчик - здоровье продолжит убывать каждый час по 5%
+	
+	-- Если отработал и пятый счётчик, смотрим - спит ли сталкер
 	if select_string=="water5" then
-		if has_alife_info("start_water_1") and has_alife_info("start_water_2") and has_alife_info("start_water_3") then
+		-- Если есть третий красный порог и отработал пятый счётчик, а сталкер спит - просто перезапускаем таймер пятой жажды
+		if sleep_manager.is_sleep_active() then
 			del_variable("water5")
 			del_variable("water4")
 			del_variable("water3")
@@ -785,8 +828,20 @@ function __do_timer_action(select_string,params_string)
 			del_variable("water1")
 			del_variable("water0")
 			
-			db.actor.health = -0.05
 			g_start_timer("water5",0, 0.6, 0)
+		else
+		-- Если не спит - здоровье продолжит убывать каждый час по 5%
+			if has_alife_info("start_water_1") and has_alife_info("start_water_2") and has_alife_info("start_water_3") then
+				del_variable("water5")
+				del_variable("water4")
+				del_variable("water3")
+				del_variable("water2")
+				del_variable("water1")
+				del_variable("water0")
+				
+				db.actor.health = -0.05
+				g_start_timer("water5",0, 0.6, 0)
+			end
 		end
 	end
 	
@@ -1047,7 +1102,7 @@ function on_actor_update(obj)
 	end
 	
 	if has_alife_info("ui_talk_hide") then
-		 check_armor()
+		check_armor()
 	end
 	-- Багфикс радара
 	ogsm_debug.check_radar_off()
@@ -1105,7 +1160,6 @@ function on_game_load()
 		g_start_timer("slp",0,0,6)
 		g_start_timer("bl1",0, 9+math.random(-1,1), 0)
 		g_start_timer("rsp",0, 5+math.random(-1,1), 0)
-		spawn_item_in_inv("matras")
 		ogsm_respawn.first_run()
 		save_variable("frn",false)
 	end
@@ -1533,14 +1587,14 @@ function check_armor()
 		
 		return
 	end
-
+	
 	if armor:id() ~= last_armor_id then
 		last_armor_id = armor:id()
 		last_condition = armor:condition()
 		
 		return
 	end
-
+	
 	if last_condition < armor:condition() then
 		armor:set_condition(last_condition)
 	else
