@@ -187,9 +187,9 @@ function actor_binder:take_item_from_box(box, item)
 	if story_id == nil then
 		return
 	end
-
+	
 	treasure_manager.take_item_from_box(box, story_id)
---[[	
+	
 	local respawner = se_respawn.get_respawner_by_parent(story_id)
 	if respawner == nil then
 		return
@@ -197,18 +197,18 @@ function actor_binder:take_item_from_box(box, item)
 	
 	--' Необходимо уменьшить счетчик в респавнере
 	respawner:remove_spawned(item:id())
-
+	
 	local smart_terrain = db.strn_by_respawn[respawner:name()]
 	if smart_terrain == nil then
 		return
 	end
-
+	
 	local npc = smart_terrain.gulag:get_nearest_online_obj(db.actor:position())
 	if npc ~= nil then
 		xr_sound.set_sound_play(npc, "reac_box")
 		xr_gulag.setGulagEnemy(smart_terrain:name() , db.actor)
 	end
-]]
+	
 	if item:section() == "pack_money" then
 		db.actor:give_info_portion("have_money")
 	end
@@ -222,50 +222,65 @@ function actor_binder:use_inventory_item(obj)
 	if string.find(obj:section(), "chay") then
 		ogsm_quests.check_use_Chay(obj)
 	end
+	
 	if string.find(obj:section(), "repair_kit") then
 		repair.check_use_kit(obj)
 	end
+	
+	if string.find(obj:section(), "repair_kit_armor") then
+		repair.check_use_kit_armor(obj)
+	end
+	
 	if string.find(obj:section(), "vodka_a") then
 		ogsm_quests.check_use_vodka_half(obj)
 		ogsm_quests.check_use_Superdrugs(obj)
 		uzi_sounds.snd_vodka()
 	end
+	
 	if string.find(obj:section(), "vodka") then
 		ogsm_quests.check_use_vodka(obj)
 		ogsm_quests.check_use_dry_foodsOrDrugs(obj)
 		uzi_sounds.snd_vodka()
 	end
+	
 	if string.find(obj:section(), "vodka_half") then
 		ogsm_quests.check_use_vodka_half(obj)
 		ogsm_quests.check_use_dry_foodsOrDrugs(obj)
 		uzi_sounds.snd_vodka()
 	end
+	
 	if string.find(obj:section(), "nuts") then
 		ogsm_quests.check_use_dry_foodsOrDrugs(obj)
 		uzi_sounds.snd_nuts()
 	end
+	
 	if string.find(obj:section(), "salo") then
 		ogsm_quests.check_use_dry_foodsOrDrugs(obj)
 		uzi_sounds.snd_conserva()
 	end
+	
 	if string.find(obj:section(), "irp") then
 		ogsm_quests.check_use_wet_foods(obj)
 		ogsm_quests.check_use_irp(obj)
 		uzi_sounds.snd_food()
 	end
+	
 	if string.find(obj:section(), "irp_two") then
 		ogsm_quests.check_use_wet_foods(obj)
 		ogsm_quests.check_use_irp_two(obj)
 		uzi_sounds.snd_food()
 	end
+	
 	if string.find(obj:section(), "irp_one") then
 		ogsm_quests.check_use_wet_foods(obj)
 		uzi_sounds.snd_food()
 	end
+	
 	if string.find(obj:section(), "mre") then
 		ogsm_quests.check_use_dry_foodsOrDrugs(obj)
 		uzi_sounds.snd_food()
 	end
+	
 	if string.find(obj:section(), "sandwich") then
 		ogsm_quests.check_use_dry_foodsOrDrugs(obj)
 		uzi_sounds.snd_food()
@@ -652,7 +667,7 @@ function actor_binder:update(delta)
 	
 	-- Взятие денег из схрона
 	if has_alife_info("have_money") and has_alife_info("ui_car_body_hide") then
-		local cond = math.ceil(math.random(25,55)*100)
+		local cond = 100
 		local col = 0
 		local count = db.actor:object_count() - 1
 		
