@@ -1,43 +1,85 @@
 function use_kit(pid)
-  local cond = 1
-  local weapon1 = db.actor:item_in_slot(1)
-  local weapon2 = db.actor:item_in_slot(2)
-  if (weapon1 == nil) and (weapon2 ~= nil) then
-    if weapon2:condition() >= 0.9999 then
-       news_manager.send_tip(db.actor, "У оружия во втором слоте отсутствует износ и оно не нуждается в починке.", nil, nil, 30000)
-       alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-       elseif (weapon2:condition() < 0.8) then
-           news_manager.send_tip(db.actor, "Оружие во втором слоте слишком изношено и не может быть восстановлено в полевых условиях.", nil, nil, 30000)
-           alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-           elseif (weapon2:condition() >= 0.8) and (weapon2:condition() < 0.9999) then
-                  news_manager.send_tip(db.actor, "Оружие во втором слоте вычищено, смазано и готово к работе. Ремкомплект использован полностью.", nil, nil, 30000)
-                  weapon2:set_condition(cond)
-    end
-    elseif (weapon1 ~= nil) and (weapon2 == nil) then
-          if weapon1:condition() >= 0.9999 then
-            news_manager.send_tip(db.actor, "У оружия в первом слоте отсутствует износ и оно не нуждается в починке.", nil, nil, 30000)
-            alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-            elseif (weapon1:condition() < 0.8) then
-                   news_manager.send_tip(db.actor, "Оружие в первом слоте слишком изношено и не может быть восстановлено в полевых условиях.", nil, nil, 30000)
-                   alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-                   elseif (weapon1:condition() >= 0.8) and (weapon1:condition() < 0.9999) then
-                   news_manager.send_tip(db.actor, "Оружие в первом слоте вычищено, смазано и готово к работе. Ремкомплект использован полностью.", nil, nil, 30000)
-                   weapon1:set_condition(cond)
-          end
-          elseif (weapon1 == nil) and (weapon2 == nil) then
-          news_manager.send_tip(db.actor, "В оружейных слотах нет оружия! Использование ремкомплекта невозможно!", nil, nil, 30000)
-          alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-          elseif (weapon1 ~= nil) and (weapon2 ~= nil) then
-                 news_manager.send_tip(db.actor, "Поместите оружие, требующее ремонта, в нужный слот. Другой слот оставьте свободным.", nil, nil, 30000)
-                 alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-  end
+	local cond = 1
+	local weapon1 = db.actor:item_in_slot(1)
+	local weapon2 = db.actor:item_in_slot(2)
+	
+	if (weapon1 == nil) and (weapon2 ~= nil) then
+		if weapon2:condition() >= 0.9999 then
+			news_manager.send_tip(db.actor, "Оружие на плече в порядке..", nil, nil, 30000)
+			alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif (weapon2:condition() < 0.3) then
+			news_manager.send_tip(db.actor, "Оружие на плече слишком забито и не может быть вычищено в полевых условиях..", nil, nil, 30000)
+			alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif (weapon2:condition() >= 0.3) and (weapon2:condition() < 0.9999) then
+			news_manager.send_tip(db.actor, "Оружие на плече вычищено и смазано. Ремкомплект использован полностью..", nil, nil, 30000)
+			weapon2:set_condition(cond)
+		end
+	elseif (weapon1 ~= nil) and (weapon2 == nil) then
+		if weapon1:condition() >= 0.9999 then
+			news_manager.send_tip(db.actor, "Оружие на груди в порядке..", nil, nil, 30000)
+			alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif (weapon1:condition() < 0.3) then
+			news_manager.send_tip(db.actor, "Оружие на груди слишком забито и не может быть вычищено в полевых условиях.", nil, nil, 30000)
+			alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif (weapon1:condition() >= 0.3) and (weapon1:condition() < 0.9999) then
+			news_manager.send_tip(db.actor, "Оружие на груди вычищено и смазано. Ремкомплект использован полностью.", nil, nil, 30000)
+			weapon1:set_condition(cond)
+		end
+	elseif (weapon1 == nil) and (weapon2 == nil) then
+		news_manager.send_tip(db.actor, "Чистить нечего..", nil, nil, 30000)
+		alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	elseif (weapon1 ~= nil) and (weapon2 ~= nil) then
+		news_manager.send_tip(db.actor, "Надо убрать второй ствол в рюкзак, а то мешает чистке..", nil, nil, 30000)
+		alife():create("repair_kit",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	end
+end
+
+function use_kit_armor(pid)
+	local armor = db.actor:item_in_slot(6)
+	local state = armor:condition()
+	
+	if (armor ~= nil) then
+		if state >= 0.95 then
+			news_manager.send_tip(db.actor, "Снаряга не требует ремонта..", nil, nil, 30000)
+			alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif state >= 0.9 and (state < 0.9999) then
+			news_manager.send_tip(db.actor, "Снаряга в относительном порядке. Остальное можно отремонтировать только у спецов..", nil, nil, 30000)
+			alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif (state < 0.3) then
+			news_manager.send_tip(db.actor, "Снаряга в хлам - заплатки ставить негде..", nil, nil, 30000)
+			alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif (state >= 0.3) and (state < 0.9) then
+			state = state + 0.3
+			
+			if state > 0.9 then 
+				state = 0.9
+			end
+			
+			armor:set_condition(state)
+			news_manager.send_tip(db.actor, "Подшаманил снарягу. Ремка кончилась..", nil, nil, 30000)
+			
+			amk.is_repaired(armor, state)
+		end
+	else
+		news_manager.send_tip(db.actor, "Ремонтировать нечего..", nil, nil, 30000)
+		alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	end
 end
 
 function check_use_kit(p_obj)
- if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
-  else
- if p_obj and p_obj:section() == "repair_kit" then
-	amk.start_timer("kit", 0.1, p_obj:id())
- end
- end
+	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
+	else
+		if p_obj and p_obj:section() == "repair_kit" then
+			amk.start_timer("kit", 0.1, p_obj:id())
+		end
+	end
+end
+
+function check_use_kit_armor(p_obj)
+	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
+	else
+		if p_obj and p_obj:section() == "repair_kit_armor" then
+			amk.start_timer("kit_armor", 0.1, p_obj:id())
+		end
+	end
 end
