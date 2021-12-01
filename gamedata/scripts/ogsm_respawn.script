@@ -310,7 +310,7 @@ function proceed_spawn(p_name, p_vector, p_lv, p_gv, p_count, p_port, p_fake)
 	
 	local qnt
 	
-	if cnt == 0 then qnt = p_count else qnt = vars.resp_index*p_count - cnt end
+	if cnt == 0 then qnt = p_count else qnt = p_count - cnt end
 	
 	if qnt>=1 then
 		for ind = 1, qnt do
@@ -437,7 +437,7 @@ function first_run()
 	---------------------------
 	
 	-- Подвал справа от тоннеля
-	spawn_restrictor("predbannik", vector():set(18.1,9.7,29.8), 971533, 4000, "stalker", 3)
+	spawn_restrictor("predbannik", vector():set(18.1,9.7,29.8), 971533, 4000, "stalker", 6)
 	-- Бар
 	spawn_restrictor("predbannik", vector():set(73.2,-0.9,89.4), 1058728, 4005, "stalker", 30)
 	spawn_restrictor("predbannik", vector():set(76.5,-0.9,97.0), 1063285, 4005, "stalker", 8)
@@ -447,19 +447,19 @@ function first_run()
 	spawn_restrictor("predbannik", vector():set(29.5,-3.1,-2.5), 989266, 4002, "stalker", 6)
 	-- Пещера Чучельника
 	spawn_restrictor("predbannik", vector():set(-232.5,16.9,239.1), 582875, 3946, "stalker", 6)
-	spawn_restrictor("predbannik", vector():set(-257.8,20.0,260.0), 543293, 3938, "stalker", 3)
+	spawn_restrictor("predbannik", vector():set(-257.8,20.0,260.0), 543293, 3938, "stalker", 6)
 	-- Лагерь Скупого
-	spawn_restrictor("predbannik", vector():set(-23.5,-4.3,329.4), 906616, 3989, "stalker", 3)
-	spawn_restrictor("predbannik", vector():set(-39.1,-1.1,333.1), 881935, 3985, "stalker", 2)
+	spawn_restrictor("predbannik", vector():set(-23.5,-4.3,329.4), 906616, 3989, "stalker", 6)
+	spawn_restrictor("predbannik", vector():set(-39.1,-1.1,333.1), 881935, 3985, "stalker", 5)
 	-- Оружейка в городке
 	spawn_restrictor("predbannik", vector():set(-445.1,-5.7,-147.3), 260773, 3902, "stalker_formers_ecolog", 10)
-	spawn_restrictor("predbannik", vector():set(-434.2,-5.7,-149.4), 277882, 3906, "stalker", 2)
+	spawn_restrictor("predbannik", vector():set(-434.2,-5.7,-149.4), 277882, 3906, "stalker", 5)
 	-- Блокпост
-	spawn_restrictor("predbannik", vector():set(-563.5,15.6,266.8), 85278, 3880, "military", 2)
-	spawn_restrictor("predbannik", vector():set(-563.2,14.9,291.7), 85306, 3881, "military", 3)
+	spawn_restrictor("predbannik", vector():set(-563.5,15.6,266.8), 85278, 3880, "military", 5)
+	spawn_restrictor("predbannik", vector():set(-563.2,14.9,291.7), 85306, 3881, "military", 6)
 	-- База
 	spawn_restrictor("predbannik", vector():set(-269.1,27.1,-179.2), 523930, 3932, "military", 14)
-	spawn_restrictor("predbannik", vector():set(-236.3,23.3,-207.1), 575799, 3943, "military", 2)
+	spawn_restrictor("predbannik", vector():set(-236.3,23.3,-207.1), 575799, 3943, "military", 5)
 	-- Завод
 	spawn_restrictor("predbannik", vector():set(-27.2,-3.0,-236.3), 900226, 3987, "stalker", 11)
 	
@@ -468,30 +468,33 @@ function first_run()
 	------------------------
 	
 	-- База
-	spawn_restrictor("marsh", vector():set(-124.8,-1.2,-272.8), 82402, 3381, "stalker", 2)
-	spawn_restrictor("marsh", vector():set(-177.5,1.8,-274.1), 52375, 3367, "stalker", 5)
-	spawn_restrictor("marsh", vector():set(-157.0,1.8,-276.3), 66041, 3372, "stalker", 2)
-	spawn_restrictor("marsh", vector():set(-162.0,1.8,-272.8), 62623, 3372, "ecolog", 2)
+	spawn_restrictor("marsh", vector():set(-124,-1.2,-272.8), 82402, 3381, "stalker", 10)
+	spawn_restrictor("marsh", vector():set(-177,1.8,-274.1), 52375, 3367, "stalker", 10)
+	spawn_restrictor("marsh", vector():set(-157,1.8,-276.3), 66041, 3372, "stalker", 10)
+	spawn_restrictor("marsh", vector():set(-162,1.8,-272.8), 62623, 3372, "ecolog", 15)
+	spawn_restrictor("marsh", vector():set(-133,1.2,-277), 62623, 3372, "trader", 5) -- Холод
+	spawn_restrictor("marsh", vector():set(-135,2.5,-307), 62623, 3372, "trader", 5) -- Новиков
+	spawn_restrictor("marsh", vector():set(-178,0.9,-320), 62623, 3372, "trader", 5) -- Суслов
 	-- Рыбацкий хутор
-	spawn_restrictor("marsh", vector():set(46.6,2.9,-237.8), 163455, 3443, "stalker", 3)
+	spawn_restrictor("marsh", vector():set(46.6,2.9,-237.8), 163455, 3443, "stalker", 6)
 	-- Насосная станция
-	spawn_restrictor("marsh", vector():set(-4.5,3.3,12.2), 136575, 3418, "stalker", 2)
+	spawn_restrictor("marsh", vector():set(-4.5,3.3,12.2), 136575, 3418, "stalker", 5)
 	-- Вагончик у вышки
-	spawn_restrictor("marsh", vector():set(-283.1,0.9,33.3), 6561, 3348, "stalker", 2)
+	spawn_restrictor("marsh", vector():set(-283.1,0.9,33.3), 6561, 3348, "stalker", 5)
 	-- Хутор с водонапоркой
-	spawn_restrictor("marsh", vector():set(-42.2,-0.9,267.7), 118647, 3402, "stalker", 2)
+	spawn_restrictor("marsh", vector():set(-42.2,-0.9,267.7), 118647, 3402, "stalker", 5)
 	-- Западный хутор
-	spawn_restrictor("marsh", vector():set(-177.7,2.4,418.2), 52730, 3361, "stalker", 3)
+	spawn_restrictor("marsh", vector():set(-177.7,2.4,418.2), 52730, 3361, "stalker", 6)
 	-- Пещерка возле моста
 	spawn_restrictor("marsh", vector():set(-183.0,2.2,534.1), 46788, 3361, "stalker", 4)
 	-- Мехдвор
 	spawn_restrictor("marsh", vector():set(410.5,3.6,238.3), 410944, 3546, "stalker", 6)
 	-- Северный хутор
-	spawn_restrictor("marsh", vector():set(580.0,3.6,421.9), 517690, 3578, "stalker", 3)
+	spawn_restrictor("marsh", vector():set(580.0,3.6,421.9), 517690, 3578, "stalker", 6)
 	-- Церковь
-	spawn_restrictor("marsh", vector():set(261.8,0.5,-182.2), 303473, 3510, "stalker", 3)
+	spawn_restrictor("marsh", vector():set(261.8,0.5,-182.2), 303473, 3510, "stalker", 6)
 	-- Южный хутор
-	spawn_restrictor("marsh", vector():set(489.6,2.8,-191.1), 471902, 3561, "stalker", 3)
+	spawn_restrictor("marsh", vector():set(489.6,2.8,-191.1), 471902, 3561, "stalker", 6)
 	
 	-------------------------------
 	-- Укрытия на Болоте Доктора --
@@ -507,57 +510,57 @@ function first_run()
 	------------------------------
 	
 	-- Тоннели
-	spawn_restrictor("garbage_old", vector():set(242.4,11.6,-106.7), 1153409, 4333, "stalker", 3)
-	spawn_restrictor("garbage_old", vector():set(-102.1,21.6,-84.1), 380977, 4041, "stalker", 3)
+	spawn_restrictor("garbage_old", vector():set(242.4,11.6,-106.7), 1153409, 4333, "stalker", 6)
+	spawn_restrictor("garbage_old", vector():set(-102.1,21.6,-84.1), 380977, 4041, "stalker", 6)
 	-- Ангар
 	spawn_restrictor("garbage_old", vector():set(-46.1,3.5,262.9), 538510, 4114, "stalker", 4)
 	spawn_restrictor("garbage_old", vector():set(-129.6,6.0,266.7), 305055, 4034, "stalker", 4)
 	-- Хутор
-	spawn_restrictor("garbage_old", vector():set(46.2,21.9,-148.5), 783505, 4209, "stalker", 2)
+	spawn_restrictor("garbage_old", vector():set(46.2,21.9,-148.5), 783505, 4209, "stalker", 5)
 	
 	----------------------------
 	-- Укрытия в Волчьем лесу --
 	----------------------------
 	
 	-- Вагончик
-	spawn_restrictor("aver", vector():set(147.5,-2.6,-311.1), 1126419, 2900, "stalker", 2)
+	spawn_restrictor("aver", vector():set(147.5,-2.6,-311.1), 1126419, 2900, "stalker", 5)
 	-- Пещера
-	spawn_restrictor("aver", vector():set(-404.8,0.7,64.3), 172520, 2889, "stalker", 3)
+	spawn_restrictor("aver", vector():set(-404.8,0.7,64.3), 172520, 2889, "stalker", 6)
 	-- Дом Лесничего
-	spawn_restrictor("aver", vector():set(-347.5,-9.3,-6.1), 271302, 2889, "stalker", 3)
+	spawn_restrictor("aver", vector():set(-347.5,-9.3,-6.1), 271302, 2889, "stalker", 6)
 	
 	-------------------------------
 	-- Укрытия в Забытой деревне --
 	-------------------------------
 	
 	-- Подземка
-	spawn_restrictor("lost_village", vector():set(29.6,-3.1,-0.6), 22376, 3332, "hunters", 3)
+	spawn_restrictor("lost_village", vector():set(29.6,-3.1,-0.6), 22376, 3332, "hunters", 6)
 	-- Домики
-	spawn_restrictor("lost_village", vector():set(77.0,4.5,-58.0), 36847, 3335, "hunters", 2)
-	spawn_restrictor("lost_village", vector():set(5.7,9.1,-65.4), 15086, 3329, "hunters", 2)
+	spawn_restrictor("lost_village", vector():set(77.0,4.5,-58.0), 36847, 3335, "hunters", 5)
+	spawn_restrictor("lost_village", vector():set(5.7,9.1,-65.4), 15086, 3329, "hunters", 5)
 	-- Тоннель
-	spawn_restrictor("lost_village", vector():set(49.4,3.9,92.7), 28590, 3331, "hunters", 2)
+	spawn_restrictor("lost_village", vector():set(49.4,3.9,92.7), 28590, 3331, "hunters", 5)
 	
 	-----------------------
 	-- Укрытия в Совхозе --
 	-----------------------
 	
 	-- АТП
-	spawn_restrictor("atp_for_test22", vector():set(122.6,-6.5,-31.4), 553721, 2833, "monolits", 3)
-	spawn_restrictor("atp_for_test22", vector():set(145.4,-7.0,-67.3), 586016, 2830, "monolits", 3)
-	spawn_restrictor("atp_for_test22", vector():set(174.9,-7.0,-28.0), 627278, 2835, "monolits", 2)
+	spawn_restrictor("atp_for_test22", vector():set(122.6,-6.5,-31.4), 553721, 2833, "monolits", 6)
+	spawn_restrictor("atp_for_test22", vector():set(145.4,-7.0,-67.3), 586016, 2830, "monolits", 6)
+	spawn_restrictor("atp_for_test22", vector():set(174.9,-7.0,-28.0), 627278, 2835, "monolits", 5)
 	
 	--------------------------
 	-- Укрытия в Рыжем лесу --
 	--------------------------
 	
 	-- Лесник
-	spawn_restrictor("red_forest", vector():set(27.5,4.0,25.0), 82165, 3263, "stalker", 3)
+	spawn_restrictor("red_forest", vector():set(27.5,4.0,25.0), 82165, 3263, "stalker", 6)
 	-- Вагончик у капера
-	spawn_restrictor("red_forest", vector():set(13.3,0.1,-40.0), 74937, 3290, "stalker", 2)
+	spawn_restrictor("red_forest", vector():set(13.3,0.1,-40.0), 74937, 3290, "stalker", 5)
 	-- Тоннели
-	spawn_restrictor("red_forest", vector():set(-103.9,-0.8,-200.3), 11512, 3241, "stalker", 3)
-	spawn_restrictor("red_forest", vector():set(-182.4,0.1,-288.1), 2958, 3236, "fake_", 3)
+	spawn_restrictor("red_forest", vector():set(-103.9,-0.8,-200.3), 11512, 3241, "stalker", 6)
+	spawn_restrictor("red_forest", vector():set(-182.4,0.1,-288.1), 2958, 3236, "fake_", 6)
 	
 	-----------------------
 	-- Укрытия на Затоне --
@@ -566,32 +569,32 @@ function first_run()
 	-- Скадовск
 	spawn_restrictor("zaton", vector():set(118.1,-5.2,182.8), 1169662, 3686, "stalker", 18)
 	-- Шевченко
-	spawn_restrictor("zaton", vector():set(4.1,-0.5,36.3), 952385, 3677, "killer", 3)
+	spawn_restrictor("zaton", vector():set(4.1,-0.5,36.3), 952385, 3677, "killer", 6)
 	-- Лесничество
-	spawn_restrictor("zaton", vector():set(428.2,36.2,-13.4), 1668424, 3693, "bandit", 3)
+	spawn_restrictor("zaton", vector():set(428.2,36.2,-13.4), 1668424, 3693, "bandit", 6)
 	-- Станция переработки
 	spawn_restrictor("zaton", vector():set(308.1,33.2,-399.4), 1487241, 3690, "killer", 5)
 	-- Ангар
-	spawn_restrictor("zaton", vector():set(-145.9,23.5,-429.6), 651105, 3678, "stalker", 2)
+	spawn_restrictor("zaton", vector():set(-145.9,23.5,-429.6), 651105, 3678, "stalker", 5)
 	-- Ной
-	spawn_restrictor("zaton", vector():set(159.2,-6.9,-141.4), 1239203, 3688, "stalker", 2)
+	spawn_restrictor("zaton", vector():set(159.2,-6.9,-141.4), 1239203, 3688, "stalker", 5)
 	-- Труба у ВНЗ
-	spawn_restrictor("zaton", vector():set(-433.6,2.6,7.8), 129942, 3660, "fake_", 2)
+	spawn_restrictor("zaton", vector():set(-433.6,2.6,7.8), 129942, 3660, "fake_", 5)
 	-- Подвал ВНЗ
-	spawn_restrictor("zaton", vector():set(-393.1,6.8,-12.6), 188123, 3663, "fake_", 2)
+	spawn_restrictor("zaton", vector():set(-393.1,6.8,-12.6), 188123, 3663, "fake_", 5)
 	-- Хибара на Портовых кранах
-	spawn_restrictor("zaton", vector():set(235.9,8.0,-4.6), 1368017, 3684, "stalker", 3)
+	spawn_restrictor("zaton", vector():set(235.9,8.0,-4.6), 1368017, 3684, "stalker", 6)
 	
 	-------------------------
 	-- Укрытия на Юпитере --
 	-------------------------
 	
 	-- Гаваец
-	spawn_restrictor("jupiter", vector():set(-58.4,3.4,213.5), 622757, 3719, "stalker", 2)
+	spawn_restrictor("jupiter", vector():set(-58.4,3.4,213.5), 622757, 3719, "stalker", 5)
 	-- Подвал на Янове
 	spawn_restrictor("jupiter", vector():set(-52.8,-0.6,199.7), 631569, 3717, "fake_", 4)
 	-- Башня Зулуса
-	spawn_restrictor("jupiter", vector():set(-10.6,23.1,246.3), 698426, 3725, "stalker", 2)
+	spawn_restrictor("jupiter", vector():set(-10.6,23.1,246.3), 698426, 3725, "stalker", 5)
 	-- Янов
 	spawn_restrictor("jupiter", vector():set(-49.8,3.4,197.7), 636190, 3717, "stalker", 4)
 	-- Бункер
@@ -603,18 +606,18 @@ function first_run()
 	-- Склад контейнеров
 	spawn_restrictor("jupiter", vector():set(-448.6,0.1,-381.2), 502, 3702, "bandit", 4)
 	-- Полустанок
-	spawn_restrictor("jupiter", vector():set(71.9,-0.7,332.4), 840876, 3725, "fake_", 2)
+	spawn_restrictor("jupiter", vector():set(71.9,-0.7,332.4), 840876, 3725, "fake_", 5)
 	-- Вагончик
-	spawn_restrictor("jupiter", vector():set(171.8,-8.6,211.5), 996811, 3732, "fake_", 2)
-	spawn_restrictor("jupiter", vector():set(160.1,1.2,217.4), 989807, 3732, "stalker", 2)
+	spawn_restrictor("jupiter", vector():set(171.8,-8.6,211.5), 996811, 3732, "fake_", 5)
+	spawn_restrictor("jupiter", vector():set(160.1,1.2,217.4), 989807, 3732, "stalker", 5)
 	
 	--------------------------------
 	-- Укрытия на Научной станции --
 	--------------------------------
 	
 	-- Подвалы
-	spawn_restrictor("yantar_old", vector():set(248.5,5.7,-120.6), 562781, 4380, "fake_", 2)
-	spawn_restrictor("yantar_old", vector():set(103.4,1.4,-149.2), 399637, 4369, "fake_", 2)
+	spawn_restrictor("yantar_old", vector():set(248.5,5.7,-120.6), 562781, 4380, "fake_", 5)
+	spawn_restrictor("yantar_old", vector():set(103.4,1.4,-149.2), 399637, 4369, "fake_", 5)
 	-- Хранилище
 	spawn_restrictor("yantar_old", vector():set(188.5,9.6,204.1), 496029, 4375, "fake_", 4)
 	-- Домик
@@ -625,9 +628,9 @@ function first_run()
 	----------------------------
 	
 	-- Погреб
-	spawn_restrictor("generators", vector():set(-124.3,34.7,-479.3), 192117, 3096, "fake_", 2)
+	spawn_restrictor("generators", vector():set(-124.3,34.7,-479.3), 192117, 3096, "fake_", 5)
 	-- Труба
-	spawn_restrictor("generators", vector():set(117.0,27.2,-505.2), 471784, 3118, "fake_", 2)
+	spawn_restrictor("generators", vector():set(117.0,27.2,-505.2), 471784, 3118, "fake_", 5)
 	
 	---------------------------------
 	-- Укрытия в Восточной Припяти --
@@ -637,40 +640,40 @@ function first_run()
 	spawn_restrictor("pripyat", vector():set(287.2,0.6,242.9), 473998, 3769, "monolith", 4)
 	-- Прачечная
 	spawn_restrictor("pripyat", vector():set(146.9,-0.0,-188.4), 376430, 3765, "stalker", 4)
-	spawn_restrictor("pripyat", vector():set(155.6,-0.0,-190.8), 384582, 3765, "fake_", 3)
+	spawn_restrictor("pripyat", vector():set(155.6,-0.0,-190.8), 384582, 3765, "fake_", 6)
 	-- Подвал под Универмагом
-	spawn_restrictor("pripyat", vector():set(-140.0,-11.1,-215.6), 60717, 3752, "fake_", 3)
+	spawn_restrictor("pripyat", vector():set(-140.0,-11.1,-215.6), 60717, 3752, "fake_", 6)
 	
 	-------------------------
 	-- Укрытия в Госпитале --
 	-------------------------
 	
 	-- Вход в южный зал
-	spawn_restrictor("hospital", vector():set(-76.4,19.8,566.6), 6552, 3075, "fake_", 3)
+	spawn_restrictor("hospital", vector():set(-76.4,19.8,566.6), 6552, 3075, "fake_", 6)
 	-- Выход из северного зала
-	spawn_restrictor("hospital", vector():set(-92.9,24.2,763.0), 1518, 3043, "fake_", 3)
+	spawn_restrictor("hospital", vector():set(-92.9,24.2,763.0), 1518, 3043, "fake_", 6)
 	
 	------------------------
 	-- Укрытия в Лиманске --
 	------------------------
 	
 	-- Дом за рекой
-	spawn_restrictor("limansk", vector():set(25.4,-2.4,47.9), 39670, 3015, "fake_", 2)
+	spawn_restrictor("limansk", vector():set(25.4,-2.4,47.9), 39670, 3015, "fake_", 5)
 	-- Подвал
 	spawn_restrictor("limansk", vector():set(-9.7,-7.1,-150.6), 20070, 2995, "fake_", 4)
 	-- Дом с техником
 	spawn_restrictor("limansk", vector():set(-39.5,-4.4,-255.0), 6600, 2994, "stalker", 6)
-	spawn_restrictor("limansk", vector():set(-35.4,-4.4,-257.7), 7860, 3001, "fake_", 2)
+	spawn_restrictor("limansk", vector():set(-35.4,-4.4,-257.7), 7860, 3001, "fake_", 5)
 	
 	------------------------------
 	-- Укрытия в Мёртвом городе --
 	------------------------------
 	
 	-- Горсовет
-	spawn_restrictor("dead_city", vector():set(-102.6,2.1,31.4), 240812, 3615, "fake_", 2)
-	spawn_restrictor("dead_city", vector():set(-110.4,2.1,42.6), 230694, 3622, "fake_", 2)
+	spawn_restrictor("dead_city", vector():set(-102.6,2.1,31.4), 240812, 3615, "fake_", 5)
+	spawn_restrictor("dead_city", vector():set(-110.4,2.1,42.6), 230694, 3622, "fake_", 5)
 	-- Школа
-	spawn_restrictor("dead_city", vector():set(-85.5,2.0,-49.9), 259035, 3620, "fake_", 2)
+	spawn_restrictor("dead_city", vector():set(-85.5,2.0,-49.9), 259035, 3620, "fake_", 5)
 	
 	---------------------------
 	-- Укрытие в Пузыре --
@@ -682,23 +685,23 @@ function first_run()
 	------------------------
 	
 	-- Бункер Сидора
-	spawn_restrictor("l01_escape", vector():set(-249.9,-24.8,-134.4), 10136, 7, "fake_", 3)
+	spawn_restrictor("l01_escape", vector():set(-249.9,-24.8,-134.4), 10136, 7, "fake_", 6)
 	-- Лагерь новичков
-	spawn_restrictor("l01_escape", vector():set(-206.5,-22.53,-128.1), 46582, 58, "stalker", 3)
-	spawn_restrictor("l01_escape", vector():set(-211.4,-23.17,-129.5), 41963, 59, "stalker", 3)
+	spawn_restrictor("l01_escape", vector():set(-206.5,-22.53,-128.1), 46582, 58, "stalker", 6)
+	spawn_restrictor("l01_escape", vector():set(-211.4,-23.17,-129.5), 41963, 59, "stalker", 6)
 	-- Ферма
 	spawn_restrictor("l01_escape", vector():set(-8.4,0.64,258.3), 268724, 183, "stalker", 4)
 	-- Заброшенный дом рядом с Лисом
-	spawn_restrictor("l01_escape", vector():set(133.0,0.22,339.5), 437657, 232, "stalker_bandit", 3)
+	spawn_restrictor("l01_escape", vector():set(133.0,0.22,339.5), 437657, 232, "stalker_bandit", 6)
 	-- АТП
 	spawn_restrictor("l01_escape", vector():set(109.9,-7.48,7.7), 411371, 118, "stalker_bandit", 5)
 	-- Блокпост
 	spawn_restrictor("l01_escape", vector():set(-119.7,-30.04,-386.4), 133789, 27, "military", 4)
 	spawn_restrictor("l01_escape", vector():set(-140.7,-29.68,-361.2), 109717, 18, "military", 4)
 	-- Мельница
-	spawn_restrictor("l01_escape", vector():set(13.3,2.7,98.7), 290783, 92, "military", 3)
+	spawn_restrictor("l01_escape", vector():set(13.3,2.7,98.7), 290783, 92, "military", 6)
 	-- Северный КПП
-	spawn_restrictor("l01_escape", vector():set(31.5,16.55,676.9), 312313, 3, "stalker_bandit", 3)
+	spawn_restrictor("l01_escape", vector():set(31.5,16.55,676.9), 312313, 3, "stalker_bandit", 6)
 	
 	-----------------------
 	-- Укрытия на Свалке --
@@ -707,12 +710,12 @@ function first_run()
 	-- Ангар - восточная часть
 	spawn_restrictor("l02_garbage", vector():set(-61.6,0.75,9.1), 135489, 330, "stalker", 6)
 	-- Изгородь
-	spawn_restrictor("l02_garbage", vector():set(66.5,0.6,144.9), 237602, 364, "bandit", 2)
+	spawn_restrictor("l02_garbage", vector():set(66.5,0.6,144.9), 237602, 364, "bandit", 5)
 	-- Ангар - западная часть
 	spawn_restrictor("l02_garbage", vector():set(-102.9,0.44,11.9), 110339, 328, "bandit", 6)
 	-- Вагончик
-	spawn_restrictor("l02_garbage", vector():set(44.4,0.9,242.4), 217950, 359, "fake_", 2)
-	spawn_restrictor("l02_garbage", vector():set(49.5,0.4,239.8), 223026, 361, "dolg", 3)
+	spawn_restrictor("l02_garbage", vector():set(44.4,0.9,242.4), 217950, 359, "fake_", 5)
+	spawn_restrictor("l02_garbage", vector():set(49.5,0.4,239.8), 223026, 361, "dolg", 6)
 	
 	--------------------------
 	-- Укрытия на Агропроме --
@@ -758,7 +761,7 @@ function first_run()
 	--------------------
 	
 	-- Бункер на заставе
-	spawn_restrictor("l05_bar", vector():set(214.2,-1.57,-18.9), 52736, 1233, "stalker_dolg", 3)
+	spawn_restrictor("l05_bar", vector():set(214.2,-1.57,-18.9), 52736, 1233, "stalker_dolg", 6)
 	-- Иди своей дорогой, сталкер...
 	spawn_restrictor("l05_bar", vector():set(178.5,0.09,49.0), 44766, 1233, "stalker_dolg", 6)
 	-- Магазин Петренко
@@ -773,23 +776,23 @@ function first_run()
 	-- Бар
 	spawn_restrictor("l05_bar", vector():set(131.6,-4.83,23.8), 36240, 1233, "fake_", 10)
 	-- Комната в Баре за охранником
-	spawn_restrictor("l05_bar", vector():set(116.3,-5.30,15.4), 33907, 1239, "fake_", 4)
+	spawn_restrictor("l05_bar", vector():set(116.3,-5.30,15.4), 33907, 1239, "fake_", 10)
 	
 	-----------------------
 	-- Укрытия на Ростке --
 	-----------------------
 	
 	-- Блокпост наемников
-	spawn_restrictor("l06_rostok", vector():set(-88.9,0,137.2), 46715, 1311, "stalker_dolg_killer_ecolog", 2)
-	spawn_restrictor("l06_rostok", vector():set(-82.6,1.95,156.8), 48150, 1311, "stalker_dolg_killer_ecolog", 3)
+	spawn_restrictor("l06_rostok", vector():set(-88.9,0,137.2), 46715, 1311, "stalker_dolg_killer_ecolog", 5)
+	spawn_restrictor("l06_rostok", vector():set(-82.6,1.95,156.8), 48150, 1311, "stalker_dolg_killer_ecolog", 6)
 	-- Ангар с пси-зоной
 	spawn_restrictor("l06_rostok", vector():set(-191.8,0,130.9), 28448, 1311, "stalker_dolg_killer_ecolog", 6)
 	-- Тоннель Фримена
-	spawn_restrictor("l06_rostok", vector():set(-280,-6,109.2), 1769, 1311, "ecolog", 3)
+	spawn_restrictor("l06_rostok", vector():set(-280,-6,109.2), 1769, 1311, "ecolog", 6)
 	-- Засады наемников
-	spawn_restrictor("l06_rostok", vector():set(-242.9,0,140), 12634, 1311, "killer", 2)
-	spawn_restrictor("l06_rostok", vector():set(-228.2,0.13,141.4), 19047, 1311, "killer", 2)
-	spawn_restrictor("l06_rostok", vector():set(-250.6,1.43,14), 9490, 1311, "killer", 2)
+	spawn_restrictor("l06_rostok", vector():set(-242.9,0,140), 12634, 1311, "killer", 5)
+	spawn_restrictor("l06_rostok", vector():set(-228.2,0.13,141.4), 19047, 1311, "killer", 5)
+	spawn_restrictor("l06_rostok", vector():set(-250.6,1.43,14), 9490, 1311, "killer", 5)
 	
 	------------------------
 	-- Укрытия на Складах --
@@ -800,9 +803,9 @@ function first_run()
 	-- Деревня кровососов
 	spawn_restrictor("l07_military", vector():set(-228.9,-21.78,196.7), 102257, 1546, "freedom", 4)
 	-- Стоянка нейтралов
-	spawn_restrictor("l07_military", vector():set(-71.4,-16.83,242.9), 240966, 1546, "stalker", 3)
+	spawn_restrictor("l07_military", vector():set(-71.4,-16.83,242.9), 240966, 1546, "stalker", 6)
 	-- Барьер
-	spawn_restrictor("l07_military", vector():set(84.7,-7,341.6), 382116, 1546, "freedom", 3)
+	spawn_restrictor("l07_military", vector():set(84.7,-7,341.6), 382116, 1546, "freedom", 6)
 	-- Хутор Павлика
 	spawn_restrictor("l07_military", vector():set(-190.4,-16,371), 134714, 1546, "killer_freedom", 4)
 	-- Штаб Свободы
@@ -833,9 +836,9 @@ function first_run()
 	-- Казармы на Радаре
 	spawn_restrictor("l10_radar", vector():set(33.6,-3.38,-42), 21487, 1868, "dolg_freedom_stalker_military_monolith", 4)
 	-- Блокпост со стороны АС
-	spawn_restrictor("l10_radar", vector():set(613.3,-51.5,-313.0), 220310, 1881, "military_monolith", 2)
+	spawn_restrictor("l10_radar", vector():set(613.3,-51.5,-313.0), 220310, 1881, "military_monolith", 5)
 	-- Блокпост со стороны Припяти
-	spawn_restrictor("l10_radar", vector():set(392.2,-34.2,154.5), 119813, 1865, "military_monolith", 2)
+	spawn_restrictor("l10_radar", vector():set(392.2,-34.2,154.5), 119813, 1865, "military_monolith", 5)
 	
 	-----------------------
 	-- Укрытия в Припяти --
@@ -852,10 +855,10 @@ function first_run()
 	-- Подвал Дома культуры
 	spawn_restrictor("l11_pripyat", vector():set(-5.6,-5.169,193.2), 95262, 2269, "fake_", 6)
 	-- Подземные переходы
-	spawn_restrictor("l11_pripyat", vector():set(-15.4,-5.55,69.3), 83833, 2269, "stalker_military_freedom_dolg_killer", 3)
-	spawn_restrictor("l11_pripyat", vector():set(170.8,-5.55,69.3), 253270, 2269, "stalker_military_freedom_dolg_killer", 3)
+	spawn_restrictor("l11_pripyat", vector():set(-15.4,-5.55,69.3), 83833, 2269, "stalker_military_freedom_dolg_killer", 6)
+	spawn_restrictor("l11_pripyat", vector():set(170.8,-5.55,69.3), 253270, 2269, "stalker_military_freedom_dolg_killer", 6)
 	-- Канализация
-	spawn_restrictor("l11_pripyat", vector():set(19.6,-3.634,121.1), 125990, 2269, "stalker_military_freedom_dolg_killer", 2)
+	spawn_restrictor("l11_pripyat", vector():set(19.6,-3.634,121.1), 125990, 2269, "stalker_military_freedom_dolg_killer", 5)
 	
 	
 	------------------------
