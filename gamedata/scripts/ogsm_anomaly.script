@@ -1718,7 +1718,9 @@ local noart_prefix = "noartf_" --префикс служит для отличия бесплодных аномалий
 local zone_prefix = "zone_" --префикс служит для отличия обычных невидимых аномалий
 
 function anomaly_section_choice(levelname)
-	local anom_to_spawn, name_anom_to_spawn, postfix_anom_to_spawn, anom_table_name
+	local anom_to_spawn, anom_table_name
+	local name_anom_to_spawn = radioactive
+	local postfix_anom_to_spawn = _weak
 	local anom_table_name = anom_types[levelname]
 	
 	if anom_table_name == nil then
