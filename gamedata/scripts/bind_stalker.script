@@ -215,10 +215,15 @@ function actor_binder:take_item_from_box(box, item)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:use_inventory_item(obj)
+	if string.find(obj:section(), "matras") then
+		sleep_manager.check_sleep_item(obj)
+	end
+	
 	if string.find(obj:section(), "spichki") then
 		uzi_sounds.snd_Spichki()
 		ogsm_quests.check_use_Spichki(obj)
 	end
+	
 	if string.find(obj:section(), "chay") then
 		ogsm_quests.check_use_Chay(obj)
 	end

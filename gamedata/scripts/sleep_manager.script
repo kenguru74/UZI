@@ -77,36 +77,34 @@ function test_for_need_sleep_nrg(oid)
 end
 
 function test_for_need_sleep_matras(oid)
-	if alife():object(oid)==nil then
-		local enemy=false
+	local enemy=false
+	
+	for a=0,65534 do
+		local obj=level.object_by_id(a)
 		
-		for a=0,65534 do
-			local obj=level.object_by_id(a)
-			
-			if obj then
-				if ((IsStalker(obj) and amk.get_npc_relation(obj,db.actor)=="enemy") or IsMonster(obj)) 
-					and obj:position():distance_to(db.actor:position())<40 
-					and obj:see(db.actor) then
-					enemy=true
-					
-					break
-				end
+		if obj then
+			if ((IsStalker(obj) and amk.get_npc_relation(obj,db.actor)=="enemy") or IsMonster(obj)) 
+				and obj:position():distance_to(db.actor:position()) < 40 
+				and obj:see(db.actor) then
+				enemy=true
+				
+				break
 			end
 		end
-		
-		if enemy == true then
-			amk.send_tip("Нельзя спать, когда кругом враги!","Сообщение",nil,5)
+	end
+	
+	if enemy == true then
+		amk.send_tip("Нельзя спать, когда кругом враги!","Сообщение",nil,5)
+	else
+		if db.Flag2 > 0 then 
+			amk.send_tip("Нельзя спать во время выброса!", "Сообщение", nil, 5) 
 		else
-			if db.Flag2 > 0 then 
-				amk.send_tip("Нельзя спать во время выброса!", "Сообщение", nil, 5) 
+			if amk.load_variable("smn",0) == 0 then
+				local spwn=ui_cheat.cheat(get_hud())
+				
+				level.start_stop_menu(spwn,true)
 			else
-				if amk.load_variable("smn",0)==0 then
-					local spwn=ui_cheat.cheat(get_hud())
-					
-					level.start_stop_menu(spwn,true)
-				else
-					amk.send_tip("Ещё действует энергетик!","Сообщение",nil,5)
-				end
+				amk.send_tip("Ещё действует энергетик!","Сообщение",nil,5)
 			end
 		end
 	end

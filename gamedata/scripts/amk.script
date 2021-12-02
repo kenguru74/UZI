@@ -1076,7 +1076,7 @@ end
 
 -- Колбэк на потерю предмета из инвентаря ГГ
 function on_item_drop(obj)
-	sleep_manager.check_sleep_item(obj)
+	-- sleep_manager.check_sleep_item(obj) -- многоразовый матрас теперь не дропается
 	ogsm_quests.check_use_harmonica(obj)
 	ogsm_quests.check_use_radio(obj)
 	ogsm_quests.check_use_rukzak(obj)
