@@ -1186,7 +1186,7 @@ function del_off_anoms() --Вызывается из add_anom, если нужно.
 end
 
 
--- Отключаем все аномалии при загрузке, кроме именных и бесплодных
+-- Отключаем все аномалии при загрузке, кроме именных и бесплодных, также удаляем заспавненную технику
 function on_game_load()
 	if check_game == 0 then
 		if list_obj_id then
@@ -1205,6 +1205,14 @@ function on_game_load()
 					end
 				end
 				
+			end
+		end
+		
+		for id=0, 65535 do
+			obj = level.object_by_id(id)
+			
+			if obj ~= nil and string.find(obj:name(), "vehicle_") then
+				alife():release(alife():object(id), true)
 			end
 		end
 		
@@ -1363,9 +1371,7 @@ function create_anom(p_obj, rad_anom, mode)
 	
 	local last_spawn_time_present = packet:r_u8()
 	
-	if packet:r_elapsed() ~= 0 then
-		abort("left=%d", packet:r_elapsed())
-	end
+	if packet:r_elapsed() ~= 0 then get_console():execute("left="..packet:r_elapsed()) end
 	
 	packet:w_u16(game_vertex_id)
 	packet:w_float(cse_alife_object__unk1_f32)
