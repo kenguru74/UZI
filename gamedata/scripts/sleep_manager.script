@@ -8,30 +8,35 @@ local nrg,med,cnt,factor
 -- Функции, относящиеся ко сну
 function reduce_need_sleep(time)
 	local tmp=amk.load_variable("slp",0)
-	tmp=tmp-time*120
-	if tmp<0 then tmp=0 end
+	
+	tmp = tmp - time * 60
+	
+	if tmp < 0 then tmp = 0 end
+	
 	amk.del_variable("nrg")
 	amk.del_variable("smn")
 	amk.save_variable("slp",tmp)
+	
 	test_sleep_pp()
 end
 
 function test_for_need_sleep()
 	if sleep_manager.is_sleep_active() == false then 
-		amk.save_variable("slp",amk.load_variable("slp",0)+1) 
+		amk.save_variable("slp",amk.load_variable("slp", 0) + 12) 
 		test_sleep_pp()
 	end
-	amk.g_start_timer("slp",0,0,6)
+	
+	amk.g_start_timer("slp", 0, 0, 60)
 end
 
 function test_sleep_pp()
 	local tmp=amk.load_variable("slp",0)
 	
-	if tmp>360 then
-		sleep_manager.main(5+amk.load_variable("nrg",0))
+	if tmp > 720 then
+		sleep_manager.main(5 + amk.load_variable("nrg", 0))
 	end
 	
-	if tmp>300 then
+	if tmp > 600 then
 		level.add_pp_effector("yantar_underground_psi.ppe", 999, true)
 		level.set_pp_effector_factor(999, 5.0)
 		
@@ -41,7 +46,7 @@ function test_sleep_pp()
 		end
 	end
 	
-	if tmp<=300 then
+	if tmp <= 120 then
 		level.remove_pp_effector(999)
 	end
 end
@@ -84,8 +89,8 @@ function test_for_need_sleep_matras(oid)
 		
 		if obj then
 			if ((IsStalker(obj) and amk.get_npc_relation(obj,db.actor)=="enemy") or IsMonster(obj)) 
-				and obj:position():distance_to(db.actor:position()) < 40 
-				and obj:see(db.actor) then
+			and obj:position():distance_to(db.actor:position()) < 40 
+			and obj:see(db.actor) then
 				enemy=true
 				
 				break
@@ -134,7 +139,9 @@ end
 
 function main(scale)
 	reduce_need_sleep(scale)
+	
 	local sleep_ltx = ini_file ("scripts\\actorsleep.ltx")
+	
 	schemes["ar_sleep"] = "ar_sleep"
 	ar_sleep.set_scheme(db.actor, sleep_ltx, "ar_sleep", logic)
 	db.actor:stop_talk()
