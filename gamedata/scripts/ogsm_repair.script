@@ -4,8 +4,8 @@
 
 -- правил kenguru 07.04.2018
 
-local weapon_profit_margin = 1.5
-local armor_profit_margin = 1.5
+local weapon_profit_margin = 2
+local armor_profit_margin = 2
 local set_cond1 = 0
 local set_cond2 = 0
 local set_cond6 = 0
