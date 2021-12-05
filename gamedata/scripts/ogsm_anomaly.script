@@ -1185,7 +1185,6 @@ function del_off_anoms() --Вызывается из add_anom, если нужно.
 	off_anoms_deleted = true
 end
 
-
 -- Отключаем все аномалии при загрузке, кроме именных и бесплодных, также удаляем заспавненную технику
 function on_game_load()
 	if check_game == 0 then
@@ -1257,6 +1256,29 @@ function add_anom(levelname)
 	generate_anomalies(levelname)
 end
 
+function spawn_anomaly(section, pos, lv, gv, shape)
+	local sobj = alife():create( section, pos, lv, gv )
+	local pk = get_netpk( sobj, 1 )
+	local data = pk:get()
+	
+	if shape.shtype == 0 then
+		data.shapes:addSphere(
+		shape.radius, vector():set( unpack( shape.center ) ))
+	else
+		data.shapes:addBox(
+		vector():set( unpack( shape.v1 ) ),
+		vector():set( unpack( shape.v2 ) ),
+		vector():set( unpack( shape.v3 ) ),
+		vector():set( unpack( shape.offset ) )
+		)
+	end
+	
+	pk:set( data )
+	
+	return sobj
+end
+
+
 -- Рандомный выбор переменных для спавна
 function generate_anomalies(lname)
 	if not off_anoms_deleted then
@@ -1266,17 +1288,11 @@ function generate_anomalies(lname)
 	local v = loc[lname]
 	local rnd = math.floor(math.random(v[1],v[2]))
 	
-	for i=1, rnd do
-		local name_new_anom = anomaly_section_choice(lname)
-		local rad_new_anom = math.random(2,3)
-		local pos_new, lv_new, new_gv = anomaly_position_choice(lname)
-		if name_new_anom ~= nil then
-			local obj = alife():create(name_new_anom, pos_new, lv_new, new_gv)
-			
-			create_anom(obj, rad_new_anom, "anom_on")
-		end
+	for i = 0, rnd do
+		local pos, new_lv, new_gv = anomaly_position_choice(lname)
+		local section, shape = anomaly_section_choice(lname)
+			spawn_anomaly(section, pos, new_lv, new_gv, shape)
 	end
-	
 end
 
 -- Получаем custom_data из нэт-пакета о вкл / выкл аномалии
@@ -1330,91 +1346,6 @@ function anom_update()
 	if amk.load_variable("an"..level.name(),0) == 1 then
 		on_game_load()
 	end
-end
-
--- Спавним и записываем новые свойства аномалий через нет-пакет
-function create_anom(p_obj, rad_anom, mode)
-	local packet = net_packet()
-	p_obj:STATE_Write(packet)
-	local game_vertex_id = packet:r_u16()
-	local cse_alife_object__unk1_f32 = packet:r_float()
-	local cse_alife_object__unk2_u32 = packet:r_s32()
-	local level_vertex_id = packet:r_s32()
-	local object_flags = packet:r_s32()
-	local custom_data = packet:r_stringZ()
-	local story_id = packet:r_s32()
-	local cse_alife_object__unk3_u32 = packet:r_s32()
-	local shape_count = packet:r_u8()
-	
-	for i=1,shape_count do
-		local shape_type = packet:r_u8()
-		
-		if shape_type == 0 then
-			local center = packet:r_vec3()
-			local radius = packet:r_float()
-		else
-			local box = packet:r_matrix()
-		end
-	end
-	
-	local restrictor_type = packet:r_u8()
-	
-	local cse_alife_custom_zone__unk1_f32 = packet:r_float()
-	local cse_alife_custom_zone__unk2_u32 = packet:r_s32()
-	local on_off_mode_enabled_time = packet:r_s32()
-	local on_off_mode_disabled_time = packet:r_s32()
-	local on_off_mode_shift_time = packet:r_s32()
-	
-	local offline_interactive_radius = packet:r_float()
-	local artefact_spawn_places_count = packet:r_u16()
-	local cse_alife_anomalous_zone__unk1_u32 = packet:r_s32()
-	
-	local last_spawn_time_present = packet:r_u8()
-	
-	if packet:r_elapsed() ~= 0 then get_console():execute("left="..packet:r_elapsed()) end
-	
-	packet:w_u16(game_vertex_id)
-	packet:w_float(cse_alife_object__unk1_f32)
-	packet:w_s32(cse_alife_object__unk2_u32)
-	packet:w_s32(level_vertex_id)
-	packet:w_s32(object_flags)
-	
-	if mode~=nil then
-		custom_data = mode
-	end
-	
-	packet:w_stringZ(custom_data)
-	packet:w_s32(story_id)
-	packet:w_s32(cse_alife_object__unk3_u32)
-	
-	packet:w_u8(1)
-	packet:w_u8(0)
-	
-	local sphere_center = vector()
-	
-	sphere_center:set(0, 0, 0)
-	packet:w_vec3(sphere_center)
-	radius = rad_anom
-	packet:w_float(radius)
-	
-	packet:w_u8(restrictor_type)
-	
-	packet:w_float(cse_alife_custom_zone__unk1_f32)
-	cse_alife_custom_zone__unk2_u32 = bit_not(0)
-	packet:w_s32(cse_alife_custom_zone__unk2_u32)
-	packet:w_s32(on_off_mode_enabled_time)
-	packet:w_s32(on_off_mode_disabled_time)
-	packet:w_s32(on_off_mode_shift_time)
-	
-	packet:w_float(offline_interactive_radius)
-	packet:w_u16(artefact_spawn_places_count)
-	packet:w_s32(cse_alife_anomalous_zone__unk1_u32)
-	
-	packet:w_u8(last_spawn_time_present)
-	
-	p_obj:STATE_Read(packet, packet:w_tell()-packet:r_tell())
-	
-	return p_obj
 end
 
 --Устанавливаем статус аномалии. По факту статус можно установить один - anom_off. В других статусах нет надобности.
@@ -1720,12 +1651,32 @@ local anom_power = {
 	other = {{postfix = "_weak", val = 0.6}, {postfix = "_average", val = 1}, {postfix = "_strong", val = 0.3}}
 }
 
+local anoms_sections = {
+	fountain = {"fountain", {shtype=0, radius=3, center={0,0,0}}},
+	field_thermal = {"field_thermal", {shtype=0, radius=3, center={0,0,0}}},
+	ice = {"ice", {shtype=0, radius=3, center={0,0,0}}},
+	monolith = {"monolith", {shtype=0, radius=3, center={0,0,0}}},
+	ogon = {"ogon", {shtype=0, radius=3, center={0,0,0}}},
+	sakbuzz = {"sakbuzz", {shtype=0, radius=3, center={0,0,0}}},
+	smallrain = {"smallrain", {shtype=0, radius=3, center={0,0,0}}},
+	sphere = {"sphere", {shtype=0, radius=3, center={0,0,0}}},
+	teleport = {"teleport", {shtype=0, radius=3, center={0,0,0}}},
+	radioactive = {"radioactive", {shtype=1, v1={1,0,0}, v2={0,1,0}, v3={0,0,1}, offset={0,0,0}}},
+	zavesa = {"zavesa", {shtype=0, radius=3, center={0,0,0}}},
+	mosquito_bald = {"mosquito_bald", {shtype=0, radius=3, center={0,0,0}}},
+	gravi = {"gravi", {shtype=0, radius=3, center={0,0,0}}},
+	mincer = {"mincer", {shtype=0, radius=3.5, center={0,0,0}}},
+	witches_galantine = {"witches_galantine", {shtype=0, radius=4, center={0,0,0}}},
+	zharka_static = {"zharka_static", {shtype=1, v1={1,0,0}, v2={0,7,0}, v3={0,0,1}, offset={0,0,0}}},
+	buzz = {"buzz", {shtype=0, radius=1.5, center={0,0,0}}}
+}
+
 local noart_prefix = "noartf_" --префикс служит для отличия бесплодных аномалий
 local zone_prefix = "zone_" --префикс служит для отличия обычных невидимых аномалий
 
 function anomaly_section_choice(levelname)
 	local anom_to_spawn, anom_table_name
-	local name_anom_to_spawn = radioactive
+	local name_anom_to_spawn = mosquito_bald
 	local postfix_anom_to_spawn = _weak
 	local anom_table_name = anom_types[levelname]
 	
@@ -1774,7 +1725,7 @@ function anomaly_section_choice(levelname)
 		end
 	end
 	
-	return anom_to_spawn
+	return anom_to_spawn, anoms_sections[name_anom_to_spawn][2]
 end
 
 
