@@ -500,10 +500,11 @@ function resp_monsters()
 	}
 	
 	local bad_circle_tbl = bad_circle_table[lname]
+	local table_bad_circles = {}
 	
 	if bad_circle_tbl then
 		for _, pos in pairs(bad_circle_tbl) do
-			table.insert(table_bad_circles, {vector():set
+			table.insert(table_bad_circles, {vector():set(pos[1], pos[2], pos[3]), pos[4]})
 		end
 	end
 	
@@ -824,10 +825,11 @@ function resp_monsters()
 	}
 	
 	local bad_pos_tbl = bad_pos_table[lname]
+	local table_bad_pos = {}
 	
 	if bad_pos_tbl then
 		for _, pos in pairs(bad_pos_tbl) do
-			table.insert(table_bad_pos, {vector():set
+			table.insert(table_bad_pos, {vector():set(pos[1], pos[2], pos[3])})
 			table.insert(table_bad_pos, {db.actor:position()})
 		end
 	end
@@ -4111,23 +4113,28 @@ function resp_monsters()
 			db.actor:disable_info_portion("jup_und_bloodsucker2_death")
 		end
 		if has_alife_info("jup_und_zombied1_death") then
-			alife():create("jup_und_zombied1",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jup_und_zombied1",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jup_und_zombied1_death")
 		end
 		if has_alife_info("jup_und_zombied2_death") then
-			alife():create("jup_und_zombied2",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jup_und_zombied2",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jup_und_zombied2_death")
 		end
 		if has_alife_info("jup_und_zombied3_death") then
-			alife():create("jup_und_zombied3",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jup_und_zombied3",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jup_und_zombied3_death")
 		end
 		if has_alife_info("jup_und_zombied4_death") then
-			alife():create("jup_und_zombied4",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jup_und_zombied4",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jup_und_zombied4_death")
 		end
 		if has_alife_info("jup_und_zombied5_death") then
-			alife():create("jup_und_zombied5",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jup_und_zombied5",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jup_und_zombied5_death")
 		end
 	end
@@ -4908,35 +4915,43 @@ function resp_monsters()
 			db.actor:disable_info_portion("kat_controller2_death")
 		end
 		if has_alife_info("kat_zombied1_death") then
-			alife():create("kat_zombied1",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("kat_zombied1",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("kat_zombied1_death")
 		end
 		if has_alife_info("kat_zombied2_death") then
-			alife():create("kat_zombied2",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("kat_zombied2",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("kat_zombied2_death")
 		end
 		if has_alife_info("kat_zombied3_death") then
-			alife():create("kat_zombied3",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("kat_zombied3",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("kat_zombied3_death")
 		end
 		if has_alife_info("kat_zombied4_death") then
-			alife():create("kat_zombied4",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("kat_zombied4",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("kat_zombied4_death")
 		end
 		if has_alife_info("kat_zombied5_death") then
-			alife():create("kat_zombied5",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("kat_zombied5",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("kat_zombied5_death")
 		end
 		if has_alife_info("kat_zombied6_death") then
-			alife():create("kat_zombied6",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("kat_zombied6",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("kat_zombied6_death")
 		end
 		if has_alife_info("kat_zombied7_death") then
-			alife():create("kat_zombied7",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("kat_zombied7",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("kat_zombied7_death")
 		end
 		if has_alife_info("kat_zombied8_death") then
-			alife():create("kat_zombied8",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("kat_zombied8",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("kat_zombied8_death")
 		end
 		if has_alife_info("kat_zombie1_death") then
@@ -8256,35 +8271,43 @@ function resp_monsters()
 			db.actor:disable_info_portion("jupiter_chimera5_death")
 		end
 		if has_alife_info("jupiter_zombied1_death") then
-			alife():create("jupiter_zombied1",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jupiter_zombied1",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jupiter_zombied1_death")
 		end
 		if has_alife_info("jupiter_zombied2_death") then
-			alife():create("jupiter_zombied2",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jupiter_zombied2",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jupiter_zombied2_death")
 		end
 		if has_alife_info("jupiter_zombied3_death") then
-			alife():create("jupiter_zombied3",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jupiter_zombied3",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jupiter_zombied3_death")
 		end
 		if has_alife_info("jupiter_zombied4_death") then
-			alife():create("jupiter_zombied4",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jupiter_zombied4",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jupiter_zombied4_death")
 		end
 		if has_alife_info("jupiter_zombied5_death") then
-			alife():create("jupiter_zombied5",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jupiter_zombied5",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jupiter_zombied5_death")
 		end
 		if has_alife_info("jupiter_zombied6_death") then
-			alife():create("jupiter_zombied6",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jupiter_zombied6",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jupiter_zombied6_death")
 		end
 		if has_alife_info("jupiter_zombied7_death") then
-			alife():create("jupiter_zombied7",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jupiter_zombied7",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jupiter_zombied7_death")
 		end
 		if has_alife_info("jupiter_zombied8_death") then
-			alife():create("jupiter_zombied8",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("jupiter_zombied8",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("jupiter_zombied8_death")
 		end
 		if has_alife_info("jupiter_jupiter_killer1_death") then
@@ -8798,243 +8821,243 @@ function resp_monsters()
 			db.actor:disable_info_portion("limansk_controller2_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit1_death") then
-			alife():create("limansk_radiowave_monolit1",vector():set
+			alife():create("limansk_radiowave_monolit1",vector():set(69.175178527832,10.299920082092,309.32666015625),57736,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit1_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit2_death") then
-			alife():create("limansk_radiowave_monolit2",vector():set
+			alife():create("limansk_radiowave_monolit2",vector():set(69.808784484863,10.297445297241,312.51129150391),57978,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit2_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit3_death") then
-			alife():create("limansk_radiowave_monolit3",vector():set
+			alife():create("limansk_radiowave_monolit3",vector():set(69.800422668457,17.295146942139,322.74450683594),57864,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit3_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit4_death") then
-			alife():create("limansk_radiowave_monolit4",vector():set
+			alife():create("limansk_radiowave_monolit4",vector():set(70.844512939453,17.297304153442,313.86862182617),57981,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit4_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit5_death") then
-			alife():create("limansk_radiowave_monolit5",vector():set
+			alife():create("limansk_radiowave_monolit5",vector():set(68.343315124512,10.299438476563,325.77603149414),57621,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit5_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit6_death") then
-			alife():create("limansk_radiowave_monolit6",vector():set
+			alife():create("limansk_radiowave_monolit6",vector():set(70.849510192871,10.299693107605,323.81130981445),57619,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit6_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit7_death") then
-			alife():create("limansk_radiowave_monolit7",vector():set
+			alife():create("limansk_radiowave_monolit7",vector():set(69.631523132324,10.297842025757,305.75836181641),57734,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit7_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit8_death") then
-			alife():create("limansk_radiowave_monolit8",vector():set
+			alife():create("limansk_radiowave_monolit8",vector():set(69.132232666016,10.299752235413,302.15505981445),57732,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit8_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit9_death") then
-			alife():create("limansk_radiowave_monolit9",vector():set
+			alife():create("limansk_radiowave_monolit9",vector():set(70.664215087891, 10.29488658905, 300.00143432617),57969,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit9_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit10_death") then
-			alife():create("limansk_radiowave_monolit10",vector():set
+			alife():create("limansk_radiowave_monolit10",vector():set(68.285629272461,10.299715042114,296.31314086914),57588,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit10_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit11_death") then
-			alife():create("limansk_radiowave_monolit11",vector():set
+			alife():create("limansk_radiowave_monolit11",vector():set(69.151359558105, 10.299016952515, 294.22180175781),57585,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit11_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit12_death") then
-			alife():create("limansk_radiowave_monolit12",vector():set
+			alife():create("limansk_radiowave_monolit12",vector():set(70.070602416992,10.299989700317,286.13265991211),57841,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit12_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit13_death") then
-			alife():create("limansk_radiowave_monolit13",vector():set
+			alife():create("limansk_radiowave_monolit13",vector():set(68.327682495117,10.300036430359,284.51629638672),57571,3023)
 			db.actor:disable_info_portion("limansk_radiowave_monolit13_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit14_death") then
-			alife():create("limansk_radiowave_monolit14",vector():set
+			alife():create("limansk_radiowave_monolit14",vector():set(28.800975799561,3.2937140464783,289.26348876953),41759,3022)
 			db.actor:disable_info_portion("limansk_radiowave_monolit14_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit15_death") then
-			alife():create("limansk_radiowave_monolit15",vector():set
+			alife():create("limansk_radiowave_monolit15",vector():set(28.672439575195,3.2983717918396,292.65679931641),41763,3022)
 			db.actor:disable_info_portion("limansk_radiowave_monolit15_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit16_death") then
-			alife():create("limansk_radiowave_monolit16",vector():set
+			alife():create("limansk_radiowave_monolit16",vector():set(37.809368133545,3.3015990257263,263.75991821289),47068,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit16_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit17_death") then
-			alife():create("limansk_radiowave_monolit17",vector():set
+			alife():create("limansk_radiowave_monolit17",vector():set(33.547527313232,3.2961235046387,268.91571044922),44542,3022)
 			db.actor:disable_info_portion("limansk_radiowave_monolit17_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit18_death") then
-			alife():create("limansk_radiowave_monolit18",vector():set
+			alife():create("limansk_radiowave_monolit18",vector():set(46.931480407715,3.2904863357544,257.79348754883),50637,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit18_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit19_death") then
-			alife():create("limansk_radiowave_monolit19",vector():set
+			alife():create("limansk_radiowave_monolit19",vector():set(47.530578613281,3.2959332466125,253.77084350586),50842,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit19_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit20_death") then
-			alife():create("limansk_radiowave_monolit20",vector():set
+			alife():create("limansk_radiowave_monolit20",vector():set(47.848560333252,3.2981925010681,256.40713500977),50845,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit20_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit21_death") then
-			alife():create("limansk_radiowave_monolit21",vector():set
+			alife():create("limansk_radiowave_monolit21",vector():set(74.509506225586,7.3426289558411,246.388671875),58479,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit21_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit22_death") then
-			alife():create("limansk_radiowave_monolit22",vector():set
+			alife():create("limansk_radiowave_monolit22",vector():set(78.873435974121,7.3436813354492,242.41070556641),58999,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit22_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit23_death") then
-			alife():create("limansk_radiowave_monolit23",vector():set
+			alife():create("limansk_radiowave_monolit23",vector():set(83.590148925781,7.3438920974731,241.50323486328),59414,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit23_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit24_death") then
-			alife():create("limansk_radiowave_monolit24",vector():set
+			alife():create("limansk_radiowave_monolit24",vector():set(86.30143737793,7.3415846824646,251.21171569824),59708,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit24_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit25_death") then
-			alife():create("limansk_radiowave_monolit25",vector():set
+			alife():create("limansk_radiowave_monolit25",vector():set(88.106002807617,7.3440818786621,240.38269042969),59764,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit25_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit26_death") then
-			alife():create("limansk_radiowave_monolit26",vector():set
+			alife():create("limansk_radiowave_monolit26",vector():set(89.903511047363,11.15648651123,245.28874206543),60027,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit26_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit27_death") then
-			alife():create("limansk_radiowave_monolit27",vector():set
+			alife():create("limansk_radiowave_monolit27",vector():set(71.379005432129,10.79884147644,258.42721557617),58482,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit27_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit28_death") then
-			alife():create("limansk_radiowave_monolit28",vector():set
+			alife():create("limansk_radiowave_monolit28",vector():set(13.714120864868,4.4527945518494,248.20562744141),33824,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit28_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit29_death") then
-			alife():create("limansk_radiowave_monolit29",vector():set
+			alife():create("limansk_radiowave_monolit29",vector():set(16.954982757568,3.3002369403839,244.4500579834),35448,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit29_death")
 		end
 		if has_alife_info("limansk_radiowave_monolit30_death") then
-			alife():create("limansk_radiowave_monolit30",vector():set
+			alife():create("limansk_radiowave_monolit30",vector():set(23.928112030029,3.2997343540192,250.06544494629),39475,3021)
 			db.actor:disable_info_portion("limansk_radiowave_monolit30_death")
 		end
 		if has_alife_info("limansk_building_monolit1_death") then
-			alife():create("limansk_building_monolit1",vector():set
+			alife():create("limansk_building_monolit1",vector():set(21.946184158325,16.834609985352,180.96238708496),37959,3010)
 			db.actor:disable_info_portion("limansk_building_monolit1_death")
 		end
 		if has_alife_info("limansk_building_monolit2_death") then
-			alife():create("limansk_building_monolit2",vector():set
+			alife():create("limansk_building_monolit2",vector():set(13.698635101318,16.837919235229,180.33467102051),33711,3010)
 			db.actor:disable_info_portion("limansk_building_monolit2_death")
 		end
 		if has_alife_info("limansk_building_monolit3_death") then
-			alife():create("limansk_building_monolit3",vector():set
+			alife():create("limansk_building_monolit3",vector():set(14.792273521423,17.102489471436,183.52491760254),34140,3010)
 			db.actor:disable_info_portion("limansk_building_monolit3_death")
 		end
 		if has_alife_info("limansk_building_monolit4_death") then
-			alife():create("limansk_building_monolit4",vector():set
+			alife():create("limansk_building_monolit4",vector():set(22.722764968872,17.09156036377,184.40678405762),38330,3010)
 			db.actor:disable_info_portion("limansk_building_monolit4_death")
 		end
 		if has_alife_info("limansk_building_monolit5_death") then
-			alife():create("limansk_building_monolit5",vector():set
+			alife():create("limansk_building_monolit5",vector():set(11.379366874695,17.088512420654,198.50479125977),31922,3010)
 			db.actor:disable_info_portion("limansk_building_monolit5_death")
 		end
 		if has_alife_info("limansk_building_monolit6_death") then
-			alife():create("limansk_building_monolit6",vector():set
+			alife():create("limansk_building_monolit6",vector():set(32.920341491699,17.085308074951,199.55656433105),44062,3010)
 			db.actor:disable_info_portion("limansk_building_monolit6_death")
 		end
 		if has_alife_info("limansk_building_monolit7_death") then
-			alife():create("limansk_building_monolit7",vector():set
+			alife():create("limansk_building_monolit7",vector():set(39.291927337646,17.085279464722,178.57516479492),47289,3010)
 			db.actor:disable_info_portion("limansk_building_monolit7_death")
 		end
 		if has_alife_info("limansk_building_monolit8_death") then
-			alife():create("limansk_building_monolit8",vector():set
+			alife():create("limansk_building_monolit8",vector():set(4.4149417877197,17.092292785645,199.43193054199),27241,3010)
 			db.actor:disable_info_portion("limansk_building_monolit8_death")
 		end
 		if has_alife_info("limansk_building_monolit9_death") then
-			alife():create("limansk_building_monolit9",vector():set
+			alife():create("limansk_building_monolit9",vector():set(9.9011116027832,20.860555648804,178.04019165039),30857,3003)
 			db.actor:disable_info_portion("limansk_building_monolit9_death")
 		end
 		if has_alife_info("limansk_building_monolit10_death") then
-			alife():create("limansk_building_monolit10",vector():set
+			alife():create("limansk_building_monolit10",vector():set(-0.55162876844406,20.896409988403,179.83827209473),24335,3003)
 			db.actor:disable_info_portion("limansk_building_monolit10_death")
 		end
 		if has_alife_info("limansk_building_monolit11_death") then
-			alife():create("limansk_building_monolit11",vector():set
+			alife():create("limansk_building_monolit11",vector():set(14.556371688843,24.8694190979,181.76644897461),34133,3003)
 			db.actor:disable_info_portion("limansk_building_monolit11_death")
 		end
 		if has_alife_info("limansk_building_monolit12_death") then
-			alife():create("limansk_building_monolit12",vector():set
+			alife():create("limansk_building_monolit12",vector():set(0.1789558082819,24.78888130188,179.05490112305),24696,3003)
 			db.actor:disable_info_portion("limansk_building_monolit12_death")
 		end
 		if has_alife_info("limansk_building_monolit13_death") then
-			alife():create("limansk_building_monolit13",vector():set
+			alife():create("limansk_building_monolit13",vector():set(-3.6227979660034,24.744258880615,183.38139343262),22843,3003)
 			db.actor:disable_info_portion("limansk_building_monolit13_death")
 		end
 		if has_alife_info("limansk_building_monolit14_death") then
-			alife():create("limansk_building_monolit14",vector():set
+			alife():create("limansk_building_monolit14",vector():set(25.41296005249,24.745464324951,186.17776489258),39771,3003)
 			db.actor:disable_info_portion("limansk_building_monolit14_death")
 		end
 		if has_alife_info("limansk_building_monolit15_death") then
-			alife():create("limansk_building_monolit15",vector():set
+			alife():create("limansk_building_monolit15",vector():set(20.608783721924,24.712196350098,199.90225219727),37660,3003)
 			db.actor:disable_info_portion("limansk_building_monolit15_death")
 		end
 		if has_alife_info("limansk_building_monolit16_death") then
-			alife():create("limansk_building_monolit16",vector():set
+			alife():create("limansk_building_monolit16",vector():set(34.025615692139,24.744703292847,199.85491943359),44904,3003)
 			db.actor:disable_info_portion("limansk_building_monolit16_death")
 		end
 		if has_alife_info("limansk_building_monolit17_death") then
-			alife():create("limansk_building_monolit17",vector():set
+			alife():create("limansk_building_monolit17",vector():set(22.513092041016,24.703378677368,188.82901000977),38349,3003)
 			db.actor:disable_info_portion("limansk_building_monolit17_death")
 		end
 		if has_alife_info("limansk_building_monolit18_death") then
-			alife():create("limansk_building_monolit18",vector():set
+			alife():create("limansk_building_monolit18",vector():set(2.2460341453552,24.811422348022,179.18258666992),25953,3003)
 			db.actor:disable_info_portion("limansk_building_monolit18_death")
 		end
 		if has_alife_info("limansk_building_monolit19_death") then
-			alife():create("limansk_building_monolit19",vector():set
+			alife():create("limansk_building_monolit19",vector():set(0.94609272480011,24.744194030762,185.53970336914),25119,3003)
 			db.actor:disable_info_portion("limansk_building_monolit19_death")
 		end
 		if has_alife_info("limansk_building_monolit20_death") then
-			alife():create("limansk_building_monolit20",vector():set
+			alife():create("limansk_building_monolit20",vector():set(4.931800365448,26.436803817749,188.25764465332),27658,3003)
 			db.actor:disable_info_portion("limansk_building_monolit20_death")
 		end
 		if has_alife_info("limansk_building_monolit21_death") then
-			alife():create("limansk_building_monolit21",vector():set
+			alife():create("limansk_building_monolit21",vector():set(28.083862304688,28.541723251343,178.98104858398),41256,3003)
 			db.actor:disable_info_portion("limansk_building_monolit21_death")
 		end
 		if has_alife_info("limansk_building_monolit22_death") then
-			alife():create("limansk_building_monolit22",vector():set
+			alife():create("limansk_building_monolit22",vector():set(25.576807022095,28.536645889282,182.4528503418),40154,3003)
 			db.actor:disable_info_portion("limansk_building_monolit22_death")
 		end
 		if has_alife_info("limansk_building_monolit23_death") then
-			alife():create("limansk_building_monolit23",vector():set
+			alife():create("limansk_building_monolit23",vector():set(38.544300079346,28.540832519531,181.17953491211),47305,3003)
 			db.actor:disable_info_portion("limansk_building_monolit23_death")
 		end
 		if has_alife_info("limansk_building_monolit24_death") then
-			alife():create("limansk_building_monolit24",vector():set
+			alife():create("limansk_building_monolit24",vector():set(38.372272491455,28.538743972778,178.03974914551),47291,3003)
 			db.actor:disable_info_portion("limansk_building_monolit24_death")
 		end
 		if has_alife_info("limansk_building_monolit25_death") then
-			alife():create("limansk_building_monolit25",vector():set
+			alife():create("limansk_building_monolit25",vector():set(39.495166778564,28.541124343872,191.75732421875),47736,3003)
 			db.actor:disable_info_portion("limansk_building_monolit25_death")
 		end
 		if has_alife_info("limansk_building_monolit26_death") then
-			alife():create("limansk_building_monolit26",vector():set
+			alife():create("limansk_building_monolit26",vector():set(33.582649230957,28.540218353271,199.69921875),44499,3003)
 			db.actor:disable_info_portion("limansk_building_monolit26_death")
 		end
 		if has_alife_info("limansk_building_monolit27_death") then
-			alife():create("limansk_building_monolit27",vector():set
+			alife():create("limansk_building_monolit27",vector():set(20.630849838257,28.518884658813,199.69314575195),37286,3003)
 			db.actor:disable_info_portion("limansk_building_monolit27_death")
 		end
 		if has_alife_info("limansk_building_monolit28_death") then
-			alife():create("limansk_building_monolit28",vector():set
+			alife():create("limansk_building_monolit28",vector():set(13.444618225098,28.515378952026,199.17797851563),33343,3003)
 			db.actor:disable_info_portion("limansk_building_monolit28_death")
 		end
 		if has_alife_info("limansk_building_monolit29_death") then
-			alife():create("limansk_building_monolit29",vector():set
+			alife():create("limansk_building_monolit29",vector():set(-3.8233947753906,28.526195526123,197.57987976074),22891,3003)
 			db.actor:disable_info_portion("limansk_building_monolit29_death")
 		end
 		if has_alife_info("limansk_building_monolit30_death") then
-			alife():create("limansk_building_monolit30",vector():set
+			alife():create("limansk_building_monolit30",vector():set(39.119758605957,28.541803359985,196.65983581543),47743,3003)
 			db.actor:disable_info_portion("limansk_building_monolit30_death")
 		end
 	end
@@ -9436,143 +9459,153 @@ function resp_monsters()
 			db.actor:disable_info_portion("pripyat_burer5_death")
 		end
 		if has_alife_info("pripyat_zombied1_death") then
-			alife():create("pripyat_zombied1",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied1",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied1_death")
 		end
 		if has_alife_info("pripyat_zombied2_death") then
-			alife():create("pripyat_zombied2",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied2",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied2_death")
 		end
 		if has_alife_info("pripyat_zombied3_death") then
-			alife():create("pripyat_zombied3",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied3",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied3_death")
 		end
 		if has_alife_info("pripyat_zombied4_death") then
-			alife():create("pripyat_zombied4",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied4",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied4_death")
 		end
 		if has_alife_info("pripyat_zombied5_death") then
-			alife():create("pripyat_zombied5",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied5",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied5_death")
 		end
 		if has_alife_info("pripyat_zombied6_death") then
-			alife():create("pripyat_zombied6",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied6",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied6_death")
 		end
 		if has_alife_info("pripyat_zombied7_death") then
-			alife():create("pripyat_zombied7",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied7",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied7_death")
 		end
 		if has_alife_info("pripyat_zombied8_death") then
-			alife():create("pripyat_zombied8",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied8",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied8_death")
 		end
 		if has_alife_info("pripyat_zombied9_death") then
-			alife():create("pripyat_zombied9",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied9",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied9_death")
 		end
 		if has_alife_info("pripyat_zombied10_death") then
-			alife():create("pripyat_zombied10",vector():set
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			alife():create("pripyat_zombied10",pos, lv_rand, gv_rand)
 			db.actor:disable_info_portion("pripyat_zombied10_death")
 		end
 		if has_alife_info("pripyat_monolit1_death") then
-			alife():create("pripyat_monolit1",vector():set
+			alife():create("pripyat_monolit1",vector():set(293.49551391602,0.73322188854218,219.75480651855),476204,3769)
 			db.actor:disable_info_portion("pripyat_monolit1_death")
 		end
 		if has_alife_info("pripyat_monolit2_death") then
-			alife():create("pripyat_monolit2",vector():set
+			alife():create("pripyat_monolit2",vector():set(296.93368530273,0.61897993087769,223.58166503906),477661,3769)
 			db.actor:disable_info_portion("pripyat_monolit2_death")
 		end
 		if has_alife_info("pripyat_monolit3_death") then
-			alife():create("pripyat_monolit3",vector():set
+			alife():create("pripyat_monolit3",vector():set(286.17028808594,0.67680060863495,223.13150024414),473737,3769)
 			db.actor:disable_info_portion("pripyat_monolit3_death")
 		end
 		if has_alife_info("pripyat_monolit4_death") then
-			alife():create("pripyat_monolit4",vector():set
+			alife():create("pripyat_monolit4",vector():set(283.86492919922,0.6774514913559,226.01849365234),472998,3769)
 			db.actor:disable_info_portion("pripyat_monolit4_death")
 		end
 		if has_alife_info("pripyat_monolit5_death") then
-			alife():create("pripyat_monolit5",vector():set
+			alife():create("pripyat_monolit5",vector():set(288.50790405273,0.67801201343536,227.17175292969),474481,3769)
 			db.actor:disable_info_portion("pripyat_monolit5_death")
 		end
 		if has_alife_info("pripyat_monolit6_death") then
-			alife():create("pripyat_monolit6",vector():set
+			alife():create("pripyat_monolit6",vector():set(298.38354492188,0.67800033092499,238.20950317383),477926,3769)
 			db.actor:disable_info_portion("pripyat_monolit6_death")
 		end
 		if has_alife_info("pripyat_monolit7_death") then
-			alife():create("pripyat_monolit7",vector():set
+			alife():create("pripyat_monolit7",vector():set(301.10659790039,0.67706024646759,233.91925048828),478861,3769)
 			db.actor:disable_info_portion("pripyat_monolit7_death")
 		end
 		if has_alife_info("pripyat_monolit8_death") then
-			alife():create("pripyat_monolit8",vector():set
+			alife():create("pripyat_monolit8",vector():set(304.40493774414,0.67612946033478,229.580078125),479777,3769)
 			db.actor:disable_info_portion("pripyat_monolit8_death")
 		end
 		if has_alife_info("pripyat_monolit9_death") then
-			alife():create("pripyat_monolit9",vector():set
+			alife():create("pripyat_monolit9",vector():set(280.95913696289,-0.17508655786514,256.39807128906),471836,3769)
 			db.actor:disable_info_portion("pripyat_monolit9_death")
 		end
 		if has_alife_info("pripyat_monolit10_death") then
-			alife():create("pripyat_monolit10",vector():set
+			alife():create("pripyat_monolit10",vector():set(260.29791259766,0.17151460051537,301.56588745117),464372,3769)
 			db.actor:disable_info_portion("pripyat_monolit10_death")
 		end
 		if has_alife_info("pripyat_monolit11_death") then
-			alife():create("pripyat_monolit11",vector():set
+			alife():create("pripyat_monolit11",vector():set(263.31420898438,0.16718474030495,305.92361450195),465470,3769)
 			db.actor:disable_info_portion("pripyat_monolit11_death")
 		end
 		if has_alife_info("pripyat_monolit12_death") then
-			alife():create("pripyat_monolit12",vector():set
+			alife():create("pripyat_monolit12",vector():set(266.03826904297,0.16682866215706,304.67520141602),466565,3769)
 			db.actor:disable_info_portion("pripyat_monolit12_death")
 		end
 		if has_alife_info("pripyat_monolit13_death") then
-			alife():create("pripyat_monolit13",vector():set
+			alife():create("pripyat_monolit13",vector():set(265.654296875,0.16638216376305,306.93176269531),466568,3769)
 			db.actor:disable_info_portion("pripyat_monolit13_death")
 		end
 		if has_alife_info("pripyat_monolit14_death") then
-			alife():create("pripyat_monolit14",vector():set
+			alife():create("pripyat_monolit14",vector():set(259.39462280273,0.16577968001366,315.25140380859),463837,3769)
 			db.actor:disable_info_portion("pripyat_monolit14_death")
 		end
 		if has_alife_info("pripyat_monolit15_death") then
-			alife():create("pripyat_monolit15",vector():set
+			alife():create("pripyat_monolit15",vector():set(259.14508056641,0.16603466868401,310.88931274414),464105,3769)
 			db.actor:disable_info_portion("pripyat_monolit15_death")
 		end
 		if has_alife_info("pripyat_monolit16_death") then
-			alife():create("pripyat_monolit16",vector():set
+			alife():create("pripyat_monolit16",vector():set(266.17993164063,0.16319188475609,317.79962158203),466576,3769)
 			db.actor:disable_info_portion("pripyat_monolit16_death")
 		end
 		if has_alife_info("pripyat_monolit17_death") then
-			alife():create("pripyat_monolit17",vector():set
+			alife():create("pripyat_monolit17",vector():set(263.80740356445,0.16706815361977,317.79177856445),465750,3769)
 			db.actor:disable_info_portion("pripyat_monolit17_death")
 		end
 		if has_alife_info("pripyat_monolit18_death") then
-			alife():create("pripyat_monolit18",vector():set
+			alife():create("pripyat_monolit18",vector():set(250.15634155273,0.1675960123539,312.13357543945),460550,3769)
 			db.actor:disable_info_portion("pripyat_monolit18_death")
 		end
 		if has_alife_info("pripyat_monolit19_death") then
-			alife():create("pripyat_monolit19",vector():set
+			alife():create("pripyat_monolit19",vector():set(258.33694458008,5.646568775177,300.74130249023),463285,3769)
 			db.actor:disable_info_portion("pripyat_monolit19_death")
 		end
 		if has_alife_info("pripyat_monolit20_death") then
-			alife():create("pripyat_monolit20",vector():set
+			alife():create("pripyat_monolit20",vector():set(268.42529296875,6.9062829017639,303.51831054688),467364,3769)
 			db.actor:disable_info_portion("pripyat_monolit20_death")
 		end
 		if has_alife_info("pripyat_monolit21_death") then
-			alife():create("pripyat_monolit21",vector():set
+			alife():create("pripyat_monolit21",vector():set(258.57540893555,5.8489775657654,295.62768554688),463555,3769)
 			db.actor:disable_info_portion("pripyat_monolit21_death")
 		end
 		if has_alife_info("pripyat_monolit22_death") then
-			alife():create("pripyat_monolit22",vector():set
+			alife():create("pripyat_monolit22",vector():set(268.74612426758,12.346661567688,304.61508178711),467629,3769)
 			db.actor:disable_info_portion("pripyat_monolit22_death")
 		end
 		if has_alife_info("pripyat_monolit23_death") then
-			alife():create("pripyat_monolit23",vector():set
+			alife():create("pripyat_monolit23",vector():set(266.96047973633,12.488086700439,309.50482177734),466851,3769)
 			db.actor:disable_info_portion("pripyat_monolit23_death")
 		end
 		if has_alife_info("pripyat_monolit24_death") then
-			alife():create("pripyat_monolit24",vector():set
+			alife():create("pripyat_monolit24",vector():set(272.72579956055,18.782258987427,310.41955566406),468653,3769)
 			db.actor:disable_info_portion("pripyat_monolit24_death")
 		end
 		if has_alife_info("pripyat_monolit25_death") then
-			alife():create("pripyat_monolit25",vector():set
+			alife():create("pripyat_monolit25",vector():set(277.75244140625,12.452333450317,309.05279541016),470946,3769)
 			db.actor:disable_info_portion("pripyat_monolit25_death")
 		end
 	end
@@ -12137,62 +12170,77 @@ function resp_monsters()
 		
 		
 		if has_alife_info("zaton_zombied1_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied1",vector():set(-312.09350585938,9.8017225265503,405.43969726563),324561,3665)
 			db.actor:disable_info_portion("zaton_zombied1_death")
 		end
 		if has_alife_info("zaton_zombied2_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied2",vector():set(-316.03387451172,9.778284072876,405.85754394531),317826,3665)
 			db.actor:disable_info_portion("zaton_zombied2_death")
 		end
 		if has_alife_info("zaton_zombied3_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied3",vector():set(-318.09130859375,9.7939119338989,410.72082519531),313852,3665)
 			db.actor:disable_info_portion("zaton_zombied3_death")
 		end
 		if has_alife_info("zaton_zombied4_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied4",vector():set(-326.34722900391,9.6446743011475,412.61337280273),298364,3665)
 			db.actor:disable_info_portion("zaton_zombied4_death")
 		end
 		if has_alife_info("zaton_zombied5_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied5",vector():set(-325.91223144531,9.5992546081543,419.97454833984),298375,3665)
 			db.actor:disable_info_portion("zaton_zombied5_death")
 		end
 		if has_alife_info("zaton_zombied6_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied6",vector():set(-334.03872680664,9.7276554107666,416.21243286133),284432,3665)
 			db.actor:disable_info_portion("zaton_zombied6_death")
 		end
 		if has_alife_info("zaton_zombied7_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied7",vector():set(-318.0615234375,9.6832447052002,429.89227294922),313874,3665)
 			db.actor:disable_info_portion("zaton_zombied7_death")
 		end
 		if has_alife_info("zaton_zombied8_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied8",vector():set(-321.77722167969,9.6900310516357,430.18246459961),305851,3665)
 			db.actor:disable_info_portion("zaton_zombied8_death")
 		end
 		if has_alife_info("zaton_zombied9_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied9",vector():set(-325.67428588867,9.6602163314819,427.2004699707),299650,3665)
 			db.actor:disable_info_portion("zaton_zombied9_death")
 		end
 		if has_alife_info("zaton_zombied10_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied10",vector():set(-305.82516479492,10.116463661194,431.21994018555),336195,3665)
 			db.actor:disable_info_portion("zaton_zombied10_death")
 		end
 		if has_alife_info("zaton_zombied11_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied11",vector():set(-303.47039794922,10.03099155426,428.4885559082),340182,3665)
 			db.actor:disable_info_portion("zaton_zombied11_death")
 		end
 		if has_alife_info("zaton_zombied12_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied12",vector():set(-308.29415893555,9.7501058578491,418.65930175781),332276,3665)
 			db.actor:disable_info_portion("zaton_zombied12_death")
 		end
 		if has_alife_info("zaton_zombied13_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied13",vector():set(-307.46990966797,9.8609037399292,412.41213989258),333567,3665)
 			db.actor:disable_info_portion("zaton_zombied13_death")
 		end
 		if has_alife_info("zaton_zombied14_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied14",vector():set(-301.47665405273,9.8663816452026,415.13681030273),344271,3665)
 			db.actor:disable_info_portion("zaton_zombied14_death")
 		end
 		if has_alife_info("zaton_zombied15_death") then
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
 			alife():create("zaton_zombied15",vector():set(-301.27923583984,9.8912839889256,411.50915527344),345640,3665)
 			db.actor:disable_info_portion("zaton_zombied15_death")
 		end
