@@ -184,7 +184,7 @@ end
 
 function evaluator_blowout:evaluate()
 	if not self.object:best_enemy() and
-	db.Flag2==1 and db.Dead2==0 and
+	db.Flag2 == 2 and db.Dead2 == 0 and
 	not (level.name()=="l11_pripyat" and self.object:character_community() == "monolith") and
 	not is_in_hide(self.object) and not is_in_specific_zone(self.object) then
 		self.st.blowout = true
@@ -220,7 +220,7 @@ function evaluator_inhide:__init(name, storage) super (nil, name)
 end
 
 function evaluator_inhide:evaluate()
-	if db.Flag2==1 and is_in_hide(self.object) then
+	if db.Flag2 == 1 and is_in_hide(self.object) then
 		self.st.inhide = true
 	else
 		self.st.inhide = false
@@ -315,7 +315,7 @@ function action_raskolbas:finalize()
 	
 	npc_psy[npc:id()] = 0
 	
-	amk.make_suicide(npc)
+	-- amk.make_suicide(npc)
 end
 
 -- Создаем оператор - усаживаем НПС, если он нашел укрытие
@@ -411,7 +411,7 @@ function add_to_binder(object, char_ini, scheme, section, st)
 	action:add_precondition(world_property(property_inhide, false))
 	
 	if anomaly_evader then
-		action:add_precondition(world_property(1099, false))
+		-- action:add_precondition(world_property(1099, false))
 	end
 	
 	action:add_precondition(world_property(property_blowout, true))
