@@ -170,14 +170,14 @@ explosion_immunity = 0.1
 fire_wound_immunity = 0.5
 
 [actor_condition]
-satiety_v = 0.00001 ; скорость уменьшения сытости со временем
+satiety_v = 0.00005 ; скорость уменьшения сытости со временем
 radiation_v = 0.0001 ; скорость уменьшения радиации
-satiety_power_v = 0.000055 ; увеличение силы при уменьшении сытости
-satiety_health_v = 0.00000 ; увеличение здоровья при уменьшении сытости, до 26.08 было 0.00001
+satiety_power_v = 0.00055 ; увеличение силы при уменьшении сытости
+satiety_health_v = 0.0001 ; увеличение здоровья при уменьшении сытости, до 26.08 было 0.00001
 satiety_critical = 0.1 ; критическое значения сытости (в процентах от 0..1) когда здоровье начинает уменьшаться
-radiation_health_v = 0.001 ; уменьшение здоровья при воздействии радиации
-morale_v = 0.001 ; скорость восстановления морали
-psy_health_v = 0.001 ; скорость восстановления psy-здоровья
+radiation_health_v = 0.0001 ; уменьшение здоровья при воздействии радиации
+morale_v = 0.0001 ; скорость восстановления морали
+psy_health_v = 0.0001 ; скорость восстановления psy-здоровья
 alcohol_v = -0.0003
 health_hit_part = 1.0 ; процент хита, уходящий на отнимание здоровья
 power_hit_part = 0.1 ; процент хита, уходящий на отнимание силы
@@ -192,25 +192,24 @@ min_wound_size = 0.0256 ; минимальный размер раны, после которого она считается 
 satiety_v_sleep = 0.0001
 radiation_v_sleep = 0.0003
 satiety_power_v_sleep = 0.0001
-satiety_health_v_sleep = 0.00001
+satiety_health_v_sleep = 0.0001
 radiation_health_v_sleep = 0.001
 morale_v_sleep = 0.0
 psy_health_v_sleep = 0.0
 alcohol_v_sleep = -0.0005
 bleeding_v_sleep = 0.0
 wound_incarnation_v_sleep = 0.0
-max_power_leak_speed_sleep = -0.00001
-health_restore_v = 0.00003
+max_power_leak_speed_sleep = -0.0001
+health_restore_v = 0.0003
 
 ; actor_condition only
-
 jump_power = 0.002 ; уменьшение силы с прыжком без учета веса ноши
 jump_weight_power = 0.002; уменьшение силы с прыжком с учетом веса ноши, для максимального допустимого веса
 overweight_jump_k = 1.05 ; коэффициент влияния перегрузки на прыжок с весом (умножается на jump_weight_power)
 
 stand_power = -0.001
-walk_power = 0.0001 ; уменьшение силы за секунду во время ходьбы без учета веса ноши
-walk_weight_power = 0.0001 ; уменьшение силы за секунду во время ходьбы с учетом веса ноши, для максимального допустимого веса
+walk_power = 0.001 ; уменьшение силы за секунду во время ходьбы без учета веса ноши
+walk_weight_power = 0.001 ; уменьшение силы за секунду во время ходьбы с учетом веса ноши, для максимального допустимого веса
 overweight_walk_k = 1.5; коэффициент влияния перегрузки ноши (умножается на walk_weight_power)
 accel_k = 1.1 ; коэффициент на бег (умножается walk_power, walk_weight_power), до 3.08.21 было 5
 sprint_k = 1.1 ; коэффициент на "sprint" бег (умножается walk_power, walk_weight_power), до 3.08.21 было 150
