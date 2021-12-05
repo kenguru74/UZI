@@ -65,6 +65,9 @@
 	<string id="ogsm_stalker_hide">
 		<text>”крытие сталкеров</text>
 	</string>
+	<string id="ogsm_trader_hide">
+		<text>”крытие торговцев</text>
+	</string>
 	<string id="ogsm_bandit_hide">
 		<text>”крытие бандитов</text>
 	</string>
