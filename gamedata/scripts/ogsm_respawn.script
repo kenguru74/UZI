@@ -472,8 +472,8 @@ function first_run()
 	spawn_restrictor("marsh", vector():set(-177,1.8,-274.1), 52375, 3367, "stalker", 10)
 	spawn_restrictor("marsh", vector():set(-157,1.8,-276.3), 66041, 3372, "stalker", 10)
 	spawn_restrictor("marsh", vector():set(-162,1.8,-272.8), 62623, 3372, "ecolog", 15)
-	spawn_restrictor("marsh", vector():set(-133,1.2,-277), 62623, 3372, "trader", 5) -- Холод
-	spawn_restrictor("marsh", vector():set(-135,2.5,-307), 62623, 3372, "trader", 5) -- Новиков
+	spawn_restrictor("marsh", vector():set(-133,1.2,-277), 62623, 3372, "stalker", 5) -- Холод
+	spawn_restrictor("marsh", vector():set(-135,2.5,-307), 62623, 3372, "stalker", 5) -- Новиков
 	spawn_restrictor("marsh", vector():set(-178,0.9,-320), 62623, 3372, "trader", 5) -- Суслов
 	-- Рыбацкий хутор
 	spawn_restrictor("marsh", vector():set(46.6,2.9,-237.8), 163455, 3443, "stalker", 6)
