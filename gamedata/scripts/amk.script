@@ -447,11 +447,15 @@ function __do_timer_action(select_string,params_string)
 	
 -- 1. Настало время выброса.
 	if select_string=="bl1" then
-		if ((level.name() == "l12_stancia" or level.name() == "l12_stancia_2") and not has_alife_info("freeplay")) then
-			g_start_timer("bl1",0,1,0)
+		if ogsm_surge then
+			if ((level.name() == "l12_stancia" or level.name() == "l12_stancia_2") and not has_alife_info("freeplay")) then
+				g_start_timer("bl1",0,2,0)
+			else
+				if sleep_manager.is_sleep_active() then sleep_manager.stopper() end
+				start_timer("bl2",1)
+			end
 		else
-			if sleep_manager.is_sleep_active() then sleep_manager.stopper() end
-			start_timer("bl2",1)
+			g_start_timer("bl1",0,10,0)
 		end
 	end
 	
@@ -464,7 +468,7 @@ function __do_timer_action(select_string,params_string)
 		local news_text = "%c[255,0,255,0]Че:\\n%c[default]Внимание! Зафиксирован всплеск аномальных возмущений в районе ЧАЭС!"
 		db.actor:give_game_news(news_text, "ui\\ui_iconsTotal", Frect():set(498,141,83,47), 0, 13000)
 		
-		g_start_timer("bl21",0,0,15)
+		g_start_timer("bl21",0,0,20)
 	end
 	
 	-- 12. 2 Сообщение о приближении выброса
@@ -476,7 +480,7 @@ function __do_timer_action(select_string,params_string)
 		local news_text = "%c[255,0,255,0]Че:\\n%c[default]Приготовиться к Выбросу! Осталось пару минут.."
 		db.actor:give_game_news(news_text, "ui\\ui_iconsTotal", Frect():set(498,141,83,47), 0, 13000)
 		
-		g_start_timer("bl22",0,0,2) -- 5
+		g_start_timer("bl22",0,0,2)
 	end
 	
 -- 2. Сирена, первые визуальные признаки выброса
@@ -492,7 +496,7 @@ function __do_timer_action(select_string,params_string)
 		local snd_obj = xr_sound.get_safe_sound_object([[anomaly\dezodor]])
 		snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
 		
-		g_start_timer("bl3",0,0,4) -- 8
+		g_start_timer("bl3",0,0,4)
 	end
 	
 -- 3. Проигрываем промежуточные эффекты
@@ -500,10 +504,10 @@ function __do_timer_action(select_string,params_string)
 		del_variable("bl22")
 		level.set_weather("stancia")
 		level.set_weather_fx(wfx1)
-		g_start_timer("bl4",0,0,2) -- 5
+		g_start_timer("bl4",0,0,2)
 	end
 	
--- 4. Спустя 5 минут затишья начинаем выброс
+-- 4. Спустя 2 минуты затишья начинаем выброс
 	if select_string=="bl4" then
 		del_variable("bl3")
 		xr_sound.set_actor_sound("")
@@ -517,7 +521,7 @@ function __do_timer_action(select_string,params_string)
 		local snd_obj = xr_sound.get_safe_sound_object([[anomaly\blowout]])
 		snd_obj:play_at_pos(db.actor, vector():set(0,0,0), 0, sound_object.s2d)
 		ogsm_surge.play_sounds()
-		g_start_timer("bl5",0,0,2) -- 4
+		g_start_timer("bl5",0,0,2)
 	end
 	
 -- 5. Начинаем расколбас
@@ -534,14 +538,14 @@ function __do_timer_action(select_string,params_string)
 			ogsm_surge.g_R_Vibros:Run()
 		end
 		
-		g_start_timer("bl6",0,0,2) -- 5
+		g_start_timer("bl6",0,0,2)
 	end
 	
 -- 6. Выброс близится к концу
 	if select_string=="bl6" then
 		del_variable("bl5")
 		level.set_weather_fx(wfx1)
-		g_start_timer("bl7",0,0,2)-- 5
+		g_start_timer("bl7",0,0,2)
 	end
 	
 -- 7. Завершаем выброс, устанавливаем время следующего
