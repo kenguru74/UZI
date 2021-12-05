@@ -244,7 +244,7 @@ function motivator_binder:update(delta)
 			   self.st.state_mgr.alife == false
 			then
 				trade_manager.update(self.object)
-			end			
+			end
 		else
 			self.st.state_mgr = nil
 		end
@@ -420,7 +420,7 @@ function addCommonPrecondition(action)
 	end
 
 	if anomaly_evader then
-		action:add_precondition (world_property(1099,false))
+		-- action:add_precondition (world_property(1099,false))
 	end
 
 	if xrs_ai then 

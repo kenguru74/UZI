@@ -530,7 +530,7 @@ function add_to_binder(object, ini, scheme, section, storage)
 		action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base, false))
 		action:add_precondition	(world_property(properties["aaa_grenade"], false))
 		if anomaly_evader then
-			action:add_precondition(world_property(1099, false))
+			-- action:add_precondition(world_property(1099, false))
 		end
 		if ogsm_hideout then
 			action:add_precondition(world_property(ogsm_hideout.property_blowout, false))
