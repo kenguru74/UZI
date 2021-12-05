@@ -1,3 +1,4 @@
+
 function init (obj)
 	xr_motivator.AddToMotivator(obj)
 end
@@ -28,7 +29,6 @@ end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:net_spawn(data)
 	level.show_indicators()
-	level.set_snd_volume( 1 )
 	
 	self.bCheckStart = true
 	self.weapon_hide = false -- спрятано или нет оружие при разговоре.
