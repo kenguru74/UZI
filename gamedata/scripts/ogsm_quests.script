@@ -119,23 +119,24 @@ end
 
 -- Использование GPS-маячка
 function use_gps(oid)
-  if alife():object(oid)==nil then
-    if ogsm_quests then
-      ogsm_quests.create_gps()
-    end
-  end
+	if alife():object(oid)==nil then
+		if ogsm_quests then
+			ogsm_quests.create_gps()
+		end
+	end
 end
 
 function create_gps()
-
 	local obj
 	local pos = db.actor:position()
+	
 	obj = alife():create("gps_box", pos, db.actor:level_vertex_id(), db.actor:game_vertex_id())
+	
 	if (obj) then
 		local t = amk.get_invbox_data(obj)
 		t.custom = "[logic]\ncfg = scripts\\gps_inventory_box.ltx"
 		amk.set_invbox_data(t, obj)
-         	level.map_add_object_spot_ser(obj.id, "my_gps", "GPS-маячок")
+		level.map_add_object_spot_ser(obj.id, "my_gps", "GPS-маячок")
 	end
 end
 
@@ -498,16 +499,11 @@ end
 function check_use_dry_foodsOrDrugs(p_obj)
 	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
 	else
-		if p_obj and ((p_obj:section() == "vodka") or (p_obj:section() == "vodka_half") or (p_obj:section() == "nuts") or (p_obj:section() == "sigaret") or (p_obj:section() == "kolbasa") or (p_obj:section() == "salo") or (p_obj:section() == "mre") or (p_obj:section() == "sandwich") or (p_obj:section() == "sweetness") or (p_obj:section() == "batat") or (p_obj:section() == "sgus") or (p_obj:section() == "bread") or (p_obj:section() == "bread_a") or (p_obj:section() == "antirad") or (p_obj:section() == "medkit") or (p_obj:section() == "medkit_army") or (p_obj:section() == "medkit_scientic")) then
+		if p_obj and ((p_obj:section() == "vodka") or (p_obj:section() == "vodka_half") or (p_obj:section() == "nuts") or (p_obj:section() == "sigaret") or (p_obj:section() == "kolbasa") or (p_obj:section() == "salo") or (p_obj:section() == "mre") or (p_obj:section() == "sandwich") or (p_obj:section() == "sweetness") or (p_obj:section() == "batat") or (p_obj:section() == "sgus") or (p_obj:section() == "bread") or (p_obj:section() == "bread_a") or (p_obj:section() == "antirad")) then
 			zhazhda()
 		end
 	end
 end
-
--- Было water1 = 10, water2 = 16, water3 = 22, water4 = 23
--- Потом было water1 = 12, water2 = 16, water3 = 20, water4 = 24
--- Сделал water1 = 8, water2 = 10, water3 = 12, water4 = 14
--- Поправил water1 = 4, water2 = 1, water3 = 1, water4 = 1
 
 function zhazhda()
 	amk.g_start_timer("water0",0, 0, 0)
