@@ -690,9 +690,8 @@ function update_surge()
 	end
 	
 	if db.Dead2 == 1 and db.FlagEsc == 0 then
-		g_R_Vibros:Run()
-		
 		if not indoor_levels[level.name()] then
+			g_R_Vibros:Run()
 			hit_actor()
 		end
 		
@@ -708,8 +707,8 @@ end
 
 -- Спавн фантомов
 function play_phantoms()
-	if math.random()<0.5 then
-		if phantom_manager:phantom_count()<5 then
+	if math.random() < 0.5 then
+		if phantom_manager:phantom_count() < 5 then
 			local yaw = math.pi*2.0*math.random()
 			local radius = 30*(math.random()/2.0+0.5)
 			local height = 2.5*math.random()
