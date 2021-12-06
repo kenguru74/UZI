@@ -173,6 +173,7 @@ end
 -- Проверка таймеров, использует 3 следующие за ним функции для выбора действия
 function check_timers()
 	local tmp
+	
 	for a=1,100,1 do
 		tmp=load_variable("rt"..a,nil)
 		if tmp~=nil then
@@ -205,7 +206,7 @@ end
 
 function __g_timer_found(idx)
 	local gtime = game.time() --time in seconds since 1970
-
+	
 	local name,params,grib
 	grib=load_variable("gt"..idx, nil)
 	
@@ -1148,17 +1149,16 @@ end
 
 -- Загружаем все переменные, которые нужно, вызывается загрузке игры автоматически
 function on_game_load()
-
 	-- Восстанавливаем солнце
 	wthr = level.get_weather()
 	level.set_weather("ogsm",true)
 	game.start_tutorial("restore_sun")
-
+	
 	-- Создаем хранилище актора
 	if db.storage[db.actor:id()].pstor == nil then
 		db.storage[db.actor:id()].pstor = {}
 	end
-
+	
 	-- Первый запуск мода
 	if load_variable("frn",true) then
 		g_start_timer("slp",0,0,6)
@@ -1170,18 +1170,15 @@ function on_game_load()
 	
 	-- Проверяем сонность
 	sleep_manager.test_sleep_pp()
-
+	
 	-- Получаем список всех монстров и укрытий
 	ogsm_respawn.get_level_mobs()
-
+	
 	-- Спавним, если надо, пси-зоны
 	if ogsm_psyzones then ogsm_psyzones.spawn_on_load() end
-
+	
 	-- Отмечаем на карте новые точки перехода
 	ogsm_freeplay.mark_lc()
-	
-	
-
 end
 
 
