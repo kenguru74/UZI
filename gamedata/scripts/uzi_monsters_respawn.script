@@ -1526,7 +1526,8 @@ function resp_monsters()
 			db.actor:disable_info_portion("marsh_pseudodog3_death")
 		end
 		if has_alife_info("marsh_bloodsucker1_death") and not has_alife_info("third_dialog_kalancha") then
-			local obj = alife():create("bloodsucker_strong",vector():set(149.81524658203,0.82491481304169,450.1220703125),226156,3474)
+			local pos, lv_rand, gv_rand = monster_position_choice(lname)
+			local obj = alife():create("bloodsucker_strong",pos, lv_rand, gv_rand)
 			local params=amk.read_monster_params(obj)
 			params.custom="[logic]\ncfg = scripts\\logic\\marsh\\bloodsucker1.ltx"
 			amk.write_monster_params(params,obj)
