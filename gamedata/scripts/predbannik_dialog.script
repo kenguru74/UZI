@@ -100,30 +100,34 @@ function has_1100000_money(first_speaker, second_speaker)
 	return first_speaker:money() >= 1100000
 end
 
-function send_money(actor, npc)	
+function send_money(actor, npc)
 	dialogs.relocate_money(npc, 1100000, "out")
-        db.actor:set_character_rank(db.actor:character_rank() + 100)
+	db.actor:set_character_rank(db.actor:character_rank() + 100)
 end
 
-function give_200(actor, npc)
-   dialogs.relocate_money(actor, 200, "out")
-   local robj = alife():object("jupiter_bet_vanna")
-   if robj then
-     level.map_add_object_spot_ser(robj.id, "uzi_spot_max", "ѕримерное место поиска аномальной пушки")
-   end
+function give_2000(actor, npc)
+	dialogs.relocate_money(actor, 200, "out")
+	local robj = alife():object("jupiter_bet_vanna")
+	
+	if robj then
+		level.map_add_object_spot_ser(robj.id, "uzi_spot_max", "ѕримерное место поиска аномальной пушки")
+	end
 end
 
 function spawn_gpistol()
- amk.g_start_timer("gpis",0, 0, 1)
+	amk.g_start_timer("gpis",0, 0, 1)
 end
 
 function gpistol_have(task, objective)
-   if db.actor ~= nil and db.actor:object("wpn_gungauss") ~= nil then
-       local robj = alife():object("jupiter_bet_vanna")
-       if robj then
-         level.map_remove_object_spot(robj.id, "uzi_spot_max")
-       end
-       return true
-   end
-   return false
+	if db.actor ~= nil and db.actor:object("wpn_gungauss") ~= nil then
+		local robj = alife():object("jupiter_bet_vanna")
+		
+		if robj then
+			level.map_remove_object_spot(robj.id, "uzi_spot_max")
+		end
+		
+		return true
+	end
+	
+	return false
 end
