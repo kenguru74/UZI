@@ -2,10 +2,10 @@
 
 --------------------- Copyright 2007-2008 Ab@dDon & DEXXX ---------------------
 
--- правил kenguru 07.04.2018
+-- правил kenguru 07.04.2018, потом маржу увеличил уже в декабре 2021
 
-local weapon_profit_margin = 2
-local armor_profit_margin = 2
+local weapon_profit_margin = 4
+local armor_profit_margin = 4
 local set_cond1 = 0
 local set_cond2 = 0
 local set_cond6 = 0
