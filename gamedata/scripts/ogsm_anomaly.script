@@ -46,7 +46,7 @@ loc={
 	warlab = {5, 20},
 	red_forest = {80, 150},
 	lost_village = {25, 50},
-	marsh = {80, 120},
+	marsh = {200, 240},
 	dead_city = {5, 10},
 	zaton = {100, 150},
 	jupiter = {100, 150},
@@ -55,9 +55,9 @@ loc={
 	labx8 = {5, 20},
 	cs_agroprom_underground = {5, 20},
 	predbannik = {1, 2},
-	garbage_old = {60, 100},
-	yantar_old = {60, 100},
-	swamp_old = {60, 100}
+	garbage_old = {200, 240},
+	yantar_old = {200, 240},
+	swamp_old = {400, 440}
 }
 
 -- Ber188 добавлены локации в список
@@ -1718,7 +1718,7 @@ function anomaly_section_choice(levelname)
 	end
 	
 	if name_anom_to_spawn and postfix_anom_to_spawn then
-		if math.random(0,1) < 0.3 then
+		if math.random(0,1) < 0.1 then
 			anom_to_spawn = noart_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
 		else
 			anom_to_spawn = zone_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
