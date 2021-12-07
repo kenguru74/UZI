@@ -689,11 +689,9 @@ function update_surge()
 		end
 	end
 	
-	if db.Dead2 == 1 and db.FlagEsc == 0 then
-		if not indoor_levels[level.name()] then
-			g_R_Vibros:Run()
-			hit_actor()
-		end
+	if db.Dead2 == 1 and db.FlagEsc == 0 and not indoor_levels[level.name()] then
+		g_R_Vibros:Run()
+		hit_actor()
 		
 		play_sounds()
 		level.add_pp_effector("dead_zone.ppe", 1003, true)
