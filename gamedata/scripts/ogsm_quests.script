@@ -377,8 +377,8 @@ function check_use_Spichki(p_obj)
 	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
 	else
 		if p_obj and ((p_obj:section() == "spichki") or (p_obj:section() == "spichki9") or (p_obj:section() == "spichki8") or (p_obj:section() == "spichki7") or (p_obj:section() == "spichki6") or (p_obj:section() == "spichki5") or (p_obj:section() == "spichki4") or (p_obj:section() == "spichki3") or (p_obj:section() == "spichki2") or (p_obj:section() == "spichki1")) then
-			local	pos = db.actor:position()
-			local	dir = db.actor:direction()
+			local pos = db.actor:position()
+			local dir = db.actor:direction()
 			local id, obj
 			local koster_esty = false
 			
@@ -386,6 +386,7 @@ function check_use_Spichki(p_obj)
 			
 			for id=0, 65535 do
 				obj = level.object_by_id(id)
+				
 				if obj ~= nil and obj:section() == "koster" then
 					local objPos = obj:position()
 					local objLvid = obj:level_vertex_id()
