@@ -5,7 +5,7 @@
 -- правил kenguru 07.04.2018, потом маржу увеличил уже в декабре 2021
 
 local weapon_profit_margin = 4
-local armor_profit_margin = 4
+local armor_profit_margin = 1.5
 local set_cond1 = 0
 local set_cond2 = 0
 local set_cond6 = 0
