@@ -858,20 +858,12 @@ function __do_timer_action(select_string,params_string)
 		for id=0, 65535 do
 			obj = level.object_by_id(id)
 			
-			if obj ~= nil and obj:section() == "koster" then
-				if obj:position():distance_to(db.actor:position()) > 50 then
-					alife():release(alife():object(id), true)
-				end
-			end
-			
 			if obj ~= nil and obj:section() == "light_koster" then
 				alife():release(alife():object(id), true)
 			end
 		end
 		
 		del_variable("koster")
-		
-		g_start_timer("koster",0, 0, 30)
 	end
 end
 

@@ -1210,10 +1210,12 @@ function on_game_load()
 		for id=0, 65535 do
 			obj = level.object_by_id(id)
 			
-			if obj ~= nil and string.find(obj:name(), "vehicle_") then
+			if obj ~= nil and (string.find(obj:name(), "vehicle_") or obj:section() == "koster" or obj:section() == "light_koster") then
 				alife():release(alife():object(id), true)
 			end
 		end
+		
+		amk.del_variable("koster")
 		
 		check_game = 1
 	end
