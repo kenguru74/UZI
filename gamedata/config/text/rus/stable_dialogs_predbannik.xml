@@ -7,7 +7,7 @@
 		<text>Да мне бы пройти...</text>
 	</string>
 	<string id="pred_blockpost_soldiers_start_13">
-		<text>Говорят тебе, нельзя!...\nНо уж если очень надо... тады можно! Гони пять штук и иди!</text>
+		<text>Говорят тебе, нельзя!...\nНо уж если очень надо... тады можно! Гони сотку и иди!</text>
 	</string>
 	<string id="pred_blockpost_soldiers_start_14">
 		<text>Вот, держи...</text>
@@ -30,39 +30,38 @@
 		<text>Слышь, служивый, дело у меня такое... В общем, мне на вашу базу надо пройти. Пособи, если можешь.</text>
 	</string>
 	<string id="pred_blockpost_soldiers_dialog_1">
-		<text>Да ты чё, сталкер, совсем мозги пропил? Я щас тебя в расход пущу, а не на военный объект! Хотя... Гони червонец, а на базу о тебе сообщу. Подойдёшь к лейтенанту Птичкину, он в доле. Да смотри, одна нога здесь - другая там.</text>
+		<text>Да ты чё, сталкер, совсем мозги пропил? Я щас тебя в расход пущу, а не на военный объект! Хотя... Гони сотку, и я закрою глаза. Подойдёшь к лейтенанту Птичкину, он в доле. Да смотри, одна нога здесь, другая там - полчаса на всё-про всё.</text>
 	</string>
 	<string id="pred_blockpost_soldiers_dialog_11">
-		<text>Благодарю, служивый. Вот бабки. Да ты не беспокойся, я мигом.</text>
+		<text>Не пыли, служивый. Вот бабки. Да ты не беспокойся, я мигом!</text>
 	</string>
 	<string id="pred_blockpost_soldiers_dialog_12">
-		<text>Эх, наличности маловато.</text>
+		<text>Эх, наличности маловато..</text>
 	</string>
 	<string id="pred_blockpost_soldiers_dialog_21">
-		<text>Давай пошевеливайся, время пошло.</text>
+		<text>Давай пошевеливайся, время пошло!</text>
 	</string>
 	<string id="pred_blockpost_soldiers_dialog_22">
-		<text>Тогда проваливай живей, пока свинца не отведал.</text>
+		<text>Тогда проваливай живей, пока свинца не отведал!</text>
 	</string>
 	<string id="pred_blockpost_soldiers_dialog_31">
-		<text>Да я уже, служивый, не серчай.</text>
+		<text>Да я уже, служивый, не серчай..</text>
 	</string>
 
-
 	<string id="pred_helipad_soldiers_dialog_0">
-		<text>Стой, сталкер, куда прёшь? Не видишь, охраняемый объект!</text>
+		<text>Стой, сталкер, куда прёшь? Не видишь - охраняемый объект!</text>
 	</string>
 	<string id="pred_helipad_soldiers_dialog_1">
 		<text>Мне нужен лейтенант Птичкин, я от Ремезова.</text>
 	</string>
 	<string id="pred_helipad_soldiers_dialog_2">
-		<text>А, это ты... Чего надо?</text>
+		<text>А, это ты... Сообщили о тебе с блокпоста. Чего надо?</text>
 	</string>
 	<string id="pred_helipad_soldiers_dialog_3">
-		<text>Мне б на базу попасть... Знакомый у меня тут служит.</text>
+		<text>Мне б на базу попасть... Земляк у меня тут служит.</text>
 	</string>
 	<string id="pred_helipad_soldiers_dialog_4">
-		<text>Ладно, чирик с тебя, только быстро.</text>
+		<text>Ладно, сотка с тебя, только быстро!</text>
 	</string>
 	<string id="pred_helipad_soldiers_dialog_51">
 		<text>Держи, лейтенант. Я недолго...</text>
@@ -71,13 +70,13 @@
 		<text>Вот незадача, не хватает мальца...</text>
 	</string>
 	<string id="pred_helipad_soldiers_dialog_61">
-		<text>Даю 5 минут. Не успеешь - открываем огонь на поражение. Время пошло!</text>
+		<text>Даю полчаса. Не успеешь - открываем огонь на поражение. Время пошло!</text>
 	</string>
 	<string id="pred_helipad_soldiers_dialog_62">
 		<text>Тогда отваливай поскорее. Бегом - марш!</text>
 	</string>
 	<string id="pred_helipad_soldiers_dialog_71">
-		<text>Спасибо, командир.</text>
+		<text>Спасибо, командир!</text>
 	</string>
 	<string id="pred_helipad_soldiers_dialog_72">
 		<text>Всё, всё, командир, уже ухожу...</text>
@@ -656,24 +655,24 @@
 		<text>Допустим.</text>
 	</string>
 	<string id="predbannik_bul_dialog_14">
-		<text>Чего допустим? Я тебе всё сказал, больше ничего не знаю. Ну дай поправиться-то, а... Дай 500.</text>
+		<text>Чего допустим? Я тебе всё сказал, больше ничего не знаю! Ну дай поправиться-то, а... Дай 500?</text>
 	</string>
 	<string id="predbannik_bul_dialog_141">
-		<text>Инфа какая-то у тебя... Странная. Хватит и две сотни, больше оно не стоит.</text>
+		<text>Инфа какая-то у тебя... Странная. Хватит и 200, больше оно не стоит.</text>
 	</string>
 	<string id="predbannik_bul_dialog_142">
 		<text>Не, это всё фуфло. Ищи другого лоха.</text>
 	</string>
 	<string id="predbannik_bul_dialog_15">
-		<text>Да чего странного?? Эх... Ладно, давай хоть две сотни...</text>
+		<text>Да чего странного?? Эх... Ладно, давай хоть две сотни!</text>
 	</string>
 	<string id="predbannik_bul_dialog_16">
 		<text>На, держи!</text>
 	</string>
 	<string id="predbannik_bul_dialog_17">
-		<text>Бывай, сталкер.</text>
+		<text>Бывай, сталкер!</text>
 	</string>
 	<string id="predbannik_bul_dialog_18">
-		<text>Иди-иди, поправляй своё здоровье.</text>
+		<text>Иди-иди, поправляй своё здоровье...</text>
 	</string>
 </string_table>

@@ -69,9 +69,9 @@
                 <next>12</next>
             </phrase>
             <phrase id="11">
-                <precondition>predbannik_dialog.has_10000</precondition>
+                <precondition>predbannik_dialog.has_pay</precondition>
                 <text>pred_blockpost_soldiers_dialog_11</text>
-                <action>predbannik_dialog.give_10000</action>
+                <action>predbannik_dialog.give_pay</action>
                 <next>21</next>
             </phrase>
             <phrase id="21">
@@ -83,7 +83,7 @@
                 <give_info>remesov_first_dialog</give_info>
             </phrase>
             <phrase id="12">
-                <precondition>predbannik_dialog.has__10000</precondition>
+                <precondition>predbannik_dialog.not_has_pay</precondition>
                 <text>pred_blockpost_soldiers_dialog_12</text>
                 <next>22</next>
             </phrase>
@@ -120,9 +120,9 @@
                 <next>52</next>
             </phrase>
             <phrase id="51">
-                <precondition>predbannik_dialog.has_10000</precondition>
+                <precondition>predbannik_dialog.has_pay</precondition>
                 <text>pred_helipad_soldiers_dialog_51</text>
-                <action>predbannik_dialog.give_10000</action>
+                <action>predbannik_dialog.give_pay</action>
                 <next>61</next>
             </phrase>
             <phrase id="61">
@@ -135,7 +135,7 @@
                 <give_info>ptichkin_first_dialog</give_info>
             </phrase>
             <phrase id="52">
-                <precondition>predbannik_dialog.has__10000</precondition>
+                <precondition>predbannik_dialog.not_has_pay</precondition>
                 <text>pred_helipad_soldiers_dialog_52</text>
                 <next>62</next>
             </phrase>
@@ -921,9 +921,9 @@
                 <next>52</next>
             </phrase>
             <phrase id="51">
-                <precondition>predbannik_dialog.has_1100000_money</precondition>
+                <precondition>predbannik_dialog.has_cash</precondition>
                 <text>predbannik_bankir_dialog_51</text>
-                <action>predbannik_dialog.send_money</action>
+                <action>predbannik_dialog.send_cash</action>
                 <next>61</next>
             </phrase>
             <phrase id="61">
@@ -1067,7 +1067,7 @@
             <phrase id="15">
                 <text>predbannik_bul_dialog_15</text>
                 <give_info>bul_first_dialog</give_info>
-                <action>predbannik_dialog.give_2000</action>
+                <action>predbannik_dialog.give_bul</action>
                 <next>16</next>
             </phrase>
             <phrase id="16">

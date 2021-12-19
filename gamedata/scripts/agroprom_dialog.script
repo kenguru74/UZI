@@ -3,12 +3,12 @@
 ------------------------------------------------------------------------------------
 function sell_krot_flash(first_speaker, second_speaker)
 	first_speaker:transfer_item(first_speaker:object("krot_flash"), second_speaker)
-    second_speaker:transfer_money(1000, first_speaker)
+	second_speaker:transfer_money(1000, first_speaker)
 end
 
 function sell_krot_flash_to_friend(first_speaker, second_speaker)
 	first_speaker:transfer_item(first_speaker:object("krot_flash"), second_speaker)
-    second_speaker:transfer_money(1000, first_speaker)
+	second_speaker:transfer_money(1000, first_speaker)
 end
 
 function krot_give_flash(first_speaker, second_speaker)
@@ -21,68 +21,70 @@ end
 
 -- Крот
 function krot_drug(first_speaker, second_speaker)
-   first_speaker:set_relation(game_object.friend, second_speaker)
+	first_speaker:set_relation(game_object.friend, second_speaker)
 end
 
 ------------------------------------------------------------------------------------
 -- Talks about Ratcatcher
 ------------------------------------------------------------------------------------
 
-function has_30_money(first_speaker, second_speaker)
+function has_money_for_info_ratcatcher(first_speaker, second_speaker)
 	return first_speaker:money() >= 30
 end
 
-function has_2000_money(first_speaker, second_speaker)
+function has_money_for_docs(first_speaker, second_speaker)
 	return first_speaker:money() >= 2000
 end
 
-function not_has_30_money(first_speaker, second_speaker)
+function not_has_money_for_info_ratcatcher(first_speaker, second_speaker)
 	return first_speaker:money() < 30
 end
 
 
-function give_30_money_to_stalker_for_info_about_ratcatcher(first_speaker, second_speaker)
+function give_money_for_info_ratcatcher(first_speaker, second_speaker)
 	first_speaker:transfer_money(30, second_speaker)
 end
 
-function give_ratcatcher_money(actor, npc)	
+function give_ratcatcher_money(actor, npc)
 	dialogs.relocate_money(npc, 2000, "out")
 end
 
 function take_agroprom_documents(first_speaker, second_speaker)
-        second_speaker:transfer_money(2000, first_speaker)
+	second_speaker:transfer_money(2000, first_speaker)
 	dialogs.relocate_item_section(second_speaker, "quest_case_02", "in")
 end
 
 function give_mixtura(first_speaker, second_speaker)
-   dialogs.relocate_item_section(second_speaker, "mixtura", "out")
+	dialogs.relocate_item_section(second_speaker, "mixtura", "out")
 end
 
 local muh_weap = {"wpn_bm16_muh", "ammo_12x70_buck"}
+
 function find_muhomor_weapons(task, objective)
-    local gg = db.actor
-    if gg then
-        for i=1,#muh_weap  do
-            if not gg:object(muh_weap[i]) then 
-                return false
-            end
-        end
-        return true 
-    end
-    return false
+	local gg = db.actor
+	if gg then
+		for i=1,#muh_weap  do
+			if not gg:object(muh_weap[i]) then 
+				return false
+			end
+		end
+		return true 
+	end
+	
+	return false
 end
 
 function spawn_weapons()	
- alife():create("ammo_12x70_buck",vector():set(-92.113792419434,5.01300573349,3.4020874500275),148064,530)
- alife():create("wpn_bm16_muh",vector():set(-86.678001403809,4.0029339790344,4.8074054718018),150969,530)
+	alife():create("ammo_12x70_buck",vector():set(-92.113792419434,5.01300573349,3.4020874500275),148064,530)
+	alife():create("wpn_bm16_muh",vector():set(-86.678001403809,4.0029339790344,4.8074054718018),150969,530)
 end
 
 function give_weapons(first_speaker, second_speaker)
-   dialogs.relocate_item_section(second_speaker, "ammo_12x70_buck", "out")
-   dialogs.relocate_item_section(second_speaker, "wpn_bm16_muh", "out")
+	dialogs.relocate_item_section(second_speaker, "ammo_12x70_buck", "out")
+	dialogs.relocate_item_section(second_speaker, "wpn_bm16_muh", "out")
 end
 
 function muhomor_friend(first_speaker, second_speaker)
-   second_speaker:set_relation(game_object.friend, first_speaker)
-   db.actor:set_character_rank(db.actor:character_rank() + 60)
+	second_speaker:set_relation(game_object.friend, first_speaker)
+	db.actor:set_character_rank(db.actor:character_rank() + 60)
 end

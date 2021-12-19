@@ -50,7 +50,7 @@
             </phrase>
             <phrase id="13">
                 <text>agr_stalker_talk_about_ratcatcher1_13</text>
-                <precondition>agroprom_dialog.not_has_30_money</precondition>
+                <precondition>agroprom_dialog.not_has_money_for_info_ratcatcher</precondition>
                 <action>dialogs.break_dialog</action>
                 <dont_has_info>agr_sold_about_ratcatcher</dont_has_info>
             </phrase>
@@ -89,8 +89,8 @@
             </phrase>
             <phrase id="11">
                 <text>agr_stalker_talk_about_ratcatcher1_11</text>
-                <precondition>agroprom_dialog.has_30_money</precondition>
-                <action>agroprom_dialog.give_30_money_to_stalker_for_info_about_ratcatcher</action>
+                <precondition>agroprom_dialog.has_money_for_info_ratcatcher</precondition>
+                <action>agroprom_dialog.give_money_for_info_ratcatcher</action>
                 <dont_has_info>agr_sold_about_ratcatcher</dont_has_info>
                 <give_info>agr_sold_about_ratcatcher</give_info>
                 <next>111</next>
@@ -425,7 +425,7 @@
                 <next>138</next>
             </phrase>
             <phrase id="137">
-                <precondition>agroprom_dialog.has_25000_money</precondition>
+                <precondition>agroprom_dialog.has_money_for_docs</precondition>
                 <text>agr_swamp_ratcatcher_talks_137</text>
                 <next>139</next>
             </phrase>
