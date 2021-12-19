@@ -463,7 +463,6 @@ local bad_pos_table = {
 	["l03_agroprom"] = {
 		{-82, 10.6, -110}, -- приход с Катакомб
 		{254, -0.2, 71}, -- приход с Путепровода
-		{14, -139}, -- приход с Кордона
 		{281, 0.3, 2}, -- приход со Свалки
 		{-75, 1.7, 11}, -- приход с подземки Агропрома
 		{-124, 0, -136}, -- приход с подземки Агропрома
@@ -1259,8 +1258,8 @@ function add_anom(levelname)
 end
 
 function spawn_anomaly(section, pos, lv, gv, shape)
-	local sobj = alife():create( section, pos, lv, gv )
-	local pk = get_netpk( sobj, 1 )
+	local sobj = alife():create(section, pos, lv, gv)
+	local pk = get_netpk(sobj, 1)
 	local data = pk:get()
 	
 	if shape.shtype == 0 then
@@ -1268,10 +1267,10 @@ function spawn_anomaly(section, pos, lv, gv, shape)
 		shape.radius, vector():set( unpack( shape.center ) ))
 	else
 		data.shapes:addBox(
-		vector():set( unpack( shape.v1 ) ),
-		vector():set( unpack( shape.v2 ) ),
-		vector():set( unpack( shape.v3 ) ),
-		vector():set( unpack( shape.offset ) )
+		vector():set(unpack(shape.v1)),
+		vector():set(unpack(shape.v2)),
+		vector():set(unpack(shape.v3)),
+		vector():set(unpack(shape.offset))
 		)
 	end
 	
@@ -1293,7 +1292,8 @@ function generate_anomalies(lname)
 	for i = 0, rnd do
 		local pos, new_lv, new_gv = anomaly_position_choice(lname)
 		local section, shape = anomaly_section_choice(lname)
-			spawn_anomaly(section, pos, new_lv, new_gv, shape)
+		
+		spawn_anomaly(section, pos, new_lv, new_gv, shape)
 	end
 end
 
@@ -1391,8 +1391,7 @@ function parse_string_arts(sect)
 		local rnd = math.random()
 		
 		for _, value in ipairs(arts_table) do
-			-- if rnd <= value.val then
-			if rnd <= 1 then
+			if rnd <= value.val then
 				return value.art
 			end
 		end
@@ -1449,191 +1448,605 @@ local anom_types = {
 	},
 	
 	l12u_sarcofag = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	l12u_control_monolith = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	l03u_agr_underground = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	l04u_labx18 = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	l08u_brainlab = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	l10u_bunker = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	peshera = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	av_peshera = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	warlab = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	jupiter_underground = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	labx8 = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
 	cs_agroprom_underground = {
-		field_thermal = 0.5,
-		ice = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.5,
-		buzz = 0.5
+		radioactive = 0.1,
+		field_thermal = 0.03,
+		ice = 0.01,
+		ogon = 0.02,
+		sakbuzz = 0.03,
+		smallrain = 0.04,
+		zavesa = 0.05,
+		witches_galantine = 0.06,
+		zharka_static = 0.07,
+		teleport = 0.01,
+		buzz = 0.1
 	},
 	
-	other = {
-		fountain = 0.5,
-		field_thermal = 0.5,
-		ice = 0.5,
-		monolith = 0.5,
-		ogon = 0.5,
-		sakbuzz = 0.5,
-		smallrain = 0.5,
-		sphere = 0.5,
-		teleport = 0.2,
-		radioactive = 0.3,
-		zavesa = 0.5,
-		mosquito_bald = 0.5,
-		gravi = 0.5,
-		mincer = 0.5,
-		witches_galantine = 0.5,
-		zharka_static = 0.2,
-		buzz = 0.5
+	l01_escape = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	l02_garbage = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	l03_agroprom = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	l05_bar = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	l06_rostok = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	l07_military = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	l08_yantar = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	l11_pripyat = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	atp_for_test22 = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	puzir = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	aver = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	limansk = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	hospital = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	generators = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	red_forest = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	lost_village = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	marsh = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.1,
+		mosquito_bald = 0.12,
+		gravi = 0.14,
+		mincer = 0.15,
+		buzz = 0.2
+	},
+	
+	dead_city = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	zaton = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	jupiter = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	garbage_old = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
+	swamp_old = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.1,
+		mosquito_bald = 0.12,
+		gravi = 0.14,
+		mincer = 0.15,
+		buzz = 0.2
 	}
 }
 
@@ -1677,28 +2090,24 @@ local noart_prefix = "noartf_" --префикс служит для отличия бесплодных аномалий
 local zone_prefix = "zone_" --префикс служит для отличия обычных невидимых аномалий
 
 function anomaly_section_choice(levelname)
-	local anom_to_spawn, anom_table_name
-	local name_anom_to_spawn = mosquito_bald
+	local anom_to_spawn
 	local postfix_anom_to_spawn = _weak
+	
+	
 	local anom_table_name = anom_types[levelname]
 	
-	if anom_table_name == nil then
-		anom_table_name = anom_types.other
-	end
+	table.sort(anom_table_name,function(a,b) return a.val < b.val end)
 	
-	local type_choose = math.random()
-	local b1, b2 = 0.0, 0.0
-	
-	for k,v in pairs(anom_table_name) do
-		b2 = b2 + v
-		
-		if type_choose >= b1 and type_choose <= b2 then
-			name_anom_to_spawn = k
-			break
+	repeat --Повторяем перебор имён пока не выберем
+		for k,v in pairs(anom_table_name) do
+			if math.random(0, 1) < v then
+				name_anom_to_spawn = k
+				break
+			end
 		end
-		
-		b1 = b2
-	end
+	until not (
+		name_anom_to_spawn == nil
+	)
 	
 	local anom_table_postfix = anom_power[levelname]
 	
@@ -1719,12 +2128,10 @@ function anomaly_section_choice(levelname)
 		low_level = value.val
 	end
 	
-	if name_anom_to_spawn and postfix_anom_to_spawn then
-		if math.random(0,1) < 0.1 then
-			anom_to_spawn = noart_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
-		else
-			anom_to_spawn = zone_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
-		end
+	if math.random(0,1) < 0.1 then
+		anom_to_spawn = noart_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
+	else
+		anom_to_spawn = zone_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
 	end
 	
 	return anom_to_spawn, anoms_sections[name_anom_to_spawn][2]
