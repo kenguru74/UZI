@@ -5,7 +5,7 @@
 -- KRodin (с) 2016: Выкинул всё лишнее, оптимизировал скрипт.
 -- Используется некоторый код Dsh мода.
 -----------------------------------------------------------------------
--- Адаптация полезных функций из ogse_anomaly.script к моду UZI сделана сталкером kenguru в ноябре 2021
+-- Адаптация полезных функций из ogse_anomaly.script к моду UZI сделана сталкером kenguru в ноябре-декабре 2021
 -----------------------------------------------------------------------
 
 local list_obj_id = {}
@@ -1262,19 +1262,23 @@ function spawn_anomaly(section, pos, lv, gv, shape)
 	local pk = get_netpk(sobj, 1)
 	local data = pk:get()
 	
-	if shape.shtype == 0 then
-		data.shapes:addSphere(
-		shape.radius, vector():set( unpack( shape.center ) ))
+	if section == "teleport" then
 	else
-		data.shapes:addBox(
-		vector():set(unpack(shape.v1)),
-		vector():set(unpack(shape.v2)),
-		vector():set(unpack(shape.v3)),
-		vector():set(unpack(shape.offset))
-		)
+		if shape.shtype == 0 then
+			data.shapes:addSphere(
+			shape.radius, vector():set( unpack( shape.center ) ))
+		elseif shape.shtype == 1 then
+			data.shapes:addBox(
+			vector():set(unpack(shape.v1)),
+			vector():set(unpack(shape.v2)),
+			vector():set(unpack(shape.v3)),
+			vector():set(unpack(shape.offset))
+			)
+		else
+		end
 	end
 	
-	pk:set( data )
+	pk:set(data)
 	
 	return sobj
 end
@@ -2075,7 +2079,7 @@ local anoms_sections = {
 	sakbuzz = {"sakbuzz", {shtype=0, radius=3, center={0,0,0}}},
 	smallrain = {"smallrain", {shtype=0, radius=3, center={0,0,0}}},
 	sphere = {"sphere", {shtype=0, radius=3, center={0,0,0}}},
-	teleport = {"teleport", {shtype=0, radius=3, center={0,0,0}}},
+	teleport = {"teleport", {shtype=2, radius=2, center={0,0,0}}},
 	radioactive = {"radioactive", {shtype=1, v1={1,0,0}, v2={0,1,0}, v3={0,0,1}, offset={0,0,0}}},
 	zavesa = {"zavesa", {shtype=0, radius=3, center={0,0,0}}},
 	mosquito_bald = {"mosquito_bald", {shtype=0, radius=3, center={0,0,0}}},
