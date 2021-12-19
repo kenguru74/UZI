@@ -3084,6 +3084,9 @@ night_vision_discharge_time = 20 ;(c) врем€ разр€дки (работы) устройства после п
 slot = 9
 disabled_maps = ai_test,ai_test2, andy_test_
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ƒозиметр
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [detector_simple]:identity_immunities
 GroupControlSection = spawn_group
 discovery_dependency =
@@ -3093,16 +3096,16 @@ class = D_SIMDET
 cform = skeleton
 visual = equipments\item_datchik1.ogf
 description = enc_equipment_devic_detect1
-radius = 10 ;15
+radius = 10
 buzzer_radius = 1.5
-noise = zone_mosquito_bald ;detectors\geiger_noise_loop
-buzzer = zone_mosquito_bald ;detectors\DA-2_alarm_loop
+noise = zone_mosquito_bald
+buzzer = zone_mosquito_bald
 slot = 7
 ef_detector_type = 1
 
 inv_name = detect
 inv_name_short = detect
-inv_weight = 0.4
+inv_weight = 0.2
 
 inv_grid_width = 1
 inv_grid_height = 1
@@ -3115,50 +3118,22 @@ auto_attach = false
 
 
 ;описание распознаваемых детектором зон
-zone_class_1 = zone_mosquito_bald
-zone_sound_1_ = $no_sound
-zone_min_freq_1 = 0.1 ;0.5
-zone_max_freq_1 = 40
+zone_class_1 = zone_radioactive
+zone_sound_1_ = detectors\geiger_1
+zone_sound_1_1 = detectors\geiger_2
+zone_sound_1_2 = detectors\geiger_3
+zone_sound_1_3 = detectors\geiger_4
+zone_sound_1_4 = detectors\geiger_5
+zone_sound_1_5 = detectors\geiger_6
+zone_sound_1_6 = detectors\geiger_1
+zone_sound_1_7 = detectors\geiger_1
+zone_sound_1_8 = detectors\geiger_1
+zone_min_freq_1 = 1
+zone_max_freq_1 = 20
 
-zone_class_2 = zone_mincer
-zone_sound_2_ = $no_sound
-zone_min_freq_2 = 0.1
-zone_max_freq_2 = 20
-
-zone_class_3 = zone_radioactive
-;zone_sound_3_ = detectors\DA-2_beep1
-zone_sound_3_ = detectors\geiger_1
-zone_sound_3_1 = detectors\geiger_2
-zone_sound_3_2 = detectors\geiger_3
-zone_sound_3_3 = detectors\geiger_4
-zone_sound_3_4 = detectors\geiger_5
-zone_sound_3_5 = detectors\geiger_6
-zone_sound_3_6 = detectors\geiger_1
-zone_sound_3_7 = detectors\geiger_1
-zone_sound_3_8 = detectors\geiger_1
-zone_min_freq_3 = 1
-zone_max_freq_3 = 20
-
-zone_class_4 = zone_gravi
-zone_sound_4_ = $no_sound
-zone_min_freq_4 = 0.5
-zone_max_freq_4 = 30
-
-zone_class_5 = zone_zharka_static
-zone_sound_5_ = $no_sound
-zone_min_freq_5 = 0.5
-zone_max_freq_5 = 30
-
-zone_class_6 = zone_buzz
-zone_sound_6_ = $no_sound
-zone_min_freq_6 = 0.5
-zone_max_freq_6 = 30
-
-zone_class_7 = zone_burning_fuzz
-zone_sound_7_ = $no_sound
-zone_min_freq_7 = 0.5
-zone_max_freq_7 = 30
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ƒетектор
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [detector_advances]:identity_immunities
 GroupControlSection = spawn_group
 discovery_dependency =
@@ -3168,10 +3143,10 @@ class = D_SIMDET
 cform = skeleton
 visual = equipments\item_datchik2.ogf
 description = enc_equipment_devic_st_detector1
-radius = 10 ;15
+radius = 10
 buzzer_radius = 1.5
-noise = zone_mosquito_bald ;detectors\geiger_noise_loop
-buzzer = zone_mosquito_bald ;detectors\DA-2_alarm_loop
+noise = zone_mosquito_bald
+buzzer = zone_mosquito_bald
 
 ef_detector_type = 1
 
@@ -3186,23 +3161,10 @@ zone_sound_2_ = detectors\DA-2_beep1
 zone_min_freq_2 = 0.1
 zone_max_freq_2 = 20
 
-zone_class_3 = zone_radioactive
-zone_sound_3_ = detectors\geiger_1
-zone_sound_3_1 = detectors\geiger_2
-zone_sound_3_2 = detectors\geiger_3
-zone_sound_3_3 = detectors\geiger_4
-zone_sound_3_4 = detectors\geiger_5
-zone_sound_3_5 = detectors\geiger_6
-zone_sound_3_6 = detectors\geiger_1
-zone_sound_3_7 = detectors\geiger_1
-zone_sound_3_8 = detectors\geiger_1
-zone_min_freq_3 = 1
-zone_max_freq_3 = 20
-
-zone_class_4 = zone_gravi
-zone_sound_4_ = detectors\DA-2_beep1
-zone_min_freq_4 = 0.5
-zone_max_freq_4 = 30
+zone_class_3 = zone_gravi
+zone_sound_3_ = detectors\DA-2_beep1
+zone_min_freq_3 = 0.5
+zone_max_freq_3 = 30
 
 inv_name = st_detector
 inv_name_short = st_detector
@@ -3218,6 +3180,9 @@ default_to_ruck = false
 auto_attach = false
 slot = 7
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ”ниверсальный детектор
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [detector_elite]:identity_immunities
 GroupControlSection = spawn_group
 discovery_dependency =
@@ -3227,10 +3192,10 @@ class = D_SIMDET
 cform = skeleton
 visual = equipments\item_datchik3.ogf
 description = enc_equipment_devic_detector1
-radius = 10 ;15
+radius = 10
 buzzer_radius = 1.5
-noise = zone_mosquito_bald ;detectors\geiger_noise_loop
-buzzer = zone_mosquito_bald ;detectors\DA-2_alarm_loop
+noise = zone_mosquito_bald
+buzzer = zone_mosquito_bald
 
 ef_detector_type = 1
 
@@ -3248,67 +3213,47 @@ zone_min_freq_2 = 1
 zone_max_freq_2 = 2
 zone_map_location_2 = anomaly_minc_location
 
-zone_class_3 = zone_radioactive
-zone_sound_3_ = detectors\geiger_1
-zone_sound_3_1 = detectors\geiger_2
-zone_sound_3_2 = detectors\geiger_3
-zone_sound_3_3 = detectors\geiger_4
-zone_sound_3_4 = detectors\geiger_5
-zone_sound_3_5 = detectors\geiger_6
-zone_sound_3_6 = detectors\geiger_1
-zone_sound_3_7 = detectors\geiger_1
-zone_sound_3_8 = detectors\geiger_1
+zone_class_3 = zone_gravi
+zone_sound_3_ = detectors\DA-2_beep1
 zone_min_freq_3 = 1
-zone_max_freq_3 = 20
-zone_map_location_3 = radio_zone_location
+zone_max_freq_3 = 2
+zone_map_location_3 = anomaly_grav_location
 
-zone_class_4 = zone_gravi
+zone_class_4 = zone_zharka_static
 zone_sound_4_ = detectors\DA-2_beep1
 zone_min_freq_4 = 1
 zone_max_freq_4 = 2
-zone_map_location_4 = anomaly_grav_location
+zone_map_location_4 = anomaly_burn_location
 
-zone_class_5 = zone_zharka_static
+zone_class_5 = zone_burning_fuzz
 zone_sound_5_ = detectors\DA-2_beep1
 zone_min_freq_5 = 1
 zone_max_freq_5 = 2
-zone_map_location_5 = anomaly_burn_location
+zone_map_location_5 = anomaly_puh_location
 
-zone_class_6 = zone_burning_fuzz
-zone_sound_6_ = detectors\DA-2_beep1
+zone_class_6 = zone_teleport
+zone_sound_6_ = $no_sound
 zone_min_freq_6 = 1
 zone_max_freq_6 = 2
-zone_map_location_6 = anomaly_puh_location
+zone_map_location_6 = anomaly_zone_location
 
-zone_class_7 = zone_teleport
-zone_sound_7_ = $no_sound
+zone_class_7 = zone_buzz
+zone_sound_7_ = detectors\DA-2_beep1
 zone_min_freq_7 = 1
 zone_max_freq_7 = 2
-zone_map_location_7 = anomaly_zone_location
+zone_map_location_7 = anomaly_buzz_location
 
-zone_class_8 = zone_mine_field
+zone_class_8 = zone_witches_galantine
 zone_sound_8_ = detectors\DA-2_beep1
 zone_min_freq_8 = 1
 zone_max_freq_8 = 2
-zone_map_location_8 = anomaly_mine_location
+zone_map_location_8 = anomaly_elec_location
 
-zone_class_9 = zone_buzz
+zone_class_9 = zone_sphere
 zone_sound_9_ = detectors\DA-2_beep1
 zone_min_freq_9 = 1
 zone_max_freq_9 = 2
-zone_map_location_9 = anomaly_buzz_location
-
-zone_class_10 = zone_witches_galantine
-zone_sound_10_ = detectors\DA-2_beep1
-zone_min_freq_10 = 1
-zone_max_freq_10 = 2
-zone_map_location_10 = anomaly_elec_location
-
-zone_class_11 = zone_sphere
-zone_sound_11_ = detectors\DA-2_beep1
-zone_min_freq_11 = 1
-zone_max_freq_11 = 2
-zone_map_location_11 = anomaly_zone_location
+zone_map_location_9 = anomaly_zone_location
 
 inv_name = detector
 inv_name_short = detector
