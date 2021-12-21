@@ -277,7 +277,7 @@ artefact_activation_seq = af_activation_bold
 
 ;скорости увеличения (уменьшения)
 health_restore_speed = 0.0
-radiation_restore_speed = 0.0022
+radiation_restore_speed = 0.0023
 satiety_restore_speed = 0.0
 power_restore_speed = 0.0
 bleeding_restore_speed = 0.0
@@ -288,11 +288,11 @@ burn_immunity = 1.0 ;коэффициенты защиты (при <1.0) или 
 strike_immunity = 1.0
 shock_immunity = 1.0
 wound_immunity = 1.0
-radiation_immunity = 1.3
+radiation_immunity = 1.1
 telepatic_immunity = 1.0
 chemical_burn_immunity = 1.0
 explosion_immunity = 1.0
-fire_wound_immunity = 0.93
+fire_wound_immunity = 0.92
 
 
 
@@ -318,7 +318,7 @@ inv_weight = 0.03
 inv_grid_x = 14
 inv_grid_y = 0
 
-cost = 10
+cost = 35
 
 jump_height = .1
 
@@ -332,18 +332,21 @@ artefact_activation_seq = af_activation_gravi
 
 ;скорости увеличения (уменьшения)
 health_restore_speed = 0.0
-radiation_restore_speed = 0.0005
+radiation_restore_speed = 0.0
 satiety_restore_speed = 0.0
 power_restore_speed = 0.0
 bleeding_restore_speed = 0.0
 hit_absorbation_sect = af_vyvert_absorbation
 
+additional_inventory_weight  = 2
+additional_inventory_weight2 = 2
+
 [af_vyvert_absorbation]
 burn_immunity = 1.0 ;коэффициенты защиты (при <1.0) или вреда (при >1.0) от арта. 1.0 = 100% ,т.е. не защищает и не вредит
 strike_immunity = 1.0
 shock_immunity = 1.0
-wound_immunity = 0.98
-radiation_immunity = 1.0
+wound_immunity = 1.0
+radiation_immunity = 1.1
 telepatic_immunity = 1.0
 chemical_burn_immunity = 1.0
 explosion_immunity = 1.0
@@ -367,7 +370,7 @@ inv_weight = 0.005
 inv_grid_x = 15
 inv_grid_y = 0
 
-cost = 60
+cost = 150
 
 jump_height = .1
 
@@ -380,19 +383,22 @@ trail_light_range = 1.5
 artefact_activation_seq = af_activation_gravi
 ;скорости увеличения (уменьшения)
 health_restore_speed = 0.0
-radiation_restore_speed = 0.001
+radiation_restore_speed = 0.0
 satiety_restore_speed = 0.0
-power_restore_speed = 0.0002
+power_restore_speed = 0.0
 bleeding_restore_speed = 0.0
 hit_absorbation_sect = af_gravi_absorbation
+
+additional_inventory_weight  = 8
+additional_inventory_weight2 = 8
 
 [af_gravi_absorbation]
 burn_immunity = 1.0 ;коэффициенты защиты (при <1.0) или вреда (при >1.0) от арта. 1.0 = 100% ,т.е. не защищает и не вредит
 strike_immunity = 1.0
 shock_immunity = 1.0
-wound_immunity = 0.97
-radiation_immunity = 1.0
-telepatic_immunity = 0.9
+wound_immunity = 1.0
+radiation_immunity = 1.2
+telepatic_immunity = 1.0
 chemical_burn_immunity = 1.0
 explosion_immunity = 1.0
 fire_wound_immunity = 1.0
@@ -429,18 +435,21 @@ artefact_activation_seq = af_activation_gravi
 
 ;скорости увеличения (уменьшения)
 health_restore_speed = 0.0
-radiation_restore_speed = 0.0015
+radiation_restore_speed = 0.0
 satiety_restore_speed = 0.0
 power_restore_speed = 0.0
 bleeding_restore_speed = 0.0
 hit_absorbation_sect = af_gold_fish_absorbation
 
+additional_inventory_weight  = 15
+additional_inventory_weight2 = 15
+
 [af_gold_fish_absorbation]
 burn_immunity = 1.0 ;коэффициенты защиты (при <1.0) или вреда (при >1.0) от арта. 1.0 = 100% ,т.е. не защищает и не вредит
 strike_immunity = 1.0
 shock_immunity = 1.0
-wound_immunity = 0.92
-radiation_immunity = 1.1
+wound_immunity = 1.0
+radiation_immunity = 1.3
 telepatic_immunity = 1.0
 chemical_burn_immunity = 1.0
 explosion_immunity = 1.0
@@ -537,12 +546,12 @@ artefact_activation_seq = af_activation_bold
 health_restore_speed = 0.0
 radiation_restore_speed = -0.0025
 satiety_restore_speed = 0.0
-power_restore_speed = -0.0008
+power_restore_speed = 0.0
 bleeding_restore_speed = 0.0
 hit_absorbation_sect = af_fireball_absorbation
 
 [af_fireball_absorbation]
-burn_immunity = 1.0 ;коэффициенты защиты (при <1.0) или вреда (при >1.0) от арта. 1.0 = 100% ,т.е. не защищает и не вредит
+burn_immunity = 0.9 ;коэффициенты защиты (при <1.0) или вреда (при >1.0) от арта. 1.0 = 100% ,т.е. не защищает и не вредит
 strike_immunity = 1.0
 shock_immunity = 1.0
 wound_immunity = 1.0
@@ -789,7 +798,7 @@ artefact_activation_seq = af_activation_electra
 health_restore_speed = -0.000001
 radiation_restore_speed = 0.0
 satiety_restore_speed = -0.000001
-power_restore_speed = 0.01
+power_restore_speed = 0.001
 bleeding_restore_speed = 0.0
 hit_absorbation_sect = af_electra_sparkler_absorbation
 
@@ -838,7 +847,7 @@ artefact_activation_seq = af_activation_electra
 health_restore_speed = -0.000002
 radiation_restore_speed = 0.0
 satiety_restore_speed = -0.000002
-power_restore_speed = 0.02
+power_restore_speed = 0.002
 bleeding_restore_speed = 0.0
 hit_absorbation_sect = af_electra_flash_absorbation
 
@@ -885,10 +894,10 @@ trail_light_range = 2.0
 artefact_activation_seq = af_activation_electra
 
 ;скорости увеличения (уменьшения)
-health_restore_speed = -0.000003
+health_restore_speed = -0.000005
 radiation_restore_speed = 0.0
 satiety_restore_speed = -0.000003
-power_restore_speed = 0.03
+power_restore_speed = 0.003
 bleeding_restore_speed = 0.0
 hit_absorbation_sect = af_electra_moonlight_absorbation
 
@@ -1050,7 +1059,7 @@ shock_immunity = 1.0
 wound_immunity = 1.0
 radiation_immunity = 1.2
 telepatic_immunity = 1.0
-chemical_burn_immunity = 0.8
+chemical_burn_immunity = 0.85
 explosion_immunity = 1.0
 fire_wound_immunity = 1.0
 
@@ -1321,19 +1330,19 @@ artefact_activation_seq = af_activation_bold
 
 ;скорости увеличения (уменьшения)
 health_restore_speed = 0.0
-radiation_restore_speed = -0.001
+radiation_restore_speed = 0.002
 satiety_restore_speed = 0.0
 power_restore_speed = 0.0
-bleeding_restore_speed = -0.005
+bleeding_restore_speed = 0.0
 hit_absorbation_sect = af_rusty_thorn_absorbation
 
 [af_rusty_thorn_absorbation]
 burn_immunity = 1.0 ;коэффициенты иммунитета
-strike_immunity = 1.1
+strike_immunity = 1.0
 shock_immunity = 1.0
-wound_immunity = 1.2
+wound_immunity = 1.0
 radiation_immunity = 1.0
-telepatic_immunity = 1.0
+telepatic_immunity = 0.9
 chemical_burn_immunity = 1.0
 explosion_immunity = 1.0
 fire_wound_immunity = 1.0
@@ -1366,19 +1375,19 @@ artefact_activation_seq = af_activation_bold
 
 ;скорости увеличения (уменьшения)
 health_restore_speed = 0.0
-radiation_restore_speed = -0.002
+radiation_restore_speed = 0.003
 satiety_restore_speed = 0.0
 power_restore_speed = 0.0
-bleeding_restore_speed = -0.003
+bleeding_restore_speed = 0.0
 hit_absorbation_sect = af_rusty_kristall_absorbation
 
 [af_rusty_kristall_absorbation]
 burn_immunity = 1.0 ;коэффициенты защиты (при <1.0) или вреда (при >1.0) от арта. 1.0 = 100% ,т.е. не защищает и не вредит
 strike_immunity = 1.0
 shock_immunity = 1.0
-wound_immunity = 1.1
+wound_immunity = 1.0
 radiation_immunity = 1.0
-telepatic_immunity = 1.0
+telepatic_immunity = 0.8
 chemical_burn_immunity = 1.0
 explosion_immunity = 1.0
 fire_wound_immunity = 1.0
@@ -1412,7 +1421,7 @@ artefact_activation_seq = af_activation_bold
 
 ;скорости увеличения (уменьшения)
 health_restore_speed = 0.0
-radiation_restore_speed = 0.0015
+radiation_restore_speed = 0.005
 satiety_restore_speed = 0.0
 power_restore_speed = 0.0
 bleeding_restore_speed = 0.0
@@ -1424,8 +1433,8 @@ strike_immunity = 1.0
 shock_immunity = 1.0
 wound_immunity = 1.0
 radiation_immunity = 1.0
-telepatic_immunity = 1.0
-chemical_burn_immunity = 0.9
+telepatic_immunity = 0.7
+chemical_burn_immunity = 1.0
 explosion_immunity = 1.0
 fire_wound_immunity = 1.0
 
