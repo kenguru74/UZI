@@ -1699,6 +1699,26 @@ local anom_types = {
 		buzz = 0.16
 	},
 	
+	l04_darkvalley = {
+		radioactive = 0.01,
+		fountain = 0.01,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.02,
+		monolith = 0.04,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.06,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.16
+	},
+	
 	l06_rostok = {
 		radioactive = 0.01,
 		fountain = 0.01,
