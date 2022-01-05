@@ -74,7 +74,7 @@
 			<text>bar_hunter_return_rifle</text>
 			<icon x="150" y="50" width="50" height="50">ui\ui_icons_task</icon>
 			<map_location_type hint="bar_hunter_return_rifle">green_location</map_location_type>
-			<object_story_id>bar_hunter</object_story_id>			
+			<object_story_id>bar_hunter</object_story_id>
 			<infoportion_complete>bar_bar_hunter_quest_finish</infoportion_complete>
 		</objective>
 	</game_task>
