@@ -223,17 +223,17 @@ function log3(fmt, ...)
 end
 --==============================================================================================
 function abort(fmt, ...)
-	log1("!!****************************[ABORT]*********************************")
-	log1(debug.traceback())
-	log3(fmt, ...)
-	log1("!!********************************************************************")
-	error(tostring(fmt))
+	-- log1("!!****************************[ABORT]*********************************")
+	-- log1(debug.traceback())
+	-- log3(fmt, ...)
+	-- log1("!!********************************************************************")
+	-- error(tostring(fmt))
 end
 
 function ASSERT(cond, ...)
-	if not cond then
-		abort(...)
-	end
+	-- if not cond then
+		-- abort(...)
+	-- end
 end
 --==============================================================================================
 function cmd(scmd, ...)
@@ -1716,19 +1716,15 @@ quest_section["bar_lucky_pda"] = true
 -------------------------------------------------------------------------------
 --                            Добавлено в OGSE                               --
 -------------------------------------------------------------------------------
-function ASSERT(cond, ...)
-	if not cond then
-		abort(...)
-	end
-end
-
 sys_ini = system_ini() --Из скриптов вызывать только sys_ini!!!!
 
 -- служебные функции для чтения параметров из секций объектов
 
 function get_string(section, param, def_val, ini_file)
 	local ini = ini_file or sys_ini
+	
 	ASSERT(ini:section_exist(section), "get_string: section '"..section.."' doesn't exist")
+	
 	if ini:line_exist(section, param) then
 		return ini:r_string(section, param)
 	else
