@@ -1,7 +1,9 @@
 function lootmoney(npc)
 	local sec = npc:section()
+	
 	if not string.find(sec, "arena") and not string.find(sec, "aem") and npc:character_community() ~= "arena_enemy" then
 		local npc_rank, money, deadmoney = ranks.get_obj_rank_name(npc), npc:money(), 0
+		
 		if npc_rank == "novice" and money >= 40 then
 			deadmoney = deadmoney + math.random(5, 20)
 		elseif npc_rank == "experienced" and money >= 60 then
@@ -13,11 +15,14 @@ function lootmoney(npc)
 		elseif npc_rank == "legend" and money >= 1000 then
 			deadmoney = deadmoney + math.random(100, 200)
 		end
+		
 		if deadmoney > 0 then
 			db.actor:give_money(deadmoney)
 			game_stats.money_quest_update(deadmoney)
 			npc:give_money(-money)
+			
 			local news_texti = "\\n%c[255,255,128,128]Мёртвый сталкер: %c[default]"..npc:character_name().."\\n%c[255,160,160,160]Нашёл у него %c[default]"..game.translate_string(tostring(deadmoney).." руб.")
+			
 			db.actor:give_game_news(news_texti, "ui\\ui_iconsTotal", Frect():set(0,0,83,47), 500, 5000)
 		end
 	end
