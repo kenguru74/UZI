@@ -26,7 +26,7 @@ function main_menu:InitControls()
 	self.shniaga = xml:InitMMShniaga("shniaga_wnd", self)
 
 	self.message_box = CUIMessageBoxEx()
-	self:Register(self.message_box, "msg_box")	
+	self:Register(self.message_box, "msg_box")
 
 	local ver = xml:InitStatic("static_version", self)
 	local ogsm_ver = xml:InitStatic ("ogsm_version",self)

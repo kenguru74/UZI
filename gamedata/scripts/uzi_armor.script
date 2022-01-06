@@ -26,7 +26,7 @@ function heal_armor(actor)
 
 			if ini:line_exist(sec, "power_restore_speed") then
 				power_restore_speed = ini:r_float(sec, "power_restore_speed")
-			end	
+			end
 		end
 
 		if actor.health < 1 and health_restore_speed ~= 0 then
