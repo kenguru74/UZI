@@ -353,24 +353,24 @@ function locate_bar_dolg(actor,npc)
 end
 
 -- Гарик
-function has_2500_money(first_speaker, second_speaker)
-	return first_speaker:money() >= 500
+function has_garik_rank (first_speaker, second_speaker)
+	return db.actor:character_reputation() >= 350
 end
 
 function give_garik_money(actor, npc)	
-	dialogs.relocate_money(npc, 500, "out")
+	dialogs.relocate_money(npc, 1, "out")
 end
 
 -- Осведомитель
-function has_osvedomitel_300(actor, npc)
+function has_osvedomitel_mzda3(actor, npc)
 	return actor:money() >= 300
 end
 
-function has_osvedomitel__300(actor, npc)
+function no_osvedomitel_mzda3(actor, npc)
 	return actor:money() < 300
 end
 
-function pay_300(actor, npc)
+function pay_mzda3(actor, npc)
 	dialogs.relocate_money(npc, 300, "out")
 end
 
@@ -378,82 +378,6 @@ function take_gen_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("gen_treasure_1")
 	treasure_manager.get_treasure_manager():give_treasure("gen_treasure_2")
 	treasure_manager.get_treasure_manager():give_treasure("gen_treasure_3")
-end
-
-function has_osvedomitel_900(actor, npc)
-	return actor:money() >= 600
-end
-
-function pay_900(actor, npc)
-	dialogs.relocate_money(npc, 900, "out")
-end
-
-function has_osvedomitel__900(actor, npc)
-	return actor:money() < 900
-end
-
-function has_osvedomitel_900(actor, npc)
-	return actor:money() >= 900
-end
-
-function take_aver_secrets()
-	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_1")
-	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_2")
-	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_3")
-	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_4")
-	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_5")
-	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_6")
-	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_7")
-	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_8")
-	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_9")
-end
-
-function has_osvedomitel_1300(actor, npc)
-	return actor:money() >= 1300
-end
-
-function pay_1300(actor, npc)
-	dialogs.relocate_money(npc, 1300, "out")
-end
-
-function take_lim_secrets()
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_1")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_2")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_3")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_4")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_5")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_6")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_7")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_8")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_9")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_10")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_11")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_12")
-	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_13")
-end
-
-function has_osvedomitel__500(actor, npc)
-	return actor:money() < 500
-end
-
-function has_osvedomitel_500(actor, npc)
-	return actor:money() >= 500
-end
-
-function pay_500(actor, npc)
-	dialogs.relocate_money(npc, 500, "out")
-end
-
-function take_pred_secrets()
-	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_1")
-	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_2")
-	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_3")
-	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_4")
-	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_5")
-end
-
-function has_osvedomitel__300(actor, npc)
-	return actor:money() < 300
 end
 
 function take_puz_secrets()
@@ -480,11 +404,45 @@ function take_put_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("put_treasure_3")
 end
 
-function has_osvedomitel_600(actor, npc)
+
+function has_osvedomitel_mzda5(actor, npc)
+	return actor:money() >= 500
+end
+
+function no_osvedomitel_mzda5(actor, npc)
+	return actor:money() < 500
+end
+
+function pay_mzda5(actor, npc)
+	dialogs.relocate_money(npc, 500, "out")
+end
+
+function take_pred_secrets()
+	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_1")
+	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_2")
+	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_3")
+	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_4")
+	treasure_manager.get_treasure_manager():give_treasure("pred_treasure_5")
+end
+
+function take_lost_secrets()
+	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_1")
+	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_2")
+	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_3")
+	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_4")
+	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_5")
+end
+
+
+function has_osvedomitel_mzda6(actor, npc)
 	return actor:money() >= 600
 end
 
-function pay_600(actor, npc)
+function no_osvedomitel_mzda6(actor, npc)
+	return actor:money() < 600
+end
+
+function pay_mzda6(actor, npc)
 	dialogs.relocate_money(npc, 600, "out")
 end
 
@@ -497,16 +455,29 @@ function take_zat_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("zat_treasure_6")
 end
 
-function has_osvedomitel__500(actor, npc)
-	return actor:money() < 500
+
+function has_osvedomitel_mzda9(actor, npc)
+	return actor:money() >= 900
 end
 
-function take_lost_secrets()
-	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_1")
-	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_2")
-	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_3")
-	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_4")
-	treasure_manager.get_treasure_manager():give_treasure("lost_treasure_5")
+function no_osvedomitel_mzda9(actor, npc)
+	return actor:money() < 900
+end
+
+function pay_mzda9(actor, npc)
+	dialogs.relocate_money(npc, 900, "out")
+end
+
+function take_aver_secrets()
+	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_1")
+	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_2")
+	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_3")
+	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_4")
+	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_5")
+	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_6")
+	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_7")
+	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_8")
+	treasure_manager.get_treasure_manager():give_treasure("aver_treasure_9")
 end
 
 function take_kat_secrets()
@@ -519,6 +490,36 @@ function take_kat_secrets()
 	treasure_manager.get_treasure_manager():give_treasure("kat_treasure_7")
 	treasure_manager.get_treasure_manager():give_treasure("kat_treasure_8")
 	treasure_manager.get_treasure_manager():give_treasure("kat_treasure_9")
+end
+
+
+function has_osvedomitel_mzda13(actor, npc)
+	return actor:money() >= 1300
+end
+
+function no_osvedomitel_mzda13(actor, npc)
+	return actor:money() < 1300
+end
+
+
+function pay_mzda13(actor, npc)
+	dialogs.relocate_money(npc, 1300, "out")
+end
+
+function take_lim_secrets()
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_1")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_2")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_3")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_4")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_5")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_6")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_7")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_8")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_9")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_10")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_11")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_12")
+	treasure_manager.get_treasure_manager():give_treasure("lim_treasure_13")
 end
 
 function pay_for_o_sosnanie(actor, npc)
