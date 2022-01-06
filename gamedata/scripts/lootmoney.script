@@ -1,5 +1,6 @@
 function lootmoney(npc)
 	local sec = npc:section()
+	local char_community = "человек"
 	
 	if not string.find(sec, "arena") and not string.find(sec, "aem") and npc:character_community() ~= "arena_enemy" then
 		local npc_rank, money, deadmoney = ranks.get_obj_rank_name(npc), npc:money(), 0
@@ -16,12 +17,43 @@ function lootmoney(npc)
 			deadmoney = deadmoney + math.random(100, 200)
 		end
 		
+		if npc:character_community()=="stalker" then
+			char_community = "сталкер"
+		elseif npc:character_community()=="monolith" then
+			char_community = "монолитовец"
+		elseif npc:character_community()=="military" then
+			char_community = "ЧВКшник"
+		elseif npc:character_community()=="killer" then
+			char_community = "наёмник"
+		elseif npc:character_community()=="ecolog" then
+			char_community = "учёный"
+		elseif npc:character_community()=="dolg" then
+			char_community = "долговец"
+		elseif npc:character_community()=="freedom" then
+			char_community = "свободовец"
+		elseif npc:character_community()=="bandit" then
+			char_community = "бандит"
+		elseif npc:character_community()=="trader" then
+			char_community = "торговец"
+		elseif npc:character_community()=="stranger" then
+			char_community = "бродяга"
+		elseif npc:character_community()=="formers" then
+			char_community = "контрабас"
+		elseif npc:character_community()=="hunters" then
+			char_community = "охотник"
+		elseif npc:character_community()=="monolits" then
+			char_community = "монолитовец - ренегат"
+		elseif npc:character_community()=="dark" then
+			char_community = "тёмный"
+		end
+
+		
 		if deadmoney > 0 then
 			db.actor:give_money(deadmoney)
 			game_stats.money_quest_update(deadmoney)
 			npc:give_money(-money)
 			
-			local news_texti = "\\n%c[255,255,128,128]Мёртвый сталкер: %c[default]"..npc:character_name().."\\n%c[255,160,160,160]Нашёл у него %c[default]"..game.translate_string(tostring(deadmoney).." руб.")
+			local news_texti = "\\n%c[255,255,128,128]Мёртвый %c[default]"..char_community.."\\n%c[255,160,160,160]Нашёл у него %c[default]"..game.translate_string(tostring(deadmoney).." руб.")
 			
 			db.actor:give_game_news(news_texti, "ui\\ui_iconsTotal", Frect():set(0,0,83,47), 500, 5000)
 		end
