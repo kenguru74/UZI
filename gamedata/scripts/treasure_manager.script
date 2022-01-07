@@ -163,7 +163,7 @@ function CTreasure:give_treasure(k)
 	if obj ~= nil then
 		news_manager.send_treasure(v.name)
 
-		--' Пометить на карте		
+		--' Пометить на карте
 		local text = "%c[255,238,155,23]"..game.translate_string(v.name).."\\n".."%c[default]"..game.translate_string(v.description)
 		level.map_add_object_spot_ser(obj.id, "treasure", text)
 
