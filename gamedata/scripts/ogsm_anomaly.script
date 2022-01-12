@@ -17,47 +17,47 @@ local table_bad_pos = {}
 local off_anoms_deleted = false
 
 loc={
-	l01_escape = {35, 50},
-	l02_garbage = {300, 400},
-	l03_agroprom = {400, 520},
+	l01_escape = {15, 50},
+	l02_garbage = {150, 400},
+	l03_agroprom = {150, 500},
 	l04_darkvalley = {200, 300},
 	l05_bar = {60, 100},
-	l06_rostok = {200, 300},
-	l07_military = {400, 600},
-	l08_yantar = {200, 300},
+	l06_rostok = {100, 300},
+	l07_military = {200, 600},
+	l08_yantar = {100, 300},
 	l10_radar = {400, 600},
-	l11_pripyat = {400, 600},
-	l12_stancia = {400, 600},
-	l12u_sarcofag = {1, 20},
-	l12u_control_monolith = {1, 20},
+	l11_pripyat = {200, 600},
+	l12_stancia = {200, 600},
+	l12u_sarcofag = {1, 10},
+	l12u_control_monolith = {1, 10},
 	l12_stancia_2 = {600, 700},
-	l03u_agr_underground = {1, 20},
-	l04u_labx18 = {1, 20},
-	l08u_brainlab = {1, 20},
-	l10u_bunker = {1, 20},
+	l03u_agr_underground = {1, 10},
+	l04u_labx18 = {1, 10},
+	l08u_brainlab = {1, 10},
+	l10u_bunker = {1, 10},
 	atp_for_test22 = {200, 300},
-	peshera = {25, 35},
-	puzir = {300, 400},
-	aver = {300, 400},
-	av_peshera = {35, 65},
-	limansk = {200, 300},
-	hospital = {60, 100},
-	generators = {300, 400},
-	warlab = {1, 20},
-	red_forest = {200, 300},
-	lost_village = {100, 150},
-	marsh = {500, 600},
+	peshera = {5, 15},
+	puzir = {100, 400},
+	aver = {200, 500},
+	av_peshera = {15, 65},
+	limansk = {200, 500},
+	hospital = {20, 50},
+	generators = {300, 600},
+	warlab = {1, 10},
+	red_forest = {250, 600},
+	lost_village = {20, 150},
+	marsh = {300, 600},
 	dead_city = {5, 10},
-	zaton = {600, 750},
-	jupiter = {700, 850},
-	pripyat = {200, 300},
-	jupiter_underground = {15, 50},
-	labx8 = {1, 20},
-	cs_agroprom_underground = {1, 20},
+	zaton = {300, 750},
+	jupiter = {300, 850},
+	pripyat = {200, 600},
+	jupiter_underground = {5, 15},
+	labx8 = {1, 15},
+	cs_agroprom_underground = {1, 10},
 	predbannik = {1, 2},
-	garbage_old = {200, 240},
-	yantar_old = {400, 440},
-	swamp_old = {400, 440}
+	garbage_old = {150, 350},
+	yantar_old = {150, 450},
+	swamp_old = {100, 450}
 }
 
 -- Ber188 добавлены локации в список
@@ -1620,7 +1620,7 @@ local anom_types = {
 	},
 	
 	l01_escape = {
-		radioactive = 0.01,
+		radioactive = 0.06,
 		fountain = 0.01,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
@@ -1636,15 +1636,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.06
 	},
 	
 	l02_garbage = {
-		radioactive = 0.01,
-		fountain = 0.01,
+		radioactive = 0.06,
+		fountain = 0.06,
 		field_thermal = 0.06,
-		witches_galantine = 0.02,
-		ice = 0.02,
+		witches_galantine = 0.06,
+		ice = 0.06,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1655,15 +1655,35 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.06
 	},
 	
 	l03_agroprom = {
-		radioactive = 0.01,
+		radioactive = 0.06,
+		fountain = 0.06,
+		field_thermal = 0.06,
+		witches_galantine = 0.02,
+		ice = 0.06,
+		monolith = 0.06,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.05,
+		sphere = 0.01,
+		teleport = 0.06,
+		zavesa = 0.07,
+		mosquito_bald = 0.1,
+		gravi = 0.12,
+		mincer = 0.14,
+		zharka_static = 0.1,
+		buzz = 0.06
+	},
+	
+	l04_darkvalley = {
+		radioactive = 0.06,
 		fountain = 0.01,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.04,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1675,15 +1695,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	l05_bar = {
 		radioactive = 0.01,
-		fountain = 0.01,
+		fountain = 0.06,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.06,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1695,35 +1715,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
-	},
-	
-	l04_darkvalley = {
-		radioactive = 0.01,
-		fountain = 0.01,
-		field_thermal = 0.06,
-		witches_galantine = 0.02,
-		ice = 0.02,
-		monolith = 0.04,
-		ogon = 0.04,
-		sakbuzz = 0.04,
-		smallrain = 0.05,
-		sphere = 0.01,
-		teleport = 0.06,
-		zavesa = 0.07,
-		mosquito_bald = 0.1,
-		gravi = 0.12,
-		mincer = 0.14,
-		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.06
 	},
 	
 	l06_rostok = {
-		radioactive = 0.01,
-		fountain = 0.01,
+		radioactive = 0.04,
+		fountain = 0.05,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.04,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1735,11 +1735,11 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	l07_military = {
-		radioactive = 0.01,
+		radioactive = 0.05,
 		fountain = 0.01,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
@@ -1755,31 +1755,51 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	l08_yantar = {
-		radioactive = 0.01,
-		fountain = 0.01,
-		field_thermal = 0.06,
-		witches_galantine = 0.02,
-		ice = 0.02,
-		monolith = 0.04,
+		radioactive = 0.08,
+		fountain = 0.08,
+		field_thermal = 0.04,
+		witches_galantine = 0.04,
+		ice = 0.06,
+		monolith = 0.06,
 		ogon = 0.04,
 		sakbuzz = 0.04,
-		smallrain = 0.05,
+		smallrain = 0.08,
 		sphere = 0.01,
 		teleport = 0.06,
-		zavesa = 0.07,
+		zavesa = 0.08,
 		mosquito_bald = 0.1,
-		gravi = 0.12,
-		mincer = 0.14,
-		zharka_static = 0.1,
-		buzz = 0.16
+		gravi = 0.1,
+		mincer = 0.1,
+		zharka_static = 0.04,
+		buzz = 0.03
+	},
+	
+	l10_radar = {
+		radioactive = 0.08,
+		fountain = 0.08,
+		field_thermal = 0.04,
+		witches_galantine = 0.04,
+		ice = 0.06,
+		monolith = 0.06,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.08,
+		sphere = 0.01,
+		teleport = 0.06,
+		zavesa = 0.08,
+		mosquito_bald = 0.1,
+		gravi = 0.1,
+		mincer = 0.1,
+		zharka_static = 0.04,
+		buzz = 0.03
 	},
 	
 	l11_pripyat = {
-		radioactive = 0.01,
+		radioactive = 0.06,
 		fountain = 0.01,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
@@ -1795,12 +1815,52 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.06
+	},
+	
+	l12_stancia = {
+		radioactive = 0.08,
+		fountain = 0.08,
+		field_thermal = 0.04,
+		witches_galantine = 0.04,
+		ice = 0.06,
+		monolith = 0.06,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.08,
+		sphere = 0.01,
+		teleport = 0.06,
+		zavesa = 0.08,
+		mosquito_bald = 0.1,
+		gravi = 0.1,
+		mincer = 0.1,
+		zharka_static = 0.04,
+		buzz = 0.03
+	},
+	
+	l12_stancia_2 = {
+		radioactive = 0.08,
+		fountain = 0.08,
+		field_thermal = 0.04,
+		witches_galantine = 0.04,
+		ice = 0.06,
+		monolith = 0.06,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.08,
+		sphere = 0.01,
+		teleport = 0.06,
+		zavesa = 0.08,
+		mosquito_bald = 0.1,
+		gravi = 0.1,
+		mincer = 0.1,
+		zharka_static = 0.04,
+		buzz = 0.03
 	},
 	
 	atp_for_test22 = {
-		radioactive = 0.01,
-		fountain = 0.01,
+		radioactive = 0.06,
+		fountain = 0.04,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
 		ice = 0.02,
@@ -1815,15 +1875,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.06
 	},
 	
 	puzir = {
-		radioactive = 0.01,
+		radioactive = 0.05,
 		fountain = 0.01,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.08,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1835,15 +1895,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	aver = {
-		radioactive = 0.01,
-		fountain = 0.01,
+		radioactive = 0.06,
+		fountain = 0.06,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.06,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1855,15 +1915,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	limansk = {
-		radioactive = 0.01,
-		fountain = 0.01,
+		radioactive = 0.06,
+		fountain = 0.06,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.06,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1875,15 +1935,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	hospital = {
-		radioactive = 0.01,
-		fountain = 0.01,
+		radioactive = 0.05,
+		fountain = 0.05,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.04,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1895,15 +1955,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	generators = {
-		radioactive = 0.01,
+		radioactive = 0.08,
 		fountain = 0.01,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.04,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1915,15 +1975,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	red_forest = {
-		radioactive = 0.01,
+		radioactive = 0.06,
 		fountain = 0.01,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.08,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1935,7 +1995,7 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	lost_village = {
@@ -1955,14 +2015,14 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	marsh = {
-		radioactive = 0.01,
-		fountain = 0.01,
+		radioactive = 0.04,
+		fountain = 0.04,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.04,
 		monolith = 0.04,
 		sakbuzz = 0.04,
 		smallrain = 0.05,
@@ -1972,15 +2032,15 @@ local anom_types = {
 		mosquito_bald = 0.12,
 		gravi = 0.14,
 		mincer = 0.15,
-		buzz = 0.2
+		buzz = 0.04
 	},
 	
 	dead_city = {
-		radioactive = 0.01,
+		radioactive = 0.08,
 		fountain = 0.01,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.06,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -1992,15 +2052,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	zaton = {
-		radioactive = 0.01,
-		fountain = 0.01,
+		radioactive = 0.08,
+		fountain = 0.04,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.04,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -2012,15 +2072,15 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
 	},
 	
 	jupiter = {
-		radioactive = 0.01,
+		radioactive = 0.08,
 		fountain = 0.01,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.04,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -2032,15 +2092,35 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
+	},
+	
+	pripyat = {
+		radioactive = 0.08,
+		fountain = 0.08,
+		field_thermal = 0.04,
+		witches_galantine = 0.04,
+		ice = 0.06,
+		monolith = 0.06,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.08,
+		sphere = 0.01,
+		teleport = 0.06,
+		zavesa = 0.08,
+		mosquito_bald = 0.1,
+		gravi = 0.1,
+		mincer = 0.1,
+		zharka_static = 0.04,
+		buzz = 0.03
 	},
 	
 	garbage_old = {
-		radioactive = 0.01,
-		fountain = 0.01,
+		radioactive = 0.06,
+		fountain = 0.06,
 		field_thermal = 0.06,
 		witches_galantine = 0.02,
-		ice = 0.02,
+		ice = 0.06,
 		monolith = 0.04,
 		ogon = 0.04,
 		sakbuzz = 0.04,
@@ -2052,15 +2132,35 @@ local anom_types = {
 		gravi = 0.12,
 		mincer = 0.14,
 		zharka_static = 0.1,
-		buzz = 0.16
+		buzz = 0.04
+	},
+	
+	yantar_old = {
+		radioactive = 0.08,
+		fountain = 0.08,
+		field_thermal = 0.04,
+		witches_galantine = 0.04,
+		ice = 0.06,
+		monolith = 0.06,
+		ogon = 0.04,
+		sakbuzz = 0.04,
+		smallrain = 0.08,
+		sphere = 0.01,
+		teleport = 0.06,
+		zavesa = 0.08,
+		mosquito_bald = 0.1,
+		gravi = 0.1,
+		mincer = 0.1,
+		zharka_static = 0.04,
+		buzz = 0.03
 	},
 	
 	swamp_old = {
-		radioactive = 0.01,
+		radioactive = 0.06,
 		fountain = 0.01,
 		witches_galantine = 0.02,
-		ice = 0.02,
-		monolith = 0.04,
+		ice = 0.06,
+		monolith = 0.06,
 		sakbuzz = 0.04,
 		smallrain = 0.05,
 		sphere = 0.01,
@@ -2069,7 +2169,7 @@ local anom_types = {
 		mosquito_bald = 0.12,
 		gravi = 0.14,
 		mincer = 0.15,
-		buzz = 0.2
+		buzz = 0.06
 	}
 }
 
