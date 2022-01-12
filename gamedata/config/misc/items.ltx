@@ -799,10 +799,11 @@ animation_slot = 4
 
 ;hud item
 hud = wpn_vodka_hud
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Ремкомплект брони
+;; Ремкомплект снаряги
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[repair_kit_armor]:identity_immunities
+[repair_kit_eqip]:identity_immunities
 GroupControlSection = spawn_group
 discovery_dependency =
 $spawn = "devices\items\repair_kit"
@@ -810,16 +811,16 @@ $prefetch = 32
 class = II_ANTIR
 cform = skeleton
 visual = equipments\item_merger.ogf
-description = enc_repair_kit_armor
+description = enc_repair_kit_eqip
 quest_item = false
 
-inv_name = repair_kit_armor_name
-inv_name_short = repair_kit_armor_name
+inv_name = repair_kit_eqip_name
+inv_name_short = repair_kit_eqip_name
 inv_weight = 0.25
 
 inv_grid_width = 1
 inv_grid_height = 1
-inv_grid_x = 43
+inv_grid_x = 23
 inv_grid_y = 48
 
 cost = 100
@@ -838,6 +839,128 @@ animation_slot = 4
 
 ;hud item
 hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ремкомплект брони
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[repair_kit_armor]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\repair_kit"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_merger.ogf
+description = enc_repair_kit_armor
+quest_item = false
+
+inv_name = repair_kit_armor_name
+inv_name_short = repair_kit_armor_name
+inv_weight = 0.8
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 23
+inv_grid_y = 47
+
+cost = 500
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Набор инструментов
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[toolbox]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "devices\items\toolbox"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_merger.ogf
+description = enc_toolbox
+quest_item = false
+
+inv_name = toolbox_name
+inv_name_short = toolbox_name
+inv_weight = 1.2
+
+inv_grid_width = 2
+inv_grid_height = 1
+inv_grid_x = 43
+inv_grid_y = 31
+
+cost = 1500
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 10000
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Бронепластина
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[armor_plate]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn = "food and drugs\antirad"
+$prefetch = 32
+class = II_ANTIR
+cform = skeleton
+visual = equipments\item_plate.ogf
+quest_item = false
+
+description = enc_armor_plate
+
+inv_name = armor_plate_name
+inv_name_short = armor_plate_name
+inv_weight = 0.4
+
+inv_grid_width = 1
+inv_grid_height = 1
+inv_grid_x = 9
+inv_grid_y = 30
+
+cost = 100
+
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 10000
+
+; food item
+animation_slot = 4
+
+;hud item
+hud = wpn_vodka_hud
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; GPS-маячок
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -875,6 +998,7 @@ animation_slot = 4
 
 ;hud item
 hud = wpn_vodka_hud
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Пеленгатор
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -901,6 +1025,7 @@ inv_grid_height = 3
 inv_grid_x = 23
 inv_grid_y = 6
 cost = 0
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Записка Клыка 3
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -3313,7 +3438,7 @@ inv_weight = 1.0
 
 inv_grid_width = 2
 inv_grid_height = 2
-inv_grid_x = 37
+inv_grid_x = 2
 inv_grid_y = 47
 
 cost = 110
@@ -3528,7 +3653,7 @@ visual = equipments\item_pda.ogf
 radius = 1
 ;script_binding = stalker.object_init
 
-quest_item = false
+quest_item = true
 
 description = enc_equipment_strelok-pda
 
@@ -3590,7 +3715,7 @@ visual = equipments\item_aptechka2.ogf
 
 ;script_binding = stalker.object_init
 
-quest_item = false
+quest_item = true
 can_trade = true
 
 description = enc_equipment_komplekt
@@ -3598,10 +3723,10 @@ description = enc_equipment_komplekt
 inv_name = komplekt
 inv_name_short = komplekt
 
-inv_weight = 12
+inv_weight = 0
 
-inv_grid_width = 6
-inv_grid_height = 4
+inv_grid_width = 4
+inv_grid_height = 5
 inv_grid_x = 39
 inv_grid_y = 45
 
