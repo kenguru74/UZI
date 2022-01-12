@@ -68,7 +68,8 @@ local bufferedmessages={}
 				end
 				bufferedmessages=nil
 			end
-				db.actor:give_game_news(msg, "ui\\ui_iconsTotal", Frect():set(0,658,83,47), 0, 15000)
+			
+			db.actor:give_game_news(msg, "ui\\ui_iconsTotal", Frect():set(0,658,83,47), 0, 15000)
 		else
 			if bufferedmessages then
 				table.insert(bufferedmessages,msg)
@@ -177,6 +178,7 @@ function check_timers()
 	
 	for a=1,100,1 do
 		tmp=load_variable("rt"..a,nil)
+		
 		if tmp~=nil then
 			__timer_found(a)
 		end
@@ -184,6 +186,7 @@ function check_timers()
 	
 	for a=1,100,1 do
 		tmp=load_variable("gt"..a,nil)
+		
 		if tmp~=nil then
 			__g_timer_found(a)
 		end
@@ -193,15 +196,18 @@ end
 function __timer_found(idx)
 	local time = game.time() --time in seconds since 1970
 	local name,params
-	if load_variable("rt"..idx.."d", nil)<=time then
-		name=load_variable("rt"..idx, nil)
-		params=load_variable("rt"..idx.."p", nil)
+	
+	if load_variable("rt"..idx.."d", nil) <= time then
+		name = load_variable("rt"..idx, nil)
+		params = load_variable("rt"..idx.."p", nil)
 		del_variable("rt"..idx)
 		del_variable("rt"..idx.."d")
 		del_variable("rt"..idx.."p")
 		__do_timer_action(name,params)
+		
 		return true
 	end
+	
 	return false
 end
 
@@ -265,7 +271,7 @@ function __do_timer_action(select_string,params_string)
 	
 	if select_string=="otf" then
 		a = level.object_by_id(tonumber(params_string))
-		if a ~= nil then a:set_condition((math.random(25)+40)/100) end
+		if a ~= nil then a:set_condition((math.random(60)+5)/100) end
 	end
 	
 	if select_string=="rsp" then
@@ -627,6 +633,10 @@ function __do_timer_action(select_string,params_string)
 		repair.use_kit(params_string)
 	end
 	
+	if select_string=="kit_eqip" then
+		repair.use_kit_eqip(params_string)
+	end
+	
 	if select_string=="kit_armor" then
 		repair.use_kit_armor(params_string)
 	end
@@ -982,11 +992,12 @@ function remove_item_from_inventory_by_name(remove_item_name,npc)
 end
 
 function remove_item_from_inventory(remove_item,npc)
-	if npc==nil then npc=db.actor end
+	if npc == nil then npc = db.actor end
 	
-	if remove_item~=nil then
+	if remove_item ~= nil then
 		npc:mark_item_dropped(remove_item)
 		alife():release(alife():object(remove_item:id()), true)
+		
 		return true
 	end
 	
@@ -1094,6 +1105,7 @@ function on_actor_update(obj)
 	if not timer_trigger then
 		timer_trigger=game.time()
 	end
+	
 	if timer_trigger<=game.time() then
 		timer_trigger=game.time()+5000
 		check_timers()
@@ -1125,9 +1137,11 @@ function on_actor_update(obj)
 	
 	-- Багфикс таймеров
 	local d = game.time()
+	
 	if d >= 200000 then
 		k = 0
 	end
+	
 	if k == 0 then
 		if d < 200000 then
 			ogsm_debug.clean_pstor()
@@ -1140,7 +1154,7 @@ function on_actor_update(obj)
 end
 
 
--- Загружаем все переменные, которые нужно, вызывается загрузке игры автоматически
+-- Загружаем все переменные, которые нужно, вызывается при загрузке игры автоматически
 function on_game_load()
 	-- Восстанавливаем солнце
 	wthr = level.get_weather()
@@ -1172,6 +1186,23 @@ function on_game_load()
 	
 	-- Отмечаем на карте новые точки перехода
 	ogsm_freeplay.mark_lc()
+	
+	--ниже блок, тестовый, раскомментировать ТОЛЬКО в случае пропадания жажды!
+	if load_variable("water",true) then
+	--всё в порядке, счётчики работают, иначе
+	else
+	--иначе вызываем мгновенную жажду
+		g_start_timer("water2",0, 1, 0)
+	end
+	
+	--ниже закомментированный блок, тестовый, раскомментировать ТОЛЬКО в случае пропадания Выбросов!
+	-- if load_variable("bl1",true) then
+		--всё в порядке, иначе
+	-- else
+		--иначе перезапускаем счётчик Выброса
+			-- g_start_timer("bl1",0, 48 + math.random(-12,0) + math.random(0,12), 0)
+	-- end
+	
 end
 
 
@@ -1196,6 +1227,49 @@ function trim (s)
 	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
 end
 
+function str_explode(div,str,pos1,pos2,clear)
+	local t={}
+	local cpt, pos
+	
+	if pos1 == nil then pos1 = 1 end
+	if pos2 == nil then pos2 = pos1 end
+	
+	pos1 = tonumber(pos1)
+	pos2 = tonumber(pos2)
+	
+	local cpt1 = string.find (str, div, pos1, true)
+	local cpt2 = string.find (str, div, pos2, true)
+	
+	if cpt1 and cpt2 then
+		if cpt2-cpt1 > 5 then
+			cpt = cpt1
+			pos = pos1
+		else
+			cpt = cpt2
+			pos = pos2
+		end
+		
+		repeat
+			if clear then
+				table.insert( t, trim(string.sub(str, 1, cpt-1)) )
+			else
+				table.insert( t, string.sub(str, 1, cpt-1) )
+			end
+			
+			str = string.sub( str, cpt+string.len(div) )
+			cpt = string.find (str, div, pos, true)
+		until cpt==nil
+	end
+	
+	if clear then
+		table.insert(t, trim(str))
+	else
+		table.insert(t, str)
+	end
+	
+	return t
+end
+
 -- Туториал на пси-воздействие
 function on_my_psy()
 	if not has_alife_info("encyclopedy_tutorial_psy") then
@@ -1203,7 +1277,6 @@ function on_my_psy()
 		db.actor:give_info_portion("encyclopedy_tutorial_psy")
 	end
 end
-
 
 -- Восстановление солнца и погоды, вызывается из туториала
 function restore_sun()
