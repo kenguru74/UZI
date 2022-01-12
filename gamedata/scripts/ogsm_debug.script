@@ -162,13 +162,14 @@ end
 
 -- Удаление трупов в Припяти во фриплее
 function clean_level()
-	if has_alife_info("freeplay") and level.name()=="l11_pripyat" and a==0 then 
+	if has_alife_info("freeplay") and level.name() == "l11_pripyat" and a == 0 then 
 		for i=1,65535 do
 			local obj = level.object_by_id(i)
 			if obj and (IsStalker(obj) or IsMonster(obj)) and not obj:alive() then
 				alife():release(alife():object(obj:id()), true)
 			end
 		end
+		
 		a = 1
 	end
 end
