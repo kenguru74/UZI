@@ -255,7 +255,7 @@ description = enc_arsenal_acogs
 
 ;$prefetch = 64
 
-cost = 20000
+cost = 200
 
 holder_range_modifier = 1.3
 holder_fov_modifier = 0.4
@@ -351,7 +351,7 @@ ammo_class = ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_pbp
 condition_shot_dec = 0.0002
 inv_grid_x = 10
 inv_grid_y = 21
-cost = 270
+cost = 170
 
 ;АК-74У СПЕЦНАЗ
 [wpn_ak74u_m1]:wpn_ak74u
@@ -427,7 +427,7 @@ inv_grid_height = 2
 inv_grid_x = 41
 inv_grid_y = 15
 
-cost = 430
+cost = 230
 ;------------------------------------------------------------------------------------------
 
 [wpn_groza_m1]:wpn_groza ;Гроза генерала Воронина
@@ -471,31 +471,30 @@ inv_name = wpn-spas12_m1
 inv_name_short = wpn-spas12_m1
 fire_dispersion_base = 0.6
 condition_shot_dec = 0.0002
-hit_impulse = 60
-fire_distance = 45
-hit_power = 0.9
-bullet_speed			                = 270
+hit_impulse = 260
+fire_distance = 25
+hit_power = 1.9
+bullet_speed = 270
 inv_grid_x = 0
 inv_grid_y = 34
-cost					        = 20000
+cost = 400
 
 [wpn_winchester_m1]:wpn_wincheaster1300 ;Боевой винчестер
 $spawn = "weapons\uniq\wpn_winchester_m1"
 description = enc_arsenal_wpn-winchester_m1
 inv_name = ars-winchester_m1
 inv_name_short = ars-winchester_m1
-ammo_mag_size			                = 4
+ammo_mag_size = 4
 fire_dispersion_base = 0.6
-hit_impulse = 80
-condition_shot_dec = 0.0001
-fire_distance = 80
-hit_power = 2.5
-bullet_speed			                = 370
+hit_impulse = 300
+fire_distance = 30
+hit_power = 2.0
+bullet_speed = 370
 inv_grid_x = 0
 inv_grid_y = 35
-cost					 	= 50000
-misfire_probability = 0.00009
-misfire_condition_k = 0.08
+cost = 800
+misfire_probability = 0.0009
+misfire_condition_k = 0.05
 condition_shot_dec = 0.001
 
 [wpn_l85_m1]:wpn_l85 ;Сбалансированная L85
@@ -661,7 +660,7 @@ silencer_status = 1
 condition_shot_dec = 0.0002
 inv_grid_x = 18
 inv_grid_y = 20
-cost = 430
+cost = 230
 smoke_particles = weapons\generic_shoot_00
 flame_particles =
 light_disabled = true
@@ -1087,7 +1086,7 @@ cam_dispersion = 0.12 ;увеличения угла (в градусах) с каждым выстрелом
 cam_dispersion_inc = 0.12 ;увеличениe cam_dispersion с каждым выстрелом
 cam_dispertion_frac = 0.9 ;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
 cam_max_angle = 5 ;максимальный угол отдачи
-cam_max_angle_horz = 4.0 ;(degree) maximum shot horizontal degree 
+cam_max_angle_horz = 4.0 ;(degree) maximum shot horizontal degree
 cam_step_angle_horz = 0.3 ;(degree) size of step camera moved in horizontal position while shooting
 
 hit_power = 0.6
@@ -1119,3 +1118,17 @@ grenade_launcher_status = 2
 quest_item = false
 
 snd_silncer_shot = weapons\ak_silent1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[wpn_ak105_m1]:wpn_ak105
+$spawn = "weapons\uniq\wpn_ak105_m1"
+description = enc_arsenal_ak105_m1
+inv_name = ars-ak105_m1
+inv_name_short = ars-ak105_m1
+inv_weight = 2.9
+cost = 400
+
+inv_grid_width = 5
+inv_grid_height = 2
+inv_grid_x = 17
+inv_grid_y = 47
