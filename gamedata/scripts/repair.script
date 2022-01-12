@@ -34,34 +34,122 @@ function use_kit(pid)
 	end
 end
 
-function use_kit_armor(pid)
-	local armor = db.actor:item_in_slot(6)
-	local state = armor:condition()
+function use_kit_eqip(pid)
+	local eqip = db.actor:item_in_slot(6)
+	local state = eqip:condition()
 	
-	if (armor ~= nil) then
-		if state >= 0.95 then
-			news_manager.send_tip(db.actor, "Снаряга не требует ремонта..", nil, nil, 30000)
-			alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-		elseif state >= 0.9 and (state < 0.9999) then
-			news_manager.send_tip(db.actor, "Снаряга в относительном порядке. Остальное можно отремонтировать только у спецов..", nil, nil, 30000)
-			alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-		elseif (state < 0.3) then
-			news_manager.send_tip(db.actor, "Снаряга в хлам - заплатки ставить негде..", nil, nil, 30000)
-			alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-		elseif (state >= 0.3) and (state < 0.9) then
-			state = state + 0.3
-			
-			if state > 0.9 then 
-				state = 0.9
+	if (eqip ~= nil) then
+		if sect == "without_outfit" or
+		sect == "novice_outfit" or
+		sect == "bandit_outfit" or
+		sect == "bandit_veteran_outfit" or
+		sect == "bandit_master_outfit" or
+		sect == "ecolog_outfit" or
+		sect == "protection_outfit"
+		then
+			if state >= 0.99 then
+				news_manager.send_tip(db.actor, "Снаряга в полном порядке..", nil, nil, 30000)
+				
+				alife():create("repair_kit_eqip",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+			elseif state < 0.3 then
+				news_manager.send_tip(db.actor, "Снаряга в хлам - заплатки ставить негде..", nil, nil, 30000)
+				
+				alife():create("repair_kit_eqip",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+			elseif state >= 0.3 and state < 0.8 then
+				state = state + 0.2
+				
+				if state > 1.0 then 
+					state = 1.0
+				end
+				
+				eqip:set_condition(state)
+				news_manager.send_tip(db.actor, "Подшаманил снарягу. Ремка кончилась..", nil, nil, 30000)
+				
+				amk.is_repaired(eqip, state)
 			end
-			
-			armor:set_condition(state)
-			news_manager.send_tip(db.actor, "Подшаманил снарягу. Ремка кончилась..", nil, nil, 30000)
-			
-			amk.is_repaired(armor, state)
+		else
+			if state >= 0.99 then
+				news_manager.send_tip(db.actor, "Снаряга в полном порядке..", nil, nil, 30000)
+				
+				alife():create("repair_kit_eqip",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+			elseif state >= 0.8 and state <= 0.95 then
+				news_manager.send_tip(db.actor, "Снаряга в полном порядке, требуется только замена бронепластин..", nil, nil, 30000)
+				
+				alife():create("repair_kit_eqip",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+			elseif state < 0.3 then
+				news_manager.send_tip(db.actor, "Снаряга в хлам - заплатки ставить негде..", nil, nil, 30000)
+				
+				alife():create("repair_kit_eqip",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+			elseif state >= 0.3 and state < 0.8 then
+				state = state + 0.2
+				
+				if state > 0.8 then 
+					state = 0.81
+				end
+				
+				eqip:set_condition(state)
+				news_manager.send_tip(db.actor, "Подшаманил снарягу. Ремка кончилась..", nil, nil, 30000)
+				
+				amk.is_repaired(eqip, state)
+			end
 		end
 	else
 		news_manager.send_tip(db.actor, "Ремонтировать нечего..", nil, nil, 30000)
+		
+		alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+	end
+end
+
+function use_kit_armor(pid)
+	local armor = db.actor:item_in_slot(6)
+	local state = armor:condition()
+	local plate_delete = false
+	local plate_delete1 = false
+	
+	if (armor ~= nil) then
+		if state < 0.8 then
+			news_manager.send_tip(db.actor, "Сначала приведи комбез в порядок, и зашей кармашки для пластин!", nil, nil, 30000)
+			
+			alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		elseif state >= 0.8 and state < 0.9999 then
+			plates_esty = _f.have_n_items("armor_plate", 2)
+			
+			if plates_esty then
+				local plates_delete = false
+				
+				plates_delete = _f.Out_N_Items("armor_plate", 2)
+				
+				if plates_delete then
+					state = state + 0.1
+					
+					if state > 1.0 then 
+						state = 1.0
+					end
+					
+					armor:set_condition(state)
+					news_manager.send_tip(db.actor, "Поменял пару пластин. Теперь хоть в бой!", nil, nil, 30000)
+					
+					amk.is_repaired(armor, state)
+				else
+					news_manager.send_tip(db.actor, "Эти пластины не подходят!", nil, nil, 30000)
+					
+					alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+					alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+					alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+				end
+			else
+				news_manager.send_tip(db.actor, "Нужна хотя бы пара бронепластин для ремонта разбитых!", nil, nil, 30000)
+				
+				alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+			end
+		else
+			news_manager.send_tip(db.actor, "Ремонтировать нечего..", nil, nil, 30000)
+			
+			alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+		end
+	else
+		news_manager.send_tip(db.actor, "Не получается.. Пластины надо другие походу.", nil, nil, 30000)
+		
 		alife():create("repair_kit_armor",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
 	end
 end
@@ -71,6 +159,15 @@ function check_use_kit(p_obj)
 	else
 		if p_obj and p_obj:section() == "repair_kit" then
 			amk.start_timer("kit", 0.1, p_obj:id())
+		end
+	end
+end
+
+function check_use_kit_eqip(p_obj)
+	if (has_alife_info("ui_trade")) or (has_alife_info("ui_car_body")) then
+	else
+		if p_obj and p_obj:section() == "repair_kit_eqip" then
+			amk.start_timer("kit_eqip", 0.1, p_obj:id())
 		end
 	end
 end
