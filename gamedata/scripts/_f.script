@@ -659,33 +659,38 @@ end
 
 --/ проверка наличия предмета
 function have_item(sSection, oNPC)
---	printf("have_item:sec=[%s]:[%s]", sSection, ">") --/#~#
 	if not oNPC then oNPC = db.actor end
+	
 	if oNPC and sSection and sSection ~= "" then
-		return (oNPC:object(sSection) ~= nil) --/>
+		return (oNPC:object(sSection) ~= nil)
 	end
+	
 	return false
 end
---[[
---/ проверка наличия у ГГ n-предметов
+
+-- проверка наличия у ГГ n-предметов
 function have_n_items(sSection,iNum)
---	printf("have_n_items:sec=[%s],n=[%s]:[%s]", sSection, iNum, ">") --/#~#
 	local oActor = db.actor
+	
 	if oActor and sSection and sSection ~= "" then
 		if not iNum then iNum = 1 end
+		
 		local iCnt = 0
+		
 		oActor:iterate_inventory(
 			function (dummy, oItem)
 				if oItem:section() == sSection then
 					iCnt = iCnt +1
 				end
 			end
-		,nil)
-		return iCnt >= iNum, iCnt --/>
+			,nil
+		)
+		return iCnt >= iNum, iCnt
 	end
+	
 	return false, 0
 end
---]]
+
 --/ Проверка на наличие у непися/актора предмета
 --/ Примеры вызова:
 --/ bHas,iCount = Has_N_Item("section")
@@ -907,25 +912,31 @@ end
 function Out_N_Items(sSection, iNum)
 	local oActor = db.actor
 	local sim = alife()
+	
 	if sim and oActor then
 		if not iNum then iNum = 1 end
+		
 		oActor:iterate_inventory(
 			function (dummy,oItem)
 				if iNum >= 1 and oItem:section() == sSection then
 					--remove_item_from_inventory(oItem,oActor)
 					local soItem = sim:object(oItem:id())
+					
 					if soItem then
 						oActor:mark_item_dropped(oItem)
 						sim:release(soItem, true)
-					else
-						printf("Out_N_Items:Num=[%s],Item=[%s]~Not_soItem:<%s>", iNum, oItem:name(), "Error!")
 					end
+					
 					iNum = iNum -1
 				end
 			end
-		,nil)
+			,nil
+		)
 		news_manager.relocate_item(oActor, "out", sSection, iNum)
+		return true
 	end
+	
+	return false
 end
 
 --/ перекладываем (shift) предметы в слотах/рюкзаке ГГ или NPC (НЕ патронов!)
