@@ -525,18 +525,19 @@ end
 --/ спавн НПС (mob&hum) на карту
 function Spawn_NPC(...)
 	local soNPC
-
+	
 	news_manager.send_tip(db.actor, "начал Spawn_NPC", nil, nil, 30000) -- Ber188
-
+	
 	if db.m_respawn then
 		news_manager.send_tip(db.actor, "soNPC = m_respawn.Spawn_FreeNPC(...)", nil, nil, 30000) -- Ber188
-
+		
 		soNPC = m_respawn.Spawn_FreeNPC(...)
 	else
 		news_manager.send_tip(db.actor, "soNPC = spawn_obj(...)", nil, nil, 30000) -- Ber188
-
+		
 		soNPC = spawn_obj(...)
 	end
+	
 	return soNPC
 end
 
@@ -638,6 +639,7 @@ function remove_item_from_inventory(oDelItem,oNPC)
 --		printf("remove_item_from_inventory:[%s]", ">")
 		local idDelItem = oDelItem:id()
 		local bRemoved = false
+		
 		oNPC:iterate_inventory(
 			function (dummy, oItem)
 				if not bRemoved and oItem:id() == idDelItem then
@@ -651,7 +653,9 @@ function remove_item_from_inventory(oDelItem,oNPC)
 					end
 				end
 			end
-		,nil)
+		,nil
+		)
+		
 		return bRemoved --/>
 	end
 	return false
@@ -713,7 +717,9 @@ function Has_N_Item(sSection,iNum,oNPC)
 	elseif not iNum or type(iNum) ~= "number" then
 		iNum = 1
 	end
+	
 	local iCnt = 0
+	
 	if oNPC and sSection then
 		if iNum == 1 then
 			local bHas = oNPC:object(sSection) ~= nil
@@ -724,15 +730,17 @@ function Has_N_Item(sSection,iNum,oNPC)
 				function (dummy, oItem)
 					if oItem:section() == sSection then
 						iCnt = iCnt + 1
+						
 						if iNum ~= 0 and iCnt >= iNum then --/ при iNum == 0 => подсчет всего кол-ва
 							return true, iCnt --/> NPC имеет N предметов
 						end
---						printf("Has_N_Item:=[%s],Cnt=[%s]:[%s]", sSection, iCnt, "i") --/#~#
 					end
 				end
-			,nil)
+			,nil
+			)
 		end
 	end
+	
 	return (iCnt > 0 and iCnt >= iNum), iCnt --/> имеет ли NPC N предметов, и сколько
 end
 
@@ -753,15 +761,19 @@ function Has_ManyItems(...)
 			oNPC = arg[iCnt] --/ запоминаем/присваиваем ...
 			iCnt = iCnt - 1 --/ уменьшаем кол-во проверяемых элементов из массива аргументов
 		end
+		
 		for i=1, iCnt do --/ проверяем массив
 			if type(arg[i]) == "string" then --/ список
 				local iNum = 1
+				
 				if type(arg[i+1]) == "number" then
 					iNum = arg[i+1]
 				end
+				
 				if not Has_N_Item(arg[i], iNum, oNPC) then
 					return false --/> у NPC нет i-предмета(ов)
 				end
+				
 				bHas = true
 			elseif type(arg[i]) == "table" then --/ таблица
 				for k,v in pairs(tTable) do
@@ -781,6 +793,7 @@ function Has_ManyItems(...)
 				end
 			end
 		end
+		
 		return bHas --/> NPC (не)имеет массив/набор предметов
 	end
 	return false
@@ -792,25 +805,32 @@ end
 --/ bHas = Has_ListItems("section1", "section2", 5, "section3")
 function Has_ListItems(...)
 	local iCnt = arg.n
+	
 	if iCnt ~= 0 then
 		local oNPC --/ для проверки: не задан ли 'не актор'
+		
 		if type(arg[iCnt]) == "userdata" then --/ задан NPC, иначе работаем с актором
 			oNPC = arg[iCnt] --/ присваиваем ...
 			iCnt = iCnt - 1 --/ удаляем из массива аргументов
 		end
+		
 		for i=1, arg.n do
 			if type(arg[i]) == "string" then
 				local iNum = 1
+				
 				if type(arg[i+1]) == "number" then
 					iNum = arg[i+1]
 				end
+				
 				if not Has_N_Item(arg[i], iNum, oNPC) then
 					return false --/> у NPC нет i-предмета(ов)
 				end
 			end
 		end
+		
 		return true --/> NPC имеет полный набор предметов
 	end
+	
 	return false
 end
 
@@ -832,8 +852,10 @@ function Has_TableItems(tTable, oNPC)
 				return false --/> ошибка в таблице
 			end
 		end
+		
 		return true --/> NPC имеет полный набор предметов
 	end
+	
 	return false
 end
 
@@ -841,15 +863,19 @@ end
 function Relocate_N_Item_Section(oNPC, sSection, iNum, sType)
 --	printf("Relocate_N_Item_Section:NPC=[%s],Section=[%s],Num=[%s],Type=[%s]:[%s]", oNPC and oNPC:name(), sSection, iNum, sType, ">") --/#~#
 	local oActor = db.actor
+	
 	if oActor and sSection then
 		if not sType then sType = "out" end --/ по умолчанию: ГГ отдает
+		
 		if not iNum then iNum = 1 end --/ по умолчанию: один предмет
+		
 		local iCnt = iNum
 		local idActor = oActor:id()
 		local idNPC = oNPC and oNPC:id()
 		local bQuestItem = quest_section[sSection] == true
 		local bAmmo = ammo_section[sSection] == true
 		local bTransfer = (idNPC ~= nil and idNPC ~= idActor and not bAmmo) --/ режим 'передача' (патроны НЕ передаются, а спавнятся/удаляются)
+		
 		if sType == "in" then --/ ГГ получает предмет(ы) (от НПС)
 --			printf("Relocate_N_Item_Section:NPC=[%s]~>Section=[%s]:[%s]", oNPC and oNPC:name(), sSection, "i") --/#~#
 			if bTransfer then
@@ -864,11 +890,13 @@ function Relocate_N_Item_Section(oNPC, sSection, iNum, sType)
 					end
 				,oNPC)
 			end
+			
 			if iCnt >= 1 then
 				local sim = alife()
 				local vPos  = oActor:position()
 				local iLvid = oActor:level_vertex_id()
 				local iGvid = oActor:game_vertex_id()
+				
 				for i=1,iCnt do
 					if bAmmo then --/ патроны спавним коробками
 						local sini = system_ini()
