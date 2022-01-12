@@ -14,7 +14,7 @@ local game_difficulty_by_num = {
 	[3] = "gd_master"
 	}
 
-lasthealth	= 0
+lasthealth = 0
 lasttime	= 0
 post_process = 0
 local weapon_hide = false
@@ -57,9 +57,11 @@ function actor_binder:net_spawn(data)
 	cmd("cam_inert 0") --сбрасываем инерцию камеры в 0
 	cmd("g_cop_death_anim 0") --Отключаем Death Anims, с ними куча багов.
 	cmd("r3_minmax_sm off") --От этого фпс дропается у некоторых при долгой игре.
+	
 	if get_console():get_integer("r3_dynamic_wet_surfaces_sm_res") < 1024 then
 		cmd("r3_dynamic_wet_surfaces_sm_res 1024") --Чтобы полос на стенах не было во время дождя.
 	end
+	
 	cmd("g_3d_scopes on") --Чтобы кто-нибудь особо умный не выключил 3д прицелы через консоль.
 	cmd("r2_exp_donttest_shad off") --С вкл окклюдером хоть тени на худе и мерцают, но он экономит фпс. В будущих релизах движка он будет переписан, и там это будет доправлено. Поэтому отключать его всё таки не надо.
 	
@@ -69,6 +71,7 @@ function actor_binder:net_spawn(data)
 	amk.on_game_load()
 	
 	if xrs_ai then xrs_ai.actor_net_spawn(self) end
+	
 	
 -- Вызов уборщика оружия
 	uzi_off_weapons.off_weapons()
@@ -184,6 +187,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:take_item_from_box(box, item)
 	local story_id = box:story_id()
+	
 	if story_id == nil then
 		return
 	end
@@ -191,6 +195,7 @@ function actor_binder:take_item_from_box(box, item)
 	treasure_manager.take_item_from_box(box, story_id)
 	
 	local respawner = se_respawn.get_respawner_by_parent(story_id)
+	
 	if respawner == nil then
 		return
 	end
@@ -199,11 +204,13 @@ function actor_binder:take_item_from_box(box, item)
 	respawner:remove_spawned(item:id())
 	
 	local smart_terrain = db.strn_by_respawn[respawner:name()]
+	
 	if smart_terrain == nil then
 		return
 	end
 	
 	local npc = smart_terrain.gulag:get_nearest_online_obj(db.actor:position())
+	
 	if npc ~= nil then
 		xr_sound.set_sound_play(npc, "reac_box")
 		xr_gulag.setGulagEnemy(smart_terrain:name() , db.actor)
@@ -219,6 +226,15 @@ function actor_binder:use_inventory_item(obj)
 		sleep_manager.check_sleep_item(obj)
 	end
 	
+	if string.find(obj:section(), "toolbox") then
+		-- uzi_sounds.snd_Spichki()
+		ogsm_quests.check_use_toolbox(obj)
+	end
+	
+	if string.find(obj:section(), "armor_plate") then
+		ogsm_quests.check_use_armor_plate(obj)
+	end
+	
 	if string.find(obj:section(), "spichki") then
 		uzi_sounds.snd_Spichki()
 		ogsm_quests.check_use_Spichki(obj)
@@ -230,6 +246,10 @@ function actor_binder:use_inventory_item(obj)
 	
 	if string.find(obj:section(), "repair_kit") then
 		repair.check_use_kit(obj)
+	end
+	
+	if string.find(obj:section(), "repair_kit_eqip") then
+		repair.check_use_kit_eqip(obj)
 	end
 	
 	if string.find(obj:section(), "repair_kit_armor") then
