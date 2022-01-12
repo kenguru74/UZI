@@ -66,7 +66,7 @@ function run_cam_effector(actor, npc, p)
 		end
 		
 		--level.add_pp_effector(p[1] .. ".ppe", num, loop)
-		level.add_cam_effector("camera_effects\\" .. p[1] .. ".anm", num, loop, "")					  
+		level.add_cam_effector("camera_effects\\" .. p[1] .. ".anm", num, loop, "")  
 	end
 end
 
@@ -113,7 +113,7 @@ function teleport_actor(actor, npc, p)
 	
 	db.actor:set_actor_position(point:point(0))
 	local dir = look:point(0):sub(point:point(0))
-	db.actor:set_actor_direction(-dir:getH())	
+	db.actor:set_actor_direction(-dir:getH())
 end
 
 -----------------------------------------------------------------------------
@@ -124,7 +124,7 @@ end
 
 function drop_actor_inventory(actor, npc, p)
 	if p[1] then
-		drop_point  = patrol(p[1]):point(0)
+		drop_point = patrol(p[1]):point(0)
 		drop_object = actor
 		actor:inventory_for_each(drop_object_item)
 	end
@@ -133,7 +133,7 @@ end
 -- FIXME: drop_npc_inventory doesn't work
 function drop_npc_inventory(actor, npc, p)
 	if p[1] then
-		drop_point  = patrol(p[1]):point(0)
+		drop_point = patrol(p[1]):point(0)
 		drop_object = npc
 		npc:inventory_for_each(drop_object_item)
 	end
@@ -196,7 +196,7 @@ function play_particle_on_path(actor, npc, p)
 		if math.random(100) <= point_prob then
 			particle:play_at_pos(path:point(a))
 		end
-	end	
+	end
 end
 
 
@@ -373,7 +373,7 @@ end
 function play_snd_from_obj(actor, npc, p)
 	if p[1] and p[2] then
 		local snd_obj = xr_sound.get_safe_sound_object(p[2])
-		local obj	 = level_object_by_sid(p[1])
+		local obj = level_object_by_sid(p[1])
 		if obj ~= nil then
 			printf("can't find object with story id %s", tostring(p[1]))
 		
@@ -596,9 +596,9 @@ end
 --' Escape
 
 function play_snd_from_radio(actor, npc)
-	local snd_obj	= xr_sound.get_safe_sound_object([[characters_voice\scenario\escape\wolf_to_rangers_1]])
-	local obj		= npc:object("hand_radio")
-	snd_obj:play_no_feedback(obj, sound_object.s3d, 0, obj:position(), 1.0)	
+	local snd_obj = xr_sound.get_safe_sound_object([[characters_voice\scenario\escape\wolf_to_rangers_1]])
+	local obj = npc:object("hand_radio")
+	snd_obj:play_no_feedback(obj, sound_object.s3d, 0, obj:position(), 1.0)
 end
 
 function esc_direction_fire(actor, npc)
@@ -631,14 +631,14 @@ end
 --	local gulag = xr_gulag.get_gulag_by_name ("esc_lager")
 --	if (gulag) then
 --		gulag:set_relation (game_object.neutral, actor)
---	end  
+--	end
 -- end
 
 -- function esc_lager_rage_actor(actor, npc)
 --	local gulag = xr_gulag.get_gulag_by_name ("esc_lager")
 --	if (gulag) then
 --		gulag:set_relation (game_object.enemy, actor)
---	end  
+--	end
 -- end
 
 --' garbage
@@ -700,11 +700,11 @@ function psi_hit_npc(actor, npc,p)
 end
 
 
-function mil_paul_frost_dead (actor, npc)	 
+function mil_paul_frost_dead (actor, npc) 
 	local gulag = xr_gulag.get_gulag_by_name ("mil_freedom")
 	if (gulag) then
 		gulag:set_relation (game_object.neutral, actor)
-	end	
+	end
 end
 
 function set_freedom_actor_enemy (actor, npc)
@@ -720,7 +720,7 @@ function military_dolg_dead (actor, npc)
 	xr_logic.pstor_store(actor, "mil_dolg_killed", mil_dolg_killed)
 	if mil_dolg_killed == 8 then
 		actor:give_info_portion ("mil_dolg_dead")
-	end	
+	end
 	
 end
 
@@ -789,7 +789,7 @@ function bar_freedom_angry_actor(actor,npc)
 end
 function bar_freedom_defence_ecolog(actor,npc)
 	news_manager.send_tip(db.actor, "bar_ecolog_attack", nil, "ecolog", nil, 503)
-end		
+end	
 function bar_freedom_angry_actor_notify(actor,npc)
 	if has_alife_info("bar_ecolog_crush_actor_enemy") then
 		news_manager.send_tip(actor, "bar_freedom_attack_spy", 4, "killer", nil, 509)
@@ -927,7 +927,7 @@ function bar_territory_logic(actor, npc)
 				db.actor:give_info_portion("bar_territory_nodolg_1_hit")
 				news_manager.send_tip(actor, "bar_territory_nodolg_1_hit", nil, "dolg", nil, 507)
 				return
-			end	
+			end
 		end
 	end
 	return
@@ -944,11 +944,11 @@ function bar_actor_is_enemy(actor, npc)
 			xr_gulag.setGulagEnemy("bar_visitors", db.actor)
 end
 
-function bar_actor_enemy_set (actor, npc)		  
+function bar_actor_enemy_set (actor, npc)  
 	local dog = level_object_by_sid (509)
 	if dog ~= nil then
 		dog:set_relation (game_object.enemy, db.actor) 
-	end	
+	end
 end
 
 function bar_arena_weapon_spawn ()
@@ -967,44 +967,44 @@ function bar_arena_weapon_spawn ()
 						obj:position(),
 						obj:level_vertex_id(),	
 						obj:game_vertex_id())
-	end	
+	end
 end
 
 local function transfer_object_item(item)
 	out_object:transfer_item(item, in_object)
 end
+
 function bar_arena_teleport ( actor, npc)
-
 	inv_box_1 = level_object_by_sid (573)
-
+	
 	out_object = actor
-	in_object  = inv_box_1
-		actor:inventory_for_each(transfer_object_item) 
-
+	in_object = inv_box_1
+	actor:inventory_for_each(transfer_object_item) 
+	
 	local spawn_items = {}	
-
-	if	has_alife_info("bar_arena_fight_1") then 
+	
+	if has_alife_info("bar_arena_fight_1") then 
 		table.insert(spawn_items, "wpn_pm")
 		table.insert(spawn_items, "ammo_9x18_pmm")
 		table.insert(spawn_items, "ammo_9x18_pmm")
 		table.insert(spawn_items, "wpn_knife")
-	elseif	has_alife_info("bar_arena_fight_2") then
+	elseif has_alife_info("bar_arena_fight_2") then
 		table.insert(spawn_items, "wpn_mp5")
 		table.insert(spawn_items, "ammo_9x19_pbp")
-		table.insert(spawn_items, "wpn_knife")		
-	elseif	has_alife_info("bar_arena_fight_3") then
+		table.insert(spawn_items, "wpn_knife")
+	elseif has_alife_info("bar_arena_fight_3") then
 		table.insert(spawn_items, "wpn_bm16")
 		table.insert(spawn_items, "ammo_12x70_buck")
 		table.insert(spawn_items, "ammo_12x70_buck")
 		table.insert(spawn_items, "wpn_knife")
-	elseif	has_alife_info("bar_arena_fight_4") then			
+	elseif has_alife_info("bar_arena_fight_4") then
 		table.insert(spawn_items, "wpn_ak74")
 		table.insert(spawn_items, "ammo_5.45x39_ap")
 		table.insert(spawn_items, "ammo_5.45x39_ap")
 		table.insert(spawn_items, "wpn_knife")
 		table.insert(spawn_items, "bandage")
 		table.insert(spawn_items, "bandage")
-	elseif	has_alife_info("bar_arena_fight_5") then	
+	elseif has_alife_info("bar_arena_fight_5") then
 		table.insert(spawn_items, "wpn_abakan")
 		table.insert(spawn_items, "ammo_5.45x39_ap")
 		table.insert(spawn_items, "ammo_5.45x39_ap")
@@ -1013,7 +1013,7 @@ function bar_arena_teleport ( actor, npc)
 		table.insert(spawn_items, "bandage")
 		table.insert(spawn_items, "medkit")
 		table.insert(spawn_items, "svoboda_light_outfit")
-	elseif	has_alife_info("bar_arena_fight_6") then
+	elseif has_alife_info("bar_arena_fight_6") then
 		table.insert(spawn_items, "wpn_groza")
 		table.insert(spawn_items, "ammo_9x39_ap")
 		table.insert(spawn_items, "ammo_9x39_ap")
@@ -1021,14 +1021,14 @@ function bar_arena_teleport ( actor, npc)
 		table.insert(spawn_items, "wpn_knife")
 		table.insert(spawn_items, "grenade_f1")
 		table.insert(spawn_items, "specops_outfit")
-	elseif	has_alife_info("bar_arena_fight_7") then
+	elseif has_alife_info("bar_arena_fight_7") then
 		table.insert(spawn_items, "wpn_knife")
 		table.insert(spawn_items, "bandage")
 		table.insert(spawn_items, "grenade_f1")
 		table.insert(spawn_items, "grenade_f1")
 		table.insert(spawn_items, "grenade_f1")
 		table.insert(spawn_items, "grenade_f1")
-	elseif	has_alife_info("bar_arena_fight_8") then
+	elseif has_alife_info("bar_arena_fight_8") then
 		table.insert(spawn_items, "wpn_g36")
 		table.insert(spawn_items, "ammo_5.56x45_ap")
 		table.insert(spawn_items, "ammo_5.56x45_ap")
@@ -1041,16 +1041,17 @@ function bar_arena_teleport ( actor, npc)
 	
 	for k,v in pairs(spawn_items) do
 		alife():create(v,	
-						db.actor:position(),
-						db.actor:level_vertex_id(),	
-						db.actor:game_vertex_id(), 
-						db.actor:id())
-	end	
+			db.actor:position(),
+			db.actor:level_vertex_id(),	
+			db.actor:game_vertex_id(), 
+			db.actor:id()
+			)
+	end
 	
 end
 
 function bar_arena_weapon_slot ()
-	if	has_alife_info("bar_arena_fight_1") then  
+	if has_alife_info("bar_arena_fight_1") then  
 		db.actor:activate_slot(1)
 	else 
 		db.actor:activate_slot(2)
@@ -1058,18 +1059,17 @@ function bar_arena_weapon_slot ()
 end
 
 function bar_arena_teleport_2 ( actor, npc)
-
-	  level.add_pp_effector ("blink.ppe", 234, false)				
+	level.add_pp_effector ("blink.ppe", 234, false)
 	
-		db.actor:set_actor_position(patrol("t_walk_2"):point(0))
-		local dir = patrol("t_look_2"):point(0):sub(patrol("t_walk_2"):point(0))
-		db.actor:set_actor_direction(-dir:getH())
+	db.actor:set_actor_position(patrol("t_walk_2"):point(0))
+	local dir = patrol("t_look_2"):point(0):sub(patrol("t_walk_2"):point(0))
+	db.actor:set_actor_direction(-dir:getH())
 	
 	inv_box_2 = level_object_by_sid (574)
-
+	
 	out_object = actor
-	in_object  = inv_box_2
-		actor:inventory_for_each(transfer_object_item) 
+	in_object = inv_box_2
+	actor:inventory_for_each(transfer_object_item) 
 end
 
 function barman_give_extra_task (actor, npc)
@@ -1083,7 +1083,8 @@ function barman_give_extra_task (actor, npc)
 		db.actor:give_info_portion("barman_job_3")
 		return
 	end
-	return	
+	
+	return
 end
 
 function trader_extra_task (actor, npc)
@@ -1091,6 +1092,7 @@ function trader_extra_task (actor, npc)
 		db.actor:give_info_portion("trader_job")
 		return
 	end
+	
 	return
 end
 
@@ -1099,6 +1101,7 @@ function scientist_extra_task (actor, npc)
 		db.actor:give_info_portion("scientist_job")
 		return
 	end
+	
 	return
 end
 
@@ -1110,17 +1113,20 @@ end
 
 function mil_courier_death (actor, npc)
 	actor:give_info_portion ("mil_courier_dead")
+	
 	if has_alife_info("mil_leader_quest2_start") then
 		if not has_alife_info("mil_courier_visited") then
-		  level_tasks.set_task_state (task.fail, "mil_courier_job", 1)
-		end	
+			level_tasks.set_task_state (task.fail, "mil_courier_job", 1)
+		end
+		
 		level_tasks.set_task_state (task.completed, "mil_courier_job", 2)
 		level_tasks.set_task_state (task.completed, "mil_courier_job", 0)
-	end	
+	end
 end
 
 function mil_courier_quest_fail (actor, npc)
 	if has_alife_info("mil_courier_quest") == false then return end
+	
 	level_tasks.set_task_state (task.fail, "mil_courier_job", 0)
 	actor:give_info_portion ("mil_courier_quest_failed")
 end
@@ -1131,41 +1137,45 @@ end
 function mil_sniper_dead (actor, npc)
 	if has_alife_info("mil_dolg_final_task") then
 		level_tasks.remove_location (npc:story_id (), "mil_sniper_location")
-	end		
+	end
 end
 
 function mil_actor_enemy_set (actor, npc)
 	local sniper = level_object_by_sid (704)
+	
 	if sniper ~= nil then
 		sniper:set_relation (game_object.enemy, db.actor) 
-	end	
-	--xr_gulag.setGulagRelation ("mil_freedom", game_object.enemy, db.actor)	
+	end
+	--xr_gulag.setGulagRelation ("mil_freedom", game_object.enemy, db.actor)
 end
 
 
 function mil_actor_enemy_reset (actor, npc)
 	local sniper = level_object_by_sid (704)
+	
 	if sniper ~= nil then
 		sniper:set_relation (game_object.neutral, db.actor) 
-	end	
-	--xr_gulag.setGulagRelation ("mil_freedom", game_object.neutral, db.actor)	
+	end
+	--xr_gulag.setGulagRelation ("mil_freedom", game_object.neutral, db.actor)
 end
 
 function mil_bomb_explode (actor, npc)
 	local source = nil
 	local sim = alife ()
+	
 	if sim then
-		local se_obj = sim:story_object (723)  
+		local se_obj = sim:story_object (723)
+		
 		if se_obj then
-		  source = level.object_by_id(se_obj.id)
+			source = level.object_by_id(se_obj.id)
 		end
 	end
-
+	
 	if source == nil then
 		--'abort ("Bomb with story id MIL_BOMB not found")
 		return
 	end
-
+	
 	local h = hit ();
 	h.power = 1000000;
 	h.direction = vector():set( 1, 0, 0 );
@@ -1173,8 +1183,6 @@ function mil_bomb_explode (actor, npc)
 	h.draftsman = source;
 	h.type = hit.chemical_burn;
 	source:hit (h);
-	
-	
 end
 
 function mil_set_alarm (actor, npc)
@@ -1186,18 +1194,19 @@ function mil_set_alarm (actor, npc)
 		return 
 	end
 
-	this.set_stalker_enemy (702, skull)	 -- hit to Lukash
-	this.set_stalker_enemy (707, skull)	 -- hit to Max
-	this.set_stalker_enemy (730, skull)	 -- hit to Sniper1
-	this.set_stalker_enemy (731, skull)	 -- hit to Sniper2
-	this.set_stalker_enemy (732, skull)	 -- hit to Sniper3
+	this.set_stalker_enemy (702, skull) -- hit to Lukash
+	this.set_stalker_enemy (707, skull) -- hit to Max
+	this.set_stalker_enemy (730, skull) -- hit to Sniper1
+	this.set_stalker_enemy (731, skull) -- hit to Sniper2
+	this.set_stalker_enemy (732, skull) -- hit to Sniper3
 end
 
 function sar2_monolith_explode (actor, npc)
 	local monolith = level_object_by_sid (1305)
 	if monolith == nil then
 		abort ("Object MONOLITH with SID 1305 not found")
-	end	
+	end
+	
 	local h = hit ();
 	h.power = 1000;
 	h.direction = vector():set( 1, 0, 0 );
@@ -1209,9 +1218,11 @@ end
 
 function set_stalker_enemy (sid, draftsman)
 	local npc = level_object_by_sid (sid)
+	
 	if npc == nil or npc:alive () == false then
 		return 
-	end	
+	end
+	
 	local h = hit ()
 	h.power = 0
 	h.direction = vector():set( 1, 0, 0 )
@@ -1232,18 +1243,18 @@ function mil_transfer_docs_to_ara (actor, npc)
 	--local pavlik = level_object_by_sid (710)
 	--if ara == nil or pavlik == nil or pavlik:object ("mil_courier_doc") == nil then
 		--return
-	--end	
+	--end
 	--ara:transfer_item (pavlik:object ("mil_courier_doc"), pavlik)
 end
 
 function mil_emeny_nearest (actor, npc)
 	if actor == nil or actor:alive () == false then
 		return
-	end	
-
+	end
+	
 	local gulag = xr_gulag.get_gulag_by_name ("mil_freedom")
 	if gulag == nil then return end
-
+	
 	if gulag:npc_is_enemy_to_anybody(actor) then
 		actor:give_info_portion ("mil_enemy_nearest")
 	end
@@ -1252,9 +1263,10 @@ end
 
 function mil_cap_mapspot (actor, npc)
 	local cap = level_object_by_sid (724)
+	
 	if cap == nil or cap:alive () == false then
 		return 
-	end	
+	end
 	
 	if not has_alife_info("mil_fblockpost_spot_set") then
 		actor:give_info_portion ("mil_fblockpost_spot") 
@@ -1267,13 +1279,12 @@ function mil_cap_mapspot_remove (stalker1, stalker2)
 	if has_alife_info("mil_fblockpost_spot") then
 		level_tasks.remove_location_safe (724, "mil_fblockpost_location")
 		db.actor:disable_info_portion ("mil_fblockpost_spot_remove")
-	end	  
+	end
 end
 
 function set_actor_enemy_for_freedom (actor, npc)
 	xr_gulag.setGulagEnemy ("mil_freedom", actor)
 end
-
 
 -- GARBAGE
 
@@ -1285,7 +1296,6 @@ function gar_send_dolg_warning()
 	end
 end
 
-
 -------------------------------------------------------------------------------------
 -- Функции для DarkValley
 -------------------------------------------------------------------------------------
@@ -1293,21 +1303,21 @@ function val_escort_guard_death(actor, npc)
 	--printf("xr_effects <val_escort_guard_death>: %s.", npc:name())
 	local idx = string.sub(npc:name(), -1)
 	local t = db.storage[npc:id()].death
-
+	
 	actor:disable_info_portion("val_escort_guard" .. idx .. "_combat")
 	actor:give_info_portion("val_escort_guard" .. idx .. "_dead")
 	
 	if t ~= nil and t.killer == actor:id() then
 		actor:give_info_portion("val_escort_actor_helped")
 	end
-	--"on_info	 = %-val_escort_guard1_combat +val_escort_guard1_dead%\n" ..
-	--"on_info2	= {=killed_by_actor} %+val_escort_actor_helped%\n" ..
+	--"on_info = %-val_escort_guard1_combat +val_escort_guard1_dead%\n" ..
+	--"on_info2 = {=killed_by_actor} %+val_escort_actor_helped%\n" ..
 end
 
 function val_escort_guard_hit(actor, npc)
 	local idx = string.sub(npc:name(), -1)
 	local t = db.storage[npc:id()].hit
-
+	
 	if t ~= nil then
 		if t.who == actor:id() then
 			actor:give_info_portion("val_escort_combat")
@@ -1317,6 +1327,7 @@ function val_escort_guard_hit(actor, npc)
 			end
 		else
 			local npc1 = level_object_by_sid(406)
+			
 			if npc1 ~= nil and t.who == npc1:id() then
 				actor:give_info_portion("val_escort_combat")
 				actor:give_info_portion("val_escort_nap1_start_combat")
@@ -1325,14 +1336,14 @@ function val_escort_guard_hit(actor, npc)
 			end
 		end
 	end
-	--"on_info	 = {=hit_by_actor} %+val_escort_combat +val_escort_actor_helped%, %+val_escort_guard1_combat%\n" ..
-	--"on_info2	= {+val_escort_combat -val_escort_nap1_start_combat} %+val_escort_captive_enemy%\n" ..
-	--"on_info3	= {=hitted_by(406) -val_escort_captive_enemy} %+val_escort_nap1_start_combat%\n" ..
+	--"on_info = {=hit_by_actor} %+val_escort_combat +val_escort_actor_helped%, %+val_escort_guard1_combat%\n" ..
+	--"on_info2 = {+val_escort_combat -val_escort_nap1_start_combat} %+val_escort_captive_enemy%\n" ..
+	--"on_info3 = {=hitted_by(406) -val_escort_captive_enemy} %+val_escort_nap1_start_combat%\n" ..
 end
 
 function val_escort_guard_combat(actor, npc)
 	local idx = string.sub(npc:name(), -1)
-
+	
 	actor:give_info_portion("val_escort_guard" .. idx .. "_combat")
 	
 	if npc:see(actor) then
@@ -1341,19 +1352,18 @@ function val_escort_guard_combat(actor, npc)
 		end
 		actor:give_info_portion("val_escort_combat")
 	end
-	--"on_info	 = %+val_escort_guard1_combat%\n" ..
-	--"on_info2	= {=see_actor -val_escort_nap1_start_combat -val_escort_captive_enemy} %+val_escort_captive_enemy%\n" ..
-	--"on_info3	= {=see_actor -val_escort_combat} %+val_escort_combat% ;remark@val_escort_guard1_fight\n" ..
+	--"on_info = %+val_escort_guard1_combat%\n" ..
+	--"on_info2 = {=see_actor -val_escort_nap1_start_combat -val_escort_captive_enemy} %+val_escort_captive_enemy%\n" ..
+	--"on_info3 = {=see_actor -val_escort_combat} %+val_escort_combat% ;remark@val_escort_guard1_fight\n" ..
 end
 
 function val_escort_guard_free(actor, npc)
 	--local idx = string.sub(npc:name(), -1)
-
+	
 	actor:give_info_portion("val_escort_guards_free")
 	actor:disable_info_portion("val_escort_guard" .. string.sub(npc:name(), -1) .. "_combat")
-	--"on_info			 = %+val_escort_guards_free -val_escort_guard1_combat%\n"
+	--"on_info = %+val_escort_guards_free -val_escort_guard1_combat%\n"
 end
-
 
 -------------------------------------------------------------------------------------
 -- kill
@@ -1366,7 +1376,6 @@ end
 function kill(actor, npc)
 	npc:kill( npc )
 end
-
 
 -------------------------------------------------------------------------------------
 -- Функции для Агропрома
@@ -1384,7 +1393,7 @@ function agr_krot_sos_1_2( actor, npc )
 	then
 		actor:give_info_portion( "agr_help_krot_start" )
 		news_manager.send_tip( actor, "tips_agr_krot_sos1", 0, "krot", 10000 )
-
+		
 		if has_alife_info( "agr_help_stalkers_defence_dead" ) then
 			news_manager.send_tip( actor, "tips_agr_krot_sos2", 0, "krot", 10000 )
 		end
@@ -1393,13 +1402,14 @@ end
 
 function agr_knockdown ()
 	local snd_obj = xr_sound.get_safe_sound_object([[affects\tinnitus3a]])
+	
 	snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
 	level.add_cam_effector("camera_effects\\earthquake.anm", 1974, false, "")
 end
 
 function agr_contuz (actor, npc)
-		local sound_obj_l		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_l]] )
-		local sound_obj_r		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_r]] )
+		local sound_obj_l = xr_sound.get_safe_sound_object( [[affects\psy_blackout_l]] )
+		local sound_obj_r = xr_sound.get_safe_sound_object( [[affects\psy_blackout_r]] )
 		
 		sound_obj_l:play_no_feedback(actor, sound_object.s2d, 0, vector():set(-1, 0, 1), 1.0)
 		sound_obj_r:play_no_feedback(actor, sound_object.s2d, 0, vector():set( 1, 0, 1), 1.0)
@@ -1414,22 +1424,24 @@ function agr_weapon(actor, npc)
 	if db.actor then actor:activate_slot(2)
 	end
 end
+
 function agr_hold_enemy(actor, npc)
 	local gulag = xr_gulag.get_gulag_by_name("agr_factory_hold")
 	
-	local h  = hit()
-	h.power	 = 0.01
+	local h = hit()
+	h.power = 0.01
 	h.direction = vector():set( 1, 0, 0 )
 	h.draftsman = actor
-	h.impulse	= 1
-	h.type	  = hit.wound
+	h.impulse = 1
+	h.type = hit.wound
 	
 	for k, v in pairs(gulag.Object) do
 		if v ~= true and level.object_by_id( k ) ~= nil then
 			v:hit( h )
 		end
-	end	
+	end
 end
+
 --------------------------------------------------------- 
 -- PRIPYAT
 --------------------------------------------------------- 
@@ -1445,10 +1457,11 @@ end
 
 function pri_drop_rpg_ammo(actor, npc)
 	local item = npc:object("ammo_og-7b")
+	
 	if item then
 		npc:drop_item(item)
 	else
-		printf("xr_effects <pri_drop_rpg_ammo>: there is no [ammo_og-7b] in [%s] inventory.", npc:name())
+		-- printf("xr_effects <pri_drop_rpg_ammo>: there is no [ammo_og-7b] in [%s] inventory.", npc:name())
 	end
 end
 
@@ -1460,6 +1473,7 @@ end
 ---------------------------------------------------------
 -- Sarcofag + Monolith
 ---------------------------------------------------------
+
 function osoznanie_call(actor, npc)
 	news_manager.send_tip(db.actor, "o_soznanie_text", 0, "o_soznanie")
 end
@@ -1569,43 +1583,44 @@ function sar2_scene_start(actor, npc)
 	sar2_heroes_sel = {}
 	sar2_heroes_sel_number = 0
 	sar2_hero_next_free_id = 1
+	
 	for i = 1, sar2_heroes_number do
 		if has_alife_info("sar2_death_" .. i) then
 			table.insert(sar2_heroes_sel, i)
 			sar2_heroes_sel_number = sar2_heroes_sel_number + 1
 		end
 	end
-
+	
 	print_table(sar2_heroes_sel)
-	printf("effects <sar2>: scene end initializing.")
+	-- printf("effects <sar2>: scene endinitializing.")
 end
 
 function sar_hero_dead(actor, npc)
 	actor:give_info_portion("sar2_monolith_rock")
-
+	
 	if sar2_heroes_count > 0 then
 		sar2_heroes_count = sar2_heroes_count - 1
 	end
-
+	
 	if sar2_heroes_count == 0 and sar2_hero_next_free_id > sar2_heroes_sel_number then
 		actor:give_info_portion("sar2_monolith_end")
 	end
-
-	printf("effects <sar2>: hero dead.")
+	
+	-- printf("effects <sar2>: hero dead.")
 end
 
 function sar2_hero_spawn(actor, npc)
-	printf("effects <sar2>: hero count - %d, max - %d.", sar2_heroes_count, sar2_heroes_max_count)
+	-- printf("effects <sar2>: hero count - %d, max - %d.", sar2_heroes_count, sar2_heroes_max_count)
 	local c = sar2_heroes_max_count - sar2_heroes_count
-
+	
 	-- check if we need to spawn stalkers
 	if sar2_hero_next_free_id <= sar2_heroes_sel_number and c > 0 then
 		local i, n = 0, math.min(sar2_hero_next_free_id + c - 1, sar2_heroes_sel_number)
-
+		
 		for i = sar2_hero_next_free_id, n do
 			actor:give_info_portion("sar2_spawn_" .. sar2_heroes_sel[i])
 		end
-
+		
 		if n >= sar2_hero_next_free_id then
 			printf("effects <sar2>: hero spawn.")
 		end
@@ -1623,18 +1638,18 @@ function heli_set_enemy_actor(actor, npc)
 	-- local st = db.storage[npc:id()]
 	-- if not st.combat.enemy_id and actor:alive() then
 	-- st.combat.enemy_id = actor:id()
-
+	
 	-- heli_snd.play_snd( st, heli_snd.snd_see_enemy, 1 )
-	-- end 
+	-- end
 end
 
 function heli_set_enemy(actor, npc, p)
-	-- local st  = db.storage[npc:id()]
+	-- local st = db.storage[npc:id()]
 	-- local obj = level_object_by_sid( p[1] )
-
+	
 	-- if not st.combat.enemy_id and obj:alive() then
 	--	st.combat.enemy_id = obj:id()
-
+	
 	--	heli_snd.play_snd( st, heli_snd.snd_see_enemy, 1 )
 	-- end
 end
@@ -1650,7 +1665,6 @@ end
 function heli_die(actor, npc)
 	bind_heli.heli_die( npc )
 end
-
 
 -------------------------------------------------------------------------------------
 -- Функции для работы с погодными эффектами
@@ -1672,7 +1686,9 @@ end
 
 function aes_grenade_explode (actor, npc)
 	local obj = level_object_by_sid (1101)
+	
 	if obj == nil then return end
+	
 	local h = hit ();
 	h.power = 1000;
 	h.direction = vector():set (1, 0, 0);
@@ -1685,14 +1701,16 @@ end
 function aes_kill_actor (actor, npc)
 	if actor ~= nil and actor.health > 0 then 
 		actor:kill (actor)
-	end	
+	end
 end
 
 function set_sidorovich_animation (npc)
 	local sidor = level_object_by_sid (1118)
+	
 	if sidor == nil then
 		abort ("SIDOROVICH NOT FOUND !!!")
 	end
+	
 	--sidor:clear_animations ()
 	sidor:play_cycle ("wonder", true)
 	--sidor:add_animation ("idle_looped")
@@ -1714,7 +1732,7 @@ function aes_zombie_hit1 (npc)
 	--element:apply_force (force.x, force.y, force.z)
 	
 	-- foot_right, foot_left, left_hand, right_hand
-		
+	
 	
 	--local dir = npc:direction ()
 	--dir.y = 0.0
@@ -1724,25 +1742,25 @@ function aes_zombie_hit1 (npc)
 	--npc = level_object_by_sid (1120)
 	--dir = npc:direction ()
 	--dir.y = 0.0
-	--dir:normalize ()	
+	--dir:normalize ()
 	--npc:set_const_force (dir, 2000, 3)
 	
 	--npc = level_object_by_sid (1121)
 	--dir = npc:direction ()
 	--dir.y = 0.0
-	--dir:normalize ()	
+	--dir:normalize ()
 	--npc:set_const_force (dir, 2000, 3)
 	
 	--npc = level_object_by_sid (1122)
 	--dir = npc:direction ()
 	--dir.y = 0.0
-	--dir:normalize ()	
+	--dir:normalize ()
 	--npc:set_const_force (dir, 2000, 3)
 	
 	--npc = level_object_by_sid (1123)
 	--dir = npc:direction ()
 	--dir.y = 0.0
-	--dir:normalize ()	
+	--dir:normalize ()
 	--npc:set_const_force (dir, 2000, 3)
 end
 
@@ -1761,9 +1779,9 @@ function aes_zombie_hit2 (npc)
 	--local joint = pshell:get_joint_by_bone_name ("head2")
 	--joint:set_max_force_and_velocity (0.5 + math.random (), 0.1 * 1, 0)
 	--joint:set_max_force_and_velocity (0.5 + math.random(), 0.1 * 1,  2)
-				--self.dir_x_axis  = self.dir_x_axis * (-1)
+				--self.dir_x_axis = self.dir_x_axis * (-1)
 				--self.dir_z_axis = self.dir_z_axis * (-1)
-				--self.time	= device():time_global() + math.random(800, 1000)
+				--self.time = device():time_global() + math.random(800, 1000)
 		--end
 	
 	--local element = pshell:get_element_by_bone_name ("foot_right")
@@ -1781,7 +1799,7 @@ function aes_zombie_hit2 (npc)
 	--dir.y = 0.0
 	--dir.x = -dir.x
 	--dir.z = -dir.z
-	--dir:normalize ()	
+	--dir:normalize ()
 	--npc:set_const_force (dir, 2000, 3)
 	
 	--npc = level_object_by_sid (1121)
@@ -1789,7 +1807,7 @@ function aes_zombie_hit2 (npc)
 	--dir.y = 0.0
 	--dir.x = -dir.x
 	--dir.z = -dir.z
-	--dir:normalize ()	
+	--dir:normalize ()
 	--npc:set_const_force (dir, 2000, 3)
 	
 	--npc = level_object_by_sid (1122)
@@ -1797,7 +1815,7 @@ function aes_zombie_hit2 (npc)
 	--dir.y = 0.0
 	--dir.x = -dir.x
 	--dir.z = -dir.z
-	--dir:normalize ()	
+	--dir:normalize ()
 	--npc:set_const_force (dir, 2000, 3)
 	
 	--npc = level_object_by_sid (1123)
@@ -1805,7 +1823,7 @@ function aes_zombie_hit2 (npc)
 	--dir.x = -dir.x
 	--dir.z = -dir.z
 	--dir.y = 0.0
-	--dir:normalize ()	
+	--dir:normalize ()
 	--npc:set_const_force (dir, 2000, 3)
 end
 
@@ -1819,58 +1837,62 @@ end
 end
 
 function vovan_camera_test (npc)
-	level.add_cam_effector("camera_effects\\test.anm", "")					  
+	level.add_cam_effector("camera_effects\\test.anm", "")
 end
+
 -------------------------------------------------------------------------------------
 -- Функции для Янтаря
 ----------------------------------------------------------------------------------
 function yan_actor_sleep (actor, npc)
 	db.actor:set_actor_position(patrol("yan_actor_sleep"):point(0))
+	
 	local dir = patrol("yan_actor_sleep"):point(1):sub(patrol("yan_actor_sleep"):point(0))
+	
 	db.actor:set_actor_direction(-dir:getH())
 end
 
 function yan_actor_sleep_1 (actor, npc)
 	db.actor:set_actor_position(patrol("yan_actor_sleep_1"):point(0))
+	
 	local dir = patrol("yan_actor_sleep_1"):point(1):sub(patrol("yan_actor_sleep_1"):point(0))
+	
 	db.actor:set_actor_direction(-dir:getH())
 end
 
 function yan_dream_voices (actor, npc)
-		local sound_obj_l		= xr_sound.get_safe_sound_object( [[characters_voice\scenario\yantar\dream_talk_l]] )
-		local sound_obj_r		= xr_sound.get_safe_sound_object( [[characters_voice\scenario\yantar\dream_talk_r]] )
-		
-		sound_obj_l:play_no_feedback(actor, sound_object.s2d, 0, vector():set(-1, 0, 1), 1.0)
-		sound_obj_r:play_no_feedback(actor, sound_object.s2d, 0, vector():set( 1, 0, 1), 1.0)
+	local sound_obj_l = xr_sound.get_safe_sound_object( [[characters_voice\scenario\yantar\dream_talk_l]] )
+	local sound_obj_r = xr_sound.get_safe_sound_object( [[characters_voice\scenario\yantar\dream_talk_r]] )
+	
+	sound_obj_l:play_no_feedback(actor, sound_object.s2d, 0, vector():set(-1, 0, 1), 1.0)
+	sound_obj_r:play_no_feedback(actor, sound_object.s2d, 0, vector():set( 1, 0, 1), 1.0)
 end
 
 function yan_gluk (actor, npc)
-		
-		local sound_obj_l		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_l]] )
-		local sound_obj_r		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_r]] )
-		
-		sound_obj_l:play_no_feedback(actor, sound_object.s2d, 0, vector():set(-1, 0, 1), 1.0)
-		sound_obj_r:play_no_feedback(actor, sound_object.s2d, 0, vector():set( 1, 0, 1), 1.0)
+	local sound_obj_l = xr_sound.get_safe_sound_object( [[affects\psy_blackout_l]] )
+	local sound_obj_r = xr_sound.get_safe_sound_object( [[affects\psy_blackout_r]] )
+	
+	sound_obj_l:play_no_feedback(actor, sound_object.s2d, 0, vector():set(-1, 0, 1), 1.0)
+	sound_obj_r:play_no_feedback(actor, sound_object.s2d, 0, vector():set( 1, 0, 1), 1.0)
 	level.add_cam_effector("camera_effects\\earthquake.anm", 1974, false, "")
-
 end
+
 function x18_gluk (actor, npc)
-		level.add_pp_effector ("blink.ppe", 234, false)
-		local sound_obj_l		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_l]] )
-		local sound_obj_r		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_r]] )
-		local snd_obj			= xr_sound.get_safe_sound_object( [[affects\tinnitus3a]] )
-		snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
-		sound_obj_l:play_no_feedback(actor, sound_object.s2d, 0, vector():set(-1, 0, 1), 1.0)
-		sound_obj_r:play_no_feedback(actor, sound_object.s2d, 0, vector():set( 1, 0, 1), 1.0)
+	level.add_pp_effector ("blink.ppe", 234, false)
+	
+	local sound_obj_l = xr_sound.get_safe_sound_object( [[affects\psy_blackout_l]] )
+	local sound_obj_r = xr_sound.get_safe_sound_object( [[affects\psy_blackout_r]] )
+	local snd_obj = xr_sound.get_safe_sound_object( [[affects\tinnitus3a]] )
+	
+	snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	sound_obj_l:play_no_feedback(actor, sound_object.s2d, 0, vector():set(-1, 0, 1), 1.0)
+	sound_obj_r:play_no_feedback(actor, sound_object.s2d, 0, vector():set( 1, 0, 1), 1.0)
 	level.add_cam_effector("camera_effects\\earthquake.anm", 1974, false, "")
-
 end
-
-
 
 function yan_sleep_not_relocate (actor, npc)
-		db.actor:actor_sleep(0, 180)
+	db.actor:actor_sleep(0, 180)
 end
+
 function yantar_kruglov_talk(actor,npc)
 	xr_sound.set_sound_play(npc, "rostok_kruglov_help_6")
 end
@@ -1884,27 +1906,33 @@ function yantar_professor_spam_2 (actor, npc)
 end
 
 function yantar_vasilyev_spam (actor, npc)
---	news_manager.send_tip(db.actor, "storyline_vasilyev_tip", nil, "ecolog", nil, 903)
+-- news_manager.send_tip(db.actor, "storyline_vasilyev_tip", nil, "ecolog", nil, 903)
 end
+
 function yan_saharov_message (actor, npc)
 	news_manager.send_tip(db.actor, "yan_saharov_message", nil, "saharov", nil, 902)
+	
 	db.actor:give_info_portion("labx16_find")
 end
 
 function yan_saharov_message_2 (actor, npc)
 	news_manager.send_tip(db.actor, "yan_saharov_message_2", nil, "saharov", nil, 902)
 end
+
 function yan_saharov_message_3 (actor, npc)
 	news_manager.send_tip(db.actor, "yan_saharov_message_3", nil, "saharov", nil, 902)
 	local obj = alife():object( "yan_mapspot_from_vasiliev" )
+	
 	if obj then
-	  level.map_remove_object_spot(obj.id, "green_location")
+		level.map_remove_object_spot(obj.id, "green_location")
 	end
 end
+
 function yan_ghost_pda (actor, npc)
 	if has_alife_info("agr_find_gunslinger_cache_final") then 
 		db.actor:give_info_portion("yan_provodnik_spawn")
 	end
+	
 	news_manager.send_tip(db.actor, "storyline_ghost_tip", nil, "wolf")
 end
 
@@ -1915,14 +1943,15 @@ end
 function end_yantar_dream(actor, npc)
 	db.actor:give_info_portion("yantar_find_ghost_task_start")
 end
------------------------------radar
+
+-----------------------------RADAR
+
 function rad_sos_spam(actor, npc)
 	news_manager.send_tip(actor, "tips_rad_sos_suicide", nil, "stalker", nil, 1004)
 end
 
-
 function monolith_generator_hit (actor, npc)
-	printf ("ON GENERATOR HIT !!!")
+	-- printf ("ON GENERATOR HIT !!!")
 end
 
 function start_atp_dream(actor, npc)
@@ -1944,9 +1973,11 @@ function aes_final_movie(actor, npc)
 	db.actor:give_info_portion("game_end")
 	game.start_tutorial("mov_refuse_osoznanie")
 end
+
 ------------------------------------------------------------------------------------
 -- Функции для Радара
 ------------------------------------------------------------------------------------
+
 function rad_psi_hit (actor, npc)
 	level.add_pp_effector ("radar_psi.ppe", 2006, false)
 end
@@ -1958,67 +1989,72 @@ end
 function end_radar_dream(actor, npc)
 	db.actor:give_info_portion("bun_patrol_start")
 end
+
 ------------------------------------------------------------------------------------
 -- Функции для саркофага
 ------------------------------------------------------------------------------------
+
 function destroy_monolith_generator(actor, npc)
 	local source = nil
 	local sim = alife()
+	
 	if sim then
-		local se_obj = sim:story_object(1305)  
+		local se_obj = sim:story_object(1305)
+		
 		if se_obj then
-		  source = level.object_by_id(se_obj.id)
+			source = level.object_by_id(se_obj.id)
 		end
 	end
-
+	
 	if source == nil then
 		abort ("MONOLITH GENERATOR story id 1305 not found")
 		return
 	end
-
+	
 	local h = hit ();
 	h.power = 1000000;
 	h.direction = vector():set( 1, 0, 0 );
 	h.impulse = 1;
 	h.draftsman = source;
 	h.type = hit.chemical_burn;
-	source:hit (h);		
+	source:hit (h);
 end
 
 function sar_monolith_miracle(actor, npc)
-
---	if has_alife_info("freeplay") then		 
+--	if has_alife_info("freeplay") then
 --		  news_manager.send_tip(db.actor, "Я - Монолит!!!", nil, nil, 30000)
 --		  return
 --	  end
-
+	
 	--' Убил лидеров группировок
-	if has_alife_info("mil_lukash_dead") and
-		has_alife_info("bar_voronin_dead")
-	then
+	if has_alife_info("mil_lukash_dead") and has_alife_info("bar_voronin_dead") then
 		game.start_tutorial("mov_desire_3")
+		
 		return
 	end
 
 	--' Много денег
 	if db.actor:money() >= 100000 then
-		game.start_tutorial("mov_desire_2")	
+		game.start_tutorial("mov_desire_2")
+		
 		return
 	end
 
 	--' Хорошая репутация
 	if db.actor:character_reputation() >= 1000 then
-		game.start_tutorial("mov_desire_1")	
+		game.start_tutorial("mov_desire_1")
+		
 		return
 	end
 
 	--' плохая репутация
 	if db.actor:character_reputation() <= -1000 then
-		game.start_tutorial("mov_desire_4")	
+		game.start_tutorial("mov_desire_4")
+		
 		return
 	end
-
-	game.start_tutorial("mov_desire_5")	
+	
+	game.start_tutorial("mov_desire_5")
 end
 
 function game_credits(actor, npc)
@@ -2030,9 +2066,10 @@ function game_over(actor, npc)
 	if db.gameover_credits_started ~= true then
 		return
 	end
+	
 	local c = get_console()
---	c:execute("disconnect")
-	printf("main_menu on console command is executed")
+-- c:execute("disconnect")
+	-- printf("main_menu on console command is executed")
 	c:execute("main_menu on")
 end
 
@@ -2040,15 +2077,18 @@ function after_credits(actor, npc)
 	if db.gameover_credits_started ~= true then
 		return
 	end
+	
 	local c = get_console()
+	
 	c:execute("disconnect")
 end
 
 
 function pri_game_over(actor, npc)
 	local c = get_console()
---	c:execute("disconnect")
-	printf("main_menu on console command is executed")
+	
+-- c:execute("disconnect")
+	-- printf("main_menu on console command is executed")
 	c:execute("main_menu on")
 end
 
@@ -2061,6 +2101,7 @@ function oso_init_dialod ()
 	-- local oso = level_object_by_sid(1307)
 	-- db.actor:run_talk_dialog(oso)
 end
+
 -- DELME:only for presentation!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 function actor_inventory_by_levels ()
@@ -2069,32 +2110,27 @@ function actor_inventory_by_levels ()
 	local start_point = ""
 	
 	if level == "l03_agroprom" then
-		start_point = "agr_start_actor"	
+		start_point = "agr_start_actor"
 	elseif level == "l05_bar" then
-		start_point = "bar_way_if_reject_to_gar"			
+		start_point = "bar_way_if_reject_to_gar"
 	elseif level == "l08_yantar" then
-		start_point = "yan_start_actor"			
+		start_point = "yan_start_actor"
 	elseif 	level == "l11_pripyat" then
-		start_point = "pri_way_if_reject_to_rad"	
+		start_point = "pri_way_if_reject_to_rad"
 	end
-	db.actor:set_actor_position(patrol(start_point):point(0))
-	local dir = patrol(start_point):point(1):sub(patrol(start_point):point(0))
-	db.actor:set_actor_direction(-dir:getH())
 	
+	db.actor:set_actor_position(patrol(start_point):point(0))
+	
+	local dir = patrol(start_point):point(1):sub(patrol(start_point):point(0))
+	
+	db.actor:set_actor_direction(-dir:getH())
 end
 
 function presentation_tutorial ()
-		
 end
 
 function presentation_task ()
-	
 end
-
-
-
-
-
 
 function change_leader(actor, npc)
 	if xr_gulag.getGulagPopulation(823) == 0 then
@@ -2104,7 +2140,7 @@ end
 
 function on_tutor_gameover_stop()
 	local c = get_console()
---	c:execute("disconnect")
+-- c:execute("disconnect")
 	printf("main_menu on console command is executed")
 	c:execute("main_menu on")
 end
@@ -2112,7 +2148,6 @@ end
 function actor_stop_sleeping()
 	sleep_manager.stopper()
 end
-
 
 ------------------------------------------------------- ARENA_EXTENSION_MOD--------------------------------------------------------
 
@@ -2144,47 +2179,52 @@ function switch(actor, npc)
 		npc:remove_all_restrictions()
 	end
 end
+
 ------------------------------------------------------- ARENA_EXTENSION_MOD--------------------------------------------------------
+
 
 -------------------- created by Mora -------------------------
 
 function bunker_door()
- if not has_alife_info("jupiter_bunker_outer_door_open") then
-	if (has_alife_info("actor_door_outer") or has_alife_info("npc_54538_outer") or has_alife_info("npc_54539_outer") or has_alife_info("npc_54540_outer")) then
-		db.actor:give_info_portion("jupiter_bunker_outer_door_open")
+	if not has_alife_info("jupiter_bunker_outer_door_open") then
+		if (has_alife_info("actor_door_outer") or has_alife_info("npc_54538_outer") or has_alife_info("npc_54539_outer") or has_alife_info("npc_54540_outer")) then
+			db.actor:give_info_portion("jupiter_bunker_outer_door_open")
+		end
 	end
- end
- if not has_alife_info("jupiter_bunker_inner_door_open") then
-	if (has_alife_info("actor_door_inner") or has_alife_info("npc_54538_inner") or has_alife_info("npc_54539_inner") or has_alife_info("npc_54540_inner")) then
-		db.actor:give_info_portion("jupiter_bunker_inner_door_open")
+	
+	if not has_alife_info("jupiter_bunker_inner_door_open") then
+		if (has_alife_info("actor_door_inner") or has_alife_info("npc_54538_inner") or has_alife_info("npc_54539_inner") or has_alife_info("npc_54540_inner")) then
+			db.actor:give_info_portion("jupiter_bunker_inner_door_open")
+		end
 	end
- end
- if has_alife_info("jupiter_bunker_outer_door_open") then
-	if ((not has_alife_info("actor_door_outer")) and (not has_alife_info("npc_54538_outer")) and (not has_alife_info("npc_54539_outer")) and (not has_alife_info("npc_54540_outer"))) then
-		db.actor:disable_info_portion("jupiter_bunker_outer_door_open")
+	
+	if has_alife_info("jupiter_bunker_outer_door_open") then
+		if ((not has_alife_info("actor_door_outer")) and (not has_alife_info("npc_54538_outer")) and (not has_alife_info("npc_54539_outer")) and (not has_alife_info("npc_54540_outer"))) then
+			db.actor:disable_info_portion("jupiter_bunker_outer_door_open")
+		end
 	end
- end
- if has_alife_info("jupiter_bunker_inner_door_open") then
-	if ((not has_alife_info("actor_door_inner")) and (not has_alife_info("npc_54538_inner")) and (not has_alife_info("npc_54539_inner")) and (not has_alife_info("npc_54540_inner"))) then
-		db.actor:disable_info_portion("jupiter_bunker_inner_door_open")
+	
+	if has_alife_info("jupiter_bunker_inner_door_open") then
+		if ((not has_alife_info("actor_door_inner")) and (not has_alife_info("npc_54538_inner")) and (not has_alife_info("npc_54539_inner")) and (not has_alife_info("npc_54540_inner"))) then
+			db.actor:disable_info_portion("jupiter_bunker_inner_door_open")
+		end
 	end
- end
 end
 
 function end_peleng()
- amk.g_start_timer("pel",0, 0, 3)
+	amk.g_start_timer("pel",0, 0, 3)
 end
 
 function send_message_doctor_2()
- amk.g_start_timer("md2",0, 0, 3)
+	amk.g_start_timer("md2",0, 0, 3)
 end
 
 function out_1()
- db.actor:set_actor_position( vector():set(58.861511230469,-5.6633777618408,99.34008026123) )
+	db.actor:set_actor_position( vector():set(58.861511230469,-5.6633777618408,99.34008026123) )
 end
 
 function out_2()
- db.actor:set_actor_position( vector():set(99.551132202148,-19.461450576782,11.607740402222) )
+	db.actor:set_actor_position( vector():set(99.551132202148,-19.461450576782,11.607740402222) )
 end
 
 function enable_ui_atp(actor, npc)
@@ -2195,463 +2235,487 @@ function enable_ui_atp(actor, npc)
 end
 
 function show_exit_to_predbannik()
- get_hud():AddCustomStatic("static_exit_to_predbannik", true)
- get_hud():GetCustomStatic("static_exit_to_predbannik"):wnd():SetTextST("message_exit_to_predbannik")
+	get_hud():AddCustomStatic("static_exit_to_predbannik", true)
+	get_hud():GetCustomStatic("static_exit_to_predbannik"):wnd():SetTextST("message_exit_to_predbannik")
 end
 
 function hide_exit_to_predbannik()
- get_hud():RemoveCustomStatic("static_exit_to_predbannik")
+	get_hud():RemoveCustomStatic("static_exit_to_predbannik")
 end
 
 function show_exit_to_av_peshera()
- get_hud():AddCustomStatic("static_exit_to_av_peshera", true)
- get_hud():GetCustomStatic("static_exit_to_av_peshera"):wnd():SetTextST("message_exit_to_av_peshera")
+	get_hud():AddCustomStatic("static_exit_to_av_peshera", true)
+	get_hud():GetCustomStatic("static_exit_to_av_peshera"):wnd():SetTextST("message_exit_to_av_peshera")
 end
 
 function hide_exit_to_av_peshera()
- get_hud():RemoveCustomStatic("static_exit_to_av_peshera")
+	get_hud():RemoveCustomStatic("static_exit_to_av_peshera")
 end
 
 function show_exit_to_jupiter_underground()
- get_hud():AddCustomStatic("static_exit_to_jupiter_underground", true)
- get_hud():GetCustomStatic("static_exit_to_jupiter_underground"):wnd():SetTextST("message_exit_to_jupiter_underground")
+	get_hud():AddCustomStatic("static_exit_to_jupiter_underground", true)
+	get_hud():GetCustomStatic("static_exit_to_jupiter_underground"):wnd():SetTextST("message_exit_to_jupiter_underground")
 end
 
 function hide_exit_to_jupiter_underground()
- get_hud():RemoveCustomStatic("static_exit_to_jupiter_underground")
+	get_hud():RemoveCustomStatic("static_exit_to_jupiter_underground")
 end
 
 function show_exit_to_escape()
- get_hud():AddCustomStatic("static_exit_to_escape", true)
- get_hud():GetCustomStatic("static_exit_to_escape"):wnd():SetTextST("message_exit_to_escape")
+	get_hud():AddCustomStatic("static_exit_to_escape", true)
+	get_hud():GetCustomStatic("static_exit_to_escape"):wnd():SetTextST("message_exit_to_escape")
 end
 
 function hide_exit_to_escape()
- get_hud():RemoveCustomStatic("static_exit_to_escape")
+	get_hud():RemoveCustomStatic("static_exit_to_escape")
 end
 
 function show_exit_to_garbage_old()
- get_hud():AddCustomStatic("static_exit_to_garbage_old", true)
- get_hud():GetCustomStatic("static_exit_to_garbage_old"):wnd():SetTextST("message_exit_to_garbage_old")
+	get_hud():AddCustomStatic("static_exit_to_garbage_old", true)
+	get_hud():GetCustomStatic("static_exit_to_garbage_old"):wnd():SetTextST("message_exit_to_garbage_old")
 end
 
 function hide_exit_to_garbage_old()
- get_hud():RemoveCustomStatic("static_exit_to_garbage_old")
+	get_hud():RemoveCustomStatic("static_exit_to_garbage_old")
 end
 
 function show_exit_to_agroprom_nord()
- get_hud():AddCustomStatic("static_exit_to_agroprom_nord", true)
- get_hud():GetCustomStatic("static_exit_to_agroprom_nord"):wnd():SetTextST("message_exit_to_agroprom_nord")
+	get_hud():AddCustomStatic("static_exit_to_agroprom_nord", true)
+	get_hud():GetCustomStatic("static_exit_to_agroprom_nord"):wnd():SetTextST("message_exit_to_agroprom_nord")
 end
 
 function hide_exit_to_agroprom_nord()
- get_hud():RemoveCustomStatic("static_exit_to_agroprom_nord")
+	get_hud():RemoveCustomStatic("static_exit_to_agroprom_nord")
 end
 
 function show_exit_to_agroprom_west()
- get_hud():AddCustomStatic("static_exit_to_agroprom_west", true)
- get_hud():GetCustomStatic("static_exit_to_agroprom_west"):wnd():SetTextST("message_exit_to_agroprom_west")
+	get_hud():AddCustomStatic("static_exit_to_agroprom_west", true)
+	get_hud():GetCustomStatic("static_exit_to_agroprom_west"):wnd():SetTextST("message_exit_to_agroprom_west")
 end
 
 function hide_exit_to_agroprom_west()
- get_hud():RemoveCustomStatic("static_exit_to_agroprom_west")
+	get_hud():RemoveCustomStatic("static_exit_to_agroprom_west")
 end
 
 function show_exit_to_darkvalley()
- get_hud():AddCustomStatic("static_exit_to_darkvalley", true)
- get_hud():GetCustomStatic("static_exit_to_darkvalley"):wnd():SetTextST("message_exit_to_darkvalley")
+	get_hud():AddCustomStatic("static_exit_to_darkvalley", true)
+	get_hud():GetCustomStatic("static_exit_to_darkvalley"):wnd():SetTextST("message_exit_to_darkvalley")
 end
 
 function hide_exit_to_darkvalley()
- get_hud():RemoveCustomStatic("static_exit_to_darkvalley")
+	get_hud():RemoveCustomStatic("static_exit_to_darkvalley")
 end
 
 function show_exit_to_yantar_tunnel()
- get_hud():AddCustomStatic("static_exit_to_yantar_tunnel", true)
- get_hud():GetCustomStatic("static_exit_to_yantar_tunnel"):wnd():SetTextST("message_exit_to_yantar_tunnel")
+	get_hud():AddCustomStatic("static_exit_to_yantar_tunnel", true)
+	get_hud():GetCustomStatic("static_exit_to_yantar_tunnel"):wnd():SetTextST("message_exit_to_yantar_tunnel")
 end
 
 function hide_exit_to_yantar_tunnel()
- get_hud():RemoveCustomStatic("static_exit_to_yantar_tunnel")
+	get_hud():RemoveCustomStatic("static_exit_to_yantar_tunnel")
 end
 
 function show_exit_to_yantar_zavod()
- get_hud():AddCustomStatic("static_exit_to_yantar_zavod", true)
- get_hud():GetCustomStatic("static_exit_to_yantar_zavod"):wnd():SetTextST("message_exit_to_yantar_zavod")
+	get_hud():AddCustomStatic("static_exit_to_yantar_zavod", true)
+	get_hud():GetCustomStatic("static_exit_to_yantar_zavod"):wnd():SetTextST("message_exit_to_yantar_zavod")
 end
 
 function hide_exit_to_yantar_zavod()
- get_hud():RemoveCustomStatic("static_exit_yantar_zavod")
+	get_hud():RemoveCustomStatic("static_exit_yantar_zavod")
 end
 
 function show_exit_to_control_monolith()
- get_hud():AddCustomStatic("static_exit_to_control_monolith", true)
- get_hud():GetCustomStatic("static_exit_to_control_monolith"):wnd():SetTextST("message_exit_to_control_monolith")
+	get_hud():AddCustomStatic("static_exit_to_control_monolith", true)
+	get_hud():GetCustomStatic("static_exit_to_control_monolith"):wnd():SetTextST("message_exit_to_control_monolith")
 end
 
 function hide_exit_to_control_monolith()
- get_hud():RemoveCustomStatic("static_exit_to_control_monolith")
+	get_hud():RemoveCustomStatic("static_exit_to_control_monolith")
 end
 
 function show_exit_to_stancia()
- get_hud():AddCustomStatic("static_exit_to_stancia", true)
- get_hud():GetCustomStatic("static_exit_to_stancia"):wnd():SetTextST("message_exit_to_stancia")
+	get_hud():AddCustomStatic("static_exit_to_stancia", true)
+	get_hud():GetCustomStatic("static_exit_to_stancia"):wnd():SetTextST("message_exit_to_stancia")
 end
 
 function hide_exit_to_stancia()
- get_hud():RemoveCustomStatic("static_exit_to_stancia")
+	get_hud():RemoveCustomStatic("static_exit_to_stancia")
 end
 
 function show_exit_to_sarcofag()
- get_hud():AddCustomStatic("static_exit_to_sarcofag", true)
- get_hud():GetCustomStatic("static_exit_to_sarcofag"):wnd():SetTextST("message_exit_to_sarcofag")
+	get_hud():AddCustomStatic("static_exit_to_sarcofag", true)
+	get_hud():GetCustomStatic("static_exit_to_sarcofag"):wnd():SetTextST("message_exit_to_sarcofag")
 end
 
 function hide_exit_to_sarcofag()
- get_hud():RemoveCustomStatic("static_exit_to_sarcofag")
+	get_hud():RemoveCustomStatic("static_exit_to_sarcofag")
 end
 
 function show_exit_to_stancia_2()
- get_hud():AddCustomStatic("static_exit_to_stancia_2", true)
- get_hud():GetCustomStatic("static_exit_to_stancia_2"):wnd():SetTextST("message_exit_to_stancia_2")
+	get_hud():AddCustomStatic("static_exit_to_stancia_2", true)
+	get_hud():GetCustomStatic("static_exit_to_stancia_2"):wnd():SetTextST("message_exit_to_stancia_2")
 end
 
 function hide_exit_to_stancia_2()
- get_hud():RemoveCustomStatic("static_exit_to_stancia_2")
+	get_hud():RemoveCustomStatic("static_exit_to_stancia_2")
 end
 
 function show_exit_to_radar_evac()
- get_hud():AddCustomStatic("static_exit_to_radar_evac", true)
- get_hud():GetCustomStatic("static_exit_to_radar_evac"):wnd():SetTextST("message_exit_to_radar_evac")
+	get_hud():AddCustomStatic("static_exit_to_radar_evac", true)
+	get_hud():GetCustomStatic("static_exit_to_radar_evac"):wnd():SetTextST("message_exit_to_radar_evac")
 end
 
 function hide_exit_to_radar_evac()
- get_hud():RemoveCustomStatic("static_exit_to_radar_evac")
+	get_hud():RemoveCustomStatic("static_exit_to_radar_evac")
 end
 
 function show_exit_to_radar()
- get_hud():AddCustomStatic("static_exit_to_radar", true)
- get_hud():GetCustomStatic("static_exit_to_radar"):wnd():SetTextST("message_exit_to_radar")
+	get_hud():AddCustomStatic("static_exit_to_radar", true)
+	get_hud():GetCustomStatic("static_exit_to_radar"):wnd():SetTextST("message_exit_to_radar")
 end
 
 function hide_exit_to_radar()
- get_hud():RemoveCustomStatic("static_exit_to_radar")
+	get_hud():RemoveCustomStatic("static_exit_to_radar")
 end
 
 function show_exit_to_aver()
- get_hud():AddCustomStatic("static_exit_to_aver", true)
- get_hud():GetCustomStatic("static_exit_to_aver"):wnd():SetTextST("message_exit_to_aver")
+	get_hud():AddCustomStatic("static_exit_to_aver", true)
+	get_hud():GetCustomStatic("static_exit_to_aver"):wnd():SetTextST("message_exit_to_aver")
 end
 
 function hide_exit_to_aver()
- get_hud():RemoveCustomStatic("static_exit_to_aver")
+	get_hud():RemoveCustomStatic("static_exit_to_aver")
 end
 
 function show_exit_to_peshera()
- get_hud():AddCustomStatic("static_exit_to_peshera", true)
- get_hud():GetCustomStatic("static_exit_to_peshera"):wnd():SetTextST("message_exit_to_peshera")
+	get_hud():AddCustomStatic("static_exit_to_peshera", true)
+	get_hud():GetCustomStatic("static_exit_to_peshera"):wnd():SetTextST("message_exit_to_peshera")
 end
 
 function hide_exit_to_peshera()
- get_hud():RemoveCustomStatic("static_exit_to_peshera")
+	get_hud():RemoveCustomStatic("static_exit_to_peshera")
 end
 
 function show_exit_to_zaton()
- get_hud():AddCustomStatic("static_exit_to_zaton", true)
- get_hud():GetCustomStatic("static_exit_to_zaton"):wnd():SetTextST("message_exit_to_zaton")
+	get_hud():AddCustomStatic("static_exit_to_zaton", true)
+	get_hud():GetCustomStatic("static_exit_to_zaton"):wnd():SetTextST("message_exit_to_zaton")
 end
 
 function hide_exit_to_zaton()
- get_hud():RemoveCustomStatic("static_exit_to_zaton")
+	get_hud():RemoveCustomStatic("static_exit_to_zaton")
 end
 
 function show_exit_to_generators()
- get_hud():AddCustomStatic("static_exit_to_generators", true)
- get_hud():GetCustomStatic("static_exit_to_generators"):wnd():SetTextST("message_exit_to_generators")
+	get_hud():AddCustomStatic("static_exit_to_generators", true)
+	get_hud():GetCustomStatic("static_exit_to_generators"):wnd():SetTextST("message_exit_to_generators")
 end
 
 function hide_exit_to_generators()
- get_hud():RemoveCustomStatic("static_exit_to_generators")
+	get_hud():RemoveCustomStatic("static_exit_to_generators")
 end
 
 function show_exit_to_labx8()
- get_hud():AddCustomStatic("static_exit_to_labx8", true)
- get_hud():GetCustomStatic("static_exit_to_labx8"):wnd():SetTextST("message_exit_to_labx8")
+	get_hud():AddCustomStatic("static_exit_to_labx8", true)
+	get_hud():GetCustomStatic("static_exit_to_labx8"):wnd():SetTextST("message_exit_to_labx8")
 end
 
 function hide_exit_to_labx8()
- get_hud():RemoveCustomStatic("static_exit_to_labx8")
+	get_hud():RemoveCustomStatic("static_exit_to_labx8")
 end
 
 function show_exit_to_pripyat()
- get_hud():AddCustomStatic("static_exit_to_pripyat", true)
- get_hud():GetCustomStatic("static_exit_to_pripyat"):wnd():SetTextST("message_exit_to_pripyat")
+	get_hud():AddCustomStatic("static_exit_to_pripyat", true)
+	get_hud():GetCustomStatic("static_exit_to_pripyat"):wnd():SetTextST("message_exit_to_pripyat")
 end
 
 function hide_exit_to_pripyat()
- get_hud():RemoveCustomStatic("static_exit_to_pripyat")
+	get_hud():RemoveCustomStatic("static_exit_to_pripyat")
 end
 
 function show_exit_to_warlab()
- get_hud():AddCustomStatic("static_exit_to_warlab", true)
- get_hud():GetCustomStatic("static_exit_to_warlab"):wnd():SetTextST("message_exit_to_warlab")
+	get_hud():AddCustomStatic("static_exit_to_warlab", true)
+	get_hud():GetCustomStatic("static_exit_to_warlab"):wnd():SetTextST("message_exit_to_warlab")
 end
 
 function hide_exit_to_warlab()
- get_hud():RemoveCustomStatic("static_exit_to_warlab")
+	get_hud():RemoveCustomStatic("static_exit_to_warlab")
 end
 
 function show_exit_to_yantar_old()
- get_hud():AddCustomStatic("static_exit_to_yantar_old", true)
- get_hud():GetCustomStatic("static_exit_to_yantar_old"):wnd():SetTextST("message_exit_to_yantar_old")
+	get_hud():AddCustomStatic("static_exit_to_yantar_old", true)
+	get_hud():GetCustomStatic("static_exit_to_yantar_old"):wnd():SetTextST("message_exit_to_yantar_old")
 end
 
 function hide_exit_to_yantar_old()
- get_hud():RemoveCustomStatic("static_exit_to_yantar_old")
+	get_hud():RemoveCustomStatic("static_exit_to_yantar_old")
 end
 
 function show_exit_to_agroprom()
- get_hud():AddCustomStatic("static_exit_to_agroprom", true)
- get_hud():GetCustomStatic("static_exit_to_agroprom"):wnd():SetTextST("message_exit_to_agroprom")
+	get_hud():AddCustomStatic("static_exit_to_agroprom", true)
+	get_hud():GetCustomStatic("static_exit_to_agroprom"):wnd():SetTextST("message_exit_to_agroprom")
 end
 
 function hide_exit_to_agroprom()
- get_hud():RemoveCustomStatic("static_exit_to_agroprom")
+	get_hud():RemoveCustomStatic("static_exit_to_agroprom")
 end
 
 function show_exit_to_bar()
- get_hud():AddCustomStatic("static_exit_to_bar", true)
- get_hud():GetCustomStatic("static_exit_to_bar"):wnd():SetTextST("message_exit_to_bar")
+	get_hud():AddCustomStatic("static_exit_to_bar", true)
+	get_hud():GetCustomStatic("static_exit_to_bar"):wnd():SetTextST("message_exit_to_bar")
 end
 
 function hide_exit_to_bar()
- get_hud():RemoveCustomStatic("static_exit_to_bar")
+	get_hud():RemoveCustomStatic("static_exit_to_bar")
 end
 
 function show_exit_to_bunker()
- get_hud():AddCustomStatic("static_exit_to_bunker", true)
- get_hud():GetCustomStatic("static_exit_to_bunker"):wnd():SetTextST("message_exit_to_bunker")
+	get_hud():AddCustomStatic("static_exit_to_bunker", true)
+	get_hud():GetCustomStatic("static_exit_to_bunker"):wnd():SetTextST("message_exit_to_bunker")
 end
 
 function hide_exit_to_bunker()
- get_hud():RemoveCustomStatic("static_exit_to_bunker")
+	get_hud():RemoveCustomStatic("static_exit_to_bunker")
 end
 
 function show_exit_to_jupiter()
- get_hud():AddCustomStatic("static_exit_to_jupiter", true)
- get_hud():GetCustomStatic("static_exit_to_jupiter"):wnd():SetTextST("message_exit_to_jupiter")
+	get_hud():AddCustomStatic("static_exit_to_jupiter", true)
+	get_hud():GetCustomStatic("static_exit_to_jupiter"):wnd():SetTextST("message_exit_to_jupiter")
 end
 
 function hide_exit_to_jupiter()
- get_hud():RemoveCustomStatic("static_exit_to_jupiter")
+	get_hud():RemoveCustomStatic("static_exit_to_jupiter")
 end
 
 function show_exit_to_labx18()
- get_hud():AddCustomStatic("static_exit_to_labx18", true)
- get_hud():GetCustomStatic("static_exit_to_labx18"):wnd():SetTextST("message_exit_to_labx18")
+	get_hud():AddCustomStatic("static_exit_to_labx18", true)
+	get_hud():GetCustomStatic("static_exit_to_labx18"):wnd():SetTextST("message_exit_to_labx18")
 end
 
 function hide_exit_to_labx18()
- get_hud():RemoveCustomStatic("static_exit_to_labx18")
+	get_hud():RemoveCustomStatic("static_exit_to_labx18")
 end
 
 function show_exit_to_military()
- get_hud():AddCustomStatic("static_exit_to_military", true)
- get_hud():GetCustomStatic("static_exit_to_military"):wnd():SetTextST("message_exit_to_military")
+	get_hud():AddCustomStatic("static_exit_to_military", true)
+	get_hud():GetCustomStatic("static_exit_to_military"):wnd():SetTextST("message_exit_to_military")
 end
 
 function hide_exit_to_military()
- get_hud():RemoveCustomStatic("static_exit_to_military")
+	get_hud():RemoveCustomStatic("static_exit_to_military")
 end
 
 function show_exit_to_radar_mon()
- get_hud():AddCustomStatic("static_exit_to_radar_mon", true)
- get_hud():GetCustomStatic("static_exit_to_radar_mon"):wnd():SetTextST("message_exit_to_radar_mon")
+	get_hud():AddCustomStatic("static_exit_to_radar_mon", true)
+	get_hud():GetCustomStatic("static_exit_to_radar_mon"):wnd():SetTextST("message_exit_to_radar_mon")
 end
 
 function hide_exit_to_radar_mon()
- get_hud():RemoveCustomStatic("static_exit_to_radar_mon")
+	get_hud():RemoveCustomStatic("static_exit_to_radar_mon")
 end
 
 function show_exit_to_swamp_old()
- get_hud():AddCustomStatic("static_exit_to_swamp_old", true)
- get_hud():GetCustomStatic("static_exit_to_swamp_old"):wnd():SetTextST("message_exit_to_swamp_old")
+	get_hud():AddCustomStatic("static_exit_to_swamp_old", true)
+	get_hud():GetCustomStatic("static_exit_to_swamp_old"):wnd():SetTextST("message_exit_to_swamp_old")
 end
 
 function hide_exit_to_swamp_old()
- get_hud():RemoveCustomStatic("static_exit_to_swamp_old")
+	get_hud():RemoveCustomStatic("static_exit_to_swamp_old")
 end
 
 function show_exit_to_katakombs()
- get_hud():AddCustomStatic("static_exit_to_katakombs", true)
- get_hud():GetCustomStatic("static_exit_to_katakombs"):wnd():SetTextST("message_exit_to_katakombs")
+	get_hud():AddCustomStatic("static_exit_to_katakombs", true)
+	get_hud():GetCustomStatic("static_exit_to_katakombs"):wnd():SetTextST("message_exit_to_katakombs")
 end
 
 function hide_exit_to_katakombs()
- get_hud():RemoveCustomStatic("static_exit_to_katakombs")
+	get_hud():RemoveCustomStatic("static_exit_to_katakombs")
 end
 
 function show_exit_to_red_forest()
- get_hud():AddCustomStatic("static_exit_to_red_forest", true)
- get_hud():GetCustomStatic("static_exit_to_red_forest"):wnd():SetTextST("message_exit_to_red_forest")
+	get_hud():AddCustomStatic("static_exit_to_red_forest", true)
+	get_hud():GetCustomStatic("static_exit_to_red_forest"):wnd():SetTextST("message_exit_to_red_forest")
 end
 
 function hide_exit_to_red_forest()
- get_hud():RemoveCustomStatic("static_exit_to_red_forest")
+	get_hud():RemoveCustomStatic("static_exit_to_red_forest")
 end
 
 function message_zver()
- db.actor:give_info_portion("going_complete")
- amk.g_start_timer("zv1",0, 0, 2)
+	db.actor:give_info_portion("going_complete")
+	amk.g_start_timer("zv1",0, 0, 2)
 end
 
 function take_access_system()
- local text = "Системное сообщение: код доступа подтверждён. Возможность ручного управления системой доступна."
- news_manager.send_tip(db.actor, text, nil, nil, 30000)
- db.actor:give_info_portion("access_system_complete")
+	local text = "Системное сообщение: код доступа подтверждён. Возможность ручного управления системой доступна."
+	news_manager.send_tip(db.actor, text, nil, nil, 30000)
+	db.actor:give_info_portion("access_system_complete")
 end
 
 function delete_anomaly()
- for a=10,65635,1 do
-  local obj=alife():object(a)
-  if obj and string.find(obj:name(),"zat_zone_mincer_killing_02") then
-	alife():release(obj,true)
-  end
- end
- local obj = alife():object( "zaton_zver_area" )
- if obj then
-  level.map_remove_object_spot(obj.id, "eliminate_lager_location")
- end
+	for a=10,65635,1 do
+		local obj=alife():object(a)
+		if obj and string.find(obj:name(),"zat_zone_mincer_killing_02") then
+			alife():release(obj,true)
+		end
+	end
+	
+	local obj = alife():object( "zaton_zver_area" )
+	
+	if obj then
+		level.map_remove_object_spot(obj.id, "eliminate_lager_location")
+	end
 end
 
 function show_gluk()
- get_hud():AddCustomStatic("static_poison_gas_on", true)
- get_hud():GetCustomStatic("static_poison_gas_on"):wnd():SetTextST("message_poison_gas_on")
- amk.g_start_timer("po1",0, 0, 2)
- amk.g_start_timer("kil",0,0,15)
+	get_hud():AddCustomStatic("static_poison_gas_on", true)
+	get_hud():GetCustomStatic("static_poison_gas_on"):wnd():SetTextST("message_poison_gas_on")
+	amk.g_start_timer("po1",0, 0, 2)
+	amk.g_start_timer("kil",0,0,15)
 end
 
 function spawn_ghost_pribor()
 	local obj = alife():object("x16_stalker_ghost")
+	
 	if obj then
-	 alife():create("pribor_ghost", vector(), 0, 0, obj.id)
+		alife():create("pribor_ghost", vector(), 0, 0, obj.id)
 	end
 end
 
 function east_pripyat_vagon()
- db.actor:set_actor_position(vector():set(179.3173828125, -0.50967305898666, -198.44468688965))
+	db.actor:set_actor_position(vector():set(179.3173828125, -0.50967305898666, -198.44468688965))
 end
 
 function east_pripyat_red_frame()
- db.actor:set_actor_position(vector():set(166.65466308594, -0.50901651382446, -167.3628692627))
+	db.actor:set_actor_position(vector():set(166.65466308594, -0.50901651382446, -167.3628692627))
 end
 
 function east_pripyat_green_shtuka()
- db.actor:set_actor_position(vector():set(137.63380432129, 4.6521697044373, -96.806922912598))
+	db.actor:set_actor_position(vector():set(137.63380432129, 4.6521697044373, -96.806922912598))
 end
 
 function east_pripyat_hospital()
- db.actor:set_actor_position(vector():set(205.94372558594, 11.563523292542, -8.3798675537109))
+	db.actor:set_actor_position(vector():set(205.94372558594, 11.563523292542, -8.3798675537109))
 end
 
 function mar_spot_off()
-		local obj = alife():object("marsh_murza_place")
-		if obj then
-		 level.map_remove_object_spot(obj.id, "ogsm_hide_spot_max")
-		end
+	local obj = alife():object("marsh_murza_place")
+	
+	if obj then
+		level.map_remove_object_spot(obj.id, "ogsm_hide_spot_max")
+	end
 end
 
 function oasis_teleport()
- db.actor:set_actor_position(vector():set(-132.02465820313,17.086109161377,-316.82672119141))
- db.actor:disable_info_portion("oasis_fail")
+	db.actor:set_actor_position(vector():set(-132.02465820313,17.086109161377,-316.82672119141))
+	db.actor:disable_info_portion("oasis_fail")
 end
 
 function hide_heli_jup()
 	local obj = alife():object("jupiter_helicopter_01")
+	
 	if obj then
-	 alife():release(obj, true)
+		alife():release(obj, true)
 	end
+	
 	local obj = alife():object("zat_lights_camp_fire_04")
+	
 	if obj then
-	 alife():release(obj, true)
+		alife():release(obj, true)
 	end
+	
 	local obj = alife():object("zat_camp_fire_04")
+	
 	if obj then
-	 alife():release(obj, true)
+		alife():release(obj, true)
 	end
+	
 	local obj = alife():object("zat_zone_flame_small_04")
+	
 	if obj then
-	 alife():release(obj, true)
+		alife():release(obj, true)
 	end
+	
 	db.actor:give_info_portion("zat_kran_koster_off")
 end
 
 function kill_sahar()
- local npc = level_object_by_sid (902)
- npc:kill(npc)
- db.actor:give_info_portion("sahar_corpse")
+	local npc = level_object_by_sid (902)
+	npc:kill(npc)
+	db.actor:give_info_portion("sahar_corpse")
 end
 
 function zat_koster_road_off()
 	local obj = alife():object("zat_lights_camp_fire_03")
+	
 	if obj then
-	 alife():release(obj, true)
+		alife():release(obj, true)
 	end
+	
 	local obj = alife():object("zat_camp_fire_03")
+	
 	if obj then
-	 alife():release(obj, true)
+		alife():release(obj, true)
 	end
+	
 	local obj = alife():object("zat_zone_flame_small_03")
+	
 	if obj then
-	 alife():release(obj, true)
+		alife():release(obj, true)
 	end
 end
 
 function zat_koster_kran_on()
- if has_alife_info("zat_kran_koster_off") and not has_alife_info("zat_kran_koster_on") then
-	 spawn_ids_object("zat_kran_lights_camp_fire")
-	 spawn_ids_object("zat_kran_camp_fire")
-	 spawn_ids_object("zat_kran_zone_flame_small")
-	 db.actor:give_info_portion("zat_kran_koster_on")
- end
+	if has_alife_info("zat_kran_koster_off") and not has_alife_info("zat_kran_koster_on") then
+		spawn_ids_object("zat_kran_lights_camp_fire")
+		spawn_ids_object("zat_kran_camp_fire")
+		spawn_ids_object("zat_kran_zone_flame_small")
+		db.actor:give_info_portion("zat_kran_koster_on")
+	end
 end
 
 function spawn_ids_object(name_object)
-  local ini = ini_file("game_spawn_story_ids.ltx")
-  local spawn_story = ini:r_string("spawn_story_ids",name_object)
-  local section_number = alife():spawn_id(tonumber(spawn_story))
-  alife():create(section_number)
+	local ini = ini_file("game_spawn_story_ids.ltx")
+	local spawn_story = ini:r_string("spawn_story_ids",name_object)
+	local section_number = alife():spawn_id(tonumber(spawn_story))
+	
+	alife():create(section_number)
 end
 
 function kran_door()
- if not has_alife_info("zaton_kranes_door_open") then
-	if (has_alife_info("zaton_actor_kran_door") or has_alife_info("npc_54563_door") or has_alife_info("npc_54564_door")) then
-		db.actor:give_info_portion("zaton_kranes_door_open")
+	if not has_alife_info("zaton_kranes_door_open") then
+		if (has_alife_info("zaton_actor_kran_door") or has_alife_info("npc_54563_door") or has_alife_info("npc_54564_door")) then
+			db.actor:give_info_portion("zaton_kranes_door_open")
+		end
 	end
- end
- if has_alife_info("zaton_kranes_door_open") then
-	if ((not has_alife_info("zaton_actor_kran_door")) and (not has_alife_info("npc_54563_door")) and (not has_alife_info("npc_54564_door"))) then
-		db.actor:disable_info_portion("zaton_kranes_door_open")
+	
+	if has_alife_info("zaton_kranes_door_open") then
+		if ((not has_alife_info("zaton_actor_kran_door")) and (not has_alife_info("npc_54563_door")) and (not has_alife_info("npc_54564_door"))) then
+			db.actor:disable_info_portion("zaton_kranes_door_open")
+		end
 	end
- end
 end
 
 function pum_lamp_generator()
 	if not has_alife_info("pum_generator_6") and has_alife_info("pum_generator_5") and has_alife_info("pum_generator_4") and has_alife_info("pum_generator_3") and has_alife_info("pum_generator_2") and has_alife_info("pum_generator_1") then
 		db.actor:give_info_portion("pum_generator_6")
 	end
+	
 	if not has_alife_info("pum_generator_5") and has_alife_info("pum_generator_4") and has_alife_info("pum_generator_3") and has_alife_info("pum_generator_2") and has_alife_info("pum_generator_1") then
 		db.actor:give_info_portion("pum_generator_5")
 	end
+	
 	if not has_alife_info("pum_generator_4") and has_alife_info("pum_generator_3") and has_alife_info("pum_generator_2") and has_alife_info("pum_generator_1") then
 		db.actor:give_info_portion("pum_generator_4")
 	end
+	
 	if not has_alife_info("pum_generator_3") and has_alife_info("pum_generator_2") and has_alife_info("pum_generator_1") then
 		db.actor:give_info_portion("pum_generator_3")
 	end
+	
 	if not has_alife_info("pum_generator_2") and has_alife_info("pum_generator_1") then
 		db.actor:give_info_portion("pum_generator_2")
 	end
+	
 	if not has_alife_info("pum_generator_1") then
 		db.actor:give_info_portion("pum_generator_1")
 	end
@@ -2659,6 +2723,7 @@ end
 
 function psychic_zone_hit()
 	local h = hit()
+	
 	h.type = hit.telepatic
 	h.draftsman = db.actor
 	h.power = 0.05
@@ -2671,6 +2736,7 @@ function acidic_zone_hit()
 	local obj = db.actor:position()
 	local particle_blow = particles_object([[anomaly2\studen_blowout]])
 	local h = hit()
+	
 	h.type = hit.chemical_burn
 	h.draftsman = db.actor
 	h.power = 0.8
@@ -2679,3 +2745,4 @@ function acidic_zone_hit()
 	db.actor:hit(h)
 	particle_blow:play_at_pos(obj)
 end
+
