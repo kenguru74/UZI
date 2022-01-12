@@ -394,99 +394,101 @@ function check_use_toolbox(p_obj)
 						local objPos = obj:position()
 						
 						if objPos:distance_to(db.actor:position()) < 1.5 then
-							if
-							((obj:section() == "without_outfit") or
-							(obj:section() == "novice_outfit") or
-							(obj:section() == "bandit_outfit") or
-							(obj:section() == "bandit_veteran_outfit") or
-							(obj:section() == "bandit_master_outfit") or
-							(obj:section() == "ecolog_outfit") or
-							(obj:section() == "protection_outfit"))
-							then
-								--борода из ваты
-								alife():release(alife():object(id), true)
-								
-								news_manager.send_tip(db.actor, "Ну и толку, что расхреначил эти тряпки? Никакого толку от этого хлама..", nil, nil, 10000)
-							elseif
-							((obj:section() == "stalker_outfit") or
-							(obj:section() == "dolg_outfit") or
-							(obj:section() == "svoboda_light_outfit") or
-							(obj:section() == "killer_outfit") or
-							(obj:section() == "monolit_outfit") or
-							(obj:section() == "soldier_outfit"))
-							then
-								local state = obj:condition()
-								
-								if state > 0.2 then
+							if obj:id() ~= db.actor:id() then
+								if
+								((obj:section() == "without_outfit") or
+								(obj:section() == "novice_outfit") or
+								(obj:section() == "bandit_outfit") or
+								(obj:section() == "bandit_veteran_outfit") or
+								(obj:section() == "bandit_master_outfit") or
+								(obj:section() == "ecolog_outfit") or
+								(obj:section() == "protection_outfit"))
+								then
+									--борода из ваты
 									alife():release(alife():object(id), true)
 									
-									news_manager.send_tip(db.actor, "Достал одну пластину. Хоть какой-то толк от этого комбеза..", nil, nil, 10000)
+									news_manager.send_tip(db.actor, "Ну и толку, что расхреначил эти тряпки? Никакого толку от этого хлама..", nil, nil, 10000)
+								elseif
+								((obj:section() == "stalker_outfit") or
+								(obj:section() == "dolg_outfit") or
+								(obj:section() == "svoboda_light_outfit") or
+								(obj:section() == "killer_outfit") or
+								(obj:section() == "monolit_outfit") or
+								(obj:section() == "soldier_outfit"))
+								then
+									local state = obj:condition()
 									
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-								else
-									news_manager.send_tip(db.actor, "Из этой кучи тряпья уже ничего не получить..", nil, nil, 10000)
-								end
-							elseif
-							((obj:section() == "svoboda_heavy_outfit") or
-							(obj:section() == "scientific_outfit") or
-							(obj:section() == "dolg_scientific_outfit") or
-							(obj:section() == "nebo_scientific_outfit") or
-							(obj:section() == "nebo_scientific_outfit_u") or
-							(obj:section() == "broken_exoskeleton") or
-							(obj:section() == "military_outfit"))
-							then
-								local state = obj:condition()
-								
-								if state > 0.6 then
-									alife():release(alife():object(id), true)
+									if state > 0.2 then
+										alife():release(alife():object(id), true)
+										
+										news_manager.send_tip(db.actor, "Достал одну пластину. Хоть какой-то толк от этого комбеза..", nil, nil, 10000)
+										
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+									else
+										news_manager.send_tip(db.actor, "Из этой кучи тряпья уже ничего не получить..", nil, nil, 10000)
+									end
+								elseif
+								((obj:section() == "svoboda_heavy_outfit") or
+								(obj:section() == "scientific_outfit") or
+								(obj:section() == "dolg_scientific_outfit") or
+								(obj:section() == "nebo_scientific_outfit") or
+								(obj:section() == "nebo_scientific_outfit_u") or
+								(obj:section() == "broken_exoskeleton") or
+								(obj:section() == "military_outfit"))
+								then
+									local state = obj:condition()
 									
-									news_manager.send_tip(db.actor, "Достал пару пластин. Это очинна ха-ра-шо!", nil, nil, 10000)
+									if state > 0.6 then
+										alife():release(alife():object(id), true)
+										
+										news_manager.send_tip(db.actor, "Достал пару пластин. Это очинна ха-ра-шо!", nil, nil, 10000)
+										
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+									elseif state > 0.2 then
+										alife():release(alife():object(id), true)
+										
+										news_manager.send_tip(db.actor, "Достал одну пластину. И то хлеб..", nil, nil, 10000)
+										
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+									else
+										news_manager.send_tip(db.actor, "Из этой кучи тряпья уже ничего не получить..", nil, nil, 10000)
+									end
+								elseif
+								((obj:section() == "exo_outfit") or
+								(obj:section() == "svoboda_exoskeleton") or
+								(obj:section() == "dolg_black_exoskeleton") or
+								(obj:section() == "killer_blue_exoskeleton") or
+								(obj:section() == "monolit_exoskeleton") or
+								(obj:section() == "specops_outfit") or
+								(obj:section() == "military_stalker_commander_outfit"))
+								then
+									local state = obj:condition()
 									
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-								elseif state > 0.2 then
-									alife():release(alife():object(id), true)
-									
-									news_manager.send_tip(db.actor, "Достал одну пластину. И то хлеб..", nil, nil, 10000)
-									
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-								else
-									news_manager.send_tip(db.actor, "Из этой кучи тряпья уже ничего не получить..", nil, nil, 10000)
-								end
-							elseif
-							((obj:section() == "exo_outfit") or
-							(obj:section() == "svoboda_exoskeleton") or
-							(obj:section() == "dolg_black_exoskeleton") or
-							(obj:section() == "killer_blue_exoskeleton") or
-							(obj:section() == "monolit_exoskeleton") or
-							(obj:section() == "specops_outfit") or
-							(obj:section() == "military_stalker_commander_outfit"))
-							then
-								local state = obj:condition()
-								
-								if state > 0.6 then
-									alife():release(alife():object(id), true)
-									
-									news_manager.send_tip(db.actor, "Достал аж три пластины! Хорошо послужит вторую жизнь снаряга..", nil, nil, 10000)
-									
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-								elseif state > 0.4 then
-									alife():release(alife():object(id), true)
-									
-									news_manager.send_tip(db.actor, "Достал пару пластин. Это очинна ха-ра-шо!", nil, nil, 10000)
-									
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-								elseif state > 0.2 then
-									alife():release(alife():object(id), true)
-									
-									news_manager.send_tip(db.actor, "Достал одну пластину. И то хлеб..", nil, nil, 10000)
-									
-									alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
-								else
-									news_manager.send_tip(db.actor, "Из этой кучи тряпья уже ничего не получить..", nil, nil, 10000)
+									if state > 0.6 then
+										alife():release(alife():object(id), true)
+										
+										news_manager.send_tip(db.actor, "Достал аж три пластины! Хорошо послужит вторую жизнь снаряга..", nil, nil, 10000)
+										
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+									elseif state > 0.4 then
+										alife():release(alife():object(id), true)
+										
+										news_manager.send_tip(db.actor, "Достал пару пластин. Это очинна ха-ра-шо!", nil, nil, 10000)
+										
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+									elseif state > 0.2 then
+										alife():release(alife():object(id), true)
+										
+										news_manager.send_tip(db.actor, "Достал одну пластину. И то хлеб..", nil, nil, 10000)
+										
+										alife():create("armor_plate",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+									else
+										news_manager.send_tip(db.actor, "Из этой кучи тряпья уже ничего не получить..", nil, nil, 10000)
+									end
 								end
 							end
 						end
