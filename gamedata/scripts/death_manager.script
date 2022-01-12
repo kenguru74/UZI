@@ -190,7 +190,6 @@ function drop_manager:create_release_item()
 					else
 						sect = "bandit_outfit"
 					end
-
 				-- dolg
 				elseif string.find(vis, "stalker_do") then
 					-- dolg_antigas
@@ -203,7 +202,6 @@ function drop_manager:create_release_item()
 					else
 						sect = "dolg_outfit"
 					end
-
 				-- merc
 				elseif string.find(vis, "stalker_ki") then
 					-- killer_antigas
@@ -216,7 +214,6 @@ function drop_manager:create_release_item()
 					else
 						sect = "killer_outfit"
 					end
-
 				-- monolith
 				elseif string.find(vis, "stalker_mo") then
 					-- monolith_antigas
@@ -229,7 +226,6 @@ function drop_manager:create_release_item()
 					else
 						sect = "monolit_outfit"
 					end
-
 				-- freedom
 				elseif string.find(vis, "stalker_sv") then
 					-- freedom_antigas
@@ -248,7 +244,6 @@ function drop_manager:create_release_item()
 					else
 						sect = "svoboda_heavy_outfit"
 					end
-
 				-- ecolog
 				elseif string.find(vis, "stalker_ecolog") then
 					if vis == "stalker_ecolog_military" then
@@ -256,7 +251,6 @@ function drop_manager:create_release_item()
 					else
 						sect = "ecolog_outfit"
 					end
-
 				-- stalker_military
 				elseif string.find(vis, "stalker_militar") then
 					if (vis == "stalker_militari_1" or 
@@ -269,7 +263,6 @@ function drop_manager:create_release_item()
 					then
 						sect = "military_stalker_commander_outfit"
 					end
-
 				-- soldier
 				elseif string.find(vis, "soldier") then
 					if (vis == "soldier_antigas" or 
@@ -280,7 +273,6 @@ function drop_manager:create_release_item()
 					else
 						sect = "soldier_outfit"
 					end
-
 				-- green_stalker
 				elseif string.find(vis, "green_stalker") then
 					-- novice_antigas
@@ -293,7 +285,6 @@ function drop_manager:create_release_item()
 					else
 						sect = "novice_outfit"
 					end
-
 				-- loners
 				elseif string.find(vis, "stalker_neytral") then
 					-- stalker_neytral_antigas
@@ -306,11 +297,9 @@ function drop_manager:create_release_item()
 					else
 						sect = "stalker_outfit"
 					end
-
 				-- bar guard
 				elseif string.find(vis, "stalker_bar_security") then
 					sect = "soldier_outfit"
-
 				-- hunters
 				elseif string.find(vis, "hunter") then
 					--sect = "hunter_outfit"
@@ -341,45 +330,49 @@ function keep_item(npc, item)
 	local sim = alife()
 	local item_id = item:id()
 	local obj = sim:object(item_id)
+	
 	if item == nil or obj == nil then
 		return
 	end
-
+	
 	local section = item:section()
 	--' бод€га кака€то. ’м...
 	if section == "bolt" then
 		return
 	end
-
+	
 	if always_keep_item[section] == true then
 		return
 	end
-
+	
 	if isWeapon(item,nil) and not string.find(section,"grenade") and not string.find(section,"addon") then
 		for i=1, 2 do
 			local item_in_slot = npc:item_in_slot(i)
+			
 			if item_in_slot and item_in_slot:id() == item_id then
 				if dm_keep_ammo ~= true then
 					item:unload_magazine()
 				end
 				--' “ут надо уменьшить кондишн оружи€
-				local condition = (math.random(15)+75)/100
+				local condition = (math.random(50)+50)/100
+				
 				item:set_condition(condition)
+				
 				return
 			end
 		end
 	end
-
+	
 	if obj then
 		if dm_keep_items ~= true then
 			sim:release(obj)
 		else
 			if (string.find(section,"device_torch")) or
-				(string.find(section,"device_pda")) or
-				(string.find(section,"hand_radio")) or
-				(string.find(section,"guitar_a")) or
-				(string.find(section,"harmonica_a")) or
-				(string.find(section,"wpn_knife"))
+			(string.find(section,"device_pda")) or
+			(string.find(section,"hand_radio")) or
+			(string.find(section,"guitar_a")) or
+			(string.find(section,"harmonica_a")) or
+			(string.find(section,"wpn_knife"))
 			then
 				sim:release(obj)
 			end
