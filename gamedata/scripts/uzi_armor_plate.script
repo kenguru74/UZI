@@ -226,7 +226,7 @@ function main(npc)
 	npc:character_community()~="zombied" and
 	npc:character_community()~="arena_enemy"
 	then
-		if math.random(100) <= 10 then
+		if math.random(100) <= 30 then
 			-- если снар€га - шл€па, то балалайку, а не пластину
 			if sect == "without_outfit" or
 			sect == "novice_outfit" or
