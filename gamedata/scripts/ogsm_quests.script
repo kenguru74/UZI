@@ -447,7 +447,10 @@ function check_use_toolbox(p_obj)
 									end
 								elseif (
 								(obj:section() == "svoboda_heavy_outfit") or
+								(obj:section() == "freedom_scientific_outfit") or
+								(obj:section() == "merc_scientific_outfit") or
 								(obj:section() == "scientific_outfit") or
+								(obj:section() == "monolit_scientific_outfit") or
 								(obj:section() == "dolg_scientific_outfit") or
 								(obj:section() == "nebo_scientific_outfit") or
 								(obj:section() == "nebo_scientific_outfit_u") or
