@@ -11,11 +11,14 @@ radius = 1
 description = zapiska_l
 inv_name = zapiska
 inv_name_short = zapiska_s
+
 inv_weight = 0
+
 inv_grid_width = 1
 inv_grid_height = 1
 inv_grid_x = 1
 inv_grid_y = 17
+
 cost = 0
 
 [zapiska_m1]:zapiska
@@ -26,159 +29,142 @@ description = zapiska_m2_l
 
 ;-----------Outfits-----------
 
-;---------------------------------------------------------------------------------------------
-; АНОМАЛЬНЫЙ КОМБЕЗ НОВИЧКА
-;---------------------------------------------------------------------------------------------
+;-----------------------------------
+; Аномальная кожанка
+;-----------------------------------
 [outfit_novice_m1]:novice_outfit
 $spawn = "outfit\uniq\outfit_novice_m1"
+
 inv_name = novice_outfit_name_m
 inv_name_short = novice_outfit_name_m
 description = novice_outfit_description_m
+
+ef_equipment_type = 3
+
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 12
+inv_grid_y = 21
+
+cost = 3000
 
 health_restore_speed = 0.0006
 satiety_restore_speed = 0.001
 bleeding_restore_speed = -0.006
 power_restore_speed = 0.003
 
-inv_grid_x = 12
-inv_grid_y = 21
+;-----------------------------------
+; Модифицированный экзоскелет
+;-----------------------------------
+[outfit_exo_m1]:exo_outfit
+$spawn = "outfit\uniq\outfit_exo_m1"
+inv_name = exo_outfit_name_m1
+inv_name_short = exo_outfit_name_m1
+description = exo_outfit_description_m1
 
-cost = 30
+ef_equipment_type = 5
 
-;---------------------------------------------------------------------------------------------
-; УПЛОТНЕННЫЙ КОМБЕЗ БАНДИТА
-;---------------------------------------------------------------------------------------------
-[outfit_bandit_m1]:bandit_outfit
-$spawn = "outfit\uniq\outfit_bandit_m1"
-inv_name = bandit_outfit_name_m
-inv_name_short = bandit_outfit_name_m
-description = bandit_outfit_description_m
-bones_koeff_protection = plasch_antigas_damage
-
+inv_grid_width = 2
+inv_grid_height = 3
 inv_grid_x = 14
-inv_grid_y = 21
-
-explosion_protection = 0.1
-fire_wound_protection = 0.15
-
-cost = 55
-
-;---------------------------------------------------------------------------------------------
-; ОХОТНИЧИЙ КОМБЕЗ ДОЛГА
-;---------------------------------------------------------------------------------------------
-[outfit_dolg_m1]:dolg_outfit
-$spawn = "outfit\uniq\outfit_dolg_m1"
-inv_name = dolg_outfit_name_m1
-inv_name_short = dolg_outfit_name_m1
-description = dolg_outfit_description_m1
-
-fire_wound_protection = 0.15
-wound_protection = 0.1
-
-nightvision_sect = effector_nightvision_good
-inv_grid_x = 16
-inv_grid_y = 21
-cost = 290
-
-;---------------------------------------------------------------------------------------------
-; УКРЕПЛЕННЫЙ КОМБЕЗ НАЕМНИКА
-;---------------------------------------------------------------------------------------------
-[outfit_killer_m1]:killer_outfit
-$spawn = "outfit\uniq\outfit_killer_m1"
-inv_name = killer_outfit_name_m1
-inv_name_short = killer_outfit_name_m1
-description = killer_outfit_description_m1
-
-explosion_protection = 0.15
-fire_wound_protection = 0.15
-wound_protection = 0.15
-
-bones_koeff_protection = gilet_antigas_damage
-
-inv_grid_x = 28
-inv_grid_y = 22
-nightvision_sect = effector_nightvision_good
-cost = 300
-inv_weight = 2.5
-
-;---------------------------------------------------------------------------------------------
-; МОДИФИЦИРОВАННЫЙ КОМБЕЗ ВОЕННОГО СПЕЦНАЗА
-;---------------------------------------------------------------------------------------------
-[outfit_specnaz_m1]:specops_outfit
-$spawn = "outfit\uniq\outfit_specnaz_m1"
-inv_name = specnaz_outfit_name_m1
-inv_name_short = specnaz_outfit_name_m1
-description = specnaz_outfit_description_m1
-
-cost = 600
-
-inv_weight = 7.0
-
-burn_protection = 0.25
-shock_protection = 0.2
-strike_protection = 0.5
-wound_protection = 0.5
-radiation_protection = 0.2
-telepatic_protection = 0.2
-chemical_burn_protection = 0.2
-explosion_protection = 0.5
-fire_wound_protection = 0.6
-
-bleeding_restore_speed = -0.006
-nightvision_sect = effector_nightvision_good
-inv_grid_x = 18
 inv_grid_y = 24
 
-;---------------------------------------------------------------------------------------------
-; КОМБЕЗ ПРИЗРАЧНОГО ВОЛЬНОГО СТАЛКЕРА
-;---------------------------------------------------------------------------------------------
+sprint_allowed = true
+nightvision_sect = effector_nightvision_good
+
+cost = 9000
+
+immunities_sect = sect_outfit_exo_m1_immunities
+
+; средняя-ниже средней защита
+burn_protection = 0.15
+shock_protection = 0.1
+strike_protection = 0.2
+wound_protection = 0.2
+radiation_protection = 0.1
+telepatic_protection = 0.1
+chemical_burn_protection = 0.1
+explosion_protection = 0.3
+fire_wound_protection = 0.25
+
+;коэффициенты повреждения комбеза
+[sect_outfit_exo_m1_immunities]
+burn_immunity = 0.025
+shock_immunity = 0.12
+strike_immunity = 0.12
+wound_immunity = 0.08
+radiation_immunity = 0.005
+telepatic_immunity = 0
+chemical_burn_immunity = 0.12
+explosion_immunity = 0.08
+fire_wound_immunity = 0.08
+
+additional_inventory_weight = 130
+additional_inventory_weight2 = 130
+
+;-----------------------------------
+; Аномальный комбинезон сталкера
+;-----------------------------------
 [outfit_stalker_m1]:stalker_outfit
+$spawn = "outfit\uniq\outfit_stalker_m1"
+inv_name = stalker_outfit_name_m1
+inv_name_short = stalker_outfit_name_m1
+description = stalker_outfit_description_m1
+immunities_sect = sect_stalker_m1_outfit_immunities
+
+ef_equipment_type = 3
+
+nightvision_sect = effector_nightvision_good
+
+health_restore_speed = 0.0006
+
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 16
+inv_grid_y = 24
+
+cost = 6000
+
 radiation_protection = 0.5
 telepatic_protection = 0.3
 chemical_burn_protection = 0.3
 explosion_protection = 0.5
 fire_wound_protection = 0.5
 
+;коэффициенты повреждения самого костюма
+[sect_stalker_m1_outfit_immunities]
 burn_immunity = 0.02
-strike_immunity = 0.03
 shock_immunity = 0.02
+strike_immunity = 0.01
 wound_immunity = 0.01
-radiation_immunity = 0.00
-telepatic_immunity = 0.00
+radiation_immunity = 0.0005
+telepatic_immunity = 0
 chemical_burn_immunity = 0.02
 explosion_immunity = 0.01
 fire_wound_immunity = 0.002
-$spawn = "outfit\uniq\outfit_stalker_m1"
-inv_name = stalker_outfit_name_m1
-inv_name_short = stalker_outfit_name_m1
-description = stalker_outfit_description_m1
 
-nightvision_sect = effector_nightvision_good
-
-health_restore_speed = 0.0006
-
-inv_grid_x = 16
-inv_grid_y = 24
-
-
-;---------------------------------------------------------------------------------------------
-; КОМБЕЗ БЫВАЛОГО ВОЛЬНОГО СТАЛКЕРА
-;---------------------------------------------------------------------------------------------
+;-----------------------------------
+; Уникальный комбинезон сталкера
+;-----------------------------------
 [outfit_stalker_m2]:stalker_outfit
 $spawn = "outfit\uniq\outfit_stalker_m2"
 inv_name = stalker_outfit_name_m2
 inv_name_short = stalker_outfit_name_m2
 description = stalker_outfit_description_m2
 
+ef_equipment_type = 3
+
 additional_inventory_weight = 20
 additional_inventory_weight2 = 20
 
-cost = 800
-
+inv_grid_width = 2
+inv_grid_height = 3
 inv_grid_x = 16
 inv_grid_y = 24
 
 inv_weight = 1
+
+cost = 8000
 
 power_loss = 0.5
 nightvision_sect = effector_nightvision_good
@@ -199,48 +185,236 @@ burn_immunity = 0.03
 shock_immunity = 0.04
 strike_immunity = 0.04
 wound_immunity = 0.03
-radiation_immunity = 0.03
-telepatic_immunity = 0.00
+radiation_immunity = 0.0003
+telepatic_immunity = 0
 chemical_burn_immunity = 0.04
 explosion_immunity = 0.03
 fire_wound_immunity = 0.03
 
-;---------------------------------------------------------------------------------------------
-; МОДИФИЦИРОВАННЫЙ КОМБЕЗ СВОБОДЫ
-;---------------------------------------------------------------------------------------------
+
+;-----------------------------------
+; Укреплённая куртка
+;-----------------------------------
+[outfit_bandit_m1]:bandit_outfit
+$spawn = "outfit\uniq\outfit_bandit_m1"
+inv_name = bandit_outfit_name_m
+inv_name_short = bandit_outfit_name_m
+description = bandit_outfit_description_m
+bones_koeff_protection = plasch_antigas_damage
+
+ef_equipment_type = 3
+
+inv_grid_width = 2
+inv_grid_height = 2
+inv_grid_x = 14
+inv_grid_y = 21
+
+explosion_protection = 0.1
+fire_wound_protection = 0.15
+
+cost = 2500
+
+immunities_sect = sect_outfit_bandit_m1_immunities
+
+; маленькая защита
+burn_protection = 0.05
+shock_protection = 0.05
+strike_protection = 0.05
+wound_protection = 0.18
+radiation_protection = 0
+telepatic_protection = 0
+chemical_burn_protection = 0.05
+explosion_protection = 0.1
+fire_wound_protection = 0.15
+
+;коэффициенты повреждения комбеза
+[sect_outfit_bandit_m1_immunities]
+burn_immunity = 0.06
+shock_immunity = 0.12
+strike_immunity = 0.12
+wound_immunity = 0.12
+radiation_immunity = 0.01
+telepatic_immunity = 0
+chemical_burn_immunity = 0.12
+explosion_immunity = 0.12
+fire_wound_immunity = 0.12
+
+;-----------------------------------
+; Охотничий ПСЗ-9Д
+;-----------------------------------
+[outfit_dolg_m1]:dolg_outfit
+$spawn = "outfit\uniq\outfit_dolg_m1"
+inv_name = dolg_outfit_name_m1
+inv_name_short = dolg_outfit_name_m1
+description = dolg_outfit_description_m1
+
+ef_equipment_type = 3
+
+fire_wound_protection = 0.15
+wound_protection = 0.1
+
+nightvision_sect = effector_nightvision_good
+
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 16
+inv_grid_y = 21
+
+cost = 4500
+
+;-----------------------------------
+; Укреплённый комбез наёмника
+;-----------------------------------
+[outfit_killer_m1]:killer_outfit
+$spawn = "outfit\uniq\outfit_killer_m1"
+inv_name = killer_outfit_name_m1
+inv_name_short = killer_outfit_name_m1
+description = killer_outfit_description_m1
+
+ef_equipment_type = 4
+
+explosion_protection = 0.15
+fire_wound_protection = 0.15
+wound_protection = 0.15
+
+bones_koeff_protection = gilet_antigas_damage
+
+inv_weight = 2.5
+
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 28
+inv_grid_y = 22
+
+nightvision_sect = effector_nightvision_good
+cost = 3000
+
+additional_inventory_weight = 3
+additional_inventory_weight2 = 3
+
+;-----------------------------------
+; Броня Берилл-5МА1
+;-----------------------------------
+[outfit_specnaz_m1]:specops_outfit
+$spawn = "outfit\uniq\outfit_specnaz_m1"
+inv_name = specnaz_outfit_name_m1
+inv_name_short = specnaz_outfit_name_m1
+description = specnaz_outfit_description_m1
+nightvision_sect = effector_nightvision_good
+
+ef_equipment_type = 4
+
+inv_weight = 7.0
+
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 18
+inv_grid_y = 24
+
+cost = 10000
+bleeding_restore_speed = -0.006
+
+immunities_sect = sect_outfit_specnaz_m1_immunities
+
+burn_protection = 0.25
+shock_protection = 0.2
+strike_protection = 0.25
+wound_protection = 0.25
+radiation_protection = 0.2
+telepatic_protection = 0.2
+chemical_burn_protection = 0.2
+explosion_protection = 0.35
+fire_wound_protection = 0.35
+
+;коэффициенты повреждения комбеза
+[sect_outfit_specnaz_m1_immunities]
+burn_immunity = 0.04
+shock_immunity = 0.04
+strike_immunity = 0.04
+wound_immunity = 0.04
+radiation_immunity = 0.001
+telepatic_immunity = 0
+chemical_burn_immunity = 0.03
+explosion_immunity = 0.015
+fire_wound_immunity = 0.025
+
+additional_inventory_weight = 7
+additional_inventory_weight2 = 7
+
+;-----------------------------------
+; Комбез "Свобода Forever"
+;-----------------------------------
 [outfit_svoboda_m1]:svoboda_light_outfit
 $spawn = "outfit\uniq\outfit_svoboda_m1"
 inv_name = svoboda_outfit_name_m1
 inv_name_short = svoboda_outfit_name_m1
 description = svoboda_outfit_description_m1
 
-shock_protection = 0.1
-strike_protection = 0.1
-fire_wound_protection = 0.15
+ef_equipment_type = 3
 
-nightvision_sect = effector_nightvision_good
+shock_protection = 0.1
+strike_protection = 0.2
+fire_wound_protection = 0.4
+
+inv_grid_width = 2
+inv_grid_height = 3
 inv_grid_x = 39
 inv_grid_y = 40
 
+cost = 6000
 
-;---------------------------------------------------------------------------------------------
-; МОДИФИЦИРОВАННЫЙ ЭКЗОСКЕЛЕТ ВОЛЬНОГО СТАЛКЕРА
-;---------------------------------------------------------------------------------------------
-[outfit_exo_m1]:exo_outfit
-$spawn = "outfit\uniq\outfit_exo_m1"
-inv_name = exo_outfit_name_m1
-inv_name_short = exo_outfit_name_m1
-description = exo_outfit_description_m1
-
-inv_grid_x = 14
-inv_grid_y = 24
-
-sprint_allowed = true
 nightvision_sect = effector_nightvision_good
 
-additional_inventory_weight = 30
-additional_inventory_weight2 = 30 ; 60+
+;-----------------------------------
+; Комбинезон "Лазурь" отработанный квестовый
+;-----------------------------------
+[nebo_scientific_outfit_u]:nebo_scientific_outfit
+GroupControlSection = spawn_group
+$spawn = "outfit\nebo_scientific_outfit"
+$prefetch = 64
+class = E_STLK
+cform = skeleton
+visual = equipments\nebo_nauchniy_suit
+actor_visual = actors\hero\stalker_nebo_nauchniy.ogf
+bones_koeff_protection = kombez_kupol_damage
 
+quest_item = true
+
+ef_equipment_type = 2
+
+inv_name = nebo_scientific_outfit_name_quest
+inv_name_short = nebo_scientific_outfit_name_quest
+description = nebo_scientific_outfit_quest_description
+
+inv_weight = 5.0
+
+inv_grid_width = 2
+inv_grid_height = 3
+inv_grid_x = 26
+inv_grid_y = 22
+full_icon_name = npc_icon_stalker_nebo_nauchniy_outfit
+
+slot = 6
+cost = 0
+
+full_scale_icon = 20,6;иконка сталкера в комбезе в полный рост
+
+immunities_sect = sect_nebo_scientific_outfit_immunities
+nightvision_sect = effector_nightvision_bast
+
+; никакая защита
+burn_protection = 0.0
+shock_protection = 0.0
+strike_protection = 0.0
+wound_protection = 0.0
+radiation_protection = 0.0
+telepatic_protection = 0.0
+chemical_burn_protection = 0.0
+explosion_protection = 0.0
+fire_wound_protection = 0.0
+
+additional_inventory_weight = 5
+additional_inventory_weight2 = 5
 
 
 ;-----------ОБВЕСЫ------------
