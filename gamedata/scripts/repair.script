@@ -43,7 +43,6 @@ function use_kit_eqip(pid)
 		sect == "novice_outfit" or
 		sect == "outfit_novice_m1" or
 		sect == "bandit_outfit" or
-		sect == "outfit_bandit_m1" or
 		sect == "bandit_veteran_outfit" or
 		sect == "bandit_master_outfit" or
 		sect == "ecolog_outfit" or
