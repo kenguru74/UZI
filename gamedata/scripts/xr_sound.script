@@ -199,7 +199,7 @@ function play_sound(npc, themes, timeout)
 		local npc_id = npc:id()
 		local group_table = xr_sound.group_idle[get_key(npc)]
 		
-		group_table.idle = math.random(snd.min_snd, snd.max_snd)*1000
+		group_table.idle = math.random(snd.min_snd, snd.max_snd)*10000
 		
 		if group_table.last_snd == nil then
 			group_table.last_snd = {}
