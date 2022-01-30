@@ -523,5 +523,5 @@ function take_lim_secrets()
 end
 
 function pay_for_o_sosnanie(actor, npc)
-	dialogs.relocate_money(actor, 5000, "in")
+	dialogs.relocate_money(actor, 50000, "in")
 end
