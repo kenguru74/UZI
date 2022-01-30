@@ -138,9 +138,10 @@ inv_grid_y = 12
 
 k_dist = 1
 k_disp = 2
-k_hit = 0.5
+k_hit = 1.5
+k_ap = 0.5
 k_impulse = 1
-k_pierce = 0.5
+k_pierce = 1
 impair = 1
 buck_shot = 1
 tracer = off
@@ -172,10 +173,11 @@ inv_grid_y = 15
 
 k_dist = 1
 k_disp = 2
-k_hit = 0.8
+k_hit = 2
+k_ap = 0.7
 k_impulse = 1.2
-k_pierce = 0.75
-impair = 1.2
+k_pierce = 1.1
+impair = 1.5
 buck_shot = 1
 tracer = off
 wm_size = 0.03
@@ -206,9 +208,10 @@ inv_grid_y = 12
 
 k_dist = 1
 k_disp = 2
-k_hit = 0.7
+k_hit = 1.8
+k_ap = 0.6
 k_impulse = 1.1
-k_pierce = 0.7
+k_pierce = 1
 impair = 1.1
 buck_shot = 1
 tracer = off
@@ -240,9 +243,10 @@ inv_grid_y = 12
 
 k_dist = 1
 k_disp = 2
-k_hit = 0.6
+k_hit = 1.6
+k_ap = 0.5
 k_impulse = 1
-k_pierce = 0.6
+k_pierce = 0.9
 impair = 1
 buck_shot = 1
 tracer = off
@@ -274,10 +278,11 @@ inv_grid_y = 12
 
 k_dist = 1
 k_disp = 2
-k_hit = 0.9
+k_hit = 2
+k_ap = 0.7
 k_impulse = 1.2
-k_pierce = 0.8
-impair = 1.4
+k_pierce = 1
+impair = 1.5
 buck_shot = 1
 tracer = off
 wm_size = 0.03
@@ -306,15 +311,16 @@ inv_grid_height = 1
 inv_grid_x = 16
 inv_grid_y = 11
 
-k_dist = 1; коэффициент дистанции (насколько теряет пуля свойства)
-k_disp = 2.5; коэффициент разброса
-k_hit = 0.85; коэффициент урона
+k_dist = 1; коэффициент дистанции
+k_disp = 2; коэффициент разброса
+k_hit = 1.8; коэффициент урона
+k_ap = 0.6; коэффициент повреждения брони пулей
 k_impulse = 1; коэффициент прилагаемого пулей импульса
-k_pierce = 0.85; коэффициент проникновения пули сквозь препятствие
-impair = 1; повреждение пулей
-buck_shot = 1; множественность повреждения пулей (картечность)
+k_pierce = 1.12; коэффициент проникновения пули сквозь препятствие
+impair = 1; повреждение пулей ствола
+buck_shot = 1; множественность повреждения пулей ("картечность")
 tracer = off; трассер
-wm_size = 0.05; размер пятна крови
+wm_size = 0.05; размер дырки от пули на поверхностях
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [ammo_5.45x39_ap]:ammo_base
@@ -341,13 +347,14 @@ inv_grid_x = 12
 inv_grid_y = 11
 
 k_dist = 1
-k_disp = 2.2
-k_hit = 0.9
+k_disp = 1.5
+k_hit = 2
+k_ap = 0.7
 k_impulse = 1
-k_pierce = 0.9
-impair = 1.02
+k_pierce = 1.12
+impair = 1.3
 buck_shot = 1
-tracer = on
+tracer = off
 wm_size = 0.05
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -375,7 +382,7 @@ inv_grid_x = 37
 inv_grid_y = 45
 
 k_dist = 1
-k_disp = 2.1
+k_disp = 1.8
 k_hit = 0.95
 k_impulse = 1
 k_pierce = 0.95
@@ -409,10 +416,11 @@ inv_grid_x = 14
 inv_grid_y = 11
 
 k_dist = 1
-k_disp = 2.2
-k_hit = 0.8
+k_disp = 2
+k_hit = 1.7
+k_ap = 0.6
 k_impulse = 1
-k_pierce = 0.8
+k_pierce = 1.1
 impair = 1
 buck_shot = 1
 tracer = off
@@ -443,13 +451,14 @@ inv_grid_x = 10
 inv_grid_y = 11
 
 k_dist = 1
-k_disp = 2.1
-k_hit = 0.9
+k_disp = 1.5
+k_hit = 2
+k_ap = 0.7
 k_impulse = 1
-k_pierce = 0.9
-impair = 1.02
+k_pierce = 1.12
+impair = 1.2
 buck_shot = 1
-tracer = oN
+tracer = off
 wm_size = 0.05
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -546,10 +555,11 @@ inv_grid_x = 15
 inv_grid_y = 9
 
 k_dist = 1
-k_disp = 0.3
-k_hit = 1
+k_disp = 0.7
+k_hit = 1.3
+k_ap = 0.7
 k_impulse = 1
-k_pierce = 1.25
+k_pierce = 1.12
 impair = 1
 buck_shot = 1
 tracer = off
@@ -580,10 +590,11 @@ inv_grid_x = 15
 inv_grid_y = 10
 
 k_dist = 1
-k_disp = 0.2
-k_hit = 1
+k_disp = 1
+k_hit = 1.5
+k_ap = 0.8
 k_impulse = 1.2
-k_pierce = 1.7
+k_pierce = 1.15
 impair = 1.2
 buck_shot = 1
 tracer = off
@@ -614,10 +625,11 @@ inv_grid_y = 40
 
 k_dist = 1
 k_disp = 2
-k_hit = 1.2
+k_hit = 1.8
+k_ap = 0.5
 k_impulse = 1.2
-k_pierce = 1.3
-impair = 1.2
+k_pierce = 1.12
+impair = 1
 buck_shot = 1
 tracer = on
 wm_size = 0.09
@@ -648,13 +660,14 @@ inv_grid_x = 17
 inv_grid_y = 9
 
 k_dist = 1
-k_disp = 0.1
-k_hit = 1.5
+k_disp = 0.5
+k_hit = 2
+k_ap = 0.8
 k_impulse = 1.2
-k_pierce = 1.5
+k_pierce = 1.15
 impair = 1.5
 buck_shot = 1
-tracer = on
+tracer = off
 wm_size = 0.09
 explosive = off
 
@@ -684,9 +697,10 @@ inv_grid_y = 14
 
 k_dist = 1
 k_disp = 0.1
-k_hit = 3
+k_hit = 2
+k_ap = 0.9
 k_impulse = 1
-k_pierce = 1.7
+k_pierce = 1.25
 impair = 5
 buck_shot = 1
 tracer = on
@@ -720,12 +734,12 @@ inv_grid_x = 4
 inv_grid_y = 14
 
 k_dist = 1
-k_disp = 0.5
-k_hit = 3
+k_disp = 0.1
+k_hit = 1
 k_impulse = 1
-k_pierce = 1.7
+k_pierce = 1.25
 impair = 5
-buck_shot = 6
+buck_shot = 1
 tracer = off
 wm_size = 0.2
 
@@ -759,9 +773,10 @@ inv_grid_y = 10
 
 k_dist = 1
 k_disp = 0.8
-k_hit = 1
+k_hit = 1.2
+k_ap = 0.7
 k_impulse = 1.2
-k_pierce = 0.95
+k_pierce = 1.1
 impair = 2
 buck_shot = 1
 tracer = off
@@ -792,14 +807,15 @@ inv_grid_x = 5
 inv_grid_y = 12
 
 k_dist = 1
-k_disp = 0.7
-k_hit = 1.2
+k_disp = 0.5
+k_hit = 2
+k_ap = 0.8
 k_impulse = 0.95
-k_pierce = 2
-impair = 1.05
+k_pierce = 1.12
+impair = 1.2
 buck_shot = 1
-tracer = on
-wm_size = 0.05
+tracer = off
+wm_size = 0.09
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [ammo_9x39_sp5]:ammo_base
@@ -826,10 +842,11 @@ inv_grid_x = 18
 inv_grid_y = 11
 
 k_dist = 1.25
-k_disp = 0.6
+k_disp = 0.3
 k_hit = 1.1
+k_ap = 0.5
 k_impulse = 1
-k_pierce = 1.35
+k_pierce = 1
 impair = 1.25
 buck_shot = 1
 tracer = on
@@ -860,14 +877,15 @@ inv_grid_x = 9
 inv_grid_y = 12
 
 k_dist = 1
-k_disp = 3
-k_hit = 1.5
+k_disp = 2
+k_hit = 1.6
+k_ap = 0.5
 k_impulse = 1
-k_pierce = 1.0
+k_pierce = 1
 impair = 1
 buck_shot = 1
 tracer = off
-wm_size = 0.07
+wm_size = 0.08
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [ammo_11.43x23_hydro]:ammo_base
@@ -895,11 +913,12 @@ inv_grid_y = 12
 
 k_dist = 1
 k_disp = 2
-k_hit = 1.8
+k_hit = 1.7
+k_ap = 0.6
 k_impulse = 1.2
-k_pierce = 1.15
-impair = 2
-buck_shot = 2
+k_pierce = 1.1
+impair = 1.2
+buck_shot = 1
 tracer = off
 wm_size = 0.09
 
@@ -927,13 +946,14 @@ inv_grid_height = 1
 inv_grid_x = 13
 inv_grid_y = 9
 
-k_dist = 0.8
+k_dist = 1
 k_disp = 3
-k_hit = 1.5
+k_hit = 0.4
+k_ap = 0.5
 k_impulse = 1.3
-k_pierce = 0.8
-impair = 2
-buck_shot = 6
+k_pierce = 0.9
+impair = 1.5
+buck_shot = 9
 tracer = off
 wm_size = 0.06
 
@@ -962,11 +982,12 @@ inv_grid_x = 13
 inv_grid_y = 10
 
 k_dist = 1
-k_disp = 0.5
+k_disp = 2
 k_hit = 2
+k_ap = 0.8
 k_impulse = 2
-k_pierce = 1.20
-impair = 3
+k_pierce = 1.12
+impair = 2.5
 buck_shot = 1
 tracer = off
 wm_size = 0.2
@@ -997,14 +1018,15 @@ inv_grid_x = 11
 inv_grid_y = 10
 
 k_dist = 1
-k_disp = 2
-k_hit = 3
+k_disp = 3
+k_hit = 1.8
+k_ap = 0.5
 k_impulse = 1.5
-k_pierce = 1.15
+k_pierce = 1.0
 impair = 2
 buck_shot = 1
 tracer = off
-wm_size = 0.09
+wm_size = 0.2
 explosive = off
 
 [ammo_12x76_zhekan_heli]:ammo_12x76_zhekan
@@ -1083,11 +1105,11 @@ kill_msg_height = 22
 
 k_dist = 1
 k_disp = 1
-k_hit = 5
+k_hit = 3
 k_impulse = 1.8
-k_pierce = 1.5
+k_pierce = 1
 impair = 1
-buck_shot = 6
+buck_shot = 0
 tracer = off
 wm_size = 0.08
 
@@ -1130,11 +1152,11 @@ kill_msg_height = 22
 
 k_dist = 1
 k_disp = 1
-k_hit = 5
+k_hit = 2.7
 k_impulse = 1.5
 k_pierce = 1.0
 impair = 1
-buck_shot = 4
+buck_shot = 0
 tracer = off
 wm_size = 0.08
 
@@ -1175,11 +1197,11 @@ kill_msg_height = 22
 
 k_dist = 1
 k_disp = 1
-k_hit = 4.5
+k_hit = 2.5
 k_impulse = 1.3
 k_pierce = 1.0
 impair = 1
-buck_shot = 4
+buck_shot = 0
 tracer = off
 wm_size = 0.08
 
