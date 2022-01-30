@@ -20,7 +20,7 @@ DynamicObjectsCount	 = 32
 smart_terrain_choose_interval	= 00:15:00
 
 Spawn_Inventory_Item_Section = mutant_dog_tail
-Spawn_Inventory_Item_Probability = 0.2
+Spawn_Inventory_Item_Probability = 0.6
 
 cform                = skeleton					; collision class
 class                = SM_DOG_S					; AI class
@@ -28,7 +28,7 @@ class                = SM_DOG_S					; AI class
 ef_creature_type	 = 6				; option for evaluation functions
 ef_weapon_type		 = 2
 ef_detector_type			 = 1
-panic_threshold		= 0
+panic_threshold		= 0.0
 
 
 script_binding  	= bind_monster.bind
@@ -185,7 +185,7 @@ max_hear_dist		 = 60
 ;-------------------------------------------------------------------------
 ; Vision
 ;-------------------------------------------------------------------------
-eye_fov				 = 150
+eye_fov				 = 150	;140
 eye_range			 = 100	;50	;40;
 
 min_view_distance   		= 0.4				; коэффициент, который множится на eye_range, в зависимости от угла
@@ -445,7 +445,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.55
-fire_wound_immunity		= 0.5
+fire_wound_immunity		= 0.7
 
 [dog_attack_params_normal]
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -483,7 +483,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.55
-fire_wound_immunity		= 0.35
+fire_wound_immunity		= 0.6
 
 [dog_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------

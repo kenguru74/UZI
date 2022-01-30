@@ -13,7 +13,7 @@ icon = ui_npc_monster_burer	;
 MaxHealthValue		    = 150						; range [0..200]
 
 Spawn_Inventory_Item_Section = mutant_burer_hand
-Spawn_Inventory_Item_Probability = 0.3
+Spawn_Inventory_Item_Probability = 0.7
 
 ;------------------------------------------------------------------------
 ; Offline Alife
@@ -92,8 +92,8 @@ satiety_health_v		= 0.00007					;увеличение здоровья при уменьшении сытости
 satiety_critical		= -1.0						;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
 radiation_health_v		= 0.01						;уменьшение здоровья при воздействии радиации
 morale_v				= 0.01						;скорость восстановления морали
-health_hit_part			= 0.7						;процент хита, уходящий на отнимание здоровья
-power_hit_part			= 0.7						;процент хита, уходящий на отнимание силы
+health_hit_part			= 0.5						;процент хита, уходящий на отнимание здоровья
+power_hit_part			= 1.0						;процент хита, уходящий на отнимание силы
 psy_health_v			= 0.1						;скорость восстановления psy-здоровья
 
 immunities_sect			= burer_immunities
@@ -158,7 +158,7 @@ max_hear_dist			= 60
 ; Vision
 ;-------------------------------------------------------------------------
 eye_fov					= 100
-eye_range				= 60	;30
+eye_range				= 30	;60	;30
 
 ; number of visible objects monster can handle
 DynamicObjectsCount		= 32		
@@ -178,24 +178,24 @@ transparency_threshold		= 0.25
 ; Morale
 ;-------------------------------------------------------------------------
 
-Morale_Hit_Quant			= 0.2
-Morale_Attack_Success_Quant		= 0.3
+Morale_Hit_Quant				= 0.1
+Morale_Attack_Success_Quant		= 0.2
 Morale_Take_Heart_Speed			= 0.1
 Morale_Despondent_Speed			= 0.1
-Morale_Stable_Speed			= 0.1
-Morale_Despondent_Threashold	        = 0.5
+Morale_Stable_Speed				= 0.1
+Morale_Despondent_Threashold	= 0.5
 
 
 ;-------------------------------------------------------------------------
 ; Gravi Ability
 ;-------------------------------------------------------------------------
-Gravi_Speed				= 100	; meter/sec	
-Gravi_Step				= 2	; meter
+Gravi_Speed					= 76	; meter/sec	
+Gravi_Step					= 2		; meter
 Gravi_Time_To_Hold			= 1200	; milisec
 Gravi_Radius				= 3.0
 Gravi_Impulse_To_Objects	= 60.0
 Gravi_Impulse_To_Enemy		= 250.0
-Gravi_Hit_Power			= 1.5
+Gravi_Hit_Power				= 0.45
 
 ;-------------------------------------------------------------------------
 ; Tele Ability

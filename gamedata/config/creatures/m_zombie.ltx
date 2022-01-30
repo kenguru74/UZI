@@ -22,10 +22,10 @@ smart_terrain_choose_interval	= 00:15:00
 ef_creature_type	 = 3				; option for evaluation functions
 ef_weapon_type		 = 1
 ef_detector_type	 = 1
-panic_threshold		= 0
+panic_threshold		= 0.1
 
 Spawn_Inventory_Item_Section = mutant_zombie_hand
-Spawn_Inventory_Item_Probability = 0.2
+Spawn_Inventory_Item_Probability = 0.7
 
 cform                = skeleton					; collision class
 class                = SM_ZOMBI					; AI class
@@ -270,7 +270,7 @@ radiation_immunity		= 0.0	;0.5
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 0.3
 explosion_immunity		= 0.3
-fire_wound_immunity		= 0.05
+fire_wound_immunity		= 0.1
 
 [nozombie_weak]:m_zombie_e
 $spawn				= "monsters\zombies\zombie_01_weak"
@@ -283,7 +283,7 @@ species					= nozombie
 [zombie_weak]:m_zombie_e
 $spawn				= "monsters\zombies\zombie_01_weak"
 visual				= monsters\zombi\zombi_2
-panic_threshold		= 0
+panic_threshold		= 0.5
 rank = 0
 spec_rank			= weak
 community			= zombie
@@ -299,7 +299,7 @@ attack_params		= zombie_attack_params_normal
 [zombie_normal]:m_zombie_e
 $spawn				= "monsters\zombies\zombie_02_normal"
 visual				= monsters\zombi\zombi_1
-panic_threshold		= 0
+panic_threshold		= 0.2
 rank = 255
 spec_rank			= normal
 community			= zombie
@@ -341,7 +341,7 @@ stand_attack_3 =	  	0.30,		0.35,		    180,        0.0, 1.0, 0.0,		 -1.0, 0.3, -0
 [zombie_strong]:m_zombie_e
 $spawn				= "monsters\zombies\zombie_ghost"
 visual				= monsters\zombi\zombi_1_ghost
-panic_threshold		= 0	
+panic_threshold		= 0.05	
 rank = 255
 spec_rank			= strong
 community			= zombie
@@ -382,7 +382,7 @@ stand_attack_3 =	  	0.30,		0.50,		    180,        0.0, 1.0, 0.0,		 -1.0, 0.3, -0
 [zombie_immortal]:zombie_strong
 $spawn				= "monsters\zombies\zombie_03_strong"
 visual				= monsters\zombi\zombi_trup_2
-panic_threshold		= 0
+panic_threshold		= 0.05
 icon = ui_npc_monster_zombie_immortal
 	
 
@@ -399,28 +399,28 @@ icon = ui_npc_monster_zombie_old
 
 
 [arena_zombie_1]:zombie_weak
-panic_threshold		= 0
+panic_threshold		= 0.2
 rank = 255
 spec_rank			= normal
 community			= zombie
 custom_data = scripts\arena_mob_3.ltx
 
 [arena_zombie_2]:zombie_normal
-panic_threshold		= 0
+panic_threshold		= 0.2
 rank = 255
 spec_rank			= normal
 community			= zombie
 custom_data = scripts\arena_mob_4.ltx
 
 [arena_zombie_3]:zombie_ghost
-panic_threshold		= 0
+panic_threshold		= 0.2
 rank = 255
 spec_rank			= normal
 community			= zombie
 custom_data = scripts\arena_mob_5.ltx
 
 [arena_zombie_4]:zombie_immortal
-panic_threshold		= 0
+panic_threshold		= 0.2
 rank = 255
 spec_rank			= normal
 community			= zombie

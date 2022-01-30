@@ -18,8 +18,8 @@ Scheduled				= on								 ; option for ALife Simulator
 Human		     		= off								 ; option for ALife Simulator
 Health					= 400								 ; option for ALife Simulator
 MinSpeed				= 1.0								 ; option for ALife Simulator
-MaxSpeed				= 6.0								 ; option for ALife Simulator
-going_speed				= 3;4.5								 ; option for ALife Simulator
+MaxSpeed				= 5.0								 ; option for ALife Simulator
+going_speed				= 2;4.5								 ; option for ALife Simulator
 current_level_going_speed		= 1;2					; option for ALife Simulator
 search_speed			= 1.5						         ; option for ALife Simulator
 
@@ -27,7 +27,7 @@ MaxHealthValue		    = 200								 ; range [0..200]
 DynamicObjectsCount		= 32
 smart_terrain_choose_interval	= 00:15:00
 Spawn_Inventory_Item_Section = mutant_boar_leg
-Spawn_Inventory_Item_Probability = 0.3
+Spawn_Inventory_Item_Probability = 0.7
 
 ;------------------------------------------------------------------------
 ; Physics
@@ -88,7 +88,7 @@ Run_Attack_Delay		= 1000,		3000
 
 Melee_Rotation_Factor	= 2.2
 
-hit_type				= wound			; type of attack
+hit_type				= wound				; type of attack
 
 
 ;------------------------------------------------------------------------
@@ -103,8 +103,8 @@ satiety_health_v 		= 0.001	;0.03						;увеличение здоровья при уменьшении сытост
 satiety_critical 		= -1.0		;0.25						;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
 radiation_health_v 		= 0.00	;0.006						;уменьшение здоровья при воздействии радиации
 morale_v				= 0.01								;скорость восстановления морали
-health_hit_part 		= 0.6		;0.5					;процент хита, уходящий на отнимание здоровья
-power_hit_part 			= 0.7		;0.8					;процент хита, уходящий на отнимание силы
+health_hit_part 		= 0.5		;0.5					;процент хита, уходящий на отнимание здоровья
+power_hit_part 			= 0.8		;0.8					;процент хита, уходящий на отнимание силы
 psy_health_v			= 0.1								;скорость восстановления psy-здоровья
 
 ;Immunities 
@@ -164,8 +164,8 @@ max_hear_dist			= 60
 ;------------------------------------------------------------------------
 ; Vision
 ;------------------------------------------------------------------------
-eye_fov						= 130	;110
-eye_range					= 60	;40	
+eye_fov						= 110	;130
+eye_range					= 40	;60	
 
 min_view_distance   		= 0.5				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 1.0				; коэффициент, который множится на eye_range, в зависимости от угла
@@ -215,7 +215,7 @@ critical_wound_bones_legs	= boar_critical_wound_bones_legs
 ef_creature_type		= 11						; option for evaluation functions
 ef_weapon_type			= 2
 ef_detector_type		= 1
-panic_threshold			= 0
+panic_threshold			= 0.1
 
 cform					 = skeleton					; collision class
 class					 = SM_BOARW					; AI class
@@ -283,7 +283,7 @@ time_release	    = 0.15				; fade out
 ce_time				= 0.35				; time 
 ce_amplitude		= 10				; head shake after hit
 ce_period_number	= 2.0				; camera shake times
-ce_power			= 3.0; 2.0			; power 
+ce_power			= 2.5; 2.0			; power 
 
 ;=================================================================================
 ; Boar Damage
@@ -401,7 +401,7 @@ fire_wound_immunity		= 0.08
 $spawn				= "monsters\boars\boar_01_weak"
 visual				= monsters\mutant_boar\mutant_boar
 icon				= ui_npc_monster_mutant_boar
-panic_threshold		= 0
+panic_threshold		= 0.5
 rank				= 0
 immunities_sect		= boar_immunities_weak
 attack_params		= boar_attack_params_weak
@@ -412,15 +412,15 @@ community			= boar
 ; WEAK PROFILE
 ;*********************************************************************************
 [boar_immunities_weak]
-burn_immunity 			= 0.3		 
-strike_immunity 		= 0.3
-shock_immunity 			= 0.3
-wound_immunity 			= 0.01	
-radiation_immunity 		= 0.01
-telepatic_immunity 		= 1.0
-chemical_burn_immunity	        = 0.05
-explosion_immunity 		= 0.05
-fire_wound_immunity  	        = 0.06
+burn_immunity			= 1.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.20
+radiation_immunity		= 0.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.5
+fire_wound_immunity		= 0.12
 
 [boar_attack_params_weak]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -440,7 +440,7 @@ stand_attack_run_0 =    0.50,		0.30,	      200,        0.0, 1.0, 2.0,	 -1.0, 1.0
 $spawn				= "monsters\boars\boar_02_normal"
 visual				= monsters\mutant_boar\mutant_boar
 icon				= ui_npc_monster_mutant_boar
-panic_threshold		= 0
+panic_threshold		= 0.2
 rank				= 401
 immunities_sect		= boar_immunities_normal
 attack_params		= boar_attack_params_normal
@@ -451,15 +451,15 @@ community			= boar
 ; NORMAL PROFILE
 ;*********************************************************************************
 [boar_immunities_normal]
-burn_immunity 			= 0.3		 
-strike_immunity 		= 0.3
-shock_immunity 			= 0.3
-wound_immunity 			= 0.01	
-radiation_immunity 		= 0.01
-telepatic_immunity 		= 1.0
-chemical_burn_immunity	        = 0.05
-explosion_immunity 		= 0.05
-fire_wound_immunity  	        = 0.02
+burn_immunity			= 1.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.15
+radiation_immunity		= 0.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.5
+fire_wound_immunity		= 0.10
 
 [boar_attack_params_normal]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -479,7 +479,7 @@ stand_attack_run_0 =    0.50,		0.50,	      200,        0.0, 1.0, 2.0,	 -1.0, 1.0
 $spawn				= "monsters\boars\boar_03_strong"
 visual				= monsters\mutant_boar\mutant_boar_strong
 icon				= ui_npc_monster_mutant_boar_strong
-panic_threshold		= 0
+panic_threshold		= 0.05
 rank				= 801
 immunities_sect		= boar_immunities_strong
 attack_params		= boar_attack_params_strong
@@ -490,15 +490,15 @@ community			= boar
 ; STRONG PROFILE
 ;*********************************************************************************
 [boar_immunities_strong]
-burn_immunity 		= 0.3	
-strike_immunity 	= 0.3
-shock_immunity 		= 0.3
-wound_immunity 		= 0.01	
-radiation_immunity 	= 0.01
-telepatic_immunity 	= 1.0
-chemical_burn_immunity	= 0.05
-explosion_immunity 	= 0.05
-fire_wound_immunity  	= 0.025
+burn_immunity			= 1.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.10
+radiation_immunity		= 0.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.5
+fire_wound_immunity		= 0.08
 
 [boar_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
