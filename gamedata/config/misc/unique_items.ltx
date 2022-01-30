@@ -500,9 +500,9 @@ cam_max_angle = 2.0
 cam_max_angle_horz = 3.0
 cam_step_angle_horz = 0.1;0.1
 
-misfire_probability = 0.002
+misfire_probability = 0.00007
 misfire_condition_k = 0.05
-condition_shot_dec = 0.0002
+condition_shot_dec = 0.00095
 
 rpm = 2000
 
@@ -543,7 +543,7 @@ cam_max_angle = 4.0
 cam_max_angle_horz = 4.0
 cam_step_angle_horz = 1;1.1
 fire_distance = 100
-bullet_speed = 660
+bullet_speed = 360
 
 silencer_status = 1
 condition_shot_dec = 0.0001
@@ -582,15 +582,15 @@ misfire_probability = 0.002
 misfire_condition_k = 0.05
 condition_shot_dec = 0.0002
 
-hit_power = 0.59
-hit_impulse = 10
-fire_distance = 80
-bullet_speed			= 220
+hit_power = 0.53
+hit_impulse = 20
+fire_distance = 60
+bullet_speed			= 230
 rpm = 800
 
-silencer_hit_power = 0.59
-silencer_hit_impulse = 10
-silencer_fire_distance = 80
+silencer_hit_power = 0.52
+silencer_hit_impulse = 20
+silencer_fire_distance = 50
 silencer_bullet_speed	 	= 220
 
 snd_shoot = weapons\mp5_m1_shot
@@ -613,14 +613,14 @@ fire_dispersion_base = 0.45
 control_inertion_factor = 1.08f
 ammo_class = ammo_5.45x39_fmj, ammo_5.45x39_ap
 ammo_mag_size = 30
-condition_shot_dec = 0.0001
-hit_power = 0.6
+condition_shot_dec = 0.00006
+hit_power = 0.5
 bullet_speed                                    = 390
-fire_distance = 200
+fire_distance = 170
 rpm = 650
-silencer_hit_power = 0.6
-silencer_fire_distance = 200
-silencer_bullet_speed                           = 380
+silencer_hit_power = 0.45
+silencer_fire_distance = 140
+silencer_bullet_speed = 340
 
 scope_zoom_factor = 80
 
@@ -644,11 +644,11 @@ description = enc_weapons1_wpn-spas12_m1
 inv_name = wpn-spas12_m1
 inv_name_short = wpn-spas12_m1
 fire_dispersion_base = 0.6
-condition_shot_dec = 0.0002
-hit_impulse = 260
+condition_shot_dec = 0.00007
+hit_impulse = 60
 fire_distance = 25
 hit_power = 1.9
-bullet_speed = 270
+bullet_speed = 250
 inv_grid_x = 0
 inv_grid_y = 34
 cost = 400
@@ -658,9 +658,9 @@ $spawn = "weapons\uniq\wpn_winchester_m1"
 description = enc_arsenal_wpn-winchester_m1
 inv_name = ars-winchester_m1
 inv_name_short = ars-winchester_m1
-ammo_mag_size = 4
+ammo_mag_size = 5
 fire_dispersion_base = 0.6
-hit_impulse = 300
+hit_impulse = 60
 fire_distance = 30
 hit_power = 2.0
 bullet_speed = 370
@@ -692,7 +692,7 @@ fire_dispersion_base = 0.25
 scope_texture = wpn\wpn_crosshair_l85
 scope_status = 1
 silencer_status = 1
-condition_shot_dec = 0.0005
+condition_shot_dec = 0.00099
 inv_grid_x = 0
 inv_grid_y = 26
 cost					 	= 730
@@ -737,12 +737,10 @@ inv_grid_height    = 2
 inv_grid_x = 21
 inv_grid_y = 43
 
-ammo_class = ammo_8.6x70_lm
-
-hit_power = 2.1
+hit_power = 2.5
 hit_impulse = 40
 hit_type = fire_wound
-fire_distance = 800
+fire_distance = 400
 cost = 800
 
 [wpn_svd_m1u]:wpn_svd_sk4 ;СВД "Дальнобойщик"
@@ -778,12 +776,10 @@ inv_grid_height    = 2
 inv_grid_x         = 21
 inv_grid_y         = 43
 
-ammo_class = ammo_8.6x70_lm
-
-hit_power = 2.1
+hit_power = 2.5
 hit_impulse = 40
 hit_type = fire_wound
-fire_distance = 800
+fire_distance = 400
 cost = 800
 
 [wpn_sig_m1]:wpn_sig550 ;Штурмовой SiG
@@ -808,11 +804,10 @@ ammo_class = ammo_9x39_ap
 hit_power = 0.6
 hit_impulse = 40
 hit_type = fire_wound
-hit_rate = 1.90
 fire_distance = 60
 bullet_speed	    = 230
 rpm = 200
-condition_shot_dec = 0.0005
+condition_shot_dec = 0.0095
 inv_grid_x = 10
 inv_grid_y = 22
 cost = 650
@@ -1042,7 +1037,7 @@ cam_dispersion_inc = 0.15
 cam_dispertion_frac = 0.8
 cam_max_angle = 7
 cam_max_angle_horz = 5.0
-cam_step_angle_horz = 0.5;0.4
+cam_step_angle_horz = 0.5
 
 fire_dispersion_condition_factor = 5
 misfire_probability = 0.001
