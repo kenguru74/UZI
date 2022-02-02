@@ -16,8 +16,8 @@ ef_weapon_type = 15
 artefacts =
 BirthProbability = 0.0
 
-min_start_power = 0.99
-max_start_power = 1.00
+min_start_power = 0
+max_start_power = 0.0089999996
 attenuation = 0.1
 period = 1
 min_artefact_count = 0
@@ -48,27 +48,29 @@ spawn_blowout_artefacts = off
 ;----------- Радиоактивная зона слабая -----------------------
 [zone_radioactive_weak]:zone_radioactive
 $spawn = "zones\radioactive_weak"
-min_start_power = 0.1
-max_start_power = 0.3
+min_start_power = 0
+max_start_power = 0.003
 
 ;----------- Радиоактивная зона средняя -----------------------
 [zone_radioactive_average]:zone_radioactive
 $spawn = "zones\radioactive_average"
-min_start_power = 0.3
-max_start_power = 0.6
+min_start_power = 0
+max_start_power = 0.009
 
 ;----------- Радиоактивная зона сильная -----------------------
 
 [zone_radioactive_strong]:zone_radioactive
 $spawn = "zones\radioactive_strong"
 accamulate_time = 75
-min_start_power = 0.6
-max_start_power = 0.99
+min_start_power = 0
+max_start_power = 0.01
 
 ;----------- Радиоактивная зона смертельная -----------------------
 [zone_radioactive_killing]:zone_radioactive
 $spawn = "zones\radioactive_killing"
 accamulate_time = 50
+min_start_power = 0
+max_start_power = 0.05
 
 [noartf_radioactive_weak]:zone_radioactive_weak
 $spawn = "zones\radioactive_weak_noartf"
