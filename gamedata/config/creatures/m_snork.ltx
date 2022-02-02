@@ -30,7 +30,7 @@ script_binding       = bind_monster.bind
 ef_creature_type		= 11						; option for evaluation functions
 ef_weapon_type			= 2
 ef_detector_type		= 1
-panic_threshold		= 0.1
+panic_threshold		= 0
 
 cform					 = skeleton					; collision class
 class					 = SM_SNORK					; AI class
@@ -104,7 +104,7 @@ satiety_health_v 		= 0.0001	;0.03						;увеличение здоровья при уменьшении сытос
 satiety_critical 		= -1.0		;0.25						;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
 radiation_health_v 		= 0.01	;0.006						;уменьшение здоровья при воздействии радиации
 morale_v				= 0.01								;скорость восстановления морали
-health_hit_part 		= 1		;0.8					;процент хита, уходящий на отнимание здоровья
+health_hit_part 		= 0.8					;процент хита, уходящий на отнимание здоровья
 power_hit_part 			= 1		;0.9					;процент хита, уходящий на отнимание силы
 psy_health_v = 0.1						;скорость восстановления psy-здоровья
 
@@ -294,7 +294,7 @@ radiation_immunity		= 0.01	;0.5
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 0.8
 explosion_immunity		= 0.8
-fire_wound_immunity		= 0.18
+fire_wound_immunity		= 0.3
 
 
 ;*********************************************************************************
@@ -304,7 +304,7 @@ fire_wound_immunity		= 0.18
 $spawn				= "monsters\snorks\snork_01_weak"
 visual				= monsters\snork\snork
 icon				= ui_npc_monster_snork
-panic_threshold		= 0.5
+panic_threshold		= 0
 rank				= 0
 immunities_sect		= snork_immunities_weak
 attack_params		= snork_attack_params_weak
@@ -321,7 +321,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.8
-fire_wound_immunity		= 0.3
+fire_wound_immunity		= 0.5
 
 [snork_attack_params_weak]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -343,7 +343,7 @@ stand_attack_2_1 =	  	0.30,		0.50,			70,        0.0, 1.0, 2.0,		-0.8, 0.8, -1.6,
 $spawn				= "monsters\snorks\snork_02_normal"
 visual				= monsters\snork\snork
 icon				= ui_npc_monster_snork
-panic_threshold		= 0.2
+panic_threshold		= 0
 rank				= 401
 immunities_sect		= snork_immunities_normal
 attack_params		= snork_attack_params_normal
@@ -360,7 +360,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.6
-fire_wound_immunity		= 0.2
+fire_wound_immunity		= 0.4
 
 [snork_attack_params_normal]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -382,7 +382,7 @@ stand_attack_2_1 =	  	0.30,		0.70,			70,        0.0, 1.0, 2.0,		-0.8, 0.8, -1.6,
 $spawn				= "monsters\snorks\snork_03_strong"
 visual				= monsters\snork\snork
 icon				= ui_npc_monster_snork
-panic_threshold		= 0.05
+panic_threshold		= 0
 rank				= 801
 immunities_sect		= snork_immunities_strong
 attack_params		= snork_attack_params_strong
@@ -399,7 +399,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.4
-fire_wound_immunity		= 0.12
+fire_wound_immunity		= 0.3
 
 [snork_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -440,7 +440,7 @@ panic_threshold		= 0.0
 $spawn				= "monsters\arena\snork_arena"
 visual				= monsters\snork\snork
 icon				= ui_npc_monster_snork
-panic_threshold		= 0.05
+panic_threshold		= 0
 species				= arena_monstr
 
 
@@ -459,7 +459,7 @@ monster_type	= outdoor
 [snork_jumper]:snork_weak
 $spawn			= "monsters\snorks\snork_jumper"
 monster_type	= outdoor
-panic_threshold		= 0.05
+panic_threshold		= 0
 
 ; jump parameters
 
@@ -474,7 +474,7 @@ jump_max_angle				= 0.8
 $spawn				= "monsters\arena\snork_arena"
 visual				= monsters\snork\snork
 icon				= ui_npc_monster_snork
-panic_threshold		= 0.05
+panic_threshold		= 0
 species				= arena_monstr
 custom_data = scripts\arena_mob_1.ltx
 
@@ -482,7 +482,7 @@ custom_data = scripts\arena_mob_1.ltx
 $spawn				= "monsters\arena\snork_arena"
 visual				= monsters\snork\snork
 icon				= ui_npc_monster_snork
-panic_threshold		= 0.05
+panic_threshold		= 0
 species				= arena_monstr
 custom_data = scripts\arena_mob_2.ltx
 
@@ -490,6 +490,6 @@ custom_data = scripts\arena_mob_2.ltx
 $spawn				= "monsters\arena\snork_arena"
 visual				= monsters\snork\snork
 icon				= ui_npc_monster_snork
-panic_threshold		= 0.05
+panic_threshold		= 0
 species				= arena_monstr
 custom_data = scripts\arena_mob_3.ltx

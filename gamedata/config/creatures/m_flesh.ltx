@@ -102,16 +102,16 @@ Melee_Rotation_Factor	= 2.6
 ; Entity Conditions
 ;-------------------------------------------------------------------------
 
-satiety_v 			= 0.0001				;0.01			;¸úş¨ş¸ª¹ ºüõı¹°õıø  ¸vªş¸ªø ¸ş ò¨õüõıõü
-radiation_v 		= 0.00001		;0.004			;¸úş¨ş¸ª¹ ºüõı¹°õıø  ¨ğôøğ¡øø
-satiety_power_v 	= 0.005		;0.01			;ºòõûø¢õıøõ ¸øûv ÿ¨ø ºüõı¹°õıøø ¸vªş¸ªø 
-satiety_health_v 	= 0.0005 ;0.001	;0.03			;ºòõûø¢õıøõ ÷ôş¨şò¹  ÿ¨ø ºüõı¹°õıøø ¸vªş¸ªø 
-satiety_critical 	= -1.0		;0.25			;ú¨øªø¢õ¸úşõ ÷ığ¢õıø  ¸vªş¸ªø (ò ÿ¨ş¡õıªğ¿ şª 0..1) úşóôğ ÷ôş¨şò¹õ ığ¢øğığõª ºüõı¹°ğª¹¸ 
-radiation_health_v 	= 0.01	;0.006			;ºüõı¹°õıøõ ÷ôş¨şò¹  ÿ¨ø òş÷ôõù¸ªòøø ¨ğôøğ¡øø
-morale_v			= 0.01					;¸úş¨ş¸ª¹ òş¸¸ªğışòûõıø  üş¨ğûø
-health_hit_part 	= 0.5		;0.5			;ÿ¨ş¡õıª ¿øªğ, º¿şô øù ığ şªıøüğıøõ ÷ôş¨şò¹ 
-power_hit_part 		= 0.8		;0.8			;ÿ¨ş¡õıª ¿øªğ, º¿şô øù ığ şªıøüğıøõ ¸øûv
-psy_health_v		= 0.1						;ñêîğîñòü âîññòàíîâëåíèÿ psy-çäîğîâüÿ
+satiety_v 			= 0.0001	;0.01	
+radiation_v 		= 0.00001		;0.004	
+satiety_power_v 	= 0.005		;0.01
+satiety_health_v 	= 0.0005 ;0.001	;0.03
+satiety_critical 	= -1.0		;0.25	
+radiation_health_v 	= 0.01	;0.006	
+morale_v			= 0.01
+health_hit_part 	= 0.7
+power_hit_part 		= 0.5		;0.8
+psy_health_v		= 0.1		
 
 immunities_sect				= flesh_immunities
 
@@ -277,7 +277,7 @@ stand_drag_0		=	   1,	    0.2,     1,	    0.25,    0.7,    0.7,     1.0,     0.7
 ; Immunities
 ;===========================================================================
 [flesh_immunities]
-burn_immunity			= 1.0				;úş¤¯¯ø¡øõıªv øüüºıøªõªğ 
+burn_immunity			= 1.0
 strike_immunity			= 1
 shock_immunity			= 1.0
 wound_immunity			= 0.15
@@ -358,7 +358,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.5
-fire_wound_immunity		= 0.16
+fire_wound_immunity		= 0.14
 
 [flesh_attack_params_weak]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -397,7 +397,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.5
-fire_wound_immunity		= 0.14
+fire_wound_immunity		= 0.12
 
 [flesh_attack_params_normal]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -436,7 +436,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.5
-fire_wound_immunity		= 0.12
+fire_wound_immunity		= 0.1
 
 [flesh_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
