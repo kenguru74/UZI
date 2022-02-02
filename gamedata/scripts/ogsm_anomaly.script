@@ -18,33 +18,33 @@ local off_anoms_deleted = false
 
 loc={
 	l01_escape = {15, 50},
-	l02_garbage = {150, 400},
-	l03_agroprom = {150, 500},
-	l04_darkvalley = {200, 300},
+	l02_garbage = {150, 250},
+	l03_agroprom = {150, 350},
+	l04_darkvalley = {150, 250},
 	l05_bar = {60, 100},
-	l06_rostok = {100, 300},
-	l07_military = {200, 600},
-	l08_yantar = {100, 300},
+	l06_rostok = {100, 200},
+	l07_military = {200, 400},
+	l08_yantar = {100, 200},
 	l10_radar = {400, 600},
-	l11_pripyat = {200, 600},
-	l12_stancia = {200, 600},
-	l12u_sarcofag = {1, 10},
-	l12u_control_monolith = {1, 10},
-	l12_stancia_2 = {600, 700},
+	l11_pripyat = {200, 400},
+	l12_stancia = {200, 400},
+	l12u_sarcofag = {1, 5},
+	l12u_control_monolith = {1, 5},
+	l12_stancia_2 = {300, 500},
 	l03u_agr_underground = {1, 10},
 	l04u_labx18 = {1, 10},
 	l08u_brainlab = {1, 10},
 	l10u_bunker = {1, 10},
 	atp_for_test22 = {200, 300},
 	peshera = {5, 15},
-	puzir = {100, 400},
+	puzir = {100, 250},
 	aver = {200, 500},
-	av_peshera = {15, 65},
-	limansk = {200, 500},
-	hospital = {20, 50},
-	generators = {300, 600},
+	av_peshera = {5, 15},
+	limansk = {100, 200},
+	hospital = {10, 20},
+	generators = {200, 300},
 	warlab = {1, 10},
-	red_forest = {250, 600},
+	red_forest = {250, 400},
 	lost_village = {20, 150},
 	marsh = {300, 600},
 	dead_city = {5, 10},
@@ -57,7 +57,7 @@ loc={
 	predbannik = {1, 2},
 	garbage_old = {150, 350},
 	yantar_old = {150, 450},
-	swamp_old = {100, 450}
+	swamp_old = {100, 200}
 }
 
 -- Ber188 добавлены локации в список
@@ -2208,7 +2208,7 @@ local anoms_sections = {
 	smallrain = {"smallrain", {shtype=0, radius=3, center={0,0,0}}},
 	sphere = {"sphere", {shtype=0, radius=3, center={0,0,0}}},
 	teleport = {"teleport", {shtype=2, radius=2, center={0,0,0}}},
-	radioactive = {"radioactive", {shtype=0, radius=25, center={0,0,0}}},
+	radioactive = {"radioactive", {shtype=0, radius=15, center={0,0,0}}},
 	zavesa = {"zavesa", {shtype=0, radius=3, center={0,0,0}}},
 	mosquito_bald = {"mosquito_bald", {shtype=0, radius=3, center={0,0,0}}},
 	gravi = {"gravi", {shtype=0, radius=3, center={0,0,0}}},
@@ -2249,7 +2249,7 @@ function anomaly_section_choice(levelname)
 		low_level = value.val
 	end
 	
-	if math.random(0,1) < 0.1 then
+	if math.random(0,1) < 0.03 then
 		anom_to_spawn = noart_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
 	else
 		anom_to_spawn = zone_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
