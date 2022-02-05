@@ -1408,7 +1408,7 @@ function spawn_blow_art(anom_id)
 	local anom_sect = obj:section_name()
 	
 	if anom_sect then
-		local rand_chk = get_float(anom_sect, "artefact_spawn_probability", 0.1)
+		local rand_chk = get_float(anom_sect, "BirthProbability", 0.02)
 		
 		if math.random() <= rand_chk then
 			local art_section = parse_string_arts(anom_sect)
@@ -2249,7 +2249,7 @@ function anomaly_section_choice(levelname)
 		low_level = value.val
 	end
 	
-	if math.random(0,1) < 0.03 then
+	if math.random(0,1) < 0.02 then
 		anom_to_spawn = noart_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
 	else
 		anom_to_spawn = zone_prefix .. name_anom_to_spawn .. postfix_anom_to_spawn
