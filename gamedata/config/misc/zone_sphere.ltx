@@ -25,15 +25,12 @@ max_artefact_count = 1
 artefact_spawn_idle = 24
 artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
 
-;idle_particles = anomaly2\generator\anomaly_teleport_00001
-blowout_particles = anomaly2\electra2_blast ;gravity_blast_03
+blowout_particles = anomaly2\electra2_blast
 tearing_particles =anomaly2\body_tear_00
 torn_particles =anomaly2\body_tear_01
 
 hit_small_particles = hit_fx\hit_metal_02
 hit_big_particles = anomaly2\gravity_damage_02_blood2
-idle_small_particles = anomaly2\electra_damage_01_smoke
-idle_big_particles = anomaly2\electra_damage_02_smoke
 entrance_small_particles = anomaly2\gravi_anomaly_shield_00
 entrance_big_particles = anomaly2\emi_entrance_big_00;
 
@@ -152,6 +149,8 @@ artefact_spawn_rnd = 90 ;вероятность заспавнить артефакт в процентах.
 [noartf_sphere_weak]:zone_sphere_weak
 $spawn = "zones\sphere_weak_noartf"
 idle_particles = anomaly2\generator\anomaly_teleport_00001
+idle_small_particles = anomaly2\electra_damage_01_smoke
+idle_big_particles = anomaly2\electra_damage_02_smoke
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -161,6 +160,8 @@ artefact_spawn_rnd = 0
 [noartf_sphere_average]:zone_sphere_average
 $spawn = "zones\sphere_average_noartf"
 idle_particles = anomaly2\generator\anomaly_teleport_00001
+idle_small_particles = anomaly2\electra_damage_01_smoke
+idle_big_particles = anomaly2\electra_damage_02_smoke
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -170,6 +171,8 @@ artefact_spawn_rnd = 0
 [noartf_sphere_strong]:zone_sphere_strong
 $spawn = "zones\sphere_strong_noartf"
 idle_particles = anomaly2\generator\anomaly_teleport_00001
+idle_small_particles = anomaly2\electra_damage_01_smoke
+idle_big_particles = anomaly2\electra_damage_02_smoke
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0

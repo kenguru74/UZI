@@ -2,9 +2,7 @@
 GroupControlSection = spawn_group_zone
 $spawn = "zones\buzz"
 $prefetch = 16
-; === Johnson ===
 class = ZS_BUZZ
-; === Johnson ===
 ;script_binding = amk_anoms.bind
 
 hit_impulse_scale = 0.0
@@ -30,19 +28,15 @@ max_artefact_count = 1
 artefact_spawn_idle = 24
 artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
 
+blowout_particles = anomaly2\studen_blowout
 
-;idle_particles = anomaly2\studen_idle_bottom
-;blowout_particles = anomaly2\studen_blowout
+hit_small_particles = anomaly2\group_items\studen_idle_bottom_00
+hit_big_particles = anomaly2\group_items\studen_idle_bottom_00
 
-;hit_small_particles = anomaly2\group_items\studen_idle_bottom_00
-;hit_big_particles = anomaly2\group_items\studen_idle_bottom_00
-;idle_small_particles = anomaly2\group_items\studen_idle_bottom_00
-;idle_big_particles = anomaly2\group_items\studen_idle_bottom_00
-
-;idle_sound = anomaly\buzz_idle; bfuzz_blowout ;постоянный звук
-;blowout_sound = anomaly\buzz_hit; bfuzz_hit ;во время выброса(удара) в центре аномалии
-;hit_sound = anomaly\buzz_hit; bfuzz_hit ;на персонаже, когда тот получает хит
-;entrance_sound = anomaly\buzz_hit; bfuzz_hit ;при попадании объекта в аномалию
+idle_sound = anomaly\buzz_idle; bfuzz_blowout ;постоянный звук
+blowout_sound = anomaly\buzz_hit; bfuzz_hit ;во время выброса(удара) в центре аномалии
+hit_sound = anomaly\buzz_hit; bfuzz_hit ;на персонаже, когда тот получает хит
+entrance_sound = anomaly\buzz_hit; bfuzz_hit ;при попадании объекта в аномалию
 
 hit_type = chemical_burn
 
@@ -128,13 +122,8 @@ period = 1
 min_artefact_count = 0
 max_artefact_count = 1
 
-
 hit_small_particles = damage_fx\burn_creatures
 hit_big_particles = damage_fx\burn_creatures00
-idle_small_particles = damage_fx\burn_creatures
-idle_big_particles = damage_fx\burn_creatures00
-
-idle_particles_dont_stop = true;
 
 idle_sound = ambient\zhar
 blowout_sound = ambient\zhar
@@ -208,7 +197,7 @@ disable_time = -1 ;время игнорирования неживого объекта в зоне (-1 если не нужно
 disable_time_small = -1 ;время игнорирования маленького неживого объекта в зоне (-1 если не нужно)
 disable_idle_time = -1 ;время отключения idle партиклов
 
-idle_sound = anomaly\monolith_idle; anomaly_gravy_idle
+idle_sound = anomaly\monolith_idle
 blowout_sound = anomaly\monolith_idle
 
 ignore_nonalive = true
@@ -258,10 +247,6 @@ max_artefact_count = 1
 
 hit_small_particles = damage_fx\burn_creatures
 hit_big_particles = damage_fx\burn_creatures00
-idle_small_particles = damage_fx\burn_creatures
-idle_big_particles = damage_fx\burn_creatures00
-
-idle_particles_dont_stop = true;
 
 idle_sound = ambient\zhar
 blowout_sound = ambient\zhar
@@ -308,6 +293,9 @@ artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
 [noartf_sakbuzz_weak]:zone_sakbuzz_weak
 $spawn = "zones\sakbuzz_weak_noartf"
 idle_particles = static\buble_distort001
+idle_small_particles = damage_fx\burn_creatures
+idle_big_particles = damage_fx\burn_creatures00
+idle_particles_dont_stop = true
 blowout_particles = anomaly2\heat_03
 BirthProbability = 0
 spawn_blowout_artefacts = off
@@ -318,6 +306,9 @@ artefact_spawn_rnd = 0
 [noartf_sakbuzz_average]:zone_sakbuzz_average
 $spawn = "zones\sakbuzz_average_noartf"
 idle_particles = anomaly2\monolith
+idle_small_particles = anomaly2\group_items\studen_idle_bottom_00
+idle_big_particles = anomaly2\group_items\studen_idle_bottom_00
+idle_particles_dont_stop = true
 blowout_particles = anomaly2\monolith_active
 BirthProbability = 0
 spawn_blowout_artefacts = off
@@ -328,6 +319,9 @@ artefact_spawn_rnd = 0
 [noartf_sakbuzz_strong]:zone_sakbuzz_strong
 $spawn = "zones\sakbuzz_strong_noartf"
 idle_particles = explosions\campfire_boar_grill
+idle_small_particles = damage_fx\burn_creatures
+idle_big_particles = damage_fx\burn_creatures00
+idle_particles_dont_stop = true
 blowout_particles = anomaly2\heat_01
 BirthProbability = 0
 spawn_blowout_artefacts = off

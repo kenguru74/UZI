@@ -24,13 +24,8 @@ BirthProbability = 0.0
 
 visible_by_detector = off
 
-;idle_particles = zones\zone_thermal_idle
-;blowout_particles =
-
 hit_small_particles = damage_fx\burn_creatures
 hit_big_particles = damage_fx\burn_creatures00
-idle_small_particles = damage_fx\burn_creatures
-idle_big_particles = damage_fx\burn_creatures00
 
 idle_particles_dont_stop = true;
 
@@ -80,10 +75,16 @@ max_start_power = 0.9
 
 [noartf_field_thermal_weak]:zone_field_thermal_weak
 idle_particles = zones\zone_thermal_idle
+idle_small_particles = damage_fx\burn_creatures
+idle_big_particles = damage_fx\burn_creatures00
 
 [noartf_field_thermal_average]:zone_field_thermal_average
 idle_particles = zones\zone_thermal_idle
+idle_small_particles = damage_fx\burn_creatures
+idle_big_particles = damage_fx\burn_creatures00
 
 [noartf_field_thermal_strong]:zone_field_thermal_strong
 idle_particles = zones\zone_thermal_idle
+idle_small_particles = damage_fx\burn_creatures
+idle_big_particles = damage_fx\burn_creatures00
 

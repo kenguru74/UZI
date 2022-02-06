@@ -24,15 +24,8 @@ period = 1
 min_artefact_count = 0
 max_artefact_count = 0
 
-idle_particles =
-blowout_particles =
-
 hit_small_particles = damage_fx\burn_creatures
 hit_big_particles = damage_fx\burn_creatures00
-idle_small_particles = damage_fx\burn_creatures
-idle_big_particles = damage_fx\burn_creatures00
-
-idle_particles_dont_stop = true;
 
 idle_sound = ambient\zhar
 blowout_sound = ambient\zhar
@@ -120,6 +113,9 @@ max_artefact_count = 1
 [noartf_ogon_weak]:zone_ogon_weak
 $spawn = "zones\zone_ogon\zone_ogon_weak_noartf"
 idle_particles = explosions\campfire_boar_grill
+idle_small_particles = damage_fx\burn_creatures
+idle_big_particles = damage_fx\burn_creatures00
+idle_particles_dont_stop = true;
 blowout_particles = explosions\campfire_blowout
 BirthProbability = 0
 spawn_blowout_artefacts = off
@@ -130,6 +126,9 @@ artefact_spawn_rnd = 0
 [noartf_ogon_average]:zone_ogon_average
 $spawn = "zones\zone_ogon\zone_ogon_average_noartf"
 idle_particles = explosions\campfire_boar_grill
+idle_small_particles = damage_fx\burn_creatures
+idle_big_particles = damage_fx\burn_creatures00
+idle_particles_dont_stop = true;
 blowout_particles = anomaly2\heat_01
 BirthProbability = 0
 spawn_blowout_artefacts = off
@@ -140,6 +139,9 @@ artefact_spawn_rnd = 0
 [noartf_ogon_strong]:zone_ogon_strong
 $spawn = "zones\zone_ogon\zone_ogon_strong_noartf"
 idle_particles = static\buble_distort001
+idle_small_particles = damage_fx\burn_creatures
+idle_big_particles = damage_fx\burn_creatures00
+idle_particles_dont_stop = true;
 blowout_particles = anomaly2\heat_03
 BirthProbability = 0
 spawn_blowout_artefacts = off

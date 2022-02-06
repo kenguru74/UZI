@@ -27,15 +27,12 @@ artefact_spawn_rnd = 25 ;вероятность заспавнить артефакт в процентах.
 
 tearing_particles =anomaly2\body_tear_00
 torn_particles =anomaly2\gravi_anomaly_shield_00
-;idle_particles = anomaly2\mincer_idle
 accum_particles = anomaly2\gravi_zaxvat_myasorubka
 awake_particles = anomaly2\gravi_zaxvat_myasorubka
 blowout_particles = anomaly2\gravi_zaxvat_myasorubka ;gravity_blast_03
 
 hit_small_particles = hit_fx\hit_metal_02
 hit_big_particles = anomaly2\gravity_damage_02_blood2
-idle_small_particles = anomaly2\gravity_damage_01_smoke
-idle_big_particles = anomaly2\gravity_damage_02_blood2; anomaly2\gravity_damage_02_smoke
 entrance_small_particles = anomaly2\gravi_anomaly_shield_00
 entrance_big_particles = anomaly2\gravi_anomaly_00;
 
@@ -215,6 +212,8 @@ artefact_spawn_probability = 0.2
 [noartf_mincer_weak]:zone_mincer_weak
 $spawn = "zones\mincer_weak_noartf"
 idle_particles = anomaly2\mincer_idle
+idle_small_particles = anomaly2\gravity_damage_01_smoke
+idle_big_particles = anomaly2\gravity_damage_02_blood2
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -225,6 +224,8 @@ artefact_spawn_rnd = 0
 [noartf_mincer_average]:zone_mincer_average
 $spawn = "zones\mincer_average_noartf"
 idle_particles = anomaly2\mincer_idle
+idle_small_particles = anomaly2\gravity_damage_01_smoke
+idle_big_particles = anomaly2\gravity_damage_02_blood2
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -235,6 +236,8 @@ artefact_spawn_rnd = 0
 [noartf_mincer_strong]:zone_mincer_strong
 $spawn = "zones\mincer_strong_noartf"
 idle_particles = anomaly2\mincer_idle
+idle_small_particles = anomaly2\gravity_damage_01_smoke
+idle_big_particles = anomaly2\gravity_damage_02_blood2
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0

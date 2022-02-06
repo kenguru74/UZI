@@ -25,15 +25,12 @@ artefact_spawn_idle = 48
 artefact_spawn_rnd = 20 ;вероятность заспавнить артефакт в процентах.
 
 
-;idle_particles = anomaly2\gravity_idle
 blowout_particles = anomaly2\gravity_blast_final00 ;gravity_blast_03
 tearing_particles =anomaly2\body_tear_00
 torn_particles =anomaly2\body_tear_01
 
 hit_small_particles = hit_fx\hit_metal_02
 hit_big_particles = anomaly2\gravity_damage_02_blood2
-idle_small_particles = anomaly2\gravity_damage_01_smoke
-idle_big_particles = anomaly2\gravity_damage_02_smoke
 entrance_small_particles = anomaly2\gravi_anomaly_shield_00
 entrance_big_particles = anomaly2\gravi_anomaly_00;
 
@@ -84,7 +81,7 @@ blowout_radius_percent = 0.8 ;радиус (в процентах от всего радиуса) непосредстве
 actor_blowout_radius_percent= 0.5
 
 tele_height = 0.35; 3.5 ;высота подъема телекинеза
-time_to_tele = 5000 ;время деражания объекта в воздухе
+time_to_tele = 5000 ;время держания объекта в воздухе
 tele_pause = 5000 ;пауза перед тем как снова поднять упавший объект
 
 visible_by_detector = on
@@ -210,6 +207,8 @@ accamulate_time = 1000
 [noartf_gravi_weak]:zone_gravi_weak
 $spawn = "zones\gravi_zone_weak_noartf"
 idle_particles = anomaly2\gravity_idle
+idle_small_particles = anomaly2\gravity_damage_01_smoke
+idle_big_particles = anomaly2\gravity_damage_02_smoke
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -220,6 +219,8 @@ artefact_spawn_rnd = 0
 [noartf_gravi_average]:zone_gravi_average
 $spawn = "zones\gravi_zone_average_noartf"
 idle_particles = anomaly2\gravity_idle
+idle_small_particles = anomaly2\gravity_damage_01_smoke
+idle_big_particles = anomaly2\gravity_damage_02_smoke
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -230,6 +231,8 @@ artefact_spawn_rnd = 0
 [noartf_gravi_strong]:zone_gravi_strong
 $spawn = "zones\gravi_zone_strong_noartf"
 idle_particles = anomaly2\gravity_idle
+idle_small_particles = anomaly2\gravity_damage_01_smoke
+idle_big_particles = anomaly2\gravity_damage_02_smoke
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0

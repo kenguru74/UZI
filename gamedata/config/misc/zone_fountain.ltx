@@ -26,13 +26,10 @@ max_artefact_count = 1
 artefact_spawn_idle = 48
 artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
 
-;idle_particles = static\buble_distort001
 blowout_particles = anomaly2\artefact\anom_fontan
 
 hit_small_particles = anomaly2\electra_entrance_small
 hit_big_particles = anomaly2\electra_entrance_small
-idle_small_particles = anomaly2\artefact\fontan_aya
-idle_big_particles = anomaly2\artefact\fontan_aya
 
 ;idle_particles_dont_stop = true;
 
@@ -103,13 +100,10 @@ artefact_spawn_idle = 48 ;насколько часто спавнить артефакты в офлайне, в часах
 artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
 
 
-;idle_particles = static\buble_distort001
 blowout_particles = anomaly2\electra2_blast
 
 hit_small_particles = anomaly2\electra_entrance_small
 hit_big_particles = anomaly2\electra_entrance_small
-idle_small_particles = anomaly2\artefact\fontan_aya
-idle_big_particles = anomaly2\artefact\fontan_aya
 
 
 [zone_fountain_average]:zone_fountain
@@ -128,13 +122,10 @@ max_artefact_count = 0
 artefact_spawn_idle = 48 ;насколько часто спавнить артефакты в офлайне, в часах
 artefact_spawn_rnd = 70 ;вероятность заспавнить артефакт в процентах.
 
-;idle_particles = static\buble_distort001
 blowout_particles = anomaly2\artefact\anom_fontan
 
 hit_small_particles = anomaly2\electra_entrance_small
 hit_big_particles = anomaly2\electra_entrance_small
-idle_small_particles = anomaly2\artefact\fontan_aya
-idle_big_particles = anomaly2\artefact\fontan_aya
 
 
 [zone_fountain_strong]:zone_fountain
@@ -153,17 +144,16 @@ max_artefact_count = 2
 artefact_spawn_idle = 48 ;насколько часто спавнить артефакты в офлайне, в часах
 artefact_spawn_rnd = 50 ;вероятность заспавнить артефакт в процентах.
 
-;idle_particles = static\buble_distort001
 blowout_particles = anomaly2\artefact\anom_fontan
 
 hit_small_particles = anomaly2\electra_entrance_small
 hit_big_particles = anomaly2\electra_entrance_small
-idle_small_particles = anomaly2\artefact\fontan_aya
-idle_big_particles = anomaly2\artefact\fontan_aya
 
 [noartf_fountain_weak]:zone_fountain_weak
 $spawn = "zones\fountain_weak_noartf"
 idle_particles = static\buble_distort001
+idle_small_particles = anomaly2\artefact\fontan_aya
+idle_big_particles = anomaly2\artefact\fontan_aya
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -173,6 +163,8 @@ artefact_spawn_rnd = 0
 [noartf_fountain_average]:zone_fountain_average
 $spawn = "zones\fountain_average_noartf"
 idle_particles = static\buble_distort001
+idle_small_particles = anomaly2\artefact\fontan_aya
+idle_big_particles = anomaly2\artefact\fontan_aya
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -182,6 +174,8 @@ artefact_spawn_rnd = 0
 [noartf_fountain_strong]:zone_fountain_strong
 $spawn = "zones\fountain_strong_noartf"
 idle_particles = static\buble_distort001
+idle_small_particles = anomaly2\artefact\fontan_aya
+idle_big_particles = anomaly2\artefact\fontan_aya
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0

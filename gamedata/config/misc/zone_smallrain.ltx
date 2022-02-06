@@ -28,7 +28,6 @@ period = 1
 min_artefact_count = 0
 max_artefact_count = 0
 
-;idle_particles = a_ufp_particles\fog_ground
 blowout_particles = a_ufp_particles\fog_ground
 
 idle_sound = ambient\random\rt_sickened1
@@ -126,7 +125,7 @@ blowout_particles = a_ufp_particles\fog_move
 
 idle_sound = ambient\random\rt_sickened1
 blowout_sound = ambient\random\rt_sickened1
-hit_sound = anomaly\buzz_hit; bfuzz_hit
+hit_sound = anomaly\buzz_hit
 entrance_sound = ambient\random\rt_sickened1
 
 awaking_time = 100
@@ -195,8 +194,6 @@ blowout_particles = a_ufp_particles\smoke_anomalie_blow
 
 hit_small_particles = a_ufp_particles\smoke_anomalie_hit
 hit_big_particles = a_ufp_particles\smoke_anomalie_hit
-idle_small_particles = a_ufp_particles\smoke_anomalie_idle
-idle_big_particles = a_ufp_particles\smoke_anomalie_idle
 entrance_small_particles = a_ufp_particles\smoke_anomalie_blow
 entrance_big_particles = a_ufp_particles\smoke_anomalie_blow
 
@@ -237,6 +234,8 @@ idle_light_height = 1.5
 [noartf_smallrain_weak]:zone_smallrain_weak
 $spawn = "zones\smallrain_weak_noartf"
 idle_particles = a_ufp_particles\fog_ground
+idle_small_particles = a_ufp_particles\smoke_anomalie_idle
+idle_big_particles = a_ufp_particles\smoke_anomalie_idle
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -246,6 +245,8 @@ artefact_spawn_rnd = 0
 [noartf_smallrain_average]:zone_smallrain_average
 $spawn = "zones\zone_smallrain_average_noartf"
 idle_particles = a_ufp_particles\fog_move
+idle_small_particles = a_ufp_particles\smoke_anomalie_idle
+idle_big_particles = a_ufp_particles\smoke_anomalie_idle
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -255,6 +256,8 @@ artefact_spawn_rnd = 0
 [noartf_smallrain_strong]:zone_smallrain_strong
 $spawn = "zones\zone_smallrain_strong_noartf"
 idle_particles = a_ufp_particles\smoke_anomalie_idle
+idle_small_particles = a_ufp_particles\smoke_anomalie_idle
+idle_big_particles = a_ufp_particles\smoke_anomalie_idle
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0

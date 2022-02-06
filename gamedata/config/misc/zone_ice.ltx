@@ -27,15 +27,12 @@ artefact_spawn_rnd = 24 ;вероятность заспавнить артефакт в процентах.
 
 tearing_particles =amk\blow_body
 torn_particles =anomaly2\gravi_anomaly_shield_00
-;idle_particles = amk\snow
 accum_particles = amk\snow_blow_accum
 awake_particles = amk\snow_blow_accum
 blowout_particles = amk\snow_blow ;gravity_blast_03
 
 hit_small_particles = hit_fx\hit_metal_02
 hit_big_particles = amk\ice_enter
-idle_small_particles = amk\ice_enter_small
-idle_big_particles = anomaly2\gravity_damage_02_blood2; anomaly2\gravity_damage_02_smoke
 entrance_small_particles = anomaly2\gravi_anomaly_shield_00
 entrance_big_particles = anomaly2\gravi_anomaly_00;
 
@@ -130,6 +127,8 @@ BirthProbability = 0.15
 [noartf_ice_weak]:zone_ice_weak
 $spawn = "zones\ice_weak_noartf"
 idle_particles = amk\snow
+idle_small_particles = amk\ice_enter_small
+idle_big_particles = anomaly2\gravity_damage_02_blood2
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -139,6 +138,8 @@ artefact_spawn_rnd = 0
 [noartf_ice_average]:zone_ice_average
 $spawn = "zones\ice_average_noartf"
 idle_particles = amk\snow
+idle_small_particles = amk\ice_enter_small
+idle_big_particles = anomaly2\gravity_damage_02_blood2
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
@@ -148,6 +149,8 @@ artefact_spawn_rnd = 0
 [noartf_ice_strong]:zone_ice_strong
 $spawn = "zones\ice_strong_noartf"
 idle_particles = amk\snow
+idle_small_particles = amk\ice_enter_small
+idle_big_particles = anomaly2\gravity_damage_02_blood2
 BirthProbability = 0
 spawn_blowout_artefacts = off
 min_artefact_count = 0
