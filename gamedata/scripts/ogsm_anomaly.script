@@ -2228,7 +2228,7 @@ function anomaly_section_choice(levelname)
 	local array_anom_names = anom_types[levelname]
 	local cnt_names = table.getn(array_anom_names) -- считаетс€ количество имЄн в таблице аномалий данной локи
 	local rnd_name = math.floor(math.random(cnt_names)) -- берЄтс€ случайное число в пределах полученного количества
-	local name_anom_to_spawn = array_anom_names[rnd_name] -- берЄтс€ им€ аномалии выпавшему числу
+	local name_anom_to_spawn = array_anom_names[rnd_name] -- берЄтс€ им€ аномалии согласно выпавшему числу
 	
 	local anom_table_postfix = anom_power[levelname]
 	
