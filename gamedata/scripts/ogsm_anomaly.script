@@ -1448,7 +1448,6 @@ local anom_types = {
 		"monolith"
 	},
 	
-	
 	l12u_sarcofag = {
 		"radioactive", "radioactive", "radioactive",
 		"field_thermal", "field_thermal", "field_thermal", "field_thermal", "field_thermal",
