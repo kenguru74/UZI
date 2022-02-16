@@ -122,16 +122,16 @@
 		<text>Вот, смотри. Сколько дашь за неё?</text>
 	</string>
 	<string id="suhar_second_dialog_5">
-		<text>А, вот оно что... Да, имел я на неё виды. Возьму, если в цене сойдёмся. Тридцать штук, идёт?</text>
+		<text>А, вот оно что... Да, имел я на неё виды. Возьму, если в цене сойдёмся. Три штуки, идёт?</text>
 	</string>
 	<string id="suhar_second_dialog_6">
-		<text>Восемьдесят - и она твоя.</text>
+		<text>Восемь - и она твоя.</text>
 	</string>
 	<string id="suhar_second_dialog_7">
-		<text>Ты не зарывайся, братан, больше 3000 не дам. Не хочешь - иди себе...</text>
+		<text>Ты не зарывайся, братан, больше трёх не дам. Не хочешь - иди себе...</text>
 	</string>
 	<string id="suhar_second_dialog_8">
-		<text>Ну... Ну ладно, уговорил. 3000 - и по рукам.</text>
+		<text>Ну... Ну ладно, уговорил. Три тысячи - и по рукам!</text>
 	</string>
 	<string id="suhar_second_dialog_9">
 		<text>По рукам. Если ещё чего-то такое попадётся - неси, столкуемся.</text>
@@ -139,5 +139,4 @@
 	<string id="suhar_second_dialog_10">
 		<text>Ага. Ну ладно, до встречи.</text>
 	</string>
-
 </string_table>

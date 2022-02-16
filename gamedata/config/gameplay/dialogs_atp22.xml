@@ -1,236 +1,236 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <game_dialogs>
-    <dialog id="atp_brodyaga_first_talk">
-    <dont_has_info>first_dialog_atp</dont_has_info>
-        <phrase_list>
-            <phrase id="0">
-                <text>atp_brodyaga_first_talk_0</text>
-                <next>1</next>
-            </phrase>
-            <phrase id="1">
-                <text>atp_brodyaga_first_talk_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="2">
-                <text>atp_brodyaga_first_talk_2</text>
-                <next>3</next>
-            </phrase>
-            <phrase id="3">
-                <text>atp_brodyaga_first_talk_3</text>
-                <next>41</next>
-                <next>42</next>
-                <next>43</next>
-            </phrase>
-            <phrase id="41">
-                <dont_has_info>freeplay</dont_has_info>
-                <text>atp_brodyaga_first_talk_41</text>
-                <next>411</next>
-            </phrase>
-            <phrase id="411">
-                <text>atp_brodyaga_first_talk_411</text>
-                <action>dialogs.break_dialog</action>
-            </phrase>
-            <phrase id="42">
-                <dont_has_info>mil_lukash_dead</dont_has_info>
-                <has_info>freeplay</has_info>
-                <text>atp_brodyaga_first_talk_42</text>
-                <next>5</next>
-            </phrase>
-            <phrase id="43">
-                <has_info>mil_lukash_dead</has_info>
-                <has_info>freeplay</has_info>
-                <text>atp_brodyaga_first_talk_43</text>
-                <next>431</next>
-            </phrase>
-            <phrase id="431">
-                <text>atp_brodyaga_first_talk_431</text>
-                <action>dialogs.break_dialog</action>
-            </phrase>
-            <phrase id="5">
-                <text>atp_brodyaga_first_talk_5</text>
-                <next>6</next>
-            </phrase>
-            <phrase id="6">
-                <text>atp_brodyaga_first_talk_6</text>
-                <next>7</next>
-            </phrase>
-            <phrase id="7">
-                <text>atp_brodyaga_first_talk_7</text>
-                <next>8</next>
-            </phrase>
-            <phrase id="8">
-                <text>atp_brodyaga_first_talk_8</text>
-                <next>9</next>
-            </phrase>
-            <phrase id="9">
-                <text>atp_brodyaga_first_talk_9</text>
-                <next>10</next>
-            </phrase>
-            <phrase id="10">
-                <text>atp_brodyaga_first_talk_10</text>
-                <next>11</next>
-            </phrase>
-            <phrase id="11">
-                <text>atp_brodyaga_first_talk_11</text>
-                <next>12</next>
-            </phrase>
-            <phrase id="12">
-                <text>atp_brodyaga_first_talk_12</text>
-                <next>13</next>
-            </phrase>
-            <phrase id="13">
-                <text>atp_brodyaga_first_talk_13</text>
-                <next>14</next>
-            </phrase>
-            <phrase id="14">
-                <text>atp_brodyaga_first_talk_14</text>
-                <next>15</next>
-            </phrase>
-            <phrase id="15">
-                <text>atp_brodyaga_first_talk_15</text>
-                <give_info>first_dialog_atp</give_info>
-                <action>atp22_dialog.take_fotka1</action>
-                <action>dialogs.break_dialog</action>
-            </phrase>
-        </phrase_list>
-    </dialog>
+	<dialog id="atp_brodyaga_first_talk">
+	<dont_has_info>first_dialog_atp</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>atp_brodyaga_first_talk_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>atp_brodyaga_first_talk_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>atp_brodyaga_first_talk_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>atp_brodyaga_first_talk_3</text>
+				<next>41</next>
+				<next>42</next>
+				<next>43</next>
+			</phrase>
+			<phrase id="41">
+				<dont_has_info>freeplay</dont_has_info>
+				<text>atp_brodyaga_first_talk_41</text>
+				<next>411</next>
+			</phrase>
+			<phrase id="411">
+				<text>atp_brodyaga_first_talk_411</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="42">
+				<dont_has_info>mil_lukash_dead</dont_has_info>
+				<has_info>freeplay</has_info>
+				<text>atp_brodyaga_first_talk_42</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="43">
+				<has_info>mil_lukash_dead</has_info>
+				<has_info>freeplay</has_info>
+				<text>atp_brodyaga_first_talk_43</text>
+				<next>431</next>
+			</phrase>
+			<phrase id="431">
+				<text>atp_brodyaga_first_talk_431</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="5">
+				<text>atp_brodyaga_first_talk_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>atp_brodyaga_first_talk_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>atp_brodyaga_first_talk_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>atp_brodyaga_first_talk_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>atp_brodyaga_first_talk_9</text>
+				<next>10</next>
+			</phrase>
+			<phrase id="10">
+				<text>atp_brodyaga_first_talk_10</text>
+				<next>11</next>
+			</phrase>
+			<phrase id="11">
+				<text>atp_brodyaga_first_talk_11</text>
+				<next>12</next>
+			</phrase>
+			<phrase id="12">
+				<text>atp_brodyaga_first_talk_12</text>
+				<next>13</next>
+			</phrase>
+			<phrase id="13">
+				<text>atp_brodyaga_first_talk_13</text>
+				<next>14</next>
+			</phrase>
+			<phrase id="14">
+				<text>atp_brodyaga_first_talk_14</text>
+				<next>15</next>
+			</phrase>
+			<phrase id="15">
+				<text>atp_brodyaga_first_talk_15</text>
+				<give_info>first_dialog_atp</give_info>
+				<action>atp22_dialog.take_fotka1</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
 
-    <dialog id="atp_brodyaga_second_talk">
-        <has_info>info_docs_monolit</has_info>
-        <dont_has_info>second_dialog_atp</dont_has_info>
-        <phrase_list>
-            <phrase id="0">
-                <text>atp_brodyaga_second_talk_0</text>
-                <next>1</next>
-            </phrase>
-            <phrase id="1">
-                <text>atp_brodyaga_second_talk_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="2">
-                <text>atp_brodyaga_second_talk_2</text>
-                <next>3</next>
-            </phrase>
-            <phrase id="3">
-                <text>atp_brodyaga_second_talk_3</text>
-                <next>4</next>
-            </phrase>
-            <phrase id="4">
-                <text>atp_brodyaga_second_talk_4</text>
-                <action>atp22_dialog.give_fotka_docs</action>
-                <give_info>second_dialog_atp</give_info>
-                <action>dialogs.break_dialog</action>
-            </phrase>
-        </phrase_list>
-    </dialog>
+	<dialog id="atp_brodyaga_second_talk">
+		<has_info>info_docs_monolit</has_info>
+		<dont_has_info>second_dialog_atp</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>atp_brodyaga_second_talk_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>atp_brodyaga_second_talk_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>atp_brodyaga_second_talk_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>atp_brodyaga_second_talk_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>atp_brodyaga_second_talk_4</text>
+				<action>atp22_dialog.give_fotka_docs</action>
+				<give_info>second_dialog_atp</give_info>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
 
-    <dialog id="atp_brodyaga_third_talk">
-        <has_info>after_new_dream</has_info>
-        <dont_has_info>third_dialog_atp</dont_has_info>
-        <phrase_list>
-            <phrase id="0">
-                <text>atp_brodyaga_third_talk_0</text>
-                <next>1</next>
-            </phrase>
-            <phrase id="1">
-                <text>atp_brodyaga_third_talk_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="2">
-                <text>atp_brodyaga_third_talk_2</text>
-                <next>3</next>
-            </phrase>
-            <phrase id="3">
-                <text>atp_brodyaga_third_talk_3</text>
-                <next>4</next>
-            </phrase>
-            <phrase id="4">
-                <text>atp_brodyaga_third_talk_4</text>
-                <action>atp22_dialog.brodyaga_friend</action>
-                <give_info>third_dialog_atp</give_info>
-                <action>dialogs.break_dialog</action>
-            </phrase>
-        </phrase_list>
-    </dialog>
+	<dialog id="atp_brodyaga_third_talk">
+		<has_info>after_new_dream</has_info>
+		<dont_has_info>third_dialog_atp</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>atp_brodyaga_third_talk_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>atp_brodyaga_third_talk_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>atp_brodyaga_third_talk_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>atp_brodyaga_third_talk_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>atp_brodyaga_third_talk_4</text>
+				<action>atp22_dialog.brodyaga_friend</action>
+				<give_info>third_dialog_atp</give_info>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
 
-    <dialog id="suhar_dialog">
-        <has_info>third_dialog_atp</has_info>
-        <dont_has_info>suhar_give_habar</dont_has_info>
-        <phrase_list>
-            <phrase id="0">
-                <text>suhar_dialog_0</text>
-                <next>1</next>
-            </phrase>
-            <phrase id="1">
-                <text>suhar_dialog_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="2">
-                <text>suhar_dialog_2</text>
-                <next>3</next>
-            </phrase>
-            <phrase id="3">
-                <text>suhar_dialog_3</text>
-                <action>atp22_dialog.take_habar_suhar</action>
-                <give_info>suhar_give_habar</give_info>
-                <action>dialogs.break_dialog</action>
-            </phrase>
-        </phrase_list>
-    </dialog>
+	<dialog id="suhar_dialog">
+		<has_info>third_dialog_atp</has_info>
+		<dont_has_info>suhar_give_habar</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>suhar_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>suhar_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>suhar_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>suhar_dialog_3</text>
+				<action>atp22_dialog.take_habar_suhar</action>
+				<give_info>suhar_give_habar</give_info>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
 
-    <dialog id="suhar_second_dialog">
-        <precondition>atp22_dialog.actor_have_gungauss</precondition>
-        <has_info>find_gpistol</has_info>
-        <dont_has_info>bring_gpistol</dont_has_info>
-        <phrase_list>
-            <phrase id="0">
-                <text>suhar_second_dialog_0</text>
-                <next>1</next>
-            </phrase>
-            <phrase id="1">
-                <text>suhar_second_dialog_1</text>
-                <next>2</next>
-            </phrase>
-            <phrase id="2">
-                <text>suhar_second_dialog_2</text>
-                <next>3</next>
-            </phrase>
-            <phrase id="3">
-                <text>suhar_second_dialog_3</text>
-                <next>4</next>
-            </phrase>
-            <phrase id="4">
-                <text>suhar_second_dialog_4</text>
-                <next>5</next>
-            </phrase>
-            <phrase id="5">
-                <text>suhar_second_dialog_5</text>
-                <next>6</next>
-            </phrase>
-            <phrase id="6">
-                <text>suhar_second_dialog_6</text>
-                <next>7</next>
-            </phrase>
-            <phrase id="7">
-                <text>suhar_second_dialog_7</text>
-                <next>8</next>
-            </phrase>
-            <phrase id="8">
-                <text>suhar_second_dialog_8</text>
-                <next>9</next>
-            </phrase>
-            <phrase id="9">
-                <text>suhar_second_dialog_9</text>
-                <action>atp22_dialog.take_50000</action>
-                <action>atp22_dialog.give_gausspistol</action>
-                <give_info>bring_gpistol</give_info>
-                <next>10</next>
-            </phrase>
-            <phrase id="10">
-                <text>suhar_second_dialog_10</text>
-                <action>dialogs.break_dialog</action>
-            </phrase>
-        </phrase_list>
-    </dialog>
+	<dialog id="suhar_second_dialog">
+		<precondition>atp22_dialog.actor_have_gungauss</precondition>
+		<has_info>find_gpistol</has_info>
+		<dont_has_info>bring_gpistol</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>suhar_second_dialog_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>suhar_second_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>suhar_second_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>suhar_second_dialog_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>suhar_second_dialog_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>suhar_second_dialog_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>suhar_second_dialog_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>suhar_second_dialog_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>suhar_second_dialog_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>suhar_second_dialog_9</text>
+				<action>atp22_dialog.take_reward</action>
+				<action>atp22_dialog.give_gausspistol</action>
+				<give_info>bring_gpistol</give_info>
+				<next>10</next>
+			</phrase>
+			<phrase id="10">
+				<text>suhar_second_dialog_10</text>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
 
 </game_dialogs>
