@@ -602,7 +602,7 @@ function __do_timer_action(select_string,params_string)
 		del_variable("mut")
 		
 		uzi_monsters_respawn.resp_monsters()
-		g_start_timer("mut",0, 48 + math.random(-24,0) + math.random(0,24), 0)
+		g_start_timer("mut",0, 0, 15 + math.random(-5,0) + math.random(0,5))
 	end
 	
 	if select_string=="vdk" then
